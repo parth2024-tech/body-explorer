@@ -3,6 +3,8 @@
 // 30+ body parts, 200+ facts, myths, actions, questions
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+import generatedFactsJson from "./generated-facts.json";
+
 export type Category =
   | "weird_wild"
   | "health_tip"
@@ -199,7 +201,7 @@ export const BODY_PARTS: BodyPart[] = [
 const f = (id: string, bodyPartId: string, category: Category, rarity: Rarity, text: string, source?: string): Fact =>
   ({ id, bodyPartId, category, rarity, text, source });
 
-export const FACTS: Fact[] = [
+const HARDCODED_FACTS: Fact[] = [
   // ━━━ BRAIN ━━━
   f("brain-w-1", "brain", "weird_wild", "mind_blowing", "Your brain generates around 20 watts of electricity while you read this — enough to dimly power a light bulb."),
   f("brain-w-2", "brain", "weird_wild", "almost_unknown", "The brain has no pain receptors. Surgeons can operate on it while you're awake and talking."),
@@ -508,6 +510,8 @@ export const FACTS: Fact[] = [
   f("db-muscles-4", "muscles", "superfood", "surprising", "Tart cherry juice contains high levels of anthocyanins, which drastically reduce delayed onset muscle soreness (DOMS) after physical exertion."),
   f("db-muscles-5", "muscles", "record_breaker", "mind_blowing", "The strongest muscle in the human body (based on its weight and force) is the masseter—the heavy jaw muscle used for chewing."),
 ];
+
+export const FACTS: Fact[] = [...HARDCODED_FACTS, ...(generatedFactsJson as Fact[])];
 
 // ━━━ Myths Busted ━━━
 export { MYTHS } from "./myths";
