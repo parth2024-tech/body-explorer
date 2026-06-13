@@ -1,95 +1,144 @@
-# 🌍 The Living Body Atlas
+# 🛰️ Human Body Atlas
 
-An interactive, animated human body education platform where users explore anatomy through a living 3D-layered map, log their own body experiences, complete weekly challenges, and get AI-guided clarity. Designed with a premium, museum-exhibit visual style.
+> **A precision aerospace-grade interactive anatomy platform** — built like mission-critical software, styled like NASA's data dashboards. Explore the human body across 30+ organ systems with engineering precision.
+
+---
+
+## 🔴 Design Philosophy — NASA Aerospace Aesthetic
+
+This platform has been entirely rebuilt to embody the visual language of premium aerospace engineering software:
+
+- **Deep Space Black** (`#030303`) — a void backdrop, not a painted wall
+- **NASA Red** (`#FC3D21`) — the iconic accent for all critical data and active states
+- **NASA Blue** (`#0B3D91`) — secondary accent for system indicators and highlights  
+- **Off-White** (`#EAEAEA`) — high-contrast foreground for readable data readouts
+- **Zero-radius UI** — razor-sharp rectangular panels, like physical instrument consoles
+- **Precision grid background** — a subtle 30×30px engineering schematic overlay
+- **Monospace technical labels** — all metadata rendered in `Fira Mono` with wide letter-spacing
+- **Corner crosshairs** — `+` marks injected on UI cards via CSS pseudo-elements
+- **Live clock & system status** in the header — real-time UTC readout + `NOMINAL / OPERATIONAL` indicators
 
 ---
 
 ## ✨ Features Overview
 
 ### 1. 🗺️ Interactive Body Map & Anatomy Layers
-- **System Switcher:** Toggle visual layers between **Skin & Sensation**, **Muscles & Movement**, **Organs & Digestion**, and **Bones & Structure** directly on the interactive map.
-- **Personal Notes Pinner:** Click any organ to log private notes locally (e.g., *"knee clicks when squatting"*).
-- **Text-to-Speech (TTS):** Accessibility-friendly audio summaries read by the browser's speech synthesis engine.
-- **3D Viewer:** Responsive WebGL renders of selected organs using Three.js/React Three Fiber.
+- **System Switcher:** Toggle visual layers between Skin & Sensation, Muscles & Movement, Organs & Digestion, and Bones & Structure
+- **Personal Notes Pinner:** Click any organ to log private notes locally
+- **Text-to-Speech (TTS):** Accessibility-friendly audio summaries
+- **3D Viewer:** WebGL renders of selected organs using Three.js / React Three Fiber
 
-### 2. 🧪 Core Content Engine
-- **Remedies Database:** Search traditional, anecdotal, and clinically studied natural remedies, complete with evidence ratings and scientific backing details.
-- **Anatomical Hacks:** Splashing cold water for vagus nerve stimulation, acupressure guides for headaches, and daily seasonal tuning advices.
-- **Myths Debunked:** Curated list of common physiological misconceptions paired with scientific truth toggles.
-- **Sensory Facts:** Fascinating explanations for everyday body responses (e.g., eye twitches, stomach gurgles).
+### 2. 📚 Anatomy Library
+- **Remedies Database:** Traditional and clinically studied natural remedies with evidence ratings
+- **Anatomical Hacks:** Acupressure guides, breathing techniques, daily tuning advice
+- **Myths Debunked:** Common physiological misconceptions paired with scientific truth
+- **Sensory Facts:** Explanations for everyday body responses
 
-### 3. 🩺 Symptoms & Conditions Library
-- **A–Z Directory:** Clinical conditions simplified into plain-language overviews, symptom frequencies (always, often, sometimes), and misconceptions.
-- **Symptom Explorer:** Pick a symptom to discover common causes and overlooked triggers.
-- **Red-Flag Checker:** Sourced checklists specifying exactly when to seek immediate medical attention.
+### 3. 💡 Body Facts Engine
+- **Daily Facts:** Curated fascinating anatomy facts organized by rarity (`COMMON`, `SURPRISING`, `MIND-BLOWING`, `RARE`)
+- **Filter & Search:** Browse by category, rarity, or body system
+- **Fact Cards:** Shareable, detailed fact panels with supporting context
 
-### 4. 🚨 Emergency Precautions & First Aid
-- **Scenario Cards:** Instant emergency action steps for cardiac arrest, strokes (with FAST check guides), anaphylaxis, choking, and bleeding.
-- **CPR Compression Pacer:** Audio/visual chest compression guide flashing and clicking at exactly **105 BPM** (optimized to match modern medical guidelines).
-- **Printable Emergency Instructions:** CSS-optimized styles that format clean and clear for printing.
-- **Smart Call Display:** Auto-detects local emergency helpline numbers based on browser location.
+### 4. 🩺 Symptoms & Conditions Library
+- **A–Z Directory:** Clinical conditions in plain-language overviews with symptom frequencies
+- **Symptom Explorer:** Discover causes, overlooked triggers, and misconceptions
+- **Red-Flag Checker:** Know exactly when to seek immediate medical attention
 
-### 5. ⚙️ Stand-alone Interactive Tools
-- **Breathing Pacer:** Pulsing visual guide for Box Breathing (4-4-4-4) and Relaxing (4-7-8) methods.
-- **Lifetime Heartbeat Simulator:** Input your age and resting heart rate to calculate total estimated heartbeats since birth.
-- **Hydration Tracker:** Visual daily log linked with anatomical facts about fluid absorption.
-- **Sleep Cycle Calculator:** Computes bedtimes based on natural 90-minute sleep cycles.
-- **Posture Alerts:** Opt-in background reminders using the browser's native Notification API.
+### 5. 🚨 Emergency Precautions & First Aid
+- **Scenario Cards:** Instant steps for cardiac arrest, stroke (FAST check), anaphylaxis, choking, bleeding
+- **CPR Compression Pacer:** Audio/visual pacing at exactly **105 BPM**
+- **Printable Instructions:** Clean print-optimized CSS layout
+- **Smart Emergency Numbers:** Auto-detects local helpline based on browser locale
 
-### 6. 👤 Onboarding & Personalization
-- **Topic Interests:** Select specific fields of anatomy to curate your feed.
-- **Mood Check-ins:** Log how your body feels daily to receive customized educational highlights.
-- **Streak Waveform:** Visually tracks daily visits with a custom SVG wave pattern.
+### 6. 📓 Body Diary
+- **Daily Log:** Track how organs and body systems feel each day
+- **Streak Waveform:** Visual SVG wave pattern tracking daily visits
+- **Personal annotations** linked to body map zones
 
----
+### 7. ⚡ Daily Insight
+- One fact, one 30-second action, every day — curated to keep anatomy education effortless
 
-## 🎨 Visual Identity
-
-- **Base Theme:** Deep space navy (`#0A0E1A`) for a premium digital dark-mode backdrop.
-- **Primary Accent:** Bioluminescent teal (`#00E5C4`) mirroring medical imaging and MRI glows.
-- **Personal Accent:** Warm amber (`#F5A623`) for diary entries, streaks, and personal logs.
-- **Community Accent:** Muted purple (`#6B4FA0`) for weekly challenges and quest indicators.
-- **Typography:** Display headlines use Clash Display (futuristic, clinical aesthetic) and body text uses Inter.
+### 8. 🏆 Weekly Quest
+- Community challenges, habit building, and certificate milestones
 
 ---
 
 ## 🛠️ Technology Stack
 
-- **Core:** React 19, TypeScript, Tailwind CSS v4, HTML5
-- **Routing & Framework:** TanStack Start (SSR) + TanStack Router (File-based routing)
-- **State Management:** Zustand (with LocalStorage state persistence middleware)
-- **Animation:** Framer Motion 12, GSAP 3
-- **3D Engine:** Three.js, `@react-three/fiber`, `@react-three/drei`
-- **Offline Capabilities:** PWA Manifest, custom Caching Service Worker
-- **Translations:** Built-in client-side translations dictionary supporting English & Hindi (EN / हिन्दी)
+| Layer | Technology |
+|---|---|
+| **Core** | React 19, TypeScript, Tailwind CSS v4 |
+| **Routing** | TanStack Start (SSR) + TanStack Router (File-based) |
+| **State** | Zustand with LocalStorage persistence |
+| **Animation** | Framer Motion 12 |
+| **3D Engine** | Three.js, `@react-three/fiber`, `@react-three/drei` |
+| **Typography** | Space Grotesk (Display), Plus Jakarta Sans (Body), Fira Mono (Code/Data) |
+| **Offline** | PWA Manifest + Custom Service Worker |
+| **i18n** | Built-in EN / हिन्दी translations |
 
 ---
 
 ## 🚀 Setup & Installation
 
 ### Prerequisites
-Make sure you have Node.js installed on your machine.
+Node.js (v18+) installed on your machine.
 
 ### Installation
-1. Clone this repository to your local system.
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/parth2024-tech/body-explorer.git
+cd body-explorer
+
+# Install dependencies
+npm install
+```
 
 ### Running Locally
-To launch the dev server on port 8080:
 ```bash
 npm run dev
 ```
 Open **[http://localhost:8080](http://localhost:8080)** in your browser.
 
 ### Building for Production
-To build the client and server assets for SSR environments:
 ```bash
 npm run build
 ```
-Preview the production build locally:
+
+Preview the production build:
 ```bash
 npm run preview
 ```
+
+---
+
+## 🧭 Navigation Structure
+
+| Route | Module Code | Description |
+|---|---|---|
+| `/explore` | `XPL-01` | Interactive body map with 3D organ viewer |
+| `/library` | `LIB-02` | Anatomy library — remedies, hacks, myths |
+| `/symptoms` | `SYM-03` | Symptoms & conditions A–Z directory |
+| `/emergency` | `EMG-04` | First aid protocols & CPR pacer |
+| `/facts` | `FCT-05` | Body facts engine with rarity ratings |
+| `/diary` | `DRY-06` | Personal body diary & streak tracker |
+| `/daily` | `DLY-07` | Daily insight & 30-second wellness action |
+| `/quest` | `QST-08` | Weekly community challenges |
+
+---
+
+## 🎨 Color System
+
+```
+Background ........... #030303  (Deep Space Black)
+Foreground ........... #EAEAEA  (Off-White)
+Card / Panel ......... #0F0F0F  (Near Black)
+Border ............... #222222  (Precision Gray)
+Primary Accent ....... #FC3D21  (NASA Red)
+Secondary Accent ..... #0B3D91  (NASA Blue)
+Gold Accent .......... #F5A623  (Telemetry Gold)
+Muted Text ........... #8A8F98  (Slate Gray)
+```
+
+---
+
+*Human Body Atlas © 2024 · All Systems Nominal · v2.0.1 · Build 042*

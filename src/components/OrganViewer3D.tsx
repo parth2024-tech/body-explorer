@@ -33,8 +33,8 @@ export function getOrganModelType(organId: string): OrganModelType {
   return ORGAN_MODEL_MAP[organId] ?? "generic";
 }
 
-const TEAL = "#00E5C4";
-const BONE = "#E8E0D5";
+const TEAL = "#FC3D21";
+const BONE = "#EAEAEA";
 const MUTED_BLUE = "#4A6FA5";
 
 function BrainModel({ wireframe }: { wireframe: boolean }) {
@@ -43,7 +43,7 @@ function BrainModel({ wireframe }: { wireframe: boolean }) {
     if (group.current) group.current.rotation.y += delta * 0.25;
   });
 
-  const lobeColors = ["#00E5C4", "#6B4FA0", "#4DC8E5", "#F5A623"];
+  const lobeColors = ["#FC3D21", "#0B3D91", "#4DC8E5", "#F5A623"];
 
   return (
     <group ref={group}>
@@ -93,8 +93,8 @@ function HeartModel({ wireframe }: { wireframe: boolean }) {
       <mesh ref={mesh}>
         <sphereGeometry args={[0.45, 32, 32]} />
         <meshStandardMaterial
-          color="#E5504D"
-          emissive="#E5504D"
+          color="#FC3D21"
+          emissive="#FC3D21"
           emissiveIntensity={0.2}
           wireframe={wireframe}
         />
@@ -142,7 +142,7 @@ function SpineModel({ wireframe }: { wireframe: boolean }) {
   const sections = [
     { y: 1.2, color: "#4DC8E5", scale: 0.35 },
     { y: 0.4, color: TEAL, scale: 0.4 },
-    { y: -0.4, color: "#6B4FA0", scale: 0.42 },
+    { y: -0.4, color: "#0B3D91", scale: 0.42 },
     { y: -1.1, color: BONE, scale: 0.38 },
   ];
 
@@ -182,7 +182,7 @@ function DigestiveModel({ wireframe }: { wireframe: boolean }) {
       </mesh>
       <mesh ref={tube} position={[0, 0.2, 0]}>
         <sphereGeometry args={[0.35, 24, 24]} />
-        <meshStandardMaterial color="#E5504D" emissive="#E5504D" emissiveIntensity={0.08} wireframe={wireframe} />
+        <meshStandardMaterial color="#FC3D21" emissive="#FC3D21" emissiveIntensity={0.08} wireframe={wireframe} />
       </mesh>
       <mesh position={[0, -0.5, 0]}>
         <torusGeometry args={[0.4, 0.12, 12, 24]} />
@@ -190,7 +190,7 @@ function DigestiveModel({ wireframe }: { wireframe: boolean }) {
       </mesh>
       <mesh position={[0, -1, 0]} scale={[0.5, 1.2, 0.5]}>
         <cylinderGeometry args={[0.2, 0.18, 0.8, 12]} />
-        <meshStandardMaterial color="#6B4FA0" emissive="#6B4FA0" emissiveIntensity={0.08} wireframe={wireframe} />
+        <meshStandardMaterial color="#0B3D91" emissive="#0B3D91" emissiveIntensity={0.08} wireframe={wireframe} />
       </mesh>
     </group>
   );
@@ -274,7 +274,7 @@ function OrganScene({ modelType, wireframe }: { modelType: OrganModelType; wiref
       <ambientLight intensity={0.4} />
       <directionalLight position={[4, 4, 4]} intensity={1.2} color="#ffffff" />
       <pointLight position={[-3, 2, 2]} intensity={0.6} color={TEAL} />
-      <pointLight position={[3, -2, -2]} intensity={0.3} color="#6B4FA0" />
+      <pointLight position={[3, -2, -2]} intensity={0.3} color="#0B3D91" />
 
       {modelType === "brain" && <BrainModel wireframe={wireframe} />}
       {modelType === "heart" && <HeartModel wireframe={wireframe} />}
@@ -312,14 +312,14 @@ export function OrganViewer3D({ organId, className = "" }: OrganViewer3DProps) {
 
   if (!mounted) {
     return (
-      <div className={`flex items-center justify-center rounded-xl border border-[#1E2844] bg-[#0A0E1A]/80 ${className}`}>
-        <div className="text-xs text-[#8B8FA3] animate-pulse">Loading 3D viewer...</div>
+      <div className={`flex items-center justify-center rounded-xl border border-[#222222] bg-[#030303]/80 ${className}`}>
+        <div className="text-xs text-[#8A8F98] animate-pulse">Loading 3D viewer...</div>
       </div>
     );
   }
 
   return (
-    <div className={`relative overflow-hidden rounded-xl border border-[#1E2844] bg-[#0A0E1A]/80 ${className}`}>
+    <div className={`relative overflow-hidden rounded-xl border border-[#222222] bg-[#030303]/80 ${className}`}>
       <Canvas
         camera={{ position: [0, 0, 2.8], fov: 45 }}
         gl={{ antialias: true, alpha: true }}
@@ -332,13 +332,13 @@ export function OrganViewer3D({ organId, className = "" }: OrganViewer3DProps) {
 
       <button
         onClick={() => setWireframe((w) => !w)}
-        className="absolute bottom-3 right-3 rounded-full border border-[#1E2844] bg-[#141826]/90 px-3 py-1 text-[10px] font-medium text-[#8B8FA3] backdrop-blur-sm transition-colors hover:border-[#00E5C4]/30 hover:text-[#00E5C4]"
+        className="absolute bottom-3 right-3 rounded-full border border-[#222222] bg-[#0F0F0F]/90 px-3 py-1 text-[10px] font-medium text-[#8A8F98] backdrop-blur-sm transition-colors hover:border-[#FC3D21]/30 hover:text-[#FC3D21]"
       >
         {wireframe ? "Solid" : "Wireframe"}
       </button>
 
       {!organId && (
-        <div className="pointer-events-none absolute inset-x-0 top-3 text-center text-[10px] uppercase tracking-wider text-[#8B8FA3]">
+        <div className="pointer-events-none absolute inset-x-0 top-3 text-center text-[10px] uppercase tracking-wider text-[#8A8F98]">
           Tap an organ to explore in 3D
         </div>
       )}

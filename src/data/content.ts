@@ -111,7 +111,7 @@ export interface EmergencyScenario {
   name: string;
   warningSigns: string[];
   beforeAmbulance: string[];
-  cprTimerNeeded: boolean;
+  cprTimerNeeded?: boolean;
   steps: string[];
 }
 
@@ -192,6 +192,7 @@ export const BODY_PARTS: BodyPart[] = [
   // WHOLE BODY
   { id: "skin", name: "Skin", slug: "skin", system: "Integumentary", emoji: "🧬", shortDescription: "Your largest organ — and it replaces itself every 27 days.", region: "whole-body" },
   { id: "bones", name: "Bones", slug: "bones", system: "Skeletal", emoji: "🦴", shortDescription: "Stronger than steel, pound for pound.", region: "whole-body" },
+  { id: "muscles", name: "Muscles", slug: "muscles", system: "Muscular", emoji: "💪", shortDescription: "Over 640 skeletal muscles enabling every movement and breath.", region: "whole-body" },
 ];
 
 // Compact fact builder
@@ -445,6 +446,67 @@ export const FACTS: Fact[] = [
   f("bones-d-1", "bones", "what_damages_it", "surprising", "Cola — not just sugar — leaches calcium from bones via phosphoric acid."),
   f("bones-s-1", "bones", "superfood", "common", "Sardines (with bones) deliver more bioavailable calcium than milk."),
   f("bones-r-1", "bones", "record_breaker", "mind_blowing", "The femur can support 30× a person's body weight without breaking."),
+
+  // ━━━ DATABASE IMPORTS ━━━
+  f("db-brain-1", "brain", "weird_wild", "mind_blowing", "The brain generates enough electricity to power a small LED lightbulb (about 12 to 25 watts of power)."),
+  f("db-brain-2", "brain", "health_tip", "surprising", "Learning a new physical skill, like juggling or dancing, physically increases the volume of gray matter in your brain."),
+  f("db-brain-3", "brain", "what_damages_it", "surprising", "Chronic sleep deprivation prevents the brain's glymphatic system from flushing out toxic amyloid-beta plaques, linked to Alzheimer's."),
+  f("db-brain-4", "brain", "superfood", "common", "Walnuts visually resemble tiny brains and are packed with DHA, an Omega-3 fatty acid crucial for protecting cognitive health."),
+  f("db-brain-5", "brain", "record_breaker", "mind_blowing", "Information travels along different types of neurons at different speeds, with the fastest motor neurons transmitting signals at up to 268 mph."),
+
+  f("db-heart-1", "heart", "weird_wild", "mind_blowing", "Because the heart has its own electrical impulse, it can continue to beat even when separated from the body, as long as it has an oxygen supply."),
+  f("db-heart-2", "heart", "health_tip", "surprising", "Laughing out loud relaxes the endothelium (the inner lining of your blood vessels) and increases blood flow by up to 20%."),
+  f("db-heart-3", "heart", "what_damages_it", "surprising", "Prolonged periods of sitting (a sedentary lifestyle) drastically stiffen arteries over time, even if you exercise for an hour a day."),
+  f("db-heart-4", "heart", "superfood", "common", "Dark chocolate (70%+ cacao) is rich in flavonoids that stimulate the production of nitric oxide, which helps lower blood pressure."),
+  f("db-heart-5", "heart", "record_breaker", "mind_blowing", "A healthy human heart beats roughly 100,000 times a day, pumping about 2,000 gallons of blood through 60,000 miles of blood vessels."),
+
+  f("db-gut-1", "large-intestine", "weird_wild", "mind_blowing", "You have a 'second brain' in your gut called the enteric nervous system, containing over 100 million neurons."),
+  f("db-gut-2", "stomach", "health_tip", "common", "Chewing your food 30 times before swallowing dramatically reduces bloating by mixing food with salivary amylase to jumpstart digestion."),
+  f("db-gut-3", "large-intestine", "what_damages_it", "surprising", "Emulsifiers found in ultra-processed foods can strip away the protective mucus lining of your intestines, leading to 'leaky gut.'"),
+  f("db-gut-4", "large-intestine", "superfood", "common", "Fermented foods like kimchi and sauerkraut provide living probiotic strains that directly repopulate and diversify your microbiome."),
+  f("db-gut-5", "small-intestine", "record_breaker", "surprising", "The small intestine is anything but small in length—if stretched out, it measures about 22 feet long."),
+
+  f("db-skin-1", "skin", "weird_wild", "mind_blowing", "You shed about 30,000 to 40,000 dead skin cells every single minute. A massive percentage of the dust in your home is actually you."),
+  f("db-skin-2", "skin", "health_tip", "common", "Applying moisturizer to damp skin within 3 minutes of showering traps water on the surface, dramatically increasing hydration compared to applying it on dry skin."),
+  f("db-skin-3", "skin", "what_damages_it", "surprising", "UVA rays from the sun penetrate deep into the dermis, destroying collagen and elastin even on cloudy days or through glass windows."),
+  f("db-skin-4", "skin", "superfood", "surprising", "Tomatoes are rich in lycopene, a powerful antioxidant that acts like an internal sunscreen to protect skin cells from UV damage."),
+  f("db-skin-5", "skin", "record_breaker", "common", "The skin is the body's largest organ, accounting for roughly 15% to 16% of your total body weight."),
+
+  f("db-lung-1", "lung-left", "weird_wild", "surprising", "Your left lung is about 10% smaller than your right lung to make room for your heart."),
+  f("db-lung-2", "lung-left", "health_tip", "common", "Practicing diaphragmatic breathing (belly breathing) stimulates the vagus nerve, which lowers your heart rate and reduces cortisol in minutes."),
+  f("db-lung-3", "lung-left", "what_damages_it", "surprising", "Vaping exposes the lungs to diacetyl and heavy metals, causing inflammation in the bronchioles (the smallest airways)."),
+  f("db-lung-4", "lung-left", "superfood", "common", "Apples are packed with quercetin, an antioxidant highly correlated with improved lung function and reduced asthma risks."),
+  f("db-lung-5", "lung-left", "record_breaker", "mind_blowing", "If you opened up your lungs and laid out all the tiny air sacs (alveoli) flat, they would cover an area the size of a tennis court."),
+
+  f("db-liver-1", "liver", "weird_wild", "mind_blowing", "The liver is the only internal human organ capable of natural regeneration. As little as 25% of a healthy liver can regenerate into a full-sized organ."),
+  f("db-liver-2", "liver", "health_tip", "common", "Drinking a glass of water with fresh lemon first thing in the morning stimulates liver enzymes and assists in natural detoxification."),
+  f("db-liver-3", "liver", "what_damages_it", "surprising", "Excessive intake of high-fructose corn syrup bypasses standard metabolic pathways and goes straight to the liver, leading to Non-Alcoholic Fatty Liver Disease (NAFLD)."),
+  f("db-liver-4", "liver", "superfood", "surprising", "Black coffee has been extensively proven by hepatologists to protect the liver against cirrhosis and reduce overall liver inflammation."),
+  f("db-liver-5", "liver", "record_breaker", "mind_blowing", "The liver is the body's ultimate multitasker, continuously performing over 500 vital biochemical functions simultaneously."),
+
+  f("db-bones-1", "bones", "weird_wild", "surprising", "Babies are born with roughly 300 bones, but as they grow, many fuse together, leaving adults with exactly 206 bones."),
+  f("db-bones-2", "bones", "health_tip", "common", "Weight-bearing exercises (like lifting weights or jumping rope) physically stress the bone, signaling osteoblast cells to build denser, stronger bones."),
+  f("db-bones-3", "bones", "what_damages_it", "surprising", "A highly processed, high-sodium diet forces your kidneys to excrete calcium out through your urine, slowly draining calcium from your bones."),
+  f("db-bones-4", "bones", "superfood", "common", "Sardines (eaten with the tiny bones intact) are an incredible, bioavailable source of both calcium and Vitamin D."),
+  f("db-bones-5", "bones", "record_breaker", "mind_blowing", "Ounce for ounce, human bone is stronger than solid steel. A block of bone the size of a matchbox can support up to 18,000 pounds of weight."),
+
+  f("db-eyes-1", "eyes", "weird_wild", "surprising", "The human eye is so highly developed it can distinguish between approximately 10 million different colors."),
+  f("db-eyes-2", "eyes", "health_tip", "common", "Prevent digital eye strain with the 20-20-20 rule: Every 20 minutes, look at an object 20 feet away for 20 seconds."),
+  f("db-eyes-3", "eyes", "what_damages_it", "surprising", "Sleeping in contact lenses deprives the cornea of necessary oxygen, increasing the risk of severe bacterial infections by up to 8 times."),
+  f("db-eyes-4", "eyes", "superfood", "common", "Leafy greens like spinach and kale contain lutein and zeaxanthin, which act as natural blue-light filters for the macula."),
+  f("db-eyes-5", "eyes", "record_breaker", "mind_blowing", "The eye has the fastest-reacting muscles in the human body. A single blink typically lasts only 100 to 150 milliseconds."),
+
+  f("db-kidneys-1", "kidneys", "weird_wild", "surprising", "Your kidneys receive about 20% of all the blood pumped by the heart, which is the highest blood flow per gram of any organ in the body."),
+  f("db-kidneys-2", "kidneys", "health_tip", "common", "Staying properly hydrated is the absolute best way to help your kidneys clear excess sodium and toxins, significantly preventing kidney stones."),
+  f("db-kidneys-3", "kidneys", "what_damages_it", "surprising", "Chronic, daily overuse of NSAIDs (like Ibuprofen or Naproxen) restricts blood flow to the kidneys and can cause permanent renal damage over time."),
+  f("db-kidneys-4", "kidneys", "superfood", "common", "Blueberries are perfect for kidney health because they are packed with antioxidants but naturally very low in sodium, phosphorus, and potassium."),
+  f("db-kidneys-5", "kidneys", "record_breaker", "mind_blowing", "Your two kidneys filter about 45 gallons of blood every single day to produce just 1 to 2 quarts of urine."),
+
+  f("db-muscles-1", "muscles", "weird_wild", "common", "It takes 43 separate muscles to frown, but only 17 muscles to smile."),
+  f("db-muscles-2", "muscles", "health_tip", "common", "Consuming a high-quality protein source within 30 to 60 minutes after a heavy workout maximizes muscle protein synthesis and speeds up repair."),
+  f("db-muscles-3", "muscles", "what_damages_it", "surprising", "Severe dehydration during extreme exercise can cause muscle tissue to break down rapidly into the bloodstream, a dangerous condition called rhabdomyolysis."),
+  f("db-muscles-4", "muscles", "superfood", "surprising", "Tart cherry juice contains high levels of anthocyanins, which drastically reduce delayed onset muscle soreness (DOMS) after physical exertion."),
+  f("db-muscles-5", "muscles", "record_breaker", "mind_blowing", "The strongest muscle in the human body (based on its weight and force) is the masseter—the heavy jaw muscle used for chewing."),
 ];
 
 // ━━━ Myths Busted ━━━
@@ -692,46 +754,356 @@ export const SENSORY_FACTS: SensoryFact[] = [
 
 export const EMERGENCY_SCENARIOS: EmergencyScenario[] = [
   {
-    id: "stroke",
-    name: "Stroke Warning & First Aid",
+    id: "cardiac-arrest",
+    name: "Cardiac Arrest (Heart Stopped)",
     warningSigns: [
-      "F - Face Drooping (one side of face droops or is numb)",
-      "A - Arm Weakness (one arm drifts downward when raised)",
-      "S - Speech Difficulty (slurred speech or unable to speak)",
-      "T - Time to call emergency services immediately"
+      "Sudden loss of responsiveness",
+      "No normal breathing (only gasping)",
+      "No detectable pulse",
+      "Collapsing abruptly"
+    ],
+    steps: [
+      "Check the scene for safety, then tap the person's shoulder and shout, 'Are you okay?'",
+      "If unresponsive, immediately yell for help and call your local emergency number.",
+      "Send someone to get an AED (Automated External Defibrillator) immediately.",
+      "Begin Hands-Only CPR: Push hard and fast in the center of the chest (use the CPR Pacer tool).",
+      "When the AED arrives, turn it on and follow the voice prompts instantly."
     ],
     beforeAmbulance: [
-      "Do NOT give the person food, drink, or aspirin (it could worsen hemorrhagic strokes).",
-      "Note the exact time symptoms first appeared.",
-      "If unconscious but breathing, place them gently in the recovery position."
-    ],
-    cprTimerNeeded: false,
-    steps: [
-      "Perform the FAST check.",
-      "Call emergency services immediately.",
-      "Keep the person calm and warm.",
-      "Do not leave them unattended."
+      "Do not stop CPR unless the person shows clear signs of life or the AED is analyzing.",
+      "Unlock the front door so paramedics can enter quickly.",
+      "Have someone wait outside to flag down the ambulance."
     ]
   },
   {
-    id: "cardiac-arrest",
-    name: "Cardiac Arrest & CPR",
+    id: "heart-attack",
+    name: "Myocardial Infarction (Heart Attack)",
     warningSigns: [
-      "Sudden collapse",
-      "No breathing or only gasping",
-      "No pulse or responsiveness"
+      "Chest pressure, tightness, or squeezing",
+      "Pain radiating to the left arm, neck, jaw, or back",
+      "Cold sweat and sudden dizziness",
+      "Shortness of breath and extreme fatigue"
+    ],
+    steps: [
+      "Have the person sit down, rest, and try to keep them calm.",
+      "Loosen any tight clothing around their neck and chest.",
+      "Call emergency services immediately—do not attempt to drive them to the hospital yourself.",
+      "Ask if they are prescribed nitroglycerin and help them take it if so.",
+      "If they are not allergic, have them chew and swallow one adult aspirin (325mg) or four low-dose aspirin."
     ],
     beforeAmbulance: [
-      "Call emergency services immediately and request an AED.",
-      "Start hands-only CPR immediately.",
-      "Push hard and fast in the center of the chest (100-120 beats per minute)."
+      "Keep the person talking to monitor their consciousness.",
+      "Prepare to begin CPR if they lose consciousness and stop breathing.",
+      "Gather all their current daily medications to hand to the paramedics."
+    ]
+  },
+  {
+    id: "stroke",
+    name: "Stroke (Brain Ischemia/Hemorrhage)",
+    warningSigns: [
+      "F - Face Drooping (One side of the face is numb/drooping)",
+      "A - Arm Weakness (Inability to raise both arms evenly)",
+      "S - Speech Difficulty (Slurred speech or unable to repeat a simple sentence)",
+      "T - Time to call emergency services immediately"
     ],
-    cprTimerNeeded: true,
     steps: [
-      "Check responsiveness and breathing.",
+      "Conduct the F.A.S.T. test to verify symptoms.",
+      "Call emergency services immediately. Every minute counts to save brain tissue.",
+      "Note the exact time the first symptoms appeared. Paramedics will need this for clot-busting drugs.",
+      "Lay the person down safely on their side with their head slightly elevated.",
+      "Keep them comfortable and reassure them calmly."
+    ],
+    beforeAmbulance: [
+      "Do NOT give them any food, water, or medication (including aspirin), as they may choke or it may worsen a bleeding stroke.",
+      "Write down the exact 'Time of Last Known Normal' for the medical team.",
+      "Clear a path in your house for the stretcher."
+    ]
+  },
+  {
+    id: "choking",
+    name: "Severe Choking",
+    warningSigns: [
+      "Clutching the throat with both hands (universal choking sign)",
+      "Inability to speak, cry, or cough forcefully",
+      "Skin, lips, or nails turning blue or dusky",
+      "High-pitched squeaking sounds when trying to breathe"
+    ],
+    steps: [
+      "Ask, 'Are you choking?' If they nod yes, tell them you are going to help.",
+      "Stand behind the person and wrap your arms around their waist.",
+      "Make a fist with one hand and place the thumb side just above their belly button.",
+      "Grasp your fist with your other hand.",
+      "Give quick, upward thrusts (Heimlich maneuver) into the abdomen.",
+      "Continue thrusts until the object is forced out or the person becomes unresponsive."
+    ],
+    beforeAmbulance: [
+      "If the person becomes unresponsive, lower them to the ground.",
       "Call emergency services immediately.",
-      "Place heel of one hand in center of chest, other hand on top.",
-      "Push down 2 inches at a rate of 100-120 compressions per minute."
+      "Begin standard CPR starting with chest compressions. Look in the mouth for an object before providing rescue breaths."
+    ]
+  },
+  {
+    id: "anaphylaxis",
+    name: "Severe Allergic Reaction (Anaphylaxis)",
+    warningSigns: [
+      "Swelling of the lips, tongue, or throat",
+      "Difficulty breathing, swallowing, or severe wheezing",
+      "Widespread hives, redness, or itching",
+      "Dizziness, fainting, or feeling of impending doom"
+    ],
+    steps: [
+      "Ask the person if they carry an epinephrine auto-injector (EpiPen).",
+      "If yes, help them use it immediately: press firmly against the outer mid-thigh and hold for 3-10 seconds.",
+      "Call emergency services immediately, even if symptoms improve.",
+      "Have the person lie flat on their back. If they are having trouble breathing, let them sit up.",
+      "If symptoms do not improve after 5-15 minutes, administer a second EpiPen if available."
+    ],
+    beforeAmbulance: [
+      "Keep the used EpiPen to hand to the paramedics.",
+      "Monitor their breathing and be ready to begin CPR if they become unresponsive.",
+      "Try to identify and remove the allergen trigger if it is still present (e.g., a bee stinger)."
+    ]
+  },
+  {
+    id: "severe-bleeding",
+    name: "Massive Hemorrhage (Severe Bleeding)",
+    warningSigns: [
+      "Blood spurting or pumping from a wound",
+      "Blood pooling rapidly on the ground",
+      "Clothing completely soaked in blood",
+      "Amputation or partial amputation"
+    ],
+    steps: [
+      "Ensure your own safety first (put on medical gloves if available).",
+      "Call emergency services immediately.",
+      "Find the source of the bleeding and apply direct, extremely firm pressure using a clean cloth or gauze.",
+      "If the bleeding is on a limb and cannot be controlled by pressure, apply a tourniquet 2-3 inches above the wound (not on a joint).",
+      "Tighten the tourniquet until the bleeding completely stops."
+    ],
+    beforeAmbulance: [
+      "Write down the exact time the tourniquet was applied (e.g., on their forehead or on the tourniquet itself).",
+      "Never remove a tourniquet once it is applied; only medical professionals should remove it.",
+      "Keep the person warm with an emergency blanket to help prevent physical shock."
+    ]
+  },
+  {
+    id: "seizure",
+    name: "Grand Mal Seizure",
+    warningSigns: [
+      "Sudden loss of consciousness and collapsing",
+      "Uncontrollable muscle spasms and jerking",
+      "Clenched teeth or biting of the tongue",
+      "Loss of bladder or bowel control"
+    ],
+    steps: [
+      "Ease the person to the floor to prevent falling injuries.",
+      "Turn the person gently onto one side to help keep their airway clear.",
+      "Clear the surrounding area of hard or sharp objects.",
+      "Place something soft and flat under their head (like a folded jacket).",
+      "Time the seizure. If it lasts longer than 5 minutes, call emergency services."
+    ],
+    beforeAmbulance: [
+      "Do NOT try to hold the person down or stop their movements.",
+      "Do NOT put anything in the person's mouth.",
+      "Once the seizure ends, stay with them until they are fully conscious and aware of their surroundings."
+    ]
+  },
+  {
+    id: "asthma-attack",
+    name: "Severe Asthma Attack",
+    warningSigns: [
+      "Severe wheezing both when breathing in and out",
+      "Coughing that won't stop",
+      "Very rapid breathing and chest retractions",
+      "Inability to speak in full sentences without gasping"
+    ],
+    steps: [
+      "Help the person sit comfortably upright (lying down makes breathing harder).",
+      "Keep them calm, as panic worsens shortness of breath.",
+      "Help them use their rescue inhaler (usually blue, e.g., Albuterol).",
+      "Use a spacer with the inhaler if one is available.",
+      "If they don't have an inhaler, or if symptoms don't improve within 5 minutes of using it, call emergency services."
+    ],
+    beforeAmbulance: [
+      "Continue to give 1 puff of the inhaler every 30 to 60 seconds (up to 10 puffs) while waiting for help.",
+      "Ensure the room has fresh air and is free of known triggers (smoke, pets, strong odors).",
+      "Have their medical history ready for paramedics."
+    ]
+  },
+  {
+    id: "diabetic-emergency",
+    name: "Diabetic Emergency (Severe Hypoglycemia)",
+    warningSigns: [
+      "Extreme confusion, irritability, or erratic behavior",
+      "Shaking, trembling, and heavy sweating",
+      "Pale skin and sudden intense hunger",
+      "Loss of consciousness or seizures"
+    ],
+    steps: [
+      "If the person is awake and can swallow safely, give them 15-20 grams of fast-acting sugar (e.g., fruit juice, regular soda, honey, or glucose tablets).",
+      "Wait 15 minutes. If they are still confused or symptomatic, give another dose of sugar.",
+      "If the person becomes unconscious or is having a seizure, call emergency services immediately.",
+      "If unconscious, do NOT put food or liquid in their mouth (they could choke).",
+      "If available and you are trained, administer a Glucagon injection."
+    ],
+    beforeAmbulance: [
+      "If unconscious, place them in the recovery position (on their side).",
+      "Gather their insulin, glucose monitor, and any other medications to give to the paramedics.",
+      "Monitor their breathing closely and be ready to begin CPR if breathing stops."
+    ]
+  },
+  {
+    id: "severe-burns",
+    name: "Major Burns (Thermal or Chemical)",
+    warningSigns: [
+      "Burns covering a large area of the body or on the face, hands, or groin",
+      "Skin that is dry, leathery, charred, or white (3rd degree)",
+      "Severe pain, or paradoxically, no pain at all (nerve damage)",
+      "Difficulty breathing (if airways are burned)"
+    ],
+    steps: [
+      "Stop the burning process: Extinguish flames (Stop, Drop, and Roll) or safely remove the person from the heat/chemical source.",
+      "Call emergency services immediately.",
+      "Cool the burn with cool (not ice cold) running water for at least 10-20 minutes. Do NOT use ice.",
+      "Remove jewelry, belts, or tight clothing near the burn before swelling begins.",
+      "Cover the burn loosely with a clean, dry, sterile dressing or plastic wrap."
+    ],
+    beforeAmbulance: [
+      "Do NOT remove clothing that is stuck to the burn.",
+      "Do NOT apply ointments, butter, lotions, or pop any blisters.",
+      "Keep the person warm with a blanket on unburned areas to prevent hypothermia and shock."
+    ]
+  },
+  {
+    id: "heat-stroke",
+    name: "Heat Stroke (Life-Threatening)",
+    warningSigns: [
+      "Extremely high body temperature (103°F / 39.4°C or higher)",
+      "Hot, red, dry skin (sweating has usually stopped)",
+      "Severe confusion, slurred speech, or hallucinations",
+      "Fainting, losing consciousness, or seizures"
+    ],
+    steps: [
+      "Call emergency services immediately. Heat stroke is a strict medical emergency.",
+      "Move the person to a cooler place (air conditioning or deep shade) immediately.",
+      "Cool them down rapidly: douse them with cold water, apply ice packs to the neck, armpits, and groin.",
+      "Fan air over them while wetting their skin.",
+      "If they are fully conscious, give small, slow sips of cool water."
+    ],
+    beforeAmbulance: [
+      "Do NOT give them anything to drink if they are confused or unconscious.",
+      "Monitor their breathing and pulse constantly.",
+      "Continue aggressive cooling until medical help arrives."
+    ]
+  },
+  {
+    id: "hypothermia",
+    name: "Severe Hypothermia",
+    warningSigns: [
+      "Uncontrollable shivering (or shivering that has dangerously stopped)",
+      "Slurred speech, mumbling, or confusion",
+      "Clumsiness, lack of coordination, or stumbling",
+      "Very low energy, drowsiness, or loss of consciousness"
+    ],
+    steps: [
+      "Call emergency services immediately.",
+      "Move the person gently to a warm, dry location. Rough handling can trigger a fatal irregular heartbeat.",
+      "Remove any wet clothing and dry the person.",
+      "Warm the center of their body first (chest, neck, head, groin) using dry, warm blankets or skin-to-skin contact.",
+      "Offer warm, sweet, non-alcoholic beverages ONLY if they are fully alert and can swallow safely."
+    ],
+    beforeAmbulance: [
+      "Do NOT apply direct heat (like hot water, heating pads, or heat lamps) to bare skin.",
+      "Do NOT rub or massage their limbs (this can force cold blood back to the heart).",
+      "Do NOT attempt to warm their arms and legs first."
+    ]
+  },
+  {
+    id: "overdose",
+    name: "Poisoning or Drug Overdose",
+    warningSigns: [
+      "Unresponsiveness or extreme drowsiness",
+      "Pinpoint pupils or highly dilated pupils",
+      "Slow, shallow, or stopped breathing (common in opioid overdose)",
+      "Vomiting, seizures, or empty pill bottles nearby"
+    ],
+    steps: [
+      "Call emergency services and/or the Poison Control Center immediately.",
+      "Check the scene for hazards (needles, toxic fumes, pill bottles).",
+      "If you suspect an opioid overdose and have Naloxone (Narcan), administer it immediately via nasal spray or injection.",
+      "If the person is unconscious but breathing, place them in the recovery position (on their side) to prevent choking on vomit.",
+      "If breathing stops, begin CPR immediately."
+    ],
+    beforeAmbulance: [
+      "Gather all pill bottles, powders, or substances found near the victim to hand to paramedics.",
+      "Do NOT induce vomiting unless explicitly instructed to do so by Poison Control.",
+      "Monitor their breathing continuously; multiple doses of Narcan may be needed."
+    ]
+  },
+  {
+    id: "spinal-injury",
+    name: "Spinal / Neck Trauma",
+    warningSigns: [
+      "Severe pain or pressure in the neck, head, or back",
+      "Numbness, tingling, or loss of feeling in hands, fingers, feet, or toes",
+      "Loss of control over parts of the body (paralysis)",
+      "Unnatural positioning of the head or neck after a fall or crash"
+    ],
+    steps: [
+      "Call emergency services immediately.",
+      "Do NOT move the person unless they are in immediate, life-threatening danger (e.g., a burning car).",
+      "Instruct the person to stay completely still and not to nod or shake their head.",
+      "Place your hands on both sides of their head to hold it perfectly still in the position you found it.",
+      "Keep them calm and reassure them that help is coming."
+    ],
+    beforeAmbulance: [
+      "Do NOT attempt to straighten their neck or body.",
+      "Do NOT remove their helmet if they are wearing one (e.g., motorcycle or bicycle helmet).",
+      "If you must begin CPR due to no breathing, do not tilt the head back; use the jaw-thrust maneuver if trained."
+    ]
+  },
+  {
+    id: "drowning",
+    name: "Drowning (Submersion Injury)",
+    warningSigns: [
+      "Person found unconscious in water",
+      "Blue or pale skin and lips",
+      "Coughing up pink, frothy fluid",
+      "No breathing or isolated gasps"
+    ],
+    steps: [
+      "Safely remove the person from the water. Do not put yourself in danger of drowning.",
+      "Check for responsiveness and normal breathing.",
+      "If unresponsive and not breathing, call emergency services immediately.",
+      "Begin CPR immediately. Unlike sudden cardiac arrest, drowning requires oxygen: start with 2 rescue breaths followed by 30 chest compressions.",
+      "If an AED is available, dry the person's chest thoroughly before applying pads."
+    ],
+    beforeAmbulance: [
+      "If they vomit during CPR, roll them onto their side to clear the airway, then roll them back to continue.",
+      "Even if they recover and seem fine, they MUST go to the hospital to prevent 'secondary drowning' (fluid in the lungs).",
+      "Keep them warm with blankets after removing wet clothing."
+    ]
+  },
+  {
+    id: "electric-shock",
+    name: "Severe Electrical Shock",
+    warningSigns: [
+      "Person is unresponsive and near an electrical source",
+      "Visible burn marks on the skin",
+      "Muscle spasms, seizures, or muscle stiffness",
+      "Irregular heartbeat or no pulse"
+    ],
+    steps: [
+      "Do NOT touch the person if they are still in contact with the electrical current.",
+      "Turn off the source of electricity if possible (unplug the appliance or turn off the circuit breaker).",
+      "If you cannot turn it off, use a dry, non-conducting object (like a wooden broom handle) to push the person away from the source.",
+      "Once they are clear of the current, call emergency services.",
+      "Check for breathing and a pulse. Begin CPR immediately if they are unresponsive and not breathing."
+    ],
+    beforeAmbulance: [
+      "Cover any visible burns loosely with a sterile gauze bandage (do not use blankets or towels, as loose fibers can stick).",
+      "Keep the person lying down and prevent them from moving, as electrical shocks can cause unseen spinal injuries or internal burns.",
+      "Wait for paramedics even if the person feels fine, as electrical shocks can cause delayed heart arrhythmias."
     ]
   }
 ];
@@ -786,7 +1158,7 @@ export const TRANSLATIONS = {
     library: "Library",
     symptoms: "Symptoms",
     emergency: "Emergency",
-    tools: "Tools",
+    facts: "Facts",
     about: "About",
     notADiagnosis: "This tool is educational and NOT a medical diagnosis.",
     cprTimer: "CPR Guide & Timer",
@@ -814,7 +1186,7 @@ export const TRANSLATIONS = {
     library: "लाइब्रेरी",
     symptoms: "लक्षण मार्गदर्शिका",
     emergency: "आपातकालीन",
-    tools: "टूल्स",
+    facts: "तथ्य",
     about: "हमारे बारे में",
     notADiagnosis: "यह उपकरण केवल शैक्षिक है और कोई चिकित्सा निदान नहीं है।",
     cprTimer: "सीपीआर टाइमर",

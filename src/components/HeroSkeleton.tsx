@@ -28,7 +28,7 @@ export function HeroSkeleton() {
             <Suspense fallback={null}>
               <OrganViewer3D organId={null} className="h-full w-full" />
             </Suspense>
-            <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-[#0A0E1A] via-transparent to-transparent" />
+            <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-[#030303] via-transparent to-transparent" />
           </motion.div>
         ) : (
           <motion.div
@@ -41,8 +41,8 @@ export function HeroSkeleton() {
             <svg viewBox="0 0 200 390" className="h-full w-auto max-h-full opacity-90">
               <defs>
                 <linearGradient id="heroGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#1A2038" />
-                  <stop offset="100%" stopColor="#111525" />
+                  <stop offset="0%" stopColor="#16181D" />
+                  <stop offset="100%" stopColor="#0D0D0D" />
                 </linearGradient>
                 <filter id="heroGlow">
                   <feGaussianBlur stdDeviation="3" result="blur" />
@@ -52,18 +52,18 @@ export function HeroSkeleton() {
                   </feMerge>
                 </filter>
               </defs>
-              <ellipse cx="100" cy="35" rx="24" ry="29" fill="url(#heroGrad)" stroke="#00E5C4" strokeWidth="0.5" opacity="0.8" filter="url(#heroGlow)" />
-              <rect x="92" y="60" width="16" height="14" rx="3" fill="url(#heroGrad)" stroke="#00E5C4" strokeWidth="0.3" opacity="0.6" />
-              <path d="M60 75 Q100 65 140 75 L148 160 Q148 200 138 220 L130 235 L70 235 L62 220 Q52 200 52 160 Z" fill="url(#heroGrad)" stroke="#00E5C4" strokeWidth="0.3" opacity="0.7" />
-              <path d="M60 78 Q45 90 40 120 L38 180 Q37 200 42 220 L48 222 Q52 200 54 180 L58 130 Q62 100 68 88 Z" fill="url(#heroGrad)" stroke="#00E5C4" strokeWidth="0.3" opacity="0.5" />
-              <path d="M140 78 Q155 90 160 120 L162 180 Q163 200 158 220 L152 222 Q148 200 146 180 L142 130 Q138 100 132 88 Z" fill="url(#heroGrad)" stroke="#00E5C4" strokeWidth="0.3" opacity="0.5" />
-              <path d="M70 235 L66 360 L84 360 L91 235 Z" fill="url(#heroGrad)" stroke="#00E5C4" strokeWidth="0.3" opacity="0.5" />
-              <path d="M109 235 L116 360 L134 360 L130 235 Z" fill="url(#heroGrad)" stroke="#00E5C4" strokeWidth="0.3" opacity="0.5" />
+              <ellipse cx="100" cy="35" rx="24" ry="29" fill="url(#heroGrad)" stroke="#FC3D21" strokeWidth="0.5" opacity="0.8" filter="url(#heroGlow)" />
+              <rect x="92" y="60" width="16" height="14" rx="3" fill="url(#heroGrad)" stroke="#FC3D21" strokeWidth="0.3" opacity="0.6" />
+              <path d="M60 75 Q100 65 140 75 L148 160 Q148 200 138 220 L130 235 L70 235 L62 220 Q52 200 52 160 Z" fill="url(#heroGrad)" stroke="#FC3D21" strokeWidth="0.3" opacity="0.7" />
+              <path d="M60 78 Q45 90 40 120 L38 180 Q37 200 42 220 L48 222 Q52 200 54 180 L58 130 Q62 100 68 88 Z" fill="url(#heroGrad)" stroke="#FC3D21" strokeWidth="0.3" opacity="0.5" />
+              <path d="M140 78 Q155 90 160 120 L162 180 Q163 200 158 220 L152 222 Q148 200 146 180 L142 130 Q138 100 132 88 Z" fill="url(#heroGrad)" stroke="#FC3D21" strokeWidth="0.3" opacity="0.5" />
+              <path d="M70 235 L66 360 L84 360 L91 235 Z" fill="url(#heroGrad)" stroke="#FC3D21" strokeWidth="0.3" opacity="0.5" />
+              <path d="M109 235 L116 360 L134 360 L130 235 Z" fill="url(#heroGrad)" stroke="#FC3D21" strokeWidth="0.3" opacity="0.5" />
               {/* Glowing organs */}
-              <path d="M94 100 Q88 95 88 104 Q88 113 100 122 Q112 113 112 104 Q112 95 106 100 Q100 105 94 100 Z" fill="rgba(0,229,196,0.25)" stroke="#00E5C4" strokeWidth="0.8" className="breathe" />
-              <ellipse cx="100" cy="28" rx="18" ry="16" fill="rgba(107,79,160,0.2)" stroke="#6B4FA0" strokeWidth="0.6" />
+              <path d="M94 100 Q88 95 88 104 Q88 113 100 122 Q112 113 112 104 Q112 95 106 100 Q100 105 94 100 Z" fill="rgba(252,61,33,0.25)" stroke="#FC3D21" strokeWidth="0.8" className="breathe" />
+              <ellipse cx="100" cy="28" rx="18" ry="16" fill="rgba(107,79,160,0.2)" stroke="#0B3D91" strokeWidth="0.6" />
             </svg>
-            <p className="absolute bottom-2 text-[10px] uppercase tracking-wider text-[#00E5C4]/60">
+            <p className="absolute bottom-2 text-[10px] uppercase tracking-wider text-[#FC3D21]/60">
               Interactive · Tap to explore
             </p>
           </motion.div>

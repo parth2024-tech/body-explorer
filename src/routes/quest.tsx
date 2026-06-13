@@ -23,7 +23,7 @@ const CURRENT_QUEST: Quest = {
   title: "Spine Week",
   subtitle: "7 days, 5 check-ins, 1 new habit",
   bodySystem: "Skeletal / Nervous",
-  color: "#00E5C4",
+  color: "#FC3D21",
   duration: "This Week",
   steps: [
     { id: "s1", text: "Learn about your cervical spine — tap it on the map", organLink: "spine-cervical" },
@@ -87,7 +87,7 @@ function QuestPage() {
     try {
       const html2canvas = (await import("html2canvas")).default;
       const canvas = await html2canvas(certRef.current, {
-        backgroundColor: "#0A0E1A",
+        backgroundColor: "#030303",
         scale: 2,
       });
       const url = canvas.toDataURL("image/png");
@@ -110,7 +110,7 @@ function QuestPage() {
         className="rounded-2xl border p-8 relative overflow-hidden"
         style={{
           borderColor: CURRENT_QUEST.color + "30",
-          background: `linear-gradient(145deg, ${CURRENT_QUEST.color}08, #141826)`,
+          background: `linear-gradient(145deg, ${CURRENT_QUEST.color}08, #0F0F0F)`,
         }}
       >
         {/* Decorative glow */}
@@ -126,21 +126,21 @@ function QuestPage() {
             {CURRENT_QUEST.duration}
           </div>
 
-          <h1 className="mt-3 text-3xl font-bold md:text-4xl text-[#E8E0D5]">
+          <h1 className="mt-3 text-3xl font-bold md:text-4xl text-[#EAEAEA]">
             {CURRENT_QUEST.title}
           </h1>
-          <p className="mt-1 text-sm text-[#8B8FA3]">{CURRENT_QUEST.subtitle}</p>
-          <div className="mt-1 text-xs text-[#8B8FA3]">{CURRENT_QUEST.bodySystem}</div>
+          <p className="mt-1 text-sm text-[#8A8F98]">{CURRENT_QUEST.subtitle}</p>
+          <div className="mt-1 text-xs text-[#8A8F98]">{CURRENT_QUEST.bodySystem}</div>
 
           {/* Progress bar */}
           <div className="mt-6">
-            <div className="flex justify-between text-xs text-[#8B8FA3] mb-2">
+            <div className="flex justify-between text-xs text-[#8A8F98] mb-2">
               <span>{completed.length} of {CURRENT_QUEST.steps.length} steps</span>
               <span className="stat-text font-semibold" style={{ color: CURRENT_QUEST.color }}>
                 {Math.round(progress * 100)}%
               </span>
             </div>
-            <div className="h-2 rounded-full bg-[#1E2844] overflow-hidden">
+            <div className="h-2 rounded-full bg-[#222222] overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${progress * 100}%` }}
@@ -152,8 +152,8 @@ function QuestPage() {
           </div>
 
           {/* Community count */}
-          <div className="mt-4 text-xs text-[#8B8FA3]">
-            <span className="stat-text font-semibold text-[#E8E0D5]">{PARTICIPANT_COUNT.toLocaleString()}</span>
+          <div className="mt-4 text-xs text-[#8A8F98]">
+            <span className="stat-text font-semibold text-[#EAEAEA]">{PARTICIPANT_COUNT.toLocaleString()}</span>
             {" "}people joined this week's quest
           </div>
         </div>
@@ -171,8 +171,8 @@ function QuestPage() {
               transition={{ duration: 0.4, delay: i * 0.05 }}
               className={`flex items-start gap-4 rounded-xl border p-4 transition-all ${
                 isDone
-                  ? "border-[#00E5C4]/20 bg-[#00E5C4]/5"
-                  : "border-[#1E2844] bg-[#141826]/40"
+                  ? "border-[#FC3D21]/20 bg-[#FC3D21]/5"
+                  : "border-[#222222] bg-[#0F0F0F]/40"
               }`}
             >
               {/* Checkbox */}
@@ -181,7 +181,7 @@ function QuestPage() {
                 className={`quest-checkbox mt-0.5 shrink-0 ${isDone ? "completed" : ""}`}
               >
                 {isDone && (
-                  <svg className="absolute inset-0 p-1 text-[#0A0E1A]" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg className="absolute inset-0 p-1 text-[#030303]" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M3 8l3 3 7-7" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 )}
@@ -189,14 +189,14 @@ function QuestPage() {
 
               {/* Step content */}
               <div className="flex-1">
-                <p className={`text-sm ${isDone ? "text-[#8B8FA3] line-through" : "text-[#E8E0D5]"}`}>
+                <p className={`text-sm ${isDone ? "text-[#8A8F98] line-through" : "text-[#EAEAEA]"}`}>
                   {step.text}
                 </p>
                 {step.organLink && !isDone && (
                   <Link
                     to="/explore"
                     search={{ part: step.organLink }}
-                    className="mt-1 inline-flex items-center gap-1 text-xs text-[#00E5C4] hover:underline"
+                    className="mt-1 inline-flex items-center gap-1 text-xs text-[#FC3D21] hover:underline"
                   >
                     Open on map →
                   </Link>
@@ -204,7 +204,7 @@ function QuestPage() {
               </div>
 
               {/* Step number */}
-              <span className="shrink-0 text-xs text-[#8B8FA3] stat-text">{i + 1}</span>
+              <span className="shrink-0 text-xs text-[#8A8F98] stat-text">{i + 1}</span>
             </motion.div>
           );
         })}
@@ -219,17 +219,17 @@ function QuestPage() {
           className="mt-10"
         >
           <div ref={certRef} className="certificate text-center">
-            <div className="text-xs uppercase tracking-[0.2em] text-[#00E5C4] font-semibold">
+            <div className="text-xs uppercase tracking-[0.2em] text-[#FC3D21] font-semibold">
               Certificate of Completion
             </div>
             <div className="mt-4 text-3xl font-bold gradient-text">
               {CURRENT_QUEST.title}
             </div>
-            <div className="mt-2 text-sm text-[#8B8FA3]">
+            <div className="mt-2 text-sm text-[#8A8F98]">
               {CURRENT_QUEST.subtitle}
             </div>
-            <div className="mt-6 mx-auto h-px w-24 bg-gradient-to-r from-transparent via-[#00E5C4]/40 to-transparent" />
-            <div className="mt-6 text-xs text-[#8B8FA3]">
+            <div className="mt-6 mx-auto h-px w-24 bg-gradient-to-r from-transparent via-[#FC3D21]/40 to-transparent" />
+            <div className="mt-6 text-xs text-[#8A8F98]">
               Completed {new Date().toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
@@ -239,14 +239,14 @@ function QuestPage() {
             <div className="mt-2 stat-text text-xs text-[#F5A623]">
               {CURRENT_QUEST.steps.length}/{CURRENT_QUEST.steps.length} steps · 100%
             </div>
-            <div className="mt-4 text-[10px] text-[#8B8FA3]">
+            <div className="mt-4 text-[10px] text-[#8A8F98]">
               The Living Body Atlas
             </div>
           </div>
 
           <button
             onClick={handleDownloadCert}
-            className="btn-hover-grow mt-4 w-full rounded-xl border border-[#00E5C4]/30 bg-[#00E5C4]/5 py-3 text-sm font-semibold text-[#00E5C4]"
+            className="btn-hover-grow mt-4 w-full rounded-xl border border-[#FC3D21]/30 bg-[#FC3D21]/5 py-3 text-sm font-semibold text-[#FC3D21]"
           >
             📸 Download Certificate
           </button>

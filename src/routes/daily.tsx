@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { getDailyInsight, getBodyPart } from "@/data/content";
 
+// --- Constants & Types ---
 const STREAK_KEY = "atlas-streak";
 const STREAK_LOG_KEY = "atlas-streak-log";
 
@@ -12,10 +13,30 @@ interface StreakData {
   longest: number;
 }
 
+// --- Date Utilities ---
+// Use local timezone to prevent streaks breaking due to UTC offsets
+const getLocalToday = () => new Date().toLocaleDateString("en-CA"); // YYYY-MM-DD
+const getLocalYesterday = () => {
+  const d = new Date();
+  d.setDate(d.getDate() - 1);
+  return d.toLocaleDateString("en-CA");
+};
+
+// --- Storage Handlers ---
 function loadStreak(): StreakData {
   try {
     const raw = localStorage.getItem(STREAK_KEY);
-    return raw ? JSON.parse(raw) : { current: 0, lastDate: "", longest: 0 };
+    if (!raw) return { current: 0, lastDate: "", longest: 0 };
+    
+    const parsed: StreakData = JSON.parse(raw);
+    const today = getLocalToday();
+    const yesterday = getLocalYesterday();
+
+    // STRICT VALIDATION: If the last date isn't today and isn't yesterday, the streak is broken.
+    if (parsed.lastDate !== today && parsed.lastDate !== yesterday) {
+      return { ...parsed, current: 0 }; // Reset current, keep longest & lastDate
+    }
+    return parsed;
   } catch {
     return { current: 0, lastDate: "", longest: 0 };
   }
@@ -30,10 +51,7 @@ function loadStreakLog(): number[] {
   }
 }
 
-function getToday() {
-  return new Date().toISOString().split("T")[0];
-}
-
+// --- Route Definition ---
 export const Route = createFileRoute("/daily")({
   head: () => ({
     meta: [
@@ -44,32 +62,35 @@ export const Route = createFileRoute("/daily")({
   component: DailyPage,
 });
 
+// --- Main Component ---
 function DailyPage() {
   const [streak, setStreak] = useState<StreakData>({ current: 0, lastDate: "", longest: 0 });
   const [streakLog, setStreakLog] = useState<number[]>([]);
   const [didIt, setDidIt] = useState(false);
+  const [isSharing, setIsSharing] = useState(false);
+  
   const shareRef = useRef<HTMLDivElement>(null);
 
-  const insight = getDailyInsight();
-  const bodyPart = getBodyPart(insight.bodyPartId);
+  // Memoize content to prevent unnecessary re-renders
+  const insight = useMemo(() => getDailyInsight(), []);
+  const bodyPart = useMemo(() => getBodyPart(insight.bodyPartId), [insight.bodyPartId]);
 
   useEffect(() => {
     const s = loadStreak();
     const log = loadStreakLog();
     setStreak(s);
     setStreakLog(log);
-    setDidIt(s.lastDate === getToday());
+    setDidIt(s.lastDate === getLocalToday() && s.current > 0);
   }, []);
 
-  const handleDidIt = () => {
-    const today = getToday();
-    if (streak.lastDate === today) return;
+  const handleDidIt = useCallback(() => {
+    const today = getLocalToday();
+    if (streak.lastDate === today && streak.current > 0) return;
 
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    const yesterdayStr = yesterday.toISOString().split("T")[0];
-
-    const newCurrent = streak.lastDate === yesterdayStr ? streak.current + 1 : 1;
+    const yesterday = getLocalYesterday();
+    
+    // If last date was yesterday, increment. Otherwise, start fresh at 1.
+    const newCurrent = streak.lastDate === yesterday ? streak.current + 1 : 1;
     const newLongest = Math.max(streak.longest, newCurrent);
 
     const newStreak: StreakData = {
@@ -78,6 +99,7 @@ function DailyPage() {
       longest: newLongest,
     };
 
+    // Keep log at max 30 days to prevent infinite array growth
     const newLog = [...streakLog.slice(-29), newCurrent];
 
     setStreak(newStreak);
@@ -86,157 +108,264 @@ function DailyPage() {
 
     localStorage.setItem(STREAK_KEY, JSON.stringify(newStreak));
     localStorage.setItem(STREAK_LOG_KEY, JSON.stringify(newLog));
-  };
+  }, [streak, streakLog]);
 
   const handleShare = async () => {
-    if (!shareRef.current) return;
+    if (!shareRef.current || isSharing) return;
+    setIsSharing(true);
+    
     try {
       const html2canvas = (await import("html2canvas")).default;
       const canvas = await html2canvas(shareRef.current, {
-        backgroundColor: "#0A0E1A",
-        scale: 2,
+        backgroundColor: "#030303",
+        scale: 3, // High-res export
+        useCORS: true,
+        logging: false,
       });
-      const url = canvas.toDataURL("image/png");
-      const link = document.createElement("a");
-      link.download = `atlas-daily-${getToday()}.png`;
-      link.href = url;
-      link.click();
+
+      canvas.toBlob(async (blob) => {
+        if (!blob) throw new Error("Canvas to Blob failed");
+        
+        const file = new File([blob], `atlas-daily-${getLocalToday()}.png`, { type: "image/png" });
+        const shareData = {
+          title: "My Daily Insight from The Living Body Atlas",
+          files: [file],
+        };
+
+        // Try Native Mobile Share Sheet first
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          await navigator.share(shareData);
+        } else {
+          // Fallback to traditional download on Desktop
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.download = file.name;
+          link.href = url;
+          link.click();
+          URL.revokeObjectURL(url);
+        }
+      }, "image/png");
     } catch (err) {
       console.error("Share card generation failed:", err);
+      alert("Oops! Couldn't generate the share image. Please try again.");
+    } finally {
+      setIsSharing(false);
     }
   };
 
-  // Streak waveform SVG
-  const wavePoints = streakLog
-    .map((val, i) => {
-      const x = (i / Math.max(streakLog.length - 1, 1)) * 200;
-      const y = 30 - Math.min(val, 30);
+  // --- Advanced SVG Generation ---
+  const { polylinePoints, areaPoints } = useMemo(() => {
+    if (streakLog.length < 2) return { polylinePoints: "", areaPoints: "" };
+    
+    const maxVal = Math.max(...streakLog, 10); // Ensure some vertical headroom
+    const points = streakLog.map((val, i) => {
+      const x = (i / (streakLog.length - 1)) * 200;
+      // Map value to Y coordinate (0 = bottom, maxVal = top)
+      const y = 35 - (Math.min(val, maxVal) / maxVal) * 30; 
       return `${x},${y}`;
-    })
-    .join(" ");
+    });
+    
+    const lineStr = points.join(" ");
+    // Close the path to create a gradient fill area
+    const areaStr = `${lineStr} 200,35 0,35`;
+    
+    return { polylinePoints: lineStr, areaPoints: areaStr };
+  }, [streakLog]);
 
   return (
     <main className="mx-auto max-w-3xl px-5 pb-24 pt-10">
+      
+      {/* Header Section */}
       <motion.div
-        initial={{ opacity: 0, y: 12 }}
+        initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.5, ease: "easeOut" as any }}
       >
-        <div className="flex items-center justify-between">
+        <div className="flex items-end justify-between">
           <div>
-            <h1 className="text-3xl font-bold md:text-4xl">
+            <h1 className="text-3xl font-extrabold md:text-4xl">
               <span className="gradient-text">Daily Insight</span>
             </h1>
-            <p className="mt-1 text-sm text-[#8B8FA3]">
+            <p className="mt-1.5 text-sm text-[#8A8F98] font-medium tracking-wide">
               One fact. One action. Every day.
             </p>
           </div>
 
-          {/* Streak counter */}
+          {/* Streak Counter */}
           <div className="text-right">
-            <div className="stat-text text-2xl font-bold text-[#F5A623]">
+            <motion.div 
+              key={streak.current} // Retriggers animation when streak changes
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ type: "spring", bounce: 0.6 }}
+              className="stat-text text-3xl font-black text-[#F5A623]"
+            >
               {streak.current}
-            </div>
-            <div className="text-[10px] uppercase tracking-wider text-[#8B8FA3]">
+            </motion.div>
+            <div className="text-[10px] uppercase font-bold tracking-widest text-[#8A8F98]">
               day streak
             </div>
           </div>
         </div>
 
-        {/* Streak waveform */}
+        {/* Upgraded Streak Waveform */}
         {streakLog.length > 1 && (
-          <div className="mt-4 rounded-xl border border-[#1E2844] bg-[#141826]/40 p-3">
-            <svg viewBox="0 0 200 35" className="w-full h-8">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="mt-6 rounded-xl border border-[#222222]/60 bg-[#0F0F0F]/40 p-4 shadow-inner relative overflow-hidden"
+          >
+            <span className="text-[10px] uppercase font-bold text-[#8A8F98] absolute top-3 left-4">30-Day Trend</span>
+            <svg viewBox="0 0 200 35" className="w-full h-12 mt-4 overflow-visible">
+              <defs>
+                <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="rgba(252, 61, 33, 0.3)" />
+                  <stop offset="100%" stopColor="rgba(252, 61, 33, 0)" />
+                </linearGradient>
+              </defs>
+              <polygon points={areaPoints} fill="url(#waveGradient)" />
               <polyline
-                points={wavePoints}
+                points={polylinePoints}
                 fill="none"
-                stroke="#00E5C4"
-                strokeWidth="1.5"
+                stroke="#FC3D21"
+                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="streak-line"
+                className="drop-shadow-[0_0_8px_rgba(252,61,33,0.5)]"
+              />
+              {/* Plot dot on the latest entry */}
+              <circle 
+                cx="200" 
+                cy={polylinePoints.split(" ").pop()?.split(",")[1] || "35"} 
+                r="3" 
+                fill="#030303" 
+                stroke="#FC3D21" 
+                strokeWidth="2" 
               />
             </svg>
-          </div>
+          </motion.div>
         )}
       </motion.div>
 
-      {/* Share card (also used for screenshot) */}
+      {/* Share Card (Exportable Canvas Target) */}
       <motion.div
         ref={shareRef}
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="share-card mt-8"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.1, type: "spring" }}
+        className="mt-8 rounded-2xl border border-border bg-[#0F0F0F] p-8 shadow-2xl relative overflow-hidden"
       >
+        {/* Subtle background glow */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#FC3D21]/5 rounded-full blur-3xl pointer-events-none" />
+
         {/* Body part badge */}
-        <div className="flex items-center gap-3 mb-6">
-          <span className="text-4xl">{bodyPart?.emoji || "🧬"}</span>
+        <div className="flex items-center gap-4 mb-8 relative z-10">
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#222222]/50 border border-border text-3xl">
+            {bodyPart?.emoji || "🧬"}
+          </div>
           <div>
-            <div className="text-xs uppercase tracking-wider text-[#8B8FA3]">
+            <div className="text-xs font-bold uppercase tracking-widest text-[#8A8F98]">
               Today's Focus
             </div>
-            <div className="text-xl font-bold gradient-text">
+            <div className="text-xl font-extrabold text-[#EAEAEA]">
               {bodyPart?.name || "Your Body"}
             </div>
           </div>
         </div>
 
         {/* The fact */}
-        <p className="text-xl md:text-2xl font-bold leading-snug text-[#E8E0D5]" style={{ letterSpacing: "-0.02em" }}>
+        <p className="text-2xl font-bold leading-relaxed text-[#EAEAEA] relative z-10" style={{ letterSpacing: "-0.01em" }}>
           {insight.fact}
         </p>
 
         {/* The action */}
-        <div className="mt-6 rounded-xl border border-[#00E5C4]/20 bg-[#00E5C4]/5 p-4">
-          <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#00E5C4] font-semibold">
-            <span>⚡</span> 
+        <div className="mt-8 rounded-xl border border-[#FC3D21]/20 bg-[#FC3D21]/10 p-5 relative z-10">
+          <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#FC3D21] font-bold">
+            <motion.span 
+              animate={{ rotate: [0, 15, -15, 0] }} 
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" as any }}
+            >
+              ⚡
+            </motion.span> 
             Your {insight.actionDuration} action
           </div>
-          <p className="mt-2 text-sm text-[#E8E0D5] leading-relaxed">
+          <p className="mt-3 text-[15px] font-medium text-[#EAEAEA] leading-relaxed">
             {insight.action}
           </p>
         </div>
 
-        {/* Streak badge on share card */}
-        <div className="mt-4 flex items-center gap-2 text-xs text-[#8B8FA3]">
-          <span className="stat-text text-[#F5A623] font-bold">{streak.current} day streak</span>
-          <span>·</span>
-          <span>The Living Body Atlas</span>
+        {/* Branding & Streak badge on share card */}
+        <div className="mt-6 flex items-center justify-between border-t border-border/40 pt-4 relative z-10">
+          <div className="text-xs font-bold text-[#8A8F98] tracking-wide">
+            THE LIVING BODY ATLAS
+          </div>
+          {streak.current > 0 && (
+            <div className="flex items-center gap-1.5 rounded-full bg-[#F5A623]/10 px-3 py-1 text-xs font-bold text-[#F5A623] border border-[#F5A623]/20">
+              🔥 {streak.current} Day Streak
+            </div>
+          )}
         </div>
       </motion.div>
 
-      {/* Action buttons */}
+      {/* Interactive Action Buttons */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="mt-6 flex gap-3"
+        className="mt-6 flex gap-4"
       >
-        <button
+        <motion.button
+          whileHover={!didIt ? { scale: 1.02 } : {}}
+          whileTap={!didIt ? { scale: 0.98 } : {}}
           onClick={handleDidIt}
           disabled={didIt}
-          className={`btn-hover-grow flex-1 rounded-xl py-3.5 text-sm font-bold transition-all ${
+          className={`flex-1 rounded-xl py-4 text-sm font-bold transition-all relative overflow-hidden ${
             didIt
-              ? "bg-[#00E5C4]/10 border border-[#00E5C4]/30 text-[#00E5C4] cursor-default"
-              : "bg-[#00E5C4] text-[#0A0E1A] shadow-[0_0_30px_rgba(0,229,196,0.3)]"
+              ? "bg-[#FC3D21]/10 border border-[#FC3D21]/30 text-[#FC3D21] cursor-default"
+              : "bg-[#FC3D21] text-[#030303] shadow-[0_0_20px_rgba(252,61,33,0.2)] hover:shadow-[0_0_30px_rgba(252,61,33,0.4)]"
           }`}
         >
-          {didIt ? "✓ Done for today!" : "Did it ⚡"}
-        </button>
-        <button
+          <AnimatePresence mode="wait">
+            {didIt ? (
+              <motion.span key="done" initial={{ scale: 0 }} animate={{ scale: 1 }} className="flex items-center justify-center gap-2">
+                <span>✓</span> Done for today!
+              </motion.span>
+            ) : (
+              <motion.span key="do" exit={{ opacity: 0 }}>
+                Did it ⚡
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </motion.button>
+        
+        <motion.button
+          whileHover={!isSharing ? { scale: 1.02 } : {}}
+          whileTap={!isSharing ? { scale: 0.98 } : {}}
           onClick={handleShare}
-          className="btn-hover-grow rounded-xl border border-[#1E2844] bg-[#141826] px-6 py-3.5 text-sm font-semibold text-[#E8E0D5] hover:border-[#00E5C4]/30"
+          disabled={isSharing}
+          className="rounded-xl border border-[#222222] bg-[#0F0F0F] px-6 py-4 text-sm font-bold text-[#EAEAEA] hover:border-[#FC3D21]/50 transition-colors disabled:opacity-50 min-w-[120px] flex justify-center items-center gap-2"
         >
-          📸 Share
-        </button>
+          {isSharing ? (
+            <span className="h-4 w-4 rounded-full border-2 border-[#EAEAEA] border-t-transparent animate-spin" />
+          ) : (
+            <><span>📸</span> Share</>
+          )}
+        </motion.button>
       </motion.div>
 
-      {/* Longest streak */}
+      {/* Longest Streak Tracker */}
       {streak.longest > 0 && (
-        <div className="mt-6 text-center text-xs text-[#8B8FA3]">
-          Longest streak: <span className="stat-text text-[#F5A623] font-semibold">{streak.longest} days</span>
-        </div>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="mt-8 text-center"
+        >
+          <span className="text-xs font-medium text-[#8A8F98] uppercase tracking-wider">
+            All-time Best: <span className="text-[#F5A623] font-bold">{streak.longest} days</span>
+          </span>
+        </motion.div>
       )}
     </main>
   );

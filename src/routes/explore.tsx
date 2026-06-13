@@ -43,7 +43,7 @@ function Explore() {
         <h1 className="text-3xl font-bold md:text-4xl">
           The <span className="gradient-text">Body Map</span>
         </h1>
-        <p className="mt-2 text-sm text-[#8B8FA3]">
+        <p className="mt-2 text-sm text-[#8A8F98]">
           Tap any glowing region to explore. Switch layers to see different data.
           30+ organs · 200+ facts · 5 data layers.
         </p>

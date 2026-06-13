@@ -13,7 +13,7 @@ const LAYERS: { id: Layer; label: string }[] = [
 
 function getPartVisualLayer(id: string): "skin" | "muscles" | "organs" | "bones" {
   if (["eyes", "ears", "throat", "sinuses"].includes(id)) return "skin";
-  if (["shoulders", "elbows", "wrists", "hands", "hips", "knees", "ankles", "feet", "jaw"].includes(id)) return "muscles";
+  if (["shoulders", "elbows", "wrists", "hands", "hips", "knees", "ankles", "feet", "jaw", "muscles"].includes(id)) return "muscles";
   if (["spine-cervical", "spine-thoracic", "spine-lumbar"].includes(id)) return "bones";
   return "organs";
 }
@@ -77,15 +77,15 @@ export function BodyMap() {
       </div>
 
       {/* Anatomy Visual System Toggle */}
-      <div className="mb-6 flex flex-wrap justify-center gap-1.5 bg-[#141826]/40 p-1 rounded-full border border-border/40 max-w-sm mx-auto">
+      <div className="mb-6 flex flex-wrap justify-center gap-1.5 bg-[#0F0F0F]/40 p-1 rounded-full border border-border/40 max-w-sm mx-auto">
         {(["skin", "muscles", "organs", "bones"] as const).map((layer) => (
           <button
             key={layer}
             onClick={() => setBodyMapLayer(layer)}
             className={`rounded-full px-2.5 py-1 text-[10px] font-bold capitalize transition-all ${
               bodyMapLayer === layer
-                ? "bg-[#00E5C4] text-[#0A0E1A] shadow-[0_0_10px_rgba(0,229,196,0.25)]"
-                : "text-[#8B8FA3] hover:text-[#E8E0D5]"
+                ? "bg-[#FC3D21] text-[#030303] shadow-[0_0_10px_rgba(252,61,33,0.25)]"
+                : "text-[#8A8F98] hover:text-[#EAEAEA]"
             }`}
           >
             {layer === "skin" ? "Skin" :
@@ -98,7 +98,7 @@ export function BodyMap() {
 
       {/* Floating label */}
       {hoveredName && (
-        <div className="pointer-events-none absolute left-1/2 top-2 z-10 -translate-x-1/2 rounded-full border border-[#00E5C4]/30 bg-[#0A0E1A]/90 px-3 py-1 text-xs font-medium text-[#00E5C4] backdrop-blur-sm">
+        <div className="pointer-events-none absolute left-1/2 top-2 z-10 -translate-x-1/2 rounded-full border border-[#FC3D21]/30 bg-[#030303]/90 px-3 py-1 text-xs font-medium text-[#FC3D21] backdrop-blur-sm">
           {hoveredName}
         </div>
       )}
@@ -111,15 +111,15 @@ export function BodyMap() {
       >
         <defs>
           <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#1A2038" />
-            <stop offset="100%" stopColor="#111525" />
+            <stop offset="0%" stopColor="#16181D" />
+            <stop offset="100%" stopColor="#0D0D0D" />
           </linearGradient>
           <filter id="softGlow">
             <feGaussianBlur stdDeviation="4" />
           </filter>
           <radialGradient id="organGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#00E5C4" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#00E5C4" stopOpacity="0" />
+            <stop offset="0%" stopColor="#FC3D21" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#FC3D21" stopOpacity="0" />
           </radialGradient>
         </defs>
 
@@ -363,7 +363,7 @@ export function BodyMap() {
       </svg>
 
       {/* Floating tip */}
-      <p className="mt-4 text-center text-sm text-[#8B8FA3]">
+      <p className="mt-4 text-center text-sm text-[#8A8F98]">
         {selected
           ? "Tap another part, or scroll the panel →"
           : "Tap an organ to reveal its secrets"}
@@ -377,8 +377,8 @@ export function BodyMap() {
             onClick={() => setSelected(p.id)}
             className={`group rounded-full border px-2.5 py-1 text-[11px] font-medium transition-all ${
               selected === p.id
-                ? "border-[#00E5C4]/40 bg-[#00E5C4]/10 text-[#00E5C4]"
-                : "border-[#1E2844] bg-[#141826]/60 text-[#8B8FA3] hover:border-[#00E5C4]/30 hover:text-[#E8E0D5]"
+                ? "border-[#FC3D21]/40 bg-[#FC3D21]/10 text-[#FC3D21]"
+                : "border-[#222222] bg-[#0F0F0F]/60 text-[#8A8F98] hover:border-[#FC3D21]/30 hover:text-[#EAEAEA]"
             }`}
           >
             <span className="mr-0.5">{p.emoji}</span>

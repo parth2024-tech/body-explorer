@@ -57,87 +57,86 @@
   --color-bone: var(--atlas-bone);
   --color-trend-red: var(--atlas-trend-red);
 
-  --font-display: "Clash Display", "Space Grotesk", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-mono: "Fira Mono", "Fira Code", ui-monospace, monospace;
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0;
 
   /* Deep space navy — NOT pure black */
-  --background: #0A0E1A;
-  --foreground: #E8E0D5;
-  --card: #141826;
-  --card-foreground: #E8E0D5;
-  --popover: #141826;
-  --popover-foreground: #E8E0D5;
+  --background: #030303;
+  --foreground: #EAEAEA;
+  --card: #0F0F0F;
+  --card-foreground: #EAEAEA;
+  --popover: #0F0F0F;
+  --popover-foreground: #EAEAEA;
 
-  /* Bioluminescent teal — like MRI glow */
-  --primary: #00E5C4;
-  --primary-foreground: #0A0E1A;
-  --secondary: #1A2038;
-  --secondary-foreground: #E8E0D5;
-  --muted: #1E2340;
-  --muted-foreground: #8B8FA3;
-  --accent: #6B4FA0;
-  --accent-foreground: #F8F8F8;
-  --destructive: #E54D4D;
-  --destructive-foreground: #F8F8F8;
-  --border: #1E2844;
-  --input: #1A2038;
-  --ring: #00E5C4;
+  /* NASA Primary & Accents */
+  --primary: #FFFFFF;
+  --primary-foreground: #030303;
+  --secondary: #16181D;
+  --secondary-foreground: #EAEAEA;
+  --muted: #16181D;
+  --muted-foreground: #8A8F98;
+  --accent: #FC3D21; /* NASA Red */
+  --accent-foreground: #FFFFFF;
+  --destructive: #FC3D21;
+  --destructive-foreground: #FFFFFF;
+  --border: #222222;
+  --input: #16181D;
+  --ring: #FC3D21;
 
-  /* Glow system */
-  --glow: #00E5C4;
-  --glow-violet: #6B4FA0;
+  /* Glow system (Repurposed for NASA theme) */
+  --glow: #FC3D21;
+  --glow-violet: #0B3D91;
   --glow-gold: #F5A623;
 
   /* Rarity colors */
-  --rarity-common: #7B8199;
-  --rarity-surprising: #4DC8E5;
-  --rarity-mind: #A855F7;
+  --rarity-common: #8A8F98;
+  --rarity-surprising: #0B3D91;
+  --rarity-mind: #FC3D21;
   --rarity-rare: #F5A623;
 
   /* Atlas-specific palette */
-  --atlas-teal: #00E5C4;
+  --atlas-teal: #FC3D21;
   --atlas-amber: #F5A623;
-  --atlas-purple: #6B4FA0;
-  --atlas-bone: #E8E0D5;
-  --atlas-trend-red: #E5504D;
+  --atlas-purple: #0B3D91;
+  --atlas-bone: #EAEAEA;
+  --atlas-trend-red: #FC3D21;
 
   /* Gradients */
-  --gradient-hero: radial-gradient(ellipse at top, rgba(107, 79, 160, 0.25), transparent 60%),
-                   radial-gradient(ellipse at bottom, rgba(0, 229, 196, 0.15), transparent 60%);
-  --gradient-glow: linear-gradient(135deg, var(--glow), var(--glow-violet));
-  --gradient-amber: linear-gradient(135deg, var(--atlas-amber), #E88E1A);
+  --gradient-hero: none;
+  --gradient-glow: none;
+  --gradient-amber: none;
 
   /* Shadows */
-  --shadow-glow: 0 0 30px rgba(0, 229, 196, 0.35), 0 0 80px rgba(0, 229, 196, 0.15);
-  --shadow-glow-violet: 0 0 30px rgba(107, 79, 160, 0.4);
-  --shadow-glow-gold: 0 0 30px rgba(245, 166, 35, 0.45);
-  --shadow-glow-amber: 0 0 20px rgba(245, 166, 35, 0.3);
+  --shadow-glow: none;
+  --shadow-glow-violet: none;
+  --shadow-glow-gold: none;
+  --shadow-glow-amber: none;
 }
 
 /* The app is dark-only — .dark class is always set on <html> */
 .dark {
-  --background: #0A0E1A;
-  --foreground: #E8E0D5;
-  --card: #111525;
-  --card-foreground: #E8E0D5;
-  --popover: #111525;
-  --popover-foreground: #E8E0D5;
-  --primary: #00E5C4;
-  --primary-foreground: #0A0E1A;
-  --secondary: #181D35;
-  --secondary-foreground: #E8E0D5;
-  --muted: #1A1F38;
-  --muted-foreground: #7B8199;
-  --accent: #6B4FA0;
-  --accent-foreground: #F8F8F8;
-  --border: #1C2540;
-  --input: #181D35;
-  --ring: #00E5C4;
+  --background: #030303;
+  --foreground: #EAEAEA;
+  --card: #0F0F0F;
+  --card-foreground: #EAEAEA;
+  --popover: #0F0F0F;
+  --popover-foreground: #EAEAEA;
+  --primary: #FFFFFF;
+  --primary-foreground: #030303;
+  --secondary: #16181D;
+  --secondary-foreground: #EAEAEA;
+  --muted: #16181D;
+  --muted-foreground: #8A8F98;
+  --accent: #FC3D21;
+  --accent-foreground: #FFFFFF;
+  --border: #222222;
+  --input: #16181D;
+  --ring: #FC3D21;
 }
 
 /* ===== BASE LAYER ===== */
@@ -155,19 +154,50 @@
     background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-body);
-    background-image: var(--gradient-hero);
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: center top;
     background-attachment: fixed;
     min-height: 100dvh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  
+  /* Technical UI Elements */
+  .card, [class*="bg-card"], .glass-panel {
+    border: 1px solid var(--border) !important;
+    position: relative;
+    border-radius: 0 !important;
+  }
+  .card::before, .card::after,
+  [class*="bg-card"]::before, [class*="bg-card"]::after,
+  .glass-panel::before, .glass-panel::after {
+    content: "+";
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--accent);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .card::before, [class*="bg-card"]::before, .glass-panel::before {
+    top: -5px;
+    left: -3px;
+  }
+  .card::after, [class*="bg-card"]::after, .glass-panel::after {
+    bottom: -5px;
+    right: -3px;
+  }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.03em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     text-wrap: balance;
   }
   h1 {
-    letter-spacing: -0.04em;
+    letter-spacing: 0.1em;
   }
 
   /* Custom scrollbar */
@@ -190,73 +220,65 @@
 /* ===== UTILITY CLASSES ===== */
 
 @utility glow-text {
-  text-shadow: 0 0 20px rgba(0, 229, 196, 0.5), 0 0 40px rgba(0, 229, 196, 0.25);
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 @utility glow-border {
-  box-shadow: var(--shadow-glow);
+  border: 1px solid var(--accent);
 }
 @utility glow-border-violet {
-  box-shadow: var(--shadow-glow-violet);
+  border: 1px solid #0B3D91;
 }
 @utility glow-border-gold {
-  box-shadow: var(--shadow-glow-gold);
+  border: 1px solid #F5A623;
 }
 @utility glow-border-amber {
-  box-shadow: var(--shadow-glow-amber);
+  border: 1px solid #F5A623;
 }
 @utility gradient-text {
-  background: var(--gradient-glow);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--accent);
 }
 @utility gradient-text-amber {
-  background: var(--gradient-amber);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #F5A623;
 }
 @utility stat-text {
   font-family: var(--font-mono);
-  letter-spacing: -0.02em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 /* ===== BODY MAP SVG INTERACTIVITY ===== */
 
 .body-part {
-  fill: rgba(30, 40, 68, 0.6);
-  stroke: rgba(75, 85, 120, 0.5);
+  fill: rgba(30, 30, 30, 0.6);
+  stroke: rgba(138, 143, 152, 0.5);
   stroke-width: 1;
   cursor: pointer;
-  transition: fill 0.4s ease-out, filter 0.4s ease-out, stroke 0.4s ease-out, transform 0.3s ease-out;
-  transform-origin: center;
+  transition: fill 0.2s ease-out, stroke 0.2s ease-out;
 }
 .body-part:hover {
-  fill: rgba(0, 229, 196, 0.2);
-  stroke: var(--glow);
-  filter: drop-shadow(0 0 8px var(--glow));
-  /* Subtle scale pulse on hover */
+  fill: rgba(252, 61, 33, 0.2);
+  stroke: var(--accent);
 }
 .body-part.is-active {
-  fill: rgba(0, 229, 196, 0.3);
-  stroke: var(--glow);
-  filter: drop-shadow(0 0 14px var(--glow)) drop-shadow(0 0 28px var(--glow));
-  animation: bodyPulse 2s ease-in-out infinite;
+  fill: rgba(252, 61, 33, 0.4);
+  stroke: var(--accent);
 }
 .body-part.is-pulsing {
   animation: organPulseClick 0.3s ease-out;
 }
 
-/* Layer-specific organ colors */
-.body-part.layer-facts { fill: rgba(0, 229, 196, 0.15); stroke: rgba(0, 229, 196, 0.5); }
-.body-part.layer-facts:hover { fill: rgba(0, 229, 196, 0.3); }
+/* Layer-specific organ colors — NASA palette */
+.body-part.layer-facts { fill: rgba(252, 61, 33, 0.15); stroke: rgba(252, 61, 33, 0.5); }
+.body-part.layer-facts:hover { fill: rgba(252, 61, 33, 0.3); }
 .body-part.layer-personal { fill: rgba(245, 166, 35, 0.15); stroke: rgba(245, 166, 35, 0.5); }
 .body-part.layer-personal:hover { fill: rgba(245, 166, 35, 0.3); }
-.body-part.layer-challenge { fill: rgba(107, 79, 160, 0.15); stroke: rgba(107, 79, 160, 0.5); }
-.body-part.layer-challenge:hover { fill: rgba(107, 79, 160, 0.3); }
-.body-part.layer-trends { fill: rgba(229, 80, 77, 0.15); stroke: rgba(229, 80, 77, 0.5); }
-.body-part.layer-trends:hover { fill: rgba(229, 80, 77, 0.3); }
-.body-part.layer-explore { fill: rgba(232, 224, 213, 0.08); stroke: rgba(232, 224, 213, 0.3); }
+.body-part.layer-challenge { fill: rgba(11, 61, 145, 0.2); stroke: rgba(11, 61, 145, 0.5); }
+.body-part.layer-challenge:hover { fill: rgba(11, 61, 145, 0.35); }
+.body-part.layer-trends { fill: rgba(252, 61, 33, 0.2); stroke: rgba(252, 61, 33, 0.6); }
+.body-part.layer-trends:hover { fill: rgba(252, 61, 33, 0.35); }
+.body-part.layer-explore { fill: rgba(234, 234, 234, 0.06); stroke: rgba(234, 234, 234, 0.25); }
 .body-part.layer-explore:hover { fill: rgba(232, 224, 213, 0.15); }
 
 .body-outline {

@@ -85,18 +85,18 @@ function OnboardingPage() {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full rounded-2xl border border-border bg-[#141826]/80 p-8 shadow-2xl relative overflow-hidden"
+        className="w-full rounded-2xl border border-border bg-[#0F0F0F]/80 p-8 shadow-2xl relative overflow-hidden"
       >
         {/* Animated Glow indicator */}
         <motion.div 
           animate={{ x: ["-100%", "100%"] }}
           transition={{ repeat: Infinity, duration: 3, ease: "linear" as any }}
-          className="absolute top-0 left-0 w-1/2 h-[3px] bg-gradient-to-r from-transparent via-[#00E5C4] to-transparent" 
+          className="absolute top-0 left-0 w-1/2 h-[3px] bg-gradient-to-r from-transparent via-[#FC3D21] to-transparent" 
         />
 
         {/* Step indicator */}
         <div className="flex justify-between items-center mb-8 border-b border-border/40 pb-4">
-          <span className="text-xs font-bold text-[#8B8FA3] tracking-wide">
+          <span className="text-xs font-bold text-[#8A8F98] tracking-wide">
             {t("step_counter", `Step ${step} of 3`)}
           </span>
           <div className="flex gap-1.5">
@@ -105,7 +105,7 @@ function OnboardingPage() {
                 key={i}
                 layout
                 className={`h-1.5 rounded-full transition-colors duration-300 ${
-                  step >= i ? "w-6 bg-[#00E5C4]" : "w-4 bg-[#1E2844]"
+                  step >= i ? "w-6 bg-[#FC3D21]" : "w-4 bg-[#222222]"
                 }`} 
               />
             ))}
@@ -118,10 +118,10 @@ function OnboardingPage() {
             {step === 1 && (
               <motion.div key="step1" variants={stepVariants} initial="hidden" animate="visible" exit="exit" className="space-y-6">
                 <div className="text-center">
-                  <motion.h2 variants={itemVariants} className="text-2xl font-bold text-[#E8E0D5]">
+                  <motion.h2 variants={itemVariants} className="text-2xl font-bold text-[#EAEAEA]">
                     {t("onboarding_q1", "What are you curious about?")}
                   </motion.h2>
-                  <motion.p variants={itemVariants} className="text-xs text-[#8B8FA3] mt-2">
+                  <motion.p variants={itemVariants} className="text-xs text-[#8A8F98] mt-2">
                     {t("onboarding_desc1", "Select topics to personalize the discover cards in your Library and Explore feeds.")}
                   </motion.p>
                 </div>
@@ -137,8 +137,8 @@ function OnboardingPage() {
                         onClick={() => toggleInterest(topic.id)}
                         className={`flex items-center gap-3 p-4 rounded-xl border text-left font-bold transition-colors ${
                           active
-                            ? "bg-[#00E5C4]/10 border-[#00E5C4] text-[#E8E0D5]"
-                            : "bg-[#111525] border-border/60 text-[#8B8FA3] hover:text-[#E8E0D5] hover:border-border"
+                            ? "bg-[#FC3D21]/10 border-[#FC3D21] text-[#EAEAEA]"
+                            : "bg-[#0D0D0D] border-border/60 text-[#8A8F98] hover:text-[#EAEAEA] hover:border-border"
                         }`}
                       >
                         <span className="text-xl" role="img" aria-hidden="true">{topic.icon}</span>
@@ -154,7 +154,7 @@ function OnboardingPage() {
                   whileTap={interests.length > 0 ? { scale: 0.98 } : {}}
                   onClick={() => setStep(2)}
                   disabled={interests.length === 0}
-                  className="w-full rounded-xl bg-[#00E5C4] text-[#0A0E1A] py-3 text-sm font-bold shadow-[0_0_20px_rgba(0,229,196,0.2)] hover:shadow-[0_0_25px_rgba(0,229,196,0.4)] disabled:opacity-50 disabled:shadow-none transition-all"
+                  className="w-full rounded-xl bg-[#FC3D21] text-[#030303] py-3 text-sm font-bold shadow-[0_0_20px_rgba(252,61,33,0.2)] hover:shadow-[0_0_25px_rgba(252,61,33,0.4)] disabled:opacity-50 disabled:shadow-none transition-all"
                 >
                   {t("continue", "Continue")}
                 </motion.button>
@@ -164,10 +164,10 @@ function OnboardingPage() {
             {step === 2 && (
               <motion.div key="step2" variants={stepVariants} initial="hidden" animate="visible" exit="exit" className="space-y-6">
                 <div className="text-center">
-                  <motion.h2 variants={itemVariants} className="text-2xl font-bold text-[#E8E0D5]">
+                  <motion.h2 variants={itemVariants} className="text-2xl font-bold text-[#EAEAEA]">
                     {t("onboarding_q2", "How is your body feeling today?")}
                   </motion.h2>
-                  <motion.p variants={itemVariants} className="text-xs text-[#8B8FA3] mt-2">
+                  <motion.p variants={itemVariants} className="text-xs text-[#8A8F98] mt-2">
                     {t("onboarding_desc2", "An anonymous check-in. Logging this influences content suggestions.")}
                   </motion.p>
                 </div>
@@ -183,8 +183,8 @@ function OnboardingPage() {
                         onClick={() => handleMoodSelect(mood.id)}
                         className={`w-full flex items-center justify-between p-4 rounded-xl border font-bold transition-colors ${
                           active
-                            ? "bg-[#F5A623]/10 border-[#F5A623] text-[#E8E0D5]"
-                            : "bg-[#111525] border-border/60 text-[#8B8FA3] hover:text-[#E8E0D5] hover:border-border"
+                            ? "bg-[#F5A623]/10 border-[#F5A623] text-[#EAEAEA]"
+                            : "bg-[#0D0D0D] border-border/60 text-[#8A8F98] hover:text-[#EAEAEA] hover:border-border"
                         }`}
                       >
                         <div className="flex items-center gap-3">
@@ -213,7 +213,7 @@ function OnboardingPage() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setStep(1)}
-                    className="flex-1 rounded-xl border border-border bg-[#111525] text-[#8B8FA3] py-3 text-sm font-bold hover:text-[#E8E0D5] transition-colors"
+                    className="flex-1 rounded-xl border border-border bg-[#0D0D0D] text-[#8A8F98] py-3 text-sm font-bold hover:text-[#EAEAEA] transition-colors"
                   >
                     {t("back", "Back")}
                   </motion.button>
@@ -222,7 +222,7 @@ function OnboardingPage() {
                     whileTap={selectedMood ? { scale: 0.98 } : {}}
                     onClick={() => setStep(3)}
                     disabled={!selectedMood}
-                    className="flex-1 rounded-xl bg-[#00E5C4] text-[#0A0E1A] py-3 text-sm font-bold shadow-[0_0_20px_rgba(0,229,196,0.2)] disabled:opacity-50 transition-all"
+                    className="flex-1 rounded-xl bg-[#FC3D21] text-[#030303] py-3 text-sm font-bold shadow-[0_0_20px_rgba(252,61,33,0.2)] disabled:opacity-50 transition-all"
                   >
                     {t("continue", "Continue")}
                   </motion.button>
@@ -236,16 +236,16 @@ function OnboardingPage() {
                   initial={{ scale: 0, rotate: -180 }}
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ type: "spring", bounce: 0.5 }}
-                  className="mx-auto flex h-16 w-16 place-items-center justify-center rounded-2xl bg-[#00E5C4]/15 text-3xl text-[#00E5C4]"
+                  className="mx-auto flex h-16 w-16 place-items-center justify-center rounded-2xl bg-[#FC3D21]/15 text-3xl text-[#FC3D21]"
                 >
                   ✨
                 </motion.div>
                 
                 <div className="space-y-2">
-                  <motion.h2 variants={itemVariants} className="text-2xl font-bold text-[#E8E0D5]">
+                  <motion.h2 variants={itemVariants} className="text-2xl font-bold text-[#EAEAEA]">
                     {t("atlas_configured", "Atlas Configured!")}
                   </motion.h2>
-                  <motion.p variants={itemVariants} className="text-xs text-[#8B8FA3]">
+                  <motion.p variants={itemVariants} className="text-xs text-[#8A8F98]">
                     {t("atlas_desc", "Your streak has begun. Explore daily to understand the 37 trillion cells keeping you alive.")}
                   </motion.p>
                 </div>
@@ -259,9 +259,9 @@ function OnboardingPage() {
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.3 }}
-                    className="text-5xl font-extrabold text-[#E8E0D5] font-mono mt-2 block relative z-10"
+                    className="text-5xl font-extrabold text-[#EAEAEA] font-mono mt-2 block relative z-10"
                   >
-                    {streak} <span className="text-xl text-[#8B8FA3]">{streak === 1 ? t("day", "Day") : t("days", "Days")}</span>
+                    {streak} <span className="text-xl text-[#8A8F98]">{streak === 1 ? t("day", "Day") : t("days", "Days")}</span>
                   </motion.span>
 
                   <div className="mt-6 flex justify-center">
@@ -295,7 +295,7 @@ function OnboardingPage() {
                             cx={cx} 
                             cy="20" 
                             r={isActive ? "5" : "4"} 
-                            fill={isActive ? "#F5A623" : "#1A2038"} 
+                            fill={isActive ? "#F5A623" : "#16181D"} 
                             stroke={isActive ? "#0F121F" : "none"}
                             strokeWidth="2"
                           />
@@ -310,7 +310,7 @@ function OnboardingPage() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setStep(2)}
-                    className="flex-1 rounded-xl border border-border bg-[#111525] text-[#8B8FA3] py-3 text-sm font-bold hover:text-[#E8E0D5] transition-colors"
+                    className="flex-1 rounded-xl border border-border bg-[#0D0D0D] text-[#8A8F98] py-3 text-sm font-bold hover:text-[#EAEAEA] transition-colors"
                   >
                     {t("back", "Back")}
                   </motion.button>
@@ -321,7 +321,7 @@ function OnboardingPage() {
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full inline-flex items-center justify-center rounded-xl bg-[#00E5C4] text-[#0A0E1A] py-3 text-sm font-bold shadow-[0_0_20px_rgba(0,229,196,0.2)] hover:shadow-[0_0_25px_rgba(0,229,196,0.4)] transition-all"
+                      className="w-full inline-flex items-center justify-center rounded-xl bg-[#FC3D21] text-[#030303] py-3 text-sm font-bold shadow-[0_0_20px_rgba(252,61,33,0.2)] hover:shadow-[0_0_25px_rgba(252,61,33,0.4)] transition-all"
                     >
                       {t("enter_atlas", "Enter Atlas →")}
                     </motion.div>

@@ -87,13 +87,13 @@ function LibraryPage() {
     <div className="mx-auto max-w-7xl px-5 py-8 page-enter">
       {/* Header section */}
       <div className="mb-10 text-center md:text-left">
-        <span className="text-xs font-bold uppercase tracking-widest text-[#00E5C4]">
+        <span className="text-xs font-bold uppercase tracking-widest text-[#FC3D21]">
           {t("library")}
         </span>
-        <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-[#E8E0D5] sm:text-5xl">
+        <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-[#EAEAEA] sm:text-5xl">
           Core Content <span className="gradient-text">Engine</span>
         </h1>
-        <p className="mt-4 max-w-2xl text-[#8B8FA3]">
+        <p className="mt-4 max-w-2xl text-[#8A8F98]">
           Browse evidence-based natural remedies, ancient healing arts, posture checks, body sensory anomalies, and myth-busting sciences.
         </p>
       </div>
@@ -105,18 +105,18 @@ function LibraryPage() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder={t("searchPlaceholder")}
-          className="w-full rounded-2xl border border-border bg-[#141826]/80 px-6 py-4 text-base text-[#E8E0D5] placeholder-[#8B8FA3] outline-none transition-all focus:border-[#00E5C4]/50 focus:shadow-[0_0_20px_rgba(0,229,196,0.15)]"
+          className="w-full rounded-2xl border border-border bg-[#0F0F0F]/80 px-6 py-4 text-base text-[#EAEAEA] placeholder-[#8A8F98] outline-none transition-all focus:border-[#FC3D21]/50 focus:shadow-[0_0_20px_rgba(252,61,33,0.15)]"
         />
-        <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[#8B8FA3] text-xl">🔍</span>
+        <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[#8A8F98] text-xl">🔍</span>
       </div>
 
       {/* Seasonal Alert Widget */}
-      <div className="mb-10 rounded-2xl border border-[#F5A623]/20 bg-gradient-to-r from-[#141826] to-[#1E2028] p-6 shadow-lg">
+      <div className="mb-10 rounded-2xl border border-[#F5A623]/20 bg-gradient-to-r from-[#0F0F0F] to-[#1E2028] p-6 shadow-lg">
         <div className="flex items-center gap-3">
           <span className="text-3xl">🌦️</span>
           <div>
             <h3 className="font-bold text-[#F5A623]">Seasonal Body Tuning</h3>
-            <p className="mt-1 text-sm text-[#8B8FA3]">
+            <p className="mt-1 text-sm text-[#8A8F98]">
               Current Climate Transition Advice: Hydrate joint cartilages dynamically. High barometric fluctuations can increase synovial fluid pressure, leading to knee twinges. Keep joints warm and double up on liquid intake.
             </p>
           </div>
@@ -131,8 +131,8 @@ function LibraryPage() {
             onClick={() => setActiveTab(tab)}
             className={`rounded-full px-5 py-2 text-sm font-semibold capitalize transition-all ${
               activeTab === tab
-                ? "bg-[#00E5C4]/15 text-[#00E5C4] border border-[#00E5C4]/30"
-                : "text-[#8B8FA3] hover:text-[#E8E0D5]"
+                ? "bg-[#FC3D21]/15 text-[#FC3D21] border border-[#FC3D21]/30"
+                : "text-[#8A8F98] hover:text-[#EAEAEA]"
             }`}
           >
             {tab === "all" ? "All Discoveries" : tab}
@@ -148,7 +148,7 @@ function LibraryPage() {
           {(activeTab === "all" || activeTab === "remedies") && (
             <div>
               <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-[#E8E0D5]">Ancient & Modern Remedies</h2>
+                <h2 className="text-2xl font-bold text-[#EAEAEA]">Ancient & Modern Remedies</h2>
                 <div className="flex flex-wrap gap-1.5">
                   {allTags.map((tag) => (
                     <button
@@ -156,8 +156,8 @@ function LibraryPage() {
                       onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
                       className={`rounded-md px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition-all ${
                         selectedTag === tag
-                          ? "bg-[#00E5C4] text-[#0A0E1A]"
-                          : "bg-[#1E2340] text-[#8B8FA3] hover:text-[#E8E0D5]"
+                          ? "bg-[#FC3D21] text-[#030303]"
+                          : "bg-[#16181D] text-[#8A8F98] hover:text-[#EAEAEA]"
                       }`}
                     >
                       {tag}
@@ -167,14 +167,14 @@ function LibraryPage() {
               </div>
 
               {filteredRemedies.length === 0 ? (
-                <p className="text-sm text-[#8B8FA3]">No remedies match your search.</p>
+                <p className="text-sm text-[#8A8F98]">No remedies match your search.</p>
               ) : (
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   {filteredRemedies.map((remedy) => (
                     <motion.div
                       layout
                       key={remedy.id}
-                      className="rounded-xl border border-border bg-[#111525] p-5 transition-all hover:border-[#00E5C4]/30"
+                      className="rounded-xl border border-border bg-[#0D0D0D] p-5 transition-all hover:border-[#FC3D21]/30"
                     >
                       <div className="flex justify-between items-start">
                         <span className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
@@ -186,16 +186,16 @@ function LibraryPage() {
                         </span>
                         <button
                           onClick={() => isBookmarked(remedy.id) ? removeBookmark(remedy.id) : addBookmark(remedy.id)}
-                          className="text-[#8B8FA3] hover:text-[#00E5C4]"
+                          className="text-[#8A8F98] hover:text-[#FC3D21]"
                         >
                           {isBookmarked(remedy.id) ? "❤️" : "🤍"}
                         </button>
                       </div>
-                      <h3 className="mt-3 font-bold text-[#E8E0D5]">{remedy.name}</h3>
+                      <h3 className="mt-3 font-bold text-[#EAEAEA]">{remedy.name}</h3>
                       <p className="mt-1 text-xs text-[#F5A623]">Target: {remedy.ailment}</p>
-                      <p className="mt-3 text-sm text-[#8B8FA3]">{remedy.description}</p>
-                      <div className="mt-4 border-t border-border/40 pt-3 text-[11px] text-[#8B8FA3]">
-                        <span className="font-bold text-[#00E5C4]">Scientific Base:</span> {remedy.evidenceDetails}
+                      <p className="mt-3 text-sm text-[#8A8F98]">{remedy.description}</p>
+                      <div className="mt-4 border-t border-border/40 pt-3 text-[11px] text-[#8A8F98]">
+                        <span className="font-bold text-[#FC3D21]">Scientific Base:</span> {remedy.evidenceDetails}
                       </div>
                     </motion.div>
                   ))}
@@ -207,23 +207,23 @@ function LibraryPage() {
           {/* Health Hacks Section */}
           {(activeTab === "all" || activeTab === "hacks") && (
             <div className="pt-6">
-              <h2 className="mb-4 text-2xl font-bold text-[#E8E0D5]">Home & Natural Hacks</h2>
+              <h2 className="mb-4 text-2xl font-bold text-[#EAEAEA]">Home & Natural Hacks</h2>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {filteredHacks.map((hack) => (
-                  <div key={hack.id} className="rounded-xl border border-border bg-[#111525] p-5">
-                    <h3 className="font-bold text-[#E8E0D5]">{hack.title}</h3>
-                    <p className="mt-2 text-sm text-[#8B8FA3]">{hack.practice}</p>
-                    <div className="mt-3 rounded-lg bg-[#00E5C4]/5 p-3 text-xs text-[#00E5C4] border border-[#00E5C4]/10">
+                  <div key={hack.id} className="rounded-xl border border-border bg-[#0D0D0D] p-5">
+                    <h3 className="font-bold text-[#EAEAEA]">{hack.title}</h3>
+                    <p className="mt-2 text-sm text-[#8A8F98]">{hack.practice}</p>
+                    <div className="mt-3 rounded-lg bg-[#FC3D21]/5 p-3 text-xs text-[#FC3D21] border border-[#FC3D21]/10">
                       <strong>How it works:</strong> {hack.scienceBasis}
                     </div>
                     <div className="mt-4 flex items-center justify-between">
                       <button
                         onClick={() => handleTryAction(hack.id)}
-                        className="rounded-full bg-[#00E5C4]/10 px-4 py-1.5 text-xs font-semibold text-[#00E5C4] transition-all hover:bg-[#00E5C4]/25"
+                        className="rounded-full bg-[#FC3D21]/10 px-4 py-1.5 text-xs font-semibold text-[#FC3D21] transition-all hover:bg-[#FC3D21]/25"
                       >
                         ⚡ Done it!
                       </button>
-                      <span className="text-[11px] text-[#8B8FA3]">
+                      <span className="text-[11px] text-[#8A8F98]">
                         {triedCounts[hack.id] || 0} tried this today
                       </span>
                     </div>
@@ -236,7 +236,7 @@ function LibraryPage() {
           {/* Myths Section */}
           {(activeTab === "all" || activeTab === "myths") && (
             <div className="pt-6">
-              <h2 className="mb-4 text-2xl font-bold text-[#E8E0D5]">{t("myths")}</h2>
+              <h2 className="mb-4 text-2xl font-bold text-[#EAEAEA]">{t("myths")}</h2>
               <div className="space-y-3">
                 {filteredMyths.map((myth) => {
                   const isExpanded = expandedMythId === myth.id;
@@ -244,13 +244,13 @@ function LibraryPage() {
                     <div
                       key={myth.id}
                       onClick={() => setExpandedMythId(isExpanded ? null : myth.id)}
-                      className="cursor-pointer rounded-xl border border-border bg-[#111525] p-5 transition-all hover:border-[#6B4FA0]/40"
+                      className="cursor-pointer rounded-xl border border-border bg-[#0D0D0D] p-5 transition-all hover:border-[#0B3D91]/40"
                     >
                       <div className="flex justify-between items-center">
-                        <h3 className="font-bold text-[#E54D4D] flex items-center gap-2">
-                          ❌ Myth: <span className="text-[#E8E0D5] font-medium">{myth.myth}</span>
+                        <h3 className="font-bold text-[#FC3D21] flex items-center gap-2">
+                          ❌ Myth: <span className="text-[#EAEAEA] font-medium">{myth.myth}</span>
                         </h3>
-                        <span className="text-[#8B8FA3] text-sm">{isExpanded ? "▲" : "▼"}</span>
+                        <span className="text-[#8A8F98] text-sm">{isExpanded ? "▲" : "▼"}</span>
                       </div>
                       <AnimatePresence>
                         {isExpanded && (
@@ -261,8 +261,8 @@ function LibraryPage() {
                             transition={{ duration: 0.2 }}
                             className="overflow-hidden"
                           >
-                            <div className="mt-4 border-t border-border/40 pt-4 text-sm text-[#8B8FA3]">
-                              <strong className="text-[#00E5C4] block mb-1">✅ Science Truth:</strong>
+                            <div className="mt-4 border-t border-border/40 pt-4 text-sm text-[#8A8F98]">
+                              <strong className="text-[#FC3D21] block mb-1">✅ Science Truth:</strong>
                               {myth.reality}
                             </div>
                           </motion.div>
@@ -278,23 +278,23 @@ function LibraryPage() {
           {/* Weekly Marvels Section */}
           {(activeTab === "all" || activeTab === "marvels") && (
             <div className="pt-6">
-              <h2 className="mb-4 text-2xl font-bold text-[#E8E0D5]">Body Marvels (Deep Dives)</h2>
+              <h2 className="mb-4 text-2xl font-bold text-[#EAEAEA]">Body Marvels (Deep Dives)</h2>
               {BODY_MARVELS.map((marvel) => (
-                <div key={marvel.id} className="rounded-xl border border-border bg-[#111525] p-6">
-                  <span className="rounded bg-[#6B4FA0]/20 px-2 py-0.5 text-xs font-bold text-[#A855F7] uppercase tracking-wider">
+                <div key={marvel.id} className="rounded-xl border border-border bg-[#0D0D0D] p-6">
+                  <span className="rounded bg-[#0B3D91]/20 px-2 py-0.5 text-xs font-bold text-[#A855F7] uppercase tracking-wider">
                     Weekly Deep-Dive
                   </span>
-                  <h3 className="mt-3 text-2xl font-bold text-[#E8E0D5]">{marvel.title}</h3>
-                  <p className="mt-2 text-sm text-[#8B8FA3] italic">{marvel.introduction}</p>
+                  <h3 className="mt-3 text-2xl font-bold text-[#EAEAEA]">{marvel.title}</h3>
+                  <p className="mt-2 text-sm text-[#8A8F98] italic">{marvel.introduction}</p>
                   <div className="mt-6 space-y-4">
                     {marvel.sections.map((sect, i) => (
-                      <div key={i} className="rounded-lg bg-[#0A0E1A] p-4 border border-border/40">
-                        <h4 className="font-bold text-[#00E5C4]">{sect.heading}</h4>
-                        <p className="mt-1 text-sm text-[#8B8FA3]">{sect.body}</p>
+                      <div key={i} className="rounded-lg bg-[#030303] p-4 border border-border/40">
+                        <h4 className="font-bold text-[#FC3D21]">{sect.heading}</h4>
+                        <p className="mt-1 text-sm text-[#8A8F98]">{sect.body}</p>
                       </div>
                     ))}
                   </div>
-                  <p className="mt-6 text-sm text-[#8B8FA3] border-l-2 border-[#00E5C4] pl-4">
+                  <p className="mt-6 text-sm text-[#8A8F98] border-l-2 border-[#FC3D21] pl-4">
                     {marvel.conclusion}
                   </p>
                 </div>
@@ -306,13 +306,13 @@ function LibraryPage() {
         {/* Right Column: Bookmarks, Sensory Facts & Details */}
         <div className="space-y-8">
           {/* Sensory Facts ("Did You Feel That?") */}
-          <div className="rounded-xl border border-border bg-[#141826] p-5">
-            <h3 className="text-lg font-bold text-[#00E5C4] mb-4">Did You Feel That?</h3>
+          <div className="rounded-xl border border-border bg-[#0F0F0F] p-5">
+            <h3 className="text-lg font-bold text-[#FC3D21] mb-4">Did You Feel That?</h3>
             <div className="space-y-4">
               {SENSORY_FACTS.map((sf) => (
                 <div key={sf.id} className="rounded-lg bg-[#0d101d] p-4 border border-border/40">
-                  <h4 className="font-bold text-[#E8E0D5] text-sm">❓ {sf.sensation}</h4>
-                  <p className="mt-1.5 text-xs text-[#8B8FA3]">{sf.cause}</p>
+                  <h4 className="font-bold text-[#EAEAEA] text-sm">❓ {sf.sensation}</h4>
+                  <p className="mt-1.5 text-xs text-[#8A8F98]">{sf.cause}</p>
                   <div className="mt-3 text-xs text-[#F5A623] bg-[#F5A623]/5 p-2 rounded border border-[#F5A623]/10">
                     💡 <strong>Tip:</strong> {sf.tip}
                   </div>
@@ -322,28 +322,28 @@ function LibraryPage() {
           </div>
 
           {/* Bookmarks Section */}
-          <div className="rounded-xl border border-border bg-[#141826] p-5">
-            <h3 className="text-lg font-bold text-[#E8E0D5] mb-4">{t("bookmarks")}</h3>
+          <div className="rounded-xl border border-border bg-[#0F0F0F] p-5">
+            <h3 className="text-lg font-bold text-[#EAEAEA] mb-4">{t("bookmarks")}</h3>
             {bookmarks.length === 0 ? (
-              <p className="text-xs text-[#8B8FA3]">No saved remedies or facts yet.</p>
+              <p className="text-xs text-[#8A8F98]">No saved remedies or facts yet.</p>
             ) : (
               <div className="space-y-2">
                 {bookmarks.map((bId) => {
                   const remedy = REMEDIES.find((r) => r.id === bId);
                   const fact = FACTS.find((f) => f.id === bId);
                   return (
-                    <div key={bId} className="flex items-center justify-between bg-[#111525] p-3 rounded-lg border border-border/40">
+                    <div key={bId} className="flex items-center justify-between bg-[#0D0D0D] p-3 rounded-lg border border-border/40">
                       <div className="truncate max-w-[80%]">
-                        <p className="text-xs font-bold text-[#00E5C4] truncate">
+                        <p className="text-xs font-bold text-[#FC3D21] truncate">
                           {remedy ? remedy.name : "Saved Fact"}
                         </p>
-                        <p className="text-[10px] text-[#8B8FA3] truncate">
+                        <p className="text-[10px] text-[#8A8F98] truncate">
                           {remedy ? remedy.ailment : fact ? fact.text : "Content item"}
                         </p>
                       </div>
                       <button
                         onClick={() => removeBookmark(bId)}
-                        className="text-xs text-[#E54D4D] hover:underline"
+                        className="text-xs text-[#FC3D21] hover:underline"
                       >
                         Remove
                       </button>
@@ -355,11 +355,11 @@ function LibraryPage() {
           </div>
 
           {/* Medical review notification */}
-          <div className="rounded-xl border border-border/40 bg-[#141826] p-4 text-center">
+          <div className="rounded-xl border border-border/40 bg-[#0F0F0F] p-4 text-center">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400 border border-emerald-500/20">
               🛡️ {t("medicalReviewed")}
             </span>
-            <p className="mt-2 text-[10px] text-[#8B8FA3]">
+            <p className="mt-2 text-[10px] text-[#8A8F98]">
               Every article and remedy is cross-referenced with medical databases (NLM, PubMed) and reviewed by board-certified physicians.
             </p>
           </div>

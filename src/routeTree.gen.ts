@@ -9,11 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ToolsRouteImport } from './routes/tools'
 import { Route as SymptomsRouteImport } from './routes/symptoms'
 import { Route as QuestRouteImport } from './routes/quest'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as LibraryRouteImport } from './routes/library'
+import { Route as FactsRouteImport } from './routes/facts'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as ExplainRouteImport } from './routes/explain'
 import { Route as EmergencyRouteImport } from './routes/emergency'
@@ -22,11 +22,6 @@ import { Route as DailyRouteImport } from './routes/daily'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
-const ToolsRoute = ToolsRouteImport.update({
-  id: '/tools',
-  path: '/tools',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SymptomsRoute = SymptomsRouteImport.update({
   id: '/symptoms',
   path: '/symptoms',
@@ -45,6 +40,11 @@ const OnboardingRoute = OnboardingRouteImport.update({
 const LibraryRoute = LibraryRouteImport.update({
   id: '/library',
   path: '/library',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FactsRoute = FactsRouteImport.update({
+  id: '/facts',
+  path: '/facts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExploreRoute = ExploreRouteImport.update({
@@ -91,11 +91,11 @@ export interface FileRoutesByFullPath {
   '/emergency': typeof EmergencyRoute
   '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
+  '/facts': typeof FactsRoute
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
   '/quest': typeof QuestRoute
   '/symptoms': typeof SymptomsRoute
-  '/tools': typeof ToolsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -105,11 +105,11 @@ export interface FileRoutesByTo {
   '/emergency': typeof EmergencyRoute
   '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
+  '/facts': typeof FactsRoute
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
   '/quest': typeof QuestRoute
   '/symptoms': typeof SymptomsRoute
-  '/tools': typeof ToolsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -120,11 +120,11 @@ export interface FileRoutesById {
   '/emergency': typeof EmergencyRoute
   '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
+  '/facts': typeof FactsRoute
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
   '/quest': typeof QuestRoute
   '/symptoms': typeof SymptomsRoute
-  '/tools': typeof ToolsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -136,11 +136,11 @@ export interface FileRouteTypes {
     | '/emergency'
     | '/explain'
     | '/explore'
+    | '/facts'
     | '/library'
     | '/onboarding'
     | '/quest'
     | '/symptoms'
-    | '/tools'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -150,11 +150,11 @@ export interface FileRouteTypes {
     | '/emergency'
     | '/explain'
     | '/explore'
+    | '/facts'
     | '/library'
     | '/onboarding'
     | '/quest'
     | '/symptoms'
-    | '/tools'
   id:
     | '__root__'
     | '/'
@@ -164,11 +164,11 @@ export interface FileRouteTypes {
     | '/emergency'
     | '/explain'
     | '/explore'
+    | '/facts'
     | '/library'
     | '/onboarding'
     | '/quest'
     | '/symptoms'
-    | '/tools'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -179,22 +179,15 @@ export interface RootRouteChildren {
   EmergencyRoute: typeof EmergencyRoute
   ExplainRoute: typeof ExplainRoute
   ExploreRoute: typeof ExploreRoute
+  FactsRoute: typeof FactsRoute
   LibraryRoute: typeof LibraryRoute
   OnboardingRoute: typeof OnboardingRoute
   QuestRoute: typeof QuestRoute
   SymptomsRoute: typeof SymptomsRoute
-  ToolsRoute: typeof ToolsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/tools': {
-      id: '/tools'
-      path: '/tools'
-      fullPath: '/tools'
-      preLoaderRoute: typeof ToolsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/symptoms': {
       id: '/symptoms'
       path: '/symptoms'
@@ -221,6 +214,13 @@ declare module '@tanstack/react-router' {
       path: '/library'
       fullPath: '/library'
       preLoaderRoute: typeof LibraryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/facts': {
+      id: '/facts'
+      path: '/facts'
+      fullPath: '/facts'
+      preLoaderRoute: typeof FactsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/explore': {
@@ -283,11 +283,11 @@ const rootRouteChildren: RootRouteChildren = {
   EmergencyRoute: EmergencyRoute,
   ExplainRoute: ExplainRoute,
   ExploreRoute: ExploreRoute,
+  FactsRoute: FactsRoute,
   LibraryRoute: LibraryRoute,
   OnboardingRoute: OnboardingRoute,
   QuestRoute: QuestRoute,
   SymptomsRoute: SymptomsRoute,
-  ToolsRoute: ToolsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

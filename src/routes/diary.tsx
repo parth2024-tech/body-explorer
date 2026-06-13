@@ -13,11 +13,11 @@ interface DiaryEntry {
 }
 
 const STATUS_OPTIONS: { id: Status; label: string; emoji: string; color: string }[] = [
-  { id: "sore", label: "Sore", emoji: "😣", color: "#E54D4D" },
+  { id: "sore", label: "Sore", emoji: "😣", color: "#FC3D21" },
   { id: "stiff", label: "Stiff", emoji: "🪵", color: "#F5A623" },
-  { id: "energized", label: "Energized", emoji: "⚡", color: "#00E5C4" },
-  { id: "neutral", label: "Neutral", emoji: "😐", color: "#8B8FA3" },
-  { id: "recovering", label: "Recovering", emoji: "🩹", color: "#6B4FA0" },
+  { id: "energized", label: "Energized", emoji: "⚡", color: "#FC3D21" },
+  { id: "neutral", label: "Neutral", emoji: "😐", color: "#8A8F98" },
+  { id: "recovering", label: "Recovering", emoji: "🩹", color: "#0B3D91" },
   { id: "great", label: "Great", emoji: "✨", color: "#4DC8E5" },
 ];
 
@@ -92,7 +92,7 @@ function DiaryPage() {
         <h1 className="text-3xl font-bold md:text-4xl">
           <span className="gradient-text-amber">Body Diary</span>
         </h1>
-        <p className="mt-2 text-sm text-[#8B8FA3]">
+        <p className="mt-2 text-sm text-[#8A8F98]">
           How does your body feel today? Log it in under 20 seconds.
         </p>
       </motion.div>
@@ -110,11 +110,11 @@ function DiaryPage() {
               {STATUS_OPTIONS.find((s) => s.id === todayEntry.status)?.emoji}
             </div>
             <p className="text-lg font-semibold text-[#F5A623]">Already checked in today!</p>
-            <p className="mt-1 text-sm text-[#8B8FA3]">
+            <p className="mt-1 text-sm text-[#8A8F98]">
               {BODY_PARTS.find((p) => p.id === todayEntry.zone)?.name} — {todayEntry.status}
             </p>
             {todayEntry.note && (
-              <p className="mt-2 text-xs text-[#8B8FA3] italic">"{todayEntry.note}"</p>
+              <p className="mt-2 text-xs text-[#8A8F98] italic">"{todayEntry.note}"</p>
             )}
           </div>
         ) : (
@@ -124,7 +124,7 @@ function DiaryPage() {
               1. What part of your body?
             </h3>
             <div className="mt-3 flex flex-wrap gap-1.5">
-              {BODY_PARTS.filter((p) => !["frontal-lobe", "temporal-lobe", "skin", "bones"].includes(p.id)).map((p) => (
+              {BODY_PARTS.filter((p) => !["frontal-lobe", "temporal-lobe", "skin", "bones", "muscles"].includes(p.id)).map((p) => (
                 <button
                   key={p.id}
                   onClick={() => setSelectedZone(p.id)}
@@ -155,7 +155,7 @@ function DiaryPage() {
                         className={`rounded-xl border px-4 py-2.5 text-sm font-medium transition-all ${
                           selectedStatus === s.id
                             ? "border-[#F5A623]/40 bg-[#F5A623]/10 text-[#F5A623]"
-                            : "border-[#1E2844] bg-[#0A0E1A]/60 text-[#8B8FA3] hover:border-[#F5A623]/20"
+                            : "border-[#222222] bg-[#030303]/60 text-[#8A8F98] hover:border-[#F5A623]/20"
                         }`}
                       >
                         <span className="mr-1.5">{s.emoji}</span>
@@ -188,7 +188,7 @@ function DiaryPage() {
                   />
                   <button
                     onClick={handleSave}
-                    className="btn-hover-grow mt-4 w-full rounded-xl bg-[#F5A623] py-3 text-sm font-bold text-[#0A0E1A] shadow-[0_0_20px_rgba(245,166,35,0.3)]"
+                    className="btn-hover-grow mt-4 w-full rounded-xl bg-[#F5A623] py-3 text-sm font-bold text-[#030303] shadow-[0_0_20px_rgba(245,166,35,0.3)]"
                   >
                     ✓ Log Today's Check-in
                   </button>
@@ -200,9 +200,9 @@ function DiaryPage() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="mt-4 rounded-xl bg-[#00E5C4]/10 border border-[#00E5C4]/30 p-4 text-center"
+                className="mt-4 rounded-xl bg-[#FC3D21]/10 border border-[#FC3D21]/30 p-4 text-center"
               >
-                <span className="text-[#00E5C4] font-semibold">✓ Logged!</span>
+                <span className="text-[#FC3D21] font-semibold">✓ Logged!</span>
               </motion.div>
             )}
           </>
@@ -217,7 +217,7 @@ function DiaryPage() {
         className="mt-10"
       >
         <h2 className="text-xl font-bold">Your 30-Day Pattern</h2>
-        <p className="mt-1 text-xs text-[#8B8FA3]">
+        <p className="mt-1 text-xs text-[#8A8F98]">
           Patterns emerge when you check in consistently. Each cell = one day.
         </p>
 
@@ -250,7 +250,7 @@ function DiaryPage() {
           })}
         </div>
 
-        <div className="mt-3 flex flex-wrap gap-3 text-[10px] text-[#8B8FA3]">
+        <div className="mt-3 flex flex-wrap gap-3 text-[10px] text-[#8A8F98]">
           {STATUS_OPTIONS.map((s) => (
             <span key={s.id} className="flex items-center gap-1">
               <span

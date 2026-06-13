@@ -23,14 +23,14 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="max-w-md text-center">
         <h1 className="text-8xl font-bold gradient-text glow-text">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-[#E8E0D5]">Lost in the body</h2>
-        <p className="mt-2 text-sm text-[#8B8FA3]">
+        <h2 className="mt-4 text-xl font-semibold text-[#EAEAEA]">Lost in the body</h2>
+        <p className="mt-2 text-sm text-[#8A8F98]">
           This organ hasn't been mapped yet. Head back to explore what's been charted.
         </p>
         <div className="mt-8">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 rounded-full bg-[#00E5C4] px-6 py-3 text-sm font-semibold text-[#0A0E1A] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(0,229,196,0.4)]"
+            className="inline-flex items-center gap-2 rounded-full bg-[#FC3D21] px-6 py-3 text-sm font-semibold text-[#030303] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(252,61,33,0.4)]"
           >
             Return to Atlas
             <span>→</span>
@@ -51,13 +51,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="max-w-md text-center">
-        <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-2xl bg-[#E54D4D]/10 text-3xl">
+        <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-2xl bg-[#FC3D21]/10 text-3xl">
           ⚡
         </div>
-        <h1 className="text-xl font-semibold tracking-tight text-[#E8E0D5]">
+        <h1 className="text-xl font-semibold tracking-tight text-[#EAEAEA]">
           Something went wrong
         </h1>
-        <p className="mt-2 text-sm text-[#8B8FA3]">
+        <p className="mt-2 text-sm text-[#8A8F98]">
           A cell misfired. You can try refreshing or head back home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
@@ -66,13 +66,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-full bg-[#00E5C4] px-5 py-2.5 text-sm font-semibold text-[#0A0E1A] transition-all hover:scale-105"
+            className="inline-flex items-center justify-center rounded-full bg-[#FC3D21] px-5 py-2.5 text-sm font-semibold text-[#030303] transition-all hover:scale-105"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-full border border-[#1E2844] bg-[#141826] px-5 py-2.5 text-sm font-medium text-[#E8E0D5] transition-colors hover:border-[#00E5C4]/30"
+            className="inline-flex items-center justify-center rounded-full border border-[#222222] bg-[#0F0F0F] px-5 py-2.5 text-sm font-medium text-[#EAEAEA] transition-colors hover:border-[#FC3D21]/30"
           >
             Go home
           </a>
@@ -108,7 +108,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "theme-color", content: "#0A0E1A" },
+        { name: "theme-color", content: "#030303" },
       ],
       links: [
         { rel: "manifest", href: "/manifest.json" },
@@ -121,11 +121,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Fira+Mono:wght@400;500;700&display=swap",
-        },
-        {
-          rel: "stylesheet",
-          href: "https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap",
         },
       ],
     }),

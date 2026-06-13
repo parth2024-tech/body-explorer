@@ -94,9 +94,9 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
               type="text"
               value={noteText}
               placeholder="e.g. knee clicks when squatting"
-              className="flex-1 rounded border border-border bg-[#0F121F] px-3 py-1.5 text-xs text-[#E8E0D5] outline-none focus:border-[#F5A623]/50"
+              className="flex-1 rounded border border-border bg-[#0F121F] px-3 py-1.5 text-xs text-[#EAEAEA] outline-none focus:border-[#F5A623]/50"
             />
-            <button type="submit" className="rounded bg-[#F5A623] text-[#0A0E1A] px-3 py-1.5 text-xs font-bold">
+            <button type="submit" className="rounded bg-[#F5A623] text-[#030303] px-3 py-1.5 text-xs font-bold">
               Pin
             </button>
           </form>
@@ -107,7 +107,7 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
             <h3 className="text-xs uppercase font-bold tracking-wider text-[#F5A623] mb-2">Pinned Notes</h3>
             <div className="space-y-1.5">
               {pinnedNotes.map((note, idx) => (
-                <div key={idx} className="flex justify-between items-center bg-[#F5A623]/5 border border-[#F5A623]/15 p-2 rounded text-xs text-[#E8E0D5]">
+                <div key={idx} className="flex justify-between items-center bg-[#F5A623]/5 border border-[#F5A623]/15 p-2 rounded text-xs text-[#EAEAEA]">
                   <span>📌 {note}</span>
                   <button onClick={() => deleteBodyMapNote(partId, idx)} className="text-rose-400 text-[10px] hover:underline ml-2">
                     Delete
@@ -122,7 +122,7 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
           <h3 className="text-xs uppercase font-bold tracking-wider text-[#F5A623] mb-2">Recent Checks</h3>
           {entries.length === 0 ? (
             <div className="rounded-xl border border-[#F5A623]/20 bg-[#F5A623]/5 p-4 text-center">
-              <p className="text-sm text-[#8B8FA3]">No diary entries for {part.name} yet.</p>
+              <p className="text-sm text-[#8A8F98]">No diary entries for {part.name} yet.</p>
               <Link to="/diary" className="mt-2 inline-block text-xs text-[#F5A623] hover:underline">
                 Log a check-in →
               </Link>
@@ -132,8 +132,8 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
               {entries.map((e: { date: string; status: string; note?: string }, i: number) => (
                 <div key={i} className="rounded-xl border border-[#F5A623]/20 bg-[#F5A623]/5 p-3">
                   <div className="text-xs text-[#F5A623] font-semibold">{e.date}</div>
-                  <div className="mt-1 text-sm text-[#E8E0D5] capitalize">{e.status}</div>
-                  {e.note && <p className="mt-1 text-xs text-[#8B8FA3] italic">"{e.note}"</p>}
+                  <div className="mt-1 text-sm text-[#EAEAEA] capitalize">{e.status}</div>
+                  {e.note && <p className="mt-1 text-xs text-[#8A8F98] italic">"{e.note}"</p>}
                 </div>
               ))}
             </div>
@@ -154,22 +154,22 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
 
     return (
       <div className="space-y-4">
-        <p className="text-xs text-[#8B8FA3]">{LAYER_META.challenge.description}</p>
-        <div className="rounded-xl border border-[#6B4FA0]/20 bg-[#6B4FA0]/5 p-4">
-          <div className="text-sm font-semibold text-[#6B4FA0]">Spine Week Quest</div>
-          <p className="mt-2 text-xs text-[#8B8FA3]">
+        <p className="text-xs text-[#8A8F98]">{LAYER_META.challenge.description}</p>
+        <div className="rounded-xl border border-[#0B3D91]/20 bg-[#0B3D91]/5 p-4">
+          <div className="text-sm font-semibold text-[#0B3D91]">Spine Week Quest</div>
+          <p className="mt-2 text-xs text-[#8A8F98]">
             {completed} of 7 steps complete. This week's quest focuses on spinal health.
           </p>
-          <Link to="/quest" className="mt-3 inline-block text-xs text-[#6B4FA0] hover:underline">
+          <Link to="/quest" className="mt-3 inline-block text-xs text-[#0B3D91] hover:underline">
             View quest →
           </Link>
         </div>
         {microAction && (
-          <div className="rounded-xl border border-[#6B4FA0]/20 bg-[#6B4FA0]/5 p-4">
-            <div className="text-xs uppercase tracking-wider text-[#6B4FA0] font-semibold">
+          <div className="rounded-xl border border-[#0B3D91]/20 bg-[#0B3D91]/5 p-4">
+            <div className="text-xs uppercase tracking-wider text-[#0B3D91] font-semibold">
               Quest micro-action
             </div>
-            <p className="mt-2 text-sm text-[#E8E0D5]">{microAction.action}</p>
+            <p className="mt-2 text-sm text-[#EAEAEA]">{microAction.action}</p>
           </div>
         )}
       </div>
@@ -180,19 +180,19 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
     const trend = getTrendData(partId);
     return (
       <div className="space-y-4">
-        <p className="text-xs text-[#8B8FA3]">
-          Based on <span className="stat-text text-[#E8E0D5]">847</span> early users
+        <p className="text-xs text-[#8A8F98]">
+          Based on <span className="stat-text text-[#EAEAEA]">847</span> early users
         </p>
-        <div className="rounded-xl border border-[#E5504D]/20 bg-[#E5504D]/5 p-4">
-          <div className="stat-text text-2xl font-bold text-[#E5504D]">{trend.percent}%</div>
-          <p className="mt-1 text-sm text-[#E8E0D5]">
+        <div className="rounded-xl border border-[#FC3D21]/20 bg-[#FC3D21]/5 p-4">
+          <div className="stat-text text-2xl font-bold text-[#FC3D21]">{trend.percent}%</div>
+          <p className="mt-1 text-sm text-[#EAEAEA]">
             of users logged <span className="capitalize">{trend.topStatus}</span> for {part.name}
           </p>
-          <p className="mt-2 text-xs text-[#8B8FA3]">{trend.checkins} community check-ins this month</p>
+          <p className="mt-2 text-xs text-[#8A8F98]">{trend.checkins} community check-ins this month</p>
         </div>
-        <div className="h-2 rounded-full bg-[#1E2844] overflow-hidden">
+        <div className="h-2 rounded-full bg-[#222222] overflow-hidden">
           <div
-            className="h-full rounded-full bg-gradient-to-r from-[#E5504D] to-[#F5A623]"
+            className="h-full rounded-full bg-gradient-to-r from-[#FC3D21] to-[#F5A623]"
             style={{ width: `${trend.percent}%` }}
           />
         </div>
@@ -203,13 +203,13 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
   if (layer === "explore") {
     return (
       <div className="space-y-4">
-        <p className="text-sm text-[#E8E0D5] leading-relaxed">{part.shortDescription}</p>
+        <p className="text-sm text-[#EAEAEA] leading-relaxed">{part.shortDescription}</p>
         
-        <div className="rounded-xl border border-[#E8E0D5]/10 bg-[#E8E0D5]/5 p-4">
-          <div className="text-xs uppercase tracking-wider text-[#E8E0D5] font-semibold mb-2">
+        <div className="rounded-xl border border-[#EAEAEA]/10 bg-[#EAEAEA]/5 p-4">
+          <div className="text-xs uppercase tracking-wider text-[#EAEAEA] font-semibold mb-2">
             System / Anatomy Region
           </div>
-          <p className="text-sm text-[#8B8FA3]">{part.system} · {part.region.replace("-", " ")}</p>
+          <p className="text-sm text-[#8A8F98]">{part.system} · {part.region.replace("-", " ")}</p>
         </div>
 
         {diseases.length > 0 && (
@@ -218,7 +218,7 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
             <div className="space-y-2">
               {diseases.map((d) => (
                 <div key={d.id} className="text-xs">
-                  <strong className="text-[#E8E0D5]">{d.name}:</strong> <span className="text-[#8B8FA3]">{d.overview}</span>
+                  <strong className="text-[#EAEAEA]">{d.name}:</strong> <span className="text-[#8A8F98]">{d.overview}</span>
                 </div>
               ))}
             </div>
@@ -231,7 +231,7 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
             <div className="space-y-2">
               {remedies.map((r) => (
                 <div key={r.id} className="text-xs">
-                  <strong className="text-[#E8E0D5]">{r.name} ({r.evidenceRating}):</strong> <span className="text-[#8B8FA3]">{r.description}</span>
+                  <strong className="text-[#EAEAEA]">{r.name} ({r.evidenceRating}):</strong> <span className="text-[#8A8F98]">{r.description}</span>
                 </div>
               ))}
             </div>
@@ -244,7 +244,7 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
             <div className="space-y-2">
               {hacks.map((h) => (
                 <div key={h.id} className="text-xs">
-                  <strong className="text-[#E8E0D5]">{h.title}:</strong> <span className="text-[#8B8FA3]">{h.practice}</span>
+                  <strong className="text-[#EAEAEA]">{h.title}:</strong> <span className="text-[#8A8F98]">{h.practice}</span>
                 </div>
               ))}
             </div>
@@ -252,12 +252,12 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
         )}
 
         {myths.map((m) => (
-          <div key={m.id} className="rounded-xl border border-[#6B4FA0]/20 bg-[#6B4FA0]/5 p-4">
-            <p className="text-sm text-[#E8E0D5]">
-              <span className="font-semibold text-[#E54D4D]">Myth:</span> {m.myth}
+          <div key={m.id} className="rounded-xl border border-[#0B3D91]/20 bg-[#0B3D91]/5 p-4">
+            <p className="text-sm text-[#EAEAEA]">
+              <span className="font-semibold text-[#FC3D21]">Myth:</span> {m.myth}
             </p>
-            <p className="mt-2 text-sm text-[#E8E0D5]">
-              <span className="font-semibold text-[#00E5C4]">Reality:</span> {m.reality}
+            <p className="mt-2 text-sm text-[#EAEAEA]">
+              <span className="font-semibold text-[#FC3D21]">Reality:</span> {m.reality}
             </p>
           </div>
         ))}
@@ -266,7 +266,7 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
             <div className="text-xs uppercase tracking-wider text-[#F5A623] font-semibold mb-2">
               Ask Your Doctor
             </div>
-            <p className="text-sm text-[#E8E0D5] italic">"{doctorQ.question}"</p>
+            <p className="text-sm text-[#EAEAEA] italic">"{doctorQ.question}"</p>
           </div>
         )}
       </div>
@@ -286,8 +286,8 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
               onClick={() => setCategory(cat)}
               className={`whitespace-nowrap rounded-full px-2.5 py-1 text-[10px] font-medium transition-all ${
                 active
-                  ? "bg-[#00E5C4]/10 text-[#00E5C4] border border-[#00E5C4]/30"
-                  : "text-[#8B8FA3] hover:text-[#E8E0D5]"
+                  ? "bg-[#FC3D21]/10 text-[#FC3D21] border border-[#FC3D21]/30"
+                  : "text-[#8A8F98] hover:text-[#EAEAEA]"
               }`}
             >
               {meta.icon} {meta.label}
@@ -297,7 +297,7 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
       </div>
 
       {facts.length === 0 ? (
-        <p className="py-6 text-center text-sm text-[#8B8FA3]">No facts in this category yet.</p>
+        <p className="py-6 text-center text-sm text-[#8A8F98]">No facts in this category yet.</p>
       ) : (
         <div className="space-y-3">
           {facts.map((f) => (
@@ -307,24 +307,24 @@ function LayerContent({ partId, layer }: { partId: string; layer: Layer }) {
       )}
 
       {microAction && (
-        <div className="rounded-xl border border-[#00E5C4]/20 bg-[#00E5C4]/5 p-4">
-          <div className="text-xs uppercase tracking-wider text-[#00E5C4] font-semibold">
+        <div className="rounded-xl border border-[#FC3D21]/20 bg-[#FC3D21]/5 p-4">
+          <div className="text-xs uppercase tracking-wider text-[#FC3D21] font-semibold">
             ⚡ {microAction.duration} micro-action
           </div>
-          <p className="mt-2 text-sm text-[#E8E0D5]">{microAction.action}</p>
+          <p className="mt-2 text-sm text-[#EAEAEA]">{microAction.action}</p>
         </div>
       )}
 
       {myths.length > 0 && (
         <div className="space-y-2">
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-[#6B4FA0]">Myths Busted</h4>
+          <h4 className="text-xs font-semibold uppercase tracking-wider text-[#0B3D91]">Myths Busted</h4>
           {myths.slice(0, 1).map((m) => (
-            <div key={m.id} className="rounded-xl border border-[#6B4FA0]/20 bg-[#6B4FA0]/5 p-3">
-              <p className="text-xs text-[#E8E0D5]">
-                <span className="text-[#E54D4D]">Myth:</span> {m.myth}
+            <div key={m.id} className="rounded-xl border border-[#0B3D91]/20 bg-[#0B3D91]/5 p-3">
+              <p className="text-xs text-[#EAEAEA]">
+                <span className="text-[#FC3D21]">Myth:</span> {m.myth}
               </p>
-              <p className="mt-1 text-xs text-[#E8E0D5]">
-                <span className="text-[#00E5C4]">Reality:</span> {m.reality}
+              <p className="mt-1 text-xs text-[#EAEAEA]">
+                <span className="text-[#FC3D21]">Reality:</span> {m.reality}
               </p>
             </div>
           ))}
@@ -362,8 +362,8 @@ export function ExplorePanel() {
     <aside className="flex flex-col gap-4 self-start lg:sticky lg:top-24">
       <Suspense
         fallback={
-          <div className="flex h-56 items-center justify-center rounded-xl border border-[#1E2844] bg-[#141826]/60">
-            <span className="text-xs text-[#8B8FA3] animate-pulse">Loading 3D...</span>
+          <div className="flex h-56 items-center justify-center rounded-xl border border-[#222222] bg-[#0F0F0F]/60">
+            <span className="text-xs text-[#8A8F98] animate-pulse">Loading 3D...</span>
           </div>
         }
       >
@@ -378,9 +378,9 @@ export function ExplorePanel() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="rounded-2xl border border-[#1E2844] bg-[#141826]/60 backdrop-blur-sm"
+            className="rounded-2xl border border-[#222222] bg-[#0F0F0F]/60 backdrop-blur-sm"
           >
-            <div className="border-b border-[#1E2844] p-5">
+            <div className="border-b border-[#222222] p-5">
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-start gap-3">
                   <span className="text-3xl">{part.emoji}</span>
@@ -388,7 +388,7 @@ export function ExplorePanel() {
                     <h2 className="text-xl font-bold" style={{ color: layerMeta.color }}>
                       {part.name}
                     </h2>
-                    <p className="text-[10px] uppercase tracking-widest text-[#8B8FA3]">
+                    <p className="text-[10px] uppercase tracking-widest text-[#8A8F98]">
                       {layerMeta.label} layer · {part.system}
                     </p>
                   </div>
@@ -396,8 +396,8 @@ export function ExplorePanel() {
                 {/* TTS button */}
                 <button
                   onClick={handleTTS}
-                  className={`rounded-full p-2 text-xs transition-colors border border-border bg-[#1E2340]/40 ${
-                    speaking ? "text-[#00E5C4] border-[#00E5C4]" : "text-[#8B8FA3] hover:text-[#E8E0D5]"
+                  className={`rounded-full p-2 text-xs transition-colors border border-border bg-[#16181D]/40 ${
+                    speaking ? "text-[#FC3D21] border-[#FC3D21]" : "text-[#8A8F98] hover:text-[#EAEAEA]"
                   }`}
                   title="Read Aloud"
                 >
@@ -415,22 +415,22 @@ export function ExplorePanel() {
             key="empty"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="rounded-2xl border border-[#1E2844] bg-[#141826]/60 p-6 backdrop-blur-sm"
+            className="rounded-2xl border border-[#222222] bg-[#0F0F0F]/60 p-6 backdrop-blur-sm"
           >
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-[#8B8FA3]">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-[#8A8F98]">
               How it works
             </h3>
-            <ol className="mt-4 space-y-3 text-sm text-[#E8E0D5]">
+            <ol className="mt-4 space-y-3 text-sm text-[#EAEAEA]">
               <li className="flex gap-3">
-                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#00E5C4]/10 text-xs text-[#00E5C4] font-bold">1</span>
+                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#FC3D21]/10 text-xs text-[#FC3D21] font-bold">1</span>
                 Tap an organ on the map.
               </li>
               <li className="flex gap-3">
-                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#00E5C4]/10 text-xs text-[#00E5C4] font-bold">2</span>
+                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#FC3D21]/10 text-xs text-[#FC3D21] font-bold">2</span>
                 Watch the 3D model appear above.
               </li>
               <li className="flex gap-3">
-                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#00E5C4]/10 text-xs text-[#00E5C4] font-bold">3</span>
+                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#FC3D21]/10 text-xs text-[#FC3D21] font-bold">3</span>
                 Switch layers to see different data.
               </li>
             </ol>
