@@ -1,114 +1,194 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { DailyFact } from "@/components/DailyFact";
+import { HeroSkeleton } from "@/components/HeroSkeleton";
 import { BODY_PARTS } from "@/data/content";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "BodyLab — Your Body Is Wilder Than You Think" },
-      { name: "description", content: "Tap any organ to discover weird facts, health tips, what damages it, and superfoods that help. A glowing, interactive human anatomy map." },
-      { property: "og:title", content: "BodyLab — Your Body Is Wilder Than You Think" },
-      { property: "og:description", content: "A glowing interactive map of the human body. Tap any organ. Learn what biology class skipped." },
-    ],
-  }),
-  component: Index,
-});
+export const Route = createFileRoute("/")(
+  {
+    head: () => ({
+      meta: [
+        { title: "The Living Body Atlas — Your body has 37 trillion cells. Start understanding them." },
+        { name: "description", content: "An interactive, animated human body education platform. Explore anatomy through a living map, log your body experiences, and get AI-guided clarity." },
+        { property: "og:title", content: "The Living Body Atlas" },
+        { property: "og:description", content: "Your body has 37 trillion cells. Start understanding them. Interactive anatomy with 30+ organs." },
+      ],
+    }),
+    component: Index,
+  }
+);
+
+const FEATURES = [
+  {
+    icon: "🗺️",
+    title: "The Living Map",
+    desc: "30+ zones · 5 data layers · tap any organ",
+    link: "/explore",
+    preview: "map",
+  },
+  {
+    icon: "⚡",
+    title: "Daily Insight",
+    desc: "One fact · one 30-second action · every day",
+    link: "/daily",
+    preview: "daily",
+  },
+  {
+    icon: "🏆",
+    title: "Weekly Quest",
+    desc: "Community challenges · certificates · habits",
+    link: "/quest",
+    preview: "quest",
+  },
+];
 
 function Index() {
   return (
-    <main className="mx-auto max-w-6xl px-5 pb-24 pt-12 md:pt-20">
+    <main className="mx-auto max-w-7xl px-5 pb-24 pt-12 md:pt-20">
       {/* Hero */}
       <section className="text-center">
+        <HeroSkeleton />
+
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur-md"
+          className="inline-flex items-center gap-2 rounded-full border border-[#1E2844] bg-[#141826]/60 px-4 py-1.5 text-xs text-[#8B8FA3] backdrop-blur-md"
         >
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
-          1,000+ facts. 10 organs. Zero textbooks.
+          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00E5C4]" />
+          30+ organs · 200+ facts · 5 data layers · Zero textbooks
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05 }}
-          className="mx-auto mt-6 max-w-3xl text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl"
+          className="mx-auto mt-6 max-w-4xl text-5xl font-bold leading-[1.02] tracking-tight md:text-8xl"
+          style={{ letterSpacing: "-0.04em" }}
         >
-          Your body is{" "}
-          <span className="gradient-text glow-text">wilder</span>{" "}
-          than you think.
+          Your body has{" "}
+          <span className="gradient-text glow-text">37 trillion</span>{" "}
+          cells.{" "}
+          <span className="block mt-2 text-[#8B8FA3]" style={{ fontSize: "0.6em", fontWeight: 500, letterSpacing: "-0.02em" }}>
+            Start understanding them.
+          </span>
         </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="mx-auto mt-5 max-w-xl text-balance text-base text-muted-foreground md:text-lg"
-        >
-          A glowing, interactive map of the human body. Tap any organ to uncover
-          weird facts, health tips, what quietly damages it, and the foods that help.
-        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="mt-8 flex items-center justify-center gap-3"
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-10 flex items-center justify-center gap-3"
         >
           <Link
             to="/explore"
-            className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
+            className="btn-hover-grow group inline-flex items-center gap-2 rounded-full bg-[#00E5C4] px-7 py-3.5 text-sm font-semibold text-[#0A0E1A] shadow-[0_0_30px_rgba(0,229,196,0.3)]"
           >
-            Open the body map
+            Explore the Map
             <span className="transition-transform group-hover:translate-x-0.5">→</span>
           </Link>
           <Link
-            to="/about"
-            className="rounded-full border border-border bg-card/60 px-6 py-3 text-sm font-medium text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
+            to="/diary"
+            className="btn-hover-grow rounded-full border border-[#F5A623]/30 bg-[#F5A623]/5 px-7 py-3.5 text-sm font-semibold text-[#F5A623] transition-colors hover:bg-[#F5A623]/10"
           >
-            What is BodyLab?
+            Start Your Body Diary
           </Link>
         </motion.div>
       </section>
 
       {/* Daily Fact */}
-      <section className="mt-16">
+      <section className="mt-20">
         <DailyFact />
       </section>
 
-      {/* Body parts grid teaser */}
-      <section className="mt-20">
+      {/* Feature grid */}
+      <section className="mt-24">
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center text-3xl font-bold md:text-4xl"
+        >
+          Five ways to know your body
+        </motion.h2>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {FEATURES.map((feat, i) => (
+            <motion.div
+              key={feat.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+            >
+              <Link
+                to={feat.link}
+                className="card-hover-lift group block rounded-2xl border border-[#1E2844] bg-[#141826]/60 p-5 backdrop-blur-sm transition-all hover:border-[#00E5C4]/30"
+              >
+                {/* CSS-only animated preview */}
+                <div className="mb-4 flex h-16 items-center justify-center rounded-xl bg-[#0A0E1A]/60 overflow-hidden">
+                  {feat.preview === "map" && (
+                    <div className="relative h-12 w-8">
+                      <div className="absolute inset-0 rounded-full border border-[#00E5C4]/40 bg-[#00E5C4]/10 breathe" />
+                      <div className="absolute left-1/2 top-3 h-6 w-4 -translate-x-1/2 rounded-sm border border-[#6B4FA0]/30 bg-[#6B4FA0]/10" />
+                    </div>
+                  )}
+                  {feat.preview === "daily" && (
+                    <div className="flex items-end gap-0.5 h-10">
+                      {[3, 5, 4, 7, 6, 8].map((h, j) => (
+                        <div
+                          key={j}
+                          className="w-1.5 rounded-t bg-[#00E5C4]/60"
+                          style={{ height: `${h * 4}px`, animationDelay: `${j * 80}ms` }}
+                        />
+                      ))}
+                    </div>
+                  )}
+                  {feat.preview === "quest" && (
+                    <div className="h-2 w-24 rounded-full bg-[#1E2844] overflow-hidden">
+                      <div className="h-full w-3/5 rounded-full bg-[#6B4FA0] animate-pulse" />
+                    </div>
+                  )}
+                </div>
+                <div className="text-sm font-bold text-[#E8E0D5]">{feat.title}</div>
+                <p className="mt-1 text-xs leading-relaxed text-[#8B8FA3]">{feat.desc}</p>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Organ grid teaser */}
+      <section className="mt-24">
         <div className="mb-6 flex items-end justify-between gap-4">
           <div>
-            <h2 className="text-2xl font-bold md:text-3xl">10 organs. 5 lenses each.</h2>
-            <p className="mt-2 text-sm text-muted-foreground">
+            <h2 className="text-2xl font-bold md:text-3xl">30+ organs. 5 lenses each.</h2>
+            <p className="mt-2 text-sm text-[#8B8FA3]">
               Every part of you has secrets. Pick one to start.
             </p>
           </div>
-          <Link to="/explore" className="hidden text-sm text-primary hover:underline md:inline">
+          <Link to="/explore" className="hidden text-sm text-[#00E5C4] hover:underline md:inline">
             View all →
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
-          {BODY_PARTS.map((p, i) => (
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
+          {BODY_PARTS.slice(0, 16).map((p, i) => (
             <motion.div
               key={p.id}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.04 }}
+              transition={{ duration: 0.4, delay: i * 0.03 }}
             >
               <Link
                 to="/explore"
                 search={{ part: p.id }}
-                className="group block rounded-2xl border border-border bg-card/60 p-4 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-primary/50 hover:glow-border"
+                className="card-hover-lift group block rounded-xl border border-[#1E2844] bg-[#141826]/60 p-3 text-center backdrop-blur-sm transition-all hover:border-[#00E5C4]/30"
               >
-                <div className="text-3xl">{p.emoji}</div>
-                <div className="mt-3 text-sm font-semibold">{p.name}</div>
-                <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+                <div className="text-2xl">{p.emoji}</div>
+                <div className="mt-2 text-xs font-semibold text-[#E8E0D5]">{p.name}</div>
+                <div className="mt-0.5 text-[10px] uppercase tracking-wider text-[#8B8FA3]">
                   {p.system}
                 </div>
               </Link>
@@ -117,28 +197,8 @@ function Index() {
         </div>
       </section>
 
-      {/* Categories explainer */}
-      <section className="mt-20 rounded-3xl border border-border bg-card/40 p-8 backdrop-blur-sm md:p-12">
-        <h2 className="text-2xl font-bold md:text-3xl">Five lenses on every organ</h2>
-        <div className="mt-8 grid gap-5 md:grid-cols-5">
-          {[
-            { e: "✨", t: "Weird & Wild", d: "The stuff that makes you say 'wait, what?'" },
-            { e: "🌿", t: "Health Tips", d: "Tiny habits backed by real research." },
-            { e: "⚠️", t: "What Damages It", d: "The everyday things quietly causing harm." },
-            { e: "🥦", t: "Superfoods", d: "Foods that genuinely fuel this part." },
-            { e: "🏆", t: "Record Breakers", d: "The wildest numbers your body pulls off." },
-          ].map((c) => (
-            <div key={c.t}>
-              <div className="text-3xl">{c.e}</div>
-              <div className="mt-3 text-sm font-semibold">{c.t}</div>
-              <p className="mt-1 text-xs text-muted-foreground">{c.d}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <footer className="mt-20 text-center text-xs text-muted-foreground">
-        Built with curiosity · BodyLab © {new Date().getFullYear()}
+      <footer className="mt-24 text-center text-xs text-[#8B8FA3]">
+        Built with curiosity · The Living Body Atlas © {new Date().getFullYear()}
       </footer>
     </main>
   );

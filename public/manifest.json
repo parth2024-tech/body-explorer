@@ -1,0 +1,22 @@
+{
+  "name": "The Living Body Atlas",
+  "short_name": "Body Atlas",
+  "description": "An interactive, animated human body education platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0E1A",
+  "theme_color": "#0A0E1A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

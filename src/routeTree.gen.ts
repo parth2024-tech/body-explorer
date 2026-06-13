@@ -9,13 +9,67 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ToolsRouteImport } from './routes/tools'
+import { Route as SymptomsRouteImport } from './routes/symptoms'
+import { Route as QuestRouteImport } from './routes/quest'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as LibraryRouteImport } from './routes/library'
 import { Route as ExploreRouteImport } from './routes/explore'
+import { Route as ExplainRouteImport } from './routes/explain'
+import { Route as EmergencyRouteImport } from './routes/emergency'
+import { Route as DiaryRouteImport } from './routes/diary'
+import { Route as DailyRouteImport } from './routes/daily'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ToolsRoute = ToolsRouteImport.update({
+  id: '/tools',
+  path: '/tools',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SymptomsRoute = SymptomsRouteImport.update({
+  id: '/symptoms',
+  path: '/symptoms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuestRoute = QuestRouteImport.update({
+  id: '/quest',
+  path: '/quest',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibraryRoute = LibraryRouteImport.update({
+  id: '/library',
+  path: '/library',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ExploreRoute = ExploreRouteImport.update({
   id: '/explore',
   path: '/explore',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExplainRoute = ExplainRouteImport.update({
+  id: '/explain',
+  path: '/explain',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmergencyRoute = EmergencyRouteImport.update({
+  id: '/emergency',
+  path: '/emergency',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiaryRoute = DiaryRouteImport.update({
+  id: '/diary',
+  path: '/diary',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DailyRoute = DailyRouteImport.update({
+  id: '/daily',
+  path: '/daily',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -32,40 +86,176 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/daily': typeof DailyRoute
+  '/diary': typeof DiaryRoute
+  '/emergency': typeof EmergencyRoute
+  '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
+  '/library': typeof LibraryRoute
+  '/onboarding': typeof OnboardingRoute
+  '/quest': typeof QuestRoute
+  '/symptoms': typeof SymptomsRoute
+  '/tools': typeof ToolsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/daily': typeof DailyRoute
+  '/diary': typeof DiaryRoute
+  '/emergency': typeof EmergencyRoute
+  '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
+  '/library': typeof LibraryRoute
+  '/onboarding': typeof OnboardingRoute
+  '/quest': typeof QuestRoute
+  '/symptoms': typeof SymptomsRoute
+  '/tools': typeof ToolsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/daily': typeof DailyRoute
+  '/diary': typeof DiaryRoute
+  '/emergency': typeof EmergencyRoute
+  '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
+  '/library': typeof LibraryRoute
+  '/onboarding': typeof OnboardingRoute
+  '/quest': typeof QuestRoute
+  '/symptoms': typeof SymptomsRoute
+  '/tools': typeof ToolsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/explore'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/daily'
+    | '/diary'
+    | '/emergency'
+    | '/explain'
+    | '/explore'
+    | '/library'
+    | '/onboarding'
+    | '/quest'
+    | '/symptoms'
+    | '/tools'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/explore'
-  id: '__root__' | '/' | '/about' | '/explore'
+  to:
+    | '/'
+    | '/about'
+    | '/daily'
+    | '/diary'
+    | '/emergency'
+    | '/explain'
+    | '/explore'
+    | '/library'
+    | '/onboarding'
+    | '/quest'
+    | '/symptoms'
+    | '/tools'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/daily'
+    | '/diary'
+    | '/emergency'
+    | '/explain'
+    | '/explore'
+    | '/library'
+    | '/onboarding'
+    | '/quest'
+    | '/symptoms'
+    | '/tools'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  DailyRoute: typeof DailyRoute
+  DiaryRoute: typeof DiaryRoute
+  EmergencyRoute: typeof EmergencyRoute
+  ExplainRoute: typeof ExplainRoute
   ExploreRoute: typeof ExploreRoute
+  LibraryRoute: typeof LibraryRoute
+  OnboardingRoute: typeof OnboardingRoute
+  QuestRoute: typeof QuestRoute
+  SymptomsRoute: typeof SymptomsRoute
+  ToolsRoute: typeof ToolsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/tools': {
+      id: '/tools'
+      path: '/tools'
+      fullPath: '/tools'
+      preLoaderRoute: typeof ToolsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/symptoms': {
+      id: '/symptoms'
+      path: '/symptoms'
+      fullPath: '/symptoms'
+      preLoaderRoute: typeof SymptomsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quest': {
+      id: '/quest'
+      path: '/quest'
+      fullPath: '/quest'
+      preLoaderRoute: typeof QuestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/library': {
+      id: '/library'
+      path: '/library'
+      fullPath: '/library'
+      preLoaderRoute: typeof LibraryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/explore': {
       id: '/explore'
       path: '/explore'
       fullPath: '/explore'
       preLoaderRoute: typeof ExploreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explain': {
+      id: '/explain'
+      path: '/explain'
+      fullPath: '/explain'
+      preLoaderRoute: typeof ExplainRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/emergency': {
+      id: '/emergency'
+      path: '/emergency'
+      fullPath: '/emergency'
+      preLoaderRoute: typeof EmergencyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diary': {
+      id: '/diary'
+      path: '/diary'
+      fullPath: '/diary'
+      preLoaderRoute: typeof DiaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/daily': {
+      id: '/daily'
+      path: '/daily'
+      fullPath: '/daily'
+      preLoaderRoute: typeof DailyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -88,8 +278,27 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  DailyRoute: DailyRoute,
+  DiaryRoute: DiaryRoute,
+  EmergencyRoute: EmergencyRoute,
+  ExplainRoute: ExplainRoute,
   ExploreRoute: ExploreRoute,
+  LibraryRoute: LibraryRoute,
+  OnboardingRoute: OnboardingRoute,
+  QuestRoute: QuestRoute,
+  SymptomsRoute: SymptomsRoute,
+  ToolsRoute: ToolsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
