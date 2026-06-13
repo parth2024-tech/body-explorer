@@ -1,4 +1,4 @@
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -9,14 +9,13 @@ const __dirname = path.dirname(__filename);
 const FACTS_FILE = path.join(__dirname, "../src/data/generated-facts.json");
 
 // Ensure the API key exists
-if (!process.env.ANTHROPIC_API_KEY) {
-  console.error("❌ Missing ANTHROPIC_API_KEY environment variable. Cannot generate facts.");
+if (!process.env.GEMINI_API_KEY) {
+  console.error("❌ Missing GEMINI_API_KEY environment variable. Cannot generate facts.");
   process.exit(1);
 }
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
+// Initialize Gemini
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const VALID_BODY_PARTS = [
   "brain", "heart", "lungs", "liver", "kidneys", "stomach", "small-intestine", 
@@ -36,28 +35,32 @@ Each fact must follow this exact JSON interface:
   "text": string; // The fact itself (1-2 sentences)
 }
 
-Output ONLY valid JSON. Your response should start with '[' and end with ']'. Do not include any markdown formatting or explanation.`;
+Output ONLY valid JSON. Your response should start with '[' and end with ']'. Do not include any markdown formatting like \`\`\`json.`;
 
 async function main() {
-  console.log("🤖 Generating 20 new daily facts using Claude...");
+  console.log("🤖 Generating 20 new daily facts using Gemini...");
   
   try {
-    const msg = await anthropic.messages.create({
-      model: "claude-3-5-sonnet-20241022",
-      max_tokens: 4000,
-      temperature: 0.9,
-      system: "You are a medical expert who shares fascinating body facts. Always output raw valid JSON without markdown formatting like ```json.",
-      messages: [{ role: "user", content: prompt }]
+    // For facts generation, gemini-2.5-flash is extremely fast, cheap/free, and smart enough
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+    
+    const result = await model.generateContent({
+      contents: [{ role: "user", parts: [{ text: prompt }] }],
+      generationConfig: {
+        temperature: 0.9,
+        // Enforce JSON output for more reliable parsing
+        responseMimeType: "application/json",
+      }
     });
 
-    const responseText = 'text' in msg.content[0] ? msg.content[0].text : "";
+    const responseText = result.response.text();
     
     // Attempt to parse the JSON
     let newFacts = [];
     try {
       newFacts = JSON.parse(responseText.trim());
     } catch (parseErr) {
-      console.error("❌ Failed to parse Claude's response as JSON:", parseErr);
+      console.error("❌ Failed to parse Gemini's response as JSON:", parseErr);
       console.error("Raw response:", responseText);
       process.exit(1);
     }
@@ -88,7 +91,7 @@ async function main() {
     console.log(`💾 Saved! Total facts in generated-facts.json is now ${combinedFacts.length}.`);
     
   } catch (error) {
-    console.error("❌ Failed to communicate with Anthropic API:", error);
+    console.error("❌ Failed to communicate with Gemini API:", error);
     process.exit(1);
   }
 }
