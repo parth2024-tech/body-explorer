@@ -83,21 +83,7 @@ function QuestPage() {
   };
 
   const handleDownloadCert = async () => {
-    if (!certRef.current) return;
-    try {
-      const html2canvas = (await import("html2canvas")).default;
-      const canvas = await html2canvas(certRef.current, {
-        backgroundColor: "#030303",
-        scale: 2,
-      });
-      const url = canvas.toDataURL("image/png");
-      const link = document.createElement("a");
-      link.download = `atlas-certificate-${CURRENT_QUEST.id}.png`;
-      link.href = url;
-      link.click();
-    } catch (err) {
-      console.error("Certificate generation failed:", err);
-    }
+    alert("Certificate downloading has been disabled to improve performance.");
   };
 
   return (

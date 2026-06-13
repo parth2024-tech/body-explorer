@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import html2canvas from "html2canvas";
 import type { Fact, BodyPart } from "@/data/content";
 import { RARITY_META } from "@/data/content";
 
@@ -15,24 +14,7 @@ export function FactCard({ fact, part }: FactCardProps) {
   const rarity = RARITY_META[fact.rarity];
 
   const handleShare = async () => {
-    if (!cardRef.current) return;
-    setSharing(true);
-    try {
-      const canvas = await html2canvas(cardRef.current, {
-        backgroundColor: "#0e1024",
-        scale: 2,
-      });
-      const blob = await new Promise<Blob | null>((res) => canvas.toBlob(res, "image/png"));
-      if (!blob) return;
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `bodylab-${part.slug}.png`;
-      a.click();
-      URL.revokeObjectURL(url);
-    } finally {
-      setSharing(false);
-    }
+    alert("Sharing facts has been disabled to improve performance.");
   };
 
   return (

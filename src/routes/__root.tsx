@@ -10,7 +10,6 @@ import {
 import { lazy, Suspense, useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/Header";
 
 // Lazy load ParticleBackground for performance
@@ -44,9 +43,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
@@ -111,7 +107,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "theme-color", content: "#030303" },
       ],
       links: [
-        { rel: "manifest", href: "/manifest.json" },
         { rel: "stylesheet", href: appCss },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
@@ -139,6 +134,12 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <a
+          href="#main-content"
+          className="absolute left-0 top-0 z-[100] -translate-y-full bg-[#FC3D21] px-4 py-2 text-sm font-bold text-black focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-white transition-transform"
+        >
+          Skip to main content
+        </a>
         {children}
         <Scripts />
       </body>
@@ -171,10 +172,10 @@ function RootComponent() {
       <Header />
 
       {/* Content — sits above particles */}
-      <div className="relative z-10">
+      <main id="main-content" className="relative z-10" tabIndex={-1}>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
-      </div>
+      </main>
     </QueryClientProvider>
   );
 }

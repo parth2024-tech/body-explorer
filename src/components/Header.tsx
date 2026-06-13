@@ -39,54 +39,40 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#222222] bg-[#030303]/95 backdrop-blur-md">
-      {/* Top status bar */}
-      <div className="border-b border-[#222222] px-5 py-1 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#FC3D21] font-bold">
-            SYS / ACTIVE
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#FC3D21] opacity-75" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#FC3D21]" />
-            </span>
-            <span className="font-mono text-[9px] text-[#8A8F98] tracking-[0.15em]">NOMINAL</span>
-          </span>
-          <span className="hidden sm:inline font-mono text-[9px] text-[#8A8F98] tracking-[0.15em]">
-            VER 2.0.1
+      {/* Simplified Top Bar for Language */}
+      <div className="border-b border-[#222222] px-5 py-2 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="font-medium text-xs text-[#8A8F98]">
+            Interactive Health Education
           </span>
         </div>
 
-        <div className="flex items-center gap-5">
-          <span className="hidden md:flex items-center gap-2 font-mono text-[9px] text-[#8A8F98] tracking-[0.15em]">
-            <span className="text-[#FC3D21]">UTC</span>
-            <span>{time}</span>
-          </span>
-          <span className="hidden sm:flex font-mono text-[9px] text-[#8A8F98] tracking-[0.15em]">
+        <div className="flex items-center gap-4">
+          <span className="hidden sm:flex text-xs text-[#8A8F98]">
             {date}
           </span>
 
           {/* i18n Selector */}
-          <div className="flex items-center gap-0.5 border border-[#222222]">
+          <div className="flex items-center gap-1 bg-[#141826] rounded-full p-1 border border-[#222222]">
             <button
               onClick={() => setLanguage("en")}
-              className={`px-2.5 py-0.5 font-mono text-[9px] font-bold tracking-[0.15em] transition-all uppercase ${
+              className={`px-3 py-1 text-xs font-medium rounded-full transition-all ${
                 language === "en"
                   ? "bg-[#FC3D21] text-white"
                   : "text-[#8A8F98] hover:text-[#EAEAEA]"
               }`}
             >
-              EN
+              English
             </button>
             <button
               onClick={() => setLanguage("hi")}
-              className={`px-2.5 py-0.5 font-mono text-[9px] font-bold tracking-[0.15em] transition-all uppercase ${
+              className={`px-3 py-1 text-xs font-medium rounded-full transition-all ${
                 language === "hi"
                   ? "bg-[#FC3D21] text-white"
                   : "text-[#8A8F98] hover:text-[#EAEAEA]"
               }`}
             >
-              HI
+              हिंदी
             </button>
           </div>
         </div>
@@ -100,16 +86,14 @@ export function Header() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FC3D21" strokeWidth="2" strokeLinecap="square">
               <path d="M12 2v20M5 8c3 0 4 2 7 2s4-2 7-2M5 16c3 0 4-2 7-2s4 2 7 2" />
             </svg>
-            {/* Corner decorations */}
-            <span className="absolute -top-px -left-px h-1.5 w-1.5 border-t border-l border-[#FC3D21]" />
-            <span className="absolute -bottom-px -right-px h-1.5 w-1.5 border-b border-r border-[#FC3D21]" />
+            {/* Corner decorations removed for friendlier look */}
           </div>
           <div className="flex flex-col">
-            <span className="font-mono text-[8px] font-bold tracking-[0.25em] text-[#FC3D21] uppercase">
-              NASA · HBA · 2024
-            </span>
-            <span className="font-display text-sm font-bold tracking-[0.08em] text-[#EAEAEA] uppercase leading-tight">
+            <span className="font-display text-lg font-bold text-[#EAEAEA] leading-tight">
               Body Atlas
+            </span>
+            <span className="text-[10px] font-medium text-[#8A8F98] uppercase tracking-wider">
+              Explore your biology
             </span>
           </div>
         </Link>
@@ -135,12 +119,7 @@ export function Header() {
                     transition={{ type: "spring", stiffness: 400, damping: 35 }}
                   />
                 )}
-                <span className={`font-mono text-[8px] tracking-[0.15em] mb-0.5 transition-colors ${
-                  isActive ? "text-[#FC3D21]" : "text-[#8A8F98]/60 group-hover:text-[#8A8F98]"
-                }`}>
-                  {code}
-                </span>
-                <span className={`font-display text-[10px] lg:text-xs font-bold uppercase tracking-[0.1em] transition-colors ${
+                <span className={`text-sm font-medium transition-colors ${
                   isActive ? "text-[#EAEAEA]" : "text-[#8A8F98] group-hover:text-[#EAEAEA]"
                 }`}>
                   {t(labelKey)}
@@ -150,10 +129,11 @@ export function Header() {
           })}
         </nav>
 
-        {/* System readout — right side */}
-        <div className="hidden xl:flex flex-col items-end border-l border-[#222222] pl-5 py-3 gap-0.5 shrink-0">
-          <span className="font-mono text-[8px] tracking-[0.2em] text-[#8A8F98] uppercase">MISSION STATUS</span>
-          <span className="font-mono text-[10px] font-bold text-[#FC3D21] tracking-[0.1em]">OPERATIONAL</span>
+        {/* Simplified right side */}
+        <div className="hidden xl:flex items-center border-l border-[#222222] pl-5 py-3 shrink-0">
+          <span className="text-sm font-medium text-[#00E5C4]">
+            Ready to learn
+          </span>
         </div>
       </div>
     </header>

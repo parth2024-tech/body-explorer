@@ -691,3 +691,158 @@
   [style*="scrollDot"] { animation: none !important; }
 }
 
+
+
+/*
+ * ─── BodyMap Advanced Styles ───────────────────────────────────────────────
+ * Drop these blocks into styles.css (replace / extend the existing
+ * .body-part, .layer-pill, and bodyPulse sections).
+ * ────────────────────────────────────────────────────────────────────────────
+ */
+
+/* ── Organ paths ──────────────────────────────────────────────────────────── */
+
+.organ-path {
+  fill: var(--organ-fill, rgba(30, 40, 68, 0.5));
+  stroke: var(--organ-stroke, rgba(75, 85, 120, 0.4));
+  stroke-width: 1;
+  cursor: pointer;
+  transition:
+    fill 0.35s ease-out,
+    stroke 0.35s ease-out,
+    filter 0.35s ease-out;
+}
+
+/* Hover: brighter fill + soft glow */
+.organ-path:hover,
+g:hover > .organ-path {
+  fill: color-mix(in srgb, var(--organ-fill) 60%, var(--organ-glow, #00E5C4) 40%);
+  stroke: var(--organ-glow, #00E5C4);
+  filter: drop-shadow(0 0 6px var(--organ-glow, #00E5C4));
+}
+
+/* Active: stronger glow + fill */
+.organ-active {
+  fill: color-mix(in srgb, var(--organ-fill) 40%, var(--organ-glow, #00E5C4) 60%) !important;
+  stroke: var(--organ-glow, #00E5C4) !important;
+  stroke-width: 1.5 !important;
+  filter: drop-shadow(0 0 10px var(--organ-glow, #00E5C4))
+          drop-shadow(0 0 22px var(--organ-glow, #00E5C4)) !important;
+}
+
+/* ── Pulse rings around the active organ ──────────────────────────────────── */
+
+.pulse-ring-1 {
+  animation: pulseRing 2s ease-out infinite;
+}
+
+.pulse-ring-2 {
+  animation: pulseRing 2s ease-out 0.5s infinite;
+}
+
+@keyframes pulseRing {
+  0%   { transform: scale(0.85); opacity: 0.7; }
+  60%  { transform: scale(1.4);  opacity: 0;   }
+  100% { transform: scale(1.4);  opacity: 0;   }
+}
+
+/* ── Click ripple ─────────────────────────────────────────────────────────── */
+
+@keyframes rippleExpand {
+  0%   { transform: scale(1);  opacity: 0.8; }
+  100% { transform: scale(8);  opacity: 0;   }
+}
+
+.ripple-ring {
+  animation: rippleExpand 0.85s cubic-bezier(0.2, 0.6, 0.4, 1) forwards;
+}
+
+/* ── Layer toggle pills ───────────────────────────────────────────────────── */
+
+.layer-pill-adv {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(30, 40, 68, 0.8);
+  background: rgba(20, 24, 38, 0.6);
+  color: #8B8FA3;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.layer-pill-adv:hover {
+  color: #E8E0D5;
+  border-color: rgba(255,255,255,0.1);
+}
+
+.layer-pill-adv[data-active="true"] {
+  color: var(--pill-color, #00E5C4);
+  border-color: color-mix(in srgb, var(--pill-color, #00E5C4) 50%, transparent);
+  background: color-mix(in srgb, var(--pill-color, #00E5C4) 10%, rgba(20,24,38,0.8));
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--pill-color, #00E5C4) 30%, transparent),
+    inset 0 0 8px color-mix(in srgb, var(--pill-color, #00E5C4) 8%, transparent);
+}
+
+.dot-adv {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: box-shadow 0.25s ease;
+}
+
+/* ── Quick-pick buttons ───────────────────────────────────────────────────── */
+
+.quick-pick-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  border: 1px solid rgba(30, 40, 68, 0.9);
+  background: rgba(20, 24, 38, 0.5);
+  color: #8B8FA3;
+  font-size: 0.65rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.quick-pick-btn:hover {
+  border-color: color-mix(in srgb, var(--qp-color, #00E5C4) 40%, transparent);
+  color: #E8E0D5;
+}
+
+.quick-pick-btn[data-active="true"] {
+  color: var(--qp-color, #00E5C4);
+  border-color: color-mix(in srgb, var(--qp-color, #00E5C4) 45%, transparent);
+  background: color-mix(in srgb, var(--qp-color, #00E5C4) 10%, rgba(20,24,38,0.7));
+}
+
+/* ── Reduced motion overrides ─────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .organ-path,
+  .organ-active,
+  .pulse-ring-1,
+  .pulse-ring-2 {
+    animation: none !important;
+    transition: none !important;
+  }
+  .ripple-ring {
+    display: none;
+  }
+}

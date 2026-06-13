@@ -111,46 +111,7 @@ function DailyPage() {
   }, [streak, streakLog]);
 
   const handleShare = async () => {
-    if (!shareRef.current || isSharing) return;
-    setIsSharing(true);
-    
-    try {
-      const html2canvas = (await import("html2canvas")).default;
-      const canvas = await html2canvas(shareRef.current, {
-        backgroundColor: "#030303",
-        scale: 3, // High-res export
-        useCORS: true,
-        logging: false,
-      });
-
-      canvas.toBlob(async (blob) => {
-        if (!blob) throw new Error("Canvas to Blob failed");
-        
-        const file = new File([blob], `atlas-daily-${getLocalToday()}.png`, { type: "image/png" });
-        const shareData = {
-          title: "My Daily Insight from The Living Body Atlas",
-          files: [file],
-        };
-
-        // Try Native Mobile Share Sheet first
-        if (navigator.canShare && navigator.canShare({ files: [file] })) {
-          await navigator.share(shareData);
-        } else {
-          // Fallback to traditional download on Desktop
-          const url = URL.createObjectURL(blob);
-          const link = document.createElement("a");
-          link.download = file.name;
-          link.href = url;
-          link.click();
-          URL.revokeObjectURL(url);
-        }
-      }, "image/png");
-    } catch (err) {
-      console.error("Share card generation failed:", err);
-      alert("Oops! Couldn't generate the share image. Please try again.");
-    } finally {
-      setIsSharing(false);
-    }
+    alert("Sharing cards has been disabled to improve performance.");
   };
 
   // --- Advanced SVG Generation ---

@@ -1,22 +1,17 @@
 {
   "name": "The Living Body Atlas",
   "short_name": "Body Atlas",
-  "description": "An interactive, animated human body education platform",
+  "description": "Interactive human body map with facts, myths, and health insights.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0A0E1A",
-  "theme_color": "#0A0E1A",
-  "orientation": "portrait-primary",
+  "background_color": "#030303",
+  "theme_color": "#FC3D21",
   "icons": [
     {
-      "src": "/icon-192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "/icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ]
 }

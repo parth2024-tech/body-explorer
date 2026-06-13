@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { BODY_PARTS } from "@/data/content";
+import Anthropic from "@anthropic-ai/sdk";
 
 interface ExplainResult {
   organs: string[];
@@ -9,71 +11,64 @@ interface ExplainResult {
   doctorQuestions: string[];
 }
 
-// Mock AI responses for demo (Claude API integration would replace this)
-const MOCK_RESPONSES: Record<string, ExplainResult> = {
-  headache: {
-    organs: ["brain", "sinuses", "eyes", "spine-cervical"],
-    facts: [
-      "Tension headaches originate from the muscles and fascia surrounding the skull, not the brain itself — the brain has no pain receptors.",
-      "The trigeminal nerve, which runs from your brainstem to your face, is involved in most headache types including migraines.",
-      "Dehydration reduces blood volume, causing the brain to temporarily shrink and pull away from the skull — triggering pain.",
-    ],
-    doctorQuestions: [
-      "My headaches occur [frequency] — should I be concerned about the pattern?",
-      "Could my headaches be related to my neck posture or vision?",
-      "What warning signs would make a headache an emergency?",
-    ],
-  },
-  stomach: {
-    organs: ["stomach", "small-intestine", "large-intestine", "liver"],
-    facts: [
-      "Your gut contains over 500 million neurons — the enteric nervous system is sometimes called your 'second brain'.",
-      "Stomach pain after eating can involve the stomach (acid), gallbladder (fat digestion), or pancreas (enzymes) — location matters.",
-      "The vagus nerve connects your gut to your brain, which is why anxiety can cause stomach symptoms.",
-    ],
-    doctorQuestions: [
-      "My stomach discomfort happens [when] — could this point to a specific cause?",
-      "Should I be tested for H. pylori or food sensitivities?",
-      "What dietary changes might help me narrow down the trigger?",
-    ],
-  },
-  back: {
-    organs: ["spine-lumbar", "spine-thoracic", "kidneys", "hips"],
-    facts: [
-      "85% of lower back pain has no specific identifiable cause — it's often muscular or related to posture and deconditioning.",
-      "Your lumbar discs absorb 40% more pressure when sitting than standing, which is why desk work aggravates back pain.",
-      "Kidney pain can mimic back pain but typically occurs higher (flank area) and may be accompanied by urinary changes.",
-    ],
-    doctorQuestions: [
-      "My back pain is in [location] — does this help narrow down the structure involved?",
-      "When should I consider imaging versus starting with physical therapy?",
-      "Could my back pain be referred from another organ like the kidneys?",
-    ],
-  },
-  default: {
-    organs: ["brain", "heart", "skin"],
-    facts: [
-      "Your body systems are interconnected — symptoms in one area often involve multiple body systems working together.",
-      "The nervous system, immune system, and endocrine system form a communication network that influences how you experience discomfort.",
-      "Stress activates the hypothalamic-pituitary-adrenal (HPA) axis, which can manifest as physical symptoms in almost any body region.",
-    ],
-    doctorQuestions: [
-      "I've been experiencing [symptom] for [duration] — what initial tests would you recommend?",
-      "Could this be related to stress, sleep, or lifestyle factors?",
-      "What should I track or document before my next visit to help with diagnosis?",
-    ],
-  },
-};
+const explainSymptom = createServerFn({ method: "POST" })
+  .validator((data: string) => data)
+  .handler(async ({ data: input }) => {
+    try {
+      const apiKey = process.env.ANTHROPIC_API_KEY || (import.meta as any).env?.VITE_ANTHROPIC_API_KEY;
+      if (!apiKey) {
+        throw new Error("Anthropic API key is missing. Please set ANTHROPIC_API_KEY in your .env file.");
+      }
 
-function getResponse(input: string): ExplainResult {
-  const lower = input.toLowerCase();
-  if (lower.includes("head") || lower.includes("migraine")) return MOCK_RESPONSES.headache;
-  if (lower.includes("stomach") || lower.includes("digest") || lower.includes("nausea") || lower.includes("gut"))
-    return MOCK_RESPONSES.stomach;
-  if (lower.includes("back") || lower.includes("spine") || lower.includes("lumbar"))
-    return MOCK_RESPONSES.back;
-  return MOCK_RESPONSES.default;
+      const anthropic = new Anthropic({ apiKey });
+
+      const prompt = `You are an expert anatomy and physiology educator. 
+A user has provided this description of their physical sensation: "${input}"
+
+Provide a JSON response with exactly this structure:
+{
+  "organs": ["brain", "heart"], // Array of lowercase organ IDs involved
+  "facts": ["Fact 1", "Fact 2", "Fact 3"], // 3 educational physiological facts about why this happens
+  "doctorQuestions": ["Q1", "Q2", "Q3"] // 3 smart questions to ask a doctor
 }
+
+CRITICAL: Do NOT provide medical advice or diagnose. Only explain the physiological mechanisms. Do NOT include markdown formatting or backticks around the JSON. Return ONLY the raw JSON string.`;
+
+      const response = await anthropic.messages.create({
+        model: "claude-3-haiku-20240307",
+        max_tokens: 1000,
+        temperature: 0.2,
+        messages: [{ role: "user", content: prompt }]
+      });
+
+      const text = response.content[0].type === 'text' ? response.content[0].text.trim() : '{}';
+      
+      // Clean up potential markdown formatting if Claude still added it
+      const cleanedText = text.replace(/^```json/i, '').replace(/^```/, '').replace(/```$/, '').trim();
+      
+      const result = JSON.parse(cleanedText);
+      
+      return {
+        organs: Array.isArray(result.organs) ? result.organs : ["brain"],
+        facts: Array.isArray(result.facts) ? result.facts : ["Your body systems are interconnected."],
+        doctorQuestions: Array.isArray(result.doctorQuestions) ? result.doctorQuestions : ["What tests would you recommend?"]
+      };
+    } catch (error) {
+      console.error("AI Explain Error:", error);
+      // Fallback response if API fails
+      return {
+        organs: ["brain", "heart"],
+        facts: [
+          "The body's systems are highly interconnected. We couldn't reach the AI server to provide a specific explanation right now.",
+          "Stress activates the hypothalamic-pituitary-adrenal (HPA) axis, which can manifest as physical symptoms in almost any body region."
+        ],
+        doctorQuestions: [
+          "I've been experiencing these symptoms — what initial tests would you recommend?",
+          "What should I track or document before my next visit to help with diagnosis?"
+        ]
+      };
+    }
+  });
 
 export const Route = createFileRoute("/explain")({
   head: () => ({
@@ -90,17 +85,21 @@ function ExplainPage() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<ExplainResult | null>(null);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!input.trim()) return;
     setLoading(true);
     setResult(null);
 
-    // Simulate AI processing delay
-    setTimeout(() => {
-      setResult(getResponse(input));
+    try {
+      const response = await explainSymptom({ data: input });
+      setResult(response);
+    } catch (e) {
+      console.error(e);
+    } finally {
       setLoading(false);
-    }, 1500);
+    }
   };
+
 
   return (
     <main className="mx-auto max-w-3xl px-5 pb-24 pt-10">

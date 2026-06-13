@@ -510,20 +510,7 @@ export const FACTS: Fact[] = [
 ];
 
 // ━━━ Myths Busted ━━━
-export const MYTHS: MythBusted[] = [
-  { id: "m-brain-1", bodyPartId: "brain", myth: "We only use 10% of our brain.", reality: "Brain scans show virtually all areas are active — different tasks use different regions, but nothing is permanently idle." },
-  { id: "m-eyes-1", bodyPartId: "eyes", myth: "Reading in dim light ruins your eyesight.", reality: "It causes temporary eye strain but no permanent damage. Your eyes recover fully after resting." },
-  { id: "m-heart-1", bodyPartId: "heart", myth: "Your heart stops when you sneeze.", reality: "A sneeze changes chest pressure and may briefly alter heart rhythm, but it never stops." },
-  { id: "m-lungs-1", bodyPartId: "lung-left", myth: "Cold weather gives you a cold.", reality: "Colds are caused by viruses, not temperature. Cold air may dry nasal passages making you more susceptible though." },
-  { id: "m-liver-1", bodyPartId: "liver", myth: "You need detox diets to cleanse your liver.", reality: "Your liver detoxifies itself continuously — no juice cleanse can improve on 500+ chemical processes." },
-  { id: "m-stom-1", bodyPartId: "stomach", myth: "Spicy food causes ulcers.", reality: "H. pylori bacteria and NSAIDs cause most ulcers. Spicy food may irritate existing ones but doesn't create them." },
-  { id: "m-bones-1", bodyPartId: "bones", myth: "Cracking your knuckles causes arthritis.", reality: "A doctor cracked his own knuckles on one hand for 60 years — no difference in arthritis rates." },
-  { id: "m-skin-1", bodyPartId: "skin", myth: "Shaving makes hair grow back thicker.", reality: "Shaving cuts hair at the thickest point, making it feel coarser. Actual hair thickness doesn't change." },
-  { id: "m-ears-1", bodyPartId: "ears", myth: "You need to clean earwax out regularly.", reality: "Ears are self-cleaning. Earwax protects the ear canal and naturally migrates outward." },
-  { id: "m-knee-1", bodyPartId: "knees", myth: "Running is bad for your knees.", reality: "Studies show recreational runners actually have LOWER rates of knee arthritis than non-runners." },
-  { id: "m-jaw-1", bodyPartId: "jaw", myth: "Wisdom teeth have no purpose.", reality: "They were essential for grinding tough raw foods. Modern diets and smaller jaws made them vestigial." },
-  { id: "m-feet-1", bodyPartId: "feet", myth: "Flat feet are always a problem.", reality: "Many people with flat feet have no pain or functional issues. The arch isn't always necessary for healthy movement." },
-];
+export { MYTHS } from "./myths";
 
 // ━━━ Micro Actions ━━━
 export const MICRO_ACTIONS: MicroAction[] = [
@@ -561,39 +548,7 @@ export const DOCTOR_QUESTIONS: DoctorQuestion[] = [
 ];
 
 // ━━━ Daily Insights (60 days of content) ━━━
-export const DAILY_INSIGHTS: DailyInsight[] = [
-  { dayOfYear: 0, bodyPartId: "brain", fact: "Your brain uses 20% of your body's total energy — despite being only 2% of your body weight.", action: "Close your eyes and count backward from 100 by 7s. This simple exercise fires up your prefrontal cortex.", actionDuration: "30 seconds" },
-  { dayOfYear: 1, bodyPartId: "heart", fact: "Your heart creates enough pressure to squirt blood 30 feet across a room.", action: "Place two fingers on your wrist. Count your pulse for 15 seconds and multiply by 4. That's your resting heart rate.", actionDuration: "20 seconds" },
-  { dayOfYear: 2, bodyPartId: "lung-left", fact: "If you laid all the airways in your lungs end to end, they'd stretch 1,500 miles.", action: "Take 5 deep breaths using the 4-7-8 technique: inhale 4s, hold 7s, exhale 8s.", actionDuration: "60 seconds" },
-  { dayOfYear: 3, bodyPartId: "eyes", fact: "Your eyes process 36,000 pieces of information every hour you're awake.", action: "Close your eyes gently and press your palms over them for 20 seconds. The darkness lets your photoreceptors reset.", actionDuration: "25 seconds" },
-  { dayOfYear: 4, bodyPartId: "skin", fact: "Your skin hosts over 1,000 species of bacteria — most of them are protecting you.", action: "Apply sunscreen to any exposed skin right now. Even on cloudy days, 80% of UV rays reach you.", actionDuration: "60 seconds" },
-  { dayOfYear: 5, bodyPartId: "spine-lumbar", fact: "Astronauts grow up to 2 inches taller in space because their spinal discs decompress without gravity.", action: "Lie flat on your back and pull both knees to your chest. Hold for 20 seconds. Your lumbar discs just got a mini decompression.", actionDuration: "25 seconds" },
-  { dayOfYear: 6, bodyPartId: "stomach", fact: "Your stomach completely replaces its inner lining every 3-4 days to protect itself from its own acid.", action: "Before your next meal, take 3 slow breaths. This activates your 'rest and digest' mode for better nutrient absorption.", actionDuration: "15 seconds" },
-  { dayOfYear: 7, bodyPartId: "hands", fact: "Your hands are controlled by muscles in your forearms — not in the hands themselves. The fingers have no muscles.", action: "Make a fist, then spread your fingers wide. Repeat 10 times quickly. Feel the forearm muscles doing all the work.", actionDuration: "20 seconds" },
-  { dayOfYear: 8, bodyPartId: "kidneys", fact: "Your kidneys produce erythropoietin (EPO) — the same hormone athletes get banned for injecting.", action: "Drink a glass of water right now and notice how long until you need to pee. That's roughly your kidney processing speed.", actionDuration: "10 seconds" },
-  { dayOfYear: 9, bodyPartId: "ears", fact: "Your ears contain the smallest muscles in your body — the stapedius is just 1mm long.", action: "Close your eyes and try to identify 5 different sounds around you right now. Your auditory cortex just performed a complex spatial analysis.", actionDuration: "30 seconds" },
-  { dayOfYear: 10, bodyPartId: "liver", fact: "Your liver can regenerate to its full size within weeks — even if 75% is removed.", action: "Think about what you ate in the last 24 hours. Your liver processed every single chemical in that food.", actionDuration: "20 seconds" },
-  { dayOfYear: 11, bodyPartId: "knees", fact: "Your kneecap acts as a fulcrum, multiplying the force of your quadriceps by 30%.", action: "Do 5 slow bodyweight squats, focusing on keeping your knees tracking over your toes. This strengthens the VMO.", actionDuration: "30 seconds" },
-  { dayOfYear: 12, bodyPartId: "bones", fact: "Your skeleton is completely replaced every 10 years — you're walking around in a completely new frame.", action: "Jump in place 10 times. The impact tells your osteoblasts to build stronger bone — this is called Wolff's Law.", actionDuration: "15 seconds" },
-  { dayOfYear: 13, bodyPartId: "shoulders", fact: "The shoulder joint sacrifices stability for mobility — it's basically a golf ball sitting on a tee.", action: "Roll your shoulders backward 10 times, then forward 10 times. Feel the full range of your glenohumeral joint.", actionDuration: "30 seconds" },
-  { dayOfYear: 14, bodyPartId: "feet", fact: "Your feet have 250,000 sweat glands — producing up to half a pint of sweat daily.", action: "Stand on one foot for 30 seconds, then switch. Your foot's intrinsic muscles just did the work of maintaining balance.", actionDuration: "60 seconds" },
-  { dayOfYear: 15, bodyPartId: "frontal-lobe", fact: "Your frontal lobe is the last brain region to fully develop — usually around age 25.", action: "Try to resist checking your phone for the next 10 minutes. That impulse control? Pure frontal lobe.", actionDuration: "10 seconds" },
-  { dayOfYear: 16, bodyPartId: "jaw", fact: "You chew about 600,000 times a year, generating enough force to crush a walnut shell.", action: "Open your mouth as wide as you can, hold 5 seconds, then slowly close. Repeat 3 times. You're releasing TMJ tension.", actionDuration: "20 seconds" },
-  { dayOfYear: 17, bodyPartId: "throat", fact: "You swallow about 2,000 times a day — and each swallow involves 50 pairs of muscles.", action: "Hum at your lowest comfortable pitch for 10 seconds. This vibrates your vocal cords and stimulates the vagus nerve.", actionDuration: "15 seconds" },
-  { dayOfYear: 18, bodyPartId: "sinuses", fact: "Your sinuses lighten your skull by about 1 kilogram — critical engineering.", action: "Press your tongue to the roof of your mouth and press between your eyebrows with one finger for 20 seconds. Your sinuses just shifted pressure.", actionDuration: "25 seconds" },
-  { dayOfYear: 19, bodyPartId: "bladder", fact: "Your bladder can sense when it's about 40% full and sends the first 'gentle reminder' signal.", action: "Next time you feel the urge, wait 5 minutes before going. This builds bladder capacity and control.", actionDuration: "5 seconds" },
-  // Continue with more days...
-  { dayOfYear: 20, bodyPartId: "brain", fact: "Dreams last 5–45 minutes, and you forget 95% of them within 5 minutes of waking.", action: "Tonight, keep a notebook by your bed. Write any dream fragment as soon as you wake — this trains dream recall.", actionDuration: "10 seconds" },
-  { dayOfYear: 21, bodyPartId: "heart", fact: "Your heart's electrical system is so independent that it could beat outside your body, in a dish.", action: "Walk briskly for 2 minutes right now. Your heart rate will rise — that's the SA node accelerating on demand.", actionDuration: "120 seconds" },
-  { dayOfYear: 22, bodyPartId: "large-intestine", fact: "Your gut bacteria produce vitamins (K, B12) that your own cells cannot manufacture.", action: "Eat something fermented today — yogurt, sauerkraut, or kombucha. You're feeding your gut's vitamin factory.", actionDuration: "30 seconds" },
-  { dayOfYear: 23, bodyPartId: "wrists", fact: "The carpal tunnel is a space the width of your index finger — 9 tendons and 1 nerve pass through it.", action: "Extend your arm, pull your fingers back gently with the other hand. Hold 15 seconds. Repeat on the other side.", actionDuration: "35 seconds" },
-  { dayOfYear: 24, bodyPartId: "hips", fact: "Your hip flexors are probably shortened right now from sitting — they pull your pelvis forward and arch your lower back.", action: "Kneel on one knee and push your hips forward gently. Hold 20 seconds per side. You just stretched your psoas.", actionDuration: "45 seconds" },
-  { dayOfYear: 25, bodyPartId: "elbows", fact: "Tennis elbow affects non-tennis players in 95% of cases — it's really 'mouse elbow' or 'wrench elbow'.", action: "Straighten your arm, make a fist, and slowly rotate your wrist. If you feel pulling at the elbow, your extensors are tight.", actionDuration: "20 seconds" },
-  { dayOfYear: 26, bodyPartId: "ankles", fact: "Your ankle joint handles forces 5x your body weight when you walk downhill.", action: "Trace the alphabet with each foot. This moves your ankle through its full range of motion in every direction.", actionDuration: "60 seconds" },
-  { dayOfYear: 27, bodyPartId: "spine-cervical", fact: "Looking at your phone tilts your head 60 degrees, adding 60 pounds of force to your neck.", action: "Retract your chin straight back (double chin position) and hold 5 seconds. Repeat 5 times. This reverses text neck posture.", actionDuration: "30 seconds" },
-  { dayOfYear: 28, bodyPartId: "temporal-lobe", fact: "Your temporal lobe links music to emotions so strongly that a song can make you cry decades later.", action: "Listen to a song from your teenage years. Notice the flood of specific memories — that's temporal lobe retrieval.", actionDuration: "30 seconds" },
-  { dayOfYear: 29, bodyPartId: "small-intestine", fact: "Your small intestine's villi give it a total surface area of about 2,700 square feet.", action: "After your next meal, take a 10-minute walk. This speeds gastric emptying and improves nutrient absorption by 30%.", actionDuration: "10 seconds" },
-];
+export { DAILY_INSIGHTS } from "./insights";
 
 // ━━━ Helper Functions ━━━
 
@@ -640,42 +595,7 @@ export function getBodyPartsByRegion(region: BodyPart["region"]): BodyPart[] {
 
 // ━━━ 10-Feature Expansion Placeholder Datasets ━━━
 
-export const DISEASES: DiseaseEntry[] = [
-  {
-    id: "migraine",
-    name: "Migraine",
-    overview: "A neurological condition characterized by intense, debilitating headaches, often accompanied by nausea and light sensitivity.",
-    symptoms: [
-      { text: "Throbbing head pain (usually on one side)", frequency: "always" },
-      { text: "Sensitivity to light and sound", frequency: "often" },
-      { text: "Nausea or vomiting", frequency: "sometimes" },
-      { text: "Visual aura (shimmering lights, blind spots)", frequency: "sometimes" }
-    ],
-    whenToSeeDoctor: "See a doctor if migraines are sudden and severe ('thunderclap' headache), accompanied by fever, stiff neck, mental confusion, seizures, double vision, numbness, or difficulty speaking.",
-    misconceptions: [
-      "It is just a bad headache.",
-      "Caffeine always helps."
-    ],
-    bodyPartId: "brain"
-  },
-  {
-    id: "acid-reflux",
-    name: "Acid Reflux (GERD)",
-    overview: "Stomach acid repeatedly flows back into the tube connecting your mouth and stomach (esophagus), causing irritation.",
-    symptoms: [
-      { text: "Heartburn / burning chest pain", frequency: "always" },
-      { text: "Regurgitation of food or sour liquid", frequency: "often" },
-      { text: "Difficulty swallowing", frequency: "sometimes" },
-      { text: "Sensation of a lump in your throat", frequency: "sometimes" }
-    ],
-    whenToSeeDoctor: "Seek immediate medical attention if you experience chest pain, especially if you also have shortness of breath, or jaw/arm pain, as these may be signs of a heart attack.",
-    misconceptions: [
-      "Acid reflux is caused by too much stomach acid (sometimes it is poor sphincter tone).",
-      "Drinking milk will cure GERD permanently."
-    ],
-    bodyPartId: "stomach"
-  }
-];
+export { DISEASE_ENTRIES as DISEASES } from "./diseases";
 
 export const REMEDIES: RemedyEntry[] = [
   {
