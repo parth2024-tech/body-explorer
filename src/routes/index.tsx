@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Interactive anatomy platform with 30+ organs, personal body diary, daily insights, community quests, and AI symptom education. 150,000+ curious humans already exploring.",
+          "Interactive anatomy platform with 30+ organs, personal body diary, daily insights, community quests, and AI symptom education. Curious humans already exploring.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

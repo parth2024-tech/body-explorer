@@ -91,7 +91,7 @@ const FEATURES = [
     title: "Body Library",
     tagline: "Deep knowledge base",
     desc: "Curated medical knowledge, cross-referenced by system, organ, and condition. Sourced from verified medical literature.",
-    stats: ["500+ articles", "Verified sources", "Cross-linked"],
+    stats: ["Deep insights", "Verified sources", "Cross-linked"],
     link: "/library",
     preview: {
       bg: "radial-gradient(ellipse at center, rgba(107,79,160,0.12) 0%, transparent 70%)",

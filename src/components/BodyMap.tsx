@@ -139,7 +139,9 @@ export function BodyMap() {
     if (!svg) return;
     const pt = svg.createSVGPoint();
     pt.x = e.clientX; pt.y = e.clientY;
-    const svgPt = pt.matrixTransform(svg.getScreenCTM()!.inverse());
+    const ctm = svg.getScreenCTM();
+    if (!ctm) return;
+    const svgPt = pt.matrixTransform(ctm.inverse());
     setTooltip({ x: svgPt.x, y: svgPt.y });
   }, []);
 
@@ -155,7 +157,9 @@ export function BodyMap() {
     if (!svg || shouldReduceMotion) return;
     const pt = svg.createSVGPoint();
     pt.x = e.clientX; pt.y = e.clientY;
-    const svgPt = pt.matrixTransform(svg.getScreenCTM()!.inverse());
+    const ctm = svg.getScreenCTM();
+    if (!ctm) return;
+    const svgPt = pt.matrixTransform(ctm.inverse());
     const part = BODY_PARTS.find(p => p.id === id);
     const color = part ? getSystemColor(part.system).glow : layerColor;
     const newRipple: Ripple = { id: rippleId.current++, x: svgPt.x, y: svgPt.y, color };

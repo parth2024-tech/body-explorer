@@ -109,8 +109,8 @@ export function TrustSection() {
         {/* Stats row */}
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4 mb-16">
           {[
-            { value: 150000, suffix: "+", label: "Active Users" },
-            { value: 4.9, suffix: "★", label: "App Rating" },
+            { value: 5, suffix: "", label: "Data Layers" },
+            { value: 100, suffix: "%", label: "Educational" },
             { value: 30, suffix: "+", label: "Organs Mapped" },
             { value: 200, suffix: "+", label: "Verified Facts" },
           ].map((stat, i) => (

@@ -233,7 +233,7 @@ export function CTASection() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00E5C4] opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00E5C4]" />
               </span>
-              <span className="font-mono text-[10px] tracking-[0.2em] text-[#00E5C4] uppercase">150,000+ explorers. Join them.</span>
+              <span className="font-mono text-[10px] tracking-[0.2em] text-[#00E5C4] uppercase">Start exploring. Join us.</span>
             </div>
 
             {/* Headline */}
