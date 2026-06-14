@@ -32,6 +32,12 @@ export const MYTHS: MythBusted[] = [
     myth: "Hearing loss only affects old people.",
     reality: "1 in 5 teens has some degree of hearing loss, mostly due to prolonged headphone use at high volumes."
   },
+  {
+    id: "m-sugar-hyperactive",
+    bodyPartId: "brain",
+    myth: "Sugar makes children hyperactive.",
+    reality: "Large scientific reviews have found little evidence that sugar directly causes hyperactivity in most children."
+  },
   
   // ━━━ METABOLIC & ORGANS ━━━
   {
@@ -49,14 +55,14 @@ export const MYTHS: MythBusted[] = [
   {
     id: "m-8",
     bodyPartId: "liver",
-    myth: "Detox diets and cleanses help your liver flush toxins.",
-    reality: "Your liver is a master detoxifier. 'Detox teas' do nothing for your liver and mostly just cause diarrhea."
+    myth: "Detox teas cleanse your body of toxins.",
+    reality: "Your liver and kidneys already remove toxins efficiently. Most detox teas have little scientific evidence and mainly act as laxatives or diuretics."
   },
   {
     id: "m-9",
     bodyPartId: "kidneys",
-    myth: "You must drink 8 glasses of water a day.",
-    reality: "Hydration needs vary wildly by person, diet, and climate. Your body gets about 20% of its water from food."
+    myth: "Drinking 8 glasses of water every day is mandatory.",
+    reality: "Hydration needs vary by age, body size, climate, activity level, diet, and health. There is no universal \"8 glasses\" rule."
   },
   {
     id: "m-10",
@@ -64,13 +70,25 @@ export const MYTHS: MythBusted[] = [
     myth: "A heart attack always involves chest pain.",
     reality: "Many people (especially women) experience nausea, shortness of breath, or back pain without classic chest pressure."
   },
+  {
+    id: "m-eggs-cholesterol",
+    bodyPartId: "heart",
+    myth: "Eggs are bad because they contain cholesterol.",
+    reality: "For most healthy people, dietary cholesterol has only a modest effect on blood cholesterol. Eggs are a nutrient-rich source of protein and vitamins."
+  },
+  {
+    id: "m-natural-safe",
+    bodyPartId: "liver",
+    myth: "Natural means completely safe.",
+    reality: "Many natural substances can interact with medications or cause side effects. \"Natural\" does not automatically mean safe."
+  },
   
   // ━━━ IMMUNE & RESPIRATORY ━━━
   {
     id: "m-11",
     bodyPartId: "lung-left",
-    myth: "Being in cold weather causes you to catch a cold.",
-    reality: "Colds are caused by viruses. Cold weather drives people indoors where viruses spread more easily in close contact."
+    myth: "Cold weather causes the common cold.",
+    reality: "Colds are caused by viruses, not cold temperatures. Winter increases indoor contact, making viral spread easier."
   },
   {
     id: "m-12",
@@ -90,13 +108,25 @@ export const MYTHS: MythBusted[] = [
     myth: "Shaving makes your hair grow back thicker and darker.",
     reality: "Shaving gives hair a blunt tip, making it feel coarser as it grows, but it doesn't change the thickness or color."
   },
+  {
+    id: "m-sweat-fat",
+    bodyPartId: "skin",
+    myth: "You need to sweat to burn fat.",
+    reality: "Sweating cools the body. Fat loss occurs when your body uses stored energy—not because you sweat more."
+  },
+  {
+    id: "m-head-heat",
+    bodyPartId: "skin",
+    myth: "You lose most body heat through your head.",
+    reality: "Heat loss depends on how much skin is exposed. Your head is no different from other uncovered body parts."
+  },
   
   // ━━━ MUSCULOSKELETAL ━━━
   {
     id: "m-15",
     bodyPartId: "bones",
     myth: "Cracking your knuckles causes arthritis.",
-    reality: "The sound is just nitrogen gas bubbles popping in the synovial fluid. Multiple studies show no link to arthritis."
+    reality: "Research has found no convincing evidence that knuckle cracking causes arthritis, although excessive cracking may temporarily reduce grip strength."
   },
   {
     id: "m-16",
@@ -145,8 +175,8 @@ export const MYTHS: MythBusted[] = [
   {
     id: "m-23",
     bodyPartId: "stomach",
-    myth: "Eating late at night causes you to gain more weight.",
-    reality: "Weight gain is determined by total caloric intake versus expenditure, regardless of when you eat."
+    myth: "Eating at night automatically makes you fat.",
+    reality: "Weight gain depends primarily on total calorie intake and energy balance, not simply the time you eat."
   },
   {
     id: "m-24",
