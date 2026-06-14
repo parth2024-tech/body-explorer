@@ -42,11 +42,26 @@ function FactsPage() {
   const [isRotating, setIsRotating] = useState(false);
   const [speakingFactId, setSpeakingFactId] = useState<string | null>(null);
 
+  const [shuffledFacts, setShuffledFacts] = useState<typeof FACTS>(FACTS);
+
   useEffect(() => {
     addHistoryEntry("/facts");
+    
+    // Shuffle facts array on mount
+    const shuffleArray = <T,>(array: T[]): T[] => {
+      const arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    };
+    const shuffled = shuffleArray(FACTS);
+    setShuffledFacts(shuffled);
+
     // Pick a random fact initially
-    if (FACTS.length > 0) {
-      setRandomFactIndex(Math.floor(Math.random() * FACTS.length));
+    if (shuffled.length > 0) {
+      setRandomFactIndex(Math.floor(Math.random() * shuffled.length));
     }
   }, []);
 
@@ -57,14 +72,14 @@ function FactsPage() {
 
   // Generate a new random fact
   const handleNextRandomFact = () => {
-    if (FACTS.length === 0) return;
+    if (shuffledFacts.length === 0) return;
     setIsRotating(true);
     setTimeout(() => {
-      let nextIndex = Math.floor(Math.random() * FACTS.length);
+      let nextIndex = Math.floor(Math.random() * shuffledFacts.length);
       // Avoid showing the exact same fact consecutively if there are multiple
-      if (FACTS.length > 1) {
+      if (shuffledFacts.length > 1) {
         while (nextIndex === randomFactIndex) {
-          nextIndex = Math.floor(Math.random() * FACTS.length);
+          nextIndex = Math.floor(Math.random() * shuffledFacts.length);
         }
       }
       setRandomFactIndex(nextIndex);
@@ -72,7 +87,7 @@ function FactsPage() {
     }, 300);
   };
 
-  const randomFact = FACTS[randomFactIndex];
+  const randomFact = shuffledFacts[randomFactIndex];
   const randomFactPart = useMemo(() => {
     return BODY_PARTS.find((p) => p.id === randomFact?.bodyPartId);
   }, [randomFact]);
@@ -115,7 +130,7 @@ function FactsPage() {
 
   // Filtered facts
   const filteredFacts = useMemo(() => {
-    return FACTS.filter((fact) => {
+    return shuffledFacts.filter((fact) => {
       const part = BODY_PARTS.find((p) => p.id === fact.bodyPartId);
       
       const matchesSearch =
@@ -128,7 +143,7 @@ function FactsPage() {
 
       return matchesSearch && matchesCategory && matchesRarity && matchesBodyPart;
     });
-  }, [searchQuery, selectedCategory, selectedRarity, selectedBodyPart]);
+  }, [shuffledFacts, searchQuery, selectedCategory, selectedRarity, selectedBodyPart]);
 
   // Organized Categories list for filter pills
   const categoriesList = Object.keys(CATEGORY_META) as Category[];
