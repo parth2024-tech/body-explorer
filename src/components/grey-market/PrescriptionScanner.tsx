@@ -75,9 +75,9 @@ export function PrescriptionScanner() {
                 <div className="flex items-start gap-3">
                   <AlertTriangle className="w-5 h-5 shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-bold font-space uppercase tracking-wide">{match.molecule}</h3>
+                    <h3 className="font-bold font-space uppercase tracking-wide">{match.brand_names_india.join(', ')}</h3>
                     <div className="text-xs opacity-90 mt-1 font-mono">
-                      Risk: {match.risk_level} | India: {match.status_india}
+                      Chemical Name: {match.molecule} | Risk: {match.risk_level} | India: {match.status_india}
                     </div>
                   </div>
                 </div>

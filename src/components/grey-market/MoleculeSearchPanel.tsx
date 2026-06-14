@@ -83,10 +83,10 @@ export function MoleculeSearchPanel() {
                 >
                   <div className="flex-1 min-w-0">
                     <div className="text-sm font-bold text-[#EAEAEA] font-space uppercase tracking-wide truncate">
-                      {entry.molecule}
+                      {entry.brand_names_india.join(', ')}
                     </div>
                     <div className="text-xs text-[#8A8F98] mt-1 font-mono truncate">
-                      Brands: {entry.brand_names_india.slice(0, 3).join(', ')}{entry.brand_names_india.length > 3 ? '...' : ''}
+                      Chemical Name: {entry.molecule}
                     </div>
                   </div>
                   <div className={`shrink-0 text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${getRiskBadgeStyles(entry.risk_level)}`}>

@@ -86,8 +86,8 @@ export function GreyMarketIndex() {
         <h1 className="text-3xl font-bold border-b-2 border-black pb-4 mb-6">The Grey Market Index - Toxicology Report</h1>
         {selectedMolecule ? (
           <div>
-            <h2 className="text-2xl font-bold mb-2 uppercase">{selectedMolecule.molecule}</h2>
-            <p className="mb-4"><strong>Indian Brands:</strong> {selectedMolecule.brand_names_india.join(', ')}</p>
+            <h2 className="text-2xl font-bold mb-2 uppercase">{selectedMolecule.brand_names_india.join(', ')}</h2>
+            <p className="mb-4"><strong>Chemical Name:</strong> {selectedMolecule.molecule}</p>
             
             <h3 className="text-xl font-bold mt-6 mb-2 border-b border-gray-300 pb-1">Regulatory Status</h3>
             <p><strong>India:</strong> {selectedMolecule.status_india} (Ref: {selectedMolecule.cdsco_ref})</p>
