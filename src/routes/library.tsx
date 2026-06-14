@@ -32,8 +32,25 @@ function LibraryPage() {
   const [triedCounts, setTriedCounts] = useState<Record<string, number>>({});
   const [expandedMythId, setExpandedMythId] = useState<string | null>(null);
 
+  const [shuffledRemedies, setShuffledRemedies] = useState<typeof REMEDIES>(REMEDIES);
+  const [shuffledHacks, setShuffledHacks] = useState<typeof HACKS>(HACKS);
+  const [shuffledMyths, setShuffledMyths] = useState<typeof MYTHS>(MYTHS);
+
   useEffect(() => {
     addHistoryEntry("/library");
+
+    const shuffleArray = <T,>(array: T[]): T[] => {
+      const arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    };
+
+    setShuffledRemedies(shuffleArray(REMEDIES));
+    setShuffledHacks(shuffleArray(HACKS));
+    setShuffledMyths(shuffleArray(MYTHS));
   }, []);
 
   const t = (key: keyof typeof TRANSLATIONS.en) => {
@@ -58,7 +75,7 @@ function LibraryPage() {
   };
 
   // Filter content
-  const filteredRemedies = REMEDIES.filter((r) => {
+  const filteredRemedies = shuffledRemedies.filter((r) => {
     const matchesSearch =
       r.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       r.ailment.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -68,14 +85,14 @@ function LibraryPage() {
     return matchesSearch && matchesTag;
   });
 
-  const filteredHacks = HACKS.filter((h) => {
+  const filteredHacks = shuffledHacks.filter((h) => {
     return (
       h.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       h.practice.toLowerCase().includes(searchQuery.toLowerCase())
     );
   });
 
-  const filteredMyths = MYTHS.filter((m) => {
+  const filteredMyths = shuffledMyths.filter((m) => {
     return (
       m.myth.toLowerCase().includes(searchQuery.toLowerCase()) ||
       m.reality.toLowerCase().includes(searchQuery.toLowerCase())
