@@ -49,6 +49,7 @@ function EmergencyPage() {
   const [cprCount, setCprCount] = useState(0);
   const [localNumber, setLocalNumber] = useState("911 (US) / 112 (EU) / 102 (IN)");
   const [kitChecked, setKitChecked] = useState<Record<string, boolean>>({});
+  const [isAlone, setIsAlone] = useState(false);
 
   // Refs for precise timing and audio
   const audioCtxRef = useRef<AudioContext | null>(null);
@@ -158,6 +159,16 @@ function EmergencyPage() {
         <p className="mt-4 max-w-2xl text-[#8A8F98]">
           Step-by-step guides for high-stakes health events. Read instructions without panic. Keep this offline-ready for quick consultation.
         </p>
+
+        {/* PROMINENT MEDICAL DISCLAIMER */}
+        <div className="mt-6 rounded-lg border-l-4 border-[#FC3D21] bg-[#FC3D21]/10 p-4 max-w-3xl print:border-black print:bg-white print:text-black">
+          <div className="flex items-start">
+            <span className="text-[#FC3D21] mr-3 text-xl">⚠️</span>
+            <p className="text-sm font-semibold text-[#FC3D21] print:text-black">
+              DISCLAIMER: These protocols are for precautionary first aid only when immediate help is unavailable. They do NOT replace doctors or professional medical intervention. Always call emergency services first.
+            </p>
+          </div>
+        </div>
       </motion.div>
 
       {/* Main Grid */}
@@ -225,11 +236,40 @@ function EmergencyPage() {
 
                 {/* Steps checklist */}
                 <div className="mb-8">
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#FC3D21] mb-3 print:text-emerald-700">
-                    Action Steps (In Order)
-                  </h3>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-[#FC3D21] print:text-emerald-700">
+                      Action Steps (In Order)
+                    </h3>
+                    {(activeScenario as any).ifAlone && (
+                      <div className="flex bg-[#16181D]/60 rounded-lg p-1 border border-border shrink-0 print:hidden">
+                        <button
+                          onClick={() => setIsAlone(false)}
+                          className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors ${!isAlone ? "bg-[#252830] text-[#EAEAEA] shadow-sm" : "text-[#8A8F98] hover:text-white"}`}
+                        >
+                          Helping Someone
+                        </button>
+                        <button
+                          onClick={() => setIsAlone(true)}
+                          className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors ${isAlone ? "bg-[#FC3D21] text-white shadow-sm" : "text-[#8A8F98] hover:text-[#FC3D21]"}`}
+                        >
+                          I Am Alone
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                  
+                  {isAlone && (activeScenario as any).ifAlone && (
+                    <motion.div 
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      className="mb-4 rounded-md border border-[#F5A623]/30 bg-[#F5A623]/10 p-3 text-xs text-[#F5A623]"
+                    >
+                      <strong>Note:</strong> You are viewing modified instructions for self-care when alone. If someone arrives, switch back to "Helping Someone" for standard protocol.
+                    </motion.div>
+                  )}
+
                   <ol className="space-y-4">
-                    {activeScenario.steps.map((s: string, i: number) => (
+                    {(isAlone && (activeScenario as any).ifAlone ? (activeScenario as any).ifAlone : activeScenario.steps).map((s: string, i: number) => (
                       <motion.li variants={itemVariants} key={i} className="flex gap-4 items-start text-sm text-[#8A8F98] print:text-black leading-relaxed">
                         <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[#FC3D21]/10 text-xs font-bold text-[#FC3D21] border border-[#FC3D21]/20 print:bg-gray-200 print:border-none print:text-black mt-0.5">
                           {i + 1}

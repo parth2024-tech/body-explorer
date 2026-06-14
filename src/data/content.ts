@@ -115,6 +115,7 @@ export interface EmergencyScenario {
   beforeAmbulance: string[];
   cprTimerNeeded?: boolean;
   steps: string[];
+  ifAlone?: string[];
 }
 
 export interface QAEntry {
@@ -697,6 +698,12 @@ export const EMERGENCY_SCENARIOS: EmergencyScenario[] = [
       "Do not stop CPR unless the person shows clear signs of life or the AED is analyzing.",
       "Unlock the front door so paramedics can enter quickly.",
       "Have someone wait outside to flag down the ambulance."
+    ],
+    ifAlone: [
+      "Call emergency services immediately and put your phone on speaker.",
+      "Unlock your front door immediately before you lose consciousness.",
+      "If you feel you are going to pass out, lie down on the floor to prevent head trauma from falling.",
+      "You cannot perform effective CPR on yourself. Focus on staying calm, breathing, and waiting for help."
     ]
   },
   {
@@ -719,6 +726,13 @@ export const EMERGENCY_SCENARIOS: EmergencyScenario[] = [
       "Keep the person talking to monitor their consciousness.",
       "Prepare to begin CPR if they lose consciousness and stop breathing.",
       "Gather all their current daily medications to hand to the paramedics."
+    ],
+    ifAlone: [
+      "Call emergency services immediately and put your phone on speaker. Do NOT drive yourself.",
+      "Unlock your front door immediately.",
+      "Sit on the floor or in a low chair to prevent injury if you collapse.",
+      "Chew and swallow one adult aspirin (325mg) if you are not allergic.",
+      "Try to stay calm. Take slow, deep breaths while waiting for help."
     ]
   },
   {
@@ -741,6 +755,13 @@ export const EMERGENCY_SCENARIOS: EmergencyScenario[] = [
       "Do NOT give them any food, water, or medication (including aspirin), as they may choke or it may worsen a bleeding stroke.",
       "Write down the exact 'Time of Last Known Normal' for the medical team.",
       "Clear a path in your house for the stretcher."
+    ],
+    ifAlone: [
+      "Call emergency services immediately and leave the line open on speaker even if you cannot speak clearly.",
+      "Unlock your front door immediately. Every minute counts.",
+      "Do NOT attempt to drive to the hospital.",
+      "Lie down in a safe, comfortable position. Do not eat or drink anything, including aspirin.",
+      "Stay as still as possible and try to remain calm."
     ]
   },
   {
@@ -764,6 +785,12 @@ export const EMERGENCY_SCENARIOS: EmergencyScenario[] = [
       "If the person becomes unresponsive, lower them to the ground.",
       "Call emergency services immediately.",
       "Begin standard CPR starting with chest compressions. Look in the mouth for an object before providing rescue breaths."
+    ],
+    ifAlone: [
+      "Call emergency services and leave the phone on speaker (even if you can't speak, they can hear you struggling).",
+      "Perform the Heimlich maneuver on yourself: Make a fist just above your navel, grasp it with your other hand, and thrust quickly inward and upward.",
+      "Alternatively, forcefully press your upper abdomen over a hard edge (like the back of a chair, a table edge, or a railing) and thrust inward and upward.",
+      "Do not go to the bathroom or hide; stay near an unlocked door if possible."
     ]
   },
   {
@@ -808,6 +835,12 @@ export const EMERGENCY_SCENARIOS: EmergencyScenario[] = [
       "Write down the exact time the tourniquet was applied (e.g., on their forehead or on the tourniquet itself).",
       "Never remove a tourniquet once it is applied; only medical professionals should remove it.",
       "Keep the person warm with an emergency blanket to help prevent physical shock."
+    ],
+    ifAlone: [
+      "Call emergency services immediately on speakerphone.",
+      "Apply extremely firm, direct pressure to the wound with whatever you have (shirt, towel, hands). Do not let go.",
+      "If the bleeding is on an arm or leg and won't stop, apply a makeshift tourniquet high and tight above the wound, and tie it as tight as possible.",
+      "Keep yourself warm and lie down if you start feeling lightheaded."
     ]
   },
   {
@@ -852,6 +885,13 @@ export const EMERGENCY_SCENARIOS: EmergencyScenario[] = [
       "Continue to give 1 puff of the inhaler every 30 to 60 seconds (up to 10 puffs) while waiting for help.",
       "Ensure the room has fresh air and is free of known triggers (smoke, pets, strong odors).",
       "Have their medical history ready for paramedics."
+    ],
+    ifAlone: [
+      "Call emergency services immediately and leave the line open on speakerphone so they can track your location.",
+      "Sit upright or lean forward slightly. Do NOT lie down.",
+      "Take slow, steady breaths. Use your rescue inhaler if you have one.",
+      "Unlock your front door so emergency responders can enter.",
+      "Try to remain as calm as possible to reduce oxygen demand."
     ]
   },
   {
