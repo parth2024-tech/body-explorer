@@ -1,6 +1,5 @@
 import { MoleculeSearchPanel } from './MoleculeSearchPanel';
 import { MoleculeDetailHUD } from './MoleculeDetailHUD';
-import { PrescriptionScanner } from './PrescriptionScanner';
 import { useGreyMarketStore } from '@/store/useGreyMarketStore';
 import { AlertTriangle, Printer } from 'lucide-react';
 
@@ -50,13 +49,8 @@ export function GreyMarketIndex() {
             <MoleculeSearchPanel />
           </div>
 
-          {/* Column 2: Label & Prescription Scanner */}
-          <div className="lg:col-span-4 h-full print:hidden">
-            <PrescriptionScanner />
-          </div>
-
-          {/* Column 3: Detail HUD */}
-          <div className="lg:col-span-4 h-full relative">
+          {/* Column 2: Detail HUD */}
+          <div className="lg:col-span-8 h-full relative">
             {selectedMolecule ? (
               <MoleculeDetailHUD />
             ) : (
@@ -66,7 +60,7 @@ export function GreyMarketIndex() {
                 </div>
                 <h3 className="text-lg font-space font-bold text-[#EAEAEA] mb-2 uppercase">No Product Selected</h3>
                 <p className="text-[#8A8F98] text-sm">
-                  Select a product from the index or scan a label/prescription to view its detailed regulatory status and toxicology profile.
+                  Select a product from the index to view its detailed regulatory status and toxicology profile.
                 </p>
               </div>
             )}
