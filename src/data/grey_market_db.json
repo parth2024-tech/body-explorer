@@ -1,306 +1,190 @@
 [
   {
-    "molecule": "Nimesulide",
-    "brand_names_india": ["Nise", "Nimulid", "Sumo"],
-    "risk_level": "HIGH",
-    "status_global": {
-      "US": "Never approved",
-      "EU": "Banned/restricted since 2002",
-      "UK": "Never approved",
-      "Australia": "Never approved"
-    },
-    "status_india": "Widely available, often prescribed for fever and pain, despite pediatric bans.",
-    "target_organ_id": "liver",
-    "mechanism": "Induces fulminant hepatic failure through mitochondrial toxicity and oxidative stress within hepatocytes.",
-    "how_to_spot": "Check the composition on the back of yellow or green painkiller strips for 'Nimesulide 100mg'.",
-    "safer_alternatives": ["Ibuprofen", "Paracetamol (Acetaminophen)"],
-    "cdsco_ref": "Banned for pediatric use (under 12) via 2011 Gazette."
-  },
-  {
-    "molecule": "Analgin",
-    "brand_names_india": ["Novalgin", "Metamizole"],
-    "risk_level": "HIGH",
-    "status_global": {
-      "US": "Banned since 1977",
-      "EU": "Restricted/Prescription only with severe warnings",
-      "UK": "Banned",
-      "Australia": "Banned"
-    },
-    "status_india": "Suspended temporarily in 2013, but ban was revoked in 2014; currently available.",
-    "target_organ_id": "bones",
-    "mechanism": "Triggers idiosyncratic agranulocytosis by destroying neutrophil precursors in the bone marrow.",
-    "how_to_spot": "Look for 'Analgin' or 'Metamizole Sodium' on older, established pain relief brands.",
-    "safer_alternatives": ["Paracetamol", "Naproxen"],
-    "cdsco_ref": "Gazette Notification G.S.R. 2014 (Ban Revoked)"
-  },
-  {
-    "molecule": "Cisapride",
-    "brand_names_india": ["Ciza", "Syspride"],
+    "molecule": "Ethylene Oxide (Carcinogenic Pesticide)",
+    "brand_names_india": ["MDH Curry Masala", "Everest Spice Powder", "MDH Madras Curry Powder", "MDH Sambhar Masala", "MDH Mixed Masala Curry Powder", "Everest Fish Curry Masala"],
     "risk_level": "CRITICAL",
     "status_global": {
-      "US": "Withdrawn in 2000",
-      "EU": "Withdrawn in 2000",
-      "UK": "Withdrawn in 2000",
-      "Australia": "Withdrawn in 2000"
-    },
-    "status_india": "Banned, but occasionally found in older pharmaceutical stocks and unregulated dispensaries.",
-    "target_organ_id": "heart",
-    "mechanism": "Prolongs the QT interval by blocking hERG potassium channels in myocardial cells, leading to fatal ventricular arrhythmias.",
-    "how_to_spot": "Used for severe acid reflux. Check GI motility drugs for the word 'Cisapride'.",
-    "safer_alternatives": ["Levosulpiride", "Itopride"],
-    "cdsco_ref": "Banned via Gazette Notification G.S.R. 82(E) 2011."
-  },
-  {
-    "molecule": "Phenacetin",
-    "brand_names_india": ["Compound Powders", "Legacy Analgesics"],
-    "risk_level": "CRITICAL",
-    "status_global": {
-      "US": "Banned in 1983",
-      "EU": "Banned in 1980s",
-      "UK": "Banned in 1980s",
-      "Australia": "Banned in 1980s"
-    },
-    "status_india": "Banned, but sometimes covertly present in unbranded compound analgesic powders.",
-    "target_organ_id": "kidneys",
-    "mechanism": "Causes analgesic nephropathy through chronic renal papillary necrosis and increases risk of urothelial cancer.",
-    "how_to_spot": "Avoid unlabeled powdered painkillers or generic 'headache powders' without printed strips.",
-    "safer_alternatives": ["Paracetamol"],
-    "cdsco_ref": "Banned (Early Gazette)"
-  },
-  {
-    "molecule": "Sibutramine",
-    "brand_names_india": ["Obestat", "Sibotrim", "Slim Capsules"],
-    "risk_level": "CRITICAL",
-    "status_global": {
-      "US": "Withdrawn in 2010",
-      "EU": "Withdrawn in 2010",
-      "UK": "Withdrawn in 2010",
-      "Australia": "Withdrawn in 2010"
-    },
-    "status_india": "Banned in 2011, but frequently resurfaces illegally in Ayurvedic or 'herbal' weight loss supplements.",
-    "target_organ_id": "heart",
-    "mechanism": "Inhibits serotonin and norepinephrine reuptake, significantly elevating heart rate, blood pressure, and risk of myocardial infarction.",
-    "how_to_spot": "Be highly suspicious of fast-acting 'herbal' fat burners; check lab reports if possible.",
-    "safer_alternatives": ["Dietary adjustment", "Orlistat (under supervision)"],
-    "cdsco_ref": "Banned via Gazette Notification G.S.R. 78(E) 2011."
-  },
-  {
-    "molecule": "Oxyphenbutazone",
-    "brand_names_india": ["Suganril", "Vet Formulations"],
-    "risk_level": "CRITICAL",
-    "status_global": {
-      "US": "Withdrawn in 1984",
-      "EU": "Withdrawn in 1984",
-      "UK": "Withdrawn in 1984",
-      "Australia": "Withdrawn in 1984"
-    },
-    "status_india": "Banned for human use, but occasionally present in veterinary formulations that cross over into human consumption.",
-    "target_organ_id": "bones",
-    "mechanism": "Induces severe, irreversible aplastic anemia and agranulocytosis by direct toxic effect on bone marrow stem cells.",
-    "how_to_spot": "Ensure NSAIDs are strictly from human-grade pharmacies and check for 'Oxyphenbutazone'.",
-    "safer_alternatives": ["Ibuprofen", "Diclofenac (human grade)"],
-    "cdsco_ref": "Banned (Historical)"
-  },
-  {
-    "molecule": "Rofecoxib",
-    "brand_names_india": ["Vioxx", "Rofibax", "Zyrox"],
-    "risk_level": "CRITICAL",
-    "status_global": {
-      "US": "Withdrawn in 2004",
-      "EU": "Withdrawn in 2004",
-      "UK": "Withdrawn in 2004",
-      "Australia": "Withdrawn in 2004"
-    },
-    "status_india": "Briefly available post-global withdrawal, now banned.",
-    "target_organ_id": "heart",
-    "mechanism": "Selective COX-2 inhibition disrupts the prostacyclin/thromboxane balance, causing severe pro-thrombotic cardiovascular events.",
-    "how_to_spot": "Check old medicine cabinets for painkillers ending in '-coxib' (except Celecoxib which remains approved).",
-    "safer_alternatives": ["Naproxen", "Celecoxib (with screening)"],
-    "cdsco_ref": "Banned via Gazette Notification 2004."
-  },
-  {
-    "molecule": "Furazolidone",
-    "brand_names_india": ["Furoxone", "Dependal-M", "Lomotil combinations"],
-    "risk_level": "HIGH",
-    "status_global": {
-      "US": "Banned in food animals (carcinogen)",
-      "EU": "Banned in food animals",
-      "UK": "Banned in food animals",
-      "Australia": "Restricted"
-    },
-    "status_india": "Widely available in over-the-counter anti-diarrheal remedies.",
-    "target_organ_id": "small-intestine",
-    "mechanism": "Causes direct DNA damage (genotoxic) and is classified as a potential human carcinogen with long-term exposure.",
-    "how_to_spot": "Read the ingredients of yellow anti-diarrhea tablets or syrups for 'Furazolidone'.",
-    "safer_alternatives": ["Oral Rehydration Salts (ORS)", "Racecadotril", "Loperamide"],
-    "cdsco_ref": "Banned in certain FDCs, but single/some combination forms remain."
-  },
-  {
-    "molecule": "Bromocriptine",
-    "brand_names_india": ["Parlodel", "Bromogen", "Sicriptin"],
-    "risk_level": "UNDER-REVIEW",
-    "status_global": {
-      "US": "Banned for postpartum lactation suppression",
-      "EU": "Restricted heavily",
-      "UK": "Restricted",
-      "Australia": "Restricted"
-    },
-    "status_india": "Still routinely prescribed for postpartum lactation suppression.",
-    "target_organ_id": "brain",
-    "mechanism": "Strong dopamine D2 receptor agonist that can trigger severe systemic vasoconstriction, leading to hypertensive crises and strokes.",
-    "how_to_spot": "Check the prescription if given a pill to 'stop milk production' immediately after childbirth.",
-    "safer_alternatives": ["Cabergoline (lower dose)", "Natural cessation"],
-    "cdsco_ref": "No explicit ban for lactation suppression yet."
-  },
-  {
-    "molecule": "Quinine injection",
-    "brand_names_india": ["Rez Q", "Quinarsol", "Cinkona"],
-    "risk_level": "HIGH",
-    "status_global": {
-      "US": "Heavily restricted (only for specific malaria)",
-      "EU": "Restricted",
-      "UK": "Restricted",
-      "Australia": "Restricted"
-    },
-    "status_india": "Still used in some hospitals for malaria beyond safe protocols, causing 'cinchonism'.",
-    "target_organ_id": "ears",
-    "mechanism": "Directly toxic to the auditory nerve and causes severe prolongation of the cardiac action potential when infused rapidly.",
-    "how_to_spot": "Ensure your doctor uses Artemisinin-based Combination Therapies (ACT) instead of Quinine for malaria.",
-    "safer_alternatives": ["Artesunate", "Artemether-Lumefantrine"],
-    "cdsco_ref": "Restricted to severe malaria only, but often misused."
-  },
-  {
-    "molecule": "Aceclofenac + Paracetamol + Rabeprazole",
-    "brand_names_india": ["Banned FDCs (April 2025 batch)"],
-    "risk_level": "HIGH",
-    "status_global": {
-      "US": "Not approved as combinations",
-      "EU": "Not approved",
-      "UK": "Not approved",
-      "Australia": "Not approved"
-    },
-    "status_india": "Targeted for blanket ban in April 2025 due to lack of therapeutic rationale and toxicity.",
-    "target_organ_id": "stomach",
-    "mechanism": "Combines compounding gastric irritants with a proton pump inhibitor, masking severe mucosal ulceration and increasing hepatic load.",
-    "how_to_spot": "Avoid any medicine strip that lists three or more active ingredients for basic pain relief.",
-    "safer_alternatives": ["Single-ingredient Paracetamol", "Single-ingredient NSAID"],
-    "cdsco_ref": "CDSCO April 2025 FDC Ban List."
-  },
-  {
-    "molecule": "Diclofenac injection (Veterinary Scale)",
-    "brand_names_india": ["Voveran", "Reactin", "Diclo"],
-    "risk_level": "CRITICAL",
-    "status_global": {
-      "US": "Human only, strict limits",
-      "EU": "Veterinary heavily restricted",
-      "UK": "Restricted",
-      "Australia": "Restricted"
-    },
-    "status_india": "Banned for veterinary use to save vultures, but multi-dose human vials are illegally diverted.",
-    "target_organ_id": "kidneys",
-    "mechanism": "Induces acute renal failure via profound inhibition of renal prostaglandins, disrupting glomerular filtration.",
-    "how_to_spot": "If you are a farmer, ensure you never use multi-dose human diclofenac vials on livestock.",
-    "safer_alternatives": ["Meloxicam (for veterinary)"],
-    "cdsco_ref": "Gazette Notification 2006 (Veterinary Ban)."
-  },
-  {
-    "molecule": "Ethylene Oxide (Pesticide/Sterilant)",
-    "brand_names_india": ["Everest Spice Powder", "MDH Curry Masala", "Everest Fish Curry Masala"],
-    "risk_level": "CRITICAL",
-    "status_global": {
-      "US": "Highly restricted sterilizing agent (regulated in food)",
+      "US": "Investigated / Batch recalls",
       "EU": "Banned in all food products since 1991",
-      "UK": "Banned",
-      "Singapore": "Banned & Recalled (2024)"
+      "UK": "Investigated / Recalled",
+      "Singapore": "Banned & Recalled",
+      "Hong Kong": "Banned",
+      "Nepal": "Banned imports and sales"
     },
-    "status_india": "FSSAI issued testing directives and launched inspections in 2024 after international bans, but MDH and Everest products remain on store shelves.",
+    "status_india": "FSSAI initiated quality checks after international pressure, but no nationwide ban was imposed; products continue to be sold freely.",
     "target_organ_id": "liver",
-    "mechanism": "Mutagenic and carcinogenic gas that alkylates cellular DNA structure, dramatically increasing the risk of lymphoid and breast cancers.",
-    "how_to_spot": "Look for independent recall reports for specific batches of MDH and Everest. Avoid commercial spice mixes lacking batch-testing certification.",
-    "safer_alternatives": ["Freshly ground whole spices", "Organic certified brands"],
-    "cdsco_ref": "FSSAI Directive on Spice Testing (2024)"
+    "mechanism": "Contains Ethylene Oxide, a highly toxic, mutagenic, and carcinogenic pesticide used as a sterilant. Chronic exposure alkylates cellular DNA structure, dramatically increasing the risk of lymphoid cancers, leukemia, and breast cancers.",
+    "how_to_spot": "Look for MDH's Madras Curry Powder, Sambhar Masala, Mixed Masala Curry Powder, or Everest's Fish Curry Masala. Check batch recall warnings.",
+    "safer_alternatives": ["Freshly ground whole spices", "Certified organic spice brands"],
+    "cdsco_ref": "FSSAI Spice Quality Directive 2024"
   },
   {
-    "molecule": "Titanium Dioxide (E171 Colorant)",
-    "brand_names_india": ["Orbit Chewing Gum", "Mentos", "Cake Decorating Frostings", "White Chocolates"],
+    "molecule": "Embedded Non-Nutritive Toys (Choking Hazard)",
+    "brand_names_india": ["Kinder Joy", "Kinder Surprise"],
     "risk_level": "HIGH",
     "status_global": {
-      "US": "Allowed in food under 1% weight",
-      "EU": "Banned in all food products since 2022 due to genotoxicity concerns",
-      "UK": "Permitted but under active review"
+      "US": "Kinder Surprise fully illegal (1938 Federal Food, Drug, and Cosmetic Act)",
+      "EU": "Kinder Surprise is legal; Kinder Joy launched in Italy in 2001 to sidestep hot weather issues"
     },
-    "status_india": "FSSAI permits wide usage of Titanium Dioxide as a coloring and whitening agent in popular confectionery products.",
-    "target_organ_id": "large-intestine",
-    "mechanism": "Nanoparticles accumulate in the intestinal epithelium, causing micro-inflammation, oxidative stress, DNA damage, and promoting pre-cancerous lesions.",
-    "how_to_spot": "Check ingredient labels of white candies, chewing gums, and cake frostings for 'Titanium Dioxide' or 'E171'.",
-    "safer_alternatives": ["Natural plant colorants", "Color-free candies"],
-    "cdsco_ref": "FSSAI Food Additives Regulation"
+    "status_india": "Sold freely in every kirana store and supermarket across the country, primarily targeted at toddlers and young children.",
+    "target_organ_id": "throat",
+    "mechanism": "The original Kinder Surprise egg embeds a plastic toy capsule inside a chocolate shell, creating a severe choking hazard. Kinder Joy separates the cream and the toy into two distinct halves to sidestep US regulations, but the choking risk associated with small embedded toy parts in children's snacks remains a concern.",
+    "how_to_spot": "Inspect plastic eggs marketed to kids containing chocolate creams and small toy parts.",
+    "safer_alternatives": ["Standard chocolates without embedded toys", "Age-appropriate toys kept separate from foodstuffs"],
+    "cdsco_ref": "FSSAI Food Safety Standards (unregulated choking hazard)"
+  },
+  {
+    "molecule": "Pathogenic Bacteria (E. coli, Salmonella, Listeria)",
+    "brand_names_india": ["Raw Milk (Doodh from Local Dairy)", "Local Milkman Milk", "Roadside Dairy Milk", "Unpasteurised Milk"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Banned / Illegal in 20 states",
+      "EU": "Restricted / Warning labels required",
+      "UK": "Banned in Scotland, heavily restricted in England/Wales",
+      "Australia": "Banned",
+      "Canada": "Banned"
+    },
+    "status_india": "Delivered door-to-door in cities and villages alike, consumed daily by millions of households with no restrictions.",
+    "target_organ_id": "stomach",
+    "mechanism": "Unpasteurised milk can harbor dangerous pathogens such as E. coli, Salmonella, Campylobacter, and Listeria. These bacteria cause severe gastrointestinal infection, food poisoning, and pose life-threatening risks to pregnant women, infants, and immunocompromised individuals.",
+    "how_to_spot": "Any milk bought directly from local dairies or milkmen that has not undergone commercial pasteurisation.",
+    "safer_alternatives": ["Pasteurised milk", "UHT packaged milk", "Boiling raw milk thoroughly before consumption"],
+    "cdsco_ref": "No FSSAI restrictions on raw milk sales"
+  },
+  {
+    "molecule": "Konjac Gelling Agent (Choking Hazard)",
+    "brand_names_india": ["Mini Jelly Cups", "Jelly Sweets", "Konjac Jelly"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Banned",
+      "EU": "Banned by the European Commission",
+      "UK": "Banned",
+      "Australia": "Banned",
+      "Canada": "Banned"
+    },
+    "status_india": "Sold near school canteens and roadside shops, marketed primarily at children with no federal ban in place.",
+    "target_organ_id": "throat",
+    "mechanism": "Mini jelly cups containing konjac are a choking hazard due to their shape, size, and firm texture. Unlike other gelatin-based products, konjac does not dissolve easily in the mouth, and when squeezed, it can stick to a child's throat and block the airway.",
+    "how_to_spot": "Look for small plastic cups containing firm fruit jellies. Check ingredient lists for 'konjac', 'glucomannan', or 'konnyaku'.",
+    "safer_alternatives": ["Gelatin-based jellies", "Agar-agar fruit jellies (which dissolve easily)", "Fresh fruits"],
+    "cdsco_ref": "No specific FSSAI ban on konjac mini jellies"
   },
   {
     "molecule": "Brominated Vegetable Oil (BVO Stabilizer)",
-    "brand_names_india": ["Citrus-Flavored Carbonated Drinks", "Mountain Dew (older batches / local duplicates)"],
+    "brand_names_india": ["Mountain Dew", "Citrus sodas"],
     "risk_level": "CRITICAL",
     "status_global": {
-      "US": "Prohibited in food and drinks by FDA since 2024",
+      "US": "Banned in food/drinks by FDA since 2024",
       "EU": "Banned",
       "UK": "Banned",
-      "Japan": "Banned"
+      "Japan": "Banned / Restricted"
     },
-    "status_india": "Allowed up to 15 ppm as a clouding agent in carbonated beverages under FSSAI standards.",
+    "status_india": "PepsiCo pulled Mountain Dew from India in the 1970s rather than reformulate it after BVO restrictions. Relaunched later after BVO removal, but Japan and parts of Europe continue to restrict it due to safety concerns about additives.",
     "target_organ_id": "brain",
-    "mechanism": "Lipophilic bromine compounds accumulate in fatty tissues, leading to systemic bromine toxicity (bromism) which causes memory loss, tremors, and skin lesions.",
-    "how_to_spot": "Check ingredients lists on citrus-flavored sodas and energy drinks for 'Brominated Vegetable Oil' or 'BVO'.",
-    "safer_alternatives": ["Glycerol Ester of Wood Rosin", "Natural juices"],
-    "cdsco_ref": "FSSAI Beverages Standards Regulation"
+    "mechanism": "BVO contains bromine, which accumulates in fat tissues. Over time, high exposure can lead to systemic bromine toxicity (bromism), causing memory loss, tremors, fatigue, and neurological/cognitive impairment.",
+    "how_to_spot": "Check ingredient labels on citrus-flavored sodas and energy drinks for 'Brominated Vegetable Oil' or 'BVO'.",
+    "safer_alternatives": ["Fresh lemonade", "Naturally flavored sparkling water", "Fruit juices"],
+    "cdsco_ref": "FSSAI Beverage Standards Regulation"
   },
   {
-    "molecule": "Potassium Bromate (E924 Baking Agent)",
-    "brand_names_india": ["Commercial White Breads", "Burger Buns", "Pizza Bases", "Pav / Bread rolls"],
-    "risk_level": "CRITICAL",
+    "molecule": "Excessive Caffeine and Taurine (Energy Drink)",
+    "brand_names_india": ["Red Bull", "Energy Drinks"],
+    "risk_level": "HIGH",
     "status_global": {
-      "US": "Permitted but voluntary reduction requested",
-      "EU": "Banned in food preparation since 1990",
+      "France": "Banned for 12 years (until 2008)",
+      "Denmark": "Age-restricted (under 18)",
+      "Lithuania": "Banned for under-18s",
+      "UK": "Supermarket voluntary ban for under-16s"
+    },
+    "status_india": "Sold freely at every tea shop, gym, and supermarket without any age restriction or ban.",
+    "target_organ_id": "heart",
+    "mechanism": "Extremely high caffeine and taurine content stimulates the cardiovascular system, which can cause heart palpitations, hypertension, anxiety, sleep disturbances, and in rare cases, cardiac issues or convulsions in young children and teenagers.",
+    "how_to_spot": "Look for 250ml silver-blue cans labeled 'Red Bull'. Check caffeine warnings on the back.",
+    "safer_alternatives": ["Green tea", "Cold brew coffee (moderate)", "Coconut water", "Natural electrolytes"],
+    "cdsco_ref": "FSSAI Energy Drink caffeine limit standards"
+  },
+  {
+    "molecule": "Synthetic Food Dyes (Titanium Dioxide / Red 40 / Yellow 5)",
+    "brand_names_india": ["Coloured Sweets / Mithai", "Packaged Candies", "Roadside Pani Puri Chutney", "Orbit Chewing Gum", "White Candies"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Titanium Dioxide permitted under 1% weight; Red 40/Yellow 5 require warning labels in some states",
+      "EU": "Titanium Dioxide (E171) banned in food since 2022 due to genotoxicity; Red 40 and Yellow 5 require mandatory warning labels",
+      "UK": "Warning labels required for artificial colorings"
+    },
+    "status_india": "These dyes are permitted in candies, coloured mithai, packaged sweets, and street-side food without any warning labels.",
+    "target_organ_id": "large-intestine",
+    "mechanism": "Titanium Dioxide (E171) nanoparticles accumulate in the intestinal lining, causing micro-inflammation, oxidative stress, DNA damage, and promoting pre-cancerous lesions. Other synthetic food dyes like Tartrazine (Yellow 5) and Allura Red (Red 40) are linked to hyperactivity and ADHD-like symptoms in children.",
+    "how_to_spot": "Avoid candy, gum, or street food with extremely bright or artificial coloring. Check labels for 'E171', 'E102', 'E129', or 'Tartrazine'.",
+    "safer_alternatives": ["Mithai colored with saffron, turmeric, or beetroot", "Organic candies using plant extracts"],
+    "cdsco_ref": "FSSAI Food Additives Regulation"
+  },
+  {
+    "molecule": "Chemically Bleached Flour (Chlorine / Benzoyl Peroxide)",
+    "brand_names_india": ["Maida (White Flour)", "Commercial White Bread", "Samosas", "Noodles", "Biscuits"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "EU": "Banned (chemically bleached flour is considered unsafe)",
       "UK": "Banned",
-      "Canada": "Banned",
       "China": "Banned"
     },
-    "status_india": "FSSAI announced a ban in 2016, but testing reveals it is still used by local, unorganized bakeries or persists as a trace contaminant in white flour.",
+    "status_india": "Used in enormous quantities across all bakeries and food manufacturing sectors with no restrictions.",
+    "target_organ_id": "small-intestine",
+    "mechanism": "Bleached flour is treated with chemical bleaching agents like chlorine gas or benzoyl peroxide to make it white and soft. These chemicals destroy nutrients and leave chemical residues that are considered unsafe for long-term consumption by European food agencies.",
+    "how_to_spot": "Look for refined wheat flour or maida in packaged foods, white breads, pizzas, and bakery snacks.",
+    "safer_alternatives": ["Whole wheat flour (Atta)", "Unbleached flour", "Millets (Ragi, Jowar, Bajra)"],
+    "cdsco_ref": "FSSAI permits chemical bleaching of flour"
+  },
+  {
+    "molecule": "Industrial Trans Fats (Partially Hydrogenated Oils)",
+    "brand_names_india": ["Packaged Namkeen", "Biscuits", "Commercial Cookies", "Bakery Products", "Vanaspati Ghee"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Banned (FDA banned partially hydrogenated oils in 2018)",
+      "EU": "Strictly limited (max 2g trans fat per 100g fat)",
+      "UK": "Strictly limited"
+    },
+    "status_india": "India has regulations targeting trans fat reduction, but enforcement is weak, and small-scale unorganized manufacturers continue to use hydrogenated vegetable fats freely.",
+    "target_organ_id": "heart",
+    "mechanism": "Industrial trans fats raise bad cholesterol (LDL) and lower good cholesterol (HDL), causing rapid inflammation, arterial plaque buildup, coronary heart disease, and strokes.",
+    "how_to_spot": "Check ingredient labels for 'partially hydrogenated oils', 'hydrogenated vegetable fat', or 'vanaspati'.",
+    "safer_alternatives": ["Cold-pressed oils (mustard, sesame, groundnut)", "Butter or pure cow ghee (in moderation)"],
+    "cdsco_ref": "FSSAI limit of 2% trans fats in oils/fats (enforcement weak in unorganized sectors)"
+  },
+  {
+    "molecule": "Lead & Excessive Taste Enhancers (MSG)",
+    "brand_names_india": ["Maggi Noodles", "Instant Noodles", "Yippee Noodles"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "FDA temporarily banned/recalled Nestlé products in 2015",
+      "EU": "Strictly monitored for lead and chemical levels",
+      "UK": "Monitored strictly",
+      "Southeast Asia": "Monitored strictly"
+    },
+    "status_india": "Temporarily banned in 2015, but returned to the market and is now sold everywhere under more relaxed permissible limits for heavy metals and flavor enhancers.",
     "target_organ_id": "kidneys",
-    "mechanism": "Classified as a Group 2B carcinogen that generates reactive oxygen species, leading to severe renal tubular necrosis and renal tumors.",
-    "how_to_spot": "Avoid buying extremely cheap, unbranded bakery products. Check ingredient labels for 'Potassium Bromate' or 'E924'.",
-    "safer_alternatives": ["Ascorbic Acid (Vitamin C)", "Organic flour products"],
-    "cdsco_ref": "FSSAI Gazette Notification F.No. P. 15025/19/2013-OOF-FSSAI"
+    "mechanism": "Accumulation of lead causes irreversible damage to the nervous system and kidneys, especially in children. High sodium and excessive flavor enhancers (monosodium glutamate) can also elevate blood pressure and cause metabolic strain.",
+    "how_to_spot": "Packaged instant noodle blocks. Check ingredient labels for 'hydrolyzed groundnut protein' or 'MSG'.",
+    "safer_alternatives": ["Whole grain noodles", "Homemade wheat noodles with fresh spices"],
+    "cdsco_ref": "FSSAI Food Safety Standards (Instant Noodles Category)"
   },
   {
-    "molecule": "Synthetic Coal Tar Dyes (Tartrazine / Allura Red)",
-    "brand_names_india": ["Fanta Orange", "Mirinda", "Red Jellies", "Packaged Candies", "Tomato Ketchup (low-cost)"],
-    "risk_level": "HIGH",
+    "molecule": "Betel Nut Carcinogens (Arecoline / Tobacco)",
+    "brand_names_india": ["Plain Meetha Paan", "Tobacco-Mixed Paan", "Paan Masala", "Betel Nut Products"],
+    "risk_level": "CRITICAL",
     "status_global": {
-      "EU": "Allowed but requires a mandatory warning label: 'May have an adverse effect on activity and attention in children'",
-      "UK": "Warning label required",
-      "Norway": "Banned",
-      "Austria": "Banned"
+      "US": "Banned/restricted (Areca nut is on FDA alert list)",
+      "EU": "Banned / restricted import",
+      "UK": "Restricted",
+      "Australia": "Banned (Betel nut is a controlled substance)",
+      "Singapore": "Banned",
+      "UAE": "Banned"
     },
-    "status_india": "Permitted in a wide range of beverages, candies, and sauces under FSSAI without any warnings or disclosures regarding child hyperactivity.",
-    "target_organ_id": "brain",
-    "mechanism": "Releases histamines and cross-reacts with salicylates, leading to central nervous system excitability, ADHD symptoms, and severe allergies.",
-    "how_to_spot": "Look for synthetic color names like 'Tartrazine', 'Allura Red', 'Sunset Yellow', 'Carmoisine', 'Ponceau 4R', 'E102', or 'E129'.",
-    "safer_alternatives": ["Beta-carotene", "Beetroot extract", "Turmeric coloring"],
-    "cdsco_ref": "FSSAI Food Coloring Standards"
-  },
-  {
-    "molecule": "Caramel Color IV (Ammonia-Sulfite Process)",
-    "brand_names_india": ["Coca-Cola", "Pepsi", "Thums Up", "Dark Soy Sauces", "Chocolate Syrups"],
-    "risk_level": "HIGH",
-    "status_global": {
-      "US": "Heavily restricted in California (Prop 65 requires warnings for >29 mcg of 4-MEI daily)",
-      "EU": "Maximum limits enforced on 4-MEI content"
-    },
-    "status_india": "FSSAI permits broad usage of Caramel Class IV colorant in cola drinks with high 4-MEI limits and no consumer warning requirements.",
-    "target_organ_id": "lung-left",
-    "mechanism": "Thermal processing with ammonia compounds produces 4-Methylimidazole (4-MEI), a proven carcinogen in animal models linked to pulmonary tumors.",
-    "how_to_spot": "Check carbonated drink labels for 'Caramel Color Class IV', 'Ammonia Sulfite Caramel', or 'E150d'.",
-    "safer_alternatives": ["Caramel Class I (plain caramel)", "Naturally colored beverages"],
-    "cdsco_ref": "FSSAI Food Additive Standards Regulation"
+    "status_india": "Sold freely at every street corner and widely consumed in every state, with deep cultural roots.",
+    "target_organ_id": "jaw",
+    "mechanism": "Betel nut (Areca nut) contains arecoline, which is classified as a Group 1 carcinogen by the WHO's IARC. It causes oral submucous fibrosis (OSF) and dramatically increases the risk of oral cancer. Adding tobacco compounding this effect.",
+    "how_to_spot": "Look for paan shops, packets of paan masala, or green betel leaf preparations containing chopped nuts or tobacco.",
+    "safer_alternatives": ["Fennel seeds (Saunf)", "Cardamom", "Natural mouth fresheners (without betel nut or tobacco)"],
+    "cdsco_ref": "FSSAI warning labels required on pan masala, but sales remain unrestricted"
   }
 ]
