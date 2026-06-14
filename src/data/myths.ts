@@ -5,8 +5,8 @@ export const MYTHS: MythBusted[] = [
   {
     id: "m-1",
     bodyPartId: "brain",
-    myth: "We only use 10% of our brains.",
-    reality: "We use virtually 100% of our brains. Even while sleeping, the brain is highly active across all regions."
+    myth: "Humans only use 10% of their brains.",
+    reality: "Functional magnetic resonance imaging (fMRI) scans prove that we use virtually every part of the brain, and most of it is active almost all the time, even during sleep."
   },
   {
     id: "m-2",
@@ -17,14 +17,20 @@ export const MYTHS: MythBusted[] = [
   {
     id: "m-3",
     bodyPartId: "eyes",
-    myth: "Reading in the dark damages your eyesight.",
-    reality: "It causes temporary eye strain and fatigue, but does not cause permanent damage to your vision."
+    myth: "Reading in dim light causes permanent damage to your eyesight.",
+    reality: "Reading in low light causes temporary eye fatigue (asthenopia) but does not alter the structure of the eye or cause permanent nearsightedness."
   },
   {
     id: "m-4",
     bodyPartId: "eyes",
     myth: "Sitting too close to the TV will ruin your eyes.",
     reality: "Children often sit close because they can focus up close better than adults. It causes strain but no lasting damage."
+  },
+  {
+    id: "m-blue-light",
+    bodyPartId: "eyes",
+    myth: "Blue-light-blocking glasses prevent digital eye strain from screens.",
+    reality: "Digital eye strain is caused by a decreased blink rate and prolonged focusing distance, not the blue light itself; regular screen breaks are far more effective at reducing ocular fatigue."
   },
   {
     id: "m-5",
@@ -35,8 +41,14 @@ export const MYTHS: MythBusted[] = [
   {
     id: "m-sugar-hyperactive",
     bodyPartId: "brain",
-    myth: "Sugar makes children hyperactive.",
-    reality: "Large scientific reviews have found little evidence that sugar directly causes hyperactivity in most children."
+    myth: "Eating sugar causes children to become hyperactive.",
+    reality: "Multiple double-blind randomized trials have found no difference in behavior between children given sugar and those given a placebo; perceived rushes are usually due to the excitement of an event."
+  },
+  {
+    id: "m-sleepwalker",
+    bodyPartId: "brain",
+    myth: "It is dangerous or physically harmful to wake a sleepwalker.",
+    reality: "Waking a sleepwalker may leave them temporarily confused, but it is not physically harmful; leaving them to wander poses a much higher risk of physical injury."
   },
   
   // ━━━ METABOLIC & ORGANS ━━━
@@ -49,20 +61,20 @@ export const MYTHS: MythBusted[] = [
   {
     id: "m-7",
     bodyPartId: "stomach",
-    myth: "Gum takes 7 years to digest if you swallow it.",
-    reality: "Gum is mostly indigestible, but it passes through your digestive system in a few days just like other roughage."
+    myth: "Swallowed chewing gum takes seven years to digest in your stomach.",
+    reality: "While the synthetic rubber base is indigestible, it does not stick to the stomach walls and moves through the digestive tract to be excreted intact within a few days."
   },
   {
     id: "m-8",
     bodyPartId: "liver",
-    myth: "Detox teas cleanse your body of toxins.",
-    reality: "Your liver and kidneys already remove toxins efficiently. Most detox teas have little scientific evidence and mainly act as laxatives or diuretics."
+    myth: "Juice cleanses effectively \"detox\" your body and organs.",
+    reality: "Your liver and kidneys continuously filter and excrete waste; juice diets lack clinical evidence for detoxification and often strip away beneficial dietary fiber."
   },
   {
     id: "m-9",
     bodyPartId: "kidneys",
-    myth: "Drinking 8 glasses of water every day is mandatory.",
-    reality: "Hydration needs vary by age, body size, climate, activity level, diet, and health. There is no universal \"8 glasses\" rule."
+    myth: "You must drink exactly 8 glasses of water a day to stay hydrated.",
+    reality: "Hydration needs are highly individualized based on weight, activity level, and climate; fluid intake from all beverages and water-rich foods counts toward your daily hydration."
   },
   {
     id: "m-10",
@@ -79,16 +91,22 @@ export const MYTHS: MythBusted[] = [
   {
     id: "m-natural-safe",
     bodyPartId: "liver",
-    myth: "Natural means completely safe.",
-    reality: "Many natural substances can interact with medications or cause side effects. \"Natural\" does not automatically mean safe."
+    myth: "If a supplement or remedy is \"natural,\" it means it is completely safe.",
+    reality: "Toxicity is determined by dosage, not origin; many natural supplements can cause severe organ toxicity if overused or interact dangerously with prescription medications."
   },
   
   // ━━━ IMMUNE & RESPIRATORY ━━━
   {
     id: "m-11",
     bodyPartId: "lung-left",
-    myth: "Cold weather causes the common cold.",
-    reality: "Colds are caused by viruses, not cold temperatures. Winter increases indoor contact, making viral spread easier."
+    myth: "Going outside in cold weather without a jacket gives you a cold.",
+    reality: "The common cold is caused by viral exposure (like rhinovirus), not temperature drops; people get sick more in winter because they spend more time indoors in poorly ventilated spaces."
+  },
+  {
+    id: "m-vit-c",
+    bodyPartId: "lung-left",
+    myth: "Taking large doses of Vitamin C prevents the common cold.",
+    reality: "Extensive meta-analyses show that Vitamin C does not prevent the onset of a cold in the general population, though it may slightly reduce the duration of symptoms."
   },
   {
     id: "m-12",
@@ -105,8 +123,8 @@ export const MYTHS: MythBusted[] = [
   {
     id: "m-14",
     bodyPartId: "skin",
-    myth: "Shaving makes your hair grow back thicker and darker.",
-    reality: "Shaving gives hair a blunt tip, making it feel coarser as it grows, but it doesn't change the thickness or color."
+    myth: "Shaving makes your hair grow back thicker, darker, and faster.",
+    reality: "Shaving only cuts the hair at the skin's surface where the shaft is thickest; it does not alter the follicle root or the DNA that dictates hair color and texture."
   },
   {
     id: "m-sweat-fat",
@@ -125,8 +143,8 @@ export const MYTHS: MythBusted[] = [
   {
     id: "m-15",
     bodyPartId: "bones",
-    myth: "Cracking your knuckles causes arthritis.",
-    reality: "Research has found no convincing evidence that knuckle cracking causes arthritis, although excessive cracking may temporarily reduce grip strength."
+    myth: "Cracking your knuckles damages cartilage and leads to arthritis.",
+    reality: "Radiographic studies show no correlation between knuckle cracking and joint degeneration; the \"pop\" is simply the release of nitrogen gas bubbles from synovial fluid."
   },
   {
     id: "m-16",
@@ -175,8 +193,8 @@ export const MYTHS: MythBusted[] = [
   {
     id: "m-23",
     bodyPartId: "stomach",
-    myth: "Eating at night automatically makes you fat.",
-    reality: "Weight gain depends primarily on total calorie intake and energy balance, not simply the time you eat."
+    myth: "Eating food late at night automatically causes weight gain.",
+    reality: "Weight management is dictated by total daily caloric intake versus energy expenditure; the time on the clock does not alter the thermodynamic value of a calorie."
   },
   {
     id: "m-24",
