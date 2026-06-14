@@ -29,12 +29,20 @@ Our design philosophy combines a premium, aerospace-inspired aesthetic with razo
 - **CPR Compression Pacer:** Integrated audio/visual metronome pacing at exactly **105 BPM** to guide emergency chest compressions.
 - **Smart Helplines:** Automatically detects and displays local emergency numbers based on the user's browser locale.
 
-### 4. 📚 Comprehensive Anatomy Library
-- **Remedies Database:** A curated list of natural remedies with clinical evidence ratings.
-- **Mythbusters:** Scientific explanations debunking common physiological misconceptions.
-- **Daily Facts Engine:** Curated anatomy facts organized by rarity (`COMMON`, `SURPRISING`, `MIND-BLOWING`, `RARE`).
+### 4. 🕵️‍♂️ The Grey Market Index
+- **Regulatory Intelligence Database:** Tracks 19 highly recognizable consumer foods, beverages, and traditional Ayurvedic supplements (e.g., *MDH & Everest Spices*, *Chyawanprash*, *Safi*, *Shilajit*, *Mustard Oil*, *Ghee*, *Pani Puri*, *Haldiram's*, *Liquid Nitrogen snacks*, etc.) that are banned or heavily restricted globally (US, EU, UK, Canada, Singapore) but remain widely consumed in India.
+- **Consumer-First Brand Swap:** Features familiar retail names as primary headers (e.g., *MDH Curry Masala*, *Amul Ghee*) and active chemical molecules/additives (e.g., *Ethylene Oxide*, *Heavy Metals*) as secondary metadata descriptors for immediate recognition.
+- **AI Toxicology Deep-Dives:** Seamlessly requests server-side Gemini analysis to generate a deep-dive pharmacokinetics report, toxicity mechanism, clinical signs, and action plans.
+- **Widescreen 2-Column Interface:** Structured into a spacious, high-contrast Search Index and Detail HUD split panel, optimized for widescreen desktop views.
+- **Printable Medical Reports:** Equipped with custom `@media print` styles to output clean, text-only regulatory reports for medical consultations.
 
-### 5. 📓 Health & Body Diary
+### 5. 📚 Comprehensive Anatomy Library & Personalization
+- **Remedies & Gen Z Context:** A curated list of natural remedies with clinical evidence ratings, expanded to address modern screen fatigue, "tech neck", and "always-on" anxiety.
+- **Dynamic Shuffling:** Fisher-Yates randomization on page mount for remedies, hacks, myths, and facts to keep the interface engaging on every session.
+- **Universal Bookmarks Hub:** Supports saving remedies, hacks, facts, and myths locally, accessible in a dedicated bookmarks tab.
+- **Mythbusters & Daily Facts:** Debunks common misconceptions and indexes anatomy facts with rarity ratings.
+
+### 6. 📓 Health & Body Diary
 - **Daily Symptom Logging:** Track how different organs and systems feel over time.
 - **Visual Streak Tracking:** Build healthy habits with SVG wave patterns that track your engagement.
 
