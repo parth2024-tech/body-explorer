@@ -1,22 +1,272 @@
 [
   {
     "molecule": "Ethylene Oxide (Carcinogenic Pesticide)",
-    "brand_names_india": ["MDH Curry Masala", "Everest Spice Powder", "MDH Madras Curry Powder", "MDH Sambhar Masala", "MDH Mixed Masala Curry Powder", "Everest Fish Curry Masala"],
+    "brand_names_india": ["Everest Fish Curry Masala", "MDH Madras Curry Powder", "MDH Sambhar Masala", "MDH Curry Powder", "Swad Masala", "Catch Masala", "Ramdev Masala", "Priya Masala", "Patanjali Masala"],
     "risk_level": "CRITICAL",
     "status_global": {
-      "US": "Investigated / Batch recalls",
+      "Singapore": "Banned & Recalled (2024)",
+      "Hong Kong": "Banned (2024)",
+      "US": "Scrutinized / FDA import warnings",
       "EU": "Banned in all food products since 1991",
-      "UK": "Investigated / Recalled",
-      "Singapore": "Banned & Recalled",
-      "Hong Kong": "Banned",
-      "Nepal": "Banned imports and sales"
+      "Maldives": "Banned imports",
+      "New Zealand": "Under investigation"
     },
-    "status_india": "FSSAI initiated quality checks after international pressure, but no nationwide ban was imposed; products continue to be sold freely.",
+    "status_india": "FSSAI initiated quality checks after international pressure, but no nationwide ban is in place; these spices continue to be sold freely.",
     "target_organ_id": "liver",
-    "mechanism": "Contains Ethylene Oxide, a highly toxic, mutagenic, and carcinogenic pesticide used as a sterilant. Chronic exposure alkylates cellular DNA structure, dramatically increasing the risk of lymphoid cancers, leukemia, and breast cancers.",
-    "how_to_spot": "Look for MDH's Madras Curry Powder, Sambhar Masala, Mixed Masala Curry Powder, or Everest's Fish Curry Masala. Check batch recall warnings.",
-    "safer_alternatives": ["Freshly ground whole spices", "Certified organic spice brands"],
+    "mechanism": "Fumigated with Ethylene Oxide to control microbial load (like Salmonella). Ethylene Oxide is an alkylating mutagenic gas classified as a Group 1 carcinogen, significantly increasing risks of lymphoid cancers, leukemia, and breast cancers.",
+    "how_to_spot": "Look for MDH Madras Curry Powder, Sambhar Masala, or Everest Fish Curry Masala. Check packaging details for international export-rejection batch codes.",
+    "safer_alternatives": ["Freshly ground whole spices", "Organic certified spice brands"],
     "cdsco_ref": "FSSAI Spice Quality Directive 2024"
+  },
+  {
+    "molecule": "Heavy Metals (Lead, Mercury, Arsenic)",
+    "brand_names_india": ["Chyawanprash (Dabur, Baidyanath, Patanjali, Zandu)"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "Canada": "Explicitly banned since 2005",
+      "US": "Import alerts on specific batches",
+      "EU": "Strict heavy metal limits enforced"
+    },
+    "status_india": "Widely consumed daily as an immunity booster across millions of households with no restrictions.",
+    "target_organ_id": "kidneys",
+    "mechanism": "Traditional Ayurvedic herbomineral manufacturing processes (Rasa Shastra) intentionally incorporate metals or fail to filter out naturally occurring lead, mercury, and arsenic, leading to chronic heavy metal accumulation, nephrotoxicity, and cognitive impairment.",
+    "how_to_spot": "Check packaging. Seek brands that provide independent lab reports verifying heavy metals are below safety thresholds.",
+    "safer_alternatives": ["Pure herbal decoctions (without mineral additions)", "Lab-tested heavy-metal-free formulations"],
+    "cdsco_ref": "Ministry of AYUSH heavy metal standards (export only)"
+  },
+  {
+    "molecule": "Toxic Heavy Metal Accumulation",
+    "brand_names_india": ["Karela Capsules (Himalaya)", "Karela Tablets (Shriji Herbal)", "Bitter Melon Supplements"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "Canada": "Blacklisted / Banned",
+      "US": "Import restrictions on unverified botanical supplements",
+      "EU": "Strictly regulated"
+    },
+    "status_india": "Sold OTC as a natural, safe blood-sugar management supplement in every pharmacy.",
+    "target_organ_id": "liver",
+    "mechanism": "Naturally occurring heavy metals (lead, arsenic, cadmium) absorbed from contaminated soil or during manufacturing accumulate in the botanical extract, causing progressive hepatotoxicity and cellular damage with chronic daily use.",
+    "how_to_spot": "Look for 'Karela' or 'Bitter Melon' capsules. Check if the brand provides heavy metal batch clearance.",
+    "safer_alternatives": ["Fresh cooked Karela (Bitter gourd)", "Standardized metformed blood sugar therapies under supervision"],
+    "cdsco_ref": "AYUSH Export Guidelines"
+  },
+  {
+    "molecule": "Arsenic & Heavy Metal Contamination",
+    "brand_names_india": ["Safi Liquid Blood Purifier (Hamdard)"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Import restrictions & warnings",
+      "Canada": "Banned / Import alert",
+      "UK": "Consumer warnings issued"
+    },
+    "status_india": "Sold widely as a daily herbal blood purifier to clear acne and improve skin health.",
+    "target_organ_id": "skin",
+    "mechanism": "Testing by international regulators identified toxic levels of arsenic. Chronic arsenic exposure damages skin cells, leading to hyperkeratosis, pigment changes, and increases the long-term risk of skin, lung, and bladder cancers.",
+    "how_to_spot": "Check apothecary shelves for 'Safi' liquid bottles by Hamdard.",
+    "safer_alternatives": ["Hydration", "Balanced diet", "Consulting a dermatologist for acne"],
+    "cdsco_ref": "FSSAI Food/Supplement Adulteration standards"
+  },
+  {
+    "molecule": "Heavy Metals (Lead, Cadmium, Mercury)",
+    "brand_names_india": ["Maha Sudarshan Churna (Zandu, Dabur)", "Shilajit Capsules (Baidyanath, Patanjali)"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "Canada": "Banned",
+      "US": "Heavy restrictions / warnings on Shilajit imports",
+      "EU": "Banned in several member states"
+    },
+    "status_india": "Prescribed and purchased freely as remedies for chronic fever (Maha Sudarshan) and vigor/vitality (Shilajit).",
+    "target_organ_id": "kidneys",
+    "mechanism": "Shilajit is a natural exudate containing fulvic acid, but frequently carries high levels of lead and arsenic from raw rock extraction. Maha Sudarshan Churna incorporates multiple herbs that concentrate heavy metals, causing chronic renal tubular necrosis and cognitive decline.",
+    "how_to_spot": "Verify packaging for Dabur, Zandu, or Baidyanath. Avoid raw, unpurified shilajit resins.",
+    "safer_alternatives": ["Clinically tested herbal extracts", "Nutritional therapies"],
+    "cdsco_ref": "AYUSH Pharmacopoeia standards"
+  },
+  {
+    "molecule": "Erucic Acid (Cardiotoxic Fatty Acid)",
+    "brand_names_india": ["Mustard Oil (Sarson ka Tel)", "Kachi Ghani Mustard Oil"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Banned for culinary use (must be labeled 'For External Use Only')",
+      "EU": "Strictly regulated (max 5% erucic acid limit)"
+    },
+    "status_india": "Used daily as the primary cooking oil in millions of households across Northern and Eastern India.",
+    "target_organ_id": "heart",
+    "mechanism": "Naturally contains high levels (30-50%) of Erucic Acid. Early animal studies linked high erucic acid intake to myocardial lipidosis (accumulation of fat in heart muscle), which can compromise cardiac muscle function over time.",
+    "how_to_spot": "Look for bottles of mustard oil in cooking aisles. In the US, check if labeled 'For External Use Only'.",
+    "safer_alternatives": ["Specially bred low-erucic mustard oil (Canola-type)", "Sunflower oil", "Cold-pressed groundnut oil"],
+    "cdsco_ref": "FSSAI Cooking Oil Regulations (Permitted culinary oil)"
+  },
+  {
+    "molecule": "Foot-and-Mouth Disease Virus (livestock biosecurity risk)",
+    "brand_names_india": ["Amul Ghee", "Gowardhan Ghee", "Aashirvaad Svasti Ghee", "Patanjali Ghee"],
+    "risk_level": "UNDER-REVIEW",
+    "status_global": {
+      "US": "Banned/Prohibited by USDA (unless imported from highly certified, pasteurized, USDA-approved facilities)"
+    },
+    "status_india": "Universally consumed as a healthy cooking fat and superfood in Indian households.",
+    "target_organ_id": "stomach",
+    "mechanism": "Not toxic to humans, but restricted internationally due to livestock biosecurity. India has endemic areas of Foot-and-Mouth Disease (FMD). Untreated dairy products can harbor the FMD virus, which if introduced to local livestock in countries like the US, could cause catastrophic agricultural outbreaks.",
+    "how_to_spot": "Ensure butter and ghee are certified as pasteurized under high heat to guarantee total viral inactivation.",
+    "safer_alternatives": ["Locally produced ghee", "Clarified butter from FMD-free regions"],
+    "cdsco_ref": "USDA APHIS Animal Product Import Regulations"
+  },
+  {
+    "molecule": "Vibrio cholerae (Waterborne Cholera Pathogen)",
+    "brand_names_india": ["Pani Puri", "Golgappa", "Puchka"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "Nepal": "Banned in Kathmandu Valley (2022)"
+    },
+    "status_india": "Sold on street corners in every town and city in India, consumed by millions daily.",
+    "target_organ_id": "small-intestine",
+    "mechanism": "Prepared at street stalls using unhygienic water. Direct contamination with Vibrio cholerae bacteria causes cholera, a severe waterborne disease leading to acute watery diarrhea, extreme dehydration, and potential circulatory collapse if untreated.",
+    "how_to_spot": "Avoid roadside stalls using open water containers or unverified ice. Look for clean, closed-loop water dispensing stalls.",
+    "safer_alternatives": ["Homemade pani puri with boiled/filtered water", "Hygienic dine-in restaurants"],
+    "cdsco_ref": "FSSAI Street Food Hygiene Guidelines"
+  },
+  {
+    "molecule": "Salmonella, Mold, & Pesticide Residues",
+    "brand_names_india": ["Haldiram's Bhujia", "Haldiram's Aloo Bhujia", "Haldiram's Snack Mixes (Panchrattan, Tasty Nuts)"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Shipments rejected by FDA in 2015",
+      "EU": "Strict residue testing required"
+    },
+    "status_india": "The most popular brand of packaged snacks in India, consumed daily by millions of families.",
+    "target_organ_id": "stomach",
+    "mechanism": "Systemic issues in ingredient sourcing and processing facility hygiene lead to contamination with Salmonella bacteria, storage mold (which can release aflatoxins), and chemical residues from agricultural pesticides exceeding safety thresholds.",
+    "how_to_spot": "Check packaged namkeen bags. Look for standard hygiene certification marks.",
+    "safer_alternatives": ["Home-cooked snacks", "Brands with strict batch-tested contamination reports"],
+    "cdsco_ref": "FSSAI Packaged Food Contaminant Limits"
+  },
+  {
+    "molecule": "Heavy Metal Adulteration (Lead, Cadmium, Chromium)",
+    "brand_names_india": ["Kaju Katli with Silver Leaf", "Silver-foiled sweets", "Mithai with Chandi ka Warq"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Strict heavy metal limits",
+      "EU": "Strict purity limits on food grade silver (E174)"
+    },
+    "status_india": "Silver leaf is universally used to garnish premium sweets during festivals and celebrations.",
+    "target_organ_id": "liver",
+    "mechanism": "Historically hammered between animal intestines (causing hygiene issues), modern warq is often adulterated with toxic heavy metals like lead, cadmium, and chromium. These metals accumulate in the liver and kidneys, causing cellular toxicity and organ strain.",
+    "how_to_spot": "Look for shiny silver coating on sweets. Try rubbing the silver layer with fingers; if it crumbles and sticks, it may be impure aluminium or adulterated silver.",
+    "safer_alternatives": ["Plain sweets without silver leaf coating", "Sweets decorated with saffron or nuts"],
+    "cdsco_ref": "FSSAI Regulation on Silver Leaf purity (Animal source ban)"
+  },
+  {
+    "molecule": "Liquid Nitrogen (Cryogenic Tissue Necrosis)",
+    "brand_names_india": ["Dragon's Breath biscuits", "Liquid Nitrogen smoke snacks", "Cryo-cocktails"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "FDA consumer alerts/restrictions",
+      "Indonesia": "Banned / Restricted at street stalls"
+    },
+    "status_india": "Banned/restricted in Tamil Nadu and Karnataka, but occasionally sold at novelty food stalls and night markets.",
+    "target_organ_id": "stomach",
+    "mechanism": "Extremely cold (-196°C) liquid nitrogen used to create a smoking effect. If consumed before fully evaporating, the liquid can cause severe cryogenic frostbite, mucosal tissue necrosis, or gas expansion inside the stomach leading to catastrophic gastric rupture.",
+    "how_to_spot": "Snacks served smoking in small cups, where users are encouraged to blow smoke from their mouth/nose.",
+    "safer_alternatives": ["Standard cooled snacks", "Normal ice-cream"],
+    "cdsco_ref": "State-level bans (Tamil Nadu, Karnataka FSSA)"
+  },
+  {
+    "molecule": "Konjac Gelling Agent (Choking Hazard)",
+    "brand_names_india": ["Mini Jelly Cups", "Fruit Jelly Sweets", "Konjac Jelly"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Banned in mini-cup packaging",
+      "EU": "Banned by European Commission",
+      "UK": "Banned",
+      "Australia": "Banned",
+      "Hong Kong": "Banned"
+    },
+    "status_india": "Available in local shops and canteens, targeted at kids with no active federal ban.",
+    "target_organ_id": "throat",
+    "mechanism": "Konjac (glucomannan) is highly slippery and does not dissolve easily in the mouth. Squeezed from small cups, the firm jelly can slide directly into the throat, get lodged, and completely block the trachea, causing fatal asphyxiation.",
+    "how_to_spot": "Small mouth-sized plastic cups of fruit jelly containing 'konjac', 'glucomannan', or 'konnyaku'.",
+    "safer_alternatives": ["Gelatin jellies", "Agar-agar sweets", "Fresh fruit"],
+    "cdsco_ref": "No specific FSSAI ban on konjac mini jellies"
+  },
+  {
+    "molecule": "Ideological Ban (Triangular Pastry shape)",
+    "brand_names_india": ["Samosa", "Singara"],
+    "risk_level": "UNDER-REVIEW",
+    "status_global": {
+      "Somalia": "Banned since 2011 (enforced by extremist Al-Shabaab group)"
+    },
+    "status_india": "The most popular, universally loved savory tea-time snack across all regions of India.",
+    "target_organ_id": "stomach",
+    "mechanism": "Not toxic. Banned purely for socio-political and ideological reasons in militant-controlled areas of Somalia, under the claim that the triangular shape resembles the Christian Holy Trinity.",
+    "how_to_spot": "Triangular fried pastry containing spiced potatoes, peas, or meat.",
+    "safer_alternatives": ["Spring rolls", "Kachoris", "Pakoras"],
+    "cdsco_ref": "No local health hazard; completely safe to consume"
+  },
+  {
+    "molecule": "Opiate Alkaloid Traces (Morphine / Codeine)",
+    "brand_names_india": ["Poppy Seeds (Khus Khus)", "White Poppy Seeds"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "Singapore": "Banned (classified as prohibited substance)",
+      "Taiwan": "Banned",
+      "Saudi Arabia": "Banned",
+      "UAE": "Banned"
+    },
+    "status_india": "Commonly used to thicken gravies, curries, and as a topping in traditional sweets and breads.",
+    "target_organ_id": "brain",
+    "mechanism": "Poppy seeds are harvested from the opium poppy plant (Papaver somniferum). Although the seeds themselves do not contain opiates, they can be contaminated with morphine and codeine sap from the plant. Consuming them can trigger positive results on sensitive drug tests, resulting in potential legal trouble.",
+    "how_to_spot": "Small white or grey-blue seeds used in gravies, sweets, or bakery toppings.",
+    "safer_alternatives": ["Melon seeds (Magajtari)", "Cashew nut paste", "Almond paste"],
+    "cdsco_ref": "FSSAI Permitted Culinary Seed"
+  },
+  {
+    "molecule": "ODAP Neurotoxin (Lathyrism Paralytic Agent)",
+    "brand_names_india": ["Khesari Dal", "Grass Pea", "Lathyrus sativus"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Highly restricted",
+      "EU": "Restricted"
+    },
+    "status_india": "Banned in 1961, but the ban was officially lifted in 2016 after the introduction of low-toxin varieties; sold in limited quantities.",
+    "target_organ_id": "spine-lumbar",
+    "mechanism": "Contains the non-protein amino acid ODAP (beta-N-oxalyl-L-alpha,beta-diaminopropionic acid). Chronic daily consumption causes lathyrism, a neurodegenerative condition resulting in permanent spastic paralysis of the lower limbs.",
+    "how_to_spot": "Look for yellow, slightly angular lentils resembling Toor dal. Often used as an adulterant in Toor dal due to low cost.",
+    "safer_alternatives": ["Toor dal (Pigeon pea)", "Masoor dal (Red lentil)", "Chana dal (Bengal gram)"],
+    "cdsco_ref": "FSSAI lifted domestic ban in 2016 (permitting low ODAP varieties)"
+  },
+  {
+    "molecule": "Synthetic Food Dyes (Tartrazine / Sunset Yellow / Allura Red)",
+    "brand_names_india": ["Mirinda", "Fanta", "Brightly Colored Mithai (Jalebi, Motichoor)", "Packaged candies", "Colored Syrups"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Allowed but regulated",
+      "EU": "Requires warning label: 'May have an adverse effect on activity and attention in children'; some colors banned in specific countries",
+      "UK": "Warning labels required for artificial colorings"
+    },
+    "status_india": "Permitted in a wide range of beverages, candies, and sauces under FSSAI without any warnings or disclosures regarding child hyperactivity.",
+    "target_organ_id": "brain",
+    "mechanism": "Synthetic coal tar dyes release histamines and cross-react with salicylates, leading to central nervous system excitability, ADHD symptoms, hyperactivity in children, and allergic reactions.",
+    "how_to_spot": "Look for colors like 'Tartrazine', 'Allura Red', 'Sunset Yellow', 'Ponceau 4R', 'E102', 'E110', or 'E129' on packaging.",
+    "safer_alternatives": ["Sweets coloured with natural saffron, turmeric, or beetroot", "Organic candies"],
+    "cdsco_ref": "FSSAI Food Coloring Standards"
+  },
+  {
+    "molecule": "Potassium Bromate (E924 Baking Agent)",
+    "brand_names_india": ["Commercial White Breads", "Burger Buns", "Pizza Bases", "Pav / Bread rolls"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Permitted but voluntary reduction requested",
+      "EU": "Banned in food preparation since 1990",
+      "UK": "Banned",
+      "Canada": "Banned",
+      "China": "Banned"
+    },
+    "status_india": "FSSAI announced a ban in 2016, but testing reveals it is still used by local, unorganized bakeries or persists as a trace contaminant in white flour.",
+    "target_organ_id": "kidneys",
+    "mechanism": "Classified as a Group 2B carcinogen that generates reactive oxygen species, leading to severe renal tubular necrosis and renal tumors.",
+    "how_to_spot": "Avoid buying extremely cheap, unbranded bakery products. Check ingredient labels for 'Potassium Bromate' or 'E924'.",
+    "safer_alternatives": ["Ascorbic Acid (Vitamin C)", "Organic flour products"],
+    "cdsco_ref": "FSSAI Gazette Notification F.No. P. 15025/19/2013-OOF-FSSAI"
   },
   {
     "molecule": "Embedded Non-Nutritive Toys (Choking Hazard)",
@@ -34,42 +284,6 @@
     "cdsco_ref": "FSSAI Food Safety Standards (unregulated choking hazard)"
   },
   {
-    "molecule": "Pathogenic Bacteria (E. coli, Salmonella, Listeria)",
-    "brand_names_india": ["Raw Milk (Doodh from Local Dairy)", "Local Milkman Milk", "Roadside Dairy Milk", "Unpasteurised Milk"],
-    "risk_level": "HIGH",
-    "status_global": {
-      "US": "Banned / Illegal in 20 states",
-      "EU": "Restricted / Warning labels required",
-      "UK": "Banned in Scotland, heavily restricted in England/Wales",
-      "Australia": "Banned",
-      "Canada": "Banned"
-    },
-    "status_india": "Delivered door-to-door in cities and villages alike, consumed daily by millions of households with no restrictions.",
-    "target_organ_id": "stomach",
-    "mechanism": "Unpasteurised milk can harbor dangerous pathogens such as E. coli, Salmonella, Campylobacter, and Listeria. These bacteria cause severe gastrointestinal infection, food poisoning, and pose life-threatening risks to pregnant women, infants, and immunocompromised individuals.",
-    "how_to_spot": "Any milk bought directly from local dairies or milkmen that has not undergone commercial pasteurisation.",
-    "safer_alternatives": ["Pasteurised milk", "UHT packaged milk", "Boiling raw milk thoroughly before consumption"],
-    "cdsco_ref": "No FSSAI restrictions on raw milk sales"
-  },
-  {
-    "molecule": "Konjac Gelling Agent (Choking Hazard)",
-    "brand_names_india": ["Mini Jelly Cups", "Jelly Sweets", "Konjac Jelly"],
-    "risk_level": "CRITICAL",
-    "status_global": {
-      "US": "Banned",
-      "EU": "Banned by the European Commission",
-      "UK": "Banned",
-      "Australia": "Banned",
-      "Canada": "Banned"
-    },
-    "status_india": "Sold near school canteens and roadside shops, marketed primarily at children with no federal ban in place.",
-    "target_organ_id": "throat",
-    "mechanism": "Mini jelly cups containing konjac are a choking hazard due to their shape, size, and firm texture. Unlike other gelatin-based products, konjac does not dissolve easily in the mouth, and when squeezed, it can stick to a child's throat and block the airway.",
-    "how_to_spot": "Look for small plastic cups containing firm fruit jellies. Check ingredient lists for 'konjac', 'glucomannan', or 'konnyaku'.",
-    "safer_alternatives": ["Gelatin-based jellies", "Agar-agar fruit jellies (which dissolve easily)", "Fresh fruits"],
-    "cdsco_ref": "No specific FSSAI ban on konjac mini jellies"
-  },
-  {
     "molecule": "Brominated Vegetable Oil (BVO Stabilizer)",
     "brand_names_india": ["Mountain Dew", "Citrus sodas"],
     "risk_level": "CRITICAL",
@@ -85,106 +299,5 @@
     "how_to_spot": "Check ingredient labels on citrus-flavored sodas and energy drinks for 'Brominated Vegetable Oil' or 'BVO'.",
     "safer_alternatives": ["Fresh lemonade", "Naturally flavored sparkling water", "Fruit juices"],
     "cdsco_ref": "FSSAI Beverage Standards Regulation"
-  },
-  {
-    "molecule": "Excessive Caffeine and Taurine (Energy Drink)",
-    "brand_names_india": ["Red Bull", "Energy Drinks"],
-    "risk_level": "HIGH",
-    "status_global": {
-      "France": "Banned for 12 years (until 2008)",
-      "Denmark": "Age-restricted (under 18)",
-      "Lithuania": "Banned for under-18s",
-      "UK": "Supermarket voluntary ban for under-16s"
-    },
-    "status_india": "Sold freely at every tea shop, gym, and supermarket without any age restriction or ban.",
-    "target_organ_id": "heart",
-    "mechanism": "Extremely high caffeine and taurine content stimulates the cardiovascular system, which can cause heart palpitations, hypertension, anxiety, sleep disturbances, and in rare cases, cardiac issues or convulsions in young children and teenagers.",
-    "how_to_spot": "Look for 250ml silver-blue cans labeled 'Red Bull'. Check caffeine warnings on the back.",
-    "safer_alternatives": ["Green tea", "Cold brew coffee (moderate)", "Coconut water", "Natural electrolytes"],
-    "cdsco_ref": "FSSAI Energy Drink caffeine limit standards"
-  },
-  {
-    "molecule": "Synthetic Food Dyes (Titanium Dioxide / Red 40 / Yellow 5)",
-    "brand_names_india": ["Coloured Sweets / Mithai", "Packaged Candies", "Roadside Pani Puri Chutney", "Orbit Chewing Gum", "White Candies"],
-    "risk_level": "HIGH",
-    "status_global": {
-      "US": "Titanium Dioxide permitted under 1% weight; Red 40/Yellow 5 require warning labels in some states",
-      "EU": "Titanium Dioxide (E171) banned in food since 2022 due to genotoxicity; Red 40 and Yellow 5 require mandatory warning labels",
-      "UK": "Warning labels required for artificial colorings"
-    },
-    "status_india": "These dyes are permitted in candies, coloured mithai, packaged sweets, and street-side food without any warning labels.",
-    "target_organ_id": "large-intestine",
-    "mechanism": "Titanium Dioxide (E171) nanoparticles accumulate in the intestinal lining, causing micro-inflammation, oxidative stress, DNA damage, and promoting pre-cancerous lesions. Other synthetic food dyes like Tartrazine (Yellow 5) and Allura Red (Red 40) are linked to hyperactivity and ADHD-like symptoms in children.",
-    "how_to_spot": "Avoid candy, gum, or street food with extremely bright or artificial coloring. Check labels for 'E171', 'E102', 'E129', or 'Tartrazine'.",
-    "safer_alternatives": ["Mithai colored with saffron, turmeric, or beetroot", "Organic candies using plant extracts"],
-    "cdsco_ref": "FSSAI Food Additives Regulation"
-  },
-  {
-    "molecule": "Chemically Bleached Flour (Chlorine / Benzoyl Peroxide)",
-    "brand_names_india": ["Maida (White Flour)", "Commercial White Bread", "Samosas", "Noodles", "Biscuits"],
-    "risk_level": "HIGH",
-    "status_global": {
-      "EU": "Banned (chemically bleached flour is considered unsafe)",
-      "UK": "Banned",
-      "China": "Banned"
-    },
-    "status_india": "Used in enormous quantities across all bakeries and food manufacturing sectors with no restrictions.",
-    "target_organ_id": "small-intestine",
-    "mechanism": "Bleached flour is treated with chemical bleaching agents like chlorine gas or benzoyl peroxide to make it white and soft. These chemicals destroy nutrients and leave chemical residues that are considered unsafe for long-term consumption by European food agencies.",
-    "how_to_spot": "Look for refined wheat flour or maida in packaged foods, white breads, pizzas, and bakery snacks.",
-    "safer_alternatives": ["Whole wheat flour (Atta)", "Unbleached flour", "Millets (Ragi, Jowar, Bajra)"],
-    "cdsco_ref": "FSSAI permits chemical bleaching of flour"
-  },
-  {
-    "molecule": "Industrial Trans Fats (Partially Hydrogenated Oils)",
-    "brand_names_india": ["Packaged Namkeen", "Biscuits", "Commercial Cookies", "Bakery Products", "Vanaspati Ghee"],
-    "risk_level": "CRITICAL",
-    "status_global": {
-      "US": "Banned (FDA banned partially hydrogenated oils in 2018)",
-      "EU": "Strictly limited (max 2g trans fat per 100g fat)",
-      "UK": "Strictly limited"
-    },
-    "status_india": "India has regulations targeting trans fat reduction, but enforcement is weak, and small-scale unorganized manufacturers continue to use hydrogenated vegetable fats freely.",
-    "target_organ_id": "heart",
-    "mechanism": "Industrial trans fats raise bad cholesterol (LDL) and lower good cholesterol (HDL), causing rapid inflammation, arterial plaque buildup, coronary heart disease, and strokes.",
-    "how_to_spot": "Check ingredient labels for 'partially hydrogenated oils', 'hydrogenated vegetable fat', or 'vanaspati'.",
-    "safer_alternatives": ["Cold-pressed oils (mustard, sesame, groundnut)", "Butter or pure cow ghee (in moderation)"],
-    "cdsco_ref": "FSSAI limit of 2% trans fats in oils/fats (enforcement weak in unorganized sectors)"
-  },
-  {
-    "molecule": "Lead & Excessive Taste Enhancers (MSG)",
-    "brand_names_india": ["Maggi Noodles", "Instant Noodles", "Yippee Noodles"],
-    "risk_level": "HIGH",
-    "status_global": {
-      "US": "FDA temporarily banned/recalled Nestlé products in 2015",
-      "EU": "Strictly monitored for lead and chemical levels",
-      "UK": "Monitored strictly",
-      "Southeast Asia": "Monitored strictly"
-    },
-    "status_india": "Temporarily banned in 2015, but returned to the market and is now sold everywhere under more relaxed permissible limits for heavy metals and flavor enhancers.",
-    "target_organ_id": "kidneys",
-    "mechanism": "Accumulation of lead causes irreversible damage to the nervous system and kidneys, especially in children. High sodium and excessive flavor enhancers (monosodium glutamate) can also elevate blood pressure and cause metabolic strain.",
-    "how_to_spot": "Packaged instant noodle blocks. Check ingredient labels for 'hydrolyzed groundnut protein' or 'MSG'.",
-    "safer_alternatives": ["Whole grain noodles", "Homemade wheat noodles with fresh spices"],
-    "cdsco_ref": "FSSAI Food Safety Standards (Instant Noodles Category)"
-  },
-  {
-    "molecule": "Betel Nut Carcinogens (Arecoline / Tobacco)",
-    "brand_names_india": ["Plain Meetha Paan", "Tobacco-Mixed Paan", "Paan Masala", "Betel Nut Products"],
-    "risk_level": "CRITICAL",
-    "status_global": {
-      "US": "Banned/restricted (Areca nut is on FDA alert list)",
-      "EU": "Banned / restricted import",
-      "UK": "Restricted",
-      "Australia": "Banned (Betel nut is a controlled substance)",
-      "Singapore": "Banned",
-      "UAE": "Banned"
-    },
-    "status_india": "Sold freely at every street corner and widely consumed in every state, with deep cultural roots.",
-    "target_organ_id": "jaw",
-    "mechanism": "Betel nut (Areca nut) contains arecoline, which is classified as a Group 1 carcinogen by the WHO's IARC. It causes oral submucous fibrosis (OSF) and dramatically increases the risk of oral cancer. Adding tobacco compounding this effect.",
-    "how_to_spot": "Look for paan shops, packets of paan masala, or green betel leaf preparations containing chopped nuts or tobacco.",
-    "safer_alternatives": ["Fennel seeds (Saunf)", "Cardamom", "Natural mouth fresheners (without betel nut or tobacco)"],
-    "cdsco_ref": "FSSAI warning labels required on pan masala, but sales remain unrestricted"
   }
 ]
