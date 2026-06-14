@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bodyatlas.app/sitemap.xml
+Sitemap: https://body-explorer.vercel.app/sitemap.xml

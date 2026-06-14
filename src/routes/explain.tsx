@@ -3,7 +3,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { BODY_PARTS } from "@/data/content";
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 interface ExplainResult {
   organs: string[];
@@ -15,12 +15,13 @@ const explainSymptom = createServerFn({ method: "POST" })
   .validator((data: string) => data)
   .handler(async ({ data: input }) => {
     try {
-      const apiKey = process.env.ANTHROPIC_API_KEY || (import.meta as any).env?.VITE_ANTHROPIC_API_KEY;
+      const apiKey = process.env.GEMINI_API_KEY || (import.meta as any).env?.VITE_GEMINI_API_KEY;
       if (!apiKey) {
-        throw new Error("Anthropic API key is missing. Please set ANTHROPIC_API_KEY in your .env file.");
+        throw new Error("Gemini API key is missing. Please set GEMINI_API_KEY in your environment.");
       }
 
-      const anthropic = new Anthropic({ apiKey });
+      const genAI = new GoogleGenerativeAI(apiKey);
+      const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
       const prompt = `You are an expert anatomy and physiology educator. 
 A user has provided this description of their physical sensation: "${input}"
@@ -28,30 +29,28 @@ A user has provided this description of their physical sensation: "${input}"
 Provide a JSON response with exactly this structure:
 {
   "organs": ["brain", "heart"], // Array of lowercase organ IDs involved
-  "facts": ["Fact 1", "Fact 2", "Fact 3"], // 3 educational physiological facts about why this happens
+  "facts": ["Fact 1", "Fact 2", "Fact 3"], // 3 fascinating physiological facts about why this happens. Make it mind-blowing!
   "doctorQuestions": ["Q1", "Q2", "Q3"] // 3 smart questions to ask a doctor
 }
 
-CRITICAL: Do NOT provide medical advice or diagnose. Only explain the physiological mechanisms. Do NOT include markdown formatting or backticks around the JSON. Return ONLY the raw JSON string.`;
+CRITICAL: Do NOT provide medical advice or diagnose. Only explain the physiological mechanisms. Return ONLY the raw JSON string.`;
 
-      const response = await anthropic.messages.create({
-        model: "claude-3-haiku-20240307",
-        max_tokens: 1000,
-        temperature: 0.2,
-        messages: [{ role: "user", content: prompt }]
+      const result = await model.generateContent({
+        contents: [{ role: "user", parts: [{ text: prompt }] }],
+        generationConfig: {
+          temperature: 0.3,
+          responseMimeType: "application/json",
+        }
       });
 
-      const text = response.content[0].type === 'text' ? response.content[0].text.trim() : '{}';
-      
-      // Clean up potential markdown formatting if Claude still added it
-      const cleanedText = text.replace(/^```json/i, '').replace(/^```/, '').replace(/```$/, '').trim();
-      
-      const result = JSON.parse(cleanedText);
+      const responseText = result.response.text();
+      const cleanedText = responseText.replace(/^```json/i, '').replace(/^```/, '').replace(/```$/, '').trim();
+      const parsed = JSON.parse(cleanedText);
       
       return {
-        organs: Array.isArray(result.organs) ? result.organs : ["brain"],
-        facts: Array.isArray(result.facts) ? result.facts : ["Your body systems are interconnected."],
-        doctorQuestions: Array.isArray(result.doctorQuestions) ? result.doctorQuestions : ["What tests would you recommend?"]
+        organs: Array.isArray(parsed.organs) ? parsed.organs : ["brain"],
+        facts: Array.isArray(parsed.facts) ? parsed.facts : ["Your body systems are interconnected."],
+        doctorQuestions: Array.isArray(parsed.doctorQuestions) ? parsed.doctorQuestions : ["What tests would you recommend?"]
       };
     } catch (error) {
       console.error("AI Explain Error:", error);

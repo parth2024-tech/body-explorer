@@ -1,17 +1,16 @@
 {
   "name": "The Living Body Atlas",
   "short_name": "Body Atlas",
-  "description": "Interactive human body map with facts, myths, and health insights.",
+  "description": "Interactive anatomy platform with 30+ organs, personal body diary, daily insights, and AI education.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#030303",
-  "theme_color": "#FC3D21",
+  "theme_color": "#030303",
   "icons": [
     {
       "src": "/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
     }
   ]
 }
