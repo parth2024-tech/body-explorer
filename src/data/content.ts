@@ -623,30 +623,30 @@ export const REMEDIES: RemedyEntry[] = [
     bodyPartId: "spine-lumbar"
   },
   {
-    id: "peppermint-tea-bloating",
-    name: "Peppermint Tea",
-    description: "A warm cup of tea brewed from dried or fresh peppermint leaves.",
+    id: "peppermint-oil-ibs",
+    name: "Peppermint Oil Extract",
+    description: "Enteric-coated peppermint oil capsules or strong brewed peppermint tea to soothe the stomach and reduce gas.",
     evidenceRating: "studied",
-    evidenceDetails: "Peppermint contains an active compound called menthol. Studies show that menthol acts as a natural antispasmodic, meaning it relaxes the muscles in your stomach and intestines to ease cramps and reduce bloating.",
-    ailment: "Bloating and Stomach Cramps",
+    evidenceDetails: "PubMed-indexed gastroenterology studies demonstrate that the menthol in peppermint acts as a natural antispasmodic. It helps relax the smooth muscles of the digestive tract, which significantly reduces abdominal pain, cramping, and bloating in IBS patients.",
+    ailment: "Bloating & Irritable Bowel Syndrome (IBS)",
     bodyPartId: "stomach"
   },
   {
     id: "honey-cough-throat",
-    name: "A Spoonful of Honey",
-    description: "Swallowing a single spoonful of dark or raw honey (sometimes mixed with warm water or a squeeze of lemon) right before bed.",
+    name: "Honey & Warm Water Soother",
+    description: "A simple spoonful of honey, taken alone or mixed into warm water, to coat the throat and calm coughing fits.",
     evidenceRating: "studied",
-    evidenceDetails: "Honey has natural antibacterial properties and acts as a physical barrier, coating the throat to soothe irritation. Clinical studies have shown that honey is often just as effective as over-the-counter cough syrups at reducing nighttime coughing, especially in children (note: honey should never be given to babies under 1 year old).",
-    ailment: "Nighttime Cough and Sore Throat",
+    evidenceDetails: "Clinical trials show that a single dose of honey can significantly reduce mucus secretion and nighttime coughing in children and adults. Studies often find it performs as well as, or better than, common over-the-counter cough suppressants like dextromethorphan. (Note: Never give honey to infants under 1 year old due to botulism risk).",
+    ailment: "Cough & Sore Throat",
     bodyPartId: "throat"
   },
   {
     id: "chamomile-tea-sleep",
-    name: "Chamomile Tea",
-    description: "A gentle, floral tea made by steeping dried chamomile flowers in hot water.",
+    name: "Chamomile Flower Infusion",
+    description: "Steeped dried chamomile flowers taken 30 to 45 minutes before bed to promote physical and mental relaxation.",
     evidenceRating: "studied",
-    evidenceDetails: "Chamomile flowers contain a specific antioxidant called apigenin. Science shows that apigenin binds to specific receptors in your brain that help decrease anxiety and naturally initiate sleepiness.",
-    ailment: "Sleeplessness and Mild Anxiety",
+    evidenceDetails: "Chamomile contains an antioxidant called apigenin. Scientific evidence shows that apigenin binds to specific receptors in the brain that decrease anxiety and initiate sleep, with controlled trials showing improvements in sleep quality and a reduction in wakefulness.",
+    ailment: "Mild Anxiety & Sleep Quality",
     bodyPartId: "brain"
   },
   {
@@ -707,6 +707,15 @@ export const REMEDIES: RemedyEntry[] = [
     ailment: "The \"Nervous Stomach\" & Stress-Induced Bloating",
     bodyPartId: "stomach",
     genZContext: "Because the brain and gut are deeply connected, the high rates of anxiety among young adults often show up physically as stomach cramps, severe bloating, or irregular digestion."
+  },
+  {
+    id: "tart-cherry-gout",
+    name: "Tart Cherry Juice Concentrate",
+    description: "A small daily serving of 100% tart cherry juice (Montmorency cherries) to reduce uric acid and inflammation.",
+    evidenceRating: "studied",
+    evidenceDetails: "Clinical research indicates that the high concentration of anthocyanins in tart cherries powerfully clears uric acid from the bloodstream (preventing gout flare-ups) and accelerates muscle recovery after intense exercise by lowering inflammatory markers.",
+    ailment: "Muscle Recovery & Gout",
+    bodyPartId: "muscles"
   }
 ];
 
