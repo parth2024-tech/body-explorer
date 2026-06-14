@@ -1,0 +1,206 @@
+[
+  {
+    "molecule": "Nimesulide",
+    "brand_names_india": ["Nise", "Nimulid", "Sumo"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Never approved",
+      "EU": "Banned/restricted since 2002",
+      "UK": "Never approved",
+      "Australia": "Never approved"
+    },
+    "status_india": "Widely available, often prescribed for fever and pain, despite pediatric bans.",
+    "target_organ_id": "liver",
+    "mechanism": "Induces fulminant hepatic failure through mitochondrial toxicity and oxidative stress within hepatocytes.",
+    "how_to_spot": "Check the composition on the back of yellow or green painkiller strips for 'Nimesulide 100mg'.",
+    "safer_alternatives": ["Ibuprofen", "Paracetamol (Acetaminophen)"],
+    "cdsco_ref": "Banned for pediatric use (under 12) via 2011 Gazette."
+  },
+  {
+    "molecule": "Analgin",
+    "brand_names_india": ["Novalgin", "Metamizole"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Banned since 1977",
+      "EU": "Restricted/Prescription only with severe warnings",
+      "UK": "Banned",
+      "Australia": "Banned"
+    },
+    "status_india": "Suspended temporarily in 2013, but ban was revoked in 2014; currently available.",
+    "target_organ_id": "bones",
+    "mechanism": "Triggers idiosyncratic agranulocytosis by destroying neutrophil precursors in the bone marrow.",
+    "how_to_spot": "Look for 'Analgin' or 'Metamizole Sodium' on older, established pain relief brands.",
+    "safer_alternatives": ["Paracetamol", "Naproxen"],
+    "cdsco_ref": "Gazette Notification G.S.R. 2014 (Ban Revoked)"
+  },
+  {
+    "molecule": "Cisapride",
+    "brand_names_india": ["Ciza", "Syspride"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Withdrawn in 2000",
+      "EU": "Withdrawn in 2000",
+      "UK": "Withdrawn in 2000",
+      "Australia": "Withdrawn in 2000"
+    },
+    "status_india": "Banned, but occasionally found in older pharmaceutical stocks and unregulated dispensaries.",
+    "target_organ_id": "heart",
+    "mechanism": "Prolongs the QT interval by blocking hERG potassium channels in myocardial cells, leading to fatal ventricular arrhythmias.",
+    "how_to_spot": "Used for severe acid reflux. Check GI motility drugs for the word 'Cisapride'.",
+    "safer_alternatives": ["Levosulpiride", "Itopride"],
+    "cdsco_ref": "Banned via Gazette Notification G.S.R. 82(E) 2011."
+  },
+  {
+    "molecule": "Phenacetin",
+    "brand_names_india": ["Compound Powders", "Legacy Analgesics"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Banned in 1983",
+      "EU": "Banned in 1980s",
+      "UK": "Banned in 1980s",
+      "Australia": "Banned in 1980s"
+    },
+    "status_india": "Banned, but sometimes covertly present in unbranded compound analgesic powders.",
+    "target_organ_id": "kidneys",
+    "mechanism": "Causes analgesic nephropathy through chronic renal papillary necrosis and increases risk of urothelial cancer.",
+    "how_to_spot": "Avoid unlabeled powdered painkillers or generic 'headache powders' without printed strips.",
+    "safer_alternatives": ["Paracetamol"],
+    "cdsco_ref": "Banned (Early Gazette)"
+  },
+  {
+    "molecule": "Sibutramine",
+    "brand_names_india": ["Obestat", "Sibotrim", "Slim Capsules"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Withdrawn in 2010",
+      "EU": "Withdrawn in 2010",
+      "UK": "Withdrawn in 2010",
+      "Australia": "Withdrawn in 2010"
+    },
+    "status_india": "Banned in 2011, but frequently resurfaces illegally in Ayurvedic or 'herbal' weight loss supplements.",
+    "target_organ_id": "heart",
+    "mechanism": "Inhibits serotonin and norepinephrine reuptake, significantly elevating heart rate, blood pressure, and risk of myocardial infarction.",
+    "how_to_spot": "Be highly suspicious of fast-acting 'herbal' fat burners; check lab reports if possible.",
+    "safer_alternatives": ["Dietary adjustment", "Orlistat (under supervision)"],
+    "cdsco_ref": "Banned via Gazette Notification G.S.R. 78(E) 2011."
+  },
+  {
+    "molecule": "Oxyphenbutazone",
+    "brand_names_india": ["Suganril", "Vet Formulations"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Withdrawn in 1984",
+      "EU": "Withdrawn in 1984",
+      "UK": "Withdrawn in 1984",
+      "Australia": "Withdrawn in 1984"
+    },
+    "status_india": "Banned for human use, but occasionally present in veterinary formulations that cross over into human consumption.",
+    "target_organ_id": "bones",
+    "mechanism": "Induces severe, irreversible aplastic anemia and agranulocytosis by direct toxic effect on bone marrow stem cells.",
+    "how_to_spot": "Ensure NSAIDs are strictly from human-grade pharmacies and check for 'Oxyphenbutazone'.",
+    "safer_alternatives": ["Ibuprofen", "Diclofenac (human grade)"],
+    "cdsco_ref": "Banned (Historical)"
+  },
+  {
+    "molecule": "Rofecoxib",
+    "brand_names_india": ["Vioxx", "Rofibax", "Zyrox"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Withdrawn in 2004",
+      "EU": "Withdrawn in 2004",
+      "UK": "Withdrawn in 2004",
+      "Australia": "Withdrawn in 2004"
+    },
+    "status_india": "Briefly available post-global withdrawal, now banned.",
+    "target_organ_id": "heart",
+    "mechanism": "Selective COX-2 inhibition disrupts the prostacyclin/thromboxane balance, causing severe pro-thrombotic cardiovascular events.",
+    "how_to_spot": "Check old medicine cabinets for painkillers ending in '-coxib' (except Celecoxib which remains approved).",
+    "safer_alternatives": ["Naproxen", "Celecoxib (with screening)"],
+    "cdsco_ref": "Banned via Gazette Notification 2004."
+  },
+  {
+    "molecule": "Furazolidone",
+    "brand_names_india": ["Furoxone", "Dependal-M", "Lomotil combinations"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Banned in food animals (carcinogen)",
+      "EU": "Banned in food animals",
+      "UK": "Banned in food animals",
+      "Australia": "Restricted"
+    },
+    "status_india": "Widely available in over-the-counter anti-diarrheal remedies.",
+    "target_organ_id": "small-intestine",
+    "mechanism": "Causes direct DNA damage (genotoxic) and is classified as a potential human carcinogen with long-term exposure.",
+    "how_to_spot": "Read the ingredients of yellow anti-diarrhea tablets or syrups for 'Furazolidone'.",
+    "safer_alternatives": ["Oral Rehydration Salts (ORS)", "Racecadotril", "Loperamide"],
+    "cdsco_ref": "Banned in certain FDCs, but single/some combination forms remain."
+  },
+  {
+    "molecule": "Bromocriptine",
+    "brand_names_india": ["Parlodel", "Bromogen", "Sicriptin"],
+    "risk_level": "UNDER-REVIEW",
+    "status_global": {
+      "US": "Banned for postpartum lactation suppression",
+      "EU": "Restricted heavily",
+      "UK": "Restricted",
+      "Australia": "Restricted"
+    },
+    "status_india": "Still routinely prescribed for postpartum lactation suppression.",
+    "target_organ_id": "brain",
+    "mechanism": "Strong dopamine D2 receptor agonist that can trigger severe systemic vasoconstriction, leading to hypertensive crises and strokes.",
+    "how_to_spot": "Check the prescription if given a pill to 'stop milk production' immediately after childbirth.",
+    "safer_alternatives": ["Cabergoline (lower dose)", "Natural cessation"],
+    "cdsco_ref": "No explicit ban for lactation suppression yet."
+  },
+  {
+    "molecule": "Quinine injection",
+    "brand_names_india": ["Rez Q", "Quinarsol", "Cinkona"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Heavily restricted (only for specific malaria)",
+      "EU": "Restricted",
+      "UK": "Restricted",
+      "Australia": "Restricted"
+    },
+    "status_india": "Still used in some hospitals for malaria beyond safe protocols, causing 'cinchonism'.",
+    "target_organ_id": "ears",
+    "mechanism": "Directly toxic to the auditory nerve and causes severe prolongation of the cardiac action potential when infused rapidly.",
+    "how_to_spot": "Ensure your doctor uses Artemisinin-based Combination Therapies (ACT) instead of Quinine for malaria.",
+    "safer_alternatives": ["Artesunate", "Artemether-Lumefantrine"],
+    "cdsco_ref": "Restricted to severe malaria only, but often misused."
+  },
+  {
+    "molecule": "Aceclofenac + Paracetamol + Rabeprazole",
+    "brand_names_india": ["Banned FDCs (April 2025 batch)"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Not approved as combinations",
+      "EU": "Not approved",
+      "UK": "Not approved",
+      "Australia": "Not approved"
+    },
+    "status_india": "Targeted for blanket ban in April 2025 due to lack of therapeutic rationale and toxicity.",
+    "target_organ_id": "stomach",
+    "mechanism": "Combines compounding gastric irritants with a proton pump inhibitor, masking severe mucosal ulceration and increasing hepatic load.",
+    "how_to_spot": "Avoid any medicine strip that lists three or more active ingredients for basic pain relief.",
+    "safer_alternatives": ["Single-ingredient Paracetamol", "Single-ingredient NSAID"],
+    "cdsco_ref": "CDSCO April 2025 FDC Ban List."
+  },
+  {
+    "molecule": "Diclofenac injection (Veterinary Scale)",
+    "brand_names_india": ["Voveran", "Reactin", "Diclo"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Human only, strict limits",
+      "EU": "Veterinary heavily restricted",
+      "UK": "Restricted",
+      "Australia": "Restricted"
+    },
+    "status_india": "Banned for veterinary use to save vultures, but multi-dose human vials are illegally diverted.",
+    "target_organ_id": "kidneys",
+    "mechanism": "Induces acute renal failure via profound inhibition of renal prostaglandins, disrupting glomerular filtration.",
+    "how_to_spot": "If you are a farmer, ensure you never use multi-dose human diclofenac vials on livestock.",
+    "safer_alternatives": ["Meloxicam (for veterinary)"],
+    "cdsco_ref": "Gazette Notification 2006 (Veterinary Ban)."
+  }
+]

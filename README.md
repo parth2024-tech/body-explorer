@@ -1,87 +1,66 @@
-# 🛰️ Human Body Atlas
+# 🛰️ Body Explorer: Next-Gen Interactive Anatomy
 
-> **A precision aerospace-grade interactive anatomy platform** — built like mission-critical software, styled like NASA's data dashboards. Explore the human body across 30+ organ systems with engineering precision.
-
----
-
-## 🔴 Design Philosophy — NASA Aerospace Aesthetic
-
-This platform has been entirely rebuilt to embody the visual language of premium aerospace engineering software:
-
-- **Deep Space Black** (`#030303`) — a void backdrop, not a painted wall
-- **NASA Red** (`#FC3D21`) — the iconic accent for all critical data and active states
-- **NASA Blue** (`#0B3D91`) — secondary accent for system indicators and highlights  
-- **Off-White** (`#EAEAEA`) — high-contrast foreground for readable data readouts
-- **Zero-radius UI** — razor-sharp rectangular panels, like physical instrument consoles
-- **Precision grid background** — a subtle 30×30px engineering schematic overlay
-- **Monospace technical labels** — all metadata rendered in `Fira Mono` with wide letter-spacing
-- **Corner crosshairs** — `+` marks injected on UI cards via CSS pseudo-elements
-- **Live clock & system status** in the header — real-time UTC readout + `NOMINAL / OPERATIONAL` indicators
+> **A precision interactive anatomy and health platform** — combining cutting-edge WebGL graphics with advanced AI to deliver a world-class educational experience. Built for students, health enthusiasts, and anyone curious about the human body.
 
 ---
 
-## ✨ Features Overview
+## 🌟 The Vision
 
-### 1. 🗺️ Interactive Body Map & Anatomy Layers
-- **System Switcher:** Toggle visual layers between Skin & Sensation, Muscles & Movement, Organs & Digestion, and Bones & Structure
-- **Personal Notes Pinner:** Click any organ to log private notes locally
-- **Text-to-Speech (TTS):** Accessibility-friendly audio summaries
-- **3D Viewer:** WebGL renders of selected organs using Three.js / React Three Fiber
+Body Explorer was built to push the boundaries of what's possible in web-based medical education. We've moved beyond static textbooks and simple 2D charts to create a **Living Body Atlas**. By leveraging Gemini AI, we don't just show you anatomy—we help you understand it, analyze symptoms, and prepare for medical consultations.
 
-### 2. 📚 Anatomy Library
-- **Remedies Database:** Traditional and clinically studied natural remedies with evidence ratings
-- **Anatomical Hacks:** Acupressure guides, breathing techniques, daily tuning advice
-- **Myths Debunked:** Common physiological misconceptions paired with scientific truth
-- **Sensory Facts:** Explanations for everyday body responses
+Our design philosophy combines a premium, aerospace-inspired aesthetic with razor-sharp performance, ensuring that critical health information is always readable, accessible, and stunningly presented.
 
-### 3. 💡 Body Facts Engine
-- **Daily Facts:** Curated fascinating anatomy facts organized by rarity (`COMMON`, `SURPRISING`, `MIND-BLOWING`, `RARE`)
-- **Filter & Search:** Browse by category, rarity, or body system
-- **Fact Cards:** Shareable, detailed fact panels with supporting context
+---
 
-### 4. 🩺 Symptoms & Conditions Library
-- **A–Z Directory:** Clinical conditions in plain-language overviews with symptom frequencies
-- **Symptom Explorer:** Discover causes, overlooked triggers, and misconceptions
-- **Red-Flag Checker:** Know exactly when to seek immediate medical attention
+## ✨ Flagship Features
 
-### 5. 🚨 Emergency Precautions & First Aid
-- **Scenario Cards:** Instant steps for cardiac arrest, stroke (FAST check), anaphylaxis, choking, bleeding
-- **CPR Compression Pacer:** Audio/visual pacing at exactly **105 BPM**
-- **Printable Instructions:** Clean print-optimized CSS layout
-- **Smart Emergency Numbers:** Auto-detects local helpline based on browser locale
+### 1. 🧠 AI Symptom Explorer (Powered by Gemini)
+- **Intelligent Symptom Analysis:** Describe how you feel in plain language. Our AI engine maps your sensations directly to the underlying physiology and affected organ systems.
+- **Doctor Visit Summary:** Generates a professional, structured report of your symptoms, potential triggers, and relevant questions to ask your physician.
+- **Print-Ready:** Custom `@media print` CSS ensures that your Doctor Report prints cleanly, hiding UI chrome and saving ink, so you can hand it directly to your healthcare provider.
 
-### 6. 📓 Body Diary
-- **Daily Log:** Track how organs and body systems feel each day
-- **Streak Waveform:** Visual SVG wave pattern tracking daily visits
-- **Personal annotations** linked to body map zones
+### 2. 🗺️ Interactive 3D Body Map
+- **Multi-System Layers:** Seamlessly toggle between Skin, Muscles, Organs, and Skeletal views.
+- **High-Fidelity 3D Viewer:** Examine selected organs in full 3D space, powered by `Three.js` and React Three Fiber.
+- **Personal Annotations:** Pin private notes locally to specific body regions for a personalized health diary.
 
-### 7. ⚡ Daily Insight
-- One fact, one 30-second action, every day — curated to keep anatomy education effortless
+### 3. 🚨 Emergency Precautions & First Aid
+- **Instant Action Protocols:** Immediate, step-by-step instructions for critical situations (Cardiac Arrest, Stroke, Anaphylaxis, Choking, Severe Bleeding).
+- **CPR Compression Pacer:** Integrated audio/visual metronome pacing at exactly **105 BPM** to guide emergency chest compressions.
+- **Smart Helplines:** Automatically detects and displays local emergency numbers based on the user's browser locale.
 
-### 8. 🏆 Weekly Quest
-- Community challenges, habit building, and certificate milestones
+### 4. 📚 Comprehensive Anatomy Library
+- **Remedies Database:** A curated list of natural remedies with clinical evidence ratings.
+- **Mythbusters:** Scientific explanations debunking common physiological misconceptions.
+- **Daily Facts Engine:** Curated anatomy facts organized by rarity (`COMMON`, `SURPRISING`, `MIND-BLOWING`, `RARE`).
+
+### 5. 📓 Health & Body Diary
+- **Daily Symptom Logging:** Track how different organs and systems feel over time.
+- **Visual Streak Tracking:** Build healthy habits with SVG wave patterns that track your engagement.
 
 ---
 
 ## 🛠️ Technology Stack
 
+Built for maximum performance, SEO, and user experience.
+
 | Layer | Technology |
 |---|---|
-| **Core** | React 19, TypeScript, Tailwind CSS v4 |
-| **Routing** | TanStack Start (SSR) + TanStack Router (File-based) |
-| **State** | Zustand with LocalStorage persistence |
-| **Animation** | Framer Motion 12 |
-| **3D Engine** | Three.js, `@react-three/fiber`, `@react-three/drei` |
-| **Typography** | Space Grotesk (Display), Plus Jakarta Sans (Body), Fira Mono (Code/Data) |
-| **Offline** | PWA Manifest + Custom Service Worker |
-| **i18n** | Built-in EN / हिन्दी translations |
+| **Core Framework** | React 19, TypeScript, Vite 8 |
+| **Server-Side Rendering (SSR)** | TanStack Start |
+| **Routing** | TanStack Router (File-based, Type-safe) |
+| **Styling** | Tailwind CSS v4, Framer Motion 12 |
+| **3D Rendering** | Three.js, `@react-three/fiber`, `@react-three/drei` |
+| **AI Integration** | Google Gemini API (`@google/generative-ai`) |
+| **State Management** | Zustand (with LocalStorage persistence) |
 
 ---
 
-## 🚀 Setup & Installation
+## 🚀 Setup & Development
 
 ### Prerequisites
-Node.js (v18+) installed on your machine.
+- Node.js (v18+)
+- A Google Gemini API Key (for the AI Symptom Explorer)
 
 ### Installation
 ```bash
@@ -93,6 +72,12 @@ cd body-explorer
 npm install
 ```
 
+### Environment Variables
+Create a `.env` file in the root directory and add your Gemini API key:
+```env
+VITE_GEMINI_API_KEY=your_api_key_here
+```
+
 ### Running Locally
 ```bash
 npm run dev
@@ -102,43 +87,23 @@ Open **[http://localhost:8080](http://localhost:8080)** in your browser.
 ### Building for Production
 ```bash
 npm run build
-```
-
-Preview the production build:
-```bash
 npm run preview
 ```
 
 ---
 
-## 🧭 Navigation Structure
+## 🎨 Design System
 
-| Route | Module Code | Description |
-|---|---|---|
-| `/explore` | `XPL-01` | Interactive body map with 3D organ viewer |
-| `/library` | `LIB-02` | Anatomy library — remedies, hacks, myths |
-| `/symptoms` | `SYM-03` | Symptoms & conditions A–Z directory |
-| `/emergency` | `EMG-04` | First aid protocols & CPR pacer |
-| `/facts` | `FCT-05` | Body facts engine with rarity ratings |
-| `/diary` | `DRY-06` | Personal body diary & streak tracker |
-| `/daily` | `DLY-07` | Daily insight & 30-second wellness action |
-| `/quest` | `QST-08` | Weekly community challenges |
+We employ a highly considered, high-contrast color palette designed for maximum readability and a premium feel.
 
----
+- **Deep Space Black** (`#030303`) — A true void backdrop that makes 3D models pop.
+- **Telemetry Gold** (`#F5A623`) — Used for premium features and AI interactions.
+- **NASA Red** (`#FC3D21`) — Reserved exclusively for critical emergency alerts and active states.
+- **NASA Blue** (`#0B3D91`) — Secondary accent for system indicators.
+- **Off-White** (`#EAEAEA`) — High-contrast foreground for text.
 
-## 🎨 Color System
-
-```
-Background ........... #030303  (Deep Space Black)
-Foreground ........... #EAEAEA  (Off-White)
-Card / Panel ......... #0F0F0F  (Near Black)
-Border ............... #222222  (Precision Gray)
-Primary Accent ....... #FC3D21  (NASA Red)
-Secondary Accent ..... #0B3D91  (NASA Blue)
-Gold Accent .......... #F5A623  (Telemetry Gold)
-Muted Text ........... #8A8F98  (Slate Gray)
-```
+*Typography:* Space Grotesk for headers, Plus Jakarta Sans for extreme readability in body copy, and Fira Mono for all technical readouts and data points.
 
 ---
 
-*Human Body Atlas © 2024 · All Systems Nominal · v2.0.1 · Build 042*
+*Body Explorer © 2024 · All Systems Nominal*

@@ -62,7 +62,8 @@ function LibraryPage() {
     const matchesSearch =
       r.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       r.ailment.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      r.description.toLowerCase().includes(searchQuery.toLowerCase());
+      r.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (r.genZContext && r.genZContext.toLowerCase().includes(searchQuery.toLowerCase()));
     const matchesTag = !selectedTag || r.evidenceRating === selectedTag;
     return matchesSearch && matchesTag;
   });
@@ -98,69 +99,69 @@ function LibraryPage() {
         </p>
       </div>
 
-      {/* Global Search Bar */}
-      <div className="relative mb-8 max-w-2xl">
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder={t("searchPlaceholder")}
-          className="w-full rounded-2xl border border-border bg-[#0F0F0F]/80 px-6 py-4 text-base text-[#EAEAEA] placeholder-[#8A8F98] outline-none transition-all focus:border-[#FC3D21]/50 focus:shadow-[0_0_20px_rgba(252,61,33,0.15)]"
-        />
-        <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[#8A8F98] text-xl">🔍</span>
-      </div>
-
-      {/* Seasonal Alert Widget */}
-      <div className="mb-10 rounded-2xl border border-[#F5A623]/20 bg-gradient-to-r from-[#0F0F0F] to-[#1E2028] p-6 shadow-lg">
-        <div className="flex items-center gap-3">
-          <span className="text-3xl">🌦️</span>
-          <div>
-            <h3 className="font-bold text-[#F5A623]">Seasonal Body Tuning</h3>
-            <p className="mt-1 text-sm text-[#8A8F98]">
-              Current Climate Transition Advice: Hydrate joint cartilages dynamically. High barometric fluctuations can increase synovial fluid pressure, leading to knee twinges. Keep joints warm and double up on liquid intake.
-            </p>
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+        {/* Main Content Area */}
+        <div className="lg:col-span-3">
+          {/* Navigation Tabs */}
+          <div className="mb-6 border-b border-border">
+            <div className="flex flex-wrap gap-2 pb-px">
+              {(["all", "remedies", "hacks", "myths", "marvels"] as const).map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => {
+                    setActiveTab(tab);
+                    setSelectedTag(null);
+                  }}
+                  className={`border-b-2 px-4 py-2 text-sm font-semibold transition-all ${
+                    activeTab === tab
+                      ? "border-[#FC3D21] text-[#EAEAEA]"
+                      : "border-transparent text-[#8A8F98] hover:text-[#EAEAEA]"
+                  }`}
+                >
+                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
 
-      {/* Tabs */}
-      <div className="mb-8 flex gap-2 overflow-x-auto border-b border-border/40 pb-2 scrollbar-none">
-        {(["all", "remedies", "hacks", "myths", "marvels"] as const).map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`rounded-full px-5 py-2 text-sm font-semibold capitalize transition-all ${
-              activeTab === tab
-                ? "bg-[#FC3D21]/15 text-[#FC3D21] border border-[#FC3D21]/30"
-                : "text-[#8A8F98] hover:text-[#EAEAEA]"
-            }`}
-          >
-            {tab === "all" ? "All Discoveries" : tab}
-          </button>
-        ))}
-      </div>
+          {/* Search bar and Filters */}
+          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <input
+              type="text"
+              placeholder="Search content engine..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full rounded-xl border border-border bg-[#0D0D0D] px-4 py-3 text-sm text-[#EAEAEA] placeholder-[#8A8F98]/50 focus:border-[#FC3D21] focus:outline-none"
+            />
+          </div>
 
-      {/* Tab Contents */}
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-        {/* Left/Middle Column: Content Cards */}
-        <div className="lg:col-span-2 space-y-8">
           {/* Remedies Section */}
           {(activeTab === "all" || activeTab === "remedies") && (
-            <div>
-              <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-[#EAEAEA]">Ancient & Modern Remedies</h2>
-                <div className="flex flex-wrap gap-1.5">
+            <div className="mb-12">
+              <div className="mb-4 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+                <h2 className="text-2xl font-bold text-[#EAEAEA]">Natural Remedies</h2>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    onClick={() => setSelectedTag(null)}
+                    className={`rounded-full px-3.5 py-1 text-xs font-semibold border transition-all ${
+                      !selectedTag
+                        ? "bg-[#FC3D21] text-white border-transparent"
+                        : "bg-transparent text-[#8A8F98] border-border hover:border-[#8A8F98]/50"
+                    }`}
+                  >
+                    All Evidence
+                  </button>
                   {allTags.map((tag) => (
                     <button
                       key={tag}
-                      onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
-                      className={`rounded-md px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition-all ${
+                      onClick={() => setSelectedTag(tag)}
+                      className={`rounded-full px-3.5 py-1 text-xs font-semibold border transition-all ${
                         selectedTag === tag
-                          ? "bg-[#FC3D21] text-[#030303]"
-                          : "bg-[#16181D] text-[#8A8F98] hover:text-[#EAEAEA]"
+                          ? "bg-[#FC3D21] text-white border-transparent"
+                          : "bg-transparent text-[#8A8F98] border-border hover:border-[#8A8F98]/50"
                       }`}
                     >
-                      {tag}
+                      {tag.charAt(0).toUpperCase() + tag.slice(1)}
                     </button>
                   ))}
                 </div>
@@ -174,26 +175,33 @@ function LibraryPage() {
                     <motion.div
                       layout
                       key={remedy.id}
-                      className="rounded-xl border border-border bg-[#0D0D0D] p-5 transition-all hover:border-[#FC3D21]/30"
+                      className="rounded-xl border border-border bg-[#0D0D0D] p-5 transition-all hover:border-[#FC3D21]/30 flex flex-col justify-between"
                     >
-                      <div className="flex justify-between items-start">
-                        <span className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
-                          remedy.evidenceRating === "studied" ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" :
-                          remedy.evidenceRating === "traditional" ? "bg-purple-500/10 text-purple-400 border border-purple-500/20" :
-                          "bg-amber-500/10 text-amber-400 border border-amber-500/20"
-                        }`}>
-                          {remedy.evidenceRating} evidence
-                        </span>
-                        <button
-                          onClick={() => isBookmarked(remedy.id) ? removeBookmark(remedy.id) : addBookmark(remedy.id)}
-                          className="text-[#8A8F98] hover:text-[#FC3D21]"
-                        >
-                          {isBookmarked(remedy.id) ? "❤️" : "🤍"}
-                        </button>
+                      <div>
+                        <div className="flex justify-between items-start">
+                          <span className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
+                            remedy.evidenceRating === "studied" ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" :
+                            remedy.evidenceRating === "traditional" ? "bg-purple-500/10 text-purple-400 border border-purple-500/20" :
+                            "bg-amber-500/10 text-amber-400 border border-amber-500/20"
+                          }`}>
+                            {remedy.evidenceRating} evidence
+                          </span>
+                          <button
+                            onClick={() => isBookmarked(remedy.id) ? removeBookmark(remedy.id) : addBookmark(remedy.id)}
+                            className="text-[#8A8F98] hover:text-[#FC3D21]"
+                          >
+                            {isBookmarked(remedy.id) ? "❤️" : "🤍"}
+                          </button>
+                        </div>
+                        <h3 className="mt-3 font-bold text-[#EAEAEA]">{remedy.name}</h3>
+                        <p className="mt-1 text-xs text-[#F5A623]">Target: {remedy.ailment}</p>
+                        <p className="mt-3 text-sm text-[#8A8F98]">{remedy.description}</p>
+                        {remedy.genZContext && (
+                          <div className="mt-3.5 rounded-lg bg-[#FC3D21]/5 border border-[#FC3D21]/10 p-3 text-xs text-[#EAEAEA]/90">
+                            <span className="font-bold text-[#FC3D21]">Gen Z Context:</span> {remedy.genZContext}
+                          </div>
+                        )}
                       </div>
-                      <h3 className="mt-3 font-bold text-[#EAEAEA]">{remedy.name}</h3>
-                      <p className="mt-1 text-xs text-[#F5A623]">Target: {remedy.ailment}</p>
-                      <p className="mt-3 text-sm text-[#8A8F98]">{remedy.description}</p>
                       <div className="mt-4 border-t border-border/40 pt-3 text-[11px] text-[#8A8F98]">
                         <span className="font-bold text-[#FC3D21]">Scientific Base:</span> {remedy.evidenceDetails}
                       </div>

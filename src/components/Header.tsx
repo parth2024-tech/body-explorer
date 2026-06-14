@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { to: "/diary", labelKey: "diary" as const, code: "DRY-06" },
   { to: "/daily", labelKey: "daily" as const, code: "DLY-07" },
   { to: "/quest", labelKey: "quest" as const, code: "QST-08" },
+  { to: "/grey-market", labelKey: "greyMarket" as const, code: "GM-09" },
 ];
 
 export function Header() {

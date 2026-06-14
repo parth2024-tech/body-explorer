@@ -81,6 +81,7 @@ export interface RemedyEntry {
   evidenceDetails: string;
   ailment: string;
   bodyPartId?: string;
+  genZContext?: string;
 }
 
 export interface HealthHack {
@@ -620,6 +621,92 @@ export const REMEDIES: RemedyEntry[] = [
     evidenceDetails: "Piperine increases curcumin bioavailability by up to 2000%, supporting its anti-inflammatory effects in osteoarthritis studies.",
     ailment: "Joint Stiffness",
     bodyPartId: "spine-lumbar"
+  },
+  {
+    id: "peppermint-tea-bloating",
+    name: "Peppermint Tea",
+    description: "A warm cup of tea brewed from dried or fresh peppermint leaves.",
+    evidenceRating: "studied",
+    evidenceDetails: "Peppermint contains an active compound called menthol. Studies show that menthol acts as a natural antispasmodic, meaning it relaxes the muscles in your stomach and intestines to ease cramps and reduce bloating.",
+    ailment: "Bloating and Stomach Cramps",
+    bodyPartId: "stomach"
+  },
+  {
+    id: "honey-cough-throat",
+    name: "A Spoonful of Honey",
+    description: "Swallowing a single spoonful of dark or raw honey (sometimes mixed with warm water or a squeeze of lemon) right before bed.",
+    evidenceRating: "studied",
+    evidenceDetails: "Honey has natural antibacterial properties and acts as a physical barrier, coating the throat to soothe irritation. Clinical studies have shown that honey is often just as effective as over-the-counter cough syrups at reducing nighttime coughing, especially in children (note: honey should never be given to babies under 1 year old).",
+    ailment: "Nighttime Cough and Sore Throat",
+    bodyPartId: "throat"
+  },
+  {
+    id: "chamomile-tea-sleep",
+    name: "Chamomile Tea",
+    description: "A gentle, floral tea made by steeping dried chamomile flowers in hot water.",
+    evidenceRating: "studied",
+    evidenceDetails: "Chamomile flowers contain a specific antioxidant called apigenin. Science shows that apigenin binds to specific receptors in your brain that help decrease anxiety and naturally initiate sleepiness.",
+    ailment: "Sleeplessness and Mild Anxiety",
+    bodyPartId: "brain"
+  },
+  {
+    id: "garlic-immune-bp",
+    name: "Crushed Raw Garlic",
+    description: "Eating a clove of raw, crushed garlic (often swallowed with water, olive oil, or honey to make the strong taste bearable).",
+    evidenceRating: "studied",
+    evidenceDetails: "When garlic is crushed or chopped, it releases an active compound called allicin. Studies suggest that allicin helps blood vessels relax (supporting healthy blood pressure) and boosts the disease-fighting response of white blood cells in your body when you encounter viruses.",
+    ailment: "Immune Support and Mild High Blood Pressure",
+    bodyPartId: "heart"
+  },
+  {
+    id: "ashwagandha-anxiety",
+    name: "Ashwagandha Root Extract",
+    description: "A daily tea or supplement made from the root of the Ashwagandha plant, which has been used for centuries in traditional Ayurvedic medicine.",
+    evidenceRating: "studied",
+    evidenceDetails: "Ashwagandha is classified as an \"adaptogen.\" Clinical studies show it actively lowers the body's production of cortisol (our primary stress hormone). This helps calm the nervous system, effectively reducing that \"always-on\" feeling of anxiety and protecting the brain from burnout.",
+    ailment: "Chronic Burnout & \"Doomscrolling\" Anxiety",
+    bodyPartId: "brain",
+    genZContext: "With constant digital connectivity and heavy pressure to achieve, Gen Z faces record highs in chronic stress, anxiety, and emotional exhaustion."
+  },
+  {
+    id: "tart-cherry-insomnia",
+    name: "Tart Cherry Juice",
+    description: "Drinking a small glass of unsweetened, 100% tart cherry juice about an hour before going to bed.",
+    evidenceRating: "studied",
+    evidenceDetails: "Gadget screens emit blue light that tricks the brain into thinking it is still daytime, preventing it from producing sleep hormones. Tart cherries are one of the rare natural, food-based sources of melatonin. Drinking the juice naturally boosts your melatonin levels, helping you fall asleep faster and stay asleep longer, even if your internal clock is confused by screens.",
+    ailment: "Screen-Induced Insomnia & \"Revenge Bedtime Procrastination\"",
+    bodyPartId: "brain",
+    genZContext: "Studies show Gen Z can spend an average of 16 hours a day utilizing gadgets, and this extreme digital overload severely disrupts sleep quality."
+  },
+  {
+    id: "bilberry-eye-strain",
+    name: "Bilberry Infusion",
+    description: "A warm tea or daily extract made from bilberries (a dark, European cousin of the common blueberry).",
+    evidenceRating: "studied",
+    evidenceDetails: "Bilberries are packed with protective plant compounds called anthocyanins. Science shows these compounds specifically protect the retina and improve blood circulation in the tiny blood vessels of the eye. This reduces the physical fatigue, blurred vision, and dryness that comes from staring at pixels all day.",
+    ailment: "Digital Eye Strain & Screen Fatigue",
+    bodyPartId: "eyes",
+    genZContext: "Hours of daily scrolling, studying, and working on devices lead to dry, tired, blurred, and physically strained eyes."
+  },
+  {
+    id: "magnesium-tech-neck",
+    name: "Topical Magnesium Oil",
+    description: "Spraying and rubbing a magnesium chloride liquid (often called magnesium oil) directly onto tight neck and shoulder muscles.",
+    evidenceRating: "studied",
+    evidenceDetails: "Magnesium is an essential mineral that acts as a natural muscle relaxer. When applied directly to the skin over tight areas, it absorbs locally to block calcium from locking the muscle tissue together. This forces the tight \"tech neck\" muscles to finally unclench, which can also relieve tension headaches.",
+    ailment: "\"Tech Neck\" & Posture Tension",
+    bodyPartId: "spine-cervical",
+    genZContext: "Constantly looking down at phones and hunching over laptops creates chronic, painful tension in the neck, shoulders, and upper back."
+  },
+  {
+    id: "lemon-balm-nervous-stomach",
+    name: "Lemon Balm Tea",
+    description: "A mild, lemon-scented tea brewed from the leaves of the lemon balm plant (a calming herb in the mint family).",
+    evidenceRating: "studied",
+    evidenceDetails: "Lemon balm contains active compounds like rosmarinic acid. Studies prove it has a dual-action effect: it increases calming chemicals in the brain to reduce anxiety, while simultaneously relaxing the smooth muscles of the digestive tract. This physically stops the painful stomach spasms and bloating that happen when you are highly stressed.",
+    ailment: "The \"Nervous Stomach\" & Stress-Induced Bloating",
+    bodyPartId: "stomach",
+    genZContext: "Because the brain and gut are deeply connected, the high rates of anxiety among young adults often show up physically as stomach cramps, severe bloating, or irregular digestion."
   }
 ];
 
@@ -1118,6 +1205,7 @@ export const TRANSLATIONS = {
     diary: "Diary",
     daily: "Daily",
     quest: "Quest",
+    greyMarket: "Grey Market Index",
     explainThis: "Explain This",
     library: "Library",
     symptoms: "Symptoms",
@@ -1146,6 +1234,7 @@ export const TRANSLATIONS = {
     diary: "डायरी",
     daily: "दैनिक ज्ञान",
     quest: "क्वेस्ट",
+    greyMarket: "ग्रे मार्केट इंडेक्स",
     explainThis: "समझाएं",
     library: "लाइब्रेरी",
     symptoms: "लक्षण मार्गदर्शिका",

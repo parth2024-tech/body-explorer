@@ -13,6 +13,7 @@ import { Route as SymptomsRouteImport } from './routes/symptoms'
 import { Route as QuestRouteImport } from './routes/quest'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as LibraryRouteImport } from './routes/library'
+import { Route as GreyMarketRouteImport } from './routes/grey-market'
 import { Route as FactsRouteImport } from './routes/facts'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as ExplainRouteImport } from './routes/explain'
@@ -40,6 +41,11 @@ const OnboardingRoute = OnboardingRouteImport.update({
 const LibraryRoute = LibraryRouteImport.update({
   id: '/library',
   path: '/library',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GreyMarketRoute = GreyMarketRouteImport.update({
+  id: '/grey-market',
+  path: '/grey-market',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FactsRoute = FactsRouteImport.update({
@@ -92,6 +98,7 @@ export interface FileRoutesByFullPath {
   '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
   '/facts': typeof FactsRoute
+  '/grey-market': typeof GreyMarketRoute
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
   '/quest': typeof QuestRoute
@@ -106,6 +113,7 @@ export interface FileRoutesByTo {
   '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
   '/facts': typeof FactsRoute
+  '/grey-market': typeof GreyMarketRoute
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
   '/quest': typeof QuestRoute
@@ -121,6 +129,7 @@ export interface FileRoutesById {
   '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
   '/facts': typeof FactsRoute
+  '/grey-market': typeof GreyMarketRoute
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
   '/quest': typeof QuestRoute
@@ -137,6 +146,7 @@ export interface FileRouteTypes {
     | '/explain'
     | '/explore'
     | '/facts'
+    | '/grey-market'
     | '/library'
     | '/onboarding'
     | '/quest'
@@ -151,6 +161,7 @@ export interface FileRouteTypes {
     | '/explain'
     | '/explore'
     | '/facts'
+    | '/grey-market'
     | '/library'
     | '/onboarding'
     | '/quest'
@@ -165,6 +176,7 @@ export interface FileRouteTypes {
     | '/explain'
     | '/explore'
     | '/facts'
+    | '/grey-market'
     | '/library'
     | '/onboarding'
     | '/quest'
@@ -180,6 +192,7 @@ export interface RootRouteChildren {
   ExplainRoute: typeof ExplainRoute
   ExploreRoute: typeof ExploreRoute
   FactsRoute: typeof FactsRoute
+  GreyMarketRoute: typeof GreyMarketRoute
   LibraryRoute: typeof LibraryRoute
   OnboardingRoute: typeof OnboardingRoute
   QuestRoute: typeof QuestRoute
@@ -214,6 +227,13 @@ declare module '@tanstack/react-router' {
       path: '/library'
       fullPath: '/library'
       preLoaderRoute: typeof LibraryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/grey-market': {
+      id: '/grey-market'
+      path: '/grey-market'
+      fullPath: '/grey-market'
+      preLoaderRoute: typeof GreyMarketRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/facts': {
@@ -284,6 +304,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExplainRoute: ExplainRoute,
   ExploreRoute: ExploreRoute,
   FactsRoute: FactsRoute,
+  GreyMarketRoute: GreyMarketRoute,
   LibraryRoute: LibraryRoute,
   OnboardingRoute: OnboardingRoute,
   QuestRoute: QuestRoute,
@@ -292,3 +313,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
