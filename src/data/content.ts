@@ -660,11 +660,11 @@ export const REMEDIES: RemedyEntry[] = [
   },
   {
     id: "ashwagandha-anxiety",
-    name: "Ashwagandha Root Extract",
-    description: "A daily tea or supplement made from the root of the Ashwagandha plant, which has been used for centuries in traditional Ayurvedic medicine.",
+    name: "Ashwagandha Root Extract (KSM-66)",
+    description: "A daily adaptogenic herbal supplement taken to lower stress hormones and combat the chronic burnout associated with constant connectivity and heavy academic or project workloads.",
     evidenceRating: "studied",
-    evidenceDetails: "Ashwagandha is classified as an \"adaptogen.\" Clinical studies show it actively lowers the body's production of cortisol (our primary stress hormone). This helps calm the nervous system, effectively reducing that \"always-on\" feeling of anxiety and protecting the brain from burnout.",
-    ailment: "Chronic Burnout & \"Doomscrolling\" Anxiety",
+    evidenceDetails: "Clinical trials in the Indian Journal of Psychological Medicine demonstrate that Ashwagandha root extract significantly reduces serum cortisol levels. It works by regulating the hypothalamic-pituitary-adrenal (HPA) axis, easing the nervous system out of \"fight or flight\" mode and improving resistance to daily stress.",
+    ailment: "Stress, Burnout & \"Always-On\" Anxiety",
     bodyPartId: "brain",
     genZContext: "With constant digital connectivity and heavy pressure to achieve, Gen Z faces record highs in chronic stress, anxiety, and emotional exhaustion."
   },
@@ -690,11 +690,11 @@ export const REMEDIES: RemedyEntry[] = [
   },
   {
     id: "magnesium-tech-neck",
-    name: "Topical Magnesium Oil",
-    description: "Spraying and rubbing a magnesium chloride liquid (often called magnesium oil) directly onto tight neck and shoulder muscles.",
+    name: "Topical Magnesium (Epsom Salt) & Heat Therapy",
+    description: "A warm bath with dissolved magnesium sulfate (Epsom salts), or a warm magnesium oil compress applied directly to the neck and trapezius muscles.",
     evidenceRating: "studied",
-    evidenceDetails: "Magnesium is an essential mineral that acts as a natural muscle relaxer. When applied directly to the skin over tight areas, it absorbs locally to block calcium from locking the muscle tissue together. This forces the tight \"tech neck\" muscles to finally unclench, which can also relieve tension headaches.",
-    ailment: "\"Tech Neck\" & Posture Tension",
+    evidenceDetails: "Poor posture over keyboards and phones restricts blood flow and causes muscle spasms. Clinical evidence supports that heat induces vasodilation (widening of blood vessels), while transdermal magnesium acts as a natural calcium channel blocker. This combination physically forces contracted muscle fibers to release and relax, alleviating tension headaches and neck stiffness.",
+    ailment: "\"Tech Neck\" & Postural Muscle Tension",
     bodyPartId: "spine-cervical",
     genZContext: "Constantly looking down at phones and hunching over laptops creates chronic, painful tension in the neck, shoulders, and upper back."
   },
@@ -716,6 +716,26 @@ export const REMEDIES: RemedyEntry[] = [
     evidenceDetails: "Clinical research indicates that the high concentration of anthocyanins in tart cherries powerfully clears uric acid from the bloodstream (preventing gout flare-ups) and accelerates muscle recovery after intense exercise by lowering inflammatory markers.",
     ailment: "Muscle Recovery & Gout",
     bodyPartId: "muscles"
+  },
+  {
+    id: "green-tea-compress",
+    name: "Warm Green Tea Compress",
+    description: "Warm, steeped green tea bags applied over closed eyelids for 10-15 minutes to soothe eyes irritated by long hours of debugging, reviewing core computing concepts, or continuous screen exposure.",
+    evidenceRating: "studied",
+    evidenceDetails: "The warmth helps unclog the meibomian glands (which stop secreting oil properly when blink rates drop during intense screen focus). Furthermore, ophthalmological studies show that the high concentration of EGCG (epigallocatechin gallate) in green tea provides powerful anti-inflammatory properties that reduce ocular surface swelling and redness.",
+    ailment: "Digital Eye Strain & Screen Fatigue",
+    bodyPartId: "eyes",
+    genZContext: "Hours of daily scrolling, studying, debugging, and working on devices lead to dry, tired, blurred, and physically strained eyes."
+  },
+  {
+    id: "bacopa-monnieri",
+    name: "Bacopa Monnieri (Brahmi)",
+    description: "An herbal nootropic traditionally used in Ayurvedic medicine, taken daily to improve focus and retain complex information during intense algorithmic problem-solving or deep-study sessions.",
+    evidenceRating: "studied",
+    evidenceDetails: "Multiple randomized, double-blind, placebo-controlled trials published in psychopharmacology journals confirm that Bacopa Monnieri improves spatial memory, working memory, and rapid visual information processing. It achieves this by promoting the growth of nerve endings (dendritic branching), enhancing neural communication.",
+    ailment: "Brain Fog & Cognitive Fatigue",
+    bodyPartId: "brain",
+    genZContext: "With constant digital multitasking, study loads, and information overload, cognitive fatigue and brain fog frequently disrupt focus."
   }
 ];
 
