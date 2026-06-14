@@ -45,16 +45,18 @@ export function GreyMarketIndex() {
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-[calc(100vh-220px)] min-h-[800px]">
           
-          {/* Left Column: Scanner & Search */}
-          <div className="lg:col-span-4 flex flex-col gap-6 h-full print:hidden">
-            <PrescriptionScanner />
-            <div className="flex-1 overflow-hidden">
-              <MoleculeSearchPanel />
-            </div>
+          {/* Column 1: Search & Index */}
+          <div className="lg:col-span-4 h-full print:hidden">
+            <MoleculeSearchPanel />
           </div>
 
-          {/* Right Column: Detail HUD */}
-          <div className="lg:col-span-8 h-full relative">
+          {/* Column 2: Label & Prescription Scanner */}
+          <div className="lg:col-span-4 h-full print:hidden">
+            <PrescriptionScanner />
+          </div>
+
+          {/* Column 3: Detail HUD */}
+          <div className="lg:col-span-4 h-full relative">
             {selectedMolecule ? (
               <MoleculeDetailHUD />
             ) : (
@@ -62,9 +64,9 @@ export function GreyMarketIndex() {
                 <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-4">
                   <AlertTriangle className="w-8 h-8 text-[#8A8F98]" />
                 </div>
-                <h3 className="text-lg font-space font-bold text-[#EAEAEA] mb-2 uppercase">No Molecule Selected</h3>
+                <h3 className="text-lg font-space font-bold text-[#EAEAEA] mb-2 uppercase">No Product Selected</h3>
                 <p className="text-[#8A8F98] text-sm">
-                  Select a molecule from the index or scan a prescription to view its detailed toxicological profile and regulatory status.
+                  Select a product from the index or scan a label/prescription to view its detailed regulatory status and toxicology profile.
                 </p>
               </div>
             )}
