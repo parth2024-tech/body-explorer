@@ -202,5 +202,105 @@
     "how_to_spot": "If you are a farmer, ensure you never use multi-dose human diclofenac vials on livestock.",
     "safer_alternatives": ["Meloxicam (for veterinary)"],
     "cdsco_ref": "Gazette Notification 2006 (Veterinary Ban)."
+  },
+  {
+    "molecule": "Ethylene Oxide (Pesticide/Sterilant)",
+    "brand_names_india": ["Everest Spice Powder", "MDH Curry Masala", "Everest Fish Curry Masala"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Highly restricted sterilizing agent (regulated in food)",
+      "EU": "Banned in all food products since 1991",
+      "UK": "Banned",
+      "Singapore": "Banned & Recalled (2024)"
+    },
+    "status_india": "FSSAI issued testing directives and launched inspections in 2024 after international bans, but MDH and Everest products remain on store shelves.",
+    "target_organ_id": "liver",
+    "mechanism": "Mutagenic and carcinogenic gas that alkylates cellular DNA structure, dramatically increasing the risk of lymphoid and breast cancers.",
+    "how_to_spot": "Look for independent recall reports for specific batches of MDH and Everest. Avoid commercial spice mixes lacking batch-testing certification.",
+    "safer_alternatives": ["Freshly ground whole spices", "Organic certified brands"],
+    "cdsco_ref": "FSSAI Directive on Spice Testing (2024)"
+  },
+  {
+    "molecule": "Titanium Dioxide (E171 Colorant)",
+    "brand_names_india": ["Orbit Chewing Gum", "Mentos", "Cake Decorating Frostings", "White Chocolates"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Allowed in food under 1% weight",
+      "EU": "Banned in all food products since 2022 due to genotoxicity concerns",
+      "UK": "Permitted but under active review"
+    },
+    "status_india": "FSSAI permits wide usage of Titanium Dioxide as a coloring and whitening agent in popular confectionery products.",
+    "target_organ_id": "large-intestine",
+    "mechanism": "Nanoparticles accumulate in the intestinal epithelium, causing micro-inflammation, oxidative stress, DNA damage, and promoting pre-cancerous lesions.",
+    "how_to_spot": "Check ingredient labels of white candies, chewing gums, and cake frostings for 'Titanium Dioxide' or 'E171'.",
+    "safer_alternatives": ["Natural plant colorants", "Color-free candies"],
+    "cdsco_ref": "FSSAI Food Additives Regulation"
+  },
+  {
+    "molecule": "Brominated Vegetable Oil (BVO Stabilizer)",
+    "brand_names_india": ["Citrus-Flavored Carbonated Drinks", "Mountain Dew (older batches / local duplicates)"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Prohibited in food and drinks by FDA since 2024",
+      "EU": "Banned",
+      "UK": "Banned",
+      "Japan": "Banned"
+    },
+    "status_india": "Allowed up to 15 ppm as a clouding agent in carbonated beverages under FSSAI standards.",
+    "target_organ_id": "brain",
+    "mechanism": "Lipophilic bromine compounds accumulate in fatty tissues, leading to systemic bromine toxicity (bromism) which causes memory loss, tremors, and skin lesions.",
+    "how_to_spot": "Check ingredients lists on citrus-flavored sodas and energy drinks for 'Brominated Vegetable Oil' or 'BVO'.",
+    "safer_alternatives": ["Glycerol Ester of Wood Rosin", "Natural juices"],
+    "cdsco_ref": "FSSAI Beverages Standards Regulation"
+  },
+  {
+    "molecule": "Potassium Bromate (E924 Baking Agent)",
+    "brand_names_india": ["Commercial White Breads", "Burger Buns", "Pizza Bases", "Pav / Bread rolls"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Permitted but voluntary reduction requested",
+      "EU": "Banned in food preparation since 1990",
+      "UK": "Banned",
+      "Canada": "Banned",
+      "China": "Banned"
+    },
+    "status_india": "FSSAI announced a ban in 2016, but testing reveals it is still used by local, unorganized bakeries or persists as a trace contaminant in white flour.",
+    "target_organ_id": "kidneys",
+    "mechanism": "Classified as a Group 2B carcinogen that generates reactive oxygen species, leading to severe renal tubular necrosis and renal tumors.",
+    "how_to_spot": "Avoid buying extremely cheap, unbranded bakery products. Check ingredient labels for 'Potassium Bromate' or 'E924'.",
+    "safer_alternatives": ["Ascorbic Acid (Vitamin C)", "Organic flour products"],
+    "cdsco_ref": "FSSAI Gazette Notification F.No. P. 15025/19/2013-OOF-FSSAI"
+  },
+  {
+    "molecule": "Synthetic Coal Tar Dyes (Tartrazine / Allura Red)",
+    "brand_names_india": ["Fanta Orange", "Mirinda", "Red Jellies", "Packaged Candies", "Tomato Ketchup (low-cost)"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "EU": "Allowed but requires a mandatory warning label: 'May have an adverse effect on activity and attention in children'",
+      "UK": "Warning label required",
+      "Norway": "Banned",
+      "Austria": "Banned"
+    },
+    "status_india": "Permitted in a wide range of beverages, candies, and sauces under FSSAI without any warnings or disclosures regarding child hyperactivity.",
+    "target_organ_id": "brain",
+    "mechanism": "Releases histamines and cross-reacts with salicylates, leading to central nervous system excitability, ADHD symptoms, and severe allergies.",
+    "how_to_spot": "Look for synthetic color names like 'Tartrazine', 'Allura Red', 'Sunset Yellow', 'Carmoisine', 'Ponceau 4R', 'E102', or 'E129'.",
+    "safer_alternatives": ["Beta-carotene", "Beetroot extract", "Turmeric coloring"],
+    "cdsco_ref": "FSSAI Food Coloring Standards"
+  },
+  {
+    "molecule": "Caramel Color IV (Ammonia-Sulfite Process)",
+    "brand_names_india": ["Coca-Cola", "Pepsi", "Thums Up", "Dark Soy Sauces", "Chocolate Syrups"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Heavily restricted in California (Prop 65 requires warnings for >29 mcg of 4-MEI daily)",
+      "EU": "Maximum limits enforced on 4-MEI content"
+    },
+    "status_india": "FSSAI permits broad usage of Caramel Class IV colorant in cola drinks with high 4-MEI limits and no consumer warning requirements.",
+    "target_organ_id": "lung-left",
+    "mechanism": "Thermal processing with ammonia compounds produces 4-Methylimidazole (4-MEI), a proven carcinogen in animal models linked to pulmonary tumors.",
+    "how_to_spot": "Check carbonated drink labels for 'Caramel Color Class IV', 'Ammonia Sulfite Caramel', or 'E150d'.",
+    "safer_alternatives": ["Caramel Class I (plain caramel)", "Naturally colored beverages"],
+    "cdsco_ref": "FSSAI Food Additive Standards Regulation"
   }
 ]
