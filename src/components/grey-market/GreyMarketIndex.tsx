@@ -1,5 +1,4 @@
 import { MoleculeSearchPanel } from './MoleculeSearchPanel';
-import { OrganHighlightViewer } from './OrganHighlightViewer';
 import { MoleculeDetailHUD } from './MoleculeDetailHUD';
 import { PrescriptionScanner } from './PrescriptionScanner';
 import { useGreyMarketStore } from '@/store/useGreyMarketStore';
@@ -47,21 +46,15 @@ export function GreyMarketIndex() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-[calc(100vh-220px)] min-h-[800px]">
           
           {/* Left Column: Scanner & Search */}
-          <div className="lg:col-span-3 flex flex-col gap-6 h-full print:hidden">
+          <div className="lg:col-span-4 flex flex-col gap-6 h-full print:hidden">
             <PrescriptionScanner />
             <div className="flex-1 overflow-hidden">
               <MoleculeSearchPanel />
             </div>
           </div>
 
-          {/* Center Column: 3D/SVG Organ Viewer */}
-          <div className="lg:col-span-5 bg-[#0A0E1A] border border-[#222222] rounded-lg overflow-hidden relative flex items-center justify-center print:hidden">
-            <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 pointer-events-none" />
-            <OrganHighlightViewer target_organ_id={selectedMolecule?.target_organ_id} />
-          </div>
-
           {/* Right Column: Detail HUD */}
-          <div className="lg:col-span-4 h-full relative">
+          <div className="lg:col-span-8 h-full relative">
             {selectedMolecule ? (
               <MoleculeDetailHUD />
             ) : (
