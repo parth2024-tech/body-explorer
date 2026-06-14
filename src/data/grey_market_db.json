@@ -1,85 +1,83 @@
 [
   {
     "molecule": "Ethylene Oxide (Carcinogenic Pesticide)",
-    "brand_names_india": ["Everest Fish Curry Masala", "MDH Madras Curry Powder", "MDH Sambhar Masala", "MDH Curry Powder", "Swad Masala", "Catch Masala", "Ramdev Masala", "Priya Masala", "Patanjali Masala"],
+    "brand_names_india": ["Everest Fish Curry Masala", "MDH Madras Curry Powder", "MDH Sambhar Masala", "MDH Curry Powder"],
     "risk_level": "CRITICAL",
     "status_global": {
       "Singapore": "Banned & Recalled (2024)",
       "Hong Kong": "Banned (2024)",
       "US": "Scrutinized / FDA import warnings",
       "EU": "Banned in all food products since 1991",
-      "Maldives": "Banned imports",
-      "New Zealand": "Under investigation"
+      "Maldives": "Banned imports"
     },
-    "status_india": "FSSAI initiated quality checks after international pressure, but no nationwide ban is in place; these spices continue to be sold freely.",
+    "status_india": "FSSAI initiated quality checks after international pressure in 2024, but no nationwide ban was imposed on these brands internally.",
     "target_organ_id": "liver",
-    "mechanism": "Fumigated with Ethylene Oxide to control microbial load (like Salmonella). Ethylene Oxide is an alkylating mutagenic gas classified as a Group 1 carcinogen, significantly increasing risks of lymphoid cancers, leukemia, and breast cancers.",
-    "how_to_spot": "Look for MDH Madras Curry Powder, Sambhar Masala, or Everest Fish Curry Masala. Check packaging details for international export-rejection batch codes.",
-    "safer_alternatives": ["Freshly ground whole spices", "Organic certified spice brands"],
+    "mechanism": "Hong Kong's Centre for Food Safety and Singapore authorities detected residues of Ethylene Oxide, a highly toxic, mutagenic, and carcinogenic pesticide used as a sterilizing fumigant, in specific MDH and Everest spice batches. Chronic exposure alkylates cellular DNA structure, increasing lymphoid and breast cancer risk.",
+    "how_to_spot": "Look for MDH's Madras Curry Powder, Sambhar Masala, Curry Powder, or Everest's Fish Curry Masala. Check batch recall warnings.",
+    "safer_alternatives": ["Freshly ground whole spices", "Certified organic spice brands"],
     "cdsco_ref": "FSSAI Spice Quality Directive 2024"
   },
   {
     "molecule": "Heavy Metals (Lead, Mercury, Arsenic)",
-    "brand_names_india": ["Chyawanprash (Dabur, Baidyanath, Patanjali, Zandu)"],
+    "brand_names_india": ["Ayurvedic Chyawanprash Supplements", "Chyawanprash"],
     "risk_level": "HIGH",
     "status_global": {
-      "Canada": "Explicitly banned since 2005",
-      "US": "Import alerts on specific batches",
+      "Canada": "Explicitly banned imports since 2005 due to heavy metal concerns",
+      "US": "Import alerts on specific unverified botanical batches",
       "EU": "Strict heavy metal limits enforced"
     },
-    "status_india": "Widely consumed daily as an immunity booster across millions of households with no restrictions.",
+    "status_india": "Widely consumed daily as an immunity booster across Indian households with no regulatory restrictions.",
     "target_organ_id": "kidneys",
-    "mechanism": "Traditional Ayurvedic herbomineral manufacturing processes (Rasa Shastra) intentionally incorporate metals or fail to filter out naturally occurring lead, mercury, and arsenic, leading to chronic heavy metal accumulation, nephrotoxicity, and cognitive impairment.",
-    "how_to_spot": "Check packaging. Seek brands that provide independent lab reports verifying heavy metals are below safety thresholds.",
-    "safer_alternatives": ["Pure herbal decoctions (without mineral additions)", "Lab-tested heavy-metal-free formulations"],
+    "mechanism": "Ayurvedic supplements are category-wide prone to heavy metal contamination, either naturally absorbed by herbs from soil or via traditional herbomineral manufacturing techniques (Rasa Shastra). Chronic exposure to lead, mercury, or arsenic leads to nephrotoxicity and cognitive impairment.",
+    "how_to_spot": "Look for Chyawanprash formulations. Seek brands that provide independent batch lab reports showing heavy metals are below safety thresholds.",
+    "safer_alternatives": ["Pure herbal extracts (without mineral additions)", "Lab-tested heavy-metal-free formulations"],
     "cdsco_ref": "Ministry of AYUSH heavy metal standards (export only)"
   },
   {
     "molecule": "Toxic Heavy Metal Accumulation",
-    "brand_names_india": ["Karela Capsules (Himalaya)", "Karela Tablets (Shriji Herbal)", "Bitter Melon Supplements"],
+    "brand_names_india": ["Karela / Bitter Melon Supplements", "Bitter Melon Capsules"],
     "risk_level": "HIGH",
     "status_global": {
-      "Canada": "Blacklisted / Banned",
+      "Canada": "Restricted / Supplement warning alerts issued",
       "US": "Import restrictions on unverified botanical supplements",
       "EU": "Strictly regulated"
     },
-    "status_india": "Sold OTC as a natural, safe blood-sugar management supplement in every pharmacy.",
+    "status_india": "Sold OTC as a natural, safe blood-sugar management supplement in pharmacies.",
     "target_organ_id": "liver",
-    "mechanism": "Naturally occurring heavy metals (lead, arsenic, cadmium) absorbed from contaminated soil or during manufacturing accumulate in the botanical extract, causing progressive hepatotoxicity and cellular damage with chronic daily use.",
-    "how_to_spot": "Look for 'Karela' or 'Bitter Melon' capsules. Check if the brand provides heavy metal batch clearance.",
-    "safer_alternatives": ["Fresh cooked Karela (Bitter gourd)", "Standardized metformed blood sugar therapies under supervision"],
+    "mechanism": "The general concern lies in category-wide botanical supplements absorbing heavy metals (lead, arsenic, cadmium) from the cultivation soil. Chronic ingestion of contaminated extracts causes progressive hepatotoxicity and organ damage.",
+    "how_to_spot": "Check ingredient lists of bitter melon or karela capsules. Ensure manufacturers verify heavy metal limits.",
+    "safer_alternatives": ["Fresh cooked Karela (Bitter gourd)", "Standardized glucose-lowering therapies under medical supervision"],
     "cdsco_ref": "AYUSH Export Guidelines"
   },
   {
     "molecule": "Arsenic & Heavy Metal Contamination",
-    "brand_names_india": ["Safi Liquid Blood Purifier (Hamdard)"],
+    "brand_names_india": ["Safi Liquid Blood Purifier", "Herbal Blood Purifiers"],
     "risk_level": "HIGH",
     "status_global": {
-      "US": "Import restrictions & warnings",
-      "Canada": "Banned / Import alert",
-      "UK": "Consumer warnings issued"
+      "US": "FDA import warning alerts on heavy metals",
+      "Canada": "Import warning and product safety advisory issued"
     },
     "status_india": "Sold widely as a daily herbal blood purifier to clear acne and improve skin health.",
     "target_organ_id": "skin",
-    "mechanism": "Testing by international regulators identified toxic levels of arsenic. Chronic arsenic exposure damages skin cells, leading to hyperkeratosis, pigment changes, and increases the long-term risk of skin, lung, and bladder cancers.",
-    "how_to_spot": "Check apothecary shelves for 'Safi' liquid bottles by Hamdard.",
-    "safer_alternatives": ["Hydration", "Balanced diet", "Consulting a dermatologist for acne"],
+    "mechanism": "Import warning alerts were issued by North American regulators after testing identified arsenic levels in specific herbal blood purifiers. Chronic arsenic exposure damages skin cells, leading to hyperkeratosis, pigmentation changes, and long-term skin and bladder cancer risk.",
+    "how_to_spot": "Check labels for Hamdard Safi or similar unverified liquid blood purifiers.",
+    "safer_alternatives": ["Proper hydration", "Balanced diet", "Consulting a dermatologist for acne"],
     "cdsco_ref": "FSSAI Food/Supplement Adulteration standards"
   },
   {
     "molecule": "Heavy Metals (Lead, Cadmium, Mercury)",
-    "brand_names_india": ["Maha Sudarshan Churna (Zandu, Dabur)", "Shilajit Capsules (Baidyanath, Patanjali)"],
+    "brand_names_india": ["Shilajit Capsules / Resins", "Maha Sudarshan Churna"],
     "risk_level": "CRITICAL",
     "status_global": {
-      "Canada": "Banned",
-      "US": "Heavy restrictions / warnings on Shilajit imports",
+      "Canada": "Banned / Import warnings on specific formulations",
+      "US": "Heavy import alerts on unstandardized Shilajit",
       "EU": "Banned in several member states"
     },
-    "status_india": "Prescribed and purchased freely as remedies for chronic fever (Maha Sudarshan) and vigor/vitality (Shilajit).",
+    "status_india": "Prescribed and purchased freely as traditional remedies for chronic fever (Maha Sudarshan) and vigor/vitality (Shilajit).",
     "target_organ_id": "kidneys",
-    "mechanism": "Shilajit is a natural exudate containing fulvic acid, but frequently carries high levels of lead and arsenic from raw rock extraction. Maha Sudarshan Churna incorporates multiple herbs that concentrate heavy metals, causing chronic renal tubular necrosis and cognitive decline.",
-    "how_to_spot": "Verify packaging for Dabur, Zandu, or Baidyanath. Avoid raw, unpurified shilajit resins.",
-    "safer_alternatives": ["Clinically tested herbal extracts", "Nutritional therapies"],
+    "mechanism": "Raw Shilajit is a natural rock exudate that frequently concentrates lead, arsenic, and mercury. Maha Sudarshan Churna uses a multi-herb blend that can carry elevated heavy metal residues if untreated, causing chronic renal tubular damage.",
+    "how_to_spot": "Look for Maha Sudarshan Churna powder or Shilajit capsules. Avoid unpurified, raw shilajit resins lacking safety certification.",
+    "safer_alternatives": ["Standardized, tested herbal extracts", "Nutritional therapies under supervision"],
     "cdsco_ref": "AYUSH Pharmacopoeia standards"
   },
   {
@@ -88,25 +86,26 @@
     "risk_level": "HIGH",
     "status_global": {
       "US": "Banned for culinary use (must be labeled 'For External Use Only')",
-      "EU": "Strictly regulated (max 5% erucic acid limit)"
+      "EU": "Strictly regulated (max 5% erucic acid limit)",
+      "Canada": "Restricted (permitted only if erucic acid is below 5%)"
     },
     "status_india": "Used daily as the primary cooking oil in millions of households across Northern and Eastern India.",
     "target_organ_id": "heart",
-    "mechanism": "Naturally contains high levels (30-50%) of Erucic Acid. Early animal studies linked high erucic acid intake to myocardial lipidosis (accumulation of fat in heart muscle), which can compromise cardiac muscle function over time.",
-    "how_to_spot": "Look for bottles of mustard oil in cooking aisles. In the US, check if labeled 'For External Use Only'.",
-    "safer_alternatives": ["Specially bred low-erucic mustard oil (Canola-type)", "Sunflower oil", "Cold-pressed groundnut oil"],
-    "cdsco_ref": "FSSAI Cooking Oil Regulations (Permitted culinary oil)"
+    "mechanism": "Naturally contains high levels (30-50%) of Erucic Acid. Early animal studies linked high erucic acid intake to myocardial lipidosis (accumulation of fat in heart muscle), compromising cardiac muscle function.",
+    "how_to_spot": "Look for bottles of mustard oil in cooking aisles. In the US, it must carry a 'For External Use Only' label.",
+    "safer_alternatives": ["Low-erucic mustard oil (canola type)", "Cold-pressed groundnut oil", "Sunflower oil"],
+    "cdsco_ref": "FSSAI Cooking Oil Regulations"
   },
   {
     "molecule": "Foot-and-Mouth Disease Virus (livestock biosecurity risk)",
-    "brand_names_india": ["Amul Ghee", "Gowardhan Ghee", "Aashirvaad Svasti Ghee", "Patanjali Ghee"],
+    "brand_names_india": ["Indian Clarified Butter (Ghee)", "Dairy Ghee"],
     "risk_level": "UNDER-REVIEW",
     "status_global": {
       "US": "Banned/Prohibited by USDA (unless imported from highly certified, pasteurized, USDA-approved facilities)"
     },
     "status_india": "Universally consumed as a healthy cooking fat and superfood in Indian households.",
     "target_organ_id": "stomach",
-    "mechanism": "Not toxic to humans, but restricted internationally due to livestock biosecurity. India has endemic areas of Foot-and-Mouth Disease (FMD). Untreated dairy products can harbor the FMD virus, which if introduced to local livestock in countries like the US, could cause catastrophic agricultural outbreaks.",
+    "mechanism": "Not toxic to humans, but restricted due to country-level livestock biosecurity. India has endemic areas of Foot-and-Mouth Disease (FMD). Untreated dairy products can harbor the FMD virus, which if introduced to local livestock in countries like the US, could cause catastrophic agricultural outbreaks.",
     "how_to_spot": "Ensure butter and ghee are certified as pasteurized under high heat to guarantee total viral inactivation.",
     "safer_alternatives": ["Locally produced ghee", "Clarified butter from FMD-free regions"],
     "cdsco_ref": "USDA APHIS Animal Product Import Regulations"
@@ -126,18 +125,18 @@
     "cdsco_ref": "FSSAI Street Food Hygiene Guidelines"
   },
   {
-    "molecule": "Salmonella, Mold, & Pesticide Residues",
-    "brand_names_india": ["Haldiram's Bhujia", "Haldiram's Aloo Bhujia", "Haldiram's Snack Mixes (Panchrattan, Tasty Nuts)"],
+    "molecule": "Salmonella, Mold, & Pesticide Residues (Historical Alerts)",
+    "brand_names_india": ["Haldiram's Bhujia", "Haldiram's Aloo Bhujia", "Haldiram's Snack Mixes"],
     "risk_level": "HIGH",
     "status_global": {
-      "US": "Shipments rejected by FDA in 2015",
+      "US": "FDA import warnings and rejections (2014-2015, resolved by 2017)",
       "EU": "Strict residue testing required"
     },
     "status_india": "The most popular brand of packaged snacks in India, consumed daily by millions of families.",
     "target_organ_id": "stomach",
-    "mechanism": "Systemic issues in ingredient sourcing and processing facility hygiene lead to contamination with Salmonella bacteria, storage mold (which can release aflatoxins), and chemical residues from agricultural pesticides exceeding safety thresholds.",
-    "how_to_spot": "Check packaged namkeen bags. Look for standard hygiene certification marks.",
-    "safer_alternatives": ["Home-cooked snacks", "Brands with strict batch-tested contamination reports"],
+    "mechanism": "Between 2014 and 2015, the US FDA rejected multiple shipments due to pesticide levels, mold, and Salmonella. However, Haldiram's addressed these violations, and the US FDA issued a closeout letter in November 2017 confirming improved sanitation controls.",
+    "how_to_spot": "Check packaged namkeen bags for quality certification symbols.",
+    "safer_alternatives": ["Home-cooked snacks", "Packaged snacks with verified hygiene standards"],
     "cdsco_ref": "FSSAI Packaged Food Contaminant Limits"
   },
   {
@@ -251,22 +250,22 @@
     "cdsco_ref": "FSSAI Food Coloring Standards"
   },
   {
-    "molecule": "Potassium Bromate (E924 Baking Agent)",
+    "molecule": "Potassium Bromate (E924 Dough Conditioner)",
     "brand_names_india": ["Commercial White Breads", "Burger Buns", "Pizza Bases", "Pav / Bread rolls"],
     "risk_level": "CRITICAL",
     "status_global": {
-      "US": "Permitted but voluntary reduction requested",
+      "US": "Permitted in baking (legal, last reviewed by FDA in 1973, though restricted/banned in California schools and specific states)",
       "EU": "Banned in food preparation since 1990",
       "UK": "Banned",
       "Canada": "Banned",
       "China": "Banned"
     },
-    "status_india": "FSSAI announced a ban in 2016, but testing reveals it is still used by local, unorganized bakeries or persists as a trace contaminant in white flour.",
+    "status_india": "Officially banned by FSSAI on June 20, 2016. However, compliance concerns persist in the unorganized local bakery sector where it can still be found or exist as a trace contaminant.",
     "target_organ_id": "kidneys",
-    "mechanism": "Classified as a Group 2B carcinogen that generates reactive oxygen species, leading to severe renal tubular necrosis and renal tumors.",
+    "mechanism": "Classified as a Group 2B carcinogen by the IARC. It generates reactive oxygen species, leading to severe renal tubular necrosis and renal tumors.",
     "how_to_spot": "Avoid buying extremely cheap, unbranded bakery products. Check ingredient labels for 'Potassium Bromate' or 'E924'.",
     "safer_alternatives": ["Ascorbic Acid (Vitamin C)", "Organic flour products"],
-    "cdsco_ref": "FSSAI Gazette Notification F.No. P. 15025/19/2013-OOF-FSSAI"
+    "cdsco_ref": "FSSAI Notice F.No. P. 15025/19/2013-OOF-FSSAI (Banned in 2016)"
   },
   {
     "molecule": "Embedded Non-Nutritive Toys (Choking Hazard)",
@@ -284,20 +283,20 @@
     "cdsco_ref": "FSSAI Food Safety Standards (unregulated choking hazard)"
   },
   {
-    "molecule": "Brominated Vegetable Oil (BVO Stabilizer)",
-    "brand_names_india": ["Mountain Dew", "Citrus sodas"],
+    "molecule": "Brominated Vegetable Oil (BVO Stabilizer - Historical)",
+    "brand_names_india": ["Mountain Dew (Older Formulations)", "Local Counterfeit Sodas"],
     "risk_level": "CRITICAL",
     "status_global": {
-      "US": "Banned in food/drinks by FDA since 2024",
+      "US": "Regulation officially revoked by FDA in July 2024 (Banned)",
       "EU": "Banned",
       "UK": "Banned",
-      "Japan": "Banned / Restricted"
+      "Japan": "Banned"
     },
-    "status_india": "PepsiCo pulled Mountain Dew from India in the 1970s rather than reformulate it after BVO restrictions. Relaunched later after BVO removal, but Japan and parts of Europe continue to restrict it due to safety concerns about additives.",
+    "status_india": "PepsiCo pulled Mountain Dew from India in the 1970s rather than reformulate it after BVO restrictions. Today, BVO has been removed from Mountain Dew by PepsiCo (around 2020), but it remains a historical warning for citrus beverages and local duplicate sodas.",
     "target_organ_id": "brain",
-    "mechanism": "BVO contains bromine, which accumulates in fat tissues. Over time, high exposure can lead to systemic bromine toxicity (bromism), causing memory loss, tremors, fatigue, and neurological/cognitive impairment.",
-    "how_to_spot": "Check ingredient labels on citrus-flavored sodas and energy drinks for 'Brominated Vegetable Oil' or 'BVO'.",
-    "safer_alternatives": ["Fresh lemonade", "Naturally flavored sparkling water", "Fruit juices"],
-    "cdsco_ref": "FSSAI Beverage Standards Regulation"
+    "mechanism": "BVO was historically used as an emulsion stabilizer. It contains bromine, which accumulates in fatty tissues. Chronic high exposure can cause systemic bromine toxicity (bromism), leading to memory loss, skin lesions, tremors, and cognitive deficits. The US FDA officially banned all BVO in food and beverages in July 2024.",
+    "how_to_spot": "Check citrus soda labels to verify the absence of BVO. Major brands like PepsiCo and Coca-Cola no longer use BVO.",
+    "safer_alternatives": ["Citrus sodas using Glycerol Ester of Wood Rosin", "Naturally flavored carbonated water"],
+    "cdsco_ref": "FSSAI Beverages Regulation (BVO is restricted)"
   }
 ]
