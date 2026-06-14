@@ -28,7 +28,7 @@ function LibraryPage() {
   const { language, bookmarks, addBookmark, removeBookmark, isBookmarked, addHistoryEntry } = useBodyStore();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<"all" | "remedies" | "hacks" | "myths" | "marvels">("all");
+  const [activeTab, setActiveTab] = useState<"all" | "remedies" | "hacks" | "myths" | "marvels" | "bookmarks">("all");
   const [triedCounts, setTriedCounts] = useState<Record<string, number>>({});
   const [expandedMythId, setExpandedMythId] = useState<string | null>(null);
 
@@ -122,7 +122,7 @@ function LibraryPage() {
           {/* Navigation Tabs */}
           <div className="mb-6 border-b border-border">
             <div className="flex flex-wrap gap-2 pb-px">
-              {(["all", "remedies", "hacks", "myths", "marvels"] as const).map((tab) => (
+              {(["all", "remedies", "hacks", "myths", "marvels", "bookmarks"] as const).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => {
@@ -235,9 +235,19 @@ function LibraryPage() {
               <h2 className="mb-4 text-2xl font-bold text-[#EAEAEA]">Home & Natural Hacks</h2>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {filteredHacks.map((hack) => (
-                  <div key={hack.id} className="rounded-xl border border-border bg-[#0D0D0D] p-5">
-                    <h3 className="font-bold text-[#EAEAEA]">{hack.title}</h3>
-                    <p className="mt-2 text-sm text-[#8A8F98]">{hack.practice}</p>
+                  <div key={hack.id} className="rounded-xl border border-border bg-[#0D0D0D] p-5 flex flex-col justify-between">
+                    <div>
+                      <div className="flex justify-between items-start">
+                        <h3 className="font-bold text-[#EAEAEA]">{hack.title}</h3>
+                        <button
+                          onClick={() => isBookmarked(hack.id) ? removeBookmark(hack.id) : addBookmark(hack.id)}
+                          className="text-[#8A8F98] hover:text-[#FC3D21]"
+                        >
+                          {isBookmarked(hack.id) ? "❤️" : "🤍"}
+                        </button>
+                      </div>
+                      <p className="mt-2 text-sm text-[#8A8F98]">{hack.practice}</p>
+                    </div>
                     <div className="mt-3 rounded-lg bg-[#FC3D21]/5 p-3 text-xs text-[#FC3D21] border border-[#FC3D21]/10">
                       <strong>How it works:</strong> {hack.scienceBasis}
                     </div>
@@ -275,7 +285,18 @@ function LibraryPage() {
                         <h3 className="font-bold text-[#FC3D21] flex items-center gap-2">
                           ❌ Myth: <span className="text-[#EAEAEA] font-medium">{myth.myth}</span>
                         </h3>
-                        <span className="text-[#8A8F98] text-sm">{isExpanded ? "▲" : "▼"}</span>
+                        <div className="flex items-center gap-3">
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              isBookmarked(myth.id) ? removeBookmark(myth.id) : addBookmark(myth.id);
+                            }}
+                            className="text-[#8A8F98] hover:text-[#FC3D21]"
+                          >
+                            {isBookmarked(myth.id) ? "❤️" : "🤍"}
+                          </button>
+                          <span className="text-[#8A8F98] text-sm">{isExpanded ? "▲" : "▼"}</span>
+                        </div>
                       </div>
                       <AnimatePresence>
                         {isExpanded && (
@@ -296,6 +317,138 @@ function LibraryPage() {
                     </div>
                   );
                 })}
+              </div>
+            </div>
+          )}
+
+          {/* Bookmarks Tab View */}
+          {activeTab === "bookmarks" && (
+            <div className="pt-6 space-y-8">
+              <div>
+                <h2 className="text-2xl font-bold text-[#EAEAEA] mb-4">Your Saved Remedies & Hacks</h2>
+                {bookmarks.filter(bId => REMEDIES.some(r => r.id === bId) || HACKS.some(h => h.id === bId)).length === 0 ? (
+                  <p className="text-sm text-[#8A8F98]">No saved remedies or hacks yet.</p>
+                ) : (
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    {REMEDIES.filter(r => bookmarks.includes(r.id)).map((remedy) => (
+                      <motion.div
+                        layout
+                        key={remedy.id}
+                        className="rounded-xl border border-border bg-[#0D0D0D] p-5 transition-all hover:border-[#FC3D21]/30 flex flex-col justify-between"
+                      >
+                        <div>
+                          <div className="flex justify-between items-start">
+                            <span className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
+                              remedy.evidenceRating === "studied" ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" :
+                              remedy.evidenceRating === "traditional" ? "bg-purple-500/10 text-purple-400 border border-purple-500/20" :
+                              "bg-amber-500/10 text-amber-400 border border-amber-500/20"
+                            }`}>
+                              {remedy.evidenceRating} evidence
+                            </span>
+                            <button
+                              onClick={() => removeBookmark(remedy.id)}
+                              className="text-[#FC3D21]"
+                            >
+                              ❤️
+                            </button>
+                          </div>
+                          <h3 className="mt-3 font-bold text-[#EAEAEA]">{remedy.name}</h3>
+                          <p className="mt-1 text-xs text-[#F5A623]">Target: {remedy.ailment}</p>
+                          <p className="mt-3 text-sm text-[#8A8F98]">{remedy.description}</p>
+                          {remedy.genZContext && (
+                            <div className="mt-3.5 rounded-lg bg-[#FC3D21]/5 border border-[#FC3D21]/10 p-3 text-xs text-[#EAEAEA]/90">
+                              <span className="font-bold text-[#FC3D21]">Gen Z Context:</span> {remedy.genZContext}
+                            </div>
+                          )}
+                        </div>
+                        <div className="mt-4 border-t border-border/40 pt-3 text-[11px] text-[#8A8F98]">
+                          <span className="font-bold text-[#FC3D21]">Scientific Base:</span> {remedy.evidenceDetails}
+                        </div>
+                      </motion.div>
+                    ))}
+
+                    {HACKS.filter(h => bookmarks.includes(h.id)).map((hack) => (
+                      <div key={hack.id} className="rounded-xl border border-border bg-[#0D0D0D] p-5 flex flex-col justify-between">
+                        <div>
+                          <div className="flex justify-between items-start">
+                            <span className="rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider">
+                              Hack
+                            </span>
+                            <button
+                              onClick={() => removeBookmark(hack.id)}
+                              className="text-[#FC3D21]"
+                            >
+                              ❤️
+                            </button>
+                          </div>
+                          <h3 className="mt-3 font-bold text-[#EAEAEA]">{hack.title}</h3>
+                          <p className="mt-2 text-sm text-[#8A8F98]">{hack.practice}</p>
+                        </div>
+                        <div className="mt-4 border-t border-[#FC3D21]/20 pt-3 text-[11px] text-[#FC3D21]">
+                          <strong>How it works:</strong> {hack.scienceBasis}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-[#EAEAEA] mb-4">Your Saved Facts & Myths</h2>
+                {bookmarks.filter(bId => FACTS.some(f => f.id === bId) || MYTHS.some(m => m.id === bId)).length === 0 ? (
+                  <p className="text-sm text-[#8A8F98]">No saved facts or myths yet.</p>
+                ) : (
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    {FACTS.filter(f => bookmarks.includes(f.id)).map((fact) => (
+                      <div key={fact.id} className="rounded-xl border border-border bg-[#0D0D0D] p-5 flex flex-col justify-between">
+                        <div>
+                          <div className="flex justify-between items-start">
+                            <span className="rounded bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider">
+                              Fact
+                            </span>
+                            <button
+                              onClick={() => removeBookmark(fact.id)}
+                              className="text-[#FC3D21]"
+                            >
+                              ❤️
+                            </button>
+                          </div>
+                          <p className="mt-3 text-sm text-[#EAEAEA]">{fact.text}</p>
+                        </div>
+                        {fact.source && (
+                          <div className="mt-4 border-t border-border/40 pt-3 text-[11px] text-[#8A8F98]">
+                            <span className="font-bold text-[#FC3D21]">Source:</span> {fact.source}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+
+                    {MYTHS.filter(m => bookmarks.includes(m.id)).map((myth) => (
+                      <div key={myth.id} className="rounded-xl border border-border bg-[#0D0D0D] p-5 flex flex-col justify-between">
+                        <div>
+                          <div className="flex justify-between items-start">
+                            <span className="rounded bg-red-500/10 text-red-400 border border-red-500/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider">
+                              Myth Busted
+                            </span>
+                            <button
+                              onClick={() => removeBookmark(myth.id)}
+                              className="text-[#FC3D21]"
+                            >
+                              ❤️
+                            </button>
+                          </div>
+                          <h4 className="mt-3 font-bold text-[#EAEAEA] text-sm flex items-center gap-1.5">
+                            ❌ Myth: <span className="font-medium text-[#8A8F98]">{myth.myth}</span>
+                          </h4>
+                        </div>
+                        <div className="mt-4 border-t border-border/40 pt-3 text-[11px] text-[#EAEAEA]/90 bg-[#FC3D21]/5 p-2.5 rounded border border-[#FC3D21]/15">
+                          <strong className="text-[#FC3D21] block mb-1">✅ Science Truth:</strong>
+                          {myth.reality}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           )}
