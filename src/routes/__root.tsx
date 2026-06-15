@@ -11,6 +11,14 @@ import { lazy, Suspense, useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { Header } from "../components/Header";
+import { useBodyStore } from "@/store/useBodyStore";
+
+declare global {
+  interface Window {
+    googleTranslateElementInit?: () => void;
+    google?: any;
+  }
+}
 
 // Lazy load ParticleBackground for performance
 const ParticleBackground = lazy(() =>
@@ -151,6 +159,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const { language } = useBodyStore();
 
   useEffect(() => {
     if (typeof window !== "undefined" && "serviceWorker" in navigator) {
@@ -162,6 +171,53 @@ function RootComponent() {
       });
     }
   }, []);
+
+  useEffect(() => {
+    // 1. Define googleTranslateElementInit function
+    window.googleTranslateElementInit = () => {
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "en,hi",
+          autoDisplay: false,
+        },
+        "google_translate_element"
+      );
+    };
+
+    // 2. Load Google Translate script
+    const id = "google-translate-script";
+    if (!document.getElementById(id)) {
+      const addScript = document.createElement("script");
+      addScript.id = id;
+      addScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      document.body.appendChild(addScript);
+    }
+  }, []);
+
+  useEffect(() => {
+    const updateLanguage = () => {
+      // Set the translation cookie googtrans
+      const cookieValue = `googtrans=/en/${language}`;
+      document.cookie = `${cookieValue}; path=/;`;
+      document.cookie = `${cookieValue}; path=/; domain=${window.location.hostname};`;
+
+      // Trigger the translation combobox
+      const selectEl = document.querySelector(".goog-te-combo") as HTMLSelectElement | null;
+      if (selectEl) {
+        selectEl.value = language;
+        selectEl.dispatchEvent(new Event("change"));
+      } else {
+        // If the element is not ready yet, retry in a moment
+        const timer = setTimeout(updateLanguage, 250);
+        return () => clearTimeout(timer);
+      }
+    };
+
+    // Delay slightly to allow element/script initialization
+    const initialTimer = setTimeout(updateLanguage, 100);
+    return () => clearTimeout(initialTimer);
+  }, [language]);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -178,6 +234,9 @@ function RootComponent() {
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </main>
+
+      {/* Hidden element for Google Translate widget */}
+      <div id="google_translate_element" style={{ display: "none" }} />
     </QueryClientProvider>
   );
 }

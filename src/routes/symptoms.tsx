@@ -10,6 +10,7 @@ interface SymptomReport {
   symptoms: string;
   duration: string;
   severity: number;
+  language?: string;
 }
 
 interface SuspectedCondition {
@@ -39,11 +40,17 @@ const evaluateSymptom = createServerFn({ method: "POST" })
       const genAI = new GoogleGenerativeAI(apiKey);
       const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
+      const languageText = input.language === "hi"
+        ? "CRITICAL: The user has selected Hindi. Therefore, you MUST write all text values (e.g. condition names, physiological mechanism descriptions, doctor questions, preventative measures, red flags, likelihoods, and urgency) in clean, readable Hindi (हिंदी). Keep the JSON keys (e.g., 'suspectedConditions', 'name', 'likelihood', 'mechanism', etc.) exactly as specified in English, but fill their values with Hindi translation/content."
+        : "All response text must be in English.";
+
       const prompt = `You are an expert medical physiology educator and diagnostic support assistant.
 A user has reported the following symptoms:
 - Description: "${input.symptoms}"
 - Duration: "${input.duration}"
 - Severity: ${input.severity}/5
+
+${languageText}
 
 Provide a JSON response with exactly this structure:
 {
@@ -76,6 +83,33 @@ CRITICAL: Do NOT give a definitive medical diagnosis. Keep it strictly education
       return JSON.parse(cleanedText) as AIAnalysisResult;
     } catch (error) {
       console.error("AI Symptom Analyzer Error:", error);
+      
+      if (input.language === "hi") {
+        return {
+          suspectedConditions: [
+            {
+              name: "अनिर्दिष्ट मस्कुलोस्केलेटल या कार्यात्मक असुविधा",
+              likelihood: "Medium",
+              mechanism: "शारीरिक लक्षण अक्सर खिंचाव, निर्जलीकरण या तनाव के कारण शुरू होते हैं, जिससे स्थानीय संवेदी तंत्रिकाएं मस्तिष्क के पार्श्विका लोब (parietal lobe) में आवेग वापस भेजती हैं।"
+            }
+          ],
+          organs: ["skin"],
+          urgency: "Low" as const,
+          doctorQuestions: [
+            "मुझे हाल ही में यह असुविधा महसूस हो रही है। आप किन जीवनशैली परिवर्तनों या बुनियादी जांचों की सिफारिश करते हैं?",
+            "क्या कोई विशिष्ट तनाव-मुक्ति या स्ट्रेचिंग पैटर्न हैं जो मदद कर सकते हैं?"
+          ],
+          preventativeMeasures: [
+            "दैनिक जलयोजन मानकों को बनाए रखें (8+ गिलास पानी)।",
+            "पोस्चर संरेखण की समीक्षा करें और छोटे स्ट्रेच ब्रेक शेड्यूल करें।"
+          ],
+          redFlags: [
+            "गंभीर स्थानीय दर्द जो नींद में बाधा डालता है",
+            "सांस लेने में तकलीफ या फैलती हुई सुन्नता"
+          ]
+        };
+      }
+
       // Fallback
       return {
         suspectedConditions: [
@@ -145,7 +179,8 @@ function SymptomsPage() {
         data: {
           symptoms: symptomsDesc,
           duration,
-          severity
+          severity,
+          language
         }
       });
       setReportData(result);

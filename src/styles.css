@@ -846,3 +846,28 @@ g:hover > .organ-path {
     display: none;
   }
 }
+
+/* ── Google Translate Clean Overrides ────────────────────────────────────────── */
+
+/* Hide Google Translate top bar and elements */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+/* Hide Google Translate tooltip popups & highlighting */
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
