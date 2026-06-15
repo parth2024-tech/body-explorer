@@ -6,7 +6,6 @@ import {
   FACTS,
   MYTHS,
   REMEDIES,
-  HACKS,
   BODY_MARVELS,
   SENSORY_FACTS,
   QA_ENTRIES,
@@ -18,22 +17,26 @@ export const Route = createFileRoute("/library")({
   head: () => ({
     meta: [
       { title: "Library — The Living Body Atlas" },
-      { name: "description", content: "Explore anatomy facts, natural remedies, seasonal hacks, and health myths." }
-    ]
+      {
+        name: "description",
+        content: "Explore anatomy facts, natural remedies, seasonal hacks, and health myths.",
+      },
+    ],
   }),
   component: LibraryPage,
 });
 
 function LibraryPage() {
-  const { language, bookmarks, addBookmark, removeBookmark, isBookmarked, addHistoryEntry } = useBodyStore();
+  const { language, bookmarks, addBookmark, removeBookmark, isBookmarked, addHistoryEntry } =
+    useBodyStore();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<"all" | "remedies" | "hacks" | "myths" | "marvels" | "bookmarks">("all");
-  const [triedCounts, setTriedCounts] = useState<Record<string, number>>({});
+  const [activeTab, setActiveTab] = useState<"remedies" | "myths" | "marvels" | "bookmarks">(
+    "remedies",
+  );
   const [expandedMythId, setExpandedMythId] = useState<string | null>(null);
 
   const [shuffledRemedies, setShuffledRemedies] = useState<typeof REMEDIES>(REMEDIES);
-  const [shuffledHacks, setShuffledHacks] = useState<typeof HACKS>(HACKS);
   const [shuffledMyths, setShuffledMyths] = useState<typeof MYTHS>(MYTHS);
 
   useEffect(() => {
@@ -49,29 +52,12 @@ function LibraryPage() {
     };
 
     setShuffledRemedies(shuffleArray(REMEDIES));
-    setShuffledHacks(shuffleArray(HACKS));
     setShuffledMyths(shuffleArray(MYTHS));
   }, []);
 
   const t = (key: keyof typeof TRANSLATIONS.en) => {
     const dict = TRANSLATIONS[language] || TRANSLATIONS.en;
     return (dict as any)[key] || (TRANSLATIONS.en as any)[key] || key;
-  };
-
-  // Pre-seed mock tried counts on client side
-  useEffect(() => {
-    const counts: Record<string, number> = {};
-    HACKS.forEach((h) => {
-      counts[h.id] = Math.floor(Math.random() * 2000) + 1200;
-    });
-    setTriedCounts(counts);
-  }, []);
-
-  const handleTryAction = (actionId: string) => {
-    setTriedCounts((prev) => ({
-      ...prev,
-      [actionId]: (prev[actionId] || 0) + 1,
-    }));
   };
 
   // Filter content
@@ -83,13 +69,6 @@ function LibraryPage() {
       (r.genZContext && r.genZContext.toLowerCase().includes(searchQuery.toLowerCase()));
     const matchesTag = !selectedTag || r.evidenceRating === selectedTag;
     return matchesSearch && matchesTag;
-  });
-
-  const filteredHacks = shuffledHacks.filter((h) => {
-    return (
-      h.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      h.practice.toLowerCase().includes(searchQuery.toLowerCase())
-    );
   });
 
   const filteredMyths = shuffledMyths.filter((m) => {
@@ -112,7 +91,8 @@ function LibraryPage() {
           Core Content <span className="gradient-text">Engine</span>
         </h1>
         <p className="mt-4 max-w-2xl text-[#8A8F98]">
-          Browse evidence-based natural remedies, ancient healing arts, posture checks, body sensory anomalies, and myth-busting sciences.
+          Browse evidence-based natural remedies, ancient healing arts, posture checks, body sensory
+          anomalies, and myth-busting sciences.
         </p>
       </div>
 
@@ -122,7 +102,7 @@ function LibraryPage() {
           {/* Navigation Tabs */}
           <div className="mb-6 border-b border-border">
             <div className="flex flex-wrap gap-2 pb-px">
-              {(["all", "remedies", "hacks", "myths", "marvels", "bookmarks"] as const).map((tab) => (
+              {(["remedies", "myths", "marvels", "bookmarks"] as const).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => {
@@ -153,7 +133,7 @@ function LibraryPage() {
           </div>
 
           {/* Remedies Section */}
-          {(activeTab === "all" || activeTab === "remedies") && (
+          {activeTab === "remedies" && (
             <div className="mb-12">
               <div className="mb-4 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
                 <h2 className="text-2xl font-bold text-[#EAEAEA]">Natural Remedies</h2>
@@ -196,15 +176,23 @@ function LibraryPage() {
                     >
                       <div>
                         <div className="flex justify-between items-start">
-                          <span className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
-                            remedy.evidenceRating === "studied" ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" :
-                            remedy.evidenceRating === "traditional" ? "bg-purple-500/10 text-purple-400 border border-purple-500/20" :
-                            "bg-amber-500/10 text-amber-400 border border-amber-500/20"
-                          }`}>
+                          <span
+                            className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
+                              remedy.evidenceRating === "studied"
+                                ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                                : remedy.evidenceRating === "traditional"
+                                  ? "bg-purple-500/10 text-purple-400 border border-purple-500/20"
+                                  : "bg-amber-500/10 text-amber-400 border border-amber-500/20"
+                            }`}
+                          >
                             {remedy.evidenceRating} evidence
                           </span>
                           <button
-                            onClick={() => isBookmarked(remedy.id) ? removeBookmark(remedy.id) : addBookmark(remedy.id)}
+                            onClick={() =>
+                              isBookmarked(remedy.id)
+                                ? removeBookmark(remedy.id)
+                                : addBookmark(remedy.id)
+                            }
                             className="text-[#8A8F98] hover:text-[#FC3D21]"
                           >
                             {isBookmarked(remedy.id) ? "❤️" : "🤍"}
@@ -215,12 +203,14 @@ function LibraryPage() {
                         <p className="mt-3 text-sm text-[#8A8F98]">{remedy.description}</p>
                         {remedy.genZContext && (
                           <div className="mt-3.5 rounded-lg bg-[#FC3D21]/5 border border-[#FC3D21]/10 p-3 text-xs text-[#EAEAEA]/90">
-                            <span className="font-bold text-[#FC3D21]">Gen Z Context:</span> {remedy.genZContext}
+                            <span className="font-bold text-[#FC3D21]">Gen Z Context:</span>{" "}
+                            {remedy.genZContext}
                           </div>
                         )}
                       </div>
                       <div className="mt-4 border-t border-border/40 pt-3 text-[11px] text-[#8A8F98]">
-                        <span className="font-bold text-[#FC3D21]">Scientific Base:</span> {remedy.evidenceDetails}
+                        <span className="font-bold text-[#FC3D21]">Scientific Base:</span>{" "}
+                        {remedy.evidenceDetails}
                       </div>
                     </motion.div>
                   ))}
@@ -229,47 +219,8 @@ function LibraryPage() {
             </div>
           )}
 
-          {/* Health Hacks Section */}
-          {(activeTab === "all" || activeTab === "hacks") && (
-            <div className="pt-6">
-              <h2 className="mb-4 text-2xl font-bold text-[#EAEAEA]">Home & Natural Hacks</h2>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {filteredHacks.map((hack) => (
-                  <div key={hack.id} className="rounded-xl border border-border bg-[#0D0D0D] p-5 flex flex-col justify-between">
-                    <div>
-                      <div className="flex justify-between items-start">
-                        <h3 className="font-bold text-[#EAEAEA]">{hack.title}</h3>
-                        <button
-                          onClick={() => isBookmarked(hack.id) ? removeBookmark(hack.id) : addBookmark(hack.id)}
-                          className="text-[#8A8F98] hover:text-[#FC3D21]"
-                        >
-                          {isBookmarked(hack.id) ? "❤️" : "🤍"}
-                        </button>
-                      </div>
-                      <p className="mt-2 text-sm text-[#8A8F98]">{hack.practice}</p>
-                    </div>
-                    <div className="mt-3 rounded-lg bg-[#FC3D21]/5 p-3 text-xs text-[#FC3D21] border border-[#FC3D21]/10">
-                      <strong>How it works:</strong> {hack.scienceBasis}
-                    </div>
-                    <div className="mt-4 flex items-center justify-between">
-                      <button
-                        onClick={() => handleTryAction(hack.id)}
-                        className="rounded-full bg-[#FC3D21]/10 px-4 py-1.5 text-xs font-semibold text-[#FC3D21] transition-all hover:bg-[#FC3D21]/25"
-                      >
-                        ⚡ Done it!
-                      </button>
-                      <span className="text-[11px] text-[#8A8F98]">
-                        {triedCounts[hack.id] || 0} tried this today
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Myths Section */}
-          {(activeTab === "all" || activeTab === "myths") && (
+          {activeTab === "myths" && (
             <div className="pt-6">
               <h2 className="mb-4 text-2xl font-bold text-[#EAEAEA]">{t("myths")}</h2>
               <div className="space-y-3">
@@ -289,7 +240,11 @@ function LibraryPage() {
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
-                              isBookmarked(myth.id) ? removeBookmark(myth.id) : addBookmark(myth.id);
+                              if (isBookmarked(myth.id)) {
+                                removeBookmark(myth.id);
+                              } else {
+                                addBookmark(myth.id);
+                              }
                             }}
                             className="text-[#8A8F98] hover:text-[#FC3D21]"
                           >
@@ -308,7 +263,9 @@ function LibraryPage() {
                             className="overflow-hidden"
                           >
                             <div className="mt-4 border-t border-border/40 pt-4 text-sm text-[#8A8F98]">
-                              <strong className="text-[#FC3D21] block mb-1">✅ Science Truth:</strong>
+                              <strong className="text-[#FC3D21] block mb-1">
+                                ✅ Science Truth:
+                              </strong>
                               {myth.reality}
                             </div>
                           </motion.div>
@@ -325,12 +282,12 @@ function LibraryPage() {
           {activeTab === "bookmarks" && (
             <div className="pt-6 space-y-8">
               <div>
-                <h2 className="text-2xl font-bold text-[#EAEAEA] mb-4">Your Saved Remedies & Hacks</h2>
-                {bookmarks.filter(bId => REMEDIES.some(r => r.id === bId) || HACKS.some(h => h.id === bId)).length === 0 ? (
-                  <p className="text-sm text-[#8A8F98]">No saved remedies or hacks yet.</p>
+                <h2 className="text-2xl font-bold text-[#EAEAEA] mb-4">Your Saved Remedies</h2>
+                {bookmarks.filter((bId) => REMEDIES.some((r) => r.id === bId)).length === 0 ? (
+                  <p className="text-sm text-[#8A8F98]">No saved remedies yet.</p>
                 ) : (
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    {REMEDIES.filter(r => bookmarks.includes(r.id)).map((remedy) => (
+                    {REMEDIES.filter((r) => bookmarks.includes(r.id)).map((remedy) => (
                       <motion.div
                         layout
                         key={remedy.id}
@@ -338,11 +295,15 @@ function LibraryPage() {
                       >
                         <div>
                           <div className="flex justify-between items-start">
-                            <span className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
-                              remedy.evidenceRating === "studied" ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" :
-                              remedy.evidenceRating === "traditional" ? "bg-purple-500/10 text-purple-400 border border-purple-500/20" :
-                              "bg-amber-500/10 text-amber-400 border border-amber-500/20"
-                            }`}>
+                            <span
+                              className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
+                                remedy.evidenceRating === "studied"
+                                  ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                                  : remedy.evidenceRating === "traditional"
+                                    ? "bg-purple-500/10 text-purple-400 border border-purple-500/20"
+                                    : "bg-amber-500/10 text-amber-400 border border-amber-500/20"
+                              }`}
+                            >
                               {remedy.evidenceRating} evidence
                             </span>
                             <button
@@ -357,37 +318,16 @@ function LibraryPage() {
                           <p className="mt-3 text-sm text-[#8A8F98]">{remedy.description}</p>
                           {remedy.genZContext && (
                             <div className="mt-3.5 rounded-lg bg-[#FC3D21]/5 border border-[#FC3D21]/10 p-3 text-xs text-[#EAEAEA]/90">
-                              <span className="font-bold text-[#FC3D21]">Gen Z Context:</span> {remedy.genZContext}
+                              <span className="font-bold text-[#FC3D21]">Gen Z Context:</span>{" "}
+                              {remedy.genZContext}
                             </div>
                           )}
                         </div>
                         <div className="mt-4 border-t border-border/40 pt-3 text-[11px] text-[#8A8F98]">
-                          <span className="font-bold text-[#FC3D21]">Scientific Base:</span> {remedy.evidenceDetails}
+                          <span className="font-bold text-[#FC3D21]">Scientific Base:</span>{" "}
+                          {remedy.evidenceDetails}
                         </div>
                       </motion.div>
-                    ))}
-
-                    {HACKS.filter(h => bookmarks.includes(h.id)).map((hack) => (
-                      <div key={hack.id} className="rounded-xl border border-border bg-[#0D0D0D] p-5 flex flex-col justify-between">
-                        <div>
-                          <div className="flex justify-between items-start">
-                            <span className="rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider">
-                              Hack
-                            </span>
-                            <button
-                              onClick={() => removeBookmark(hack.id)}
-                              className="text-[#FC3D21]"
-                            >
-                              ❤️
-                            </button>
-                          </div>
-                          <h3 className="mt-3 font-bold text-[#EAEAEA]">{hack.title}</h3>
-                          <p className="mt-2 text-sm text-[#8A8F98]">{hack.practice}</p>
-                        </div>
-                        <div className="mt-4 border-t border-[#FC3D21]/20 pt-3 text-[11px] text-[#FC3D21]">
-                          <strong>How it works:</strong> {hack.scienceBasis}
-                        </div>
-                      </div>
                     ))}
                   </div>
                 )}
@@ -395,12 +335,17 @@ function LibraryPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-[#EAEAEA] mb-4">Your Saved Facts & Myths</h2>
-                {bookmarks.filter(bId => FACTS.some(f => f.id === bId) || MYTHS.some(m => m.id === bId)).length === 0 ? (
+                {bookmarks.filter(
+                  (bId) => FACTS.some((f) => f.id === bId) || MYTHS.some((m) => m.id === bId),
+                ).length === 0 ? (
                   <p className="text-sm text-[#8A8F98]">No saved facts or myths yet.</p>
                 ) : (
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    {FACTS.filter(f => bookmarks.includes(f.id)).map((fact) => (
-                      <div key={fact.id} className="rounded-xl border border-border bg-[#0D0D0D] p-5 flex flex-col justify-between">
+                    {FACTS.filter((f) => bookmarks.includes(f.id)).map((fact) => (
+                      <div
+                        key={fact.id}
+                        className="rounded-xl border border-border bg-[#0D0D0D] p-5 flex flex-col justify-between"
+                      >
                         <div>
                           <div className="flex justify-between items-start">
                             <span className="rounded bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider">
@@ -423,8 +368,11 @@ function LibraryPage() {
                       </div>
                     ))}
 
-                    {MYTHS.filter(m => bookmarks.includes(m.id)).map((myth) => (
-                      <div key={myth.id} className="rounded-xl border border-border bg-[#0D0D0D] p-5 flex flex-col justify-between">
+                    {MYTHS.filter((m) => bookmarks.includes(m.id)).map((myth) => (
+                      <div
+                        key={myth.id}
+                        className="rounded-xl border border-border bg-[#0D0D0D] p-5 flex flex-col justify-between"
+                      >
                         <div>
                           <div className="flex justify-between items-start">
                             <span className="rounded bg-red-500/10 text-red-400 border border-red-500/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider">
@@ -454,7 +402,7 @@ function LibraryPage() {
           )}
 
           {/* Weekly Marvels Section */}
-          {(activeTab === "all" || activeTab === "marvels") && (
+          {activeTab === "marvels" && (
             <div className="pt-6">
               <h2 className="mb-4 text-2xl font-bold text-[#EAEAEA]">Body Marvels (Deep Dives)</h2>
               {BODY_MARVELS.map((marvel) => (
@@ -510,7 +458,10 @@ function LibraryPage() {
                   const remedy = REMEDIES.find((r) => r.id === bId);
                   const fact = FACTS.find((f) => f.id === bId);
                   return (
-                    <div key={bId} className="flex items-center justify-between bg-[#0D0D0D] p-3 rounded-lg border border-border/40">
+                    <div
+                      key={bId}
+                      className="flex items-center justify-between bg-[#0D0D0D] p-3 rounded-lg border border-border/40"
+                    >
                       <div className="truncate max-w-[80%]">
                         <p className="text-xs font-bold text-[#FC3D21] truncate">
                           {remedy ? remedy.name : "Saved Fact"}
@@ -538,7 +489,8 @@ function LibraryPage() {
               🛡️ {t("medicalReviewed")}
             </span>
             <p className="mt-2 text-[10px] text-[#8A8F98]">
-              Every article and remedy is cross-referenced with medical databases (NLM, PubMed) and reviewed by board-certified physicians.
+              Every article and remedy is cross-referenced with medical databases (NLM, PubMed) and
+              reviewed by board-certified physicians.
             </p>
           </div>
         </div>
