@@ -125,11 +125,7 @@ const ORGAN_CONNECTIONS: Connection[] = [
 // ─── CSS ──────────────────────────────────────────────────────────────────────
 
 const CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
+  .bodymap-container {
     --bg: #060B18;
     --surface: rgba(12,18,36,0.92);
     --border: rgba(255,255,255,0.07);
@@ -140,54 +136,15 @@ const CSS = `
     --font-body: 'Inter', sans-serif;
     --radius: 12px;
     --transition: 0.2s cubic-bezier(0.4,0,0.2,1);
-  }
 
-  body {
-    background: var(--bg);
-    color: var(--text-primary);
-    font-family: var(--font-body);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  .app {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 24px 16px 64px;
-    gap: 24px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  /* Header */
-  .header {
-    text-align: center;
     width: 100%;
-  }
-  .header-eyebrow {
-    font-family: var(--font-display);
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .header-title {
-    font-family: var(--font-display);
-    font-size: clamp(22px, 4vw, 36px);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--text-primary);
-  }
-  .header-sub {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-top: 6px;
   }
 
   /* Layout */
-  .layout {
+  .bodymap-layout {
     display: flex;
     gap: 28px;
     width: 100%;
@@ -631,15 +588,8 @@ export function BodyMap() {
   return (
     <>
       <style>{CSS}</style>
-      <div className="app">
-        {/* Header */}
-        <div className="header">
-          <div className="header-eyebrow">Human Anatomy · Interactive</div>
-          <h1 className="header-title">Body Intelligence Map</h1>
-          <p className="header-sub">Click any structure to explore facts, challenges, and cutting-edge research</p>
-        </div>
-
-        <div className="layout">
+      <div className="bodymap-container">
+        <div className="bodymap-layout">
           {/* ─ Body map column ─ */}
           <div className="map-col">
             {/* Layer selector */}
