@@ -20,7 +20,7 @@ function EmergencyPage() {
   const { addHistoryEntry } = useBodyStore();
   const [cprRunning, setCprRunning] = useState(false);
   const [cprCount, setCprCount] = useState(0);
-  const [localNumber, setLocalNumber] = useState("911 (US) / 112 (EU)");
+  const [localNumber, setLocalNumber] = useState("112 / 108");
   const [isCprExpanded, setIsCprExpanded] = useState(false);
 
   // Refs for precise timing and audio
@@ -37,7 +37,7 @@ function EmergencyPage() {
       } else if (locale.includes("GB") || locale.includes("UK")) {
         setLocalNumber("999 (Ambulance / Fire / Police)");
       } else {
-        setLocalNumber("911 (US) / 112 (EU)");
+        setLocalNumber("112 / 108");
       }
     }
   }, [addHistoryEntry]);

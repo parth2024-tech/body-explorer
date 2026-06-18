@@ -12,7 +12,7 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
       { text: "Shortness of breath", frequency: "often" },
       { text: "Chest tightness", frequency: "sometimes" }
     ],
-    whenToSeeDoctor: "⚠️ SEE A DOCTOR WITHIN 48 HOURS: If you need your rescue inhaler more than twice a week. 🚨 EMERGENCY WARNING - CALL 911: If your lips turn blue or you are struggling to breathe.",
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR WITHIN 48 HOURS: If you need your rescue inhaler more than twice a week. 🚨 EMERGENCY WARNING - CALL 112: If your lips turn blue or you are struggling to breathe.",
     misconceptions: ["Asthma only happens in childhood", "You can't exercise with asthma"]
   },
   {
@@ -55,7 +55,7 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
       { text: "Nausea", frequency: "often" },
       { text: "Aura (visual spots)", frequency: "sometimes" }
     ],
-    whenToSeeDoctor: "⚠️ SEE A DOCTOR: If you get severe headaches multiple days a month. 🚨 EMERGENCY WARNING - CALL 911: If you get the worst headache of your life suddenly, or have a stiff neck and fever.",
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR: If you get severe headaches multiple days a month. 🚨 EMERGENCY WARNING - CALL 112: If you get the worst headache of your life suddenly, or have a stiff neck and fever.",
     misconceptions: ["It's just a bad headache", "Caffeine always triggers them (it can sometimes help)"]
   },
   {
@@ -97,7 +97,7 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
       { text: "No early symptoms", frequency: "always" },
       { text: "Severe eye pain", frequency: "sometimes" }
     ],
-    whenToSeeDoctor: "⚠️ SEE A DOCTOR: If you notice you are losing vision on the sides of your eyes. 🚨 EMERGENCY WARNING - CALL 911: If you suddenly lose your vision or see rainbow halos around lights with terrible eye pain.",
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR: If you notice you are losing vision on the sides of your eyes. 🚨 EMERGENCY WARNING - CALL 112: If you suddenly lose your vision or see rainbow halos around lights with terrible eye pain.",
     misconceptions: ["You'll know if you have it", "It only affects the elderly"]
   },
   {

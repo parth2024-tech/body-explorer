@@ -9,7 +9,7 @@ export const MYTHS: MythBusted[] = [
     reality: "CPR almost never restarts a heart on its own. Its only job is to pump oxygen to the brain to keep the person alive until an ambulance gets there with a defibrillator.",
     sources: ["American Heart Association (AHA)", "Red Cross"],
     actionableTip: "Learn Hands-Only CPR! Push hard and fast in the center of the chest to the beat of 'Stayin' Alive'. Don't stop until paramedics arrive.",
-    dangerAlert: "🚨 CALL 911 IMMEDIATELY before starting CPR. Time is the only thing that saves a brain without oxygen.",
+    dangerAlert: "🚨 CALL 112 IMMEDIATELY before starting CPR. Time is the only thing that saves a brain without oxygen.",
     confidenceLevel: "HIGH",
     evidenceStatement: "✅ EVIDENCE: Supported by AHA Guidelines 2020 - CPR survival rates depend on uninterrupted compressions and rapid defibrillation.",
     clinicalDisclaimer: "📍 IMPORTANT: This is for educational purposes. Take an official CPR course to be prepared for real emergencies."
@@ -53,7 +53,7 @@ export const MYTHS: MythBusted[] = [
     reality: "It is physically impossible to swallow your own tongue. Forcing an object into a seizing person's mouth will only break their teeth or cause them to choke.",
     sources: ["Epilepsy Foundation"],
     actionableTip: "Gently roll the person onto their side so they can breathe easily, put something soft like a jacket under their head, and time the seizure with your watch.",
-    dangerAlert: "⚠️ DANGEROUS MISINFORMATION: Do not hold them down or force their mouth open. Call 911 if the seizure lasts longer than 5 minutes.",
+    dangerAlert: "⚠️ DANGEROUS MISINFORMATION: Do not hold them down or force their mouth open. Call 112 if the seizure lasts longer than 5 minutes.",
     confidenceLevel: "HIGH",
     evidenceStatement: "✅ EVIDENCE: Supported by Epilepsy Foundation First Aid Protocols - Inserting objects causes severe maxillofacial trauma."
   },
@@ -118,7 +118,7 @@ export const MYTHS: MythBusted[] = [
     reality: "Many people, especially women, never feel chest pain during a heart attack. They might just feel extremely tired, nauseous, or have bad pain in their jaw or back.",
     sources: ["American Heart Association (AHA)"],
     actionableTip: "If you suddenly break out in a cold sweat, feel like you're going to throw up, and can't catch your breath, don't wait for chest pain to start.",
-    dangerAlert: "🚨 URGENT WARNING: Call 911 immediately if you have unexplained jaw pain with shortness of breath. Women often dismiss this as the flu.",
+    dangerAlert: "🚨 URGENT WARNING: Call 112 immediately if you have unexplained jaw pain with shortness of breath. Women often dismiss this as the flu.",
     confidenceLevel: "HIGH",
     evidenceStatement: "✅ EVIDENCE: Supported by AHA Clinical Guidelines - Atypical presentation is common in women, diabetics, and the elderly."
   },
