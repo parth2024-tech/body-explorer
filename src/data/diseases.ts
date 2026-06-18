@@ -6,13 +6,13 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     name: "Asthma",
     bodyPartId: "lung-left",
     genZContext: "Your lungs are basically acting dramatic and ghosting your air supply. Not a vibe.",
-    overview: "A chronic respiratory condition causing airway inflammation and constriction.",
+    overview: "A long-lasting lung problem where your breathing tubes get swollen and narrow, making it hard to breathe.",
     symptoms: [
       { text: "Wheezing", frequency: "always" },
       { text: "Shortness of breath", frequency: "often" },
       { text: "Chest tightness", frequency: "sometimes" }
     ],
-    whenToSeeDoctor: "If you need your rescue inhaler more than twice a week.",
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR WITHIN 48 HOURS: If you need your rescue inhaler more than twice a week. 🚨 EMERGENCY WARNING - CALL 911: If your lips turn blue or you are struggling to breathe.",
     misconceptions: ["Asthma only happens in childhood", "You can't exercise with asthma"]
   },
   {
@@ -20,13 +20,13 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     name: "Fatty Liver Disease (NAFLD)",
     bodyPartId: "liver",
     genZContext: "Your liver has been binge-watching Netflix and snacking too much. Needs a serious detox era.",
-    overview: "Excess fat buildup in the liver not caused by alcohol consumption.",
+    overview: "When too much fat builds up in your liver, even if you don't drink alcohol. This makes it hard for your liver to clean your blood.",
     symptoms: [
       { text: "Fatigue", frequency: "often" },
       { text: "Pain in upper right abdomen", frequency: "sometimes" },
       { text: "No symptoms (silent)", frequency: "always" }
     ],
-    whenToSeeDoctor: "Yearly blood tests (ALT/AST) are crucial as it's often asymptomatic.",
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR: Get yearly blood tests, as this often has zero warning signs. 🚨 EMERGENCY WARNING: Go to the ER if your skin or eyes suddenly turn yellow.",
     misconceptions: ["Only heavy drinkers get liver disease", "Fatty liver is untreatable"]
   },
   {
@@ -34,13 +34,13 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     name: "GERD (Acid Reflux)",
     bodyPartId: "stomach",
     genZContext: "Your stomach acid said 'I'm coming over' when nobody invited it. Toxic behavior.",
-    overview: "Stomach acid repeatedly flows back into the tube connecting your mouth and stomach.",
+    overview: "When harsh stomach acid constantly splashes backward up into your throat, causing a burning feeling in your chest.",
     symptoms: [
       { text: "Heartburn", frequency: "always" },
       { text: "Regurgitation", frequency: "often" },
       { text: "Chronic dry cough", frequency: "sometimes" }
     ],
-    whenToSeeDoctor: "If symptoms occur more than twice a week despite over-the-counter medication.",
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR: If you have heartburn more than twice a week and normal medicine doesn't help. 🚨 EMERGENCY WARNING: Go to the ER if you feel crushing chest pain that spreads to your arm or jaw.",
     misconceptions: ["Milk cures heartburn (it actually worsens it later)", "It's just indigestion"]
   },
   {
@@ -48,14 +48,14 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     name: "Migraine",
     bodyPartId: "brain",
     genZContext: "Your brain is throwing a massive tantrum with main character energy. 0/10 do not recommend.",
-    overview: "A neurological condition causing intense, debilitating headaches, often with sensory disturbances.",
+    overview: "A serious brain condition that causes intense, blinding headaches. It can also make you feel sick and see flashing lights.",
     symptoms: [
       { text: "Throbbing pain on one side of head", frequency: "always" },
       { text: "Light sensitivity", frequency: "often" },
       { text: "Nausea", frequency: "often" },
       { text: "Aura (visual spots)", frequency: "sometimes" }
     ],
-    whenToSeeDoctor: "If headaches are accompanied by fever, stiff neck, or neurological symptoms.",
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR: If you get severe headaches multiple days a month. 🚨 EMERGENCY WARNING - CALL 911: If you get the worst headache of your life suddenly, or have a stiff neck and fever.",
     misconceptions: ["It's just a bad headache", "Caffeine always triggers them (it can sometimes help)"]
   },
   {
@@ -63,13 +63,13 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     name: "Celiac Disease",
     bodyPartId: "small-intestine",
     genZContext: "Your immune system beefs with bread. Gluten is officially canceled.",
-    overview: "An autoimmune disorder where eating gluten leads to damage in the small intestine.",
+    overview: "A condition where eating gluten (found in bread and pasta) makes your own body attack and damage your stomach area.",
     symptoms: [
       { text: "Diarrhea", frequency: "often" },
       { text: "Bloating and gas", frequency: "often" },
       { text: "Fatigue", frequency: "always" }
     ],
-    whenToSeeDoctor: "If you have chronic digestive distress or unexplained anemia.",
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR WITHIN 24 HOURS: If you have terrible stomach pain, constant diarrhea, or feel incredibly tired all the time.",
     misconceptions: ["It's the same as a gluten allergy", "A little bit of gluten is okay"]
   },
   {
@@ -77,13 +77,13 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     name: "Osteoarthritis",
     bodyPartId: "knees",
     genZContext: "Your joints have left the chat. They're basically grinding like bad brakes on a scooter.",
-    overview: "The most common form of arthritis, occurring when protective cartilage wears down over time.",
+    overview: "When the slippery cushions between your knee bones wear away, making it painful to walk or bend your knees.",
     symptoms: [
       { text: "Joint pain during or after movement", frequency: "always" },
       { text: "Stiffness upon waking", frequency: "often" },
       { text: "Loss of flexibility", frequency: "often" }
     ],
-    whenToSeeDoctor: "If joint pain or stiffness doesn't go away and interferes with daily activities.",
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR: If knee pain or stiffness doesn't go away and stops you from doing normal daily things.",
     misconceptions: ["Exercise makes it worse (it actually helps)", "It only affects old people"]
   },
   {
@@ -91,13 +91,13 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     name: "Glaucoma",
     bodyPartId: "eyes",
     genZContext: "Your eye pressure is acting sus and slowly stealing your peripheral vision.",
-    overview: "A group of eye conditions that damage the optic nerve, often due to abnormally high pressure.",
+    overview: "When pressure builds up inside your eye and slowly damages the nerve that connects your eye to your brain.",
     symptoms: [
       { text: "Gradual loss of peripheral vision", frequency: "often" },
       { text: "No early symptoms", frequency: "always" },
       { text: "Severe eye pain", frequency: "sometimes" }
     ],
-    whenToSeeDoctor: "If you experience sudden vision loss or see halos around lights.",
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR: If you notice you are losing vision on the sides of your eyes. 🚨 EMERGENCY WARNING - CALL 911: If you suddenly lose your vision or see rainbow halos around lights with terrible eye pain.",
     misconceptions: ["You'll know if you have it", "It only affects the elderly"]
   },
   {
@@ -105,13 +105,13 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     name: "Hypertension (High Blood Pressure)",
     bodyPartId: "heart",
     genZContext: "Your blood is rushing through your veins with zero chill. Major red flag.",
-    overview: "A condition in which the force of the blood against the artery walls is too high.",
+    overview: "When your blood pushes way too hard against the walls of your blood vessels, which can eventually damage your heart.",
     symptoms: [
       { text: "No symptoms (silent killer)", frequency: "always" },
       { text: "Headaches", frequency: "sometimes" },
       { text: "Nosebleeds", frequency: "sometimes" }
     ],
-    whenToSeeDoctor: "Requires regular monitoring; see a doctor if readings consistently exceed 130/80.",
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR: Check your blood pressure yearly, as you usually won't feel anything wrong. 🚨 EMERGENCY WARNING: Go to the ER if your blood pressure is extremely high and you have a severe headache or chest pain.",
     misconceptions: ["You can feel when your blood pressure is high", "It's normal with age"]
   },
   {
@@ -119,13 +119,13 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     name: "Carpal Tunnel Syndrome",
     bodyPartId: "wrists",
     genZContext: "Your wrists are screaming 'touch grass' after too much doomscrolling or gaming.",
-    overview: "A condition caused by compression of the median nerve as it travels through the wrist.",
+    overview: "When a nerve gets pinched or squeezed inside your wrist, causing your hand to feel numb and weak.",
     symptoms: [
       { text: "Tingling or numbness in fingers", frequency: "always" },
       { text: "Weakness in the hand", frequency: "often" },
       { text: "Pain traveling up the arm", frequency: "sometimes" }
     ],
-    whenToSeeDoctor: "If symptoms interfere with your normal activities or sleep.",
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR: If your hands feel numb, tingle, or hurt so much that it wakes you up at night or stops you from doing normal things.",
     misconceptions: ["It's only caused by typing", "Surgery is the only treatment"]
   },
   {
@@ -133,13 +133,13 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     name: "Kidney Stones",
     bodyPartId: "kidneys",
     genZContext: "Your kidneys made literal rocks. The pain is not giving.",
-    overview: "Hard deposits made of minerals and salts that form inside your kidneys.",
+    overview: "When minerals build up inside your kidneys to form hard, sharp rocks that are incredibly painful to pee out.",
     symptoms: [
       { text: "Severe pain in the side and back", frequency: "always" },
       { text: "Pain that radiates to the lower abdomen", frequency: "often" },
       { text: "Nausea and vomiting", frequency: "often" }
     ],
-    whenToSeeDoctor: "Seek immediate attention if pain is so severe you can't sit still or is accompanied by fever.",
+    whenToSeeDoctor: "🚨 EMERGENCY WARNING: Go to the ER immediately if you are in so much pain that you can't sit still, or if you have pain combined with a fever or throwing up.",
     misconceptions: ["Cranberry juice dissolves them", "Milk causes them"]
   },
   {
