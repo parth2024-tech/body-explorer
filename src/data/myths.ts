@@ -6,31 +6,41 @@ export const MYTHS: MythBusted[] = [
     id: "m-1",
     bodyPartId: "brain",
     myth: "Humans only use 10% of their brains.",
-    reality: "Neurologists confirm you use your entire brain, not just 10%. Brain scans show that all parts of your brain are constantly working together, even when you are fast asleep."
+    reality: "Neurologists confirm you use your entire brain, not just 10%. Brain scans show that all parts of your brain are constantly working together, even when you are fast asleep.",
+    sources: ["Johns Hopkins Medicine", "Scientific American"],
+    actionableTip: "Keep your brain sharp by learning a new skill like a language or an instrument, instead of worrying about unlocking 'hidden potential'."
   },
   {
     id: "m-2",
     bodyPartId: "brain",
     myth: "You are either 'left-brained' (logical) or 'right-brained' (creative).",
-    reality: "Brain experts say this is false. Whether you are doing math or painting a picture, both sides of your brain are rapidly talking to each other to get the job done."
+    reality: "Brain experts say this is false. Whether you are doing math or painting a picture, both sides of your brain are rapidly talking to each other to get the job done.",
+    sources: ["University of Utah Neuroscience", "Harvard Health"],
+    actionableTip: "Don't limit yourself to 'logical' or 'creative' hobbies. Your brain actually gets stronger when you mix both types of activities!"
   },
   {
     id: "m-3",
     bodyPartId: "eyes",
     myth: "Reading in dim light causes permanent damage to your eyesight.",
-    reality: "Eye doctors confirm that while reading in the dark might make your eyes feel tired or strained, it will never cause any permanent damage to your vision."
+    reality: "Eye doctors confirm that while reading in the dark might make your eyes feel tired or strained, it will never cause any permanent damage to your vision.",
+    sources: ["American Academy of Ophthalmology", "Mayo Clinic"],
+    actionableTip: "If your eyes feel tired from reading in the dark, just stop, close your eyes for a few minutes, and rest. You haven't caused any real damage."
   },
   {
     id: "m-4",
     bodyPartId: "eyes",
     myth: "Sitting too close to the TV will ruin your eyes.",
-    reality: "Medical experts assure us that sitting close to the TV will not ruin your eyes. Kids just do this because they can focus on close objects much easier than adults can."
+    reality: "Medical experts assure us that sitting close to the TV will not ruin your eyes. Kids just do this because they can focus on close objects much easier than adults can.",
+    sources: ["American Academy of Pediatrics", "Cleveland Clinic"],
+    actionableTip: "If your child constantly sits close to the TV or holds books close to their face, get their eyes checked—they might just need glasses!"
   },
   {
     id: "m-blue-light",
     bodyPartId: "eyes",
     myth: "Blue-light-blocking glasses prevent digital eye strain from screens.",
-    reality: "Eye specialists explain that screens hurt your eyes because you forget to blink as often, not because of blue light. The best fix is simply taking frequent screen breaks."
+    reality: "Eye specialists explain that screens hurt your eyes because you forget to blink as often, not because of blue light. The best fix is simply taking frequent screen breaks.",
+    sources: ["American Academy of Ophthalmology"],
+    actionableTip: "Use the 20-20-20 rule: Every 20 minutes, look at something 20 feet away for 20 seconds. And remember to blink!"
   },
   {
     id: "m-5",
@@ -68,7 +78,10 @@ export const MYTHS: MythBusted[] = [
     id: "m-8",
     bodyPartId: "liver",
     myth: "Juice cleanses effectively \"detox\" your body and organs.",
-    reality: "Liver experts explain that your liver and kidneys already clean your blood perfectly 24/7. Juice cleanses do not \"detox\" you, and they actually remove healthy fiber from your diet."
+    reality: "Liver experts explain that your liver and kidneys already clean your blood perfectly 24/7. Juice cleanses do not \"detox\" you, and they actually remove healthy fiber from your diet.",
+    sources: ["Mayo Clinic", "Cleveland Clinic"],
+    actionableTip: "Save your money! Instead of buying an expensive juice cleanse, simply drink plenty of water and eat high-fiber whole foods to support your liver's natural detox process.",
+    dangerAlert: "Extreme liquid cleanses can cause dangerous drops in blood sugar and severe dehydration. Your organs do not need to be 'reset'."
   },
   {
     id: "m-9",
@@ -92,7 +105,10 @@ export const MYTHS: MythBusted[] = [
     id: "m-natural-safe",
     bodyPartId: "liver",
     myth: "If a supplement or remedy is \"natural,\" it means it is completely safe.",
-    reality: "Toxicologists warn that \"natural\" does not mean safe. Taking too much of a natural herb or supplement can actually cause severe damage to your liver."
+    reality: "Toxicologists warn that \"natural\" does not mean safe. Taking too much of a natural herb or supplement can actually cause severe damage to your liver.",
+    sources: ["FDA", "National Institutes of Health"],
+    actionableTip: "Always bring the physical bottle of any supplement you want to take to your doctor's appointment so they can check for dangerous interactions.",
+    dangerAlert: "Many 'all-natural' supplements are completely unregulated and can interact fatally with prescription medications or cause acute liver failure."
   },
   
   // ━━━ IMMUNE & RESPIRATORY ━━━

@@ -251,10 +251,34 @@ function LibraryPage() {
                         </div>
                       </div>
                       <div className="mt-4 border-t border-border/40 pt-4 text-sm text-[#8A8F98]">
-                        <strong className="text-[#FC3D21] block mb-1">
+                        <strong className="text-[#00C853] block mb-1">
                           ✅ Science Truth:
                         </strong>
                         {myth.reality}
+                        
+                        {myth.dangerAlert && (
+                          <div className="mt-3 rounded-lg bg-red-500/10 border border-red-500/20 p-3 text-xs text-red-200">
+                            <span className="font-bold text-red-500">🔴 DANGEROUS MISINFORMATION ALERT:</span>{" "}
+                            {myth.dangerAlert}
+                          </div>
+                        )}
+                        
+                        {myth.actionableTip && (
+                          <div className="mt-3 rounded-lg bg-[#0B3D91]/10 border border-[#0B3D91]/20 p-3 text-xs text-[#EAEAEA]/90">
+                            <span className="font-bold text-[#FC3D21]">🎯 TRY THIS:</span>{" "}
+                            {myth.actionableTip}
+                          </div>
+                        )}
+                        
+                        {myth.sources && myth.sources.length > 0 && (
+                          <div className="mt-3 text-[11px] text-[#8A8F98]">
+                            <span className="font-bold text-[#FC3D21]">📚 SOURCES:</span>{" "}
+                            {myth.sources.join(" • ")}
+                            <div className="mt-1 text-[10px] text-[#8A8F98]/70">
+                              📍 IMPORTANT: This content is for educational purposes only. Always consult your healthcare provider for medical decisions.
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   );

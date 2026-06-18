@@ -40,6 +40,9 @@ export interface MythBusted {
   bodyPartId: string;
   myth: string;
   reality: string;
+  sources?: string[];
+  actionableTip?: string;
+  dangerAlert?: string;
 }
 
 export interface MicroAction {
