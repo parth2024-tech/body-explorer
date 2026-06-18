@@ -9,10 +9,10 @@ export function EmergencyCard({ scenario }: { scenario: EmergencyScenario }) {
 
   const getThemeColor = (id: string) => {
     switch (id) {
-      case 'cardiac-arrest': return 'border-red-500/50 text-red-500 bg-red-500/10 shadow-[0_0_20px_rgba(239,68,68,0.2)]';
-      case 'stroke': return 'border-orange-500/50 text-orange-500 bg-orange-500/10 shadow-[0_0_20px_rgba(249,115,22,0.2)]';
-      case 'choking': return 'border-purple-500/50 text-purple-500 bg-purple-500/10 shadow-[0_0_20px_rgba(168,85,247,0.2)]';
-      default: return 'border-amber-500/50 text-amber-500 bg-amber-500/10 shadow-[0_0_20px_rgba(245,158,11,0.2)]';
+      case 'cardiac-arrest': return 'border-crimson text-crimson bg-crimson/5';
+      case 'stroke': return 'border-accent text-accent bg-accent/5';
+      case 'choking': return 'border-charcoal dark:border-bone text-charcoal dark:text-bone bg-muted';
+      default: return 'border-sage text-sage bg-sage/5';
     }
   };
 
@@ -30,9 +30,9 @@ export function EmergencyCard({ scenario }: { scenario: EmergencyScenario }) {
     <motion.div 
       layout
       transition={{ duration: 0.5, type: 'spring', bounce: 0.2 }}
-      className={`relative rounded-2xl overflow-hidden backdrop-blur-md border ${
-        isExpanded ? getThemeColor(scenario.id) : 'border-white/10 bg-white/[0.03] hover:bg-white/[0.05]'
-      } transition-colors duration-500 flex flex-col`}
+      className={`relative overflow-hidden border-2 transition-colors duration-500 flex flex-col ${
+        isExpanded ? getThemeColor(scenario.id) : 'border-border bg-card hover:bg-muted'
+      }`}
     >
       {/* Front Label */}
       <div 
@@ -41,10 +41,10 @@ export function EmergencyCard({ scenario }: { scenario: EmergencyScenario }) {
       >
         <div className="flex w-full justify-between items-start gap-4">
           <div className="flex flex-col gap-2">
-            <span className={`text-xs font-bold uppercase tracking-widest ${isExpanded ? 'text-inherit opacity-80' : 'text-[#8A8F98]'}`}>
-              Emergency Protocol
+            <span className={`font-mono text-[10px] font-bold uppercase tracking-widest ${isExpanded ? 'text-inherit opacity-80' : 'text-muted-foreground'}`}>
+              Emergency Protocol — 0{scenario.id.length % 9 + 1}
             </span>
-            <h3 className={`text-3xl md:text-4xl font-space font-extrabold tracking-tight uppercase ${isExpanded ? 'text-white' : 'text-[#EAEAEA]'}`}>
+            <h3 className={`text-3xl md:text-4xl font-display tracking-tight uppercase ${isExpanded ? 'text-inherit' : 'text-foreground'}`}>
               {scenario.name}
             </h3>
           </div>
@@ -62,19 +62,19 @@ export function EmergencyCard({ scenario }: { scenario: EmergencyScenario }) {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4 }}
-            className="border-t border-white/10 bg-black/80 relative z-10"
+            className="border-t-2 border-inherit bg-background relative z-10"
           >
-            <div className="p-6 md:p-8 space-y-8">
+            <div className="p-6 md:p-8 space-y-10">
               
               {/* Warning Signs */}
-              <div className="bg-red-500/5 border border-red-500/20 rounded-xl p-5">
-                <h4 className="flex items-center gap-2 text-red-500 font-bold mb-3 uppercase tracking-wider text-sm">
+              <div className="bg-crimson/5 border-l-4 border-crimson p-6">
+                <h4 className="flex items-center gap-3 text-crimson font-display text-xl mb-4 uppercase tracking-widest">
                   <AlertTriangle className="w-5 h-5" />
                   Key Warning Signs
                 </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {scenario.warningSigns.map((sign, idx) => (
-                    <div key={idx} className="bg-black/40 px-3 py-2 rounded-lg border border-red-500/10 text-[#EAEAEA] text-sm">
+                    <div key={idx} className="bg-background px-4 py-3 border border-border font-body text-sm text-foreground">
                       {sign}
                     </div>
                   ))}
@@ -83,23 +83,23 @@ export function EmergencyCard({ scenario }: { scenario: EmergencyScenario }) {
 
               {/* Action Steps */}
               <div>
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-                  <h4 className="text-lg font-bold text-[#EAEAEA] uppercase tracking-wider flex items-center gap-2">
-                    <Activity className="w-5 h-5 text-amber-500" />
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 border-b-2 border-border pb-4">
+                  <h4 className="text-xl font-display text-foreground uppercase tracking-widest flex items-center gap-3">
+                    <Activity className="w-5 h-5 text-accent" />
                     Action Steps
                   </h4>
                   
                   {scenario.ifAlone && (
-                    <div className="flex bg-[#16181D] rounded-lg p-1 border border-white/10 shrink-0">
+                    <div className="flex bg-muted p-1 border border-border shrink-0">
                       <button
                         onClick={() => setIsAlone(false)}
-                        className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors ${!isAlone ? "bg-amber-500 text-black shadow-sm" : "text-[#8A8F98] hover:text-white"}`}
+                        className={`px-4 py-2 font-mono text-[10px] uppercase tracking-widest font-bold transition-colors ${!isAlone ? "bg-charcoal text-bone dark:bg-bone dark:text-charcoal" : "text-muted-foreground hover:text-foreground"}`}
                       >
                         Helping Someone
                       </button>
                       <button
                         onClick={() => setIsAlone(true)}
-                        className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors flex items-center gap-1 ${isAlone ? "bg-amber-500 text-black shadow-sm" : "text-[#8A8F98] hover:text-amber-500"}`}
+                        className={`px-4 py-2 font-mono text-[10px] uppercase tracking-widest font-bold transition-colors flex items-center gap-2 ${isAlone ? "bg-charcoal text-bone dark:bg-bone dark:text-charcoal" : "text-muted-foreground hover:text-foreground"}`}
                       >
                         <User className="w-3 h-3" /> I Am Alone
                       </button>
@@ -108,32 +108,35 @@ export function EmergencyCard({ scenario }: { scenario: EmergencyScenario }) {
                 </div>
 
                 {isAlone && scenario.ifAlone && (
-                  <div className="mb-4 rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-xs text-amber-500">
+                  <div className="mb-6 border border-accent bg-accent/5 p-4 font-mono text-xs text-accent uppercase tracking-widest">
                     <strong>Note:</strong> Displaying modified instructions for self-care.
                   </div>
                 )}
 
-                <div className="space-y-4 pl-2">
+                <div className="space-y-6">
                   {currentSteps.map((step, idx) => (
-                    <div key={idx} className="flex gap-4 items-start text-[#EAEAEA] leading-relaxed">
-                      <span className="flex shrink-0 w-8 h-8 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/30 items-center justify-center font-bold text-sm">
+                    <div key={idx} className="flex gap-6 items-start text-foreground font-body leading-relaxed">
+                      <span className="flex shrink-0 w-10 h-10 bg-accent text-white font-mono items-center justify-center font-bold text-lg">
                         {idx + 1}
                       </span>
-                      <p className="mt-1">{step}</p>
+                      <p className="mt-1 text-lg">{step}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Before Ambulance */}
-              <div className="bg-white/[0.02] border border-white/10 rounded-xl p-5">
-                <h4 className="flex items-center gap-2 text-[#00E5C4] font-bold mb-3 uppercase tracking-wider text-sm">
+              <div className="bg-muted border border-border p-6 md:p-8">
+                <h4 className="flex items-center gap-3 text-charcoal dark:text-bone font-display text-xl mb-6 uppercase tracking-widest border-b border-border pb-4">
                   <Phone className="w-5 h-5" />
                   Before Ambulance Arrives
                 </h4>
-                <ul className="list-disc list-inside space-y-2 text-[#8A8F98] text-sm">
+                <ul className="space-y-3 font-body text-foreground">
                   {scenario.beforeAmbulance.map((item, idx) => (
-                    <li key={idx}>{item}</li>
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className="text-accent font-bold mt-1">—</span>
+                      <span>{item}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -145,8 +148,8 @@ export function EmergencyCard({ scenario }: { scenario: EmergencyScenario }) {
 
       {/* Expand Hint */}
       {!isExpanded && (
-        <div className="absolute bottom-4 right-6 opacity-30">
-          <ChevronDown className="w-6 h-6 text-white" />
+        <div className="absolute bottom-6 right-8 opacity-50">
+          <ChevronDown className="w-6 h-6 text-foreground" />
         </div>
       )}
     </motion.div>

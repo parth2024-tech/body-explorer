@@ -1,37 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useBodyStore } from "@/store/useBodyStore";
-import { DISEASES, BODY_PARTS, TRANSLATIONS } from "@/data/content";
+import { TRANSLATIONS } from "@/data/content";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { DiseaseCard } from "@/components/symptoms/DiseaseCard";
-import { Sparkles, Brain, Loader2, FileText, Activity } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Send, Stethoscope, Loader2, RefreshCcw } from "lucide-react";
 
-interface SymptomReport {
-  symptoms: string;
-  duration: string;
-  severity: number;
+export interface ChatMessage {
+  role: "user" | "model";
+  content: string;
+}
+
+export interface ChatPayload {
+  messages: ChatMessage[];
   language?: string;
 }
 
-interface SuspectedCondition {
-  name: string;
-  likelihood: string;
-  mechanism: string;
-}
-
-interface AIAnalysisResult {
-  suspectedConditions: SuspectedCondition[];
-  organs: string[];
-  urgency: "Low" | "Medium" | "High" | "Immediate";
-  doctorQuestions: string[];
-  preventativeMeasures: string[];
-  redFlags: string[];
-}
-
-const evaluateSymptom = createServerFn({ method: "POST" })
-  .validator((data: SymptomReport) => data)
+const chatWithAI = createServerFn({ method: "POST" })
+  .validator((data: ChatPayload) => data)
   .handler(async ({ data: input }) => {
     try {
       const apiKey = process.env.GEMINI_API_KEY || (import.meta as any).env?.VITE_GEMINI_API_KEY;
@@ -43,390 +30,209 @@ const evaluateSymptom = createServerFn({ method: "POST" })
       const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
       const languageText = input.language === "hi"
-        ? "CRITICAL: Write all text values in Hindi (हिंदी). Keep JSON keys in English."
+        ? "CRITICAL: Write all text values in Hindi (हिंदी)."
         : "All response text must be in English.";
 
-      const prompt = `You are an expert medical physiology educator.
-A user has reported the following symptoms:
-- Description: "${input.symptoms}"
-- Duration: "${input.duration}"
-- Severity: ${input.severity}/5
+      const systemPrompt = `You are an elite, highly intelligent Clinical Diagnostician and Health Investigator.
+Your tone is professional, direct, analytical, and editorial (like a high-end medical journal). 
+Do NOT sound like a generic AI. Do not use generic pleasantries like "I'm sorry to hear that" or "I am an AI."
+Provide precise, physiological explanations. 
+
+CRITICAL CROSS-REFERENCING INSTRUCTIONS:
+Always be suspicious of modern environmental and dietary factors. When diagnosing, actively cross-reference the user's symptoms with:
+1. Grey Market Items: Ask if they are using unregulated peptides, generic minoxidil, SARMs, or unverified online supplement stacks.
+2. Food Labels / FMCG Expose: Ask if they consume hidden toxic ingredients (e.g., 'natural flavors', seed oils disguised as healthy, 'mono- and diglycerides' acting as trans fats, artificial food dyes like Red 40 which cause neurological symptoms).
+
+Structure your responses using clear markdown. Use bolding for emphasis. Keep paragraphs short and asymmetrical. If you need more information to diagnose, ask ONE or TWO piercing questions.
 
 ${languageText}
+`;
 
-Provide a JSON response strictly adhering to this structure:
-{
-  "suspectedConditions": [
-    {
-      "name": "Condition Name",
-      "likelihood": "Low/Medium/High",
-      "mechanism": "Educational physiological mechanism explanation."
-    }
-  ],
-  "organs": ["brain", "heart"],
-  "urgency": "Low/Medium/High/Immediate",
-  "doctorQuestions": ["Question 1", "Question 2"],
-  "preventativeMeasures": ["Measure 1", "Measure 2"],
-  "redFlags": ["Emergency symptom A", "Emergency symptom B"]
-}
+      const contents = [
+        { role: "user", parts: [{ text: systemPrompt }] },
+        { role: "model", parts: [{ text: "Acknowledged. I am ready to begin the clinical consultation. Please describe your symptoms." }] }
+      ];
 
-CRITICAL: Educational only. Return ONLY raw JSON string.`;
+      for (const msg of input.messages) {
+        contents.push({
+          role: msg.role === "user" ? "user" : "model",
+          parts: [{ text: msg.content }]
+        });
+      }
 
       const result = await model.generateContent({
-        contents: [{ role: "user", parts: [{ text: prompt }] }],
+        contents,
         generationConfig: {
-          temperature: 0.3,
-          responseMimeType: "application/json",
+          temperature: 0.4,
         }
       });
 
-      const responseText = result.response.text();
-      const cleanedText = responseText.replace(/^```json/i, '').replace(/^```/, '').replace(/```$/, '').trim();
-      return JSON.parse(cleanedText) as AIAnalysisResult;
+      return result.response.text();
     } catch (error) {
       console.error("AI Error:", error);
-      // Fallback object truncated for brevity, same as original
-      return {
-        suspectedConditions: [
-          {
-            name: "Unspecified Discomfort",
-            likelihood: "Medium",
-            mechanism: "Sensory nerves are firing impulses back to the parietal lobe due to an unknown stressor."
-          }
-        ],
-        organs: ["skin"],
-        urgency: "Low" as const,
-        doctorQuestions: ["What lifestyle changes do you recommend?"],
-        preventativeMeasures: ["Maintain daily hydration."],
-        redFlags: ["Severe localized pain"]
-      };
+      return "There was an error connecting to the diagnostic server. Please try again.";
     }
   });
 
 export const Route = createFileRoute("/symptoms")({
   head: () => ({
     meta: [
-      { title: "Symptoms AI — The Living Body Atlas" },
-      { name: "description", content: "AI-powered educational symptom evaluator." }
+      { title: "Consult AI — The Living Body Atlas" },
+      { name: "description", content: "Conversational AI Symptom Analyzer." }
     ]
   }),
-  component: SymptomsPage,
+  component: SymptomsChatPage,
 });
 
-function SymptomsPage() {
+function SymptomsChatPage() {
   const { language, addHistoryEntry } = useBodyStore();
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
   
-  // AI Form States
-  const [symptomsDesc, setSymptomsDesc] = useState("");
-  const [duration, setDuration] = useState("A few days");
-  const [severity, setSeverity] = useState(3);
-  const [analyzing, setAnalyzing] = useState(false);
-  const [reportData, setReportData] = useState<AIAnalysisResult | null>(null);
+  const [messages, setMessages] = useState<ChatMessage[]>([
+    { role: "model", content: "Please describe what you're experiencing. Include onset duration, severity, and any recent changes to your diet or supplement stack." }
+  ]);
+  const [inputValue, setInputValue] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     addHistoryEntry("/symptoms");
-  }, []);
+  }, [addHistoryEntry]);
 
-  const t = (key: keyof typeof TRANSLATIONS.en) => {
-    const dict = TRANSLATIONS[language] || TRANSLATIONS.en;
-    return (dict as any)[key] || (TRANSLATIONS.en as any)[key] || key;
-  };
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
-  const handleAIAnalyze = async (e: React.FormEvent) => {
+  const handleSend = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!symptomsDesc.trim()) return;
-    setAnalyzing(true);
-    setReportData(null);
+    if (!inputValue.trim() || isTyping) return;
+
+    const userMsg: ChatMessage = { role: "user", content: inputValue.trim() };
+    const newMessages = [...messages, userMsg];
+    
+    setMessages(newMessages);
+    setInputValue("");
+    setIsTyping(true);
 
     try {
-      const result = await evaluateSymptom({
-        data: { symptoms: symptomsDesc, duration, severity, language }
+      const aiResponse = await chatWithAI({
+        data: { messages: newMessages, language }
       });
-      setReportData(result);
+      setMessages([...newMessages, { role: "model", content: aiResponse }]);
     } catch (err) {
-      console.error(err);
+      setMessages([...newMessages, { role: "model", content: "Communication interrupted. Please verify connection." }]);
     } finally {
-      setAnalyzing(false);
+      setIsTyping(false);
     }
   };
 
-  const filteredDiseases = DISEASES.filter((d) => {
-    const matchesSearch =
-      d.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      d.overview.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesRegion = !selectedRegion || getBodyPartRegion(d.bodyPartId) === selectedRegion;
-    return matchesSearch && matchesRegion;
-  });
-
-  function getBodyPartRegion(partId?: string) {
-    if (!partId) return "";
-    const part = BODY_PARTS.find((p) => p.id === partId);
-    return part ? part.region : "";
-  }
+  const clearChat = () => {
+    setMessages([{ role: "model", content: "Chat history cleared. Please describe what you're experiencing." }]);
+  };
 
   return (
-    <div className="min-h-screen bg-[#030303] text-[#EAEAEA] font-sans selection:bg-[#FC3D21]/30 pb-32">
-      <style>{`
-        @media print {
-          nav, footer, header, .no-print { display: none !important; }
-          body { background: #ffffff !important; color: #000000 !important; font-size: 12pt; }
-          .print-container { display: block !important; width: 100% !important; margin: 0 !important; padding: 0 !important; border: none !important; box-shadow: none !important; background: transparent !important; }
-          .print-card { border: 1px solid #ddd !important; padding: 15px !important; margin-bottom: 15px !important; background: #fff !important; color: #000 !important; page-break-inside: avoid; }
-        }
-      `}</style>
-
+    <main className="min-h-screen bg-background text-foreground flex flex-col pt-12 pb-8">
+      
       {/* Medical Disclaimer Banner */}
-      <div className="w-full bg-rose-500/10 border-b border-rose-500/30 px-4 py-3 flex items-start sm:items-center justify-center no-print">
-        <p className="text-xs sm:text-sm font-mono text-rose-500 leading-snug text-center">
-          <strong className="uppercase tracking-wider">⚠️ NOT A DIAGNOSIS:</strong> Seek immediate professional help if experiencing severe pain or life-threatening symptoms.
+      <div className="w-full bg-accent/10 border-b border-accent/20 px-4 py-3 flex items-start sm:items-center justify-center shrink-0">
+        <p className="text-xs sm:text-sm font-mono text-accent leading-snug text-center">
+          <strong className="uppercase tracking-wider">⚠️ NOT A DIAGNOSIS:</strong> Consult a verified physician for severe or life-threatening symptoms.
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 py-12">
+      <div className="max-w-4xl mx-auto w-full px-6 flex flex-col grow h-[calc(100vh-180px)]">
+        
         {/* Header */}
-        <header className="mb-16 relative text-center max-w-3xl mx-auto no-print">
-          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-96 bg-[#FC3D21]/10 rounded-full blur-[120px] pointer-events-none" />
-          <div className="relative z-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#FC3D21]">
-              {t("symptoms")}
-            </span>
-            <h1 className="mt-4 text-5xl md:text-6xl font-space font-extrabold tracking-tighter text-white">
-              AI Symptom <span className="text-[#FC3D21]">Analyzer</span>
-            </h1>
-            <p className="text-[#8A8F98] mt-6 font-mono text-sm leading-relaxed">
-              Describe your physical sensations. Our AI maps your sensory anomalies to core anatomical systems, explaining the physiological mechanics, and generating a structured report for your doctor.
-            </p>
+        <header className="mb-8 border-b-2 border-charcoal dark:border-bone pb-6 shrink-0 mt-8">
+          <div className="flex justify-between items-end">
+            <div>
+              <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                Section 02 — Consult
+              </span>
+              <h1 className="mt-4 text-3xl md:text-5xl font-display text-charcoal dark:text-bone flex items-center gap-4">
+                <Stethoscope className="w-8 h-8 text-accent hidden md:block" />
+                The Diagnostician.
+              </h1>
+            </div>
+            <button 
+              onClick={clearChat}
+              className="text-xs font-mono uppercase tracking-widest text-muted-foreground hover:text-charcoal dark:hover:text-bone transition-colors flex items-center gap-2"
+            >
+              <RefreshCcw className="w-3 h-3" />
+              Reset
+            </button>
           </div>
         </header>
 
-        {/* AI Wizard & Results Area (Full Width) */}
-        <div className="mb-20">
-          <div className="relative rounded-[2rem] border border-white/10 bg-[#0F0F0F]/60 p-1 shadow-2xl backdrop-blur-xl no-print">
-            <div className="rounded-[1.8rem] bg-black/40 p-6 md:p-10 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#FC3D21] to-transparent opacity-50" />
-              
-              <h2 className="text-xl md:text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                <Brain className="w-6 h-6 text-[#FC3D21]" />
-                Describe your sensations
-              </h2>
-
-              <form onSubmit={handleAIAnalyze} className="space-y-6">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                  <div className="lg:col-span-2">
-                    <label className="block text-[10px] font-bold uppercase tracking-wider text-[#8A8F98] mb-3">
-                      1. What are you feeling?
-                    </label>
-                    <textarea
-                      value={symptomsDesc}
-                      onChange={(e) => setSymptomsDesc(e.target.value)}
-                      placeholder="e.g. 'I feel a dull, throbbing pressure behind my left eye...'"
-                      className="w-full h-32 rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-sm text-[#EAEAEA] placeholder-[#555] outline-none focus:border-[#FC3D21]/50 focus:bg-white/[0.04] transition-all"
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-6">
-                    <div>
-                      <label className="block text-[10px] font-bold uppercase tracking-wider text-[#8A8F98] mb-3">
-                        2. Duration
-                      </label>
-                      <select
-                        value={duration}
-                        onChange={(e) => setDuration(e.target.value)}
-                        className="w-full rounded-xl border border-white/10 bg-white/[0.02] px-5 py-4 text-sm text-[#EAEAEA] outline-none focus:border-[#FC3D21]/50 appearance-none"
-                      >
-                        <option value="Less than 24 hours">Less than 24 hours</option>
-                        <option value="A few days">A few days</option>
-                        <option value="1-2 weeks">1-2 weeks</option>
-                        <option value="Over a month">Over a month</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-[10px] font-bold uppercase tracking-wider text-[#8A8F98] mb-3 flex justify-between">
-                        <span>3. Severity</span>
-                        <span className="text-[#FC3D21]">{severity}/5</span>
-                      </label>
-                      <div className="flex flex-col gap-2">
-                        <input
-                          type="range"
-                          min="1"
-                          max="5"
-                          value={severity}
-                          onChange={(e) => setSeverity(parseInt(e.target.value))}
-                          className="w-full accent-[#FC3D21]"
-                        />
-                        <div className="flex justify-between text-[10px] text-[#8A8F98] uppercase font-bold px-1">
-                          <span>Mild</span>
-                          <span>Extreme</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={!symptomsDesc.trim() || analyzing}
-                  className="w-full rounded-2xl bg-[#FC3D21] py-4 text-sm font-bold text-[#030303] uppercase tracking-wider hover:bg-red-500 transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_0_30px_rgba(252,61,33,0.2)] flex justify-center items-center gap-2"
-                >
-                  {analyzing ? <Loader2 className="w-5 h-5 animate-spin" /> : <Sparkles className="w-5 h-5" />}
-                  {analyzing ? "Mapping sensory anomalies..." : "Generate Pre-Consultation Summary"}
-                </button>
-              </form>
-            </div>
-          </div>
-
-          {/* Report Output */}
-          <AnimatePresence>
-            {reportData && !analyzing && (
+        {/* Chat Thread */}
+        <div className="flex-1 overflow-y-auto mb-6 pr-4 space-y-8 no-scrollbar pb-12">
+          <AnimatePresence initial={false}>
+            {messages.map((msg, idx) => (
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                key={idx}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mt-8 print-container"
+                className={`flex flex-col max-w-[85%] ${msg.role === "user" ? "ml-auto" : "mr-auto"}`}
               >
-                <div className="rounded-[2rem] border border-[#FC3D21]/30 bg-black/60 p-6 md:p-10 shadow-[0_0_50px_rgba(252,61,33,0.1)] backdrop-blur-md">
-                  <div className="print-header flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-white/10 pb-6 mb-8">
-                    <div>
-                      <h2 className="text-3xl font-black text-white flex items-center gap-3">
-                        <FileText className="w-8 h-8 text-[#FC3D21]" />
-                        Pre-Consultation Summary
-                      </h2>
-                      <p className="text-xs text-[#8A8F98] mt-2 font-mono">Generated via The Living Body Atlas AI</p>
-                    </div>
-                    <button
-                      onClick={() => window.print()}
-                      className="no-print rounded-xl bg-white/5 border border-white/10 px-5 py-3 text-xs font-bold text-white hover:bg-white hover:text-black transition-colors flex items-center gap-2 uppercase tracking-wider"
-                    >
-                      🖨️ Print Report
-                    </button>
+                {msg.role === "model" && (
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2 ml-4">
+                    Dr. AI / {new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
                   </div>
-
-                  {/* AI Output Content structure identical to original but styled better */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {/* Left Column: Explanations */}
-                    <div className="space-y-8">
-                      <div className="print-card">
-                        <h3 className="text-[10px] font-bold uppercase tracking-widest text-[#FC3D21] mb-4">Physiological Explanations</h3>
-                        <div className="space-y-4">
-                          {reportData.suspectedConditions.map((cond, idx) => (
-                            <div key={idx} className="bg-white/[0.02] p-5 rounded-2xl border border-white/5">
-                              <div className="flex justify-between items-start gap-4 mb-3">
-                                <h4 className="font-bold text-white text-lg">{cond.name}</h4>
-                                <span className={`text-[9px] font-bold px-2 py-1 rounded uppercase tracking-wider ${
-                                  cond.likelihood === "High" ? "bg-rose-500/20 text-rose-400" :
-                                  cond.likelihood === "Medium" ? "bg-amber-500/20 text-amber-400" :
-                                  "bg-teal-500/20 text-teal-400"
-                                }`}>
-                                  {cond.likelihood}
-                                </span>
-                              </div>
-                              <p className="text-sm text-[#8A8F98] leading-relaxed">{cond.mechanism}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="print-card">
-                        <h3 className="text-[10px] font-bold uppercase tracking-widest text-teal-400 mb-4">Preventative / Lifestyle Measures</h3>
-                        <ul className="list-disc list-inside space-y-2 text-sm text-[#EAEAEA]">
-                          {reportData.preventativeMeasures.map((m, idx) => (
-                            <li key={idx} className="leading-relaxed">{m}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    {/* Right Column: Alerts & Questions */}
-                    <div className="space-y-8">
-                      <div className="bg-rose-500/5 border border-rose-500/20 p-6 rounded-2xl print-card">
-                        <h3 className="text-sm font-bold uppercase tracking-wider text-rose-500 mb-2 flex items-center gap-2">
-                          🚨 Red Flag Indicators
-                        </h3>
-                        <p className="text-xs text-rose-200/60 mb-4">Seek immediate care if you notice:</p>
-                        <ul className="space-y-3">
-                          {reportData.redFlags.map((flag, idx) => (
-                            <li key={idx} className="text-sm text-rose-100 flex items-start gap-2">
-                              <span className="text-rose-500 mt-1">•</span>
-                              <span>{flag}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="print-card">
-                        <h3 className="text-[10px] font-bold uppercase tracking-widest text-amber-500 mb-4">Questions for your Doctor</h3>
-                        <ul className="space-y-3">
-                          {reportData.doctorQuestions.map((q, idx) => (
-                            <li key={idx} className="text-sm text-[#EAEAEA] flex gap-3 p-4 bg-white/[0.02] rounded-xl border border-white/5">
-                              <span className="text-amber-500 font-bold">Q.</span>
-                              <span>{q}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                )}
+                <div 
+                  className={`p-6 ${
+                    msg.role === "user" 
+                      ? "bg-charcoal text-bone dark:bg-bone dark:text-charcoal rounded-tl-2xl rounded-tr-sm rounded-b-2xl font-body text-sm" 
+                      : "bg-transparent border-l-2 border-accent/50 rounded-r-2xl font-display text-lg text-charcoal dark:text-bone leading-relaxed"
+                  }`}
+                >
+                  <p className="whitespace-pre-wrap">{msg.content}</p>
+                </div>
+              </motion.div>
+            ))}
+            
+            {isTyping && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex flex-col max-w-[85%] mr-auto"
+              >
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2 ml-4">
+                  Dr. AI / Synthesizing
+                </div>
+                <div className="p-6 bg-transparent border-l-2 border-accent/50 rounded-r-2xl flex items-center gap-3 text-muted-foreground">
+                  <Loader2 className="w-5 h-5 animate-spin text-accent" />
+                  <span className="font-mono text-xs uppercase tracking-widest">Cross-referencing databases...</span>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
+          <div ref={messagesEndRef} />
         </div>
 
-        {/* A-Z Directory Grid */}
-        <div className="mt-20 no-print">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-10">
-            <div>
-              <h2 className="text-3xl font-bold text-white flex items-center gap-3">
-                <Activity className="w-8 h-8 text-[#00E5C4]" />
-                Disease Directory
-              </h2>
-              <p className="text-sm text-[#8A8F98] mt-2 font-mono">Expand cards for physiological breakdowns.</p>
-            </div>
-            
-            <div className="flex bg-white/5 p-1.5 rounded-xl border border-white/10 overflow-x-auto max-w-full hide-scrollbar">
-              {["head", "chest", "abdomen", "spine"].map((region) => (
-                <button
-                  key={region}
-                  onClick={() => setSelectedRegion(selectedRegion === region ? null : region)}
-                  className={`px-4 py-2 rounded-lg text-xs capitalize font-bold transition-all whitespace-nowrap ${
-                    selectedRegion === region
-                      ? "bg-white text-black"
-                      : "text-[#8A8F98] hover:text-white hover:bg-white/5"
-                  }`}
-                >
-                  {region}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative mb-8">
+        {/* Input Area */}
+        <div className="shrink-0 bg-background pt-4 pb-8">
+          <form onSubmit={handleSend} className="relative">
             <input
               type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search by condition or organ..."
-              className="w-full rounded-2xl border border-white/10 bg-white/[0.02] pl-14 pr-6 py-4 text-sm text-white placeholder-[#555] outline-none focus:border-[#00E5C4]/50 focus:bg-white/[0.04] transition-all"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="Describe your symptoms..."
+              disabled={isTyping}
+              className="w-full bg-input border border-border px-6 py-5 pr-16 text-foreground font-body text-sm focus:outline-none focus:border-accent transition-colors disabled:opacity-50"
             />
-            <span className="absolute left-5 top-1/2 -translate-y-1/2 text-lg">🔍</span>
-          </div>
-
-          {filteredDiseases.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="text-[#8A8F98]">No matching diseases found.</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {filteredDiseases.map((d) => (
-                <DiseaseCard key={d.id} disease={d} />
-              ))}
-            </div>
-          )}
+            <button
+              type="submit"
+              disabled={!inputValue.trim() || isTyping}
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-charcoal text-bone dark:bg-bone dark:text-charcoal disabled:opacity-50 hover:bg-accent dark:hover:bg-accent hover:text-white transition-colors"
+            >
+              <Send className="w-5 h-5" />
+            </button>
+          </form>
+          <p className="text-center font-mono text-[10px] text-muted-foreground mt-3 uppercase tracking-widest">
+            AI can make mistakes. Always verify with a real doctor.
+          </p>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

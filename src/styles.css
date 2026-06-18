@@ -5,13 +5,12 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * The Living Body Atlas — Premium anatomy education platform.
- * Deep space navy base, bioluminescent teal accent,
- * warm amber for diary/streaks, muted purple for community.
- * Designed to feel like a $10,000 product.
+ * The Living Body Atlas — Editorial Design System
+ * Handcrafted, asymmetrical, human.
+ * A palette of Bone White, Deep Charcoal, Crimson, and Sage.
  */
 
-/* ===== Google Fonts: Clash Display is self-hosted via CDN ===== */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -42,102 +41,96 @@
   --color-ring: var(--ring);
 
   --color-glow: var(--glow);
-  --color-glow-violet: var(--glow-violet);
-  --color-glow-gold: var(--glow-gold);
 
   --color-rarity-common: var(--rarity-common);
   --color-rarity-surprising: var(--rarity-surprising);
   --color-rarity-mind: var(--rarity-mind);
   --color-rarity-rare: var(--rarity-rare);
 
-  /* Atlas-specific palette */
-  --color-teal: var(--atlas-teal);
-  --color-amber: var(--atlas-amber);
-  --color-purple: var(--atlas-purple);
+  /* Editorial palette */
   --color-bone: var(--atlas-bone);
-  --color-trend-red: var(--atlas-trend-red);
+  --color-charcoal: var(--atlas-charcoal);
+  --color-crimson: var(--atlas-crimson);
+  --color-sage: var(--atlas-sage);
 
-  --font-display: "Clash Display", "Space Grotesk", system-ui, sans-serif;
+  --font-display: "Merriweather", Georgia, serif;
   --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "Fira Mono", "Fira Code", ui-monospace, monospace;
+  --font-mono: "Space Mono", ui-monospace, monospace;
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.25rem; /* Sharper edges */
 
-  /* Deep space navy — NOT pure black */
-  --background: #0A0E1A;
-  --foreground: #E8E0D5;
-  --card: #141826;
-  --card-foreground: #E8E0D5;
-  --popover: #141826;
-  --popover-foreground: #E8E0D5;
+  /* Editorial Light Mode (Bone White) */
+  --background: #FDFBF7;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
 
-  /* Bioluminescent teal — like MRI glow */
-  --primary: #00E5C4;
-  --primary-foreground: #0A0E1A;
-  --secondary: #1A2038;
-  --secondary-foreground: #E8E0D5;
-  --muted: #1E2340;
-  --muted-foreground: #8B8FA3;
-  --accent: #6B4FA0;
-  --accent-foreground: #F8F8F8;
-  --destructive: #E54D4D;
-  --destructive-foreground: #F8F8F8;
-  --border: #1E2844;
-  --input: #1A2038;
-  --ring: #00E5C4;
+  /* Editorial Accents */
+  --primary: #1A1A1A;
+  --primary-foreground: #FDFBF7;
+  --secondary: #F0EDE5;
+  --secondary-foreground: #1A1A1A;
+  --muted: #F5F3EC;
+  --muted-foreground: #666666;
+  --accent: #D44D4D; /* Crimson */
+  --accent-foreground: #FFFFFF;
+  --destructive: #D44D4D;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E0D8;
+  --input: #F5F3EC;
+  --ring: #1A1A1A;
 
-  /* Glow system */
-  --glow: #00E5C4;
-  --glow-violet: #6B4FA0;
-  --glow-gold: #F5A623;
+  --glow: #E5E0D8;
 
-  /* Rarity colors */
-  --rarity-common: #7B8199;
-  --rarity-surprising: #4DC8E5;
-  --rarity-mind: #A855F7;
-  --rarity-rare: #F5A623;
+  /* Rarity colors (muted) */
+  --rarity-common: #666666;
+  --rarity-surprising: #4A7B8C;
+  --rarity-mind: #7B628A;
+  --rarity-rare: #B87A3D;
 
   /* Atlas-specific palette */
-  --atlas-teal: #00E5C4;
-  --atlas-amber: #F5A623;
-  --atlas-purple: #6B4FA0;
-  --atlas-bone: #E8E0D5;
-  --atlas-trend-red: #E5504D;
+  --atlas-bone: #FDFBF7;
+  --atlas-charcoal: #1A1A1A;
+  --atlas-crimson: #D44D4D;
+  --atlas-sage: #738C7A;
 
-  /* Gradients */
-  --gradient-hero: radial-gradient(ellipse at top, rgba(107, 79, 160, 0.25), transparent 60%),
-                   radial-gradient(ellipse at bottom, rgba(0, 229, 196, 0.15), transparent 60%);
-  --gradient-glow: linear-gradient(135deg, var(--glow), var(--glow-violet));
-  --gradient-amber: linear-gradient(135deg, var(--atlas-amber), #E88E1A);
+  /* Subtle gradients (no neon) */
+  --gradient-hero: linear-gradient(to bottom, #FDFBF7, #F5F3EC);
+  --gradient-glow: linear-gradient(135deg, #1A1A1A, #4D4D4D);
+  --gradient-amber: linear-gradient(135deg, #B87A3D, #8C5C2E);
 
-  /* Shadows */
-  --shadow-glow: 0 0 30px rgba(0, 229, 196, 0.35), 0 0 80px rgba(0, 229, 196, 0.15);
-  --shadow-glow-violet: 0 0 30px rgba(107, 79, 160, 0.4);
-  --shadow-glow-gold: 0 0 30px rgba(245, 166, 35, 0.45);
-  --shadow-glow-amber: 0 0 20px rgba(245, 166, 35, 0.3);
+  /* Subtle Shadows */
+  --shadow-glow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-glow-violet: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-glow-gold: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-glow-amber: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* The app is dark-only — .dark class is always set on <html> */
 .dark {
-  --background: #0A0E1A;
-  --foreground: #E8E0D5;
-  --card: #111525;
-  --card-foreground: #E8E0D5;
-  --popover: #111525;
-  --popover-foreground: #E8E0D5;
-  --primary: #00E5C4;
-  --primary-foreground: #0A0E1A;
-  --secondary: #181D35;
-  --secondary-foreground: #E8E0D5;
-  --muted: #1A1F38;
-  --muted-foreground: #7B8199;
-  --accent: #6B4FA0;
-  --accent-foreground: #F8F8F8;
-  --border: #1C2540;
-  --input: #181D35;
-  --ring: #00E5C4;
+  /* Editorial Dark Mode (Deep Charcoal) */
+  --background: #121212;
+  --foreground: #E0E0E0;
+  --card: #1A1A1A;
+  --card-foreground: #E0E0E0;
+  --popover: #1A1A1A;
+  --popover-foreground: #E0E0E0;
+  --primary: #E0E0E0;
+  --primary-foreground: #121212;
+  --secondary: #242424;
+  --secondary-foreground: #E0E0E0;
+  --muted: #242424;
+  --muted-foreground: #999999;
+  --accent: #D44D4D;
+  --accent-foreground: #FFFFFF;
+  --border: #333333;
+  --input: #242424;
+  --ring: #E0E0E0;
+
+  --gradient-hero: none;
 }
 
 /* ===== BASE LAYER ===== */
@@ -777,7 +770,6 @@ g:hover > .organ-path {
     border-color 0.25s ease,
     background 0.25s ease,
     box-shadow 0.25s ease;
-  backdrop-filter: blur(8px);
 }
 
 .layer-pill-adv:hover {
