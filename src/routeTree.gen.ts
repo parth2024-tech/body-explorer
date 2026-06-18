@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SymptomsRouteImport } from './routes/symptoms'
-import { Route as QuestRouteImport } from './routes/quest'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as LibraryRouteImport } from './routes/library'
 import { Route as GreyMarketRouteImport } from './routes/grey-market'
@@ -18,19 +17,12 @@ import { Route as FactsRouteImport } from './routes/facts'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as ExplainRouteImport } from './routes/explain'
 import { Route as EmergencyRouteImport } from './routes/emergency'
-import { Route as DiaryRouteImport } from './routes/diary'
-import { Route as DailyRouteImport } from './routes/daily'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SymptomsRoute = SymptomsRouteImport.update({
   id: '/symptoms',
   path: '/symptoms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const QuestRoute = QuestRouteImport.update({
-  id: '/quest',
-  path: '/quest',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OnboardingRoute = OnboardingRouteImport.update({
@@ -68,16 +60,6 @@ const EmergencyRoute = EmergencyRouteImport.update({
   path: '/emergency',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DiaryRoute = DiaryRouteImport.update({
-  id: '/diary',
-  path: '/diary',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DailyRoute = DailyRouteImport.update({
-  id: '/daily',
-  path: '/daily',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -92,8 +74,6 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/daily': typeof DailyRoute
-  '/diary': typeof DiaryRoute
   '/emergency': typeof EmergencyRoute
   '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
@@ -101,14 +81,11 @@ export interface FileRoutesByFullPath {
   '/grey-market': typeof GreyMarketRoute
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
-  '/quest': typeof QuestRoute
   '/symptoms': typeof SymptomsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/daily': typeof DailyRoute
-  '/diary': typeof DiaryRoute
   '/emergency': typeof EmergencyRoute
   '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
@@ -116,15 +93,12 @@ export interface FileRoutesByTo {
   '/grey-market': typeof GreyMarketRoute
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
-  '/quest': typeof QuestRoute
   '/symptoms': typeof SymptomsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/daily': typeof DailyRoute
-  '/diary': typeof DiaryRoute
   '/emergency': typeof EmergencyRoute
   '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
@@ -132,7 +106,6 @@ export interface FileRoutesById {
   '/grey-market': typeof GreyMarketRoute
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
-  '/quest': typeof QuestRoute
   '/symptoms': typeof SymptomsRoute
 }
 export interface FileRouteTypes {
@@ -140,8 +113,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
-    | '/daily'
-    | '/diary'
     | '/emergency'
     | '/explain'
     | '/explore'
@@ -149,14 +120,11 @@ export interface FileRouteTypes {
     | '/grey-market'
     | '/library'
     | '/onboarding'
-    | '/quest'
     | '/symptoms'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/daily'
-    | '/diary'
     | '/emergency'
     | '/explain'
     | '/explore'
@@ -164,14 +132,11 @@ export interface FileRouteTypes {
     | '/grey-market'
     | '/library'
     | '/onboarding'
-    | '/quest'
     | '/symptoms'
   id:
     | '__root__'
     | '/'
     | '/about'
-    | '/daily'
-    | '/diary'
     | '/emergency'
     | '/explain'
     | '/explore'
@@ -179,15 +144,12 @@ export interface FileRouteTypes {
     | '/grey-market'
     | '/library'
     | '/onboarding'
-    | '/quest'
     | '/symptoms'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  DailyRoute: typeof DailyRoute
-  DiaryRoute: typeof DiaryRoute
   EmergencyRoute: typeof EmergencyRoute
   ExplainRoute: typeof ExplainRoute
   ExploreRoute: typeof ExploreRoute
@@ -195,7 +157,6 @@ export interface RootRouteChildren {
   GreyMarketRoute: typeof GreyMarketRoute
   LibraryRoute: typeof LibraryRoute
   OnboardingRoute: typeof OnboardingRoute
-  QuestRoute: typeof QuestRoute
   SymptomsRoute: typeof SymptomsRoute
 }
 
@@ -206,13 +167,6 @@ declare module '@tanstack/react-router' {
       path: '/symptoms'
       fullPath: '/symptoms'
       preLoaderRoute: typeof SymptomsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/quest': {
-      id: '/quest'
-      path: '/quest'
-      fullPath: '/quest'
-      preLoaderRoute: typeof QuestRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/onboarding': {
@@ -264,20 +218,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EmergencyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/diary': {
-      id: '/diary'
-      path: '/diary'
-      fullPath: '/diary'
-      preLoaderRoute: typeof DiaryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/daily': {
-      id: '/daily'
-      path: '/daily'
-      fullPath: '/daily'
-      preLoaderRoute: typeof DailyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -298,8 +238,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  DailyRoute: DailyRoute,
-  DiaryRoute: DiaryRoute,
   EmergencyRoute: EmergencyRoute,
   ExplainRoute: ExplainRoute,
   ExploreRoute: ExploreRoute,
@@ -307,19 +245,8 @@ const rootRouteChildren: RootRouteChildren = {
   GreyMarketRoute: GreyMarketRoute,
   LibraryRoute: LibraryRoute,
   OnboardingRoute: OnboardingRoute,
-  QuestRoute: QuestRoute,
   SymptomsRoute: SymptomsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

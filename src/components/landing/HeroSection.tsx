@@ -379,13 +379,7 @@ export function HeroSection() {
                 />
               </MagneticButton>
 
-              <MagneticButton
-                to="/diary"
-                className="group relative inline-flex items-center gap-2.5 rounded-full border border-[#1E2844] bg-[#0D1428]/60 px-8 py-4 text-sm font-semibold text-[#E8E0D5] backdrop-blur-sm transition-all duration-300 hover:border-[#00E5C4]/40 hover:bg-[#0D1428]/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#00E5C4]"
-              >
-                <span>Start Body Diary</span>
-                <span className="transition-transform duration-300 group-hover:translate-x-0.5">↗</span>
-              </MagneticButton>
+
             </motion.div>
 
             {/* Trust stats */}

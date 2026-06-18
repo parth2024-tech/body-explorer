@@ -94,12 +94,6 @@ function About() {
           >
             Open the body map →
           </Link>
-          <Link
-            to="/diary"
-            className="btn-hover-grow inline-flex items-center gap-2 rounded-full border border-[#F5A623]/30 bg-[#F5A623]/5 px-6 py-3 text-sm font-semibold text-[#F5A623]"
-          >
-            Start your diary
-          </Link>
         </div>
       </motion.div>
 

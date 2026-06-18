@@ -301,20 +301,16 @@ export function FooterSection() {
     Explore: [
       { label: "Body Map", to: "/explore" },
       { label: "Organ Library", to: "/library" },
-      { label: "Daily Insight", to: "/daily" },
+
       { label: "Body Facts", to: "/facts" },
     ],
     Tools: [
-      { label: "Body Diary", to: "/diary" },
+
       { label: "Symptom Guide", to: "/symptoms" },
       { label: "Explain This", to: "/explain" },
       { label: "Emergency Guide", to: "/emergency" },
     ],
-    Community: [
-      { label: "Weekly Quest", to: "/quest" },
-      { label: "Leaderboard", to: "/quest" },
-      { label: "Certificates", to: "/quest" },
-    ],
+    Community: [],
     Company: [
       { label: "About", to: "/about" },
       { label: "Medical Advisory", to: "/about" },

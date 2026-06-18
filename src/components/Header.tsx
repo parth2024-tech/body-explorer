@@ -10,9 +10,6 @@ const NAV_LINKS = [
   { to: "/symptoms", labelKey: "symptoms" as const, code: "SYM-03" },
   { to: "/emergency", labelKey: "emergency" as const, code: "EMG-04" },
   { to: "/facts", labelKey: "facts" as const, code: "FCT-05" },
-  { to: "/diary", labelKey: "diary" as const, code: "DRY-06" },
-  { to: "/daily", labelKey: "daily" as const, code: "DLY-07" },
-  { to: "/quest", labelKey: "quest" as const, code: "QST-08" },
   { to: "/grey-market", labelKey: "greyMarket" as const, code: "GM-09" },
 ];
 

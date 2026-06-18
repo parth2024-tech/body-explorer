@@ -19,22 +19,7 @@ const FEATURES = [
       label: "Cardiovascular",
     },
   },
-  {
-    id: "diary",
-    icon: "📓",
-    code: "DRY",
-    color: "#F5A623",
-    title: "Body Diary",
-    tagline: "Track, understand, discover",
-    desc: "Log how your body feels daily. Annotate by organ, intensity, and time. Watch patterns emerge across 30-day heatmaps.",
-    stats: ["Daily logging", "30-day trends", "Organ specific"],
-    link: "/diary",
-    preview: {
-      bg: "radial-gradient(ellipse at center, rgba(245,166,35,0.1) 0%, transparent 70%)",
-      icon: "📊",
-      label: "Today's Entry",
-    },
-  },
+
   {
     id: "explain",
     icon: "🧠",
