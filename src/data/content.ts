@@ -780,6 +780,57 @@ export const BODY_MARVELS: BodyMarvel[] = [
     ],
     conclusion: "Taking care of your gut microbiome with fiber and fermented foods is not just digestive hygiene; it's a direct intervention in your mental health.",
     bodyPartId: "large-intestine"
+  },
+  {
+    id: "liver-regeneration",
+    title: "The Liver's Wolverine Superpower",
+    introduction: "Your liver is the only organ in your body capable of complete regeneration. Even if up to 75% of it is removed, it can regrow to its original size within a matter of weeks.",
+    sections: [
+      {
+        heading: "1. Rapid Cell Proliferation",
+        body: "Hepatocytes (liver cells) usually exist in a resting phase. But when the liver is injured, they rapidly switch into a hyper-growth mode, multiplying relentlessly until the organ is restored."
+      },
+      {
+        heading: "2. The Master Filter",
+        body: "While it regrows, it never stops working. The liver filters over a liter of blood every minute, dismantling toxins, breaking down medications, and producing essential bile."
+      }
+    ],
+    conclusion: "Treat your liver well. While it can regenerate from surgical removal, chronic damage like alcohol abuse or fatty liver disease can cause permanent scarring (cirrhosis) that stops the regeneration process entirely.",
+    bodyPartId: "liver"
+  },
+  {
+    id: "bone-strength",
+    title: "Human Bone: Stronger Than Steel",
+    introduction: "Ounce for ounce, human bone is stronger than solid steel. A block of bone the size of a matchbox can support 18,000 pounds of weight without crushing.",
+    sections: [
+      {
+        heading: "1. The Composite Structure",
+        body: "Bones aren't solid stone. They are a composite matrix of flexible collagen fibers woven with hard calcium phosphate crystals. This makes them both extremely strong and flexible enough to absorb impact."
+      },
+      {
+        heading: "2. Constant Remodeling",
+        body: "Your skeleton is completely replaced every 10 years. Specialized cells called osteoclasts constantly break down old bone, while osteoblasts build new bone in its place based on the physical stress you experience."
+      }
+    ],
+    conclusion: "Lifting weights literally tells your bones to become denser. The impact signals osteoblasts to lay down more calcium, making weight training the best defense against osteoporosis.",
+    bodyPartId: "skeleton"
+  },
+  {
+    id: "optical-processing",
+    title: "The Ultimate HDR Camera",
+    introduction: "Your eyes can distinguish between 10 million different colors and adjust to lighting conditions ranging from glaring sunlight to faint starlight—far outperforming the most advanced digital cameras.",
+    sections: [
+      {
+        heading: "1. Blind Spot Interpolation",
+        body: "You actually have a physical blind spot in each eye where the optic nerve attaches. But you never notice it because your brain seamlessly 'photoshops' the missing data in real-time based on the surrounding environment."
+      },
+      {
+        heading: "2. Continuous Micro-Saccades",
+        body: "Even when staring intently, your eyes are constantly vibrating in tiny movements called micro-saccades. If they stopped moving entirely, your visual field would slowly fade to gray and disappear."
+      }
+    ],
+    conclusion: "Your vision is less of a live video feed and more of an AI-generated construct heavily processed by your brain before you ever 'see' it.",
+    bodyPartId: "eyes"
   }
 ];
 
