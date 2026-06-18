@@ -8,19 +8,15 @@ import {
   REMEDIES,
   BODY_MARVELS,
   SENSORY_FACTS,
-  QA_ENTRIES,
-  BODY_PARTS,
   TRANSLATIONS,
 } from "@/data/content";
+import { BookOpen, Leaf, Zap, Bookmark as BookmarkIcon, Heart, Search } from "lucide-react";
 
 export const Route = createFileRoute("/library")({
   head: () => ({
     meta: [
-      { title: "Library — The Living Body Atlas" },
-      {
-        name: "description",
-        content: "Explore anatomy facts, natural remedies, seasonal hacks, and health myths.",
-      },
+      { title: "Core Library — The Living Body Atlas" },
+      { name: "description", content: "Explore anatomy facts, natural remedies, seasonal hacks, and health myths." },
     ],
   }),
   component: LibraryPage,
@@ -31,17 +27,13 @@ function LibraryPage() {
     useBodyStore();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<"remedies" | "myths" | "marvels" | "bookmarks">(
-    "remedies",
-  );
-
+  const [activeTab, setActiveTab] = useState<"remedies" | "myths" | "marvels" | "bookmarks">("remedies");
 
   const [shuffledRemedies, setShuffledRemedies] = useState<typeof REMEDIES>(REMEDIES);
   const [shuffledMyths, setShuffledMyths] = useState<typeof MYTHS>(MYTHS);
 
   useEffect(() => {
     addHistoryEntry("/library");
-
     const shuffleArray = <T,>(array: T[]): T[] => {
       const arr = [...array];
       for (let i = arr.length - 1; i > 0; i--) {
@@ -50,7 +42,6 @@ function LibraryPage() {
       }
       return arr;
     };
-
     setShuffledRemedies(shuffleArray(REMEDIES));
     setShuffledMyths(shuffleArray(MYTHS));
   }, []);
@@ -60,7 +51,6 @@ function LibraryPage() {
     return (dict as any)[key] || (TRANSLATIONS.en as any)[key] || key;
   };
 
-  // Filter content
   const filteredRemedies = shuffledRemedies.filter((r) => {
     const matchesSearch =
       r.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -81,427 +71,267 @@ function LibraryPage() {
   const allTags = ["studied", "traditional", "anecdotal", "unproven"];
 
   return (
-    <div className="mx-auto max-w-7xl px-5 py-8 page-enter">
-      {/* Header section */}
-      <div className="mb-10 text-center md:text-left">
-        <span className="text-xs font-bold uppercase tracking-widest text-[#FC3D21]">
-          {t("library")}
-        </span>
-        <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-[#EAEAEA] sm:text-5xl">
-          Core Content <span className="gradient-text">Engine</span>
-        </h1>
-        <p className="mt-4 max-w-2xl text-[#8A8F98]">
-          Browse evidence-based natural remedies, ancient healing arts, posture checks, body sensory
-          anomalies, and myth-busting sciences.
-        </p>
+    <div className="min-h-screen bg-[#030303] text-[#EAEAEA] font-sans selection:bg-[#00E5C4]/30 pb-32">
+      
+      {/* Header */}
+      <div className="max-w-7xl mx-auto px-5 pt-12 pb-8">
+        <header className="relative text-center max-w-3xl mx-auto">
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-96 bg-[#00E5C4]/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="relative z-10">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#00E5C4]">
+              {t("library")}
+            </span>
+            <h1 className="mt-4 text-5xl md:text-6xl font-space font-extrabold tracking-tighter text-white">
+              Core Content <span className="text-[#00E5C4]">Engine</span>
+            </h1>
+            <p className="text-[#8A8F98] mt-6 font-mono text-sm leading-relaxed">
+              Browse evidence-based natural remedies, ancient healing arts, posture checks, body sensory anomalies, and myth-busting sciences.
+            </p>
+          </div>
+        </header>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
-        {/* Main Content Area */}
-        <div className="lg:col-span-3">
-          {/* Navigation Tabs */}
-          <div className="mb-6 border-b border-border">
-            <div className="flex flex-wrap gap-2 pb-px">
-              {(["remedies", "myths", "marvels", "bookmarks"] as const).map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => {
-                    setActiveTab(tab);
-                    setSelectedTag(null);
-                  }}
-                  className={`border-b-2 px-4 py-2 text-sm font-semibold transition-all ${
-                    activeTab === tab
-                      ? "border-[#FC3D21] text-[#EAEAEA]"
-                      : "border-transparent text-[#8A8F98] hover:text-[#EAEAEA]"
-                  }`}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              ))}
-            </div>
-          </div>
+      <div className="max-w-7xl mx-auto px-5">
+        
+        {/* Navigation Tabs (Glassmorphism) */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12 relative z-10">
+          {[
+            { id: "remedies", label: "Natural Remedies", icon: <Leaf className="w-4 h-4" /> },
+            { id: "myths", label: "Medical Myths", icon: <Zap className="w-4 h-4" /> },
+            { id: "marvels", label: "Body Marvels", icon: <BookOpen className="w-4 h-4" /> },
+            { id: "bookmarks", label: "Saved Items", icon: <BookmarkIcon className="w-4 h-4" /> }
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => {
+                setActiveTab(tab.id as any);
+                setSelectedTag(null);
+              }}
+              className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm transition-all backdrop-blur-md border ${
+                activeTab === tab.id
+                  ? "bg-[#00E5C4] text-black border-[#00E5C4] shadow-[0_0_20px_rgba(0,229,196,0.3)]"
+                  : "bg-white/[0.02] text-[#8A8F98] border-white/10 hover:text-white hover:bg-white/[0.05]"
+              }`}
+            >
+              {tab.icon} {tab.label}
+            </button>
+          ))}
+        </div>
 
-          {/* Search bar and Filters */}
-          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+        {/* Global Search (Hidden on Marvels/Bookmarks) */}
+        {(activeTab === "remedies" || activeTab === "myths") && (
+          <div className="relative mb-12 max-w-3xl mx-auto z-10">
             <input
               type="text"
-              placeholder="Search content engine..."
+              placeholder={`Search ${activeTab}...`}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-xl border border-border bg-[#0D0D0D] px-4 py-3 text-sm text-[#EAEAEA] placeholder-[#8A8F98]/50 focus:border-[#FC3D21] focus:outline-none"
+              className="w-full rounded-2xl border border-white/10 bg-white/[0.02] pl-14 pr-6 py-4 text-sm text-white placeholder-[#555] outline-none focus:border-[#00E5C4]/50 focus:bg-white/[0.04] transition-all backdrop-blur-md"
             />
+            <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#8A8F98]" />
           </div>
+        )}
 
-          {/* Remedies Section */}
-          {activeTab === "remedies" && (
-            <div className="mb-12">
-              <div className="mb-4 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-                <h2 className="text-2xl font-bold text-[#EAEAEA]">Natural Remedies</h2>
-                <div className="flex flex-wrap gap-2">
-                  <button
-                    onClick={() => setSelectedTag(null)}
-                    className={`rounded-full px-3.5 py-1 text-xs font-semibold border transition-all ${
-                      !selectedTag
-                        ? "bg-[#FC3D21] text-white border-transparent"
-                        : "bg-transparent text-[#8A8F98] border-border hover:border-[#8A8F98]/50"
-                    }`}
-                  >
-                    All Evidence
-                  </button>
-                  {allTags.map((tag) => (
+        {/* Main Content Grid */}
+        <div className="relative z-10">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              
+              {/* REMEDIES */}
+              {activeTab === "remedies" && (
+                <div>
+                  <div className="flex flex-wrap justify-center gap-3 mb-10">
                     <button
-                      key={tag}
-                      onClick={() => setSelectedTag(tag)}
-                      className={`rounded-full px-3.5 py-1 text-xs font-semibold border transition-all ${
-                        selectedTag === tag
-                          ? "bg-[#FC3D21] text-white border-transparent"
-                          : "bg-transparent text-[#8A8F98] border-border hover:border-[#8A8F98]/50"
+                      onClick={() => setSelectedTag(null)}
+                      className={`px-4 py-2 rounded-lg text-xs font-bold transition-all border ${
+                        !selectedTag ? "bg-white text-black border-white" : "bg-transparent text-[#8A8F98] border-white/10 hover:border-white/30 hover:text-white"
                       }`}
                     >
-                      {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                      All Evidence
                     </button>
-                  ))}
-                </div>
-              </div>
-
-              {filteredRemedies.length === 0 ? (
-                <p className="text-sm text-[#8A8F98]">No remedies match your search.</p>
-              ) : (
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  {filteredRemedies.map((remedy) => (
-                    <motion.div
-                      layout
-                      key={remedy.id}
-                      className="rounded-xl border border-border bg-[#0D0D0D] p-5 transition-all hover:border-[#FC3D21]/30 flex flex-col justify-between"
-                    >
-                      <div>
-                        <div className="flex justify-between items-start">
-                          <span
-                            className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
-                              remedy.evidenceRating === "studied"
-                                ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-                                : remedy.evidenceRating === "traditional"
-                                  ? "bg-purple-500/10 text-purple-400 border border-purple-500/20"
-                                  : "bg-amber-500/10 text-amber-400 border border-amber-500/20"
-                            }`}
-                          >
-                            {remedy.evidenceRating} evidence
-                          </span>
-                          <button
-                            onClick={() =>
-                              isBookmarked(remedy.id)
-                                ? removeBookmark(remedy.id)
-                                : addBookmark(remedy.id)
-                            }
-                            className="text-[#8A8F98] hover:text-[#FC3D21]"
-                          >
-                            {isBookmarked(remedy.id) ? "❤️" : "🤍"}
-                          </button>
-                        </div>
-                        <h3 className="mt-3 font-bold text-[#EAEAEA]">{remedy.name}</h3>
-                        <p className="mt-1 text-xs text-[#F5A623]">Target: {remedy.ailment}</p>
-                        <p className="mt-3 text-sm text-[#8A8F98]">{remedy.description}</p>
-                        {remedy.genZContext && (
-                          <div className="mt-3.5 rounded-lg bg-[#FC3D21]/5 border border-[#FC3D21]/10 p-3 text-xs text-[#EAEAEA]/90">
-                            <span className="font-bold text-[#FC3D21]">Gen Z Context:</span>{" "}
-                            {remedy.genZContext}
-                          </div>
-                        )}
-                      </div>
-                      <div className="mt-4 border-t border-border/40 pt-3 text-[11px] text-[#8A8F98]">
-                        <span className="font-bold text-[#FC3D21]">Scientific Base:</span>{" "}
-                        {remedy.evidenceDetails}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* Myths Section */}
-          {activeTab === "myths" && (
-            <div className="pt-6">
-              <h2 className="mb-4 text-2xl font-bold text-[#EAEAEA]">{t("myths")}</h2>
-              <div className="space-y-3">
-                {filteredMyths.map((myth) => {
-                  return (
-                    <div
-                      key={myth.id}
-                      className="rounded-xl border border-border bg-[#0D0D0D] p-5 transition-all hover:border-[#0B3D91]/40"
-                    >
-                      <div className="flex justify-between items-center">
-                        <h3 className="font-bold text-[#FC3D21] flex items-center gap-2">
-                          ❌ Myth: <span className="text-[#EAEAEA] font-medium">{myth.myth}</span>
-                        </h3>
-                        <div className="flex items-center gap-3">
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              if (isBookmarked(myth.id)) {
-                                removeBookmark(myth.id);
-                              } else {
-                                addBookmark(myth.id);
-                              }
-                            }}
-                            className="text-[#8A8F98] hover:text-[#FC3D21]"
-                          >
-                            {isBookmarked(myth.id) ? "❤️" : "🤍"}
-                          </button>
-                        </div>
-                      </div>
-                      <div className="mt-4 border-t border-border/40 pt-4 text-sm text-[#8A8F98]">
-                        <strong className="text-[#00C853] block mb-1">
-                          ✅ Science Truth:
-                        </strong>
-                        {myth.reality}
-                        
-                        {myth.dangerAlert && (
-                          <div className="mt-3 rounded-lg bg-red-500/10 border border-red-500/20 p-3 text-xs text-red-200">
-                            <span className="font-bold text-red-500">🔴 DANGEROUS MISINFORMATION ALERT:</span>{" "}
-                            {myth.dangerAlert}
-                          </div>
-                        )}
-                        
-                        {myth.actionableTip && (
-                          <div className="mt-3 rounded-lg bg-[#0B3D91]/10 border border-[#0B3D91]/20 p-3 text-xs text-[#EAEAEA]/90">
-                            <span className="font-bold text-[#FC3D21]">🎯 TRY THIS:</span>{" "}
-                            {myth.actionableTip}
-                          </div>
-                        )}
-                        
-                        {myth.sources && myth.sources.length > 0 && (
-                          <div className="mt-3 text-[11px] text-[#8A8F98]">
-                            <span className="font-bold text-[#FC3D21]">📚 SOURCES:</span>{" "}
-                            {myth.sources.join(" • ")}
-                            <div className="mt-1 text-[10px] text-[#8A8F98]/70">
-                              📍 IMPORTANT: This content is for educational purposes only. Always consult your healthcare provider for medical decisions.
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* Bookmarks Tab View */}
-          {activeTab === "bookmarks" && (
-            <div className="pt-6 space-y-8">
-              <div>
-                <h2 className="text-2xl font-bold text-[#EAEAEA] mb-4">Your Saved Remedies</h2>
-                {bookmarks.filter((bId) => REMEDIES.some((r) => r.id === bId)).length === 0 ? (
-                  <p className="text-sm text-[#8A8F98]">No saved remedies yet.</p>
-                ) : (
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    {REMEDIES.filter((r) => bookmarks.includes(r.id)).map((remedy) => (
-                      <motion.div
-                        layout
-                        key={remedy.id}
-                        className="rounded-xl border border-border bg-[#0D0D0D] p-5 transition-all hover:border-[#FC3D21]/30 flex flex-col justify-between"
+                    {allTags.map((tag) => (
+                      <button
+                        key={tag}
+                        onClick={() => setSelectedTag(tag)}
+                        className={`px-4 py-2 rounded-lg text-xs font-bold capitalize transition-all border ${
+                          selectedTag === tag ? "bg-white text-black border-white" : "bg-transparent text-[#8A8F98] border-white/10 hover:border-white/30 hover:text-white"
+                        }`}
                       >
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {filteredRemedies.map((remedy) => (
+                      <div key={remedy.id} className="rounded-3xl border border-white/10 bg-[#0F0F0F]/80 p-6 backdrop-blur-xl flex flex-col justify-between hover:border-[#00E5C4]/30 transition-all hover:shadow-[0_0_30px_rgba(0,229,196,0.1)]">
                         <div>
-                          <div className="flex justify-between items-start">
-                            <span
-                              className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
-                                remedy.evidenceRating === "studied"
-                                  ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-                                  : remedy.evidenceRating === "traditional"
-                                    ? "bg-purple-500/10 text-purple-400 border border-purple-500/20"
-                                    : "bg-amber-500/10 text-amber-400 border border-amber-500/20"
-                              }`}
-                            >
-                              {remedy.evidenceRating} evidence
+                          <div className="flex justify-between items-start mb-4">
+                            <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border ${
+                              remedy.evidenceRating === "studied" ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" :
+                              remedy.evidenceRating === "traditional" ? "bg-purple-500/10 text-purple-400 border-purple-500/20" :
+                              "bg-amber-500/10 text-amber-400 border-amber-500/20"
+                            }`}>
+                              {remedy.evidenceRating}
                             </span>
                             <button
-                              onClick={() => removeBookmark(remedy.id)}
-                              className="text-[#FC3D21]"
+                              onClick={() => isBookmarked(remedy.id) ? removeBookmark(remedy.id) : addBookmark(remedy.id)}
+                              className="text-[#8A8F98] hover:scale-110 transition-transform"
                             >
-                              ❤️
+                              <Heart className={`w-5 h-5 ${isBookmarked(remedy.id) ? 'fill-[#FC3D21] text-[#FC3D21]' : ''}`} />
                             </button>
                           </div>
-                          <h3 className="mt-3 font-bold text-[#EAEAEA]">{remedy.name}</h3>
-                          <p className="mt-1 text-xs text-[#F5A623]">Target: {remedy.ailment}</p>
-                          <p className="mt-3 text-sm text-[#8A8F98]">{remedy.description}</p>
+                          
+                          <h3 className="text-xl font-bold text-white">{remedy.name}</h3>
+                          <p className="text-[10px] text-[#F5A623] uppercase tracking-widest font-bold mt-1">Target: {remedy.ailment}</p>
+                          
+                          <p className="mt-4 text-sm text-[#8A8F98] leading-relaxed">
+                            {remedy.description}
+                          </p>
+
                           {remedy.genZContext && (
-                            <div className="mt-3.5 rounded-lg bg-[#FC3D21]/5 border border-[#FC3D21]/10 p-3 text-xs text-[#EAEAEA]/90">
-                              <span className="font-bold text-[#FC3D21]">Gen Z Context:</span>{" "}
-                              {remedy.genZContext}
+                            <div className="mt-4 bg-[#A855F7]/10 border border-[#A855F7]/20 p-3 rounded-xl">
+                              <p className="text-[10px] font-bold text-[#A855F7] uppercase tracking-wider mb-1">Gen Z Context</p>
+                              <p className="text-xs text-[#EAEAEA]">{remedy.genZContext}</p>
                             </div>
                           )}
                         </div>
-                        <div className="mt-4 border-t border-border/40 pt-3 text-[11px] text-[#8A8F98]">
-                          <span className="font-bold text-[#FC3D21]">Scientific Base:</span>{" "}
-                          {remedy.evidenceDetails}
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <div>
-                <h2 className="text-2xl font-bold text-[#EAEAEA] mb-4">Your Saved Facts & Myths</h2>
-                {bookmarks.filter(
-                  (bId) => FACTS.some((f) => f.id === bId) || MYTHS.some((m) => m.id === bId),
-                ).length === 0 ? (
-                  <p className="text-sm text-[#8A8F98]">No saved facts or myths yet.</p>
-                ) : (
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    {FACTS.filter((f) => bookmarks.includes(f.id)).map((fact) => (
-                      <div
-                        key={fact.id}
-                        className="rounded-xl border border-border bg-[#0D0D0D] p-5 flex flex-col justify-between"
-                      >
-                        <div>
-                          <div className="flex justify-between items-start">
-                            <span className="rounded bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider">
-                              Fact
-                            </span>
-                            <button
-                              onClick={() => removeBookmark(fact.id)}
-                              className="text-[#FC3D21]"
-                            >
-                              ❤️
-                            </button>
-                          </div>
-                          <p className="mt-3 text-sm text-[#EAEAEA]">{fact.text}</p>
-                        </div>
-                        {fact.source && (
-                          <div className="mt-4 border-t border-border/40 pt-3 text-[11px] text-[#8A8F98]">
-                            <span className="font-bold text-[#FC3D21]">Source:</span> {fact.source}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-
-                    {MYTHS.filter((m) => bookmarks.includes(m.id)).map((myth) => (
-                      <div
-                        key={myth.id}
-                        className="rounded-xl border border-border bg-[#0D0D0D] p-5 flex flex-col justify-between"
-                      >
-                        <div>
-                          <div className="flex justify-between items-start">
-                            <span className="rounded bg-red-500/10 text-red-400 border border-red-500/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider">
-                              Myth Busted
-                            </span>
-                            <button
-                              onClick={() => removeBookmark(myth.id)}
-                              className="text-[#FC3D21]"
-                            >
-                              ❤️
-                            </button>
-                          </div>
-                          <h4 className="mt-3 font-bold text-[#EAEAEA] text-sm flex items-center gap-1.5">
-                            ❌ Myth: <span className="font-medium text-[#8A8F98]">{myth.myth}</span>
-                          </h4>
-                        </div>
-                        <div className="mt-4 border-t border-border/40 pt-3 text-[11px] text-[#EAEAEA]/90 bg-[#FC3D21]/5 p-2.5 rounded border border-[#FC3D21]/15">
-                          <strong className="text-[#FC3D21] block mb-1">✅ Science Truth:</strong>
-                          {myth.reality}
+                        
+                        <div className="mt-6 pt-4 border-t border-white/5">
+                          <p className="text-[10px] font-bold text-[#00E5C4] uppercase tracking-wider mb-1">Scientific Base</p>
+                          <p className="text-xs text-[#8A8F98] leading-relaxed">{remedy.evidenceDetails}</p>
                         </div>
                       </div>
                     ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* Weekly Marvels Section */}
-          {activeTab === "marvels" && (
-            <div className="pt-6">
-              <h2 className="mb-4 text-2xl font-bold text-[#EAEAEA]">Body Marvels (Deep Dives)</h2>
-              {BODY_MARVELS.map((marvel) => (
-                <div key={marvel.id} className="rounded-xl border border-border bg-[#0D0D0D] p-6">
-                  <span className="rounded bg-[#0B3D91]/20 px-2 py-0.5 text-xs font-bold text-[#A855F7] uppercase tracking-wider">
-                    Weekly Deep-Dive
-                  </span>
-                  <h3 className="mt-3 text-2xl font-bold text-[#EAEAEA]">{marvel.title}</h3>
-                  <p className="mt-2 text-sm text-[#8A8F98] italic">{marvel.introduction}</p>
-                  <div className="mt-6 space-y-4">
-                    {marvel.sections.map((sect, i) => (
-                      <div key={i} className="rounded-lg bg-[#030303] p-4 border border-border/40">
-                        <h4 className="font-bold text-[#FC3D21]">{sect.heading}</h4>
-                        <p className="mt-1 text-sm text-[#8A8F98]">{sect.body}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="mt-6 text-sm text-[#8A8F98] border-l-2 border-[#FC3D21] pl-4">
-                    {marvel.conclusion}
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Right Column: Bookmarks, Sensory Facts & Details */}
-        <div className="space-y-8">
-          {/* Sensory Facts ("Did You Feel That?") */}
-          <div className="rounded-xl border border-border bg-[#0F0F0F] p-5">
-            <h3 className="text-lg font-bold text-[#FC3D21] mb-4">Did You Feel That?</h3>
-            <div className="space-y-4">
-              {SENSORY_FACTS.map((sf) => (
-                <div key={sf.id} className="rounded-lg bg-[#0d101d] p-4 border border-border/40">
-                  <h4 className="font-bold text-[#EAEAEA] text-sm">❓ {sf.sensation}</h4>
-                  <p className="mt-1.5 text-xs text-[#8A8F98]">{sf.cause}</p>
-                  <div className="mt-3 text-xs text-[#F5A623] bg-[#F5A623]/5 p-2 rounded border border-[#F5A623]/10">
-                    💡 <strong>Tip:</strong> {sf.tip}
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
+              )}
 
-          {/* Bookmarks Section */}
-          <div className="rounded-xl border border-border bg-[#0F0F0F] p-5">
-            <h3 className="text-lg font-bold text-[#EAEAEA] mb-4">{t("bookmarks")}</h3>
-            {bookmarks.length === 0 ? (
-              <p className="text-xs text-[#8A8F98]">No saved remedies or facts yet.</p>
-            ) : (
-              <div className="space-y-2">
-                {bookmarks.map((bId) => {
-                  const remedy = REMEDIES.find((r) => r.id === bId);
-                  const fact = FACTS.find((f) => f.id === bId);
-                  return (
-                    <div
-                      key={bId}
-                      className="flex items-center justify-between bg-[#0D0D0D] p-3 rounded-lg border border-border/40"
-                    >
-                      <div className="truncate max-w-[80%]">
-                        <p className="text-xs font-bold text-[#FC3D21] truncate">
-                          {remedy ? remedy.name : "Saved Fact"}
-                        </p>
-                        <p className="text-[10px] text-[#8A8F98] truncate">
-                          {remedy ? remedy.ailment : fact ? fact.text : "Content item"}
-                        </p>
+              {/* MYTHS */}
+              {activeTab === "myths" && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {filteredMyths.map((myth) => (
+                    <div key={myth.id} className="rounded-3xl border border-white/10 bg-[#0F0F0F]/80 p-6 backdrop-blur-xl hover:border-blue-500/30 transition-all hover:shadow-[0_0_30px_rgba(59,130,246,0.1)]">
+                      <div className="flex justify-between items-start mb-4">
+                        <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border bg-red-500/10 text-red-500 border-red-500/20">
+                          Myth Busted
+                        </span>
+                        <button
+                          onClick={() => isBookmarked(myth.id) ? removeBookmark(myth.id) : addBookmark(myth.id)}
+                          className="text-[#8A8F98] hover:scale-110 transition-transform"
+                        >
+                          <Heart className={`w-5 h-5 ${isBookmarked(myth.id) ? 'fill-[#FC3D21] text-[#FC3D21]' : ''}`} />
+                        </button>
                       </div>
-                      <button
-                        onClick={() => removeBookmark(bId)}
-                        className="text-xs text-[#FC3D21] hover:underline"
-                      >
-                        Remove
-                      </button>
+
+                      <h3 className="text-lg font-bold text-red-400 line-through decoration-red-500/50 decoration-2 mb-4">
+                        <span className="text-white decoration-transparent">{myth.myth}</span>
+                      </h3>
+
+                      <div className="bg-emerald-500/5 border border-emerald-500/20 p-4 rounded-2xl">
+                        <p className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider mb-2">✅ Science Truth</p>
+                        <p className="text-sm text-emerald-50 leading-relaxed">{myth.reality}</p>
+                      </div>
+
+                      {(myth.dangerAlert || myth.actionableTip) && (
+                        <div className="mt-4 space-y-3">
+                          {myth.dangerAlert && (
+                            <div className="bg-rose-500/10 border border-rose-500/20 p-3 rounded-xl">
+                              <p className="text-[10px] font-bold text-rose-500 uppercase tracking-wider mb-1">🚨 Danger Alert</p>
+                              <p className="text-xs text-rose-200">{myth.dangerAlert}</p>
+                            </div>
+                          )}
+                          {myth.actionableTip && (
+                            <div className="bg-blue-500/10 border border-blue-500/20 p-3 rounded-xl">
+                              <p className="text-[10px] font-bold text-blue-400 uppercase tracking-wider mb-1">🎯 Try This</p>
+                              <p className="text-xs text-blue-100">{myth.actionableTip}</p>
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </div>
-                  );
-                })}
-              </div>
-            )}
-          </div>
+                  ))}
+                </div>
+              )}
 
-          {/* Medical review notification */}
-          <div className="rounded-xl border border-border/40 bg-[#0F0F0F] p-4 text-center">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400 border border-emerald-500/20">
-              🛡️ {t("medicalReviewed")}
-            </span>
-            <p className="mt-2 text-[10px] text-[#8A8F98]">
-              Every article and remedy is cross-referenced with medical databases (NLM, PubMed) and
-              reviewed by board-certified physicians.
-            </p>
-          </div>
+              {/* MARVELS */}
+              {activeTab === "marvels" && (
+                <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
+                  {BODY_MARVELS.map((marvel) => (
+                    <div key={marvel.id} className="rounded-[2.5rem] border border-white/10 bg-[#0F0F0F]/80 p-8 md:p-12 backdrop-blur-xl">
+                      <span className="px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider border bg-purple-500/10 text-purple-400 border-purple-500/20">
+                        Weekly Deep-Dive
+                      </span>
+                      <h3 className="mt-6 text-3xl md:text-4xl font-space font-extrabold text-white">{marvel.title}</h3>
+                      <p className="mt-4 text-lg text-[#8A8F98] italic font-serif">"{marvel.introduction}"</p>
+                      
+                      <div className="mt-10 space-y-8">
+                        {marvel.sections.map((sect, i) => (
+                          <div key={i}>
+                            <h4 className="font-bold text-[#00E5C4] text-lg mb-2">{sect.heading}</h4>
+                            <p className="text-[#EAEAEA] leading-relaxed">{sect.body}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mt-10 p-6 bg-white/[0.02] border border-white/10 rounded-2xl text-center">
+                        <p className="text-sm text-[#8A8F98] font-medium leading-relaxed">{marvel.conclusion}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* BOOKMARKS */}
+              {activeTab === "bookmarks" && (
+                <div className="max-w-4xl mx-auto text-center py-20">
+                  <BookmarkIcon className="w-16 h-16 text-white/20 mx-auto mb-6" />
+                  <h2 className="text-2xl font-bold text-white mb-2">Your Saved Collection</h2>
+                  <p className="text-[#8A8F98] mb-8">Items you star across the library will appear here.</p>
+                  
+                  {bookmarks.length === 0 ? (
+                    <div className="inline-block px-6 py-3 rounded-full border border-white/10 bg-white/5 text-sm text-[#8A8F98]">
+                      Collection is empty
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                      {bookmarks.map((bId) => {
+                        const remedy = REMEDIES.find((r) => r.id === bId);
+                        const fact = FACTS.find((f) => f.id === bId);
+                        const myth = MYTHS.find((m) => m.id === bId);
+                        
+                        return (
+                          <div key={bId} className="flex items-center justify-between bg-white/[0.02] p-4 rounded-2xl border border-white/10 hover:border-white/30 transition-all">
+                            <div className="truncate pr-4">
+                              <p className="text-sm font-bold text-white truncate">
+                                {remedy ? remedy.name : myth ? myth.myth : "Saved Fact"}
+                              </p>
+                              <p className="text-xs text-[#8A8F98] truncate mt-1">
+                                {remedy ? "Remedy" : myth ? "Myth" : fact ? "Fact" : ""}
+                              </p>
+                            </div>
+                            <button
+                              onClick={() => removeBookmark(bId)}
+                              className="text-white hover:scale-110 transition-transform shrink-0"
+                            >
+                              <Heart className="w-5 h-5 fill-[#FC3D21] text-[#FC3D21]" />
+                            </button>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              )}
+
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </div>
