@@ -49,10 +49,11 @@ export function MoleculeDetailHUD() {
           <X className="w-5 h-5" />
         </button>
         <h2 className="text-2xl font-space font-bold uppercase tracking-wider text-[#EAEAEA] pr-8">
+          <span className="text-[#8A8F98] text-sm tracking-widest mr-2">PRODUCT NAME:</span>
           {m.brand_names_india.join(', ')}
         </h2>
         <p className="text-sm font-mono text-[#8A8F98] mt-2 leading-relaxed">
-          <span className="text-[#EAEAEA]">Chemical / Active Molecule:</span> {m.molecule}
+          <span className="text-[#EAEAEA] tracking-widest uppercase text-xs mr-2">CHEMICAL NAME:</span> {m.molecule}
         </p>
         <div className="mt-4 p-3 bg-black/40 border border-[#222222] rounded-md font-mono text-sm flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-[#FF9500] shrink-0" />

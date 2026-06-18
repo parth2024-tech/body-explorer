@@ -83,7 +83,7 @@ export function MoleculeSearchPanel() {
                 >
                   <div className="flex-1 min-w-0">
                     <div className="text-sm font-bold text-[#EAEAEA] font-space uppercase tracking-wide truncate">
-                      {entry.brand_names_india.join(', ')}
+                      Product Name: {entry.brand_names_india.join(', ')}
                     </div>
                     <div className="text-xs text-[#8A8F98] mt-1 font-mono truncate">
                       Chemical Name: {entry.molecule}
