@@ -13,14 +13,16 @@ export const GreyMarketCard: React.FC<GreyMarketCardProps> = ({ item }) => {
     <div className="gm-card">
       <div className="gm-card-header">
         <div className="gm-card-icon">{item.icon}</div>
-        <div className={`gm-risk-badge ${item.risk.toLowerCase()}`}>
-          {item.risk} RISK
-        </div>
-        {item.confidenceLevel && (
-          <div className="gm-risk-badge" style={{ backgroundColor: 'rgba(46, 139, 87, 0.1)', color: '#2E8B57', borderColor: 'rgba(46, 139, 87, 0.3)' }}>
-            {item.confidenceLevel} CONFIDENCE
+        <div className="gm-badges-container">
+          <div className={`gm-risk-badge ${item.risk.toLowerCase()}`}>
+            {item.risk} RISK
           </div>
-        )}
+          {item.confidenceLevel && (
+            <div className="gm-risk-badge" style={{ backgroundColor: 'rgba(46, 139, 87, 0.1)', color: '#2E8B57', borderColor: 'rgba(46, 139, 87, 0.3)' }}>
+              {item.confidenceLevel} CONFIDENCE
+            </div>
+          )}
+        </div>
         <div className="gm-card-molecule">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1m-1.636 6.364l-.707-.707M3 12h1m1.636-6.364l.707.707"/>
