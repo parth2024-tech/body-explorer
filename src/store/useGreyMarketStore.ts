@@ -1,43 +1,50 @@
 import { create } from 'zustand';
-import { type MoleculeEntry } from '../data/grey_market_db'; // I'll define this type
 
 export interface MoleculeEntry {
+  id: number;
+  category: 'food' | 'drug';
+  icon: string;
+  product: string;
   molecule: string;
-  brand_names_india: string[];
-  risk_level: 'CRITICAL' | 'HIGH' | 'UNDER-REVIEW';
-  status_global: {
-    US: string;
-    EU: string;
-    UK: string;
-    Australia: string;
-  };
-  status_india: string;
-  target_organ_id: string;
+  subtitle: string;
+  brands: string[];
+  risk: 'CRITICAL' | 'HIGH' | 'UNDER-REVIEW';
+  organ: string;
+  summary: string;
   mechanism: string;
+  status_global: Record<string, string>;
+  status_india: string;
   how_to_spot: string;
-  safer_alternatives: string[];
-  cdsco_ref: string;
+  alternatives: string[];
+  ref: string;
+  confidenceLevel?: 'HIGH' | 'MODERATE' | 'LOW' | 'INSUFFICIENT';
+  evidenceStatement?: string;
+  clinicalDisclaimer?: string;
 }
 
 interface GreyMarketState {
-  selectedMolecule: MoleculeEntry | null;
   searchTerm: string;
-  activeFilters: string[]; // e.g. ['CRITICAL', 'HIGH']
-  setSelectedMolecule: (molecule: MoleculeEntry | null) => void;
+  categoryFilter: 'all' | 'food' | 'drug';
+  riskFilters: string[]; // e.g. ['CRITICAL', 'HIGH']
+  sortBy: 'risk' | 'az' | 'cat';
   setSearchTerm: (term: string) => void;
-  toggleFilter: (filter: string) => void;
+  setCategoryFilter: (cat: 'all' | 'food' | 'drug') => void;
+  toggleRiskFilter: (risk: string) => void;
+  setSortBy: (sort: 'risk' | 'az' | 'cat') => void;
 }
 
 export const useGreyMarketStore = create<GreyMarketState>((set) => ({
-  selectedMolecule: null,
   searchTerm: '',
-  activeFilters: [],
-  setSelectedMolecule: (molecule) => set({ selectedMolecule: molecule }),
+  categoryFilter: 'all',
+  riskFilters: [],
+  sortBy: 'risk',
   setSearchTerm: (term) => set({ searchTerm: term }),
-  toggleFilter: (filter) =>
+  setCategoryFilter: (cat) => set({ categoryFilter: cat }),
+  toggleRiskFilter: (risk) =>
     set((state) => ({
-      activeFilters: state.activeFilters.includes(filter)
-        ? state.activeFilters.filter((f) => f !== filter)
-        : [...state.activeFilters, filter],
+      riskFilters: state.riskFilters.includes(risk)
+        ? state.riskFilters.filter((r) => r !== risk)
+        : [...state.riskFilters, risk],
     })),
+  setSortBy: (sort) => set({ sortBy: sort }),
 }));

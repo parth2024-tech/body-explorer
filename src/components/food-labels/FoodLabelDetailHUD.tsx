@@ -20,9 +20,18 @@ export function FoodLabelDetailHUD() {
         >
           <X className="w-5 h-5" />
         </button>
-        <h2 className="text-2xl font-space font-bold uppercase tracking-wider text-[#EAEAEA] pr-8">
-          <span className="text-[#8A8F98] text-sm tracking-widest mr-2">MARKETING CLAIM:</span>
+        <h2 className="text-2xl font-space font-bold uppercase tracking-wider text-[#EAEAEA] pr-8 flex items-center flex-wrap gap-3">
+          <span className="text-[#8A8F98] text-sm tracking-widest">MARKETING CLAIM:</span>
           "{entry.marketing_claim}"
+          {entry.confidenceLevel && (
+            <span className={`px-2 py-0.5 rounded text-[10px] font-bold tracking-widest ${
+              entry.confidenceLevel === 'HIGH' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+              entry.confidenceLevel === 'MODERATE' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
+              'bg-red-500/20 text-red-400 border border-red-500/30'
+            }`}>
+              {entry.confidenceLevel} CONFIDENCE
+            </span>
+          )}
         </h2>
         
         <div className="mt-4 p-3 bg-black/40 border border-[#222222] rounded-md font-mono text-sm flex items-start gap-3">
@@ -46,9 +55,16 @@ export function FoodLabelDetailHUD() {
             </h3>
           </div>
           <div className="bg-white/[0.02] border border-white/5 rounded-lg p-5">
-            <p className="text-[#8A8F98] leading-relaxed">
+            <p className="text-[#EAEAEA] leading-relaxed">
               {entry.biological_impact}
             </p>
+            {entry.evidenceStatement && (
+              <div className="mt-4 pt-4 border-t border-white/5">
+                <p className="text-xs text-[#8A8F98] font-mono italic">
+                  {entry.evidenceStatement}
+                </p>
+              </div>
+            )}
           </div>
         </section>
 
@@ -86,7 +102,16 @@ export function FoodLabelDetailHUD() {
             ))}
           </div>
         </section>
-
+        {/* Clinical Disclaimer */}
+        {entry.clinicalDisclaimer && (
+          <section className="pb-4">
+            <div className="bg-[#FC3D21]/10 border border-[#FC3D21]/20 rounded-lg p-4">
+              <p className="text-xs font-mono text-[#FC3D21] leading-relaxed">
+                {entry.clinicalDisclaimer}
+              </p>
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );

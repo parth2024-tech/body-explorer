@@ -9,6 +9,9 @@ export interface FoodLabelEntry {
   biological_impact: string;
   how_to_spot: string;
   common_products: string[];
+  confidenceLevel?: 'HIGH' | 'MODERATE' | 'LOW' | 'INSUFFICIENT';
+  evidenceStatement?: string;
+  clinicalDisclaimer?: string;
 }
 
 interface FoodLabelState {

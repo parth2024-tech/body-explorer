@@ -43,6 +43,9 @@ export interface MythBusted {
   sources?: string[];
   actionableTip?: string;
   dangerAlert?: string;
+  confidenceLevel?: 'HIGH' | 'MODERATE' | 'LOW' | 'INSUFFICIENT';
+  evidenceStatement?: string;
+  clinicalDisclaimer?: string;
 }
 
 export interface MicroAction {

@@ -131,21 +131,68 @@ export function FactPanel() {
 
               {/* Myth Busted */}
               {myths.length > 0 && (
-                <div className="space-y-3">
+                <div className="space-y-4">
                   <h4 className="text-xs font-semibold uppercase tracking-wider text-[#0B3D91]">
                     Myths Busted
                   </h4>
                   {myths.map((m) => (
                     <div
                       key={m.id}
-                      className="rounded-xl border border-[#0B3D91]/20 bg-[#0B3D91]/5 p-4"
+                      className="rounded-xl border border-[#0B3D91]/20 bg-[#0B3D91]/5 p-4 space-y-3"
                     >
+                      {/* Confidence Badge */}
+                      {m.confidenceLevel && (
+                        <div className="flex items-center gap-1.5 mb-2">
+                          <span className={`px-2 py-0.5 rounded text-[10px] font-bold tracking-widest ${
+                            m.confidenceLevel === 'HIGH' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+                            m.confidenceLevel === 'MODERATE' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
+                            'bg-red-500/20 text-red-400 border border-red-500/30'
+                          }`}>
+                            {m.confidenceLevel} CONFIDENCE
+                          </span>
+                        </div>
+                      )}
+
                       <p className="text-sm text-[#EAEAEA]">
                         <span className="font-semibold text-[#FC3D21]">Myth:</span> {m.myth}
                       </p>
-                      <p className="mt-2 text-sm text-[#EAEAEA]">
-                        <span className="font-semibold text-[#FC3D21]">Reality:</span> {m.reality}
+                      <p className="text-sm text-[#EAEAEA] leading-relaxed">
+                        <span className="font-semibold text-[#2E8B57]">Reality:</span> {m.reality}
                       </p>
+
+                      {/* Actionable Tip */}
+                      {m.actionableTip && (
+                        <div className="rounded-lg bg-[#2E8B57]/10 p-3 mt-2 border border-[#2E8B57]/20">
+                          <p className="text-xs text-[#EAEAEA] leading-relaxed">
+                            <span className="font-bold text-[#2E8B57]">👉 TRY THIS:</span> {m.actionableTip}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Danger Alert */}
+                      {m.dangerAlert && (
+                        <div className="rounded-lg bg-red-500/10 p-3 mt-2 border border-red-500/20">
+                          <p className="text-xs text-red-300 font-medium leading-relaxed">
+                            {m.dangerAlert}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Trust Signals */}
+                      {(m.evidenceStatement || m.clinicalDisclaimer) && (
+                        <div className="mt-3 pt-3 border-t border-[#0B3D91]/20 space-y-2">
+                          {m.evidenceStatement && (
+                            <p className="text-[10.5px] text-[#8A8F98]">
+                              {m.evidenceStatement}
+                            </p>
+                          )}
+                          {m.clinicalDisclaimer && (
+                            <p className="text-[10.5px] text-[#8A8F98]">
+                              {m.clinicalDisclaimer}
+                            </p>
+                          )}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
