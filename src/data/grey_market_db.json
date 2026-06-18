@@ -298,5 +298,329 @@
     "how_to_spot": "Check citrus soda labels to verify the absence of BVO. Major brands like PepsiCo and Coca-Cola no longer use BVO.",
     "safer_alternatives": ["Citrus sodas using Glycerol Ester of Wood Rosin", "Naturally flavored carbonated water"],
     "cdsco_ref": "FSSAI Beverages Regulation (BVO is restricted)"
+  },
+  {
+    "molecule": "Nimesulide",
+    "brand_names_india": ["Nise", "Nimulid", "Sumo"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Never Approved / Banned",
+      "EU": "Severely Restricted (Second-line only, max 15 days)",
+      "UK": "Withdrawn",
+      "Australia": "Never Approved"
+    },
+    "status_india": "Banned for children under 12; still widely available over-the-counter for adults.",
+    "target_organ_id": "liver",
+    "mechanism": "Non-steroidal anti-inflammatory drug (NSAID) known to cause severe, unpredictable hepatotoxicity (liver failure) that can be fatal, even after short-term use.",
+    "how_to_spot": "Look for generic name 'Nimesulide' on the blister pack of fever and pain relief tablets.",
+    "safer_alternatives": ["Ibuprofen", "Paracetamol (Acetaminophen)", "Naproxen"],
+    "cdsco_ref": "Banned in <12 years (2011)"
+  },
+  {
+    "molecule": "Metamizole (Analgin)",
+    "brand_names_india": ["Novalgin", "Baralgan", "Ultragin"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Banned (1977)",
+      "EU": "Restricted/Banned in several member states",
+      "UK": "Banned",
+      "Australia": "Banned"
+    },
+    "status_india": "Banned in 2013, but ban was mysteriously revoked in 2014 for severe pain when other alternatives fail.",
+    "target_organ_id": "blood",
+    "mechanism": "Causes agranulocytosis (a dangerous, rapid drop in white blood cells), leaving the patient highly vulnerable to fatal infections.",
+    "how_to_spot": "Look for 'Analgin' or 'Metamizole Sodium' on strong painkiller packaging.",
+    "safer_alternatives": ["Paracetamol", "Diclofenac (with caution)"],
+    "cdsco_ref": "Revocation Order No. X-11014/17/2013-DFQC"
+  },
+  {
+    "molecule": "Sibutramine",
+    "brand_names_india": ["Reduce", "Sibotrim", "Slimcal"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Withdrawn (2010)",
+      "EU": "Withdrawn (2010)",
+      "UK": "Withdrawn (2010)",
+      "Australia": "Withdrawn (2010)"
+    },
+    "status_india": "Banned (2011), but frequently found illegally undeclared in 'herbal' or 'ayurvedic' weight loss supplements.",
+    "target_organ_id": "heart",
+    "mechanism": "An appetite suppressant that significantly increases the risk of cardiovascular events, including non-fatal heart attacks and strokes in healthy individuals.",
+    "how_to_spot": "Extremely common in unregulated dietary supplements imported or sold online promising 'rapid weight loss'.",
+    "safer_alternatives": ["Orlistat (under Rx)", "Lifestyle modifications"],
+    "cdsco_ref": "S.O. 306(E) - 2011"
+  },
+  {
+    "molecule": "Flupentixol + Melitracen (FDC)",
+    "brand_names_india": ["Deanxit", "Placida", "Franxit"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "Denmark": "Banned in country of origin",
+      "US": "Not Approved",
+      "UK": "Not Approved",
+      "Japan": "Not Approved"
+    },
+    "status_india": "Banned in 2013, but continues to be sold widely due to court stays and immense market demand.",
+    "target_organ_id": "brain",
+    "mechanism": "An irrational combination of an antipsychotic and an antidepressant. Can cause tardive dyskinesia (permanent involuntary muscle movements) and severe neuroleptic malignant syndrome.",
+    "how_to_spot": "Check anxiety/depression medication blister packs for the combination of 'Flupentixol and Melitracen'.",
+    "safer_alternatives": ["SSRI antidepressants (Escitalopram)", "CBT therapy"],
+    "cdsco_ref": "Suspension Order 2013 (Currently contested)"
+  },
+  {
+    "molecule": "Placental Extract",
+    "brand_names_india": ["Placentrex"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Banned (Lack of efficacy and safety)",
+      "EU": "Not Approved",
+      "Canada": "Banned"
+    },
+    "status_india": "Widely sold as a topical gel or injectable for wound healing, pelvic inflammatory disease, and cosmetic uses.",
+    "target_organ_id": "blood",
+    "mechanism": "Derived from human placenta. Banned in developed nations due to zero proven clinical efficacy and the severe risk of transmitting blood-borne pathogens (HIV, Hepatitis) and prion diseases.",
+    "how_to_spot": "Look for 'Human Placental Extract' in wound-healing gels or injectables.",
+    "safer_alternatives": ["Povidone-iodine", "Standard antibiotics for PID"],
+    "cdsco_ref": "Permitted for specific indications only"
+  },
+  {
+    "molecule": "Buclizine",
+    "brand_names_india": ["Longifene"],
+    "risk_level": "UNDER-REVIEW",
+    "status_global": {
+      "US": "Not approved as appetite stimulant",
+      "EU": "Not approved as appetite stimulant",
+      "UK": "Not approved"
+    },
+    "status_india": "Marketed heavily as an appetite stimulant, especially for underweight children. Banned in 2018, but stays exist.",
+    "target_organ_id": "brain",
+    "mechanism": "A first-generation antihistamine that causes severe drowsiness and anticholinergic effects; clinically unproven to sustainably or healthily increase appetite.",
+    "how_to_spot": "Look for appetite stimulant syrups given to children containing 'Buclizine'.",
+    "safer_alternatives": ["Nutritional counseling", "Addressing underlying causes of low appetite"],
+    "cdsco_ref": "S.O. 6386(E) - 2018"
+  },
+  {
+    "molecule": "Cisapride",
+    "brand_names_india": ["Ciza", "Syspride"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Withdrawn (2000)",
+      "EU": "Withdrawn",
+      "UK": "Withdrawn",
+      "Australia": "Withdrawn"
+    },
+    "status_india": "Banned (2011), though occasionally found in grey-market veterinary or older generic stocks.",
+    "target_organ_id": "heart",
+    "mechanism": "Used for heartburn, but it blocks potassium channels in the heart, prolonging the QT interval and causing life-threatening ventricular arrhythmias (torsades de pointes).",
+    "how_to_spot": "Check old gastro-intestinal medications or grey-market antacids.",
+    "safer_alternatives": ["Pantoprazole", "Domperidone"],
+    "cdsco_ref": "S.O. 304(E) - 2011"
+  },
+  {
+    "molecule": "Furazolidone",
+    "brand_names_india": ["Furoxone", "Dependal-M (Older formulations)"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Banned in food-producing animals; restricted in humans",
+      "EU": "Banned",
+      "UK": "Banned"
+    },
+    "status_india": "Available; frequently used to treat diarrhea and GI infections.",
+    "target_organ_id": "stomach",
+    "mechanism": "An antimicrobial that has shown carcinogenic (cancer-causing) properties in animal studies and causes severe, dangerous interactions with certain foods (MAOI activity).",
+    "how_to_spot": "Check anti-diarrheal syrups and tablets.",
+    "safer_alternatives": ["Metronidazole", "Oral Rehydration Salts (ORS)"],
+    "cdsco_ref": "Under continuous review"
+  },
+  {
+    "molecule": "Serratiopeptidase",
+    "brand_names_india": ["Lyser D", "Serrapeptase", "Flozen-AA"],
+    "risk_level": "UNDER-REVIEW",
+    "status_global": {
+      "Japan": "Withdrawn by creator (Takeda) in 2011 for lack of efficacy",
+      "US": "Not approved as a drug (sold only as dietary supplement)",
+      "EU": "Not approved"
+    },
+    "status_india": "One of the most widely prescribed anti-inflammatory enzyme supplements in India.",
+    "target_organ_id": "stomach",
+    "mechanism": "Marketed to reduce swelling, but clinical trials consistently show it performs no better than a placebo. Represents a massive financial burden on patients for an unproven therapy.",
+    "how_to_spot": "Often combined with Diclofenac or Paracetamol in 'DP' or 'D' suffix medications (e.g., Lyser-D).",
+    "safer_alternatives": ["Standard NSAIDs like Ibuprofen"],
+    "cdsco_ref": "Approved but highly debated"
+  },
+  {
+    "molecule": "Aceclofenac + Paracetamol (FDC)",
+    "brand_names_india": ["Zerodol-P", "Hifenac-P", "Aldigesic-P"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Not Approved",
+      "EU": "Not Approved",
+      "UK": "Not Approved"
+    },
+    "status_india": "The highest selling painkiller combination in India, despite being deemed 'irrational' by pharmacologists.",
+    "target_organ_id": "liver",
+    "mechanism": "Aceclofenac rapidly metabolizes into Diclofenac. Combining it with Paracetamol increases the risk of hepatotoxicity and gastrointestinal bleeding without providing significantly better pain relief than either drug alone.",
+    "how_to_spot": "Look for the '-P' suffix on painkiller brands.",
+    "safer_alternatives": ["Paracetamol alone", "Ibuprofen alone"],
+    "cdsco_ref": "Subject to FDC rationalization committees"
+  },
+  {
+    "molecule": "Pantoprazole + Domperidone (FDC)",
+    "brand_names_india": ["Pan-D", "Pantocid D", "Pensec D"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Not Approved",
+      "EU": "Not Approved",
+      "UK": "Not Approved"
+    },
+    "status_india": "A massive blockbuster drug prescribed for almost any minor gastric complaint.",
+    "target_organ_id": "heart",
+    "mechanism": "An irrational combination. Pantoprazole is for acid reflux, while Domperidone is for nausea. Domperidone carries a black-box warning in Europe for sudden cardiac death. Combining them exposes patients to heart risks for simple acidity.",
+    "how_to_spot": "Look for the '-D' suffix on antacids.",
+    "safer_alternatives": ["Pantoprazole alone", "Antacid syrups (Gelusil)"],
+    "cdsco_ref": "Subject to FDC rationalization committees"
+  },
+  {
+    "molecule": "Ofloxacin + Ornidazole (FDC)",
+    "brand_names_india": ["Zenflox-OZ", "O2", "Oflox-OZ"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Not Approved",
+      "EU": "Not Approved",
+      "UK": "Not Approved"
+    },
+    "status_india": "Given indiscriminately for loose motions and mild diarrhea.",
+    "target_organ_id": "stomach",
+    "mechanism": "A completely irrational broad-spectrum antibiotic bomb. Promotes severe antibiotic resistance. Ofloxacin carries FDA black box warnings for tendon rupture and permanent nerve damage.",
+    "how_to_spot": "Look for the '-OZ' suffix on diarrhea medicines.",
+    "safer_alternatives": ["Oral Rehydration Salts (ORS)", "Targeted single antibiotics if bacterial infection is confirmed"],
+    "cdsco_ref": "Subject to FDC rationalization committees"
+  },
+  {
+    "molecule": "Gatifloxacin (Systemic)",
+    "brand_names_india": ["Gatquin", "Tequin (Historical)"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Withdrawn (Systemic use) in 2006",
+      "EU": "Withdrawn",
+      "Canada": "Withdrawn"
+    },
+    "status_india": "Banned for systemic use in 2011, though eye drops remain legal. Occasional systemic grey-market stocks appear.",
+    "target_organ_id": "blood",
+    "mechanism": "Causes severe, life-threatening dysglycemia (wild swings between deadly high blood sugar and coma-inducing low blood sugar).",
+    "how_to_spot": "Look for generic Gatifloxacin tablets.",
+    "safer_alternatives": ["Ciprofloxacin", "Levofloxacin"],
+    "cdsco_ref": "S.O. 552(E) - 2011"
+  },
+  {
+    "molecule": "Letrozole (For Infertility/Ovulation)",
+    "brand_names_india": ["Letroz", "Femara"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Off-label use only (Novartis issued warnings against infertility use)",
+      "EU": "Restricted to breast cancer"
+    },
+    "status_india": "Banned for use in female infertility in 2011, but the ban was controversially revoked in 2017 after heavy lobbying by IVF doctors.",
+    "target_organ_id": "reproductive",
+    "mechanism": "Originally a breast cancer drug. It is teratogenic (causes birth defects) if taken while pregnant. Its use to stimulate ovulation is highly contested due to potential fetal toxicity.",
+    "how_to_spot": "Prescribed at fertility clinics.",
+    "safer_alternatives": ["Clomiphene citrate"],
+    "cdsco_ref": "Ban revoked in 2017"
+  },
+  {
+    "molecule": "Rosiglitazone",
+    "brand_names_india": ["Rezulin", "Avandia (Historical)"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "EU": "Suspended (2010)",
+      "UK": "Suspended",
+      "US": "Highly restricted (REMS program)"
+    },
+    "status_india": "Banned in 2010 due to massive cardiovascular risks.",
+    "target_organ_id": "heart",
+    "mechanism": "An anti-diabetic drug that significantly increases the risk of myocardial infarction (heart attacks) and congestive heart failure.",
+    "how_to_spot": "Historical grey market; carefully check generic diabetes combos.",
+    "safer_alternatives": ["Metformin", "SGLT2 inhibitors"],
+    "cdsco_ref": "Banned (2010)"
+  },
+  {
+    "molecule": "Nimesulide + Paracetamol (FDC)",
+    "brand_names_india": ["Sumo", "Nise Plus"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Unapproved",
+      "EU": "Unapproved",
+      "UK": "Unapproved"
+    },
+    "status_india": "Widely sold despite repeated attempts to ban it.",
+    "target_organ_id": "liver",
+    "mechanism": "Combining two liver-toxic agents significantly increases the risk of fulminant hepatic failure. Provides no scientifically proven benefit over taking either drug separately.",
+    "how_to_spot": "Check fever/pain blister packs for the combination.",
+    "safer_alternatives": ["Paracetamol alone"],
+    "cdsco_ref": "Irrational FDC List"
+  },
+  {
+    "molecule": "Pioglitazone",
+    "brand_names_india": ["Pioz", "Piodar"],
+    "risk_level": "UNDER-REVIEW",
+    "status_global": {
+      "US": "Black Box Warning",
+      "France": "Suspended",
+      "Germany": "Suspended"
+    },
+    "status_india": "Banned briefly in 2013, but revoked. Remains one of the most popular diabetes drugs.",
+    "target_organ_id": "urinary",
+    "mechanism": "Linked to a statistically significant increased risk of bladder cancer and congestive heart failure.",
+    "how_to_spot": "Check generic names on diabetes prescriptions.",
+    "safer_alternatives": ["Metformin", "DPP-4 Inhibitors"],
+    "cdsco_ref": "Revocation Order No. X-11014/14/2013"
+  },
+  {
+    "molecule": "D-Propoxyphene",
+    "brand_names_india": ["Proxyvon", "Spasmo-Proxyvon"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Withdrawn (2010)",
+      "EU": "Withdrawn (2009)",
+      "UK": "Withdrawn (2005)"
+    },
+    "status_india": "Suspended/Withdrawn (2013), but illicit manufacturing for substance abuse continues.",
+    "target_organ_id": "heart",
+    "mechanism": "An opioid pain reliever that alters the electrical activity of the heart, leading to fatal cardiac arrhythmias and sudden death even at therapeutic doses.",
+    "how_to_spot": "Look out for 'Propoxyphene' on older pain and spasm relief packaging.",
+    "safer_alternatives": ["Ibuprofen", "Paracetamol"],
+    "cdsco_ref": "G.S.R 332(E) - 2013"
+  },
+  {
+    "molecule": "Phenylpropanolamine (PPA)",
+    "brand_names_india": ["Vicks Action 500 Extra (Historical)", "D-Cold Total (Historical)"],
+    "risk_level": "CRITICAL",
+    "status_global": {
+      "US": "Banned (2000)",
+      "Canada": "Banned (2001)",
+      "UK": "Banned"
+    },
+    "status_india": "Banned in 2011 after decades of use. Brands reformulated, but older grey market stocks and local counterfeit formulations sometimes still use it.",
+    "target_organ_id": "brain",
+    "mechanism": "A decongestant that significantly increases the risk of hemorrhagic stroke (bleeding in the brain), particularly in young women.",
+    "how_to_spot": "Check the active ingredients of cheap, local cold-and-flu tablets for 'Phenylpropanolamine'.",
+    "safer_alternatives": ["Phenylephrine", "Steam inhalation"],
+    "cdsco_ref": "S.O. 306(E) - 2011"
+  },
+  {
+    "molecule": "Rabeprazole + Domperidone (FDC)",
+    "brand_names_india": ["Rablet-D", "Veloz-D", "Cyra-D"],
+    "risk_level": "HIGH",
+    "status_global": {
+      "US": "Not Approved",
+      "EU": "Not Approved",
+      "UK": "Not Approved"
+    },
+    "status_india": "A top-selling combination for acidity and bloating.",
+    "target_organ_id": "heart",
+    "mechanism": "Domperidone crosses the blood-brain barrier poorly but affects the heart, carrying risks of fatal ventricular arrhythmias. Combining it routinely with a simple antacid (Rabeprazole) is highly dangerous and irrational.",
+    "how_to_spot": "Look for the '-D' suffix on Rabeprazole brands.",
+    "safer_alternatives": ["Rabeprazole alone"],
+    "cdsco_ref": "Subject to FDC rationalization committees"
   }
 ]
