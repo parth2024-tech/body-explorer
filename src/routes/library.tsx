@@ -34,7 +34,7 @@ function LibraryPage() {
   const [activeTab, setActiveTab] = useState<"remedies" | "myths" | "marvels" | "bookmarks">(
     "remedies",
   );
-  const [expandedMythId, setExpandedMythId] = useState<string | null>(null);
+
 
   const [shuffledRemedies, setShuffledRemedies] = useState<typeof REMEDIES>(REMEDIES);
   const [shuffledMyths, setShuffledMyths] = useState<typeof MYTHS>(MYTHS);
@@ -225,12 +225,10 @@ function LibraryPage() {
               <h2 className="mb-4 text-2xl font-bold text-[#EAEAEA]">{t("myths")}</h2>
               <div className="space-y-3">
                 {filteredMyths.map((myth) => {
-                  const isExpanded = expandedMythId === myth.id;
                   return (
                     <div
                       key={myth.id}
-                      onClick={() => setExpandedMythId(isExpanded ? null : myth.id)}
-                      className="cursor-pointer rounded-xl border border-border bg-[#0D0D0D] p-5 transition-all hover:border-[#0B3D91]/40"
+                      className="rounded-xl border border-border bg-[#0D0D0D] p-5 transition-all hover:border-[#0B3D91]/40"
                     >
                       <div className="flex justify-between items-center">
                         <h3 className="font-bold text-[#FC3D21] flex items-center gap-2">
@@ -250,27 +248,14 @@ function LibraryPage() {
                           >
                             {isBookmarked(myth.id) ? "❤️" : "🤍"}
                           </button>
-                          <span className="text-[#8A8F98] text-sm">{isExpanded ? "▲" : "▼"}</span>
                         </div>
                       </div>
-                      <AnimatePresence>
-                        {isExpanded && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="overflow-hidden"
-                          >
-                            <div className="mt-4 border-t border-border/40 pt-4 text-sm text-[#8A8F98]">
-                              <strong className="text-[#FC3D21] block mb-1">
-                                ✅ Science Truth:
-                              </strong>
-                              {myth.reality}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                      <div className="mt-4 border-t border-border/40 pt-4 text-sm text-[#8A8F98]">
+                        <strong className="text-[#FC3D21] block mb-1">
+                          ✅ Science Truth:
+                        </strong>
+                        {myth.reality}
+                      </div>
                     </div>
                   );
                 })}
