@@ -280,6 +280,7 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
       { text: "Morning headache", frequency: "sometimes" }
     ],
     whenToSeeDoctor: "If your snoring is loud enough to disturb others, or you wake up gasping.",
+    misconceptions: ["Only overweight men get it", "Snoring always means sleep apnea"]
   },
   {
     id: "d-21",
