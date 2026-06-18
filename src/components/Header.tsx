@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { to: "/emergency", labelKey: "emergency" as const, code: "EMG-04" },
   { to: "/facts", labelKey: "facts" as const, code: "FCT-05" },
   { to: "/grey-market", labelKey: "greyMarket" as const, code: "GM-09" },
+  { to: "/food-labels", labelKey: "foodLabels" as const, code: "FL-10" },
 ];
 
 export function Header() {

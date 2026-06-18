@@ -13,6 +13,7 @@ import { Route as SymptomsRouteImport } from './routes/symptoms'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as LibraryRouteImport } from './routes/library'
 import { Route as GreyMarketRouteImport } from './routes/grey-market'
+import { Route as FoodLabelsRouteImport } from './routes/food-labels'
 import { Route as FactsRouteImport } from './routes/facts'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as ExplainRouteImport } from './routes/explain'
@@ -38,6 +39,11 @@ const LibraryRoute = LibraryRouteImport.update({
 const GreyMarketRoute = GreyMarketRouteImport.update({
   id: '/grey-market',
   path: '/grey-market',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FoodLabelsRoute = FoodLabelsRouteImport.update({
+  id: '/food-labels',
+  path: '/food-labels',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FactsRoute = FactsRouteImport.update({
@@ -78,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
   '/facts': typeof FactsRoute
+  '/food-labels': typeof FoodLabelsRoute
   '/grey-market': typeof GreyMarketRoute
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
@@ -90,6 +97,7 @@ export interface FileRoutesByTo {
   '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
   '/facts': typeof FactsRoute
+  '/food-labels': typeof FoodLabelsRoute
   '/grey-market': typeof GreyMarketRoute
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
@@ -103,6 +111,7 @@ export interface FileRoutesById {
   '/explain': typeof ExplainRoute
   '/explore': typeof ExploreRoute
   '/facts': typeof FactsRoute
+  '/food-labels': typeof FoodLabelsRoute
   '/grey-market': typeof GreyMarketRoute
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
@@ -117,6 +126,7 @@ export interface FileRouteTypes {
     | '/explain'
     | '/explore'
     | '/facts'
+    | '/food-labels'
     | '/grey-market'
     | '/library'
     | '/onboarding'
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/explain'
     | '/explore'
     | '/facts'
+    | '/food-labels'
     | '/grey-market'
     | '/library'
     | '/onboarding'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
     | '/explain'
     | '/explore'
     | '/facts'
+    | '/food-labels'
     | '/grey-market'
     | '/library'
     | '/onboarding'
@@ -154,6 +166,7 @@ export interface RootRouteChildren {
   ExplainRoute: typeof ExplainRoute
   ExploreRoute: typeof ExploreRoute
   FactsRoute: typeof FactsRoute
+  FoodLabelsRoute: typeof FoodLabelsRoute
   GreyMarketRoute: typeof GreyMarketRoute
   LibraryRoute: typeof LibraryRoute
   OnboardingRoute: typeof OnboardingRoute
@@ -188,6 +201,13 @@ declare module '@tanstack/react-router' {
       path: '/grey-market'
       fullPath: '/grey-market'
       preLoaderRoute: typeof GreyMarketRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/food-labels': {
+      id: '/food-labels'
+      path: '/food-labels'
+      fullPath: '/food-labels'
+      preLoaderRoute: typeof FoodLabelsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/facts': {
@@ -242,6 +262,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExplainRoute: ExplainRoute,
   ExploreRoute: ExploreRoute,
   FactsRoute: FactsRoute,
+  FoodLabelsRoute: FoodLabelsRoute,
   GreyMarketRoute: GreyMarketRoute,
   LibraryRoute: LibraryRoute,
   OnboardingRoute: OnboardingRoute,

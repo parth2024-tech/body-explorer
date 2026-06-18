@@ -1259,7 +1259,8 @@ export const TRANSLATIONS = {
     didYouKnow: "Did You Know?",
     myths: "Myths Debunked",
     scienceBehind: "The Science Behind It",
-    medicalReviewed: "Medically Reviewed"
+    medicalReviewed: "Medically Reviewed",
+    foodLabels: "Food Labels"
   },
   hi: {
     home: "होम",
@@ -1288,7 +1289,8 @@ export const TRANSLATIONS = {
     didYouKnow: "क्या आप जानते हैं?",
     myths: "झूठ बनाम सच",
     scienceBehind: "इसके पीछे का विज्ञान",
-    medicalReviewed: "चिकित्सकीय रूप से परीक्षित"
+    medicalReviewed: "चिकित्सकीय रूप से परीक्षित",
+    foodLabels: "खाद्य लेबल"
   }
 } as const;
 

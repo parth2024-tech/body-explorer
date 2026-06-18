@@ -1,0 +1,92 @@
+[
+  {
+    "id": "fl-01",
+    "marketing_claim": "No Added Sugar / Sugar-Free",
+    "real_meaning": "Contains artificial sweeteners or hidden Maltodextrin.",
+    "risk_level": "CRITICAL",
+    "biological_impact": "Maltodextrin has a higher Glycemic Index (GI: 110) than pure table sugar (GI: 65), causing massive insulin spikes. Artificial sweeteners like Aspartame can disrupt the gut microbiome and potentially increase long-term cravings.",
+    "how_to_spot": "Look for Maltodextrin, Sucralose, Aspartame, or INS 955 / INS 951 in the ingredient list.",
+    "common_products": ["Diet Sodas", "Protein Bars", "Sugar-Free Biscuits", "Diabetic Supplements"]
+  },
+  {
+    "id": "fl-02",
+    "marketing_claim": "Multigrain / Whole Wheat",
+    "real_meaning": "Usually 90% refined flour (Maida) with a tiny sprinkling of cheap seeds for visual effect.",
+    "risk_level": "HIGH",
+    "biological_impact": "Refined flour strips away fiber and nutrients, acting exactly like sugar in the bloodstream. It causes rapid fat storage and metabolic syndrome.",
+    "how_to_spot": "Check the first ingredient on the back. If it says 'Refined Wheat Flour' or 'Maida', it is junk food. A true whole grain product will list '100% Whole Wheat' as the ONLY flour.",
+    "common_products": ["Brown Bread", "Multigrain Biscuits", "Healthy Cereals"]
+  },
+  {
+    "id": "fl-03",
+    "marketing_claim": "Immunity Boosting",
+    "real_meaning": "A sugar-filled product with a microscopic spray of synthetic Vitamin C.",
+    "risk_level": "HIGH",
+    "biological_impact": "The massive sugar content actually SUPPRESSES your immune system by reducing the phagocytic index of white blood cells for hours after consumption, completely overriding any benefit of the added vitamins.",
+    "how_to_spot": "Check the 'Total Sugars' per 100g. If it is over 10g, the product will harm your immunity, regardless of the claims on the front box.",
+    "common_products": ["Fruit Juices", "Health Drinks for Kids", "Flavored Milk"]
+  },
+  {
+    "id": "fl-04",
+    "marketing_claim": "Made with Real Fruit",
+    "real_meaning": "Contains less than 2% fruit puree or concentrate, functioning mainly as a flavor vehicle.",
+    "risk_level": "MEDIUM",
+    "biological_impact": "Fruit concentrate is essentially just fructose syrup stripped of fiber. It hits the liver directly, promoting non-alcoholic fatty liver disease (NAFLD) and visceral fat.",
+    "how_to_spot": "Read the ingredient percentages. If 'Fruit Pulp/Concentrate' is listed at 2% or 5%, you are paying for flavored sugar water.",
+    "common_products": ["Packaged Juices", "Fruit Yogurts", "Breakfast Cereals"]
+  },
+  {
+    "id": "fl-05",
+    "marketing_claim": "Roasted / Baked Not Fried",
+    "real_meaning": "Still highly processed and often sprayed with low-quality inflammatory seed oils.",
+    "risk_level": "HIGH",
+    "biological_impact": "Extruded 'baked' snacks break down instantly into glucose in the mouth. Furthermore, they are often coated in Palmolein or Refined Sunflower oil, leading to high Omega-6 ratios which trigger systemic inflammation.",
+    "how_to_spot": "Look for 'Edible Vegetable Oil (Palmolein)' or 'Refined Oil' in the ingredients. Check the calorie count; it's often identical to fried chips.",
+    "common_products": ["Diet Chips", "Roasted Makhana (Flavored)", "Baked Namkeen"]
+  },
+  {
+    "id": "fl-06",
+    "marketing_claim": "Zero Trans Fat",
+    "real_meaning": "Legally allowed to contain up to 0.5g of trans fat per serving, and uses ridiculously tiny serving sizes to cheat the math.",
+    "risk_level": "CRITICAL",
+    "biological_impact": "Trans fats are artificial fats that your body literally cannot process. They permanently lodge in arterial walls, driving atherosclerosis and coronary artery disease more aggressively than any other lipid.",
+    "how_to_spot": "If the ingredients list 'Partially Hydrogenated Vegetable Oil', 'Hydrogenated Fat', or 'Vanaspati', it contains dangerous trans fats, regardless of the 'Zero' claim on the front.",
+    "common_products": ["Margarine", "Packaged Bakery Items", "Microwave Popcorn"]
+  },
+  {
+    "id": "fl-07",
+    "marketing_claim": "Fortified with Vitamins / Minerals",
+    "real_meaning": "Uses the cheapest, least bioavailable forms of synthetic vitamins that your body cannot absorb.",
+    "risk_level": "MEDIUM",
+    "biological_impact": "For example, using Calcium Carbonate (poor absorption, risk of kidney stones) instead of Calcium Citrate, or synthetic Folic Acid instead of natural Folate. It provides a false sense of security while delivering zero real nutrition.",
+    "how_to_spot": "Look at the specific chemical names in the bracket next to the vitamins. If it says 'Ferrous Fumarate' or 'Calcium Carbonate', it's low quality.",
+    "common_products": ["Kids Health Powders", "Corn Flakes", "Fortified Biscuits"]
+  },
+  {
+    "id": "fl-08",
+    "marketing_claim": "Natural Flavors & Colors",
+    "real_meaning": "Derived from a 'natural' source originally, but heavily processed in a lab using chemical solvents.",
+    "risk_level": "MEDIUM",
+    "biological_impact": "While legally 'natural', these extracts often contain hidden chemical carriers or preservatives. Some 'natural' colors like Annatto (INS 160b) or Carmine (INS 120 - crushed bugs) can still trigger allergic reactions or IBS in sensitive individuals.",
+    "how_to_spot": "Look for generic 'Added Flavors (Natural & Nature Identical)' or INS codes. 'Nature Identical' means chemically synthesized to match nature.",
+    "common_products": ["Ice Creams", "Candies", "Flavored Yogurts"]
+  },
+  {
+    "id": "fl-09",
+    "marketing_claim": "Contains Real Honey / Jaggery",
+    "real_meaning": "Contains mostly liquid glucose, invert sugar, or malt extract, with a tiny drop of honey for marketing.",
+    "risk_level": "HIGH",
+    "biological_impact": "Even if it is 100% real jaggery, biologically, your liver cannot tell the difference between jaggery and refined sugar. It all breaks down into glucose and fructose, causing the exact same insulin spike.",
+    "how_to_spot": "Check the ingredient list order. If 'Invert Sugar', 'Liquid Glucose', or 'Sugar' comes before 'Honey/Jaggery', you're being scammed. Also check 'Total Sugars'.",
+    "common_products": ["Health Bars", "Oats/Muesli", "Ayurvedic Syrups"]
+  },
+  {
+    "id": "fl-10",
+    "marketing_claim": "High Protein",
+    "real_meaning": "Uses low-quality protein sources like soy isolate or wheat gluten, or requires you to drink 2 glasses of milk to actually get the protein.",
+    "risk_level": "MEDIUM",
+    "biological_impact": "Low-quality plant isolates often lack a complete amino acid profile, meaning poor muscle protein synthesis. Additionally, the high sugar content completely offsets the health benefits of the protein.",
+    "how_to_spot": "Look at 'Protein per 100g'. Anything less than 15g-20g per 100g is NOT high protein. Look for 'Whey Protein Concentrate/Isolate' or 'Pea Protein' over 'Soy Protein'.",
+    "common_products": ["Protein Biscuits", "Health Drinks for Kids", "Breakfast Cereals"]
+  }
+]
