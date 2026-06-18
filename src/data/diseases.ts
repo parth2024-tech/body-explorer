@@ -260,6 +260,135 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
       { text: "Morning headache", frequency: "sometimes" }
     ],
     whenToSeeDoctor: "If your snoring is loud enough to disturb others, or you wake up gasping.",
-    misconceptions: ["Only overweight men get it", "Snoring always means sleep apnea"]
+  },
+  {
+    id: "d-21",
+    name: "Rheumatoid Arthritis",
+    bodyPartId: "hands",
+    overview: "An autoimmune and inflammatory disease where your immune system attacks healthy cells in your body by mistake, causing painful swelling in affected parts of the body.",
+    symptoms: [
+      { text: "Tender, warm, swollen joints", frequency: "always" },
+      { text: "Joint stiffness that is usually worse in the mornings", frequency: "often" },
+      { text: "Fatigue and fever", frequency: "sometimes" }
+    ],
+    whenToSeeDoctor: "If you experience persistent discomfort, swelling, or stiffness in your joints. Early diagnosis can prevent severe joint damage.",
+    misconceptions: ["It only affects old people", "It's the same as regular 'wear and tear' osteoarthritis"]
+  },
+  {
+    id: "d-22",
+    name: "Ulcerative Colitis",
+    bodyPartId: "large-intestine",
+    overview: "An inflammatory bowel disease (IBD) that causes long-lasting inflammation and ulcers in your digestive tract.",
+    symptoms: [
+      { text: "Diarrhea, often with blood or pus", frequency: "often" },
+      { text: "Abdominal pain and cramping", frequency: "always" },
+      { text: "Weight loss and fatigue", frequency: "sometimes" }
+    ],
+    whenToSeeDoctor: "If you notice a persistent change in your bowel habits, or if you experience abdominal pain or blood in your stool.",
+    misconceptions: ["It's caused entirely by a poor diet", "It's just another name for Irritable Bowel Syndrome (IBS)"]
+  },
+  {
+    id: "d-23",
+    name: "Psoriasis",
+    bodyPartId: "skin",
+    overview: "A condition in which skin cells build up and form scales and itchy, dry patches. It's thought to be an immune system problem.",
+    symptoms: [
+      { text: "Red patches of skin covered with thick, silvery scales", frequency: "always" },
+      { text: "Dry, cracked skin that may bleed", frequency: "often" },
+      { text: "Itching, burning or soreness", frequency: "often" }
+    ],
+    whenToSeeDoctor: "If you suspect you may have psoriasis, or if the rash worsens and doesn't improve with over-the-counter treatments.",
+    misconceptions: ["Psoriasis is contagious", "It is caused by poor hygiene"]
+  },
+  {
+    id: "d-24",
+    name: "Multiple Sclerosis (MS)",
+    bodyPartId: "brain",
+    overview: "A potentially disabling disease of the brain and spinal cord where the immune system attacks the protective sheath (myelin) that covers nerve fibers.",
+    symptoms: [
+      { text: "Numbness or weakness in one or more limbs", frequency: "often" },
+      { text: "Electric-shock sensations that occur with certain neck movements", frequency: "sometimes" },
+      { text: "Tremor, lack of coordination or unsteady gait", frequency: "sometimes" }
+    ],
+    whenToSeeDoctor: "If you experience unexplainable numbness, weakness, or vision changes for unknown reasons.",
+    misconceptions: ["It is always fatal", "Everyone with MS will end up in a wheelchair"]
+  },
+  {
+    id: "d-25",
+    name: "Chronic Kidney Disease",
+    bodyPartId: "kidneys",
+    overview: "The gradual loss of kidney function over time, which means your kidneys can't filter dirt and excess fluid from your blood as well as they should.",
+    symptoms: [
+      { text: "Changes in urination frequency", frequency: "often" },
+      { text: "Swelling in the feet and ankles", frequency: "often" },
+      { text: "No symptoms in the early stages", frequency: "always" }
+    ],
+    whenToSeeDoctor: "If you have a medical condition that increases your risk of kidney disease, such as high blood pressure or diabetes, ask for regular testing.",
+    misconceptions: ["Kidney failure happens suddenly without any underlying cause", "Drinking lots of water will cure kidney disease"]
+  },
+  {
+    id: "d-26",
+    name: "Peptic Ulcer Disease",
+    bodyPartId: "stomach",
+    overview: "A condition in which painful sores or ulcers develop in the lining of the stomach or the first part of the small intestine.",
+    symptoms: [
+      { text: "Burning stomach pain", frequency: "always" },
+      { text: "Feeling of fullness, bloating or belching", frequency: "often" },
+      { text: "Intolerance to fatty foods or heartburn", frequency: "sometimes" }
+    ],
+    whenToSeeDoctor: "If you have severe or persistent stomach pain, dark/bloody stools, or vomit that looks like coffee grounds.",
+    misconceptions: ["Spicy foods and stress are the primary causes (they only aggravate it, H. pylori bacteria is the main cause)", "Drinking milk helps heal ulcers"]
+  },
+  {
+    id: "d-27",
+    name: "Macular Degeneration",
+    bodyPartId: "eyes",
+    overview: "An eye disease that can blur your central vision. It happens when aging causes damage to the macula — the part of the eye that controls sharp, straight-ahead vision.",
+    symptoms: [
+      { text: "Blurry or fuzzy central vision", frequency: "always" },
+      { text: "Difficulty recognizing faces", frequency: "often" },
+      { text: "Straight lines appearing wavy", frequency: "sometimes" }
+    ],
+    whenToSeeDoctor: "If you notice a sudden change in your central vision or if straight lines appear distorted or wavy.",
+    misconceptions: ["It causes total blindness (it mostly affects central vision)", "Nothing can be done to slow its progression"]
+  },
+  {
+    id: "d-28",
+    name: "Hypothyroidism",
+    bodyPartId: "throat",
+    overview: "A condition in which your thyroid gland (located in the lower front of your neck) doesn't produce enough of certain crucial hormones.",
+    symptoms: [
+      { text: "Fatigue and sluggishness", frequency: "often" },
+      { text: "Increased sensitivity to cold", frequency: "often" },
+      { text: "Unexplained weight gain", frequency: "sometimes" }
+    ],
+    whenToSeeDoctor: "If you're feeling tired for no reason or have any of the other signs or symptoms of hypothyroidism, such as dry skin, a pale, puffy face, or constipation.",
+    misconceptions: ["Everyone with an underactive thyroid gets extremely overweight", "Eating a specific diet can cure it completely without medication"]
+  },
+  {
+    id: "d-29",
+    name: "Heart Failure",
+    bodyPartId: "heart",
+    overview: "A chronic, progressive condition in which the heart muscle is unable to pump enough blood to meet the body's needs for blood and oxygen.",
+    symptoms: [
+      { text: "Shortness of breath with activity or when lying down", frequency: "always" },
+      { text: "Fatigue and weakness", frequency: "often" },
+      { text: "Swelling in the legs, ankles and feet", frequency: "often" }
+    ],
+    whenToSeeDoctor: "Seek emergency medical care if you experience severe, sudden shortness of breath and coughing up pink, foamy mucus.",
+    misconceptions: ["Heart failure means your heart has completely stopped beating", "It only happens to the elderly"]
+  },
+  {
+    id: "d-30",
+    name: "Chronic Obstructive Pulmonary Disease (COPD)",
+    bodyPartId: "lung-left",
+    overview: "A chronic inflammatory lung disease that causes obstructed airflow from the lungs, making it hard to breathe.",
+    symptoms: [
+      { text: "Shortness of breath, especially during physical activities", frequency: "always" },
+      { text: "Wheezing and a chronic cough", frequency: "often" },
+      { text: "Frequent respiratory infections", frequency: "sometimes" }
+    ],
+    whenToSeeDoctor: "If your symptoms are not improving with treatment or are getting worse, or if you notice signs of an infection.",
+    misconceptions: ["Only smokers get COPD", "Once diagnosed, there is nothing you can do to improve breathing"]
   }
 ];
