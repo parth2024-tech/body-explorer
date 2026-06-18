@@ -100,45 +100,34 @@ function EmergencyPage() {
   }, [cprRunning, initAudioCtx, playBeep]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-body selection:bg-crimson/30 pb-32">
+    <div className="min-h-screen bg-[#030303] text-[#EAEAEA] font-sans selection:bg-red-500/30 pb-32">
       
       {/* Medical Disclaimer Banner */}
-      <div className="w-full bg-crimson/10 border-b-4 border-crimson px-4 py-4 flex items-start justify-center">
-        <AlertTriangle className="w-6 h-6 text-crimson shrink-0 mr-4" />
-        <p className="text-sm md:text-base font-body text-crimson leading-snug">
-          <strong className="uppercase tracking-widest font-mono text-xs block mb-1">Disclaimer</strong> 
-          These protocols are for precautionary first aid when immediate help is unavailable. They do NOT replace professional medical intervention.
+      <div className="w-full bg-red-500/10 border-b border-red-500/30 px-4 py-3 flex items-start sm:items-center justify-center">
+        <AlertTriangle className="w-5 h-5 text-red-500 shrink-0 mr-3" />
+        <p className="text-xs sm:text-sm font-mono text-red-500 leading-snug">
+          <strong className="uppercase tracking-wider">DISCLAIMER:</strong> These protocols are for precautionary first aid when immediate help is unavailable. They do NOT replace professional medical intervention.
         </p>
       </div>
 
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 pt-16">
+      <div className="max-w-[1600px] mx-auto p-4 sm:p-6 lg:p-8">
         
         {/* Header */}
-        <header className="mb-20 border-b-2 border-charcoal dark:border-bone pb-8">
-          <div className="flex justify-between items-end">
-            <div>
-              <span className="font-mono text-xs uppercase tracking-widest text-crimson block mb-4">
-                Section 05 — Critical Actions
-              </span>
-              <h1 className="text-5xl md:text-7xl font-display uppercase tracking-tight text-charcoal dark:text-bone">
-                Emergency Protocol.
-              </h1>
-            </div>
-            <div className="hidden md:block max-w-sm text-right">
-              <p className="text-muted-foreground font-body text-sm leading-relaxed">
-                Step-by-step visual guides for high-stakes health events. Read instructions without panic. Click any scenario below to expand the critical action steps.
-              </p>
-            </div>
-          </div>
-          <div className="md:hidden mt-6">
-            <p className="text-muted-foreground font-body text-sm leading-relaxed">
+        <header className="mb-12 relative">
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-96 bg-red-500/10 rounded-full blur-[120px] pointer-events-none" />
+          
+          <div className="relative z-10 text-center max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-space font-extrabold uppercase tracking-tighter text-white">
+              Emergency <span className="text-red-500">Protocol</span>
+            </h1>
+            <p className="text-[#8A8F98] mt-4 font-mono text-sm leading-relaxed">
               Step-by-step visual guides for high-stakes health events. Read instructions without panic. Click any scenario below to expand the critical action steps.
             </p>
           </div>
         </header>
 
         {/* Grid of Emergency Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 relative z-10">
           {EMERGENCY_SCENARIOS.map((scenario) => (
             <div key={scenario.id} className="h-fit">
               <EmergencyCard scenario={scenario} />
@@ -148,17 +137,17 @@ function EmergencyPage() {
       </div>
 
       {/* Floating Global Action Bar (CPR Pacer & Emergency Number) */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 p-6 pointer-events-none">
-        <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row justify-between items-end gap-6">
+      <div className="fixed bottom-0 left-0 right-0 z-50 p-4 pointer-events-none">
+        <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row justify-between items-end gap-4">
           
           {/* Local Emergency Number Display */}
-          <div className="pointer-events-auto bg-card border-2 border-border p-6 shadow-[8px_8px_0_0_rgba(0,0,0,0.1)] dark:shadow-[8px_8px_0_0_rgba(255,255,255,0.1)] flex items-center gap-6">
-            <div className="bg-crimson/10 p-4 border border-crimson/30">
-              <Phone className="w-8 h-8 text-crimson animate-pulse" />
+          <div className="pointer-events-auto bg-black/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 shadow-2xl flex items-center gap-4">
+            <div className="bg-red-500/20 p-3 rounded-xl border border-red-500/30">
+              <Phone className="w-6 h-6 text-red-500 animate-pulse" />
             </div>
             <div>
-              <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest font-bold mb-1">Ambulance Dial</p>
-              <p className="text-3xl font-display text-foreground">{localNumber}</p>
+              <p className="text-xs text-[#8A8F98] uppercase tracking-widest font-bold">Ambulance Dial</p>
+              <p className="text-xl font-mono font-bold text-white">{localNumber}</p>
             </div>
           </div>
 
@@ -167,16 +156,16 @@ function EmergencyPage() {
             <AnimatePresence>
               {isCprExpanded && (
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  className="mb-6 bg-card border-2 border-crimson p-8 shadow-[8px_8px_0_0_rgba(220,38,38,0.2)] flex flex-col items-center min-w-[320px]"
+                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                  className="mb-4 bg-black/90 backdrop-blur-xl border border-red-500/30 rounded-3xl p-6 shadow-[0_0_50px_rgba(239,68,68,0.15)] flex flex-col items-center min-w-[300px]"
                 >
-                  <h3 className="text-2xl font-display text-charcoal dark:text-bone mb-8 uppercase tracking-widest text-center border-b border-border pb-4 w-full">
-                    CPR Pacer <br/><span className="text-crimson text-sm font-mono tracking-widest block mt-2">105 BPM</span>
+                  <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-widest text-center">
+                    CPR Pacer <br/><span className="text-red-500 text-sm">105 BPM</span>
                   </h3>
                   
-                  <div className="relative mb-4">
+                  <div className="relative">
                     <AnimatePresence>
                       {cprRunning && (
                         <motion.div
@@ -185,7 +174,7 @@ function EmergencyPage() {
                           animate={{ scale: 2, opacity: 0 }}
                           exit={{ opacity: 0 }}
                           transition={{ duration: 0.5, ease: "easeOut" }}
-                          className="absolute inset-0 rounded-full bg-crimson/20 pointer-events-none"
+                          className="absolute inset-0 rounded-full bg-red-500/40 pointer-events-none"
                         />
                       )}
                     </AnimatePresence>
@@ -193,14 +182,14 @@ function EmergencyPage() {
                     <motion.div 
                       animate={cprRunning ? { scale: [1, 0.9, 1] } : { scale: 1 }}
                       transition={cprRunning ? { repeat: Infinity, duration: 60/105, ease: "easeInOut" } : {}}
-                      className={`w-40 h-40 rounded-full border-4 flex flex-col items-center justify-center transition-colors duration-300 ${
-                        cprRunning ? "border-crimson bg-crimson/10" : "border-border bg-muted"
+                      className={`w-32 h-32 rounded-full border-4 flex flex-col items-center justify-center transition-colors duration-300 ${
+                        cprRunning ? "border-red-500 bg-red-500/20 shadow-[0_0_30px_rgba(239,68,68,0.4)]" : "border-white/20 bg-white/5"
                       }`}
                     >
-                      <span className={`font-mono text-xs font-bold tracking-widest transition-colors ${cprRunning ? "text-crimson" : "text-muted-foreground"}`}>
+                      <span className={`text-sm font-bold tracking-widest transition-colors ${cprRunning ? "text-red-500" : "text-[#8A8F98]"}`}>
                         PUSH
                       </span>
-                      <span className={`text-6xl font-display mt-2 transition-colors ${cprRunning ? "text-foreground" : "text-muted-foreground"}`}>
+                      <span className={`text-5xl font-extrabold font-mono mt-1 transition-colors ${cprRunning ? "text-white" : "text-[#8A8F98]"}`}>
                         {cprCount}
                       </span>
                     </motion.div>
@@ -208,8 +197,8 @@ function EmergencyPage() {
 
                   <button
                     onClick={() => setCprRunning(!cprRunning)}
-                    className={`mt-8 w-full py-4 font-mono text-xs font-bold uppercase tracking-widest transition-colors border-2 ${
-                      cprRunning ? 'bg-card text-foreground border-border hover:bg-muted' : 'bg-crimson text-white border-crimson hover:bg-crimson/90'
+                    className={`mt-8 w-full py-3 rounded-xl font-bold uppercase tracking-wider transition-colors ${
+                      cprRunning ? 'bg-white text-black hover:bg-gray-200' : 'bg-red-500 text-white hover:bg-red-600 shadow-[0_0_20px_rgba(239,68,68,0.3)]'
                     }`}
                   >
                     {cprRunning ? "Stop Pacer" : "Start Pacer"}
@@ -221,14 +210,14 @@ function EmergencyPage() {
             {/* CPR FAB */}
             <button
               onClick={() => setIsCprExpanded(!isCprExpanded)}
-              className={`flex items-center gap-4 px-8 py-5 border-2 transition-all ${
+              className={`flex items-center gap-3 px-6 py-4 rounded-full shadow-2xl transition-all ${
                 isCprExpanded || cprRunning 
-                  ? 'bg-crimson border-crimson text-white hover:bg-crimson/90 shadow-[8px_8px_0_0_rgba(220,38,38,0.2)]' 
-                  : 'bg-charcoal border-charcoal text-bone dark:bg-bone dark:border-bone dark:text-charcoal hover:bg-charcoal/90 dark:hover:bg-bone/90 shadow-[8px_8px_0_0_rgba(0,0,0,0.1)] dark:shadow-[8px_8px_0_0_rgba(255,255,255,0.1)]'
+                  ? 'bg-red-500 text-white shadow-[0_0_30px_rgba(239,68,68,0.4)] hover:bg-red-600' 
+                  : 'bg-white text-black hover:bg-gray-100'
               }`}
             >
               <HeartPulse className={`w-6 h-6 ${cprRunning ? 'animate-pulse' : ''}`} />
-              <span className="font-mono text-xs font-bold uppercase tracking-widest">
+              <span className="font-bold uppercase tracking-wider text-sm">
                 {isCprExpanded ? 'Close Pacer' : 'CPR Timer'}
               </span>
             </button>

@@ -16,7 +16,7 @@ import { Heart, Search, Volume2, Square, RefreshCcw } from "lucide-react";
 export const Route = createFileRoute("/facts")({
   head: () => ({
     meta: [
-      { title: "Body Facts Archive — The Living Body Atlas" },
+      { title: "Body Facts Explorer — The Living Body Atlas" },
       { name: "description", content: "Explore hundreds of fascinating, medically-backed anatomical facts about your 37 trillion cells." }
     ]
   }),
@@ -64,7 +64,7 @@ function FactsPage() {
     if (shuffled.length > 0) {
       setRandomFactIndex(Math.floor(Math.random() * shuffled.length));
     }
-  }, [addHistoryEntry]);
+  }, []);
 
   const t = (key: keyof typeof TRANSLATIONS.en) => {
     const dict = TRANSLATIONS[language] || TRANSLATIONS.en;
@@ -144,56 +144,62 @@ function FactsPage() {
   const raritiesList = Object.keys(RARITY_META) as Rarity[];
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-body pb-32">
+    <div className="min-h-screen bg-[#030303] text-[#EAEAEA] font-sans selection:bg-[#A855F7]/30 pb-32">
       
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-5 pt-12 pb-8">
         {/* Header */}
-        <header className="mb-20 border-b-2 border-charcoal dark:border-bone pb-8">
-          <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-            Section 03 — Records
-          </span>
-          <h1 className="mt-4 text-4xl md:text-6xl font-display text-charcoal dark:text-bone">
-            Anatomy Archive.
-          </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">
-            Explore a rich, medically-validated catalog of biological facts, records, health guidance, and anatomical mysteries across your 37 trillion cells.
-          </p>
+        <header className="relative text-center max-w-3xl mx-auto mb-16">
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-96 bg-[#A855F7]/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="relative z-10">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#A855F7]">
+              {t("facts")}
+            </span>
+            <h1 className="mt-4 text-5xl md:text-7xl font-space font-black tracking-tighter text-white">
+              Anatomy <span className="text-[#A855F7]">Archive</span>
+            </h1>
+            <p className="text-[#8A8F98] mt-6 font-mono text-sm leading-relaxed max-w-2xl mx-auto">
+              Explore a rich, medically-validated catalog of biological facts, records, health guidance, and anatomical mysteries across your 37 trillion cells.
+            </p>
+          </div>
         </header>
 
         {/* Hero Interactive Segment: Random Fact Generator */}
         {randomFact && (
-          <div className="mb-24">
-            <div className="bg-card border-2 border-charcoal dark:border-bone p-8 md:p-16 max-w-4xl mx-auto shadow-[8px_8px_0_0_rgba(0,0,0,0.1)] dark:shadow-[8px_8px_0_0_rgba(255,255,255,0.1)] transition-shadow">
-              
-              <div className="flex flex-col items-center text-center">
-                <span className="bg-foreground text-background px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-widest">
-                  Featured Record
+          <div className="mb-16 relative z-10">
+            <div className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-black/40 p-8 md:p-12 shadow-[0_0_80px_rgba(168,85,247,0.05)] backdrop-blur-xl max-w-4xl mx-auto">
+              {/* Background glowing gradients inside the card */}
+              <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#A855F7]/20 blur-3xl" />
+              <div className="absolute -left-32 -bottom-32 h-96 w-96 rounded-full bg-[#FC3D21]/15 blur-3xl" />
+
+              <div className="relative flex flex-col items-center text-center">
+                <span className="rounded-full bg-white/5 border border-white/10 px-4 py-1.5 text-[10px] font-bold text-white uppercase tracking-widest backdrop-blur-md">
+                  💡 Featured Fact
                 </span>
 
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={randomFact.id}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                    className="mt-12 min-h-[160px] flex flex-col justify-center items-center w-full"
+                    initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                    transition={{ duration: 0.3, type: "spring", bounce: 0.3 }}
+                    className="mt-8 min-h-[160px] flex flex-col justify-center items-center max-w-3xl w-full"
                   >
-                    <p className="text-3xl md:text-5xl font-display font-bold leading-tight text-charcoal dark:text-bone italic">
+                    <p className="text-2xl md:text-4xl font-space font-bold leading-tight text-white tracking-tight">
                       "{randomFact.text}"
                     </p>
                     
-                    <div className="mt-10 flex flex-wrap justify-center items-center gap-4">
+                    <div className="mt-8 flex flex-wrap justify-center items-center gap-3">
                       {randomFactPart && (
-                        <span className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest bg-muted border border-border px-4 py-2">
+                        <span className="inline-flex items-center gap-1.5 text-sm font-bold text-white bg-white/5 px-4 py-1.5 rounded-full border border-white/10">
                           <span>{randomFactPart.emoji}</span>
                           <span>{randomFactPart.name}</span>
                         </span>
                       )}
-                      <span className="px-4 py-2 font-mono text-xs font-bold uppercase tracking-widest border border-border bg-background">
+                      <span className={`rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider border ${RARITY_META[randomFact.rarity].tokenClass}`}>
                         {RARITY_META[randomFact.rarity].label}
                       </span>
-                      <span className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest bg-background border border-border px-4 py-2">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-bold bg-white/5 text-white border border-white/10 px-4 py-1.5 rounded-full">
                         {CATEGORY_META[randomFact.category].icon} {CATEGORY_META[randomFact.category].label}
                       </span>
                     </div>
@@ -204,21 +210,21 @@ function FactsPage() {
                   <button
                     onClick={handleNextRandomFact}
                     disabled={isRotating}
-                    className="inline-flex items-center gap-3 bg-charcoal text-bone dark:bg-bone dark:text-charcoal px-8 py-4 font-mono text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-white dark:hover:bg-accent transition-colors disabled:opacity-50"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#A855F7] px-8 py-4 text-sm font-bold text-white transition-all hover:bg-purple-500 active:scale-95 shadow-[0_0_30px_rgba(168,85,247,0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <RefreshCcw className={`w-4 h-4 ${isRotating ? "animate-spin" : ""}`} />
-                    Next Record
+                    Next Random Fact
                   </button>
                   <button
                     onClick={() => handleSpeak(randomFact.text, randomFact.id)}
-                    className={`inline-flex items-center gap-3 px-8 py-4 font-mono text-xs font-bold uppercase tracking-widest border transition-colors ${
+                    className={`inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-bold border transition-all active:scale-95 ${
                       speakingFactId === randomFact.id
-                        ? "bg-accent/10 border-accent text-accent"
-                        : "border-border bg-background text-foreground hover:bg-muted"
+                        ? "bg-rose-500/10 border-rose-500 text-rose-400"
+                        : "border-white/10 bg-white/[0.02] text-white hover:bg-white/5"
                     }`}
                   >
                     {speakingFactId === randomFact.id ? <Square className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-                    {speakingFactId === randomFact.id ? "Stop" : "Dictate"}
+                    {speakingFactId === randomFact.id ? "Stop" : "Listen"}
                   </button>
                   <button
                     onClick={() =>
@@ -226,10 +232,10 @@ function FactsPage() {
                         ? removeBookmark(randomFact.id)
                         : addBookmark(randomFact.id)
                     }
-                    className={`inline-flex items-center justify-center w-14 h-14 border transition-colors ${
+                    className={`inline-flex items-center justify-center w-14 h-14 rounded-full border transition-all active:scale-95 ${
                       isBookmarked(randomFact.id)
                         ? "bg-rose-500/10 border-rose-500 text-rose-500"
-                        : "border-border bg-background text-foreground hover:bg-muted hover:text-rose-500"
+                        : "border-white/10 bg-white/[0.02] text-white hover:bg-white/5 hover:text-rose-500"
                     }`}
                   >
                     <Heart className={`w-5 h-5 ${isBookmarked(randomFact.id) ? "fill-rose-500" : ""}`} />
@@ -240,8 +246,8 @@ function FactsPage() {
           </div>
         )}
 
-        {/* Filters Panel */}
-        <div className="mb-16 border border-border bg-muted p-6 md:p-8">
+        {/* Filters Panel (Glassmorphism) */}
+        <div className="mb-12 rounded-[2rem] border border-white/10 bg-white/[0.02] p-6 md:p-8 backdrop-blur-xl relative z-10 max-w-5xl mx-auto">
           
           {/* Search Input and Body Part selector */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -250,39 +256,39 @@ function FactsPage() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Query records by text or organ..."
-                className="w-full bg-input border border-border pl-12 pr-6 py-4 font-body text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
+                placeholder="Search facts or body parts..."
+                className="w-full rounded-2xl border border-white/10 bg-black/40 pl-12 pr-6 py-4 text-sm text-white placeholder-[#555] outline-none transition-all focus:border-[#A855F7]/50 focus:bg-black/60"
               />
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#8A8F98]" />
             </div>
 
             <div className="relative">
               <select
                 value={selectedBodyPart}
                 onChange={(e) => setSelectedBodyPart(e.target.value)}
-                className="w-full bg-input border border-border px-6 py-4 font-body text-sm text-foreground focus:outline-none focus:border-accent appearance-none transition-colors"
+                className="w-full rounded-2xl border border-white/10 bg-black/40 px-6 py-4 text-sm text-white outline-none focus:border-[#A855F7]/50 appearance-none transition-all"
               >
-                <option value="all">All Systems</option>
+                <option value="all">All Organs & Systems</option>
                 {BODY_PARTS.map((part) => (
-                  <option key={part.id} value={part.id}>
+                  <option key={part.id} value={part.id} className="bg-black text-white">
                     {part.emoji} {part.name}
                   </option>
                 ))}
               </select>
-              <span className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-xs text-muted-foreground">▼</span>
+              <span className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-xs text-[#8A8F98]">▼</span>
             </div>
           </div>
 
           <div className="space-y-6">
             {/* Categories Pills */}
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest font-mono">Category</span>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-[10px] font-bold text-[#8A8F98] mr-2 uppercase tracking-widest">Category</span>
               <button
                 onClick={() => setSelectedCategory("all")}
-                className={`px-4 py-2 font-mono text-[10px] uppercase tracking-widest font-bold transition-colors border ${
+                className={`rounded-full px-5 py-2 text-xs font-bold transition-all border ${
                   selectedCategory === "all"
-                    ? "bg-foreground text-background border-foreground"
-                    : "bg-background border-border text-muted-foreground hover:text-foreground"
+                    ? "bg-white text-black border-white"
+                    : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"
                 }`}
               >
                 All Categories
@@ -291,10 +297,10 @@ function FactsPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 font-mono text-[10px] uppercase tracking-widest font-bold transition-colors border flex items-center gap-2 ${
+                  className={`rounded-full px-5 py-2 text-xs font-bold transition-all flex items-center gap-2 border ${
                     selectedCategory === cat
-                      ? "bg-foreground text-background border-foreground"
-                      : "bg-background border-border text-muted-foreground hover:text-foreground"
+                      ? "bg-white text-black border-white"
+                      : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"
                   }`}
                 >
                   <span>{CATEGORY_META[cat].icon}</span>
@@ -304,26 +310,26 @@ function FactsPage() {
             </div>
 
             {/* Rarity Pills */}
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest font-mono">Classification</span>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-[10px] font-bold text-[#8A8F98] mr-2 uppercase tracking-widest">Rarity Level</span>
               <button
                 onClick={() => setSelectedRarity("all")}
-                className={`px-4 py-2 font-mono text-[10px] uppercase tracking-widest font-bold transition-colors border ${
+                className={`rounded-full px-5 py-2 text-xs font-bold transition-all border ${
                   selectedRarity === "all"
-                    ? "bg-foreground text-background border-foreground"
-                    : "bg-background border-border text-muted-foreground hover:text-foreground"
+                    ? "bg-white text-black border-white"
+                    : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"
                 }`}
               >
-                All Classifications
+                All Rarities
               </button>
               {raritiesList.map((rar) => (
                 <button
                   key={rar}
                   onClick={() => setSelectedRarity(rar)}
-                  className={`px-4 py-2 font-mono text-[10px] uppercase tracking-widest font-bold transition-colors border ${
+                  className={`rounded-full px-5 py-2 text-xs font-bold transition-all border ${
                     selectedRarity === rar
-                      ? "bg-foreground text-background border-foreground"
-                      : "bg-background border-border text-muted-foreground hover:text-foreground"
+                      ? "bg-white text-black border-white"
+                      : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"
                   }`}
                 >
                   {RARITY_META[rar].label}
@@ -333,91 +339,84 @@ function FactsPage() {
           </div>
         </div>
 
-        {/* Facts Card Grid - Masonry/Editorial Layout */}
-        <div className="mb-12 flex justify-between items-end border-b border-border pb-4">
-          <h2 className="text-2xl font-display text-charcoal dark:text-bone">
-            Index Results
-          </h2>
-          <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-            {filteredFacts.length} Records Found
-          </span>
-        </div>
-
-        {filteredFacts.length === 0 ? (
-          <div className="border border-border bg-muted p-16 text-center">
-            <Search className="w-12 h-12 text-muted-foreground mx-auto mb-4 opacity-50" />
-            <h3 className="text-xl font-display text-charcoal dark:text-bone">No records matched your criteria</h3>
-            <p className="text-sm text-muted-foreground mt-2 font-body">Refine your query to explore the archive.</p>
+        {/* Facts Card Grid */}
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="mb-8 flex justify-between items-center border-b border-white/10 pb-4">
+            <h2 className="text-xl font-bold text-white flex items-center gap-3">
+              Filtered Archive <span className="bg-white/10 text-white text-xs px-3 py-1 rounded-full">{filteredFacts.length}</span>
+            </h2>
           </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max">
-            {filteredFacts.map((fact, index) => {
-              const part = BODY_PARTS.find((p) => p.id === fact.bodyPartId);
-              // Mix component sizes based on index
-              const isLarge = index % 7 === 0;
-              const isWide = index % 5 === 0 && !isLarge;
-              
-              return (
-                <motion.div
-                  layout
-                  key={fact.id}
-                  className={`group relative border border-border bg-card p-8 flex flex-col justify-between hover:bg-muted transition-colors ${
-                    isLarge ? "md:col-span-2 lg:col-span-2 row-span-2" : isWide ? "md:col-span-2 lg:col-span-1" : "col-span-1"
-                  }`}
-                >
-                  <div>
-                    <div className="flex justify-between items-start mb-8">
-                      <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground border-b border-border pb-1">
-                        <span>{part?.emoji}</span>
-                        <span>{part?.name}</span>
-                      </span>
-                      
-                      <div className="flex items-center gap-2 opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity">
-                        <button
-                          onClick={() => handleSpeak(fact.text, fact.id)}
-                          className={`p-2 border transition-colors ${
-                            speakingFactId === fact.id
-                              ? "bg-accent/10 border-accent text-accent"
-                              : "border-border bg-background text-muted-foreground hover:text-foreground"
-                          }`}
-                          title="Dictate"
-                        >
-                          {speakingFactId === fact.id ? <Square className="w-3 h-3" /> : <Volume2 className="w-3 h-3" />}
-                        </button>
-                        <button
-                          onClick={() =>
-                            isBookmarked(fact.id) ? removeBookmark(fact.id) : addBookmark(fact.id)
-                          }
-                          className={`p-2 border transition-colors ${
-                            isBookmarked(fact.id)
-                              ? "bg-rose-500/10 border-rose-500 text-rose-500"
-                              : "border-border bg-background text-muted-foreground hover:text-rose-500"
-                          }`}
-                        >
-                          <Heart className={`w-3 h-3 ${isBookmarked(fact.id) ? "fill-rose-500" : ""}`} />
-                        </button>
+
+          {filteredFacts.length === 0 ? (
+            <div className="rounded-[3rem] border border-white/10 bg-white/[0.02] p-16 text-center backdrop-blur-md">
+              <Search className="w-12 h-12 text-[#8A8F98] mx-auto mb-4 opacity-50" />
+              <h3 className="text-xl font-bold text-white">No facts matched your filters</h3>
+              <p className="text-sm text-[#8A8F98] mt-2">Try resetting the search terms or category selectors.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredFacts.map((fact) => {
+                const part = BODY_PARTS.find((p) => p.id === fact.bodyPartId);
+                return (
+                  <motion.div
+                    layout
+                    key={fact.id}
+                    className="group relative rounded-3xl border border-white/10 bg-[#0F0F0F]/80 p-6 flex flex-col justify-between hover:border-[#A855F7]/40 transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(168,85,247,0.1)] backdrop-blur-xl"
+                  >
+                    <div>
+                      <div className="flex justify-between items-start mb-6">
+                        <span className="inline-flex items-center gap-2 text-xs text-white bg-white/5 border border-white/10 px-3 py-1 rounded-full font-bold">
+                          <span>{part?.emoji}</span>
+                          <span>{part?.name}</span>
+                        </span>
+                        
+                        <div className="flex items-center gap-2 opacity-100 md:opacity-50 group-hover:opacity-100 transition-opacity">
+                          <button
+                            onClick={() => handleSpeak(fact.text, fact.id)}
+                            className={`p-2 rounded-full border transition-all ${
+                              speakingFactId === fact.id
+                                ? "bg-rose-500/10 border-rose-500 text-rose-500"
+                                : "border-white/10 bg-white/5 text-white hover:border-white/30"
+                            }`}
+                            title="Read aloud"
+                          >
+                            {speakingFactId === fact.id ? <Square className="w-3 h-3" /> : <Volume2 className="w-3 h-3" />}
+                          </button>
+                          <button
+                            onClick={() =>
+                              isBookmarked(fact.id) ? removeBookmark(fact.id) : addBookmark(fact.id)
+                            }
+                            className={`p-2 rounded-full border transition-all ${
+                              isBookmarked(fact.id)
+                                ? "bg-rose-500/10 border-rose-500 text-rose-500"
+                                : "border-white/10 bg-white/5 text-white hover:border-white/30 hover:text-rose-500"
+                            }`}
+                          >
+                            <Heart className={`w-3 h-3 ${isBookmarked(fact.id) ? "fill-rose-500" : ""}`} />
+                          </button>
+                        </div>
                       </div>
+
+                      <p className="text-[15px] leading-relaxed text-[#EAEAEA] font-medium">
+                        "{fact.text}"
+                      </p>
                     </div>
 
-                    <p className={`font-body text-foreground leading-relaxed ${isLarge ? "text-2xl md:text-3xl font-display italic" : "text-base"}`}>
-                      "{fact.text}"
-                    </p>
-                  </div>
-
-                  <div className="mt-12 flex items-center justify-between pt-6 border-t border-border">
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-foreground">
-                      {RARITY_META[fact.rarity].label}
-                    </span>
-                    
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground flex items-center gap-2">
-                      {CATEGORY_META[fact.category].icon} {CATEGORY_META[fact.category].label}
-                    </span>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        )}
+                    <div className="mt-8 flex items-center justify-between">
+                      <span className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest border ${RARITY_META[fact.rarity].tokenClass}`}>
+                        {RARITY_META[fact.rarity].label}
+                      </span>
+                      
+                      <span className="text-xs font-bold text-[#8A8F98] flex items-center gap-1.5">
+                        {CATEGORY_META[fact.category].icon} {CATEGORY_META[fact.category].label}
+                      </span>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

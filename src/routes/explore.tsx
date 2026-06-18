@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, Suspense } from "react";
+import { useEffect } from "react";
 import { z } from "zod";
-import { BodyMap3D } from "@/components/BodyMap3D";
+import { BodyMap } from "@/components/BodyMap";
 import { FactPanel } from "@/components/FactPanel";
 import { useBodyStore } from "@/store/useBodyStore";
 import { motion } from "framer-motion";
@@ -32,81 +32,88 @@ function Explore() {
   }, [part, setSelected]);
 
   return (
-    <main className="min-h-screen bg-background text-foreground pb-32">
+    <main className="min-h-screen bg-[#030303] text-white overflow-hidden relative selection:bg-[#00E5C4]/30 pb-32">
       
-      <div className="mx-auto max-w-7xl px-6 md:px-12 pb-24 pt-12">
+      {/* Background glow for immersion */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00E5C4]/5 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="mx-auto max-w-7xl px-5 pb-24 pt-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-16 border-b-2 border-charcoal dark:border-bone pb-8"
+          className="mb-12 text-center"
         >
-          <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-            Section 01 — Atlas
+          <span className="text-xs font-bold uppercase tracking-widest text-[#00E5C4]">
+            Interactive Atlas
           </span>
-          <h1 className="mt-4 text-4xl md:text-6xl font-display text-charcoal dark:text-bone">
-            The Interactive Map.
+          <h1 className="mt-4 text-5xl md:text-7xl font-space font-black tracking-tighter text-white">
+            The <span className="text-[#00E5C4]">Body Map</span>
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">
-            A precise 3D spatial representation of the human anatomy. 
-            Tap any region to access structural facts, documented myths, and personal health data.
+          <p className="mt-6 text-sm text-[#8A8F98] max-w-2xl mx-auto leading-relaxed">
+            Tap any glowing region to explore. Switch layers to see different data.
+            <br /> <span className="text-white font-bold">30+ organs · 200+ facts · 5 data layers.</span>
           </p>
         </motion.div>
 
-        {/* Textbook-style asymmetrical layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        {/* Immersive centered layout */}
+        <div className="relative w-full max-w-4xl mx-auto rounded-[3rem] border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_0_80px_rgba(0,229,196,0.05)] p-4 md:p-8">
           
           {/* Desktop floating sidebar — how it works + quick stats */}
-          <aside className="hidden lg:block lg:col-span-3 space-y-12">
-            <div>
-              <h3 className="font-display text-xl mb-4 text-charcoal dark:text-bone border-b border-border pb-2">
-                Instructions
+          <aside className="absolute left-8 top-8 bottom-8 w-64 hidden xl:flex flex-col justify-between rounded-[2rem] border border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl z-20 pointer-events-none">
+            <div className="pointer-events-auto">
+              <h3 className="text-[10px] font-bold uppercase tracking-widest text-[#00E5C4] mb-4">
+                How it works
               </h3>
-              <ol className="space-y-4 font-body text-sm text-muted-foreground">
-                <li className="flex gap-4 items-start leading-relaxed">
-                  <span className="font-mono text-xs mt-0.5">01</span>
-                  Drag to rotate the 3D map.
+              <ol className="space-y-4 text-xs text-[#EAEAEA]">
+                <li className="flex gap-3 items-start leading-relaxed">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#00E5C4]/20 text-[#00E5C4] font-bold border border-[#00E5C4]/30 mt-0.5">
+                    1
+                  </span>
+                  Tap an organ on the map.
                 </li>
-                <li className="flex gap-4 items-start leading-relaxed">
-                  <span className="font-mono text-xs mt-0.5">02</span>
-                  Select an organ node.
+                <li className="flex gap-3 items-start leading-relaxed">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#00E5C4]/20 text-[#00E5C4] font-bold border border-[#00E5C4]/30 mt-0.5">
+                    2
+                  </span>
+                  Browse facts across 5 categories.
                 </li>
-                <li className="flex gap-4 items-start leading-relaxed">
-                  <span className="font-mono text-xs mt-0.5">03</span>
-                  Browse facts across 5 categories in the panel below.
+                <li className="flex gap-3 items-start leading-relaxed">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#00E5C4]/20 text-[#00E5C4] font-bold border border-[#00E5C4]/30 mt-0.5">
+                    3
+                  </span>
+                  Switch layers to reveal hidden systems.
                 </li>
               </ol>
-            </div>
 
-            <div className="space-y-6">
-              <div className="border border-border p-4 text-sm leading-relaxed">
-                <span className="font-display italic text-charcoal dark:text-bone block mb-2">Note on Rarities</span>
-                <span className="text-muted-foreground">Every fact is assigned a rarity. Gold indicates information known by less than 1% of the population.</span>
-              </div>
-              <div className="border border-border p-4 text-sm leading-relaxed">
-                <span className="font-display italic text-charcoal dark:text-bone block mb-2">Personal Diary</span>
-                <span className="text-muted-foreground">Switch to the Personal layer to visualize your own logged symptoms and data directly on the map.</span>
+              <div className="mt-8 space-y-3">
+                <div className="rounded-xl border border-[#00E5C4]/20 bg-[#00E5C4]/5 p-3 text-[10px] leading-relaxed">
+                  <span className="text-[#00E5C4] font-bold uppercase tracking-wider block mb-1">✶ Tip</span>
+                  <span className="text-[#8A8F98]">Every fact has a rarity badge. Gold = almost nobody knows this.</span>
+                </div>
+                <div className="rounded-xl border border-[#F5A623]/20 bg-[#F5A623]/5 p-3 text-[10px] leading-relaxed">
+                  <span className="text-[#F5A623] font-bold uppercase tracking-wider block mb-1">📓 Diary</span>
+                  <span className="text-[#8A8F98]">Switch to Personal layer to see your diary entries mapped.</span>
+                </div>
               </div>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-4 pt-8 border-t border-border">
-              <div>
-                <div className="font-display text-3xl text-accent">30+</div>
-                <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest mt-2">Organs</div>
+            <div className="grid grid-cols-2 gap-2 mt-auto pointer-events-auto">
+              <div className="rounded-xl bg-white/[0.03] border border-white/5 p-3 text-center">
+                <div className="text-xl font-black text-white">30+</div>
+                <div className="text-[9px] text-[#8A8F98] uppercase tracking-wider mt-1">Organs</div>
               </div>
-              <div>
-                <div className="font-display text-3xl text-accent">200+</div>
-                <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest mt-2">Facts</div>
+              <div className="rounded-xl bg-white/[0.03] border border-white/5 p-3 text-center">
+                <div className="text-xl font-black text-white">200+</div>
+                <div className="text-[9px] text-[#8A8F98] uppercase tracking-wider mt-1">Facts</div>
               </div>
             </div>
           </aside>
 
           {/* The Body Map Component */}
-          <div className="lg:col-span-9 flex justify-center items-center py-2 bg-muted border-2 border-border">
-            <Suspense fallback={<div className="h-[600px] flex items-center justify-center font-mono text-sm uppercase tracking-widest text-muted-foreground">Loading 3D Engine...</div>}>
-              <BodyMap3D />
-            </Suspense>
+          <div className="w-full flex justify-center items-center py-10 relative z-10">
+            <BodyMap />
           </div>
         </div>
       </div>
