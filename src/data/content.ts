@@ -71,6 +71,7 @@ export interface DiseaseEntry {
   whenToSeeDoctor: string;
   misconceptions: string[];
   bodyPartId?: string;
+  genZContext?: string;
 }
 
 export interface RemedyEntry {

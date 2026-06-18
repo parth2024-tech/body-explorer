@@ -562,6 +562,13 @@ function SymptomsPage() {
                     <div className="mt-4 bg-rose-500/5 border border-rose-500/10 p-3.5 rounded-lg text-xs text-rose-300">
                       <strong>When to see a doctor:</strong> {d.whenToSeeDoctor}
                     </div>
+
+                    {/* Gen Z Context */}
+                    {d.genZContext && (
+                      <div className="mt-4 bg-[#A855F7]/10 border border-[#A855F7]/20 p-3.5 rounded-lg text-xs text-[#A855F7]">
+                        <strong>Gen Z Translation:</strong> {d.genZContext}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
