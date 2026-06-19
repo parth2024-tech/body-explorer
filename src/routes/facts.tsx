@@ -124,8 +124,13 @@ function FactsPage() {
       utteranceRef.current = null;
     };
 
-    setSpeakingFactId(id);
-    window.speechSynthesis.speak(utterance);
+    // Use a small timeout to let the cancel operation finish in the browser before speaking the new text
+    setTimeout(() => {
+      setSpeakingFactId(id);
+      if (utteranceRef.current === utterance) {
+        window.speechSynthesis.speak(utterance);
+      }
+    }, 50);
   };
 
   useEffect(() => {
