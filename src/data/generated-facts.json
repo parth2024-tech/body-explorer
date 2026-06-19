@@ -1,1 +1,212 @@
-[]
+[
+  {
+    "id": "gen-fact-lung-left-1",
+    "bodyPartId": "lung-left",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "The left lung has a special indentation called the cardiac notch, which acts as a built-in pocket to cradle the heart."
+  },
+  {
+    "id": "gen-fact-stomach-1",
+    "bodyPartId": "stomach",
+    "category": "record_breaker",
+    "rarity": "surprising",
+    "text": "Your stomach is highly elastic; it can expand from about 50 milliliters (less than a shot glass) when empty to hold over 1 liter (about 32 ounces) of food and liquid when fully stretched."
+  },
+  {
+    "id": "gen-fact-throat-1",
+    "bodyPartId": "throat",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "The epiglottis in your throat acts like a railway switch, automatically folding over your windpipe when you swallow to block food from entering your lungs."
+  },
+  {
+    "id": "gen-fact-skin-1",
+    "bodyPartId": "skin",
+    "category": "weird_wild",
+    "rarity": "common",
+    "text": "Skin thickness varies dramatically across the body: it is thinnest on your eyelids (about 0.5 mm) and thickest on the soles of your feet (up to 4.0 mm)."
+  },
+  {
+    "id": "gen-fact-bones-1",
+    "bodyPartId": "bones",
+    "category": "record_breaker",
+    "rarity": "surprising",
+    "text": "Your hands and feet contain more than half of all the bones in your entire body (106 out of 206 total bones)."
+  },
+  {
+    "id": "gen-fact-ears-1",
+    "bodyPartId": "ears",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "A nerve called the chorda tympani runs directly through your middle ear cavity, carrying taste signals from the front of your tongue to your brain."
+  },
+  {
+    "id": "gen-fact-liver-1",
+    "bodyPartId": "liver",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "The liver is unique because it receives a dual blood supply: about 75% comes from the nutrient-rich portal vein, and 25% comes from the oxygen-rich hepatic artery."
+  },
+  {
+    "id": "gen-fact-lung-right-1",
+    "bodyPartId": "lung-right",
+    "category": "weird_wild",
+    "rarity": "common",
+    "text": "The right lung is shorter but wider than the left lung to accommodate the liver, which sits directly beneath it in the abdomen."
+  },
+  {
+    "id": "gen-fact-bladder-1",
+    "bodyPartId": "bladder",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "Your brain receives the first 'full' signal when your bladder is only filled to about a quarter or half of its total capacity (around 150ml to 200ml)."
+  },
+  {
+    "id": "gen-fact-kidneys-1",
+    "bodyPartId": "kidneys",
+    "category": "health_tip",
+    "rarity": "surprising",
+    "text": "If you donate or lose a kidney, the remaining kidney can grow up to 50% larger to handle the filtration needs of the entire body on its own."
+  },
+  {
+    "id": "gen-fact-small-intestine-1",
+    "bodyPartId": "small-intestine",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "The interior of the small intestine is covered with millions of microscopic, finger-like projections called villi that multiply its absorption surface area by about 30 times."
+  },
+  {
+    "id": "gen-fact-large-intestine-1",
+    "bodyPartId": "large-intestine",
+    "category": "superfood",
+    "rarity": "common",
+    "text": "The billions of gut bacteria in your large intestine synthesize vitamin K and biotin, which are directly absorbed into your bloodstream to help with blood clotting and metabolism."
+  },
+  {
+    "id": "gen-fact-hands-1",
+    "bodyPartId": "hands",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "There are no muscles located inside your fingers; the muscles that move your fingers are located in your forearm and the palm of your hand, pulling on fingers like puppet strings via long tendons."
+  },
+  {
+    "id": "gen-fact-feet-1",
+    "bodyPartId": "feet",
+    "category": "record_breaker",
+    "rarity": "surprising",
+    "text": "Walking impacts your feet with a force of about 1.5 times your body weight, which surges to 3 to 4 times your body weight when running."
+  },
+  {
+    "id": "gen-fact-jaw-1",
+    "bodyPartId": "jaw",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "The temporomandibular joint (TMJ) in your jaw is one of the only joints in the body that can perform both hinge (rotation) and sliding (gliding) movements simultaneously."
+  },
+  {
+    "id": "gen-fact-shoulders-1",
+    "bodyPartId": "shoulders",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "The shoulder joint (glenohumeral joint) is so mobile because the 'socket' is extremely shallow, like a golf tee holding a golf ball, relying almost entirely on muscles and ligaments for stability."
+  },
+  {
+    "id": "gen-fact-spine-lumbar-1",
+    "bodyPartId": "spine-lumbar",
+    "category": "weird_wild",
+    "rarity": "common",
+    "text": "The lumbar vertebrae are the largest unfused vertebrae in the spine, designed specifically to carry the massive load of your entire upper body."
+  },
+  {
+    "id": "gen-fact-spine-thoracic-1",
+    "bodyPartId": "spine-thoracic",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "The thoracic spine is the most stable section of the spine, as it works directly with the ribs to form a protective cage around your heart and lungs."
+  },
+  {
+    "id": "gen-fact-ankles-1",
+    "bodyPartId": "ankles",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "Your ankle joint is actually a complex of three separate joints working in harmony to allow your foot to tilt, rotate, and flex."
+  },
+  {
+    "id": "gen-fact-knees-1",
+    "bodyPartId": "knees",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "Your kneecap (patella) is a sesamoid bone, which means it is embedded within a tendon (the quadriceps tendon) to act as a leverage-increasing pulley."
+  },
+  {
+    "id": "gen-fact-hips-1",
+    "bodyPartId": "hips",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "The hip joint is wrapped in the iliofemoral ligament—the strongest ligament in the human body—which prevents you from falling backward when standing upright."
+  },
+  {
+    "id": "gen-fact-wrists-1",
+    "bodyPartId": "wrists",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "Your wrist bones (carpals) do not connect directly to the ulna bone of the forearm; a triangular fibrocartilage disc separates them to enable rotation."
+  },
+  {
+    "id": "gen-fact-elbows-1",
+    "bodyPartId": "elbows",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "The elbow joint contains three distinct smaller joints within one capsule, allowing you to both bend/straighten your arm and rotate your palm up and down."
+  },
+  {
+    "id": "gen-fact-frontal-lobe-1",
+    "bodyPartId": "frontal-lobe",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "The frontal lobe coordinates with the motor cortex to suppress unwanted movements, helping you stay still when focused."
+  },
+  {
+    "id": "gen-fact-temporal-lobe-1",
+    "bodyPartId": "temporal-lobe",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "Damage to Wernicke's area in the temporal lobe can cause 'fluent aphasia,' where a person speaks with normal speed and rhythm but uses random, meaningless words."
+  },
+  {
+    "id": "gen-fact-sinuses-1",
+    "bodyPartId": "sinuses",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "Your sinuses act as acoustic chambers, echoing and enriching the unique resonance and tone of your voice when you speak."
+  },
+  {
+    "id": "gen-fact-muscles-1",
+    "bodyPartId": "muscles",
+    "category": "record_breaker",
+    "rarity": "common",
+    "text": "Skeletal muscles account for roughly 35% to 45% of your total body weight and are a primary source of body heat generation through shivering."
+  },
+  {
+    "id": "gen-fact-skin-2",
+    "bodyPartId": "skin",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "The skin on your palms and the soles of your feet has no sebaceous (oil) glands, which is why they do not produce oil or get greasy like your face or back."
+  },
+  {
+    "id": "gen-fact-heart-1",
+    "bodyPartId": "heart",
+    "category": "weird_wild",
+    "rarity": "common",
+    "text": "The heart has its own electrical system (the sinoatrial node) that triggers beats independently of the brain, meaning it can continue beating outside the body if it has oxygen."
+  },
+  {
+    "id": "gen-fact-eyes-1",
+    "bodyPartId": "eyes",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "The muscles that control your eyes are the most active muscles in the entire body, moving constantly even during sleep (during REM sleep)."
+  }
+]
