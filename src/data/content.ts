@@ -866,6 +866,45 @@ export const REMEDIES: RemedyEntry[] = [
     evidenceDetails: "There is no scientific proof that body heat triggers the release of succinic acid from amber, or that it is absorbed through the skin to act as a painkiller. Pediatric societies warn that these necklaces pose serious choking and strangulation hazards for infants.",
     ailment: "Teething Pain & Jaw Discomfort",
     bodyPartId: "jaw"
+  },
+  {
+    id: "capsaicin-muscle",
+    name: "Capsaicin Topical Cream",
+    description: "Applying a thin layer of cream containing capsaicin (extracted from chili peppers) directly to sore muscles or the lower back.",
+    evidenceRating: "studied",
+    evidenceDetails: "Clinical trials demonstrate that capsaicin depletes substance P—a neurotransmitter responsible for sending pain signals to the brain—resulting in a significant reduction in chronic musculoskeletal and neuropathic pain.",
+    ailment: "Chronic Muscle Soreness & Lower Back Pain",
+    bodyPartId: "muscles"
+  },
+  {
+    id: "ginkgo-memory",
+    name: "Ginkgo Biloba Extract",
+    description: "A standardized extract supplement made from the leaves of the ancient Ginkgo tree.",
+    evidenceRating: "traditional",
+    evidenceDetails: "Ginkgo biloba has been used in Traditional Chinese Medicine for thousands of years to improve blood flow to the brain and enhance memory. While modern clinical trials show mixed results for cognitive decline, its traditional reputation for sharpening focus remains strong.",
+    ailment: "Brain Fog & Cognitive Enhancement",
+    bodyPartId: "frontal-lobe",
+    genZContext: "A classic herbal option favored by students during exam seasons to boost mental clarity."
+  },
+  {
+    id: "ginger-ale-nausea",
+    name: "Commercial Ginger Ale Carbonated Drink",
+    description: "Drinking carbonated ginger ale soda to settle an upset stomach or relieve nausea.",
+    evidenceRating: "anecdotal",
+    evidenceDetails: "Many people swear by ginger ale for stomach issues, but most commercial sodas contain artificial ginger flavoring, high-fructose corn syrup, and carbonation, which can actually worsen bloating and acid reflux. Real ginger root is required for therapeutic effects.",
+    ailment: "Nausea & Indigestion",
+    bodyPartId: "stomach",
+    genZContext: "A popular comfort drink when feeling sick, though medically it is mostly the cold temperature and fizz that soothe rather than real ginger."
+  },
+  {
+    id: "alkaline-water-ph",
+    name: "Alkaline Water (High pH)",
+    description: "Drinking water with a pH level above 8.0 to neutralize body acid and prevent diseases.",
+    evidenceRating: "unproven",
+    evidenceDetails: "There is no scientific proof that alkaline water alters the body's internal pH balance. The stomach's powerful hydrochloric acid immediately neutralizes alkaline liquids upon consumption, and the kidneys and lungs naturally maintain a tight blood pH range (7.35–7.45) regardless of diet.",
+    ailment: "Systemic Acidity & Metabolic Detox",
+    bodyPartId: "stomach",
+    genZContext: "Highly marketed by wellness influencers and bottled water brands as a performance booster, despite lacking clinical support."
   }
 ];
 
