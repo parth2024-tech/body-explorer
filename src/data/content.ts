@@ -773,6 +773,99 @@ export const REMEDIES: RemedyEntry[] = [
     ailment: "Brain Fog & Cognitive Fatigue",
     bodyPartId: "brain",
     genZContext: "With constant digital multitasking, study loads, and information overload, cognitive fatigue and brain fog frequently disrupt focus."
+  },
+  {
+    id: "lavender-anxiety",
+    name: "Lavender Essential Oil Inhalation",
+    description: "Inhaling diffused lavender essential oil or applying it to pulse points before sleeping.",
+    evidenceRating: "studied",
+    evidenceDetails: "Clinical studies demonstrate that lavender oil inhalation interacts with the GABA neurotransmitter system in the brain to reduce heart rate, calm the autonomic nervous system, and improve sleep quality.",
+    ailment: "Stress, Sleep Disruptions & Mild Anxiety",
+    bodyPartId: "brain",
+    genZContext: "Perfect for wind-down routines to counteract late-night scrolling anxiety."
+  },
+  {
+    id: "cranberry-uti",
+    name: "Cranberry Extract (PACs)",
+    description: "Consuming concentrated cranberry extract containing Proanthocyanidins (PACs).",
+    evidenceRating: "studied",
+    evidenceDetails: "Clinical trials show that A-type proanthocyanidins in cranberries physically block E. coli bacteria from adhering to the uroepithelial cells lining the bladder wall, helping prevent recurrent urinary tract infections.",
+    ailment: "Recurrent Urinary Tract Infections (UTIs)",
+    bodyPartId: "bladder"
+  },
+  {
+    id: "colloidal-oatmeal-itch",
+    name: "Colloidal Oatmeal Bath",
+    description: "Soaking in a lukewarm bath with finely ground oats suspended in the water.",
+    evidenceRating: "studied",
+    evidenceDetails: "In vitro and clinical research confirms that oats contain avenanthramides—powerful antioxidants that reduce inflammation, soothe dry skin, and significantly inhibit histamine release to stop itching.",
+    ailment: "Eczema, Dry Skin & Severe Itching",
+    bodyPartId: "skin"
+  },
+  {
+    id: "fennel-seeds-bloating",
+    name: "Fennel Seed Chew / Infusion",
+    description: "Chewing a teaspoon of whole fennel seeds after meals or brewing them into a warm herbal tea.",
+    evidenceRating: "traditional",
+    evidenceDetails: "Fennel has been used for centuries in Eastern medicine to treat stomach distress. It contains anethole, an organic compound that relaxes gastrointestinal tract muscles to alleviate trapped gas and bloating.",
+    ailment: "Trapped Gas, Bloating & Indigestion",
+    bodyPartId: "small-intestine"
+  },
+  {
+    id: "eucalyptus-sinus",
+    name: "Eucalyptus Oil Steam Inhalation",
+    description: "Adding a few drops of pure eucalyptus oil to a bowl of steaming water, covering the head with a towel, and inhaling the steam.",
+    evidenceRating: "traditional",
+    evidenceDetails: "Eucalyptus oil contains cineole (eucalyptol), which has been traditionally used to relieve nasal congestion. It acts as a mild decongestant and anti-inflammatory agent, helping thin mucus in the sinuses.",
+    ailment: "Nasal Congestion & Sinus Pressure",
+    bodyPartId: "sinuses"
+  },
+  {
+    id: "acv-reflux",
+    name: "Diluted Apple Cider Vinegar (ACV)",
+    description: "Drinking one tablespoon of raw, unfiltered apple cider vinegar diluted in a glass of water before meals.",
+    evidenceRating: "anecdotal",
+    evidenceDetails: "While highly popular online, there is no robust clinical evidence showing ACV cures acid reflux or GERD. Some users claim it balances stomach acid, but drinking highly acidic vinegar can irritate the esophagus and damage tooth enamel.",
+    ailment: "Acid Reflux & Heartburn",
+    bodyPartId: "stomach",
+    genZContext: "A massive TikTok trend that is often shared as a cure-all, but lacking solid scientific backing."
+  },
+  {
+    id: "cold-compress-migraine",
+    name: "Cold Gel Compress",
+    description: "Applying a cold gel pack or chilled cloth to the forehead or back of the neck during a headache.",
+    evidenceRating: "anecdotal",
+    evidenceDetails: "Many migraine sufferers report immediate soothing relief from cold packs. It is believed that the cold constricts local blood vessels and tempers down pain signals, though it does not resolve the underlying neurological cause of the migraine.",
+    ailment: "Migraines & Tension Headaches",
+    bodyPartId: "brain"
+  },
+  {
+    id: "activated-charcoal-detox",
+    name: "Activated Charcoal Drinks",
+    description: "Consuming black activated charcoal powders or capsules daily as a wellness juice 'detox.'",
+    evidenceRating: "unproven",
+    evidenceDetails: "Activated charcoal is used in emergency medicine to bind to acute poisons in the stomach. However, consuming it for daily 'detoxification' is medically unproven and dangerous, as it binds to beneficial nutrients and blocks the absorption of prescription medications.",
+    ailment: "Systemic Toxin Removal (Detoxification)",
+    bodyPartId: "liver",
+    genZContext: "Frequently marketed as an aesthetic 'detox drink' in social media health trends, despite having no clinical benefit for healthy livers."
+  },
+  {
+    id: "ear-candling",
+    name: "Ear Candling / Coning",
+    description: "Placing a hollow, lit candle into the ear canal to create a supposed 'vacuum' that draws out wax and toxins.",
+    evidenceRating: "unproven",
+    evidenceDetails: "Numerous clinical trials and statements by the FDA and ENT societies confirm that ear candling does not produce a vacuum and does not remove earwax. The soot inside the candle afterward is simply burnt candle wax, and the practice frequently causes burns and eardrum perforations.",
+    ailment: "Excess Earwax & Hearing Congestion",
+    bodyPartId: "ears"
+  },
+  {
+    id: "amber-teething-necklace",
+    name: "Baltic Amber Necklaces",
+    description: "Wearing beads of Baltic amber close to the skin, supposedly releasing succinic acid to ease teething pain.",
+    evidenceRating: "unproven",
+    evidenceDetails: "There is no scientific proof that body heat triggers the release of succinic acid from amber, or that it is absorbed through the skin to act as a painkiller. Pediatric societies warn that these necklaces pose serious choking and strangulation hazards for infants.",
+    ailment: "Teething Pain & Jaw Discomfort",
+    bodyPartId: "jaw"
   }
 ];
 
