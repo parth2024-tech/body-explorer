@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useBodyStore } from "@/store/useBodyStore";
 import {
   FACTS,
@@ -60,6 +60,8 @@ function LibraryPage() {
     return (dict as any)[key] || (TRANSLATIONS.en as any)[key] || key;
   };
 
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+
   const handleSpeak = (marvel: typeof BODY_MARVELS[0]) => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
 
@@ -75,7 +77,9 @@ function LibraryPage() {
     const sectionsText = marvel.sections.map(s => `${s.heading}. ${s.body}`).join(" ");
     const fullText = `${marvel.title}. ${marvel.introduction} ${sectionsText} ${marvel.conclusion}`;
 
+    // Create utterance and store a strong reference to prevent garbage collection
     const utterance = new SpeechSynthesisUtterance(fullText);
+    utteranceRef.current = utterance;
 
     if (language === "hi") {
       utterance.lang = "hi-IN";
@@ -83,8 +87,15 @@ function LibraryPage() {
       utterance.lang = "en-US";
     }
 
-    utterance.onend = () => setSpeakingId(null);
-    utterance.onerror = () => setSpeakingId(null);
+    utterance.onend = () => {
+      setSpeakingId(null);
+      utteranceRef.current = null;
+    };
+    utterance.onerror = (e) => {
+      console.error("Speech synthesis error:", e);
+      setSpeakingId(null);
+      utteranceRef.current = null;
+    };
 
     setSpeakingId(marvel.id);
     window.speechSynthesis.speak(utterance);

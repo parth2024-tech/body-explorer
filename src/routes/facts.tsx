@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useBodyStore } from "@/store/useBodyStore";
 import {
   FACTS,
@@ -91,6 +91,8 @@ function FactsPage() {
     return BODY_PARTS.find((p) => p.id === randomFact?.bodyPartId);
   }, [randomFact]);
 
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+
   const handleSpeak = (text: string, id: string) => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
 
@@ -101,7 +103,10 @@ function FactsPage() {
     }
 
     window.speechSynthesis.cancel();
+    
+    // Create utterance and store a strong reference to prevent garbage collection
     const utterance = new SpeechSynthesisUtterance(text);
+    utteranceRef.current = utterance;
     
     if (language === "hi") {
       utterance.lang = "hi-IN";
@@ -109,8 +114,15 @@ function FactsPage() {
       utterance.lang = "en-US";
     }
 
-    utterance.onend = () => setSpeakingFactId(null);
-    utterance.onerror = () => setSpeakingFactId(null);
+    utterance.onend = () => {
+      setSpeakingFactId(null);
+      utteranceRef.current = null;
+    };
+    utterance.onerror = (e) => {
+      console.error("Speech synthesis error:", e);
+      setSpeakingFactId(null);
+      utteranceRef.current = null;
+    };
 
     setSpeakingFactId(id);
     window.speechSynthesis.speak(utterance);
