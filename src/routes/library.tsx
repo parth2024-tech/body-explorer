@@ -10,7 +10,7 @@ import {
   SENSORY_FACTS,
   TRANSLATIONS,
 } from "@/data/content";
-import { BookOpen, Leaf, Zap, Bookmark as BookmarkIcon, Heart, Search } from "lucide-react";
+import { BookOpen, Leaf, Zap, Bookmark as BookmarkIcon, Heart, Search, Volume2, Square } from "lucide-react";
 
 export const Route = createFileRoute("/library")({
   head: () => ({
@@ -31,6 +31,7 @@ function LibraryPage() {
 
   const [shuffledRemedies, setShuffledRemedies] = useState<typeof REMEDIES>(REMEDIES);
   const [shuffledMyths, setShuffledMyths] = useState<typeof MYTHS>(MYTHS);
+  const [speakingId, setSpeakingId] = useState<string | null>(null);
 
   useEffect(() => {
     addHistoryEntry("/library");
@@ -46,9 +47,47 @@ function LibraryPage() {
     setShuffledMyths(shuffleArray(MYTHS));
   }, []);
 
+  useEffect(() => {
+    return () => {
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
+
   const t = (key: keyof typeof TRANSLATIONS.en) => {
     const dict = TRANSLATIONS[language] || TRANSLATIONS.en;
     return (dict as any)[key] || (TRANSLATIONS.en as any)[key] || key;
+  };
+
+  const handleSpeak = (marvel: typeof BODY_MARVELS[0]) => {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+
+    if (speakingId === marvel.id) {
+      window.speechSynthesis.cancel();
+      setSpeakingId(null);
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    // Construct the text to read
+    const sectionsText = marvel.sections.map(s => `${s.heading}. ${s.body}`).join(" ");
+    const fullText = `${marvel.title}. ${marvel.introduction} ${sectionsText} ${marvel.conclusion}`;
+
+    const utterance = new SpeechSynthesisUtterance(fullText);
+
+    if (language === "hi") {
+      utterance.lang = "hi-IN";
+    } else {
+      utterance.lang = "en-US";
+    }
+
+    utterance.onend = () => setSpeakingId(null);
+    utterance.onerror = () => setSpeakingId(null);
+
+    setSpeakingId(marvel.id);
+    window.speechSynthesis.speak(utterance);
   };
 
   const filteredRemedies = shuffledRemedies.filter((r) => {
@@ -264,10 +303,24 @@ function LibraryPage() {
               {activeTab === "marvels" && (
                 <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
                   {BODY_MARVELS.map((marvel) => (
-                    <div key={marvel.id} className="rounded-[2.5rem] border border-white/10 bg-[#0F0F0F]/80 p-8 md:p-12 backdrop-blur-xl">
-                      <span className="px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider border bg-purple-500/10 text-purple-400 border-purple-500/20">
-                        Weekly Deep-Dive
-                      </span>
+                    <div key={marvel.id} className="rounded-[2.5rem] border border-white/10 bg-[#0F0F0F]/80 p-8 md:p-12 backdrop-blur-xl relative overflow-hidden">
+                      <div className="flex justify-between items-center gap-4">
+                        <span className="px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider border bg-purple-500/10 text-purple-400 border-purple-500/20">
+                          Weekly Deep-Dive
+                        </span>
+                        
+                        <button
+                          onClick={() => handleSpeak(marvel)}
+                          className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold border transition-all active:scale-95 ${
+                            speakingId === marvel.id
+                              ? "bg-rose-500/10 border-rose-500 text-rose-400"
+                              : "border-white/10 bg-white/[0.02] text-white hover:bg-white/5"
+                          }`}
+                        >
+                          {speakingId === marvel.id ? <Square className="w-3 h-3" /> : <Volume2 className="w-3 h-3" />}
+                          {speakingId === marvel.id ? "Stop" : "Listen"}
+                        </button>
+                      </div>
                       <h3 className="mt-6 text-3xl md:text-4xl font-space font-extrabold text-white">{marvel.title}</h3>
                       <p className="mt-4 text-lg text-[#8A8F98] italic font-serif">"{marvel.introduction}"</p>
                       
