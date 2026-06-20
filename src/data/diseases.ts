@@ -421,5 +421,19 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     ],
     whenToSeeDoctor: "If your symptoms are not improving with treatment or are getting worse, or if you notice signs of an infection.",
     misconceptions: ["Only smokers get COPD", "Once diagnosed, there is nothing you can do to improve breathing"]
+  },
+  {
+    id: "d-31",
+    name: "Dehydration",
+    bodyPartId: "kidneys",
+    genZContext: "Your body is running on empty and desperately screaming for water. Stay hydrated besties.",
+    overview: "A condition caused by the loss of too much water and essential salts from your body, preventing your organs from functioning properly.",
+    symptoms: [
+      { text: "Dark-colored urine", frequency: "always" },
+      { text: "Dry mouth and extreme thirst", frequency: "often" },
+      { text: "Dizziness or confusion", frequency: "sometimes" }
+    ],
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR: If you cannot keep fluids down due to persistent vomiting. 🚨 EMERGENCY WARNING: Get immediate medical help if you experience extreme confusion, lethargy, or stop peeing altogether.",
+    misconceptions: ["Thirst is the first sign of dehydration (it's actually a late sign)", "Drinking coffee dehydrates you just as much as not drinking anything"]
   }
 ];
