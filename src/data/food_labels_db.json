@@ -118,5 +118,17 @@
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Muscle protein synthesis (MPS) requires a complete essential amino acid profile (specifically Leucine), which is often deficient in cheap plant isolates.",
     "clinicalDisclaimer": "📍 IMPORTANT: Read the fine print. Many products claim 'High Protein' based on the milk you add to them, not the powder itself."
+  },
+  {
+    "id": "fl-11",
+    "marketing_claim": "Zero Cholesterol / Cholesterol Free",
+    "real_meaning": "The product is naturally plant-based, so it could never contain cholesterol in the first place, but it is still highly processed and packed with inflammatory fats.",
+    "risk_level": "MEDIUM",
+    "biological_impact": "Cholesterol only exists in animal cells. Labeling vegetable cooking oils (like Sunflower or Soybean oil) as 'Cholesterol Free' is a marketing trick to make them look heart-healthy. These oils are actually refined at extremely high temperatures, creating inflammatory trans-fat compounds and high levels of Omega-6 fatty acids that can damage your arteries.",
+    "how_to_spot": "Ignore the 'Zero Cholesterol' banner on cooking oil bottles or peanut butter. Look instead at the refining method (refined vs. cold-pressed/kachi ghani) and check if the ingredients contain 'refined vegetable oil'.",
+    "common_products": ["Refined Sunflower Oil", "Peanut Butter", "Potato Chips", "Vegetable Oils"],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: Biochemistry textbooks confirm cholesterol is synthesized exclusively in animal cells; plant membranes contain phytosterols which do not contribute to serum LDL cholesterol.",
+    "clinicalDisclaimer": "📍 IMPORTANT: A product labeled 'Cholesterol Free' can still raise your bad cholesterol if it is high in saturated or refined trans-fats."
   }
 ]
