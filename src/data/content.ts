@@ -993,6 +993,40 @@ export const BODY_MARVELS: BodyMarvel[] = [
     ],
     conclusion: "Your vision is less of a live video feed and more of an AI-generated construct heavily processed by your brain before you ever 'see' it.",
     bodyPartId: "eyes"
+  },
+  {
+    id: "neuroplasticity",
+    title: "Neuroplasticity: The Rewiring Brain",
+    introduction: "Your brain is not a static piece of hardware. It is constantly remodeling its pathways in response to your thoughts, habits, and actions.",
+    sections: [
+      {
+        heading: "1. Synaptic Pruning",
+        body: "Pathways that are rarely used are slowly dismantled, while frequently activated connections are reinforced with myelin coating, speeding up signal transmission."
+      },
+      {
+        heading: "2. Structural Rewiring",
+        body: "Learning a new physical skill or language can physically increase gray matter density in corresponding brain regions in a matter of weeks."
+      }
+    ],
+    conclusion: "You are the architect of your own brain. Consistently repeating a positive behavior literally carves it into your physical biology.",
+    bodyPartId: "brain"
+  },
+  {
+    id: "dna-repair",
+    title: "DNA Damage Control: The Infinite Repair Loop",
+    introduction: "Every single cell in your body experiences up to 100,000 DNA lesions every single day from normal metabolism, UV light, and environmental toxins.",
+    sections: [
+      {
+        heading: "1. Base Excision Repair",
+        body: "Specialized enzymes sweep your DNA helix, cutting out single damaged letters (bases) and pasting in correct replacements before errors duplicate."
+      },
+      {
+        heading: "2. Apoptosis: The Kill Switch",
+        body: "If a cell's DNA damage is too severe to fix safely, it triggers an orderly self-destruct sequence to protect the surrounding tissue from mutation."
+      }
+    ],
+    conclusion: "Without this relentless, millisecond-by-millisecond molecular repair system, complex multicellular life would disintegrate within hours.",
+    bodyPartId: "skin"
   }
 ];
 
