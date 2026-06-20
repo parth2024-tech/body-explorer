@@ -320,5 +320,25 @@ export const MYTHS: MythBusted[] = [
     actionableTip: "Wash your face twice a day with a gentle cleanser containing Salicylic Acid. Don't torture yourself by banning all your favorite foods.",
     confidenceLevel: "MODERATE",
     evidenceStatement: "✅ EVIDENCE: Supported by AAD Guidelines - While high-glycemic diets may mildly exacerbate inflammation, genetics and androgens are the primary pathogenesis."
+  },
+  {
+    id: "m-dim-light",
+    bodyPartId: "eyes",
+    myth: "Reading in dim light or in the dark will permanently damage your eyes.",
+    reality: "Reading in dim light might cause temporary eye strain and headaches because your eye muscles work harder to focus, but it does not cause any permanent damage or weaken your eyesight.",
+    sources: ["Harvard Medical School", "American Academy of Ophthalmology"],
+    actionableTip: "Use a reading lamp directed at your pages to avoid fatigue, and rest your eyes with the 20-20-20 rule if you feel strain.",
+    confidenceLevel: "HIGH",
+    evidenceStatement: "✅ EVIDENCE: Supported by AAO Guidelines - Lack of light does not alter the physical shape or function of the eyes."
+  },
+  {
+    id: "m-head-heat",
+    bodyPartId: "brain",
+    myth: "You lose up to 80% of your body heat through your head, so you must always wear a hat in cold weather.",
+    reality: "You only lose about 7% to 10% of your body heat through your head—which is roughly proportional to its surface area compared to the rest of your body.",
+    sources: ["BMJ (British Medical Journal)", "U.S. Army Research Institute of Environmental Medicine"],
+    actionableTip: "Dress in warm layers all over. Covering your torso and limbs is far more important for preventing hypothermia than just wearing a beanie.",
+    confidenceLevel: "HIGH",
+    evidenceStatement: "✅ EVIDENCE: Supported by BMJ clinical review - Head heat loss is proportional to exposed surface area, not disproportionately elevated."
   }
 ];
