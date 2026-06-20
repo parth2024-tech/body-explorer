@@ -922,6 +922,20 @@ export const HACKS: HealthHack[] = [
     practice: "Apply firm pressure to the webbed space between your thumb and index finger (Hegu point) for 2 minutes in circular motions.",
     scienceBasis: "Stimulates local nerves to release endorphins, triggering systemic pain relief signals that block cranial headache pathways.",
     bodyPartId: "jaw"
+  },
+  {
+    id: "breath-478",
+    title: "The 4-7-8 Breathing Hack",
+    practice: "Inhale through your nose for 4 seconds, hold your breath for 7 seconds, and exhale completely through your mouth with a 'whoosh' sound for 8 seconds.",
+    scienceBasis: "Acts as a natural tranquilizer for the nervous system. Holding the breath increases carbon dioxide concentration in the blood, which triggers the parasympathetic nervous system via the vagus nerve, rapidly lowering heart rate and anxiety.",
+    bodyPartId: "lung-left"
+  },
+  {
+    id: "stretch-9090",
+    title: "The 90/90 Hip Mobility Stretch",
+    practice: "Sit on the floor with your right leg bent at 90 degrees in front of you and your left leg bent at 90 degrees to the side. Keep your torso upright and lean forward slightly over the front leg for 60 seconds.",
+    scienceBasis: "Improves internal and external rotation of the hip joints. This relieves structural strain on the lumbar spine and pelvic floor, preventing lower back fatigue caused by prolonged sitting.",
+    bodyPartId: "hips"
   }
 ];
 
