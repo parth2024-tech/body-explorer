@@ -130,5 +130,18 @@
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Biochemistry textbooks confirm cholesterol is synthesized exclusively in animal cells; plant membranes contain phytosterols which do not contribute to serum LDL cholesterol.",
     "clinicalDisclaimer": "📍 IMPORTANT: A product labeled 'Cholesterol Free' can still raise your bad cholesterol if it is high in saturated or refined trans-fats."
+  },
+  {
+    "id": "fl-12",
+    "marketing_claim": "Gluten-Free (for non-celiacs)",
+    "real_meaning": "Contains highly processed starches, extra sugar, and chemical binders to mimic the elasticity of gluten, making it less healthy than the original.",
+    "risk_level": "HIGH",
+    "biological_impact": "Gluten is just a protein found in wheat, rye, and barley. Unless you have Celiac disease or gluten sensitivity, avoiding it is unnecessary. To replace gluten, manufacturers often use cheap, high-glycemic starches like potato starch or tapioca starch, which cause your blood sugar to spike much faster and contain almost zero fiber or vitamins.",
+    "how_to_spot": "Check the ingredients. If you see 'starch', 'sugar', or 'xanthan gum' near the top, it is a highly processed gluten alternative that is worse for your metabolism than normal whole wheat.",
+    "common_products": ["Gluten-Free Bread", "Gluten-Free Cookies", "Gluten-Free Pasta"],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: Clinical nutrition studies show that processed gluten-free products have a higher glycemic index and lower micronutrient density compared to their gluten-containing equivalents.",
+    "clinicalDisclaimer": "🚨 DANGER: If you have Celiac disease, you must eat gluten-free. If not, these processed gluten-free items are not a health food and may promote weight gain."
   }
 ]
+
