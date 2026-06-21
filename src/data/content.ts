@@ -1060,8 +1060,26 @@ export const BODY_MARVELS: BodyMarvel[] = [
     ],
     conclusion: "Without this relentless, millisecond-by-millisecond molecular repair system, complex multicellular life would disintegrate within hours.",
     bodyPartId: "skin"
+  },
+  {
+    id: "heart-pacemaker",
+    title: "The Sinoatrial Node: Your Built-In Pacemaker",
+    introduction: "Deep inside your heart is a tiny cluster of specialized cells that generate their own electricity, acting as the master conductor for every single heartbeat.",
+    sections: [
+      {
+        heading: "1. Self-Generated Electricity",
+        body: "Unlike other muscles that wait for brain signals, the sinoatrial node spontaneously fires electric currents, causing the heart chambers to squeeze in a perfect rhythm."
+      },
+      {
+        heading: "2. Autonomous Action",
+        body: "Because it has its own power source, a healthy heart can actually continue to beat even if it is completely disconnected from the rest of the body."
+      }
+    ],
+    conclusion: "This natural pacemaker adjusts your heart rate in real-time, instantly speeding up during exercise or slowing down while you sleep.",
+    bodyPartId: "heart"
   }
 ];
+
 
 export const SENSORY_FACTS: SensoryFact[] = [
   {
