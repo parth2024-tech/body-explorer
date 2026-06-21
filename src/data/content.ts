@@ -905,8 +905,19 @@ export const REMEDIES: RemedyEntry[] = [
     ailment: "Systemic Acidity & Metabolic Detox",
     bodyPartId: "stomach",
     genZContext: "Highly marketed by wellness influencers and bottled water brands as a performance booster, despite lacking clinical support."
+  },
+  {
+    id: "chamomile-insomnia",
+    name: "Chamomile Tea Brew",
+    description: "Brewing dried chamomile flowers in hot water before sleep to reduce anxiety and promote rest.",
+    evidenceRating: "studied",
+    evidenceDetails: "Chamomile contains apigenin, an antioxidant that binds to specific receptors in the brain that may decrease anxiety and initiate sleep, as supported by several clinical trials.",
+    ailment: "Insomnia & Sleeplessness",
+    bodyPartId: "brain",
+    genZContext: "Your brain is spinning at 3 AM and needs to hit the snooze button. Chamomile has your back, bestie."
   }
 ];
+
 
 export const HACKS: HealthHack[] = [
   {
