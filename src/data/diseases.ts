@@ -435,5 +435,20 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     ],
     whenToSeeDoctor: "⚠️ SEE A DOCTOR: If you cannot keep fluids down due to persistent vomiting. 🚨 EMERGENCY WARNING: Get immediate medical help if you experience extreme confusion, lethargy, or stop peeing altogether.",
     misconceptions: ["Thirst is the first sign of dehydration (it's actually a late sign)", "Drinking coffee dehydrates you just as much as not drinking anything"]
+  },
+  {
+    id: "d-32",
+    name: "Hypertension (High Blood Pressure)",
+    bodyPartId: "heart",
+    genZContext: "Your arteries are feeling way too much pressure and are about to boil over. High key stressful.",
+    overview: "A common condition where the force of the blood pushing against your artery walls is consistently too high, straining your heart.",
+    symptoms: [
+      { text: "No symptoms (known as the 'silent killer')", frequency: "always" },
+      { text: "Headaches or shortness of breath", frequency: "sometimes" },
+      { text: "Nosebleeds or dizziness", frequency: "sometimes" }
+    ],
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR: Get a blood pressure reading at least once a year. 🚨 EMERGENCY WARNING: Go to the ER immediately if you have chest pain, a severe headache, or vision changes with a high reading.",
+    misconceptions: ["If I don't feel sick, my blood pressure is fine", "High blood pressure is normal as you age"]
   }
 ];
+
