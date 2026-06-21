@@ -359,5 +359,25 @@
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: The EMA reviewed massive epidemiological data proving Domperidone doubles the risk of sudden cardiac death.",
     "clinicalDisclaimer": "📍 IMPORTANT: Do not panic if you take this, but absolutely discuss switching to a safer, plain antacid with your doctor."
+  },
+  {
+    "id": 20, "category": "food", "icon": "🥛",
+    "product": "Uncertified Protein Powders",
+    "molecule": "Heavy Metals (Lead, Arsenic, Cadmium)",
+    "subtitle": "Toxic metals contaminating fitness supplements.",
+    "brands": ["Various cheap gym brands", "Imported uncertified proteins"],
+    "risk": "HIGH",
+    "organ": "Kidneys & Liver",
+    "summary": "Many fitness enthusiasts consume cheap protein powders daily to build muscle. However, independent lab tests have repeatedly found high levels of Lead, Cadmium, and Arsenic in these uncertified supplements, which can cause permanent damage to your kidneys and liver.",
+    "mechanism": "Heavy metals get into protein powders through poor filtration or contaminated soil where raw ingredients (like pea, soy, or whey) are sourced. Since these metals are not listed on the label, they build up in your body over time, slowly poisoning your kidney filters and causing tissue damage in your liver.",
+    "status_global": { "US": "Clean Label Project alerts", "EU": "Strict heavy metal testing limits" },
+    "status_india": "FSSAI has issued warnings to several brands, but uncertified products are still sold at local gym shops.",
+    "how_to_spot": "Look for third-party testing certifications (like Informed-Choice, NSF, or labdoor) on the tub. Avoid buying unbranded or incredibly cheap protein powder from local dealers.",
+    "alternatives": ["Third-party certified protein brands", "Natural protein sources like eggs, paneer, chicken, or lentils"],
+    "ref": "Clean Label Project Protein Powder Study",
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: Multi-brand chemical analyses have detected toxic concentrations of heavy metals exceeding daily safe limits in several popular commercial protein powders.",
+    "clinicalDisclaimer": "📍 IMPORTANT: Muscle building requires protein, but consuming toxic heavy metals daily will destroy your long-term health. Always check for independent lab verification."
   }
 ]
+
