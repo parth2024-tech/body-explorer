@@ -936,8 +936,16 @@ export const HACKS: HealthHack[] = [
     practice: "Sit on the floor with your right leg bent at 90 degrees in front of you and your left leg bent at 90 degrees to the side. Keep your torso upright and lean forward slightly over the front leg for 60 seconds.",
     scienceBasis: "Improves internal and external rotation of the hip joints. This relieves structural strain on the lumbar spine and pelvic floor, preventing lower back fatigue caused by prolonged sitting.",
     bodyPartId: "hips"
+  },
+  {
+    id: "breath-box",
+    title: "Box Breathing for Stress Control",
+    practice: "Inhale for 4 seconds, hold for 4 seconds, exhale for 4 seconds, hold empty for 4 seconds. Repeat 4 times.",
+    scienceBasis: "Regulates autonomic nervous system activity. The equal ratio of breathing stages increases heart rate variability (HRV) and suppresses the amygdala, stopping stress loops instantly.",
+    bodyPartId: "lung-right"
   }
 ];
+
 
 export const BODY_MARVELS: BodyMarvel[] = [
   {
