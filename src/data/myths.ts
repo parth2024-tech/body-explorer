@@ -340,5 +340,16 @@ export const MYTHS: MythBusted[] = [
     actionableTip: "Dress in warm layers all over. Covering your torso and limbs is far more important for preventing hypothermia than just wearing a beanie.",
     confidenceLevel: "HIGH",
     evidenceStatement: "✅ EVIDENCE: Supported by BMJ clinical review - Head heat loss is proportional to exposed surface area, not disproportionately elevated."
+  },
+  {
+    id: "m-knuckle-cracking",
+    bodyPartId: "hands",
+    myth: "Cracking your knuckles causes arthritis in your fingers.",
+    reality: "The sound of cracking knuckles is just gas bubbles popping in the joint fluid. Studies show it does not cause arthritis, though chronic cracking might reduce grip strength.",
+    sources: ["Harvard Medical School", "Journal of Family Practice"],
+    actionableTip: "If you feel the urge to crack your knuckles, try stretching your fingers or squeezing a stress ball instead.",
+    confidenceLevel: "HIGH",
+    evidenceStatement: "✅ EVIDENCE: Supported by multiple prospective studies, including one famous doctor who cracked the knuckles of only one hand for 50 years with zero differences in arthritis."
   }
 ];
+
