@@ -449,6 +449,21 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     ],
     whenToSeeDoctor: "⚠️ SEE A DOCTOR: Get a blood pressure reading at least once a year. 🚨 EMERGENCY WARNING: Go to the ER immediately if you have chest pain, a severe headache, or vision changes with a high reading.",
     misconceptions: ["If I don't feel sick, my blood pressure is fine", "High blood pressure is normal as you age"]
+  },
+  {
+    id: "d-33",
+    name: "Type 2 Diabetes",
+    bodyPartId: "liver",
+    genZContext: "Your body's insulin key is broken and cells are ghosting glucose. High-key insulin resistance era.",
+    overview: "A chronic condition that affects how your body processes blood sugar (glucose), leading to insulin resistance and high blood sugar levels.",
+    symptoms: [
+      { text: "Increased thirst and frequent urination", frequency: "always" },
+      { text: "Fatigue and blurry vision", frequency: "often" },
+      { text: "Slow-healing sores or frequent infections", frequency: "sometimes" }
+    ],
+    whenToSeeDoctor: "⚠️ SEE A DOCTOR: If you feel constantly tired, thirsty, and are peeing much more than usual. 🚨 EMERGENCY WARNING: Go to the ER if you experience deep, rapid breathing, confusion, or extreme dehydration.",
+    misconceptions: ["Diabetes is only caused by eating too much sugar", "You have to take insulin injections if you have diabetes"]
   }
 ];
+
 
