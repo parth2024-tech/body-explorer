@@ -52,6 +52,8 @@ function LibraryPage() {
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
         window.speechSynthesis.cancel();
       }
+      speakingIdRef.current = null;
+      utteranceRef.current = null;
     };
   }, []);
 
@@ -60,14 +62,17 @@ function LibraryPage() {
     return (dict as any)[key] || (TRANSLATIONS.en as any)[key] || key;
   };
 
+  const speakingIdRef = useRef<string | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
   const handleSpeak = (marvel: typeof BODY_MARVELS[0]) => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
 
-    if (speakingId === marvel.id) {
+    if (speakingIdRef.current === marvel.id) {
       window.speechSynthesis.cancel();
       setSpeakingId(null);
+      speakingIdRef.current = null;
+      utteranceRef.current = null;
       return;
     }
 
@@ -77,28 +82,53 @@ function LibraryPage() {
     const sectionsText = marvel.sections.map(s => `${s.heading}. ${s.body}`).join(" ");
     const fullText = `${marvel.title}. ${marvel.introduction} ${sectionsText} ${marvel.conclusion}`;
 
-    // Create utterance and store a strong reference to prevent garbage collection
-    const utterance = new SpeechSynthesisUtterance(fullText);
-    utteranceRef.current = utterance;
-
-    if (language === "hi") {
-      utterance.lang = "hi-IN";
+    // Split text into sentences using Intl.Segmenter (with regex fallback)
+    let sentences: string[] = [];
+    if (typeof Intl !== "undefined" && "Segmenter" in Intl) {
+      const segmenter = new Intl.Segmenter(language === "hi" ? "hi" : "en", { granularity: "sentence" });
+      const segments = segmenter.segment(fullText);
+      sentences = Array.from(segments).map(s => s.segment.trim()).filter(Boolean);
     } else {
-      utterance.lang = "en-US";
+      sentences = fullText.split(/[.!?]\s+/).map(s => s.trim()).filter(Boolean);
     }
 
-    utterance.onend = () => {
-      setSpeakingId(null);
-      utteranceRef.current = null;
-    };
-    utterance.onerror = (e) => {
-      console.error("Speech synthesis error:", e);
-      setSpeakingId(null);
-      utteranceRef.current = null;
+    if (sentences.length === 0) return;
+
+    let index = 0;
+    setSpeakingId(marvel.id);
+    speakingIdRef.current = marvel.id;
+
+    const playNext = () => {
+      if (speakingIdRef.current !== marvel.id) return;
+
+      if (index >= sentences.length) {
+        setSpeakingId(null);
+        speakingIdRef.current = null;
+        utteranceRef.current = null;
+        return;
+      }
+
+      const utterance = new SpeechSynthesisUtterance(sentences[index]);
+      utteranceRef.current = utterance;
+      utterance.lang = language === "hi" ? "hi-IN" : "en-US";
+
+      utterance.onend = () => {
+        if (speakingIdRef.current !== marvel.id) return;
+        index++;
+        playNext();
+      };
+
+      utterance.onerror = (e) => {
+        console.error("Speech synthesis sentence error:", e);
+        if (speakingIdRef.current !== marvel.id) return;
+        index++;
+        playNext();
+      };
+
+      window.speechSynthesis.speak(utterance);
     };
 
-    setSpeakingId(marvel.id);
-    window.speechSynthesis.speak(utterance);
+    playNext();
   };
 
   const filteredRemedies = shuffledRemedies.filter((r) => {
