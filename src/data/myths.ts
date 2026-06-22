@@ -350,6 +350,59 @@ export const MYTHS: MythBusted[] = [
     actionableTip: "If you feel the urge to crack your knuckles, try stretching your fingers or squeezing a stress ball instead.",
     confidenceLevel: "HIGH",
     evidenceStatement: "✅ EVIDENCE: Supported by multiple prospective studies, including one famous doctor who cracked the knuckles of only one hand for 50 years with zero differences in arthritis."
+  },
+  {
+    id: "m-toothpaste-burn",
+    bodyPartId: "skin",
+    myth: "Smearing white toothpaste on a fresh kitchen burn cools it down and prevents blisters.",
+    reality: "Toothpaste contains abrasive chemicals like calcium carbonate, sodium lauryl sulfate, and mint that trap heat inside the burn and irritate the skin, frequently leading to chemical irritation and infection.",
+    sources: ["American Burn Association"],
+    actionableTip: "Flush the area under cool running tap water for 15 minutes immediately. Keep it clean and dry.",
+    dangerAlert: "🚨 DANGEROUS MISINFORMATION: Never put toothpaste, butter, oil, or ice on a burn. They cook the tissue deeper. Run cool water for 15 minutes.",
+    confidenceLevel: "HIGH",
+    evidenceStatement: "✅ EVIDENCE: Supported by American Burn Association Guidelines. Immediate cooling with running tap water (15°C) for 20 minutes minimizes tissue damage."
+  },
+  {
+    id: "m-shivering-fever",
+    bodyPartId: "brain",
+    myth: "Shivering during a high fever means you should bundle up in thick blankets and sweaters.",
+    reality: "Shivering is the brain's thermostat instructing the body to raise its temperature. Wrapping up in blankets traps heat and can dangerously drive body temperatures up to hyperpyrexia (above 103°F or 39.4°C), increasing the risk of febrile seizures, especially in children.",
+    sources: ["Indian Academy of Pediatrics (IAP)", "World Health Organization (WHO)"],
+    actionableTip: "Wear a single layer of light cotton clothing, keep the room ventilated, and use room-temperature sponge baths (not cold water) to cool down.",
+    dangerAlert: "🚨 EMERGENCY WARNING: If a fever exceeds 103°F (39.4°C) or is accompanied by confusion, stiff neck, or seizures, call 112 / 108 immediately.",
+    confidenceLevel: "HIGH",
+    evidenceStatement: "✅ EVIDENCE: Supported by Indian Academy of Pediatrics (IAP) & WHO fever management protocols."
+  },
+  {
+    id: "m-cold-water-fats",
+    bodyPartId: "stomach",
+    myth: "Drinking ice-cold water after a meal solidifies the fats you ate and causes stomach cancer.",
+    reality: "The human body maintains a core temperature of 37°C. Cold water warms to body temperature within minutes of swallowing and has no effect on solidifying dietary fats or causing gastrointestinal cancers.",
+    sources: ["World Health Organization (WHO)", "Indian Council of Medical Research (ICMR)"],
+    actionableTip: "Drink water whenever you are thirsty. Water temperature does not affect digestion or cause cancer; staying hydrated is what matters.",
+    confidenceLevel: "HIGH",
+    evidenceStatement: "✅ EVIDENCE: Supported by WHO and Gastroenterology clinical consensus."
+  },
+  {
+    id: "m-detox-cleanses",
+    bodyPartId: "liver",
+    myth: "Drinking detox juices and herbal teas is necessary to flush toxins out of your body.",
+    reality: "Your liver and kidneys act as highly advanced, 24/7 detox systems. No commercial juice, powder, or herbal tea can cleanse your organs; in fact, many detox teas contain dangerous laxatives that cause dehydration and electrolyte loss.",
+    sources: ["National Institutes of Health (NIH)", "Indian Council of Medical Research (ICMR)"],
+    actionableTip: "Skip expensive detox products. Support your liver and kidneys naturally by drinking plenty of water, getting 7-8 hours of sleep, and eating fresh vegetables.",
+    confidenceLevel: "HIGH",
+    evidenceStatement: "✅ EVIDENCE: Supported by National Institutes of Health (NIH) and Indian Council of Medical Research (ICMR)."
+  },
+  {
+    id: "m-nosebleed-tilt",
+    bodyPartId: "mouth",
+    myth: "Tilting your head backward is the best way to stop a sudden bloody nose.",
+    reality: "Tilting your head back makes the blood run down your throat into your stomach or lungs, which causes coughing, choking, or vomiting.",
+    sources: ["American Academy of Otolaryngology"],
+    actionableTip: "Lean slightly forward and pinch the soft part of your nose just below the bony bridge for 10 full minutes without releasing pressure.",
+    dangerAlert: "🚨 EMERGENCY WARNING: Call 112 / 108 or go to the ER if a nosebleed doesn't stop after 20 minutes of firm pinching.",
+    confidenceLevel: "HIGH",
+    evidenceStatement: "✅ EVIDENCE: Supported by American Academy of Otolaryngology guidelines."
   }
 ];
 
