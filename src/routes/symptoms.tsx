@@ -222,7 +222,7 @@ function SymptomsPage() {
                       value={symptomsDesc}
                       onChange={(e) => setSymptomsDesc(e.target.value)}
                       placeholder="e.g. 'I feel a dull, throbbing pressure behind my left eye...'"
-                      className="w-full h-32 rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-sm text-[#EAEAEA] placeholder-[#555] outline-none focus:border-[#FC3D21]/50 focus:bg-white/[0.04] transition-all"
+                      className="w-full h-32 rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-base sm:text-sm text-[#EAEAEA] placeholder-[#555] outline-none focus:border-[#FC3D21]/50 focus:bg-white/[0.04] transition-all"
                       required
                     />
                   </div>
@@ -235,7 +235,7 @@ function SymptomsPage() {
                       <select
                         value={duration}
                         onChange={(e) => setDuration(e.target.value)}
-                        className="w-full rounded-xl border border-white/10 bg-white/[0.02] px-5 py-4 text-sm text-[#EAEAEA] outline-none focus:border-[#FC3D21]/50 appearance-none"
+                        className="w-full rounded-xl border border-white/10 bg-white/[0.02] px-5 py-4 text-base sm:text-sm text-[#EAEAEA] outline-none focus:border-[#FC3D21]/50 appearance-none"
                       >
                         <option value="Less than 24 hours">Less than 24 hours</option>
                         <option value="A few days">A few days</option>
@@ -391,7 +391,7 @@ function SymptomsPage() {
                 <button
                   key={region}
                   onClick={() => setSelectedRegion(selectedRegion === region ? null : region)}
-                  className={`px-4 py-2 rounded-lg text-xs capitalize font-bold transition-all whitespace-nowrap ${
+                  className={`px-4 py-2.5 rounded-lg text-xs capitalize font-bold transition-all whitespace-nowrap min-h-[42px] flex items-center ${
                     selectedRegion === region
                       ? "bg-white text-black"
                       : "text-[#8A8F98] hover:text-white hover:bg-white/5"
@@ -409,7 +409,7 @@ function SymptomsPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by condition or organ..."
-              className="w-full rounded-2xl border border-white/10 bg-white/[0.02] pl-14 pr-6 py-4 text-sm text-white placeholder-[#555] outline-none focus:border-[#00E5C4]/50 focus:bg-white/[0.04] transition-all"
+              className="w-full rounded-2xl border border-white/10 bg-white/[0.02] pl-14 pr-6 py-4 text-base sm:text-sm text-white placeholder-[#555] outline-none focus:border-[#00E5C4]/50 focus:bg-white/[0.04] transition-all"
             />
             <span className="absolute left-5 top-1/2 -translate-y-1/2 text-lg">🔍</span>
           </div>

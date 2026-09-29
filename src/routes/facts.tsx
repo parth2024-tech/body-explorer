@@ -267,14 +267,14 @@ function FactsPage() {
         <div className="mb-12 rounded-[2rem] border border-white/10 bg-white/[0.02] p-6 md:p-8 backdrop-blur-xl relative z-10 max-w-5xl mx-auto">
           
           {/* Search Input and Body Part selector */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
             <div className="md:col-span-2 relative">
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search facts or body parts..."
-                className="w-full rounded-2xl border border-white/10 bg-black/40 pl-12 pr-6 py-4 text-sm text-white placeholder-[#555] outline-none transition-all focus:border-[#A855F7]/50 focus:bg-black/60"
+                className="w-full rounded-2xl border border-white/10 bg-black/40 pl-12 pr-6 py-4 text-base sm:text-sm text-white placeholder-[#555] outline-none transition-all focus:border-[#A855F7]/50 focus:bg-black/60"
               />
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#8A8F98]" />
             </div>
@@ -283,7 +283,7 @@ function FactsPage() {
               <select
                 value={selectedBodyPart}
                 onChange={(e) => setSelectedBodyPart(e.target.value)}
-                className="w-full rounded-2xl border border-white/10 bg-black/40 px-6 py-4 text-sm text-white outline-none focus:border-[#A855F7]/50 appearance-none transition-all"
+                className="w-full rounded-2xl border border-white/10 bg-black/40 px-6 py-4 text-base sm:text-sm text-white outline-none focus:border-[#A855F7]/50 appearance-none transition-all"
               >
                 <option value="all">All Organs & Systems</option>
                 {BODY_PARTS.map((part) => (
@@ -302,7 +302,7 @@ function FactsPage() {
               <span className="text-[10px] font-bold text-[#8A8F98] mr-2 uppercase tracking-widest">Category</span>
               <button
                 onClick={() => setSelectedCategory("all")}
-                className={`rounded-full px-5 py-2 text-xs font-bold transition-all border ${
+                className={`rounded-full px-4 sm:px-5 py-2.5 text-xs font-bold transition-all border min-h-[40px] flex items-center ${
                   selectedCategory === "all"
                     ? "bg-white text-black border-white"
                     : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"
@@ -314,7 +314,7 @@ function FactsPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`rounded-full px-5 py-2 text-xs font-bold transition-all flex items-center gap-2 border ${
+                  className={`rounded-full px-4 sm:px-5 py-2.5 text-xs font-bold transition-all flex items-center gap-2 border min-h-[40px] ${
                     selectedCategory === cat
                       ? "bg-white text-black border-white"
                       : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"
@@ -331,7 +331,7 @@ function FactsPage() {
               <span className="text-[10px] font-bold text-[#8A8F98] mr-2 uppercase tracking-widest">Rarity Level</span>
               <button
                 onClick={() => setSelectedRarity("all")}
-                className={`rounded-full px-5 py-2 text-xs font-bold transition-all border ${
+                className={`rounded-full px-4 sm:px-5 py-2.5 text-xs font-bold transition-all border min-h-[40px] flex items-center ${
                   selectedRarity === "all"
                     ? "bg-white text-black border-white"
                     : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"
@@ -343,7 +343,7 @@ function FactsPage() {
                 <button
                   key={rar}
                   onClick={() => setSelectedRarity(rar)}
-                  className={`rounded-full px-5 py-2 text-xs font-bold transition-all border ${
+                  className={`rounded-full px-4 sm:px-5 py-2.5 text-xs font-bold transition-all border min-h-[40px] flex items-center ${
                     selectedRarity === rar
                       ? "bg-white text-black border-white"
                       : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"

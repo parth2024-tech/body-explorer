@@ -57,9 +57,9 @@ export function FactPanel() {
               <button
                 onClick={close}
                 aria-label="Close"
-                className="absolute right-4 top-4 rounded-full border border-[#222222] bg-[#16181D] p-1.5 text-[#8A8F98] transition-colors hover:border-[#FC3D21]/50 hover:text-[#EAEAEA]"
+                className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-[#222222] bg-[#16181D] text-[#8A8F98] transition-colors hover:border-[#FC3D21]/50 hover:text-[#EAEAEA]"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M18 6L6 18M6 6l12 12" />
                 </svg>
               </button>
@@ -72,7 +72,7 @@ export function FactPanel() {
             </div>
 
             {/* Category tabs */}
-            <div className="flex gap-1 overflow-x-auto border-b border-[#222222] px-3 py-2 fact-scroll">
+            <div className="flex gap-1.5 overflow-x-auto border-b border-[#222222] px-3 py-2.5 fact-scroll">
               {CATEGORIES.map((cat) => {
                 const meta = CATEGORY_META[cat];
                 const active = activeCategory === cat;
@@ -80,7 +80,7 @@ export function FactPanel() {
                   <button
                     key={cat}
                     onClick={() => setCategory(cat)}
-                    className={`relative whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium transition-all ${
+                    className={`relative whitespace-nowrap rounded-full px-3.5 py-2 text-xs font-medium min-h-[40px] flex items-center transition-all ${
                       active
                         ? "bg-[#FC3D21]/10 text-[#FC3D21]"
                         : "text-[#8A8F98] hover:text-[#EAEAEA]"
@@ -99,8 +99,8 @@ export function FactPanel() {
               })}
             </div>
 
-            {/* Scrollable content */}
-            <div className="flex-1 overflow-y-auto fact-scroll p-5 space-y-4">
+            {/* Scrollable content with mobile bottom navigation clearance */}
+            <div className="flex-1 overflow-y-auto fact-scroll p-5 space-y-4 pb-28 lg:pb-6">
               {/* Facts */}
               {facts.length === 0 ? (
                 <div className="py-12 text-center text-sm text-[#8A8F98]">

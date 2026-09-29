@@ -137,18 +137,27 @@ function EmergencyPage() {
       </div>
 
       {/* Floating Global Action Bar (CPR Pacer & Emergency Number) */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 p-4 pointer-events-none">
-        <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row justify-between items-end gap-4">
+      {/* Floating Global Action Bar (CPR Pacer & Emergency Number) */}
+      <div className="fixed bottom-20 md:bottom-0 left-0 right-0 z-30 p-3 sm:p-4 pointer-events-none pb-[calc(env(safe-area-inset-bottom)+5rem)] md:pb-4">
+        <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row justify-between items-end gap-3 sm:gap-4">
           
-          {/* Local Emergency Number Display */}
-          <div className="pointer-events-auto bg-black/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 shadow-2xl flex items-center gap-4">
-            <div className="bg-red-500/20 p-3 rounded-xl border border-red-500/30">
-              <Phone className="w-6 h-6 text-red-500 animate-pulse" />
+          {/* Local Emergency Number Display & Direct Dial Button */}
+          <div className="pointer-events-auto bg-black/90 backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:p-4 shadow-2xl flex items-center justify-between gap-3 w-full sm:w-auto">
+            <div className="flex items-center gap-3">
+              <div className="bg-red-500/20 p-2.5 sm:p-3 rounded-xl border border-red-500/30">
+                <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-red-500 animate-pulse" />
+              </div>
+              <div>
+                <p className="text-[10px] sm:text-xs text-[#8A8F98] uppercase tracking-widest font-bold">Ambulance Dial</p>
+                <p className="text-base sm:text-xl font-mono font-bold text-white">{localNumber}</p>
+              </div>
             </div>
-            <div>
-              <p className="text-xs text-[#8A8F98] uppercase tracking-widest font-bold">Ambulance Dial</p>
-              <p className="text-xl font-mono font-bold text-white">{localNumber}</p>
-            </div>
+            <a
+              href="tel:112"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-red-500 px-4 text-xs font-bold text-white shadow-lg shadow-red-500/30 active:scale-95 transition-all"
+            >
+              Call 112
+            </a>
           </div>
 
           {/* Floating CPR Pacer */}

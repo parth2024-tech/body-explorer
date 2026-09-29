@@ -409,8 +409,49 @@ const CSS = `
   ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
 
   @media (max-width: 680px) {
-    .layout { flex-direction: column; align-items: center; }
-    .map-col { flex: none; width: 100%; max-width: 340px; }
+    .bodymap-layout { flex-direction: column; align-items: stretch; gap: 20px; }
+    .map-col { flex: none; width: 100%; max-width: 100%; }
+    .info-col { width: 100%; min-width: 0; }
+
+    /* Touch-friendly layer bar carousel */
+    .layer-bar {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 8px;
+      width: 100%;
+      padding: 2px 2px 8px 2px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .layer-bar::-webkit-scrollbar { display: none; }
+    .layer-pill {
+      min-height: 44px;
+      padding: 8px 16px;
+      font-size: 13px;
+      border-radius: 22px;
+      flex-shrink: 0;
+    }
+
+    /* Touch-friendly quick-pick organ carousel */
+    .quick-pick-row {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 8px;
+      width: 100%;
+      padding: 4px 2px 10px 2px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .quick-pick-row::-webkit-scrollbar { display: none; }
+    .qp-btn {
+      min-height: 42px;
+      padding: 8px 14px;
+      font-size: 12px;
+      border-radius: 21px;
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
   }
 `;
 

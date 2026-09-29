@@ -32,32 +32,32 @@ function Explore() {
   }, [part, setSelected]);
 
   return (
-    <main className="min-h-screen bg-[#030303] text-white overflow-hidden relative selection:bg-[#00E5C4]/30 pb-32">
+    <div className="min-h-screen bg-[#030303] text-white overflow-x-clip relative selection:bg-[#00E5C4]/30 pb-32">
       
       {/* Background glow for immersion */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00E5C4]/5 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="mx-auto max-w-7xl px-5 pb-24 pt-12 relative z-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-5 pb-24 pt-8 sm:pt-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-12 text-center"
+          className="mb-8 sm:mb-12 text-center"
         >
           <span className="text-xs font-bold uppercase tracking-widest text-[#00E5C4]">
             Interactive Atlas
           </span>
-          <h1 className="mt-4 text-5xl md:text-7xl font-space font-black tracking-tighter text-white">
+          <h1 className="mt-3 sm:mt-4 text-4xl sm:text-5xl md:text-7xl font-space font-black tracking-tighter text-white">
             The <span className="text-[#00E5C4]">Body Map</span>
           </h1>
-          <p className="mt-6 text-sm text-[#8A8F98] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 sm:mt-6 text-xs sm:text-sm text-[#8A8F98] max-w-2xl mx-auto leading-relaxed">
             Tap any glowing region to explore. Switch layers to see different data.
             <br /> <span className="text-white font-bold">30+ organs · 200+ facts · 5 data layers.</span>
           </p>
         </motion.div>
 
         {/* Immersive centered layout */}
-        <div className="relative w-full max-w-4xl mx-auto rounded-[3rem] border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_0_80px_rgba(0,229,196,0.05)] p-4 md:p-8">
+        <div className="relative w-full max-w-4xl mx-auto rounded-3xl sm:rounded-[3rem] border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_0_80px_rgba(0,229,196,0.05)] p-3 sm:p-6 md:p-8">
           
           {/* Desktop floating sidebar — how it works + quick stats */}
           <aside className="absolute left-8 top-8 bottom-8 w-64 hidden xl:flex flex-col justify-between rounded-[2rem] border border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl z-20 pointer-events-none">
@@ -119,6 +119,6 @@ function Explore() {
       </div>
 
       <FactPanel />
-    </main>
+    </div>
   );
 }

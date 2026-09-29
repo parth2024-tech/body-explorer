@@ -11,6 +11,7 @@ import { lazy, Suspense, useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { Header } from "../components/Header";
+import { MobileBottomNav } from "../components/MobileBottomNav";
 import { useBodyStore } from "@/store/useBodyStore";
 
 declare global {
@@ -230,10 +231,13 @@ function RootComponent() {
       <Header />
 
       {/* Content: sits above particles */}
-      <main id="main-content" className="relative z-10" tabIndex={-1}>
+      <main id="main-content" className="relative z-10 pb-20 md:pb-0" tabIndex={-1}>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </main>
+
+      {/* Touch-optimized mobile bottom navigation */}
+      <MobileBottomNav />
 
       {/* Hidden element for Google Translate widget */}
       <div id="google_translate_element" style={{ display: "none" }} />

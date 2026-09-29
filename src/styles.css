@@ -871,3 +871,26 @@ body {
   border: none !important;
   box-shadow: none !important;
 }
+
+/* ── Mobile Ergonomics & Safe Area Support ───────────────────────────────── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Smooth mobile touch scrolling */
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.touch-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Prevent tap highlight gray box on mobile webkit */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+

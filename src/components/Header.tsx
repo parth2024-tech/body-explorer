@@ -38,8 +38,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#222222] bg-[#030303]/95 backdrop-blur-md">
-      {/* Simplified Top Bar for Language */}
-      <div className="border-b border-[#222222] px-5 py-2 flex items-center justify-between">
+      {/* Desktop Top Bar */}
+      <div className="hidden md:flex border-b border-[#222222] px-5 py-2 items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="font-medium text-xs text-[#8A8F98]">
             Interactive Health Education
@@ -47,11 +47,11 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-4">
-          <span className="hidden sm:flex text-xs text-[#8A8F98]">
+          <span className="flex text-xs text-[#8A8F98]">
             {date}
           </span>
 
-          {/* i18n Selector */}
+          {/* i18n Selector for Desktop */}
           <div className="flex items-center gap-1 bg-[#141826] rounded-full p-1 border border-[#222222]">
             <button
               onClick={() => setLanguage("en")}
@@ -78,27 +78,49 @@ export function Header() {
       </div>
 
       {/* Main header bar */}
-      <div className="mx-auto flex flex-col md:flex-row md:items-center justify-between gap-0 px-5 max-w-7xl">
+      <div className="mx-auto flex items-center justify-between gap-0 px-4 md:px-5 max-w-7xl">
         {/* Logo */}
-        <Link to="/" className="group flex items-center gap-3 py-3 md:py-4 border-r border-[#222222] md:pr-6">
+        <Link to="/" className="group flex items-center gap-3 py-2.5 md:py-4 md:border-r border-[#222222] md:pr-6">
           <div className="relative flex h-8 w-8 items-center justify-center border border-[#FC3D21]/60 group-hover:border-[#FC3D21] transition-colors">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FC3D21" strokeWidth="2" strokeLinecap="square">
               <path d="M12 2v20M5 8c3 0 4 2 7 2s4-2 7-2M5 16c3 0 4-2 7-2s4 2 7 2" />
             </svg>
-            {/* Corner decorations removed for friendlier look */}
           </div>
           <div className="flex flex-col">
-            <span className="font-display text-lg font-bold text-[#EAEAEA] leading-tight">
+            <span className="font-display text-base md:text-lg font-bold text-[#EAEAEA] leading-tight">
               Body Atlas
             </span>
-            <span className="text-[10px] font-medium text-[#8A8F98] uppercase tracking-wider">
+            <span className="text-[9px] md:text-[10px] font-medium text-[#8A8F98] uppercase tracking-wider">
               Explore your biology
             </span>
           </div>
         </Link>
 
-        {/* Navigation */}
-        <nav className="flex items-center gap-0 overflow-x-auto scrollbar-none -mx-5 px-5 md:mx-0 md:px-0 md:flex-1 md:pl-4">
+        {/* Mobile-only Quick Controls: Emergency Dial & Compact Language */}
+        <div className="flex md:hidden items-center gap-2">
+          {/* Quick Emergency Dial Button */}
+          <a
+            href="tel:112"
+            aria-label="Call Emergency 112"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-500/15 border border-red-500/40 text-red-400 text-xs font-bold transition-transform active:scale-95"
+          >
+            <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
+            <span>112 SOS</span>
+          </a>
+
+          {/* Compact Language Toggle */}
+          <button
+            type="button"
+            onClick={() => setLanguage(language === "en" ? "hi" : "en")}
+            className="flex items-center justify-center h-8 px-2.5 rounded-full border border-white/10 bg-white/5 text-xs font-semibold text-[#EAEAEA] active:scale-95 transition-all"
+            aria-label="Toggle language"
+          >
+            {language === "en" ? "हिं" : "EN"}
+          </button>
+        </div>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-0 overflow-x-auto scrollbar-none md:flex-1 md:pl-4">
           {NAV_LINKS.map(({ to, labelKey, code }) => {
             const isActive = pathname === to;
             return (
@@ -128,7 +150,7 @@ export function Header() {
           })}
         </nav>
 
-        {/* Simplified right side */}
+        {/* Desktop right side */}
         <div className="hidden xl:flex items-center border-l border-[#222222] pl-5 py-3 shrink-0">
           <span className="text-sm font-medium text-[#00E5C4]">
             Ready to learn

@@ -173,8 +173,8 @@ function LibraryPage() {
 
       <div className="max-w-7xl mx-auto px-5">
         
-        {/* Navigation Tabs (Glassmorphism) */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12 relative z-10">
+        {/* Navigation Tabs (Touch Scrollable on Mobile) */}
+        <div className="flex gap-2.5 overflow-x-auto sm:flex-wrap sm:justify-center mb-10 relative z-10 touch-scroll px-1 pb-2">
           {[
             { id: "remedies", label: "Natural Remedies", icon: <Leaf className="w-4 h-4" /> },
             { id: "myths", label: "Medical Myths", icon: <Zap className="w-4 h-4" /> },
@@ -187,7 +187,7 @@ function LibraryPage() {
                 setActiveTab(tab.id as any);
                 setSelectedTag(null);
               }}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm transition-all backdrop-blur-md border ${
+              className={`flex items-center gap-2 px-5 py-3 rounded-full font-bold text-xs sm:text-sm whitespace-nowrap min-h-[44px] shrink-0 transition-all backdrop-blur-md border ${
                 activeTab === tab.id
                   ? "bg-[#00E5C4] text-black border-[#00E5C4] shadow-[0_0_20px_rgba(0,229,196,0.3)]"
                   : "bg-white/[0.02] text-[#8A8F98] border-white/10 hover:text-white hover:bg-white/[0.05]"
@@ -206,7 +206,7 @@ function LibraryPage() {
               placeholder={`Search ${activeTab}...`}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-2xl border border-white/10 bg-white/[0.02] pl-14 pr-6 py-4 text-sm text-white placeholder-[#555] outline-none focus:border-[#00E5C4]/50 focus:bg-white/[0.04] transition-all backdrop-blur-md"
+              className="w-full rounded-2xl border border-white/10 bg-white/[0.02] pl-14 pr-6 py-4 text-base sm:text-sm text-white placeholder-[#555] outline-none focus:border-[#00E5C4]/50 focus:bg-white/[0.04] transition-all backdrop-blur-md"
             />
             <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#8A8F98]" />
           </div>
