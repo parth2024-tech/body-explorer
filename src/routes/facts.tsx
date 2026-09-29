@@ -223,18 +223,18 @@ function FactsPage() {
                   </motion.div>
                 </AnimatePresence>
 
-                <div className="mt-12 flex flex-wrap justify-center gap-4">
+                <div className="mt-12 flex flex-wrap justify-center gap-3.5">
                   <button
                     onClick={handleNextRandomFact}
                     disabled={isRotating}
-                    className="inline-flex items-center gap-2 rounded-full bg-[#A855F7] px-8 py-4 text-sm font-bold text-white transition-all hover:bg-purple-500 active:scale-95 shadow-[0_0_30px_rgba(168,85,247,0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="inline-flex items-center gap-2 rounded-lg bg-[#00E5C4] px-6 py-3.5 text-sm font-bold text-[#0A0E1A] transition-colors hover:bg-[#00cbb0] active:scale-98 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <RefreshCcw className={`w-4 h-4 ${isRotating ? "animate-spin" : ""}`} />
                     Next Random Fact
                   </button>
                   <button
                     onClick={() => handleSpeak(randomFact.text, randomFact.id)}
-                    className={`inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-bold border transition-all active:scale-95 ${
+                    className={`inline-flex items-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold border transition-all active:scale-98 ${
                       speakingFactId === randomFact.id
                         ? "bg-rose-500/10 border-rose-500 text-rose-400"
                         : "border-white/10 bg-white/[0.02] text-white hover:bg-white/5"
@@ -249,7 +249,7 @@ function FactsPage() {
                         ? removeBookmark(randomFact.id)
                         : addBookmark(randomFact.id)
                     }
-                    className={`inline-flex items-center justify-center w-14 h-14 rounded-full border transition-all active:scale-95 ${
+                    className={`inline-flex items-center justify-center w-12 h-12 rounded-lg border transition-all active:scale-98 ${
                       isBookmarked(randomFact.id)
                         ? "bg-rose-500/10 border-rose-500 text-rose-500"
                         : "border-white/10 bg-white/[0.02] text-white hover:bg-white/5 hover:text-rose-500"

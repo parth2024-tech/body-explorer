@@ -1,205 +1,108 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-
-const LOGOS = [
-  { name: "WebMD", icon: "🩺" },
-  { name: "Mayo Clinic", icon: "🏥" },
-  { name: "Harvard Health", icon: "🎓" },
-  { name: "NIH", icon: "🔬" },
-  { name: "WHO", icon: "🌍" },
-  { name: "Nature", icon: "📰" },
-  { name: "PubMed", icon: "📚" },
-  { name: "Lancet", icon: "⚕️" },
-];
-
-const TESTIMONIALS_MINI = [
-  {
-    quote: "The most beautiful anatomy app I've ever used. Period.",
-    author: "Dr. Priya Sharma",
-    role: "Cardiologist",
-    avatar: "👩‍⚕️",
-  },
-  {
-    quote: "My students finally understand what a liver does. Atlas changed that.",
-    author: "Prof. James Liu",
-    role: "Biology Professor",
-    avatar: "👨‍🏫",
-  },
-  {
-    quote: "I track my symptoms here daily. It's become part of my health routine.",
-    author: "Meera K.",
-    role: "Verified User",
-    avatar: "🧑",
-  },
-];
-
-function AnimatedCounter({ end, suffix = "" }: { end: number; suffix?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
-
-  return (
-    <motion.span
-      ref={ref}
-      initial={{ opacity: 0 }}
-      animate={inView ? { opacity: 1 } : {}}
-    >
-      <motion.span
-        initial={{ scale: 0.5 }}
-        animate={inView ? { scale: 1 } : {}}
-        transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-      >
-        {inView ? (
-          <CountUp end={end} suffix={suffix} />
-        ) : (
-          "0"
-        )}
-      </motion.span>
-    </motion.span>
-  );
-}
-
-function CountUp({ end, suffix = "" }: { end: number; suffix: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true });
-
-  return (
-    <motion.span
-      ref={ref}
-      initial={0}
-      animate={inView ? end : 0}
-      transition={{ duration: 2, ease: "easeOut" }}
-      onUpdate={(latest) => {
-        if (ref.current) {
-          ref.current.textContent = Math.round(latest as number).toLocaleString() + suffix;
-        }
-      }}
-    >
-      0{suffix}
-    </motion.span>
-  );
-}
+import { ShieldCheck, CheckCircle2, FileText, Scale } from "lucide-react";
 
 export function TrustSection() {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  return (
-    <section ref={ref} className="relative py-20 overflow-hidden" aria-label="Trust and social proof">
-      {/* Divider line with glow */}
-      <div className="absolute top-0 left-0 right-0 h-px" aria-hidden="true">
-        <div
-          className="h-full"
-          style={{
-            background: "linear-gradient(90deg, transparent 0%, rgba(0,229,196,0.3) 30%, rgba(107,79,160,0.3) 70%, transparent 100%)",
-          }}
-        />
-      </div>
+  const EVIDENCE_TIERS = [
+    {
+      tier: "Tier 1: Gold Standard",
+      sources: "Cochrane Reviews, WHO, CDC, NIH, USPSTF",
+      description: "Systematic reviews, meta-analyses, and national public health clinical guidelines.",
+      badge: "Highest Clinical Weight",
+      color: "#00E5C4",
+    },
+    {
+      tier: "Tier 2: Silver Standard",
+      sources: "AHA, ADA, AAO, NASS, ACSM, Lancet, NEJM",
+      description: "Peer-reviewed randomized controlled trials and specialty medical association standards.",
+      badge: "Clinical Specialty Rigor",
+      color: "#38BDF8",
+    },
+    {
+      tier: "Tier 3: Bronze Standard",
+      sources: "Validated Pharmacological & Observational Data",
+      description: "Peer-reviewed biochemical mechanisms, pharmacokinetic data, and controlled human trials.",
+      badge: "Explicitly Contextualized",
+      color: "#F5A623",
+    },
+  ];
 
+  return (
+    <section ref={ref} className="relative py-20 overflow-hidden border-y border-[#1C2540]" aria-label="Evidence and sourcing standards">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* Section label */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center font-mono text-[10px] tracking-[0.3em] text-[#7B8199] uppercase mb-10"
-        >
-          Trusted by scientists, educators & curious minds
-        </motion.p>
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 rounded-md border border-[#1E2844] bg-[#0D1428] px-3.5 py-1 mb-3">
+            <ShieldCheck className="h-3.5 w-3.5 text-[#00E5C4]" />
+            <span className="font-mono text-[10px] tracking-[0.2em] text-[#00E5C4] uppercase">
+              Clinical Integrity Framework
+            </span>
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[#E8E0D5]">
+            Every Claim Grounded in Tier 1 and Tier 2 Medical Evidence
+          </h2>
+          <p className="mt-3 text-xs md:text-sm text-[#7B8199] leading-relaxed">
+            We do not publish unverified viral claims, sponsored supplement hype, or fabricated statistics.
+            All anatomical statements and remedies are mapped to primary clinical literature.
+          </p>
+        </div>
 
-        {/* Stats row */}
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 mb-16">
+        {/* Real Stats Row (no fake animated count-ups) */}
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 mb-14">
           {[
-            { value: 5, suffix: "", label: "Data Layers" },
-            { value: 100, suffix: "%", label: "Educational" },
-            { value: 30, suffix: "+", label: "Organs Mapped" },
-            { value: 200, suffix: "+", label: "Verified Facts" },
+            { value: "297", label: "Peer-Reviewed Anatomical Facts", note: "Indexed to primary citations" },
+            { value: "58", label: "Debunked Health Myths", note: "With danger alerts and evidence" },
+            { value: "39", label: "Evidence-Rated Remedies", note: "Studied, traditional & unproven" },
+            { value: "30+", label: "Anatomical Organs Mapped", note: "Vector layered visualization" },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="text-center p-6 rounded-2xl border border-[#1E2844] bg-[#0D1428]/60 backdrop-blur-sm"
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="p-5 rounded-xl border border-[#1E2844] bg-[#0D1428]/80 text-center"
             >
-              <div
-                className="font-mono text-3xl md:text-4xl font-bold"
-                style={{
-                  background: "linear-gradient(135deg, #00E5C4, #6B4FA0)",
-                  WebkitBackgroundClip: "text",
-                  backgroundClip: "text",
-                  color: "transparent",
-                  textShadow: "none",
-                }}
-              >
-                <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+              <div className="font-mono text-3xl font-bold text-[#00E5C4]">
+                {stat.value}
               </div>
-              <div className="mt-1.5 text-xs text-[#7B8199]">{stat.label}</div>
+              <div className="mt-1.5 text-xs font-semibold text-[#E8E0D5]">{stat.label}</div>
+              <div className="mt-1 text-[10px] text-[#7B8199]">{stat.note}</div>
             </motion.div>
           ))}
         </div>
 
-        {/* Marquee logo strip */}
-        <div className="relative overflow-hidden mb-16">
-          <div className="absolute left-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-            style={{ background: "linear-gradient(90deg, #0A0E1A, transparent)" }} aria-hidden="true" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-            style={{ background: "linear-gradient(270deg, #0A0E1A, transparent)" }} aria-hidden="true" />
-          <div
-            className="flex gap-12 items-center"
-            style={{ animation: "marquee 30s linear infinite", width: "max-content" }}
-          >
-            {[...LOGOS, ...LOGOS].map((logo, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-2.5 opacity-40 hover:opacity-70 transition-opacity cursor-default"
-              >
-                <span className="text-xl">{logo.icon}</span>
-                <span className="font-mono text-xs font-semibold tracking-widest text-[#8B8FA3] uppercase whitespace-nowrap">
-                  {logo.name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Mini testimonials */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {TESTIMONIALS_MINI.map((t, i) => (
-            <motion.div
-              key={t.author}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-              className="relative rounded-2xl border border-[#1E2844] bg-[#0D1428]/60 p-6 backdrop-blur-sm overflow-hidden group hover:border-[#00E5C4]/25 transition-all duration-300 hover:-translate-y-0.5"
+        {/* Evidence Tiers Architecture */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {EVIDENCE_TIERS.map((tier, i) => (
+            <div
+              key={tier.tier}
+              className="p-6 rounded-xl border border-[#1E2844] bg-[#0B0F19]/80 backdrop-blur-sm flex flex-col justify-between"
             >
-              {/* Top shimmer */}
-              <div
-                className="absolute top-0 left-0 right-0 h-px"
-                style={{
-                  background: "linear-gradient(90deg, transparent, rgba(0,229,196,0.3), transparent)",
-                  opacity: 0,
-                  transition: "opacity 0.3s",
-                }}
-              />
-              {/* Quote icon */}
-              <div
-                className="mb-4 font-mono text-3xl leading-none"
-                style={{ color: "#00E5C4", opacity: 0.3 }}
-                aria-hidden="true"
-              >
-                "
-              </div>
-              <p className="text-sm leading-relaxed text-[#B8C0CC] mb-5">"{t.quote}"</p>
-              <div className="flex items-center gap-3 pt-4 border-t border-[#1E2844]">
-                <div className="h-8 w-8 rounded-full bg-[#1A2038] flex items-center justify-center text-lg">
-                  {t.avatar}
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span
+                    className="font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border"
+                    style={{
+                      borderColor: `${tier.color}40`,
+                      background: `${tier.color}10`,
+                      color: tier.color,
+                    }}
+                  >
+                    {tier.badge}
+                  </span>
+                  <CheckCircle2 className="h-4 w-4" style={{ color: tier.color }} />
                 </div>
-                <div>
-                  <div className="text-xs font-semibold text-[#E8E0D5]">{t.author}</div>
-                  <div className="text-[10px] text-[#7B8199]">{t.role}</div>
-                </div>
+                <h3 className="text-sm font-bold text-[#E8E0D5] mb-1.5">{tier.tier}</h3>
+                <p className="text-xs text-[#8B8FA3] leading-relaxed mb-4">{tier.description}</p>
               </div>
-            </motion.div>
+
+              <div className="pt-3 border-t border-[#1C2540] text-[11px] font-mono text-[#7B8199]">
+                <span className="text-[#E8E0D5] font-semibold">Sources:</span> {tier.sources}
+              </div>
+            </div>
           ))}
         </div>
       </div>

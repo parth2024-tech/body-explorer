@@ -11,22 +11,21 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title:
-          "The Living Body Atlas — Your body has 37 trillion cells. Start understanding them.",
+        title: "The Living Body Atlas: Interactive Human Anatomy & Physiology",
       },
       {
         name: "description",
         content:
-          "The world's most immersive human anatomy education platform. Explore 30+ organs through 5 data layers, track your body diary, complete weekly quests, and get AI-guided clarity. Free forever on the basics.",
+          "Clinically verified human anatomy and physiology platform. Explore 30+ anatomical structures, 290+ peer-reviewed physiological mechanisms, and evidence-rated remedies.",
       },
       {
         property: "og:title",
-        content: "The Living Body Atlas — Know Your Body",
+        content: "The Living Body Atlas: Interactive Human Anatomy",
       },
       {
         property: "og:description",
         content:
-          "Interactive anatomy platform with 30+ organs, personal body diary, daily insights, community quests, and AI symptom education. Curious humans already exploring.",
+          "Interactive human anatomy and physiological reference vetted against gold-standard clinical guidelines from the AHA, CDC, and WHO.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

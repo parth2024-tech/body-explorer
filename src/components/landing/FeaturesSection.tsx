@@ -1,88 +1,82 @@
 import { useState, useRef } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Link } from "@tanstack/react-router";
+import {
+  Compass,
+  FileQuestion,
+  Calendar,
+  Layers,
+  BookOpen,
+  ArrowRight,
+  ShieldAlert,
+} from "lucide-react";
 
 const FEATURES = [
   {
     id: "explore",
-    icon: "🗺️",
+    icon: Compass,
     code: "XPL",
     color: "#00E5C4",
-    title: "Living Map",
-    tagline: "Navigate your anatomy",
-    desc: "30+ interactive zones across 5 data layers. Tap any organ to reveal what biology class never taught you. Real-time MRI-quality visualization.",
-    stats: ["30+ organs", "5 data layers", "Real-time"],
+    title: "Interactive Body Map",
+    tagline: "Explore Regional Anatomy",
+    desc: "30+ anatomical zones mapped across physiological layers. Click any organ to view verified biological mechanisms and clinical facts.",
+    stats: ["30+ Organs", "Interactive Vectors", "Layered Views"],
     link: "/explore",
-    preview: {
-      bg: "radial-gradient(ellipse at center, rgba(0,229,196,0.12) 0%, transparent 70%)",
-      icon: "🫀",
-      label: "Cardiovascular",
-    },
   },
-
   {
     id: "explain",
-    icon: "🧠",
+    icon: FileQuestion,
     code: "EXP",
-    color: "#A855F7",
-    title: "Explain This",
-    tagline: "AI-guided body clarity",
-    desc: "Describe what you feel in plain language. Get educational context, organ connections, and smart questions to ask your doctor.",
-    stats: ["Plain language", "Doctor prep", "Organ maps"],
+    color: "#38BDF8",
+    title: "Terminology Explainer",
+    tagline: "Demystify Medical Terms",
+    desc: "Describe medical terms or clinical concepts in plain language. Get context, anatomical connections, and doctor discussion guides.",
+    stats: ["Plain Language", "Doctor Prep", "Organ Connections"],
     link: "/explain",
-    preview: {
-      bg: "radial-gradient(ellipse at center, rgba(168,85,247,0.1) 0%, transparent 70%)",
-      icon: "💬",
-      label: "Symptom Analysis",
-    },
   },
   {
     id: "daily",
-    icon: "⚡",
+    icon: Calendar,
     code: "DLY",
     color: "#00E5C4",
-    title: "Daily Insight",
-    tagline: "One fact. One action.",
-    desc: "Every day, one carefully chosen body fact + one 30-second action. Streak tracking, reminders, knowledge that accumulates.",
-    stats: ["Daily streak", "200+ facts", "30s actions"],
-    link: "/daily",
-    preview: {
-      bg: "radial-gradient(ellipse at center, rgba(0,229,196,0.1) 0%, transparent 70%)",
-      icon: "🔥",
-      label: "Day 12 Streak",
-    },
+    title: "Daily Clinical Insight",
+    tagline: "One Fact, One Micro-Action",
+    desc: "A daily rotating peer-reviewed physiological insight paired with a practical 30-second evidence-based habit.",
+    stats: ["Daily Rotation", "290+ Facts", "Habit Guidance"],
+    link: "/facts",
   },
   {
-    id: "quest",
-    icon: "🏆",
-    code: "QST",
-    color: "#F5A623",
-    title: "Weekly Quest",
-    tagline: "Learn together",
-    desc: "Community challenges every week. Complete quests, earn verified certificates, compete on the global leaderboard.",
-    stats: ["Weekly reset", "Certificates", "Leaderboard"],
-    link: "/quest",
-    preview: {
-      bg: "radial-gradient(ellipse at center, rgba(245,166,35,0.1) 0%, transparent 70%)",
-      icon: "🎖️",
-      label: "Quest Active",
-    },
+    id: "emergency",
+    icon: ShieldAlert,
+    code: "EMG",
+    color: "#F43F5E",
+    title: "Emergency Red Flags",
+    tagline: "Critical Triage Warnings",
+    desc: "Immediate emergency warning signs separated from non-urgent symptoms. Know when to call emergency services versus scheduling a routine visit.",
+    stats: ["Urgency Tiers", "Emergency 911/112", "Clinical Safety"],
+    link: "/emergency",
   },
   {
     id: "library",
-    icon: "📚",
+    icon: BookOpen,
     code: "LIB",
-    color: "#6B4FA0",
-    title: "Body Library",
-    tagline: "Deep knowledge base",
-    desc: "Curated medical knowledge, cross-referenced by system, organ, and condition. Sourced from verified medical literature.",
-    stats: ["Deep insights", "Verified sources", "Cross-linked"],
+    color: "#F5A623",
+    title: "Anatomical Library",
+    tagline: "Evidence-Based Index",
+    desc: "Peer-reviewed medical literature indexed by system, organ, and condition. Grounded in CDC, WHO, and AHA clinical standards.",
+    stats: ["Tier 1/2 Sources", "Cross-Linked", "Peer-Reviewed"],
     link: "/library",
-    preview: {
-      bg: "radial-gradient(ellipse at center, rgba(107,79,160,0.12) 0%, transparent 70%)",
-      icon: "🔍",
-      label: "Digestive System",
-    },
+  },
+  {
+    id: "symptoms",
+    icon: Layers,
+    code: "SYM",
+    color: "#38BDF8",
+    title: "Symptom Navigator",
+    tagline: "Organ-Guided Context",
+    desc: "Understand how localized symptoms correlate with specific anatomical structures, complete with discussion prompts for physicians.",
+    stats: ["Educational Focus", "Anatomy-Linked", "Doctor Questions"],
+    link: "/symptoms",
   },
 ];
 
@@ -90,43 +84,27 @@ function FeatureCard({ feat, index }: { feat: typeof FEATURES[0]; index: number 
   const [hovered, setHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+  const Icon = feat.icon;
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.08, ease: [0.25, 0.4, 0.25, 1] }}
+      transition={{ duration: 0.5, delay: index * 0.06 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="relative"
     >
       <Link
         to={feat.link}
-        className="group block rounded-3xl border border-[#1E2844] bg-[#0D1428]/60 p-6 backdrop-blur-sm transition-all duration-500 overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-        style={{
-          borderColor: hovered ? `${feat.color}40` : undefined,
-          boxShadow: hovered ? `0 0 40px ${feat.color}10, 0 8px 32px rgba(0,0,0,0.4)` : undefined,
-          transform: hovered ? "translateY(-4px)" : "translateY(0)",
-          outline: `2px solid transparent`,
-        }}
+        className="group block rounded-xl border border-[#1E2844] bg-[#0D1428]/70 p-6 backdrop-blur-sm transition-all duration-300 overflow-hidden hover:border-[#2D3B66] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#00E5C4]"
       >
-        {/* Background gradient on hover */}
+        {/* Top accent line */}
         <div
-          className="absolute inset-0 transition-opacity duration-500 pointer-events-none"
+          className="absolute top-0 left-0 right-0 h-0.5 opacity-40 group-hover:opacity-100 transition-opacity"
           style={{
-            background: feat.preview.bg,
-            opacity: hovered ? 1 : 0,
-          }}
-          aria-hidden="true"
-        />
-
-        {/* Top shimmer line */}
-        <div
-          className="absolute top-0 left-0 right-0 h-px transition-opacity duration-300"
-          style={{
-            background: `linear-gradient(90deg, transparent, ${feat.color}60, transparent)`,
-            opacity: hovered ? 1 : 0,
+            background: `linear-gradient(90deg, transparent, ${feat.color}, transparent)`,
           }}
           aria-hidden="true"
         />
@@ -136,59 +114,49 @@ function FeatureCard({ feat, index }: { feat: typeof FEATURES[0]; index: number 
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-center gap-3">
               <div
-                className="flex h-12 w-12 items-center justify-center rounded-2xl text-2xl transition-transform duration-300"
+                className="flex h-10 w-10 items-center justify-center rounded-lg"
                 style={{
-                  background: `linear-gradient(135deg, ${feat.color}20, ${feat.color}08)`,
+                  background: `${feat.color}15`,
                   border: `1px solid ${feat.color}30`,
-                  transform: hovered ? "scale(1.08)" : "scale(1)",
+                  color: feat.color,
                 }}
               >
-                {feat.icon}
+                <Icon className="h-5 w-5" />
               </div>
               <div>
-                <div className="font-mono text-[9px] tracking-[0.2em] text-[#7B8199] uppercase mb-0.5">
+                <div className="font-mono text-[9px] tracking-[0.2em] text-[#7B8199] uppercase">
                   {feat.code}
                 </div>
-                <h3
-                  className="text-base font-bold transition-colors duration-300"
-                  style={{ color: hovered ? feat.color : "#E8E0D5" }}
-                >
+                <h3 className="text-base font-bold text-[#E8E0D5] group-hover:text-[#00E5C4] transition-colors">
                   {feat.title}
                 </h3>
               </div>
             </div>
-            <div
-              className="font-mono text-xs transition-all duration-300"
-              style={{
-                color: feat.color,
-                opacity: hovered ? 1 : 0.4,
-                transform: hovered ? "translate(2px, -2px)" : "translate(0,0)",
-              }}
+            <ArrowRight
+              className="h-4 w-4 text-[#7B8199] group-hover:text-[#00E5C4] transition-all transform group-hover:translate-x-0.5"
               aria-hidden="true"
-            >
-              ↗
-            </div>
+            />
           </div>
 
           {/* Tagline */}
           <div
-            className="mb-2 font-mono text-[10px] tracking-wider uppercase"
-            style={{ color: feat.color, opacity: 0.7 }}
+            className="mb-2 font-mono text-[10px] tracking-wider uppercase font-semibold"
+            style={{ color: feat.color }}
           >
             {feat.tagline}
           </div>
 
           {/* Description */}
-          <p className="text-sm leading-relaxed text-[#7B8199] mb-5">{feat.desc}</p>
+          <p className="text-xs md:text-sm leading-relaxed text-[#8B8FA3] mb-5">{feat.desc}</p>
 
           {/* Stats pills */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {feat.stats.map((s) => (
               <span
                 key={s}
-                className="rounded-full px-2.5 py-1 font-mono text-[10px] tracking-wider"
+                className="rounded-md px-2.5 py-1 font-mono text-[10px] tracking-wide"
                 style={{
-                  background: `${feat.color}10`,
+                  background: `${feat.color}08`,
                   border: `1px solid ${feat.color}25`,
                   color: feat.color,
                 }}
@@ -209,54 +177,35 @@ export function FeaturesSection() {
 
   return (
     <section ref={ref} className="relative py-24 overflow-hidden" aria-labelledby="features-heading">
-      {/* Section background */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "radial-gradient(ellipse 70% 40% at 50% 50%, rgba(107,79,160,0.06) 0%, transparent 70%)",
-          }}
-        />
-      </div>
-
       <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
         {/* Section header */}
-        <div className="mb-16 text-center">
+        <div className="mb-16 text-center max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#1E2844] bg-[#0D1428]/60 px-4 py-1.5 backdrop-blur-sm"
+            transition={{ duration: 0.4 }}
+            className="mb-4 inline-flex items-center gap-2 rounded-md border border-[#1E2844] bg-[#0D1428] px-3.5 py-1"
           >
-            <span className="font-mono text-[10px] tracking-[0.25em] text-[#00E5C4] uppercase">Platform</span>
+            <span className="font-mono text-[10px] tracking-[0.2em] text-[#00E5C4] uppercase">
+              Core Modules
+            </span>
           </motion.div>
           <motion.h2
             id="features-heading"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight tracking-[-0.03em] text-[#E8E0D5]"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-[clamp(1.9rem,4vw,2.75rem)] font-bold tracking-tight text-[#E8E0D5]"
           >
-            Six ways to know{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #00E5C4, #A855F7)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-                color: "transparent",
-              }}
-            >
-              your body
-            </span>
+            Structured Tools for Practical Health Literacy
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-4 max-w-xl mx-auto text-base text-[#7B8199]"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-3 text-xs md:text-sm text-[#7B8199] leading-relaxed"
           >
-            Each module is a complete experience. Together, they form the most
-            comprehensive self-education health platform ever built.
+            Each module is designed for clinical accuracy and clear patient understanding.
           </motion.p>
         </div>
 
@@ -267,19 +216,19 @@ export function FeaturesSection() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
+        {/* Bottom link */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-14 text-center"
+          transition={{ duration: 0.4, delay: 0.4 }}
+          className="mt-12 text-center"
         >
           <Link
             to="/explore"
-            className="group inline-flex items-center gap-2 text-sm font-semibold text-[#00E5C4] hover:text-[#00BFA0] transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#00E5C4] hover:underline"
           >
-            Explore the full platform
-            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            <span>Launch Complete Anatomical Explorer</span>
+            <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </motion.div>
       </div>
