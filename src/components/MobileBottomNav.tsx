@@ -16,6 +16,7 @@ import {
   PhoneCall,
   CheckCircle2,
   Info,
+  Apple,
 } from "lucide-react";
 
 export function MobileBottomNav() {
@@ -78,6 +79,15 @@ export function MobileBottomNav() {
   ];
 
   const secondaryLinks = [
+    {
+      to: "/food",
+      title: language === "hi" ? "भोजन और पोषण स्तर" : "Food & Nutrition Levels",
+      subtitle: language === "hi" ? "4-स्तरीय वर्गीकरण, पोषक नियम और तालमेल" : "4-level food spectrum, metabolic hacks & targets",
+      icon: Apple,
+      color: "text-teal-400",
+      bg: "bg-teal-400/10",
+      border: "border-teal-400/20",
+    },
     {
       to: "/facts",
       title: language === "hi" ? "तथ्य और मिथक" : "Facts & Myths",
