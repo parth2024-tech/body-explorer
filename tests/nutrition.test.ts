@@ -70,3 +70,95 @@ describe("Clinical Nutrition Benchmarks", () => {
     expect(targets.fiberRange[1]).toBe(38);
   });
 });
+
+import {
+  FOOD_FACTS,
+  FOOD_SYNERGIES,
+  DRUG_FOOD_WARNINGS,
+  NUTRITION_LEVELS,
+} from "../src/data/nutrition";
+
+describe("Indian Food Facts Clinical Database Integrity", () => {
+  it("contains all 12 curated Indian superfoods and staples", () => {
+    expect(FOOD_FACTS.length).toBe(12);
+  });
+
+  it("enforces the 6-part fixed card format and clinical safety criteria on every entry", () => {
+    for (const item of FOOD_FACTS) {
+      // 1. Identification & Evidence
+      expect(item.id).toBeTruthy();
+      expect(item.foodName).toBeTruthy();
+      expect(item.hindiName).toBeTruthy();
+      expect(item.evidenceTier).toMatch(/^Tier (1 Gold|2 Silver)/);
+      expect(item.sourceUrl).toMatch(/^https:\/\//);
+      expect(item.lastReviewed.length).toBeGreaterThan(5);
+
+      // 2. What it contains (Plain language)
+      expect(item.whatItContains.length).toBeGreaterThan(10);
+      expect(item.hi.whatItContains.length).toBeGreaterThan(10);
+
+      // 3. Proven benefit
+      expect(item.provenBenefit.length).toBeGreaterThan(10);
+      expect(item.hi.provenBenefit.length).toBeGreaterThan(10);
+
+      // 4. Myth check (Claim vs Reality)
+      expect(item.mythCheck.claim.length).toBeGreaterThan(5);
+      expect(item.mythCheck.reality.length).toBeGreaterThan(10);
+      expect(item.hi.mythClaim.length).toBeGreaterThan(5);
+      expect(item.hi.mythReality.length).toBeGreaterThan(10);
+
+      // 5. Who should limit it (Safety contraindications)
+      expect(item.whoShouldLimit.length).toBeGreaterThan(0);
+      expect(item.hi.whoShouldLimit.length).toBeGreaterThan(0);
+
+      // 6. Best pairing & Indian context serving
+      expect(item.bestPairing.length).toBeGreaterThan(10);
+      expect(item.indianServingContext.length).toBeGreaterThan(10);
+      expect(item.hi.bestPairing.length).toBeGreaterThan(10);
+
+      // 7. Clinical Triad: Do / Don't / Ask a doctor if
+      expect(item.guidance.do.length).toBeGreaterThan(5);
+      expect(item.guidance.dont.length).toBeGreaterThan(5);
+      expect(item.guidance.askDoctorIf.length).toBeGreaterThan(5);
+      expect(item.hi.do.length).toBeGreaterThan(5);
+      expect(item.hi.dont.length).toBeGreaterThan(5);
+      expect(item.hi.askDoctorIf.length).toBeGreaterThan(5);
+
+      // 8. Situational Context Tag
+      expect(item.situationTag.length).toBeGreaterThan(5);
+    }
+  });
+
+  it("ensures drug-nutrient warnings cite clinical interaction risks", () => {
+    expect(DRUG_FOOD_WARNINGS.length).toBeGreaterThanOrEqual(4);
+    for (const warning of DRUG_FOOD_WARNINGS) {
+      expect(warning.food).toBeTruthy();
+      expect(warning.medicationClass).toBeTruthy();
+      expect(["CRITICAL", "HIGH", "MODERATE"]).toContain(warning.riskSeverity);
+      expect(warning.clinicalConsequence).toBeTruthy();
+      expect(warning.doctorDirective).toBeTruthy();
+    }
+  });
+
+  it("ensures bioavailability synergies have evidence explanations", () => {
+    expect(FOOD_SYNERGIES.length).toBeGreaterThanOrEqual(4);
+    for (const syn of FOOD_SYNERGIES) {
+      expect(syn.foodA).toBeTruthy();
+      expect(syn.foodB).toBeTruthy();
+      expect(syn.synergyOutcome).toBeTruthy();
+      expect(syn.multiplier).toBeTruthy();
+      expect(syn.mechanism.length).toBeGreaterThan(10);
+      expect(syn.culinaryIdea.length).toBeGreaterThan(10);
+    }
+  });
+
+  it("ensures nutrition level benchmarks cover all 4 dietary tiers", () => {
+    const levels = Object.values(NUTRITION_LEVELS);
+    expect(levels.length).toBe(4);
+    for (const lvl of levels) {
+      expect(lvl.title).toBeTruthy();
+      expect(lvl.description).toBeTruthy();
+      expect(lvl.targetShare).toBeTruthy();
+    }
+  });
+});

@@ -2,11 +2,11 @@ import { useState, useMemo } from "react";
 import { useBodyStore } from "@/store/useBodyStore";
 import {
   NUTRITION_LEVELS,
-  FOOD_TIPS,
+  FOOD_FACTS,
   FOOD_SYNERGIES,
   DRUG_FOOD_WARNINGS,
   NutritionLevel,
-  FoodTip,
+  FoodFactEntry,
 } from "@/data/nutrition";
 import {
   Apple,
@@ -25,12 +25,21 @@ import {
   Layers,
   ArrowRight,
   Info,
+  ExternalLink,
+  Calendar,
+  Stethoscope,
+  XCircle,
+  Clock,
+  Check,
+  X,
+  Filter,
 } from "lucide-react";
 
 export function FoodNutritionHub() {
   const { language } = useBodyStore();
   const [selectedLevel, setSelectedLevel] = useState<NutritionLevel | "all">("all");
   const [selectedSystem, setSelectedSystem] = useState<string>("all");
+  const [selectedSituation, setSelectedSituation] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
 
   // Calculator state
@@ -66,24 +75,59 @@ export function FoodNutritionHub() {
     };
   }, [bodyWeight, activityFactor]);
 
-  // Filtered Food Tips
-  const filteredTips = useMemo(() => {
-    return FOOD_TIPS.filter((tip) => {
-      const matchesLevel = selectedLevel === "all" || tip.level === selectedLevel;
-      const matchesSystem = selectedSystem === "all" || tip.system === selectedSystem;
+  // Filtered Food Facts
+  const filteredFacts = useMemo(() => {
+    return FOOD_FACTS.filter((entry) => {
+      const matchesLevel = selectedLevel === "all" || entry.level === selectedLevel;
+      const matchesSystem = selectedSystem === "all" || entry.system === selectedSystem;
+
+      let matchesSituation = true;
+      if (selectedSituation === "bp") {
+        matchesSituation =
+          entry.situationTag.toLowerCase().includes("bp") ||
+          entry.situationTag.toLowerCase().includes("pressure") ||
+          entry.situationTag.toLowerCase().includes("heart");
+      } else if (selectedSituation === "diabetes") {
+        matchesSituation =
+          entry.situationTag.toLowerCase().includes("diabetes") ||
+          entry.situationTag.toLowerCase().includes("sugar") ||
+          entry.situationTag.toLowerCase().includes("prediabetes");
+      } else if (selectedSituation === "fasting") {
+        matchesSituation =
+          entry.situationTag.toLowerCase().includes("fasting") ||
+          entry.category === "millet" ||
+          entry.category === "sweetener";
+      } else if (selectedSituation === "immunity") {
+        matchesSituation =
+          entry.situationTag.toLowerCase().includes("monsoon") ||
+          entry.situationTag.toLowerCase().includes("winter") ||
+          entry.situationTag.toLowerCase().includes("immunity");
+      } else if (selectedSituation === "kidney") {
+        matchesSituation = entry.whoShouldLimit.some(
+          (w) =>
+            w.toLowerCase().includes("kidney") ||
+            w.toLowerCase().includes("ckd") ||
+            w.toLowerCase().includes("stone"),
+        );
+      }
+
       const query = searchQuery.toLowerCase().trim();
       const matchesSearch =
         !query ||
-        tip.title.toLowerCase().includes(query) ||
-        tip.foodName.toLowerCase().includes(query) ||
-        tip.actionableTip.toLowerCase().includes(query) ||
-        tip.biologicalMechanism.toLowerCase().includes(query) ||
-        tip.hi.title.includes(query) ||
-        tip.hi.foodName.includes(query);
+        entry.foodName.toLowerCase().includes(query) ||
+        entry.hindiName.toLowerCase().includes(query) ||
+        entry.whatItContains.toLowerCase().includes(query) ||
+        entry.provenBenefit.toLowerCase().includes(query) ||
+        entry.situationTag.toLowerCase().includes(query) ||
+        entry.mythCheck.claim.toLowerCase().includes(query) ||
+        entry.mythCheck.reality.toLowerCase().includes(query) ||
+        entry.bestPairing.toLowerCase().includes(query) ||
+        entry.hi.foodName.includes(query) ||
+        entry.hi.whatItContains.includes(query);
 
-      return matchesLevel && matchesSystem && matchesSearch;
+      return matchesLevel && matchesSystem && matchesSituation && matchesSearch;
     });
-  }, [selectedLevel, selectedSystem, searchQuery]);
+  }, [selectedLevel, selectedSystem, selectedSituation, searchQuery]);
 
   const systems = [
     { id: "all", label: language === "hi" ? "सभी प्रणालियां" : "All Systems", icon: Layers },
@@ -476,21 +520,28 @@ export function FoodNutritionHub() {
           </div>
         </section>
 
-        {/* ─── SECTION 3: Clinical Food Tips & Guidance Cards ─── */}
-        <section id="tips" aria-labelledby="tips-heading" className="mb-12 sm:mb-16 scroll-mt-24">
+        {/* ─── SECTION 3: Food Facts: What Each Food Really Does ─── */}
+        <section id="facts" aria-labelledby="facts-heading" className="mb-12 sm:mb-16 scroll-mt-24">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
             <div>
               <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#00E5C4] block">
-                {language === "hi" ? "व्यावहारिक सुझाव" : "Evidence-Based Protocols"}
+                {language === "hi"
+                  ? "आईसीएमआर व पबमेड साक्ष्य वेधशाला"
+                  : "ICMR-NIN & PubMed Evidence Observatory"}
               </span>
               <h2
-                id="tips-heading"
+                id="facts-heading"
                 className="text-xl sm:text-3xl font-bold text-white tracking-tight"
               >
                 {language === "hi"
-                  ? "भोजन और पोषण के प्रमुख नियम"
-                  : "Clinical Food Tips & Nutrition Rules"}
+                  ? "फूड फैक्ट्स: असल में क्या काम करता है प्रत्येक भोजन"
+                  : "Food Facts: What Each Food Really Does"}
               </h2>
+              <p className="text-xs sm:text-sm text-[#8A8F98] mt-1 max-w-2xl">
+                {language === "hi"
+                  ? "भारतीय मिलेट्स, साग, घी और पारंपरिक खाद्य पदार्थों के पोषक तत्व, सिद्ध नैदानिक लाभ, मिथक जांच और व्यावहारिक सावधानियां।"
+                  : "Nutrients, proven clinical benefits, viral myth checks, Indian food pairings, and situational precautions for Indian staples, millets, and produce."}
+              </p>
             </div>
 
             {/* Search Input */}
@@ -501,7 +552,9 @@ export function FoodNutritionHub() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={
-                  language === "hi" ? "भोजन या लाभ खोजें..." : "Search foods, organs, nutrients..."
+                  language === "hi"
+                    ? "मिलेट, रागी, मोरिंगा, घी..."
+                    : "Search ragi, moringa, ghee, BP..."
                 }
                 className="w-full rounded-xl border border-white/10 bg-white/[0.03] pl-10 pr-9 py-2.5 text-base sm:text-sm text-white placeholder-[#8A8F98] outline-none focus:border-[#00E5C4]/50 transition-all"
               />
@@ -515,6 +568,61 @@ export function FoodNutritionHub() {
                   ✕
                 </button>
               )}
+            </div>
+          </div>
+
+          {/* Situational Scenario Filter Pills */}
+          <div className="mb-4">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-[#8A8F98] mb-2 block flex items-center gap-1.5">
+              <Filter className="w-3.5 h-3.5 text-teal-400" />
+              {language === "hi"
+                ? "परिस्थिति अनुसार फिल्टर (सिचुएशनल टिप्स):"
+                : "Situational Context Filter:"}
+            </span>
+            <div className="flex gap-2 overflow-x-auto pb-2 touch-scroll -mx-4 px-4 sm:mx-0 sm:px-0">
+              {[
+                { id: "all", label: language === "hi" ? "सभी खाद्य पदार्थ" : "All Indian Foods" },
+                {
+                  id: "diabetes",
+                  label:
+                    language === "hi"
+                      ? "शुगर / प्रीडायबिटीज"
+                      : "If you have Diabetes / Sugar Spikes",
+                },
+                {
+                  id: "bp",
+                  label: language === "hi" ? "BP / दिल की दवाएं" : "If you're on BP / Heart Meds",
+                },
+                {
+                  id: "fasting",
+                  label: language === "hi" ? "त्योहार व व्रत" : "If you're Fasting for Festivals",
+                },
+                {
+                  id: "immunity",
+                  label: language === "hi" ? "मानसून व सर्दी सुरक्षा" : "Monsoon & Winter Safety",
+                },
+                {
+                  id: "kidney",
+                  label:
+                    language === "hi" ? "किडनी / पथरी सावधानी" : "If you have Kidney / Stone Risk",
+                },
+              ].map((sit) => {
+                const isSelected = selectedSituation === sit.id;
+                return (
+                  <button
+                    key={sit.id}
+                    type="button"
+                    onClick={() => setSelectedSituation(sit.id)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap border transition-all ${
+                      isSelected
+                        ? "bg-teal-500/20 text-teal-300 border-teal-500/50 shadow-sm"
+                        : "bg-white/[0.02] text-[#8A8F98] border-white/10 hover:text-white hover:bg-white/5"
+                    }`}
+                  >
+                    {sit.label}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -541,115 +649,240 @@ export function FoodNutritionHub() {
             })}
           </div>
 
-          {/* Tips Grid */}
-          {filteredTips.length === 0 ? (
+          {/* Facts Grid */}
+          {filteredFacts.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-white/10 p-8 sm:p-12 text-center text-[#8A8F98]">
               <Apple className="w-10 h-10 mx-auto text-[#8A8F98] mb-3 opacity-50" />
               <h3 className="text-base font-bold text-white mb-1">
-                {language === "hi" ? "कोई सुझाव नहीं मिला" : "No matching nutrition tips found"}
+                {language === "hi"
+                  ? "कोई खाद्य पदार्थ नहीं मिला"
+                  : "No matching food entries found"}
               </h3>
               <p className="text-xs">
                 {language === "hi"
                   ? "कृपया फिल्टर बदलें या खोज शब्द रीसेट करें।"
-                  : "Try clearing your search query or selecting a different system filter."}
+                  : "Try clearing your search query or selecting 'All Situations'."}
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-              {filteredTips.map((tip) => {
-                const levelMeta = NUTRITION_LEVELS[tip.level];
-                const displayTitle = language === "hi" ? tip.hi.title : tip.title;
-                const displayFood = language === "hi" ? tip.hi.foodName : tip.foodName;
-                const displayAction = language === "hi" ? tip.hi.actionableTip : tip.actionableTip;
-                const displayMechanism =
-                  language === "hi" ? tip.hi.biologicalMechanism : tip.biologicalMechanism;
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+              {filteredFacts.map((entry) => {
+                const levelMeta = NUTRITION_LEVELS[entry.level];
+                const displayName = language === "hi" ? entry.hi.foodName : entry.foodName;
+                const displayNutrients =
+                  language === "hi" ? entry.hi.whatItContains : entry.whatItContains;
+                const displayBenefit =
+                  language === "hi" ? entry.hi.provenBenefit : entry.provenBenefit;
+                const displayMythClaim =
+                  language === "hi" ? entry.hi.mythClaim : entry.mythCheck.claim;
+                const displayMythReality =
+                  language === "hi" ? entry.hi.mythReality : entry.mythCheck.reality;
+                const displayPairing = language === "hi" ? entry.hi.bestPairing : entry.bestPairing;
+                const displayDo = language === "hi" ? entry.hi.do : entry.guidance.do;
+                const displayDont = language === "hi" ? entry.hi.dont : entry.guidance.dont;
+                const displayAsk =
+                  language === "hi" ? entry.hi.askDoctorIf : entry.guidance.askDoctorIf;
 
                 return (
                   <article
-                    key={tip.id}
-                    className="rounded-2xl sm:rounded-3xl border border-white/10 bg-[#0A0E1A] p-4 sm:p-7 flex flex-col justify-between hover:border-white/20 transition-all shadow-lg"
+                    key={entry.id}
+                    className="rounded-2xl sm:rounded-3xl border border-white/10 bg-[#0A0E1A] p-5 sm:p-7 flex flex-col justify-between hover:border-teal-500/30 transition-all shadow-xl"
                   >
                     <div>
-                      {/* Card Header Badges */}
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3.5 sm:mb-4">
+                      {/* Top Badges */}
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                         <div className="flex items-center gap-1.5 sm:gap-2">
                           <span
                             className={`px-2.5 py-1 rounded-md text-[10px] sm:text-[11px] font-bold uppercase tracking-wider border ${levelMeta.badgeClass}`}
                           >
-                            Level {tip.level}
+                            Level {entry.level}
                           </span>
                           <span className="px-2.5 py-1 rounded-md text-[10px] sm:text-[11px] font-mono text-[#8A8F98] bg-white/5 border border-white/10">
-                            {tip.systemLabel}
+                            {entry.categoryLabel}
                           </span>
                         </div>
                         <span className="text-[10px] font-mono text-teal-400/90 font-medium">
-                          {tip.readingGrade}
+                          {entry.readingGrade}
                         </span>
                       </div>
 
-                      {/* Title & Food */}
-                      <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 leading-snug">
-                        {displayTitle}
-                      </h3>
-                      <p className="text-xs font-mono text-[#00E5C4] mb-3.5 sm:mb-4">
-                        <strong className="text-white/60">
-                          {language === "hi" ? "खाद्य स्रोत:" : "Key Foods:"}
-                        </strong>{" "}
-                        {displayFood}
-                      </p>
+                      {/* Food Name Header */}
+                      <div className="mb-3">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                          {displayName}
+                        </h3>
+                        <div className="text-xs font-mono text-[#8A8F98] mt-0.5">
+                          {entry.systemLabel}
+                        </div>
+                      </div>
 
-                      {/* Actionable Tip Box */}
-                      <div className="rounded-xl border border-teal-500/20 bg-teal-500/5 p-3.5 sm:p-4 mb-3.5 sm:mb-4">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-teal-300 block mb-1">
+                      {/* Situational Scenario Tag */}
+                      <div className="mb-4 px-3 py-2 rounded-lg bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-medium flex items-center gap-2">
+                        <Clock className="w-4 h-4 shrink-0 text-teal-400" />
+                        <span>{entry.situationTag}</span>
+                      </div>
+
+                      {/* Block 1: What It Contains */}
+                      <div className="mb-4 rounded-xl bg-white/[0.02] border border-white/5 p-3.5 text-xs text-[#EAEAEA] leading-relaxed">
+                        <strong className="text-teal-300 uppercase tracking-wider text-[10px] block mb-1">
+                          🌿{" "}
                           {language === "hi"
-                            ? "👉 थाली में आज ही अपनाएं (स्मार्ट टिप)"
-                            : "👉 Try This Today (Action Rule)"}
-                        </span>
-                        <p className="text-xs sm:text-sm text-[#EAEAEA] leading-relaxed font-medium">
-                          {displayAction}
+                            ? "इसमें क्या पोषक तत्व हैं (सरल भाषा में):"
+                            : "What It Contains (Plain Language):"}
+                        </strong>
+                        <p>{displayNutrients}</p>
+                      </div>
+
+                      {/* Block 2: Proven Benefit */}
+                      <div className="mb-4 rounded-xl bg-teal-500/5 border border-teal-500/20 p-3.5 text-xs text-[#EAEAEA] leading-relaxed">
+                        <div className="flex items-center justify-between gap-2 mb-1.5">
+                          <strong className="text-teal-400 uppercase tracking-wider text-[10px] flex items-center gap-1.5">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-teal-400" />
+                            {language === "hi"
+                              ? "प्रमाणित नैदानिक लाभ:"
+                              : "Proven Clinical Benefit:"}
+                          </strong>
+                          <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 border border-teal-500/40">
+                            {entry.evidenceTier}
+                          </span>
+                        </div>
+                        <p className="mb-2">{displayBenefit}</p>
+                        <div className="pt-2 border-t border-teal-500/10 flex items-center justify-between text-[10px] font-mono text-[#8A8F98]">
+                          <span className="truncate max-w-[280px]" title={entry.sourceCitation}>
+                            {entry.sourceCitation}
+                          </span>
+                          <a
+                            href={entry.sourceUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-teal-400 hover:text-teal-300 underline underline-offset-2 shrink-0 ml-2"
+                          >
+                            <span>Study</span>
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Block 3: Myth Check (Overhyped Claims) */}
+                      <div className="mb-4 rounded-xl bg-amber-500/10 border border-amber-500/20 p-3.5 text-xs leading-relaxed space-y-1.5">
+                        <div className="flex items-center gap-1.5 text-amber-300 font-bold uppercase tracking-wider text-[10px]">
+                          <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                          <span>
+                            {language === "hi"
+                              ? "मिथक जांच (सोशल मीडिया दावों की सच्चाई):"
+                              : "Myth Check (Unproven / Overhyped Claims):"}
+                          </span>
+                        </div>
+                        <p className="text-amber-200/90 text-[11px]">
+                          <strong className="text-amber-400">
+                            ❌ {language === "hi" ? "दावा:" : "Claim:"}
+                          </strong>{" "}
+                          {displayMythClaim}
+                        </p>
+                        <p className="text-amber-100 text-[11px]">
+                          <strong className="text-emerald-400">
+                            💡 {language === "hi" ? "हकीकत:" : "Reality:"}
+                          </strong>{" "}
+                          {displayMythReality}
                         </p>
                       </div>
 
-                      {/* Biological Mechanism */}
-                      <div className="space-y-1 sm:space-y-1.5 mb-3.5 sm:mb-4 text-xs text-[#8A8F98] leading-relaxed">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-white/50 block">
+                      {/* Block 4: Who Should Limit It */}
+                      <div className="mb-4 rounded-xl bg-rose-500/10 border border-rose-500/20 p-3.5 text-xs text-rose-200 leading-relaxed">
+                        <strong className="text-rose-400 uppercase tracking-wider text-[10px] block mb-1.5 flex items-center gap-1.5">
+                          <XCircle className="w-3.5 h-3.5 text-rose-400" />
                           {language === "hi"
-                            ? "कोशिकीय जैव रसायन (कैसे काम करता है):"
-                            : "Biological Cellular Mechanism:"}
-                        </span>
-                        <p>{displayMechanism}</p>
+                            ? "किन्हें सावधानी बरतनी चाहिए (चिकित्सा सीमा):"
+                            : "Who Should Limit It (Clinical Exclusions):"}
+                        </strong>
+                        <ul className="list-disc list-inside space-y-0.5 text-[11px] text-rose-200/90">
+                          {entry.whoShouldLimit.map((item, idx) => (
+                            <li key={idx}>{item}</li>
+                          ))}
+                        </ul>
                       </div>
 
-                      {/* Synergy Hack */}
-                      {tip.synergyHack && (
-                        <div className="rounded-lg bg-white/[0.02] border border-white/5 p-2.5 sm:p-3 mb-3.5 sm:mb-4 text-xs text-[#8A8F98]">
-                          <strong className="text-amber-400 block mb-0.5">
-                            ⚡ {language === "hi" ? "सुपरचार्जर तालमेल:" : "Synergy Multiplier:"}
+                      {/* Block 5: Best Pairing & Indian-Context Serving */}
+                      <div className="mb-4 rounded-xl bg-white/[0.02] border border-white/5 p-3.5 text-xs text-[#8A8F98] leading-relaxed space-y-1.5">
+                        <div>
+                          <strong className="text-teal-300 uppercase tracking-wider text-[10px] block mb-0.5">
+                            🍛{" "}
+                            {language === "hi"
+                              ? "सर्वश्रेष्ठ भारतीय भोजन तालमेल:"
+                              : "Best Pairing & Indian Combination:"}
                           </strong>
-                          <span>{tip.synergyHack}</span>
+                          <span className="text-[#EAEAEA]">{displayPairing}</span>
                         </div>
-                      )}
+                        <div className="pt-1.5 border-t border-white/5 text-[11px]">
+                          <strong className="text-white/60">
+                            {language === "hi" ? "अनुशंसित मात्रा:" : "Recommended Portion:"}
+                          </strong>{" "}
+                          <span>{entry.indianServingContext}</span>
+                        </div>
+                      </div>
 
-                      {/* Caution Alert */}
-                      {tip.cautionAlert && (
-                        <div className="rounded-lg bg-red-500/10 border border-red-500/20 p-2.5 sm:p-3 mb-3.5 sm:mb-4 text-xs text-red-300">
-                          <strong className="text-red-400 block mb-0.5">
-                            ⚠️ {language === "hi" ? "सावधानी / चेतावनी:" : "Clinical Caution:"}
-                          </strong>
-                          <span>{tip.cautionAlert}</span>
+                      {/* Block 6: "Do / Don't / Ask a Doctor If" 3-Column Micro-Grid */}
+                      <div className="my-4">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#8A8F98] mb-2 block">
+                          {language === "hi"
+                            ? "थाली नियम (करें / न करें / डॉक्टर से पूछें):"
+                            : "Guidance Rules (Do / Don't / Ask a Doctor If):"}
+                        </span>
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+                          {/* DO */}
+                          <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/20 p-2.5 flex flex-col">
+                            <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1 mb-1">
+                              <Check className="w-3 h-3 text-emerald-400" />
+                              {language === "hi" ? "करें (DO)" : "DO"}
+                            </span>
+                            <p className="text-[11px] text-emerald-200/90 leading-snug">
+                              {displayDo}
+                            </p>
+                          </div>
+
+                          {/* DON'T */}
+                          <div className="rounded-lg bg-rose-500/10 border border-rose-500/20 p-2.5 flex flex-col">
+                            <span className="text-[10px] font-bold text-rose-400 uppercase tracking-wider flex items-center gap-1 mb-1">
+                              <X className="w-3 h-3 text-rose-400" />
+                              {language === "hi" ? "न करें (DON'T)" : "DON'T"}
+                            </span>
+                            <p className="text-[11px] text-rose-200/90 leading-snug">
+                              {displayDont}
+                            </p>
+                          </div>
+
+                          {/* ASK A DOCTOR IF */}
+                          <div className="rounded-lg bg-amber-500/10 border border-amber-500/20 p-2.5 flex flex-col">
+                            <span className="text-[10px] font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1 mb-1">
+                              <Stethoscope className="w-3 h-3 text-amber-400" />
+                              {language === "hi" ? "डॉक्टर से पूछें" : "ASK DOCTOR IF"}
+                            </span>
+                            <p className="text-[11px] text-amber-200/90 leading-snug">
+                              {displayAsk}
+                            </p>
+                          </div>
                         </div>
-                      )}
+                      </div>
                     </div>
 
-                    {/* Card Footer: Evidence & Citation */}
-                    <div className="pt-3 sm:pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-mono text-[#8A8F98]">
-                      <span className="text-teal-400 font-semibold">{tip.quickStat}</span>
-                      <span
-                        className="break-words sm:truncate max-w-full sm:max-w-xs text-left sm:text-right"
-                        title={tip.citation}
-                      >
-                        {tip.citation}
+                    {/* Card Footer: Last Reviewed & Primary Source */}
+                    <div className="pt-3 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-[10px] font-mono text-[#8A8F98]">
+                      <span className="flex items-center gap-1.5 text-[#8A8F98]">
+                        <Calendar className="w-3 h-3 text-teal-400" />
+                        <span>
+                          {language === "hi" ? "समीक्षा तिथि:" : "Last Medically Reviewed:"}{" "}
+                          {entry.lastReviewed}
+                        </span>
                       </span>
+                      <a
+                        href={entry.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-teal-400 hover:text-teal-300 font-medium"
+                      >
+                        <span>ICMR-NIN / PubMed Source</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
                     </div>
                   </article>
                 );
