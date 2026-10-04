@@ -406,9 +406,9 @@ export function FoodNutritionHub() {
               <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white/5 border border-white/10 self-start md:self-auto shrink-0">
                 {(
                   [
-                    { id: "all", label: language === "hi" ? "सभी (24)" : "All (24)" },
-                    { id: "fact", label: language === "hi" ? "💡 फैक्ट्स (12)" : "💡 Facts (12)" },
-                    { id: "tip", label: language === "hi" ? "⚡ टिप्स (12)" : "⚡ Tips (12)" },
+                    { id: "all", label: language === "hi" ? "सभी (32)" : "All (32)" },
+                    { id: "fact", label: language === "hi" ? "💡 फैक्ट्स (16)" : "💡 Facts (16)" },
+                    { id: "tip", label: language === "hi" ? "⚡ टिप्स (16)" : "⚡ Tips (16)" },
                   ] as const
                 ).map((tab) => (
                   <button
@@ -435,37 +435,37 @@ export function FoodNutritionHub() {
               {[
                 {
                   id: "all",
-                  label: language === "hi" ? "सभी 4 स्तर (24)" : "All 4 Levels (24)",
+                  label: language === "hi" ? "सभी 4 स्तर (32)" : "All 4 Levels (32)",
                   color: "border-white/20 text-white",
                 },
                 {
                   id: 1,
                   label:
                     language === "hi"
-                      ? "स्तर 1: ताजी सब्जियां व फल (6)"
-                      : "Level 1: Whole Foods (6)",
+                      ? "स्तर 1: ताजी सब्जियां व फल (8)"
+                      : "Level 1: Whole Foods (8)",
                   color: "border-teal-500/40 text-teal-300",
                 },
                 {
                   id: 2,
                   label:
-                    language === "hi" ? "स्तर 2: अनाज, दाल व दही (6)" : "Level 2: Grains & Dal (6)",
+                    language === "hi" ? "स्तर 2: अनाज, दाल व दही (8)" : "Level 2: Grains & Dal (8)",
                   color: "border-sky-500/40 text-sky-300",
                 },
                 {
                   id: 3,
                   label:
                     language === "hi"
-                      ? "स्तर 3: तेल, घी व गुड़ (6)"
-                      : "Level 3: Fats & Moderation (6)",
+                      ? "स्तर 3: तेल, घी व गुड़ (8)"
+                      : "Level 3: Fats & Moderation (8)",
                   color: "border-amber-500/40 text-amber-300",
                 },
                 {
                   id: 4,
                   label:
                     language === "hi"
-                      ? "स्तर 4: पैकेटबंद स्नैक्स (6)"
-                      : "Level 4: Packaged Snacks (6)",
+                      ? "स्तर 4: पैकेटबंद स्नैक्स (8)"
+                      : "Level 4: Packaged Snacks (8)",
                   color: "border-red-500/40 text-red-300",
                 },
               ].map((pill) => {
@@ -558,21 +558,21 @@ export function FoodNutritionHub() {
             <div>
               <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#00E5C4] block">
                 {language === "hi"
-                  ? "आईसीएमआर व पबमेड साक्ष्य वेधशाला • 24 खाद्य पदार्थ"
-                  : "ICMR-NIN & PubMed Evidence Observatory • 24 Power Foods"}
+                  ? "आईसीएमआर व पबमेड साक्ष्य वेधशाला • 36 खाद्य पदार्थ"
+                  : "ICMR-NIN & PubMed Evidence Observatory • 36 Power Foods"}
               </span>
               <h2
                 id="facts-heading"
                 className="text-xl sm:text-3xl font-bold text-white tracking-tight"
               >
                 {language === "hi"
-                  ? "खाद्य निर्देशिका: 24 भोजन और उनके वास्तविक लाभ"
-                  : "Food Directory: Discover 24 Foods & How You Benefit"}
+                  ? "खाद्य निर्देशिका: 36 भोजन और उनके वास्तविक लाभ"
+                  : "Food Directory: Discover 36 Foods & How You Benefit"}
               </h2>
               <p className="text-xs sm:text-sm text-[#8A8F98] mt-1 max-w-2xl">
                 {language === "hi"
-                  ? "अक्सर लोग सभी पारंपरिक खाद्य पदार्थों और उनके असली फायदों के बारे में नहीं जान पाते। 24 भारतीय अनाजों, साग, बीजों और फलों के वास्तविक लाभ, सही खाने का तरीका और सावधानियां सरल भाषा में जानें।"
-                  : "People often miss out on the incredible benefits of everyday staples. Explore 24 traditional Indian grains, seeds, greens, and fruits with proven health benefits, best food pairings, and who should limit them."}
+                  ? "अक्सर लोग सभी पारंपरिक खाद्य पदार्थों और उनके असली फायदों के बारे में नहीं जान पाते। 36 भारतीय अनाजों, साग, बीजों और फलों के वास्तविक लाभ, सही खाने का तरीका और सावधानियां सरल भाषा में जानें।"
+                  : "People often miss out on the incredible benefits of everyday staples. Explore 36 traditional Indian grains, seeds, greens, and fruits with proven health benefits, best food pairings, and who should limit them."}
               </p>
             </div>
 
@@ -585,8 +585,8 @@ export function FoodNutritionHub() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={
                   language === "hi"
-                    ? "सर्च: रागी, ज्वार, मखाना, सब्जा, पपीता, बीपी..."
-                    : "Search ragi, jowar, makhana, sabja, BP..."
+                    ? "सर्च: रागी, काला चना, जीरा, सौंफ, तिल, मखाना, बीपी..."
+                    : "Search ragi, chana, jeera, saunf, til, BP..."
                 }
                 className="w-full rounded-xl border border-white/10 bg-white/[0.03] pl-10 pr-9 py-2.5 text-base sm:text-sm text-white placeholder-[#8A8F98] outline-none focus:border-[#00E5C4]/50 transition-all"
               />
@@ -613,7 +613,7 @@ export function FoodNutritionHub() {
             </span>
             <div className="flex gap-2 overflow-x-auto pb-1 touch-scroll -mx-2 px-2 sm:mx-0 sm:px-0">
               {[
-                { id: "all", label: language === "hi" ? "सभी 24 खाद्य पदार्थ" : "All 24 Foods" },
+                { id: "all", label: language === "hi" ? "सभी 36 खाद्य पदार्थ" : "All 36 Foods" },
                 {
                   id: "blood_sugar",
                   label:
@@ -1007,13 +1007,13 @@ export function FoodNutritionHub() {
             </h2>
             <p className="text-xs sm:text-sm text-[#8A8F98] mt-2 leading-relaxed">
               {language === "hi"
-                ? "कुछ पोषक तत्व अकेले खाने पर ठीक से अवशोषित नहीं होते, लेकिन सही भोजन के साथ मिलते ही उनका लाभ 20 गुना तक बढ़ जाता है।"
-                : "Certain micronutrients have low standalone bioavailability until paired with specific lipid, enzymatic, or acidic cofactors."}
+                ? "कुछ पोषक तत्व अकेले खाने पर ठीक से अवशोषित नहीं होते, लेकिन सही भोजन के साथ मिलते ही उनका लाभ कई गुना तक बढ़ जाता है।"
+                : "Certain vitamins and minerals are difficult for your body to absorb on their own. But when paired with healthy fats, herbs, or lemon drops, your body absorbs up to 20 times more."}
             </p>
           </div>
 
           {/* Swipeable Carousel on Mobile Phones, Grid on Tablet/Desktop */}
-          <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory touch-scroll">
+          <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory touch-scroll">
             {FOOD_SYNERGIES.map((syn) => (
               <div
                 key={syn.id}
@@ -1056,7 +1056,7 @@ export function FoodNutritionHub() {
                 ? "👈 तालमेल देखने के लिए स्वाइप करें 👉"
                 : "👈 Swipe to view synergies 👉"}
             </span>
-            <span className="font-mono text-amber-400">1 — 4</span>
+            <span className="font-mono text-amber-400">1 — {FOOD_SYNERGIES.length}</span>
           </div>
         </section>
 
@@ -1089,10 +1089,10 @@ export function FoodNutritionHub() {
             <p className="text-xs sm:text-sm text-[#8A8F98] mb-4 sm:mb-6 leading-relaxed max-w-3xl">
               {language === "hi"
                 ? "प्राकृतिक और स्वास्थ्यवर्धक माने जाने वाले कुछ खाद्य पदार्थ यदि विशेष दवाओं के साथ खाए जाएं, तो वे लिवर एंजाइम को बाधित कर रक्त में दवा का स्तर 300% से अधिक बढ़ा सकते हैं या उसके प्रभाव को निष्क्रिय कर सकते हैं।"
-                : "Common foods contain potent phytochemicals that can inhibit cytochrome P450 enzymes or chelate antibiotics. Never ignore these clinically documented interactions."}
+                : "Common foods contain natural active plant nutrients that can slow down how your liver clears prescription drugs or stop antibiotics from working. Never ignore these clinically documented interactions."}
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
               {DRUG_FOOD_WARNINGS.map((warn) => (
                 <div
                   key={warn.id}

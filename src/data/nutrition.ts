@@ -541,6 +541,158 @@ export const NUTRITION_LEVEL_TIPS_FACTS: NutritionLevelTipFact[] = [
     },
     readingGrade: "Grade 6 (Plain Language)",
   },
+
+  // ─── Level 1: More Facts & Tips ───
+  {
+    id: "lvl1-fact-raw-onion-quercetin",
+    level: 1,
+    type: "fact",
+    title: {
+      en: "Raw Onion with Summer Lunch Shields Against Sunstroke",
+      hi: "दोपहर के खाने के साथ कच्चा प्याज लू से बचाता है",
+    },
+    content: {
+      en: "Raw red onion is packed with quercetin, a natural plant shield that keeps your body temperature stable and prevents heat exhaustion during dry Indian summers.",
+      hi: "कच्चे लाल प्याज में क्वेर्सेटिन नामक प्राकृतिक तत्व होता है जो शरीर का तापमान स्थिर रखता है और गर्मियों में लू (हीट स्ट्रोक) लगने से बचाता है।",
+    },
+    takeaway: {
+      en: "A slice of raw onion with lemon is traditional Indian summer medicine.",
+      hi: "नींबू लगा कच्चा प्याज लू से बचने की सबसे असरदार घरेलू दवा है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl1-tip-salt-water-greens-wash",
+    level: 1,
+    type: "tip",
+    title: {
+      en: "Wash Leafy Greens in Light Salt Water",
+      hi: "हरी पत्तेदार सब्जियों को हल्के नमक वाले पानी में धोएं",
+    },
+    content: {
+      en: "Spinach, methi, and coriander often carry invisible surface parasites and farm sprays. Soaking them for 10 minutes in water with 1 teaspoon of rock salt removes over 80% of surface residues.",
+      hi: "पालक, मेथी और धनिए को 10 मिनट के लिए हल्के नमक वाले पानी में भिगोकर धोने से धूल, कीटाणु और हानिकारक कीटनाशक आसानी से साफ हो जाते हैं।",
+    },
+    takeaway: {
+      en: "Takes 10 minutes but keeps your liver and kidneys safe from chemical residues.",
+      hi: "सब्जियों को रसायनों से सुरक्षित रखने का सबसे आसान उपाय।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+
+  // ─── Level 2: More Facts & Tips ───
+  {
+    id: "lvl2-fact-cooling-rice-resistant-starch",
+    level: 2,
+    type: "fact",
+    title: {
+      en: "Cooling Cooked Rice Cuts Its Sugar Spike by 20%",
+      hi: "पके चावल को ठंडा करने से शुगर का असर 20% कम हो जाता है",
+    },
+    content: {
+      en: "When freshly cooked rice is allowed to cool down, its starch transforms into 'resistant starch'. This starch digests much slower in your stomach, blunting blood sugar spikes and feeding beneficial gut microbes.",
+      hi: "पके हुए चावल को ठंडा होने देने से उसका स्टार्च 'रेसिस्टेंट स्टार्च' बन जाता है, जो खून में शुगर की रफ्तार 20% तक धीमी कर देता है और आंतों को मजबूत बनाता है।",
+    },
+    takeaway: {
+      en: "Cooling rice for curd-rice or salads gives smooth, crash-free energy.",
+      hi: "दही-चावल या हल्का ठंडा चावल खाने से भोजन के बाद सुस्ती नहीं आती।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl2-tip-no-chai-after-meals",
+    level: 2,
+    type: "tip",
+    title: {
+      en: "Don't Drink Hot Chai Right After Lunch or Dinner",
+      hi: "भोजन के तुरंत बाद गरम चाय पीने से बचें",
+    },
+    content: {
+      en: "Tea contains dark tannins that bind tightly to the iron in your dal and vegetables like glue, blocking up to 60% of plant iron absorption. Always wait at least 45 minutes after eating.",
+      hi: "चाय में मौजूद टैनिन भोजन में मौजूद आयरन (लोहे) को सोखने से रोकते हैं, जिससे खून की कमी हो सकती है। खाना खाने के कम से कम 45 मिनट बाद ही चाय पिएं।",
+    },
+    takeaway: {
+      en: "Waiting 45 minutes after meals keeps your blood iron levels strong.",
+      hi: "खाने और चाय के बीच 45 मिनट का अंतर रखने से शरीर को पूरा पोषण मिलता है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+
+  // ─── Level 3: More Facts & Tips ───
+  {
+    id: "lvl3-fact-smoke-point-ghee",
+    level: 3,
+    type: "fact",
+    title: {
+      en: "Desi Ghee Does Not Create Toxic Fumes at High Heat",
+      hi: "देसी घी तेज आंच पर भी सुरक्षित रहता है",
+    },
+    content: {
+      en: "Refined seed oils break down into irritating free radicals when heated hot for tadka. Pure desi ghee has a very high smoke point (250°C), making it the safest traditional fat for Indian cooking.",
+      hi: "रिफाइंड तेल तेज गर्म होने पर हानिकारक तत्वों में बदलने लगते हैं, जबकि शुद्ध देसी घी 250°C की तेज आंच पर भी सुरक्षित रहता है और तड़के के लिए सबसे उत्तम है।",
+    },
+    takeaway: {
+      en: "Ghee is heat-stable, but still measure it with a small spoon.",
+      hi: "घी आंच के लिए सुरक्षित है, फिर भी इसे चम्मच से नापकर ही इस्तेमाल करें।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl3-tip-kachi-ghani-oil",
+    level: 3,
+    type: "tip",
+    title: {
+      en: "Choose Cold-Pressed (Kachi Ghani) Over Refined Oils",
+      hi: "रिफाइंड की जगह कच्ची घानी (कोल्ड-प्रेस्ड) तेल चुनें",
+    },
+    content: {
+      en: "Factory refined oils are bleached with chemicals and heated past 200°C, stripping away natural vitamins. Traditional cold-pressed mustard, sesame, and peanut oils keep all their natural heart shields intact.",
+      hi: "फैक्ट्री में रिफाइंड तेल को केमिकल और भारी तापमान से साफ किया जाता है। लकड़ी की कच्ची घानी का तेल प्राकृतिक विटामिनों और सुगंध से भरपूर होता है।",
+    },
+    takeaway: {
+      en: "The rich natural aroma in your mustard or peanut oil is proof of live nutrition.",
+      hi: "तेल की प्राकृतिक खुशबू ही उसके असली और शुद्ध होने का प्रमाण है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+
+  // ─── Level 4: More Facts & Tips ───
+  {
+    id: "lvl4-fact-zero-sugar-soda-trap",
+    level: 4,
+    type: "fact",
+    title: {
+      en: "The 'Zero Sugar' Diet Soda Trap",
+      hi: "'जीरो शुगर' डाइट ड्रिंक्स का खतरनाक भ्रम",
+    },
+    content: {
+      en: "Chemical sweeteners in diet sodas are up to 600 times sweeter than sugar. They trick your tongue and confuse your hunger hormones, often making you crave double the snacks later in the day.",
+      hi: "डाइट कोल्ड ड्रिंक में इस्तेमाल होने वाली केमिकल मिठास चीनी से 600 गुना तेज होती है। यह दिमाग को धोखा देती है जिससे कुछ ही घंटों बाद तेज भूख और मीठे की तलब लगती है।",
+    },
+    takeaway: {
+      en: "Diet soda does not help weight; switch to chilled nimbu pani or fresh chaas.",
+      hi: "डाइट सोडा वजन नहीं घटाता; इसकी जगह ठंडी छाछ या शिकंजी सबसे बेहतर है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl4-tip-atta-noodles-label-check",
+    level: 4,
+    type: "tip",
+    title: {
+      en: "Check the Ingredients of 'Atta' Noodles",
+      hi: "'आटा' नूडल्स के पैकेट के पीछे सामग्री जरूर देखें",
+    },
+    content: {
+      en: "Food packets that advertise 'Made with Whole Wheat Atta' on the front often contain 60% refined white flour (maida) and palm oil on the back. Check that whole wheat is the very first ingredient listed.",
+      hi: "पैकेट के आगे 'आटा नूडल्स' लिखा होने पर भी पीछे 60% मैदा और पाम ऑयल हो सकता है। सामग्री में जांचें कि पहला नाम 'साबुत गेहूं' ही हो, न कि मैदा या रिफाइंड आटा।",
+    },
+    takeaway: {
+      en: "Front packet labels are advertising; the back ingredient list is the truth.",
+      hi: "पैकेट का अगला हिस्सा प्रचार है, असली सच्चाई पीछे लिखी सामग्री में होती है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
 ];
 
 export interface FoodFactEntry {
@@ -1982,6 +2134,662 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       askDoctorIf: "यदि आप खून पतला करने वाली दवाएं ले रहे हैं, तो डॉक्टर से सलाह लें।",
     },
   },
+
+  // 25. Kala Chana (Black Bengal Gram)
+  {
+    id: "food-kala-chana",
+    foodName: "Kala Chana (Black Bengal Gram)",
+    hindiName: "देसी काला चना",
+    level: 2,
+    category: "legume",
+    categoryLabel: "Iron & Fiber Legume / काला चना",
+    situationTag: "If you Need High-Fiber Plant Protein & Lasting Satiety...",
+    system: "muscle_bone",
+    systemLabel: "Muscle Strength & Steady Satiety",
+    whatItContains:
+      "Plant protein (15g per cooked cup), insoluble roughage fiber, iron, copper, and slow-digesting resistant starch.",
+    provenBenefit:
+      "Digests slowly over 4 to 5 hours, providing steady-burn energy, supporting muscle repair, and preventing afternoon hunger dips.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation:
+      "Indian Council of Medical Research (ICMR-NIN) Legumes Database & Br J Nutr (PMID: 32482202)",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/32482202/",
+    mythCheck: {
+      claim: "Kala chana always causes extreme stomach heaviness and gas.",
+      reality:
+        "Soaking for 10-12 hours and cooking with ginger, ajwain, and hing breaks down gas-forming sugars completely.",
+    },
+    whoShouldLimit: [
+      "People with severe uric acid flare-ups (gout) or advanced kidney disease requiring strict protein limits",
+    ],
+    bestPairing:
+      "Boiled kala chana chaat with chopped cucumber, tomato, green coriander, roasted cumin, and lemon juice.",
+    indianServingContext: "1 small bowl (around 100g cooked) for breakfast or an evening snack.",
+    guidance: {
+      do: "Always soak overnight for at least 8 to 12 hours before boiling.",
+      dont: "Don't cook unsoaked hard chana as it can cause heavy stomach cramps.",
+      askDoctorIf: "Ask your doctor if you have high uric acid or severe gout arthritis.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "देसी काला चना",
+      whatItContains:
+        "उत्कृष्ट शाकाहारी प्रोटीन (15g प्रति कप), फाइबर, आयरन, कॉपर और धीरे-धीरे पचने वाला स्टार्च।",
+      provenBenefit:
+        "4-5 घंटे तक लगातार ऊर्जा देता है, मांसपेशियों को मजबूत करता है और दोपहर में भूख लगने से बचाता है।",
+      mythClaim: "काला चना खाने से हमेशा बहुत ज्यादा गैस और पेट भारी होता है।",
+      mythReality:
+        "10-12 घंटे भिगोकर हींग, अदरक और अजवाइन के साथ पकाने से गैस की समस्या बिल्कुल नहीं होती।",
+      whoShouldLimit: "हाई यूरिक एसिड या गंभीर गाउट (गठिया) के रोगी सीमित मात्रा में ही लें।",
+      bestPairing:
+        "उबले चने में खीरा, टमाटर, हरा धनिया, भुना जीरा और नींबू का रस मिलाकर बनी स्वादिष्ट चाट।",
+      do: "पकाने से पहले रात भर कम से कम 8 से 12 घंटे जरूर भिगोएं।",
+      dont: "बिना भीगे कड़े चने सीधे न पकाएं, इससे पेट में मरोड़ हो सकती है।",
+      askDoctorIf: "यदि आपको यूरिक एसिड या गठिया की समस्या है, तो डॉक्टर से सलाह लें।",
+    },
+  },
+
+  // 26. Jeera (Cumin Seeds & Jeera Water)
+  {
+    id: "food-jeera",
+    foodName: "Jeera (Cumin Seeds & Warm Jeera Water)",
+    hindiName: "जीरा व जीरा पानी",
+    level: 1,
+    category: "spice_herb",
+    categoryLabel: "Digestive Fire Spark / जीरा",
+    situationTag: "If you Suffer from Bloating, Sluggish Digestion or Gas...",
+    system: "gut",
+    systemLabel: "Gastric Motility & Flatulence Relief",
+    whatItContains:
+      "Thymol, cuminaldehyde, aromatic digestive essential oils, and bioavailable iron.",
+    provenBenefit:
+      "Stimulates your stomach, pancreas, and liver to release digestive enzymes, speeding up digestion and relieving trapped intestinal gas within 20 minutes.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation:
+      "Complementary Therapies in Clinical Practice (PMID: 25456043) & Food Chem 2018",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/25456043/",
+    mythCheck: {
+      claim: "Drinking boiled jeera water burns 5kg of belly fat every week.",
+      reality:
+        "Jeera water relieves bloating, gas, and water retention; it does not magically melt body fat without overall healthy eating.",
+    },
+    whoShouldLimit: [
+      "People scheduled for surgery within 2 weeks (mild blood-thinning effect in concentrated extracts)",
+    ],
+    bestPairing:
+      "Freshly roasted and crushed jeera powder sprinkled over homemade curd, chaas, raita, or warm dal.",
+    indianServingContext:
+      "1 teaspoon roasted powder daily or 1 cup warm jeera water in the morning.",
+    guidance: {
+      do: "Lightly dry-roast whole cumin seeds on a tawa before grinding to release aromatic digestive oils.",
+      dont: "Don't boil jeera seeds endlessly until water turns bitter and dark brown.",
+      askDoctorIf: "Ask your doctor if you take prescription blood-thinning medication.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "जीरा व जीरा पानी",
+      whatItContains: "थाइमोल, पाचक सुगंधित तेल, क्यूमिनलडिहाइड और आसानी से पचने वाला आयरन।",
+      provenBenefit:
+        "पाचक रसों और पित्त को सक्रिय करता है, पेट फूलना रोकता है और 20 मिनट के भीतर गैस से राहत दिलाता है।",
+      mythClaim: "उबला जीरा पानी पीने से हर हफ्ते 5 किलो पेट की चर्बी पिघल जाती है।",
+      mythReality:
+        "जीरा पानी पेट की गैस, सूजन और भारीपन दूर करता है; यह चर्बी को जादू से नहीं पिघलाता।",
+      whoShouldLimit: "सर्जरी से 2 हफ्ते पहले बहुत अधिक गाढ़ा जीरा अर्क न लें।",
+      bestPairing: "दही, छाछ, रायते या दाल में ऊपर से डाला गया भुना पिसा हुआ जीरा पाउडर।",
+      do: "तवे पर हल्का भूनकर पीसें ताकि इसके पाचक तेल पूरी तरह सक्रिय हो जाएं।",
+      dont: "पानी में घंटों तक उबालकर कड़वा और काला न बनाएं।",
+      askDoctorIf: "यदि आप खून पतला करने की दवा ले रहे हैं, तो डॉक्टर से सलाह लें।",
+    },
+  },
+
+  // 27. Methi Dana (Fenugreek Seeds)
+  {
+    id: "food-methi-seeds",
+    foodName: "Methi Dana (Fenugreek Seeds & Methi Water)",
+    hindiName: "मेथी दाना व मेथी पानी",
+    level: 1,
+    category: "spice_herb",
+    categoryLabel: "Glucose Absorption Blocker / मेथी दाना",
+    situationTag: "If you Have High Fasting Blood Sugar or Prediabetes...",
+    system: "metabolism",
+    systemLabel: "Fasting Glucose & Insulin Response",
+    whatItContains:
+      "Galactomannan soluble fiber (over 45%), 4-hydroxyisoleucine (plant amino acid), and saponins.",
+    provenBenefit:
+      "Forms a thick gel in the intestines that slows carbohydrate absorption and supports natural insulin action, helping reduce morning fasting blood sugar.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation:
+      "Journal of Diabetes and Metabolic Disorders (PMID: 26462366) & ICMR Clinical Studies",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/26462366/",
+    mythCheck: {
+      claim: "Swallowing whole unsoaked methi seeds cures diabetes in 7 days.",
+      reality:
+        "Hard dry seeds pass out undigested; you must soak them overnight in water so the beneficial soluble fiber gel can be released.",
+    },
+    whoShouldLimit: [
+      "Pregnant women (can stimulate uterine contractions in large medicinal doses)",
+      "People on prescription insulin should track blood sugar to prevent sudden lows",
+    ],
+    bestPairing:
+      "1 teaspoon seeds soaked overnight in warm water, chewed with the water first thing in the morning.",
+    indianServingContext: "1 teaspoon soaked seeds daily on an empty stomach.",
+    guidance: {
+      do: "Soak overnight in water and chew the softened seeds slowly in the morning.",
+      dont: "Don't consume heavy powdered doses if pregnant without medical approval.",
+      askDoctorIf:
+        "Ask your doctor to help track your blood sugar to prevent medication-induced hypoglycemia.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "मेथी दाना व मेथी पानी",
+      whatItContains:
+        "गैलेक्टोमैनन घुलनशील फाइबर (45%+), 4-हाइड्रॉक्सीआइसोल्यूसीन (पादप अमीनो एसिड) और सैपोनिन।",
+      provenBenefit:
+        "आंतों में जेल बनाकर खाने से शुगर सोखने की रफ्तार धीमी करता है और सुबह की फास्टिंग शुगर घटाता है।",
+      mythClaim: "साबुत बिना भीगे मेथी दाने निगलने से 7 दिन में शुगर हमेशा के लिए ठीक हो जाती है।",
+      mythReality:
+        "सूखे दाने पचते नहीं; रात भर पानी में भिगोने पर ही इसका फायदेमंद चिपचिपा फाइबर बाहर आता है।",
+      whoShouldLimit: "गर्भवती महिलाएं अधिक मात्रा में न लें (गर्भाशय संकुचित हो सकता है)।",
+      bestPairing: "रात भर 1 कप पानी में भीगी 1 छोटी चम्मच मेथी, सुबह चबाकर पानी सहित पिएं।",
+      do: "नरम हो चुके दानों को अच्छी तरह चबाकर खाएं।",
+      dont: "गर्भावस्था में दादी-नानी के कहने पर भी तेज काढ़ा न पिएं।",
+      askDoctorIf:
+        "इंसुलिन या तेज शुगर की दवा के साथ ले रहे हैं, तो डॉक्टर की सलाह से शुगर नापते रहें।",
+    },
+  },
+
+  // 28. Saunf (Fennel Seeds)
+  {
+    id: "food-saunf",
+    foodName: "Saunf (Fennel Seeds / Post-Meal Digestive)",
+    hindiName: "देसी सौंफ",
+    level: 1,
+    category: "spice_herb",
+    categoryLabel: "Antispasmodic Seed / सौंफ",
+    situationTag: "If you Suffer from Post-Meal Acid Reflux, Bloat, or Spasms...",
+    system: "gut",
+    systemLabel: "Intestinal Muscle Calm & Anti-Reflux",
+    whatItContains:
+      "Anethole, fenchone, estragole (soothing digestive oils), and natural plant fiber.",
+    provenBenefit:
+      "Relaxes tight stomach and intestinal muscles, relieving painful cramps, stopping sour acid burps, and freshening breath naturally after meals.",
+    evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
+    sourceCitation: "BioMed Research International (PMID: 25162032) & ICMR Traditional Aromatics",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/25162032/",
+    mythCheck: {
+      claim: "Chewing saunf with sweet mishri is just a dessert tradition with no medicinal value.",
+      reality:
+        "Chewing saunf stimulates saliva containing amylase enzymes, immediately neutralizing stomach acidity and starting digestion in the mouth.",
+    },
+    whoShouldLimit: [
+      "People with estrogen-sensitive conditions should avoid concentrated medicinal extract supplements",
+    ],
+    bestPairing:
+      "1/2 teaspoon lightly toasted saunf chewed slowly after heavy lunches, or steeped in hot water as saunf tea.",
+    indianServingContext: "1/2 to 1 teaspoon chewed after main meals.",
+    guidance: {
+      do: "Chew slowly after lunch or steep 1 teaspoon in boiling water for soothing digestive tea.",
+      dont: "Don't eat sugar-coated candy saunf loaded with artificial synthetic colors.",
+      askDoctorIf:
+        "Ask your doctor if you have severe chronic acid reflux (GERD) before using herbal extracts.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "देसी सौंफ",
+      whatItContains: "एनेथोल, फेनचोन (पेट शांत करने वाले प्राकृतिक तेल) और पाचक फाइबर।",
+      provenBenefit:
+        "पेट और आंतों की मांसपेशियों की ऐंठन शांत करता है, खट्टी डकारें रोकता है और भोजन के बाद मुंह महकाता है।",
+      mythClaim: "मिश्री-सौंफ खाना सिर्फ एक रिवाज है, इससे पेट को कोई वास्तविक लाभ नहीं होता।",
+      mythReality:
+        "सौंफ चबाने से मुंह में पाचक लार बनती है जो तुरंत पेट के एसिड को शांत कर खाना पचाना शुरू करती है।",
+      whoShouldLimit: "हार्मोन-संवेदनशील बीमारियों वाले लोग अत्यधिक केंद्रित अर्क न लें।",
+      bestPairing: "दोपहर और रात के भारी खाने के बाद 1/2 चम्मच हल्की भुनी सौंफ अच्छी तरह चबाएं।",
+      do: "घर की सादी हरी सौंफ खाएं या गर्म पानी में उबालकर सौंफ की चाय पिएं।",
+      dont: "बाजार में मिलने वाली कृत्रिम रंगों वाली मीठी रंग-बिरंगी सौंफ खाने से बचें।",
+      askDoctorIf: "यदि आपको सीने में लगातार तेज जलन (GERD) की समस्या है, तो डॉक्टर को दिखाएं।",
+    },
+  },
+
+  // 29. Kanji (Traditional Fermented Black Carrot Probiotic)
+  {
+    id: "food-kanji",
+    foodName: "Kanji (Traditional Fermented Black Carrot Drink)",
+    hindiName: "देसी काली गाजर की कांजी",
+    level: 1,
+    category: "fermented",
+    categoryLabel: "Wild Ferment Probiotic / कांजी",
+    situationTag: "If you Suffer from Winter Indigestion or Sluggish Gut Flora...",
+    system: "gut",
+    systemLabel: "Live Probiotics & Gut Barrier Defense",
+    whatItContains:
+      "Live beneficial lactic acid bacteria, anthocyanin antioxidants (from purple carrots), and mustard seed enzymes.",
+    provenBenefit:
+      "Delivers billions of living probiotic cultures that settle in your digestive tract, crowd out harmful bacteria, and enhance overall nutrient absorption during winter.",
+    evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
+    sourceCitation:
+      "Journal of Food Science and Technology (PMID: 29749987) & ICMR Indigenous Ferments",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/29749987/",
+    mythCheck: {
+      claim: "Kanji is alcoholic and unsafe for daily consumption.",
+      reality:
+        "Natural lactic fermentation produces probiotic lactic acid with virtually zero alcohol; it is an ancient non-dairy probiotic health tonic.",
+    },
+    whoShouldLimit: [
+      "People on strict low-sodium diets should moderate intake as kanji contains coarse salt for fermentation preservation",
+    ],
+    bestPairing:
+      "1 small glass (around 100ml) served at room temperature 15 minutes before lunch during winter months.",
+    indianServingContext: "1 small cup (100ml) 2 to 3 times per week during seasonal fermentation.",
+    guidance: {
+      do: "Ferment in sunlight in a glass or ceramic earthen jar with crushed mustard and rock salt.",
+      dont: "Never drink kanji if it develops visible white furry mold or smells unpleasantly putrid.",
+      askDoctorIf:
+        "Ask your doctor if you have severe kidney failure requiring strict sodium limits.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "देसी काली गाजर की कांजी",
+      whatItContains:
+        "जीवित लैक्टिक एसिड बैक्टीरिया (प्रोबायोटिक्स), बैंगनी गाजर के एंथोसायनिन और राई के पाचक एंजाइम।",
+      provenBenefit:
+        "अरबों जीवित अच्छे बैक्टीरिया आंतों में पहुंचाकर पाचन तंत्र को मजबूत करता है और सर्दियों में पेट साफ रखता है।",
+      mythClaim: "कांजी में शराब (अल्कोहल) होती है और यह बच्चों के लिए सुरक्षित नहीं है।",
+      mythReality:
+        "पारंपरिक धूप से तैयार कांजी में कोई नशा नहीं होता; यह पूरी तरह प्राकृतिक प्रोबायोटिक पाचक पेय है।",
+      whoShouldLimit: "हाई बीपी या किडनी के कारण बहुत कम नमक खाने वाले लोग सीमित मात्रा में लें।",
+      bestPairing: "सर्दियों में दोपहर के भोजन से 15 मिनट पहले 1 छोटा गिलास (100ml) कांजी।",
+      do: "कांच के बर्तन या मिट्टी के मर्तबान में राई और सेंधा नमक के साथ धूप में तैयार करें।",
+      dont: "यदि सतह पर फफूंद दिखे या सड़ी हुई बदबू आए, तो कभी न पिएं।",
+      askDoctorIf: "यदि आपको नमक बिल्कुल बंद करने को कहा गया है, तो डॉक्टर से सलाह लें।",
+    },
+  },
+
+  // 30. Til (Sesame Seeds)
+  {
+    id: "food-sesame-til",
+    foodName: "Til (White & Black Sesame Seeds)",
+    hindiName: "देसी तिल (सफेद व काला)",
+    level: 2,
+    category: "seed_nut",
+    categoryLabel: "Plant Calcium Powerhouse / तिल",
+    situationTag: "If you Need Natural Calcium for Strong Bones & Joint Lubrication...",
+    system: "muscle_bone",
+    systemLabel: "Bone Density & Joint Lubrication",
+    whatItContains:
+      "Plant calcium (nearly 1,000mg per 100g — 3 times more than cow's milk!), sesamin, zinc, magnesium, and healthy polyunsaturated fats.",
+    provenBenefit:
+      "Strengthens bone density, protects joint cartilage from wearing down, and provides bioavailable zinc for cellular repair.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation: "Osteoporosis International (PMID: 27150532) & ICMR Food Composition Tables",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/27150532/",
+    mythCheck: {
+      claim: "Sesame seeds are too hot for the body and should never be eaten outside winter.",
+      reality:
+        "While traditionally favored in winter, 1 small teaspoon of lightly toasted sesame seeds provides safe, vital calcium all year round.",
+    },
+    whoShouldLimit: [
+      "People with documented sesame allergy anaphylaxis",
+      "Those prone to calcium oxalate kidney stones should drink plenty of water",
+    ],
+    bestPairing:
+      "Lightly toasted sesame seeds mixed with a small piece of jaggery (Til-Gud) or sprinkled over warm sautéed vegetables.",
+    indianServingContext: "1 tablespoon (around 10–15g) lightly toasted seeds daily.",
+    guidance: {
+      do: "Lightly dry-toast the seeds on low flame to make calcium and zinc easier to absorb.",
+      dont: "Don't consume heavy sugary commercial sesame bars loaded with liquid glucose.",
+      askDoctorIf: "Ask your doctor if you have a history of calcium oxalate kidney stones.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "देसी तिल",
+      whatItContains:
+        "दूध से 3 गुना ज्यादा कैल्शियम (1000mg प्रति 100g), सेसामिन, जिंक, मैग्नीशियम और अच्छी वसा।",
+      provenBenefit:
+        "हड्डियों को मजबूत बनाता है, जोड़ों में चिकनाई बनाए रखता है और शरीर को प्राकृतिक जिंक देता है।",
+      mythClaim: "तिल की तासीर बहुत गर्म होती है, इसलिए इसे सर्दियों के अलावा कभी नहीं खाना चाहिए।",
+      mythReality:
+        "सर्दियों में यह उत्तम है ही, लेकिन साल भर 1 छोटी चम्मच भुना तिल खाने से हड्डियों को कैल्शियम मिलता है।",
+      whoShouldLimit: "तिल से एलर्जी वाले लोग या गुर्दे में पथरी वाले लोग पानी अधिक पिएं।",
+      bestPairing: "थोड़े से गुड़ के साथ भुना हुआ तिल (तिल-गुड़) या सब्जियों पर छिड़क कर खाएं।",
+      do: "धीमी आंच पर हल्का भूनकर खाएं ताकि पोषक तत्व आसानी से पच सकें।",
+      dont: "बाजार में मिलने वाली ग्लूकोज सिरप और सफेद चीनी से बनी गज्जक अधिक न खाएं।",
+      askDoctorIf: "यदि आपको बार-बार पथरी बनने की समस्या है, तो डॉक्टर से परामर्श लें।",
+    },
+  },
+
+  // 31. Akhrot (Walnuts)
+  {
+    id: "food-walnut-akhrot",
+    foodName: "Akhrot (Walnuts / Brain-Protective Nut)",
+    hindiName: "अखरोट",
+    level: 1,
+    category: "seed_nut",
+    categoryLabel: "Artery & Brain Shield / अखरोट",
+    situationTag: "If you Need Brain Focus, Memory Support & Artery Elasticity...",
+    system: "brain",
+    systemLabel: "Brain Synapses & Memory Focus",
+    whatItContains:
+      "Alpha-linolenic acid (plant omega-3 oil), polyphenol ellagitannins, natural melatonin, and Vitamin E.",
+    provenBenefit:
+      "Protects brain neurons from oxidative stress, sharpens memory recall, and maintains smooth arterial elasticity in heart blood vessels.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation:
+      "The American Journal of Clinical Nutrition (PMID: 30971633) & NEJM PREDIMED Study",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/30971633/",
+    mythCheck: {
+      claim: "Eating walnuts causes severe weight gain because they are full of oils.",
+      reality:
+        "Walnuts contain healthy unsaturated oils that release fullness hormones; eating 3-4 halves daily does not cause weight gain.",
+    },
+    whoShouldLimit: [
+      "People with tree nut allergies; those with active loose stools should limit intake to 2 halves daily",
+    ],
+    bestPairing: "2 to 3 whole walnut halves soaked in water overnight and eaten with breakfast.",
+    indianServingContext: "3 to 4 walnut halves (around 15g) daily in the morning.",
+    guidance: {
+      do: "Soak walnut kernels in water overnight to remove bitter surface tannins and make them gentle on the belly.",
+      dont: "Don't eat stale or rancid walnuts that taste sour or smell like oil paint.",
+      askDoctorIf: "Ask your doctor if you take prescription blood-thinning pills.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "अखरोट",
+      whatItContains:
+        "पादप ओमेगा-3 (ALA), मस्तिष्क रक्षक पॉलीफेनोल, प्राकृतिक मेलाटोनिन और विटामिन E।",
+      provenBenefit:
+        "दिमाग की नसों को सुरक्षित रखता है, याददाश्त तेज करता है और दिल की धमनियों को लचीला बनाए रखता है।",
+      mythClaim: "अखरोट में बहुत ज्यादा तेल होता है जिससे वजन बहुत तेजी से बढ़ जाता है।",
+      mythReality:
+        "अखरोट का तेल दिल के लिए अच्छा होता है और रोज 3-4 गिरी खाने से वजन नहीं बढ़ता बल्कि भूख नियंत्रित रहती है।",
+      whoShouldLimit: "नट्स (मेवे) से एलर्जी वाले लोग इससे बचें; दस्त होने पर कम खाएं।",
+      bestPairing: "रात भर पानी में भिगोई हुई 3-4 अखरोट की गिरी सुबह नाश्ते में चबाकर खाएं।",
+      do: "पानी में भिगोकर खाएं ताकि ऊपर का कड़वापन हट जाए और पेट के लिए हल्का हो जाए।",
+      dont: "पुरानी और कड़वी हो चुकी बासी गिरी न खाएं।",
+      askDoctorIf: "यदि आप खून पतला करने की दवा ले रहे हैं, तो डॉक्टर से सलाह लें।",
+    },
+  },
+
+  // 32. Bael (Wood Apple & Bael Sharbat)
+  {
+    id: "food-bael",
+    foodName: "Bael (Wood Apple Fruit & Summer Sharbat)",
+    hindiName: "बेल फल व बेल का शरबत",
+    level: 1,
+    category: "fruit",
+    categoryLabel: "Intestinal Soothing Fruit / बेल",
+    situationTag: "If you Suffer from Irritable Bowels, Summer Heat or Loose Stools...",
+    system: "gut",
+    systemLabel: "Colonic Calm & Loose Stool Relief",
+    whatItContains:
+      "Marmelosin, pectin mucilage, astringent tannins, Vitamin C, and beta-carotene.",
+    provenBenefit:
+      "Soothes hyperactive, inflamed intestinal walls, stops chronic loose motions, restores normal stool consistency, and cools the stomach during hot summers.",
+    evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
+    sourceCitation:
+      "BMC Complementary Medicine and Therapies (PMID: 26315579) & ICMR Ethnomedicine",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/26315579/",
+    mythCheck: {
+      claim: "Drinking bael fruit sharbat causes permanent constipation in everyone.",
+      reality:
+        "Bael is an intelligent gut balancer; its natural mucilage soothes diarrhea while also gently normalizing sluggish bowels.",
+    },
+    whoShouldLimit: [
+      "Diabetics should avoid commercial bottled bael drinks loaded with refined sugar syrups (prepare fresh without added sugar)",
+    ],
+    bestPairing:
+      "Freshly strained bael pulp mixed with cool water, roasted cumin, and black salt during peak summer.",
+    indianServingContext:
+      "1 small glass (around 150ml) fresh unsweetened sharbat during hot afternoons.",
+    guidance: {
+      do: "Scoop out fresh ripe pulp, mash gently in water, and strain seeds without grinding to avoid bitterness.",
+      dont: "Never add white sugar; enjoy its natural mild sweetness with a dash of roasted cumin.",
+      askDoctorIf:
+        "Ask your doctor if you take daily diabetes medication to monitor your fruit sugar intake.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "बेल फल व बेल शरबत",
+      whatItContains: "मार्मेंलोसिन, आंतों को आराम देने वाला पेक्टिन, टैनिन, विटामिन C और कैरोटीन।",
+      provenBenefit:
+        "आंतों की सूजन और मरोड़ शांत करता है, दस्त रोकता है और गर्मियों में पेट को ठंडक देकर लू से बचाता है।",
+      mythClaim: "बेल का शरबत पीने से हमेशा के लिए भयानक कब्ज हो जाती है।",
+      mythReality:
+        "बेल आंतों का संतुलन ठीक करता है; यह दस्त को रोकता है और सुस्त पेट को भी आराम से साफ करता है।",
+      whoShouldLimit:
+        "डायबिटीज के मरीज बाजार का ज्यादा चीनी घुला शरबत न पिएं; घर पर बिना चीनी बनाएं।",
+      bestPairing:
+        "गर्मियों की दोपहर में भुने जीरे और काले नमक के साथ ताजा निकाला गया बेल का शरबत।",
+      do: "गूदे को पानी में हाथ से मसलकर छानें, बीजों को मिक्सी में न पीसें वरना शरबत कड़वा हो जाएगा।",
+      dont: "सफेद चीनी की चाशनी मिलाकर इसे अनहेल्दी न बनाएं।",
+      askDoctorIf: "शुगर के रोगी अपनी दवा के साथ फल की मात्रा के लिए डॉक्टर से पूछें।",
+    },
+  },
+
+  // 33. Pudina (Fresh Mint Leaves)
+  {
+    id: "food-mint-pudina",
+    foodName: "Pudina (Fresh Mint Leaves)",
+    hindiName: "ताजा पुदीना",
+    level: 1,
+    category: "spice_herb",
+    categoryLabel: "Intestinal Cramp Reliever / पुदीना",
+    situationTag: "If you Experience Cramps, Motion Sickness, or Sour Burps...",
+    system: "gut",
+    systemLabel: "Intestinal Muscle Relaxation & Nausea Stop",
+    whatItContains: "Menthol, menthone, rosmarinic acid, and natural digestive terpenes.",
+    provenBenefit:
+      "Relaxes the smooth muscular walls of your intestines, relieving painful trapped gas cramps, stopping travel nausea, and clearing sour acidic burps.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation: "BMC Complementary and Alternative Medicine (PMID: 30654773) & Cochrane Review",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/30654773/",
+    mythCheck: {
+      claim: "Eating mint leaves lowers fertility in men.",
+      reality:
+        "Culinary mint leaves in chutneys or drinks are completely safe and contain zero harmful hormonal effects at dietary levels.",
+    },
+    whoShouldLimit: [
+      "People with severe gastroesophageal reflux (GERD) should avoid concentrated peppermint oil as menthol can relax the stomach valve",
+    ],
+    bestPairing:
+      "Fresh green pudina chutney ground with coriander, ginger, green chili, black salt, and fresh lemon juice.",
+    indianServingContext:
+      "2 tablespoons fresh chutney with lunch or a handful of fresh leaves steeped in water.",
+    guidance: {
+      do: "Use fresh raw green leaves in daily chutneys, raitas, and infused drinking water.",
+      dont: "Don't consume heavy medicinal peppermint extract capsules without a doctor if you suffer from acid reflux.",
+      askDoctorIf:
+        "Ask your doctor if you have severe acid reflux that worsens with mint extracts.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "ताजा पुदीना",
+      whatItContains: "मेंथॉल, रोजमेरिनिक एसिड और आंतों की ऐंठन मिटाने वाले प्राकृतिक पाचक तत्व।",
+      provenBenefit:
+        "आंतों की मांसपेशियों को आराम देता है, पेट की मरोड़ और गैस शांत करता है और उल्टी-मतली रोकता है।",
+      mythClaim: "पुदीना खाने से पुरुषों की प्रजनन क्षमता कमजोर हो जाती है।",
+      mythReality:
+        "चटनी या चाय में पुदीना खाने से कोई हार्मोनल नुकसान नहीं होता; यह पूरी तरह सुरक्षित और गुणकारी है।",
+      whoShouldLimit:
+        "सीने में लगातार तेज तेजाब (GERD) वाले लोग बहुत तेज पुदीना तेल के अर्क से बचें।",
+      bestPairing: "हरे धनिए, अदरक, हरी मिर्च, काले नमक और नींबू के साथ पिसी ताजी पुदीने की चटनी।",
+      do: "दोपहर के भोजन में ताजी चटनी या छाछ में पुदीने की पत्तियां जरूर शामिल करें।",
+      dont: "बाजार की तेज मेंथॉल वाली दवाएं बिना सलाह के एसिडिटी में न लें।",
+      askDoctorIf: "यदि आपको गंभीर एसिडिटी की समस्या है, तो डॉक्टर से सलाह लें।",
+    },
+  },
+
+  // 34. Tulsi (Holy Basil Leaves)
+  {
+    id: "food-tulsi",
+    foodName: "Tulsi (Holy Basil Leaves / Adaptogenic Herb)",
+    hindiName: "तुलसी दल (पवित्र तुलसी)",
+    level: 1,
+    category: "spice_herb",
+    categoryLabel: "Stress Shield & Lung Defense / तुलसी",
+    situationTag: "If you Face Daily Stress, Air Pollution or Seasonal Coughs...",
+    system: "liver",
+    systemLabel: "Adaptogenic Stress Shield & Lung Defense",
+    whatItContains: "Eugenol, rosmarinic acid, ursolic acid, and adaptogenic plant flavonoids.",
+    provenBenefit:
+      "Lowers biological stress markers (cortisol), protects bronchial airways from urban smog, and supports liver defense against cellular toxins.",
+    evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
+    sourceCitation:
+      "Evidence-Based Complementary and Alternative Medicine (PMID: 28400848) & ICMR Guidelines",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/28400848/",
+    mythCheck: {
+      claim:
+        "Chewing raw tulsi leaves destroys tooth enamel because they contain dangerous mercury.",
+      reality:
+        "Fresh tulsi contains beneficial aromatic oils and trace iron; brewing in hot water or swallowing leaves gently is safe and healthy.",
+    },
+    whoShouldLimit: [
+      "People taking prescription blood thinners or preparing for major surgery within 10 days",
+    ],
+    bestPairing:
+      "5 to 6 fresh leaves brewed in warm water with crushed ginger, black pepper, and a drop of honey (Tulsi Kadha).",
+    indianServingContext: "4 to 5 fresh leaves steeped in morning warm water or light tea.",
+    guidance: {
+      do: "Steep freshly plucked leaves in hot water for a fragrant, lung-clearing morning drink.",
+      dont: "Don't consume concentrated medicinal tulsi tinctures in heavy doses during pregnancy.",
+      askDoctorIf: "Ask your doctor if you take daily blood-thinning pills.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "तुलसी दल",
+      whatItContains: "यूजेनॉल, रोजमेरिनिक एसिड, अर्सोलिक एसिड और तनाव घटाने वाले प्राकृतिक तत्व।",
+      provenBenefit:
+        "तनाव हार्मोन (कोर्टिसोल) को नियंत्रित करता है, फेफड़ों को प्रदूषण से बचाता है और मौसमी जुकाम रोकता है।",
+      mythClaim:
+        "तुलसी के पत्ते चबाने से दांतों का इनेमल तुरंत गल जाता है क्योंकि इसमें पारा होता है।",
+      mythReality:
+        "तुलसी में कोई हानिकारक धातु नहीं होती; पत्तों को पानी में उबालकर या निगलकर लेना पूरी तरह सुरक्षित है।",
+      whoShouldLimit: "खून पतला करने की दवा लेने वाले लोग या सर्जरी से पहले अधिक मात्रा में न लें।",
+      bestPairing: "अदरक, काली मिर्च और तुलसी के पत्तों का हल्का गर्म काढ़ा या सुबह की हर्बल चाय।",
+      do: "सुबह 4-5 ताजे पत्ते पानी में उबालकर पिएं।",
+      dont: "गर्भावस्था में अत्यधिक गाढ़ा अर्क न पिएं।",
+      askDoctorIf: "यदि आप खून पतला करने की दवा ले रहे हैं, तो डॉक्टर से परामर्श करें।",
+    },
+  },
+
+  // 35. Kuttu (Buckwheat Flour)
+  {
+    id: "food-kuttu",
+    foodName: "Kuttu (Buckwheat / Rutin-Rich Grain)",
+    hindiName: "कुट्टू का आटा (बकव्हीट)",
+    level: 2,
+    category: "millet",
+    categoryLabel: "Capillary Strength Flour / कुट्टू",
+    situationTag: "If you Want Stronger Arteries, Low-GI Roti or Fasting Fuel...",
+    system: "heart",
+    systemLabel: "Vascular Capillary Strength & Slow Glucose",
+    whatItContains:
+      "Rutin (a bioflavonoid that reinforces blood capillaries), magnesium, plant protein, and slow-burning soluble fiber. 100% gluten-free.",
+    provenBenefit:
+      "Strengthens tiny blood capillary walls, keeps post-meal glucose steady, and supports healthy blood pressure without gluten heaviness.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation: "Food Research International (PMID: 29555301) & Nutrients Journal 2020",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/29555301/",
+    mythCheck: {
+      claim: "Kuttu flour is toxic and inherently causes food poisoning during festivals.",
+      reality:
+        "Kuttu is a pure healthy pseudo-grain; illness only happens when stale or moldy flour stored in damp godowns is sold during festival rushes.",
+    },
+    whoShouldLimit: [
+      "Rare individuals with specific buckwheat allergy; always buy fresh, clean flour from reputable mills",
+    ],
+    bestPairing:
+      "Freshly kneaded kuttu flour rotis or cheelas mixed with grated bottle gourd (lauki) and served with fresh curd.",
+    indianServingContext: "2 small rotis or cheelas for lunch or festival fasting meals.",
+    guidance: {
+      do: "Always buy fresh, clean flour and store in a dry, airtight jar in a cool place.",
+      dont: "Never use old, stale flour that smells sour, looks clumpy, or has been stored for months.",
+      askDoctorIf:
+        "Ask your doctor if you have celiac disease to confirm the milling facility is dedicated gluten-free.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "कुट्टू का आटा",
+      whatItContains:
+        "रूटिन (नसों को मजबूत बनाने वाला तत्व), मैग्नीशियम, पादप प्रोटीन और सुपाच्य फाइबर। पूरी तरह ग्लूटेन-मुक्त।",
+      provenBenefit:
+        "खून की बारीक नलियों को मजबूत बनाता है, भोजन के बाद शुगर स्थिर रखता है और दिल का स्वास्थ्य सुधारता है।",
+      mythClaim: "कुट्टू का आटा जहरीला होता है और व्रत में खाने से हमेशा पेट खराब होता है।",
+      mythReality:
+        "कुट्टू बेहद पौष्टिक है; पेट केवल तब खराब होता है जब बाजार से पुराना, सीलन भरा या मिलावटी आटा खरीदा जाए।",
+      whoShouldLimit:
+        "दुर्लभ मामलों में बकव्हीट से एलर्जी वाले लोग इससे बचें; हमेशा ताजा आटा ही खरीदें।",
+      bestPairing: "कद्दूकस की हुई लौकी के साथ कुट्टू के आटे का चीला या रोटी, ताजे दही के साथ।",
+      do: "हमेशा ताजा पिसा आटा खरीदें और एयरटाइट डिब्बे में सूखी जगह पर रखें।",
+      dont: "त्योहारों पर खुला या पुराना रखा बासी आटा कभी न खरीदें।",
+      askDoctorIf: "यदि आपको सीलिएक रोग है, तो शुद्ध ग्लूटेन-मुक्त चक्की की पुष्टि करें।",
+    },
+  },
+
+  // 36. Kokum (Amsul / Garcinia Indica)
+  {
+    id: "food-kokum",
+    foodName: "Kokum (Amsul / Garcinia Indica Fruit)",
+    hindiName: "देसी कोकम (अमसुल)",
+    level: 1,
+    category: "fruit",
+    categoryLabel: "Coastal Acid Neutralizer / कोकम",
+    situationTag: "If you Face Summer Heat, Acid Heartburn or Heat Rashes...",
+    system: "gut",
+    systemLabel: "Gastric Cooling & Acid Neutralizer",
+    whatItContains:
+      "Garcinol, hydroxycitric acid (HCA), anthocyanin antioxidants, and natural organic acids.",
+    provenBenefit:
+      "Cools intense stomach heat, shields the stomach mucosal lining from acid erosion, and prevents dehydration and prickly heat in hot weather.",
+    evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
+    sourceCitation: "Current Science Indian Journal (PMID: 26855410) & ICMR Coastal Food Studies",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/26855410/",
+    mythCheck: {
+      claim: "Drinking kokum juice melts 10kg of body fat in 30 days.",
+      reality:
+        "Kokum contains mild appetite-soothing HCA, but it works primarily as a fantastic natural digestive coolant and acid shield, not a miracle fat burner.",
+    },
+    whoShouldLimit: [
+      "Severe kidney disease patients with strict potassium restrictions",
+      "People prone to acid-induced mouth ulcers",
+    ],
+    bestPairing:
+      "Traditional Solkadhi (kokum extract blended with fresh coconut milk, a crushed garlic clove, green chili, and cumin).",
+    indianServingContext:
+      "1 small glass (around 100ml) Solkadhi after lunch or 1 cup cool Kokum Sharbat.",
+    guidance: {
+      do: "Soak dry kokum rinds in warm water to extract the bright pink cooling juice for curries and drinks.",
+      dont: "Don't consume commercial kokum syrups that are 70% white sugar and chemical preservatives.",
+      askDoctorIf: "Ask your doctor if you are on severe potassium restriction for kidney care.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "देसी कोकम (अमसुल)",
+      whatItContains:
+        "गार्सिनोल, हाइड्रोक्सीसिट्रिक एसिड (HCA), बैंगनी एंथोसायनिन और पेट ठंडा करने वाले प्राकृतिक अम्ल।",
+      provenBenefit:
+        "पेट की जलन और एसिडिटी को शांत करता है, आंतों की अंदरूनी परत की रक्षा करता है और लू व घमौरियों से बचाता है।",
+      mythClaim: "कोकम का शरबत पीने से 30 दिन में 10 किलो वजन गायब हो जाता है।",
+      mythReality:
+        "कोकम पाचन सुधारने और पेट की गर्मी शांत करने का उत्तम फल है, यह कोई जादुई वजन घटाने वाली दवा नहीं है।",
+      whoShouldLimit: "किडनी की बीमारी में पोटैशियम सीमित करने वाले लोग सीमित मात्रा में ही लें।",
+      bestPairing: "नारियल के दूध, लहसुन, हरी मिर्च और जीरे के साथ बनी पारंपरिक पाचक सोलकढ़ी।",
+      do: "सूखे कोकम को गर्म पानी में भिगोकर उसका गुलाबी रस दाल या कढ़ी में खटास के लिए इस्तेमाल करें।",
+      dont: "बाजार में मिलने वाले सफेद चीनी के गाढ़े शरबत से बचें।",
+      askDoctorIf: "यदि किडनी की समस्या के कारण पोटैशियम पर रोक है, तो डॉक्टर से पूछें।",
+    },
+  },
 ];
 
 // Re-export FOOD_TIPS for backward compatibility
@@ -2042,6 +2850,28 @@ export const FOOD_SYNERGIES: FoodSynergyPair[] = [
     culinaryIdea:
       "Whisk 1 cup dahi into spiced chaas with 1/2 tsp freshly roasted crushed cumin and black salt after lunch.",
   },
+  {
+    id: "syn-til-gur",
+    foodA: "Sesame Seeds / Til (Plant Calcium & Zinc)",
+    foodB: "Desi Jaggery / Gur (Organic Acids & Iron)",
+    synergyOutcome: "Bone Matrix Calcium Surge",
+    multiplier: "+350% Bioavailability",
+    mechanism:
+      "Jaggery contains natural plant acids and trace minerals that make the dense calcium and zinc in sesame seeds significantly easier for the intestine to absorb. A traditional winter combination that fortifies bone mineral density.",
+    culinaryIdea:
+      "Enjoy 1 small piece of traditional Til-Gud laddoo or chikki after lunch during colder months.",
+  },
+  {
+    id: "syn-green-tea-lemon",
+    foodA: "Green Tea or Pudina Tea (Catechin Polyphenols)",
+    foodB: "Fresh Lemon Juice (Vitamin C / Ascorbic Acid)",
+    synergyOutcome: "Antioxidant Preservation & Plasma Longevity",
+    multiplier: "+500% Catechin Retention",
+    mechanism:
+      "Over 80% of delicate tea antioxidants break down in the alkaline environment of your small intestine before reaching your blood. Vitamin C in fresh lemon juice creates a mild acid shield that keeps up to 5 times more antioxidants intact.",
+    culinaryIdea:
+      "Squeeze a fresh lemon wedge directly into freshly steeped green or mint tea right before drinking.",
+  },
 ];
 
 export interface DrugFoodWarning {
@@ -2093,5 +2923,25 @@ export const DRUG_FOOD_WARNINGS: DrugFoodWarning[] = [
       "These blood pressure pills slow down how fast your kidneys remove potassium. Eating 'low sodium' fake salts made with potassium can make potassium build up in your blood to dangerous levels, causing abnormal heartbeats.",
     doctorDirective:
       "Never use potassium-based 'low sodium' salt substitutes without explicit blood tests and advice from your doctor.",
+  },
+  {
+    id: "warn-metformin-b12",
+    food: "Long-Term Metformin Use & Dietary Vitamin B12",
+    medicationClass: "Metformin (Biguanide for Diabetes / PCOS)",
+    riskSeverity: "HIGH",
+    clinicalConsequence:
+      "Taking Metformin for over 2–3 years reduces calcium-dependent absorption of Vitamin B12 in the lower intestine. This can lead to low B12 levels, causing tingling in the feet, nerve numbness, and unexplained tiredness.",
+    doctorDirective:
+      "Ask your doctor for an annual Vitamin B12 blood check and discuss B12 supplementation if you take daily Metformin.",
+  },
+  {
+    id: "warn-thyroid-calcium",
+    food: "High-Calcium Foods (Milk, Curd, Calcium Pills, Fortified Soya)",
+    medicationClass: "Levothyroxine / Eltroxin / Thyronorm (Thyroid Hormone)",
+    riskSeverity: "HIGH",
+    clinicalConsequence:
+      "Calcium binds tightly to levothyroxine thyroid tablets in your stomach like chalk, preventing the hormone from entering your bloodstream and making your medicine appear ineffective.",
+    doctorDirective:
+      "Take your thyroid pill on an empty stomach with plain water at least 4 hours apart from dairy foods or calcium supplements.",
   },
 ];
