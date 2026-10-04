@@ -5,10 +5,10 @@ import {
   Compass,
   FileQuestion,
   Calendar,
-  Layers,
   BookOpen,
   ArrowRight,
   ShieldAlert,
+  Apple,
 } from "lucide-react";
 
 const FEATURES = [
@@ -22,6 +22,17 @@ const FEATURES = [
     desc: "30+ anatomical zones mapped across physiological layers. Click any organ to view verified biological mechanisms and clinical facts.",
     stats: ["30+ Organs", "Interactive Vectors", "Layered Views"],
     link: "/explore",
+  },
+  {
+    id: "food",
+    icon: Apple,
+    code: "NTR",
+    color: "#00E5C4",
+    title: "Nutrition & Food Spectrum",
+    tagline: "4-Level Nutrition & Synergies",
+    desc: "Clinically graded 4-level food spectrum, glucose-balancing meal sequencing, personalized protein/fiber targets, and life-saving drug-food interaction alerts.",
+    stats: ["4-Tier Hierarchy", "Daily Calculator", "Food Synergies"],
+    link: "/food",
   },
   {
     id: "explain",
@@ -66,17 +77,6 @@ const FEATURES = [
     desc: "Peer-reviewed medical literature indexed by system, organ, and condition. Grounded in CDC, WHO, and AHA clinical standards.",
     stats: ["Tier 1/2 Sources", "Cross-Linked", "Peer-Reviewed"],
     link: "/library",
-  },
-  {
-    id: "symptoms",
-    icon: Layers,
-    code: "SYM",
-    color: "#38BDF8",
-    title: "Symptom Navigator",
-    tagline: "Organ-Guided Context",
-    desc: "Understand how localized symptoms correlate with specific anatomical structures, complete with discussion prompts for physicians.",
-    stats: ["Educational Focus", "Anatomy-Linked", "Doctor Questions"],
-    link: "/symptoms",
   },
 ];
 

@@ -6,12 +6,12 @@ import { useState, useEffect } from "react";
 
 const NAV_LINKS = [
   { to: "/explore", labelKey: "explore" as const, code: "XPL-01" },
-  { to: "/library", labelKey: "library" as const, code: "LIB-02" },
-  { to: "/symptoms", labelKey: "symptoms" as const, code: "SYM-03" },
-  { to: "/emergency", labelKey: "emergency" as const, code: "EMG-04" },
-  { to: "/facts", labelKey: "facts" as const, code: "FCT-05" },
-  { to: "/grey-market", labelKey: "greyMarket" as const, code: "GM-09" },
+  { to: "/food", labelKey: "food" as const, code: "NTR-02" },
+  { to: "/library", labelKey: "library" as const, code: "LIB-03" },
+  { to: "/emergency", labelKey: "emergency" as const, code: "EMG-05" },
+  { to: "/facts", labelKey: "facts" as const, code: "FCT-06" },
   { to: "/food-labels", labelKey: "foodLabels" as const, code: "FL-10" },
+  { to: "/grey-market", labelKey: "greyMarket" as const, code: "GM-09" },
 ];
 
 export function Header() {

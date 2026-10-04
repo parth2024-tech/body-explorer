@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
-import { Activity, Wind, Brain, Bone, ArrowRight, ShieldCheck } from "lucide-react";
+import { Activity, Wind, Brain, Bone, ArrowRight, ShieldCheck, Apple } from "lucide-react";
 
 /* ─── Clinical Data Cards ─── */
 const FLOAT_CARDS = [
@@ -172,11 +172,11 @@ export function HeroSection() {
               </Link>
 
               <Link
-                to="/symptoms"
+                to="/food"
                 className="inline-flex items-center gap-2 rounded-lg border border-[#1E2844] bg-[#0D1428] px-6 py-3.5 text-sm font-medium text-[#E8E0D5] transition-colors hover:border-[#2D3B66] hover:bg-[#111A33] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#00E5C4]"
               >
-                <ShieldCheck className="h-4 w-4 text-[#00E5C4]" />
-                <span>Symptom Navigator</span>
+                <Apple className="h-4 w-4 text-[#00E5C4]" />
+                <span>Food & Nutrition</span>
               </Link>
             </motion.div>
 
