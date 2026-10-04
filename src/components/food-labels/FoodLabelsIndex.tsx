@@ -12,13 +12,17 @@ export function FoodLabelsIndex() {
   return (
     <div className="min-h-screen bg-[#030303] text-[#EAEAEA] font-sans selection:bg-[#FC3D21]/30">
       {/* Disclaimer Banner */}
-      <div className="w-full bg-[#FC3D21]/10 border-b border-[#FC3D21]/30 px-4 py-2 flex items-start gap-3 sm:items-center justify-center print:hidden">
-        <AlertTriangle className="w-5 h-5 text-[#FC3D21] shrink-0" />
-        <p className="text-xs font-mono text-[#FC3D21] leading-snug max-w-4xl">
-          <strong className="uppercase tracking-wider">Disclaimer:</strong> This index exposes
-          common FMCG (Fast-Moving Consumer Goods) marketing tactics based on nutritional science.
-          It does not target specific brands, but rather universal misleading labeling practices.
-          Always read the ingredient list.
+      <div className="w-full bg-[#FC3D21]/10 border-b border-[#FC3D21]/30 px-4 py-3 flex items-start gap-3 sm:items-center justify-center print:hidden">
+        <AlertTriangle className="w-5 h-5 text-[#FC3D21] shrink-0 mt-0.5 sm:mt-0" />
+        <p className="text-xs font-mono text-[#FC3D21] leading-snug max-w-5xl">
+          <strong className="uppercase tracking-wider">
+            Statutory Nutritional & Regulatory Notice:
+          </strong>{" "}
+          This educational index evaluates statutory labeling criteria (Codex Alimentarius, US FDA
+          21 CFR 101, and FSSAI Food Safety and Standards Regulations) regarding marketing claims
+          like "Natural", "Multigrain", or "Zero Sugar". It analyzes generalized consumer marketing
+          conventions and does not constitute individualized dietary prescription or brand dispute
+          adjudication. Always read the complete mandatory ingredient declaration.
         </p>
       </div>
 

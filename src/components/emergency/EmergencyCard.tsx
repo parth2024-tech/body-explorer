@@ -143,6 +143,43 @@ export function EmergencyCard({ scenario }: { scenario: EmergencyScenario }) {
                 </div>
               </div>
 
+              {/* Age & Pediatric Warning Box */}
+              <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 text-xs text-amber-300">
+                <span className="font-bold uppercase tracking-wider block mb-1">
+                  Clinical Age Scope: Adult & Adolescent (12+ Years)
+                </span>
+                {scenario.id === "choking" && (
+                  <p>
+                    <strong>INFANT WARNING (&lt;1 yr):</strong> DO NOT perform abdominal thrusts.
+                    Lay infant face down on your forearm supported by your thigh; give 5 firm back
+                    blows, then turn face up and give 5 chest thrusts with 2 fingers.
+                  </p>
+                )}
+                {scenario.id === "cardiac-arrest" && (
+                  <p>
+                    <strong>PEDIATRIC NOTE:</strong> For infants (&lt;1 yr), use 2 fingers in center
+                    of chest, compress 1.5 inches (4 cm) deep at 100–120 CPM. For children, use 1 or
+                    2 hands to compress 2 inches (5 cm).
+                  </p>
+                )}
+                {scenario.id === "anaphylaxis" && (
+                  <p>
+                    <strong>DOSING NOTE:</strong> Standard adult auto-injectors contain 0.3 mg
+                    epinephrine. Pediatric patients (15–30 kg) require pediatric 0.15 mg
+                    auto-injectors.
+                  </p>
+                )}
+                {scenario.id !== "choking" &&
+                  scenario.id !== "cardiac-arrest" &&
+                  scenario.id !== "anaphylaxis" && (
+                    <p>
+                      These steps reflect adult emergency response guidelines. Pediatric patients
+                      have distinct physiological anatomy and require immediate pediatric EMS
+                      response.
+                    </p>
+                  )}
+              </div>
+
               {/* Before Ambulance */}
               <div className="bg-white/[0.02] border border-white/10 rounded-xl p-5">
                 <h4 className="flex items-center gap-2 text-[#00E5C4] font-bold mb-3 uppercase tracking-wider text-sm">
@@ -154,6 +191,12 @@ export function EmergencyCard({ scenario }: { scenario: EmergencyScenario }) {
                     <li key={idx}>{item}</li>
                   ))}
                 </ul>
+              </div>
+
+              {/* Guideline Source Footer */}
+              <div className="text-[11px] font-mono text-[#8A8F98] pt-2 border-t border-white/10 flex flex-wrap justify-between gap-2">
+                <span>Guideline: AHA 2020 / ERC 2021 BLS Protocol</span>
+                <span>Reviewed: Oct 2026</span>
               </div>
             </div>
           </motion.div>

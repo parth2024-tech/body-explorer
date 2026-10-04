@@ -39,28 +39,30 @@ export function FoodNutritionHub() {
     "moderate",
   );
 
-  // Calculate personalized nutrition benchmarks
+  // Calculate personalized nutrition benchmark ranges
   const nutritionTargets = useMemo(() => {
-    const weight = Math.max(30, Math.min(200, bodyWeight || 70));
-    let proteinMultiplier = 1.2;
-    let waterMultiplier = 35; // ml per kg
+    const weight = Math.max(35, Math.min(140, bodyWeight || 70));
+    let proteinRange: [number, number];
+    let waterRange: [string, string];
 
-    if (activityFactor === "moderate") {
-      proteinMultiplier = 1.4;
-      waterMultiplier = 38;
+    if (activityFactor === "sedentary") {
+      proteinRange = [Math.round(weight * 0.8), Math.round(weight * 1.0)];
+      waterRange = [((weight * 30) / 1000).toFixed(1), ((weight * 35) / 1000).toFixed(1)];
     } else if (activityFactor === "active") {
-      proteinMultiplier = 1.8;
-      waterMultiplier = 42;
+      proteinRange = [Math.round(weight * 1.4), Math.round(weight * 1.8)];
+      waterRange = [((weight * 38) / 1000).toFixed(1), ((weight * 45) / 1000).toFixed(1)];
+    } else {
+      proteinRange = [Math.round(weight * 1.0), Math.round(weight * 1.3)];
+      waterRange = [((weight * 33) / 1000).toFixed(1), ((weight * 38) / 1000).toFixed(1)];
     }
 
-    const dailyProtein = Math.round(weight * proteinMultiplier);
-    const dailyWaterLiters = ((weight * waterMultiplier) / 1000).toFixed(1);
-    const dailyFiber = weight > 75 ? 35 : 30; // standard clinical recommendation
-
     return {
-      protein: dailyProtein,
-      fiber: dailyFiber,
-      water: dailyWaterLiters,
+      proteinMin: proteinRange[0],
+      proteinMax: proteinRange[1],
+      fiberMin: 25,
+      fiberMax: 38,
+      waterMin: waterRange[0],
+      waterMax: waterRange[1],
     };
   }, [bodyWeight, activityFactor]);
 
@@ -116,15 +118,15 @@ export function FoodNutritionHub() {
   return (
     <div className="min-h-screen bg-[#030303] text-[#EAEAEA] font-sans selection:bg-[#00E5C4]/30 pb-32 pb-[calc(7.5rem+env(safe-area-inset-bottom))]">
       {/* Clinical Medical Disclaimer Banner */}
-      <div className="w-full bg-[#FC3D21]/10 border-b border-[#FC3D21]/30 px-3.5 sm:px-4 py-2 sm:py-2.5 flex items-start sm:items-center justify-center gap-2.5 sm:gap-3">
-        <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-[#FC3D21] shrink-0 mt-0.5 sm:mt-0" />
-        <p className="text-[11px] sm:text-xs font-mono text-[#FC3D21] leading-snug max-w-4xl text-left sm:text-center">
-          <strong className="uppercase tracking-wider">
-            {language === "hi" ? "चिकित्सा अस्वीकरण:" : "CLINICAL DISCLAIMER:"}
+      <div className="w-full bg-red-950/70 border-b-2 border-red-500/50 px-3.5 sm:px-4 py-3 flex items-start sm:items-center justify-center gap-3">
+        <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5 sm:mt-0" />
+        <p className="text-[11px] sm:text-xs font-sans text-red-200 leading-relaxed max-w-5xl text-left">
+          <strong className="text-white uppercase tracking-wider">
+            {language === "hi" ? "चिकित्सा व पोषण अस्वीकरण:" : "CLINICAL & NUTRITIONAL DISCLAIMER:"}
           </strong>{" "}
           {language === "hi"
-            ? "यह अनुभाग केवल वैज्ञानिक और पोषण शिक्षा के लिए है। यह किसी व्यक्तिगत चिकित्सा उपचार या आहार विशेषज्ञ के परामर्श का विकल्प नहीं है।"
-            : "This module provides clinical nutrition education vetted against Tier 1/2 evidence. It does not replace individualized medical nutrition therapy or physician guidance."}
+            ? "यह हब WHO/FAO और NOVA खाद्य वर्गीकरण पर आधारित जनसंख्या-स्तरीय पोषण शिक्षा प्रदान करता है। यह व्यक्तिगत मेडिकल न्यूट्रिशन थेरेपी (MNT) का विकल्प नहीं है। दवा-खाद्य इंटरैक्शन केवल डॉक्टर के साथ चर्चा के लिए हैं।"
+            : "This module provides population-level dietary education based on WHO/FAO nutritional guidelines, the NOVA food processing framework, and evidence-graded studies. It does NOT constitute individualized Medical Nutrition Therapy (MNT). Food-drug interaction alerts are provided for patient-physician discussion; never alter prescribed medical therapy without consulting your doctor or clinical pharmacist."}
         </p>
       </div>
 
@@ -396,20 +398,20 @@ export function FoodNutritionHub() {
                 <div className="rounded-xl sm:rounded-2xl border border-teal-500/30 bg-teal-500/5 p-4 sm:p-5 flex flex-col justify-between">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-[10px] font-bold text-teal-400 uppercase tracking-widest">
-                      {language === "hi" ? "दैनिक प्रोटीन" : "Daily Protein"}
+                      {language === "hi" ? "दैनिक प्रोटीन दायरा" : "Daily Protein Range"}
                     </span>
                     <Scale className="w-4 h-4 text-teal-400" />
                   </div>
                   <div>
-                    <span className="text-3xl sm:text-4xl font-mono font-black text-white">
-                      {nutritionTargets.protein}
+                    <span className="text-2xl sm:text-3xl font-mono font-black text-white">
+                      {nutritionTargets.proteinMin} – {nutritionTargets.proteinMax}
                     </span>
                     <span className="text-xs font-mono text-teal-300 ml-1">g / day</span>
                   </div>
                   <p className="text-[11px] text-[#8A8F98] mt-2.5 sm:mt-3 leading-tight">
                     {language === "hi"
                       ? "प्रति भोजन 25-30g बांटकर खाएं ताकि मांसपेशियों का रखरखाव हो सके।"
-                      : "Paced evenly across 3-4 meals (~25-30g each) for optimal muscle protein synthesis."}
+                      : "Paced across meals (0.8–1.8 g/kg based on activity). Healthy adult reference only."}
                   </p>
                 </div>
 
@@ -417,20 +419,20 @@ export function FoodNutritionHub() {
                 <div className="rounded-xl sm:rounded-2xl border border-sky-500/30 bg-sky-500/5 p-4 sm:p-5 flex flex-col justify-between">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-[10px] font-bold text-sky-400 uppercase tracking-widest">
-                      {language === "hi" ? "आहार फाइबर" : "Dietary Fiber"}
+                      {language === "hi" ? "आहार फाइबर दायरा" : "Dietary Fiber Range"}
                     </span>
                     <Activity className="w-4 h-4 text-sky-400" />
                   </div>
                   <div>
-                    <span className="text-3xl sm:text-4xl font-mono font-black text-white">
-                      {nutritionTargets.fiber}
+                    <span className="text-2xl sm:text-3xl font-mono font-black text-white">
+                      {nutritionTargets.fiberMin} – {nutritionTargets.fiberMax}
                     </span>
                     <span className="text-xs font-mono text-sky-300 ml-1">g / day</span>
                   </div>
                   <p className="text-[11px] text-[#8A8F98] mt-2.5 sm:mt-3 leading-tight">
                     {language === "hi"
                       ? "आंतों के अच्छे बैक्टीरिया को पोषित करने और शुगर स्पाइक रोकने के लिए आवश्यक।"
-                      : "Gold standard for short-chain fatty acid (butyrate) production and steady glucose curves."}
+                      : "Institute of Medicine standard for glycemic regulation and microbiome diversity."}
                   </p>
                 </div>
 
@@ -438,23 +440,38 @@ export function FoodNutritionHub() {
                 <div className="rounded-xl sm:rounded-2xl border border-blue-500/30 bg-blue-500/5 p-4 sm:p-5 flex flex-col justify-between">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">
-                      {language === "hi" ? "जलयोजन (पानी)" : "Hydration"}
+                      {language === "hi" ? "जलयोजन दायरा" : "Hydration Range"}
                     </span>
                     <Droplets className="w-4 h-4 text-blue-400" />
                   </div>
                   <div>
-                    <span className="text-3xl sm:text-4xl font-mono font-black text-white">
-                      {nutritionTargets.water}
+                    <span className="text-2xl sm:text-3xl font-mono font-black text-white">
+                      {nutritionTargets.waterMin} – {nutritionTargets.waterMax}
                     </span>
                     <span className="text-xs font-mono text-blue-300 ml-1">L / day</span>
                   </div>
                   <p className="text-[11px] text-[#8A8F98] mt-2.5 sm:mt-3 leading-tight">
                     {language === "hi"
                       ? "गुर्दे की निस्पंदन और कोशिका कार्यप्रणाली को बनाए रखने के लिए आधारभूत मात्रा।"
-                      : "Baseline fluid requirement before factoring in excessive sweat or humid climates."}
+                      : "General fluid intake. Restricted fluid protocols apply to CHF or kidney disease."}
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* Clinical Exclusion & Guardrail Banner */}
+            <div className="mt-6 pt-5 border-t border-white/10 bg-amber-500/5 rounded-xl p-4 border border-amber-500/20 text-xs text-amber-300 leading-relaxed">
+              <strong className="text-amber-200 uppercase tracking-wider block mb-1">
+                Clinical Exclusions & Boundary Notice:
+              </strong>
+              These calculated reference intervals apply strictly to healthy adults (age 18+). They
+              are{" "}
+              <strong>
+                NOT calibrated for children, pregnancy, lactation, active eating disorders, or
+                chronic kidney disease (CKD stages 3–5)
+              </strong>
+              . Individuals with renal impairment, liver failure, or congestive heart failure must
+              adhere to their clinical specialist's exact prescribed macro and fluid restrictions.
             </div>
           </div>
         </section>

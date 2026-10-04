@@ -131,17 +131,25 @@ function ExplainPage() {
         </p>
       </motion.div>
 
-      {/* Disclaimer */}
+      {/* Clinical Disclaimer & Non-Diagnostic Boundary */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="mt-6 rounded-xl border border-[#F5A623]/20 bg-[#F5A623]/5 p-4 text-center"
+        className="mt-6 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-left font-mono text-xs leading-relaxed"
       >
-        <p className="text-sm text-[#F5A623] font-medium">⚠️ This is not medical advice.</p>
-        <p className="mt-1 text-xs text-[#8B8FA3]">
-          This tool helps you learn about your body and prepare questions for your doctor. It does
-          not diagnose conditions.
+        <p className="text-amber-300 font-bold uppercase tracking-wider flex items-center gap-2">
+          <span>⚠️</span> Non-Diagnostic Physiology Education Only
+        </p>
+        <p className="mt-2 text-amber-200/90">
+          This educational tool translates user-described sensations into physiological concepts and
+          structured clinical communication prompts. It does <strong>NOT</strong> perform diagnostic
+          triage, symptom scoring, risk stratification, or clinical assessment.
+        </p>
+        <p className="mt-1 text-amber-300/80">
+          If you are experiencing acute chest discomfort, severe dyspnea, sudden neurological
+          weakness, or thunderclap cephalalgia, call emergency services (
+          <strong>112 / 911 / 999</strong>) or navigate directly to Emergency SOS.
         </p>
       </motion.div>
 

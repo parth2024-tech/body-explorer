@@ -120,9 +120,9 @@ export function MobileBottomNav() {
     },
     {
       to: "/grey-market",
-      title: language === "hi" ? "पूरक सुरक्षा" : "Supplement Safety",
+      title: language === "hi" ? "नियामक वेधशाला" : "Regulatory Watch",
       subtitle:
-        language === "hi" ? "बाजार जोखिम और प्रमाण समीक्षा" : "Market risk and evidence rating",
+        language === "hi" ? "दवा और खाद्य सुरक्षा अलर्ट" : "Cross-border alerts & safety recalls",
       icon: ShieldAlert,
       color: "text-rose-400",
       bg: "bg-rose-400/10",

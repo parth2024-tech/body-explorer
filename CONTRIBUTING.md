@@ -18,12 +18,14 @@ Because this platform serves users seeking health and anatomical information, al
 ## 💻 Development Workflow
 
 ### 1. Branch Strategy
-* Branch from `main` using descriptive branch names:
-  * `feat/short-feature-name`
-  * `fix/short-bug-description`
-  * `docs/documentation-update`
+
+- Branch from `main` using descriptive branch names:
+  - `feat/short-feature-name`
+  - `fix/short-bug-description`
+  - `docs/documentation-update`
 
 ### 2. Local Setup
+
 ```bash
 git clone https://github.com/parth2024-tech/body-explorer.git
 cd body-explorer
@@ -32,23 +34,28 @@ npm run dev
 ```
 
 ### 3. Code Standards
-* **Strict TypeScript:** No `any` types. Provide explicit interfaces and union types.
-* **Component Design:** Use named exports for components, clean modular structures, and accessible semantic HTML.
-* **Styling:** Follow Tailwind CSS v4 conventions with the telemetry dark design system. Avoid arbitrary inline styles.
-* **Touch Targets:** Ensure interactive mobile controls meet the minimum ≥48px boundary standard.
+
+- **Strict TypeScript:** No `any` types. Provide explicit interfaces and union types.
+- **Component Design:** Use named exports for components, clean modular structures, and accessible semantic HTML.
+- **Styling:** Follow Tailwind CSS v4 conventions with the telemetry dark design system. Avoid arbitrary inline styles.
+- **Touch Targets:** Ensure interactive mobile controls meet the minimum ≥48px boundary standard.
 
 ### 4. Mandatory Pre-Commit Checks
+
 Before submitting a pull request, run all quality checks:
 
 ```bash
+# Run unit tests
+npm run test
+
 # Type check
 npm run typecheck
 
 # ESLint verification
 npm run lint
 
-# Code formatting
-npm run format
+# Comprehensive validation suite
+npm run validate
 
 # Production build verification
 npm run build
@@ -62,13 +69,13 @@ All checks must pass with zero errors.
 
 We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
 
-* `feat(...)`: A new feature or capability
-* `fix(...)`: A bug fix or type resolution
-* `docs(...)`: Documentation changes
-* `style(...)`: Formatting or CSS visual improvements
-* `refactor(...)`: Code changes that neither fix a bug nor add a feature
-* `perf(...)`: Performance optimizations
-* `chore(...)`: Routine tasks, dependency updates, or repo configuration
+- `feat(...)`: A new feature or capability
+- `fix(...)`: A bug fix or type resolution
+- `docs(...)`: Documentation changes
+- `style(...)`: Formatting or CSS visual improvements
+- `refactor(...)`: Code changes that neither fix a bug nor add a feature
+- `perf(...)`: Performance optimizations
+- `chore(...)`: Routine tasks, dependency updates, or repo configuration
 
 ---
 

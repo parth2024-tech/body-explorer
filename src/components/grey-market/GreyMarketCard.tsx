@@ -113,7 +113,9 @@ export const GreyMarketCard: React.FC<GreyMarketCardProps> = ({ item }) => {
             className={`gm-expand-btn ${isExpanded ? "active" : ""}`}
             onClick={() => setIsExpanded(!isExpanded)}
           >
-            {isExpanded ? "Hide Medical Mechanism" : "View Medical Mechanism"}
+            {isExpanded
+              ? "Hide Pharmacological / Physiological Mechanism"
+              : "View Pharmacological / Physiological Mechanism"}
             <svg
               width="16"
               height="16"
@@ -131,7 +133,7 @@ export const GreyMarketCard: React.FC<GreyMarketCardProps> = ({ item }) => {
               className="gm-data-label"
               style={{ color: "var(--text)", marginBottom: "8px", display: "block" }}
             >
-              Why is it dangerous?
+              Regulatory & Physiological Rationale
             </span>
             <span
               className="gm-data-value"
@@ -165,14 +167,31 @@ export const GreyMarketCard: React.FC<GreyMarketCardProps> = ({ item }) => {
         className="gm-card-footer"
         style={{ display: "flex", flexDirection: "column", gap: "8px" }}
       >
-        <div>Ref: {item.ref}</div>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+            gap: "8px",
+            fontSize: "0.8rem",
+          }}
+        >
+          <div>Ref: {item.ref}</div>
+          {item.regulatorAgency && (
+            <div style={{ color: "#00E5C4", fontWeight: 500 }}>
+              {item.regulatorAgency} {item.noticeDate ? `(${item.noticeDate})` : ""}
+            </div>
+          )}
+        </div>
         {item.clinicalDisclaimer && (
           <div
             style={{
               fontSize: "0.75rem",
-              color: "var(--red)",
+              color: "var(--text3)",
               fontStyle: "italic",
               fontWeight: 500,
+              paddingTop: "6px",
+              borderTop: "1px dashed var(--border2)",
             }}
           >
             {item.clinicalDisclaimer}

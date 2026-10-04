@@ -1,7 +1,7 @@
 {
   "name": "body-explorer",
   "version": "2.0.0",
-  "description": "The Living Body Atlas & Health Intelligence Platform: Interactive 2D/3D anatomy, evidence-graded food spectrum, regulatory safety registry, and emergency triage protocols.",
+  "description": "The Living Body Atlas: An evidence-based educational platform featuring interactive 2D anatomy, clinical nutrition frameworks, cross-border regulatory advisories, and emergency first-aid protocols.",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -11,12 +11,11 @@
     "url": "git+https://github.com/parth2024-tech/body-explorer.git"
   },
   "keywords": [
-    "health",
+    "health-education",
     "anatomy",
     "interactive-body-map",
-    "clinical-evidence",
-    "nutrition",
-    "emergency-first-aid",
+    "evidence-based-nutrition",
+    "first-aid-protocols",
     "tanstack-start",
     "react-19",
     "tailwind-css"
@@ -29,12 +28,11 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
-    "validate": "npm run typecheck && npm run lint"
+    "test": "vitest run",
+    "validate": "npm run typecheck && npm run lint && npm run test"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
-    "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.6.1",
     "@tailwindcss/vite": "^4.2.1",
     "@tanstack/react-query": "^5.83.0",
     "@tanstack/react-router": "^1.168.25",
@@ -45,7 +43,6 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwindcss": "^4.2.1",
-    "three": "^0.184.0",
     "tw-animate-css": "^1.3.4",
     "vite-tsconfig-paths": "^6.0.2",
     "zod": "^3.24.2",
@@ -56,7 +53,6 @@
     "@types/node": "^22.16.5",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
-    "@types/three": "^0.184.1",
     "@vitejs/plugin-react": "^5.2.0",
     "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.1",
@@ -69,6 +65,7 @@
     "tsx": "^4.22.4",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
-    "vite": "^8.0.16"
+    "vite": "^8.0.16",
+    "vitest": "^5.0.3"
   }
 }

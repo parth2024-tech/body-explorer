@@ -48,25 +48,41 @@ export function PrescriptionScanner() {
 
   return (
     <div className="w-full h-full bg-[#0F0F0F] border border-[#222222] rounded-lg p-5 flex flex-col overflow-hidden">
-      <div className="flex items-center gap-3 mb-4 shrink-0">
+      <div className="flex items-center gap-3 mb-3 shrink-0">
         <ScanSearch className="w-5 h-5 text-[#EAEAEA]" />
-        <h2 className="text-lg font-semibold text-[#EAEAEA] font-space">
-          Scan Ingredients / Labels
-        </h2>
+        <div>
+          <h2 className="text-lg font-semibold text-[#EAEAEA] font-space">
+            Regulatory Watchlist Search
+          </h2>
+          <p className="text-xs text-[#8A8F98]">
+            Cross-reference ingredient names against public statutory alerts and recall notices.
+          </p>
+        </div>
+      </div>
+
+      {/* Educational & Non-Diagnostic Disclaimer */}
+      <div className="mb-4 p-3 bg-amber-500/10 border border-amber-500/20 rounded-md text-xs text-amber-200/90 font-mono leading-relaxed shrink-0">
+        <strong className="text-amber-300 uppercase tracking-wider block mb-1">
+          ⚠️ Educational Registry Match Only
+        </strong>
+        Performs exact text matching against public regulatory advisories (FDA, EFSA, FSSAI). Does
+        NOT evaluate clinical efficacy, drug-drug interactions, or personal safety. A "no matches"
+        result does NOT confirm clinical safety or appropriateness. Never start, stop, or alter
+        prescribed medication regimens without consulting your prescribing physician.
       </div>
 
       <textarea
-        className="w-full bg-[#030303] border border-[#222222] rounded-md p-3 text-[#EAEAEA] placeholder:text-[#8A8F98] focus:outline-none focus:border-[#FC3D21] font-mono text-sm transition-colors min-h-[100px] shrink-0"
-        placeholder="Type ingredient or brand names from the back of your food package or medicine strip, separated by commas."
+        className="w-full bg-[#030303] border border-[#222222] rounded-md p-3 text-[#EAEAEA] placeholder:text-[#8A8F98] focus:outline-none focus:border-[#FC3D21] font-mono text-sm transition-colors min-h-[90px] shrink-0"
+        placeholder="Type ingredient or brand names from packaging, separated by commas (e.g. Nimesulide, Potassium Bromate, Konjac)."
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
 
       <button
         onClick={handleScan}
-        className="mt-4 px-4 py-2 bg-[#FC3D21]/20 text-[#FC3D21] border border-[#FC3D21]/50 rounded-md font-medium hover:bg-[#FC3D21]/30 transition-colors w-full shrink-0"
+        className="mt-3 px-4 py-2 bg-[#FC3D21]/20 text-[#FC3D21] border border-[#FC3D21]/50 rounded-md font-medium hover:bg-[#FC3D21]/30 transition-colors w-full shrink-0"
       >
-        Scan for Flagged Substances
+        Check Against Regulatory Watchlists
       </button>
 
       {results !== null && (

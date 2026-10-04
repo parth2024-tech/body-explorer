@@ -20,6 +20,8 @@ export interface MoleculeEntry {
   confidenceLevel?: "HIGH" | "MODERATE" | "LOW" | "INSUFFICIENT";
   evidenceStatement?: string;
   clinicalDisclaimer?: string;
+  regulatorAgency?: string;
+  noticeDate?: string;
 }
 
 interface GreyMarketState {

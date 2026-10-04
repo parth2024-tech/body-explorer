@@ -10,7 +10,7 @@
     "Tailwind CSS v4",
     "Nitro Engine (Vercel)",
     "Zustand (Local-First State)",
-    "Three.js / React Three Fiber"
+    "Hardware-Accelerated SVG & Web Audio API"
   ],
   "conventions": [
     "All components use named exports, never default exports",
@@ -43,11 +43,7 @@
   "deployment": {
     "platform": "Vercel",
     "branch_strategy": "main → production, dev → preview",
-    "environments": [
-      "development",
-      "staging",
-      "production"
-    ]
+    "environments": ["development", "staging", "production"]
   },
   "sprint_focus": "Building the user onboarding flow with email verification and profile setup.",
   "sprint_skills": [
@@ -79,11 +75,7 @@
   ],
   "agent_skills": {
     "directory": "/home/thor/skiils/skills",
-    "default_skills": [
-      "using-agent-skills",
-      "context-engineering",
-      "anti-vibe-design"
-    ],
+    "default_skills": ["using-agent-skills", "context-engineering", "anti-vibe-design"],
     "mandatory_skills": {
       "api": "api-and-interface-design",
       "auth": "security-and-hardening",

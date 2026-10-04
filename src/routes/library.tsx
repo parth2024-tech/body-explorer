@@ -12,6 +12,7 @@ import {
   Search,
   Volume2,
   Square,
+  AlertTriangle,
 } from "lucide-react";
 
 export const Route = createFileRoute("/library")({
@@ -186,6 +187,28 @@ function LibraryPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-5">
+        {/* Oxford CEBM Evidence Hierarchy & Non-Prescriptive Clinical Notice */}
+        <div className="mb-8 p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200/90 text-xs font-mono leading-relaxed flex items-start gap-3 relative z-10">
+          <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <p>
+              <strong className="text-amber-300 uppercase tracking-wider">
+                Oxford CEBM Evidence Hierarchy & Clinical Notice:
+              </strong>{" "}
+              Entries in this library are indexed against Oxford Centre for Evidence-Based Medicine
+              (CEBM) and GRADE standards (Level 1–2: Randomized controlled trials and systematic
+              reviews; Level 3–4: Observational cohorts, traditional pharmacognosy, and mechanistic
+              models).
+            </p>
+            <p className="text-amber-300/80">
+              Educational synthesis only. Does not constitute personal medical diagnosis, botanical
+              dosage prescription, or drug-herb contraindication clearance. Consult a licensed
+              physician or clinical pharmacologist before initiating botanical or supplement
+              protocols.
+            </p>
+          </div>
+        </div>
+
         {/* Navigation Tabs (Touch Scrollable on Mobile) */}
         <div className="flex gap-2.5 overflow-x-auto sm:flex-wrap sm:justify-center mb-10 relative z-10 touch-scroll px-1 pb-2">
           {[
