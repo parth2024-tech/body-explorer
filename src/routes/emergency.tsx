@@ -10,8 +10,12 @@ export const Route = createFileRoute("/emergency")({
   head: () => ({
     meta: [
       { title: "Emergency Protocol - The Living Body Atlas" },
-      { name: "description", content: "Life-saving guides, FAST stroke checks, before-the-ambulance steps, and an interactive CPR pacing helper." }
-    ]
+      {
+        name: "description",
+        content:
+          "Life-saving guides, FAST stroke checks, before-the-ambulance steps, and an interactive CPR pacing helper.",
+      },
+    ],
   }),
   component: EmergencyPage,
 });
@@ -44,10 +48,14 @@ function EmergencyPage() {
 
   const initAudioCtx = useCallback(() => {
     if (!audioCtxRef.current) {
-      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
-      audioCtxRef.current = new AudioContext();
+      const AudioContextClass =
+        window.AudioContext ||
+        (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+      if (AudioContextClass) {
+        audioCtxRef.current = new AudioContextClass();
+      }
     }
-    if (audioCtxRef.current.state === "suspended") {
+    if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
       audioCtxRef.current.resume();
     }
   }, []);
@@ -56,13 +64,13 @@ function EmergencyPage() {
     try {
       const ctx = audioCtxRef.current;
       if (!ctx) return;
-      
+
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
 
       osc.type = "sine";
-      osc.frequency.setValueAtTime(800, ctx.currentTime); 
-      
+      osc.frequency.setValueAtTime(800, ctx.currentTime);
+
       gain.gain.setValueAtTime(0, ctx.currentTime);
       gain.gain.linearRampToValueAtTime(0.1, ctx.currentTime + 0.01);
       gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.1);
@@ -79,9 +87,9 @@ function EmergencyPage() {
   // CPR Timer Logic (105 BPM)
   useEffect(() => {
     if (cprRunning) {
-      initAudioCtx(); 
+      initAudioCtx();
       const intervalMs = (60 / 105) * 1000; // ~571ms
-      
+
       setCprCount((c) => c + 1);
       playBeep();
 
@@ -101,27 +109,28 @@ function EmergencyPage() {
 
   return (
     <div className="min-h-screen bg-[#030303] text-[#EAEAEA] font-sans selection:bg-red-500/30 pb-32">
-      
       {/* Medical Disclaimer Banner */}
       <div className="w-full bg-red-500/10 border-b border-red-500/30 px-4 py-3 flex items-start sm:items-center justify-center">
         <AlertTriangle className="w-5 h-5 text-red-500 shrink-0 mr-3" />
         <p className="text-xs sm:text-sm font-mono text-red-500 leading-snug">
-          <strong className="uppercase tracking-wider">DISCLAIMER:</strong> These protocols are for precautionary first aid when immediate help is unavailable. They do NOT replace professional medical intervention.
+          <strong className="uppercase tracking-wider">DISCLAIMER:</strong> These protocols are for
+          precautionary first aid when immediate help is unavailable. They do NOT replace
+          professional medical intervention.
         </p>
       </div>
 
       <div className="max-w-[1600px] mx-auto p-4 sm:p-6 lg:p-8">
-        
         {/* Header */}
         <header className="mb-12 relative">
           <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-96 bg-red-500/10 rounded-full blur-[120px] pointer-events-none" />
-          
+
           <div className="relative z-10 text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-space font-extrabold uppercase tracking-tighter text-white">
               Emergency <span className="text-red-500">Protocol</span>
             </h1>
             <p className="text-[#8A8F98] mt-4 font-mono text-sm leading-relaxed">
-              Step-by-step visual guides for high-stakes health events. Read instructions without panic. Click any scenario below to expand the critical action steps.
+              Step-by-step visual guides for high-stakes health events. Read instructions without
+              panic. Click any scenario below to expand the critical action steps.
             </p>
           </div>
         </header>
@@ -140,7 +149,6 @@ function EmergencyPage() {
       {/* Floating Global Action Bar (CPR Pacer & Emergency Number) */}
       <div className="fixed bottom-20 md:bottom-0 left-0 right-0 z-30 p-3 sm:p-4 pointer-events-none pb-[calc(env(safe-area-inset-bottom)+5rem)] md:pb-4">
         <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row justify-between items-end gap-3 sm:gap-4">
-          
           {/* Local Emergency Number Display & Direct Dial Button */}
           <div className="pointer-events-auto bg-black/90 backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:p-4 shadow-2xl flex items-center justify-between gap-3 w-full sm:w-auto">
             <div className="flex items-center gap-3">
@@ -148,7 +156,9 @@ function EmergencyPage() {
                 <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-red-500 animate-pulse" />
               </div>
               <div>
-                <p className="text-[10px] sm:text-xs text-[#8A8F98] uppercase tracking-widest font-bold">Ambulance Dial</p>
+                <p className="text-[10px] sm:text-xs text-[#8A8F98] uppercase tracking-widest font-bold">
+                  Ambulance Dial
+                </p>
                 <p className="text-base sm:text-xl font-mono font-bold text-white">{localNumber}</p>
               </div>
             </div>
@@ -171,9 +181,10 @@ function EmergencyPage() {
                   className="mb-4 bg-black/90 backdrop-blur-xl border border-red-500/30 rounded-3xl p-6 shadow-[0_0_50px_rgba(239,68,68,0.15)] flex flex-col items-center min-w-[300px]"
                 >
                   <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-widest text-center">
-                    CPR Pacer <br/><span className="text-red-500 text-sm">105 BPM</span>
+                    CPR Pacer <br />
+                    <span className="text-red-500 text-sm">105 BPM</span>
                   </h3>
-                  
+
                   <div className="relative">
                     <AnimatePresence>
                       {cprRunning && (
@@ -187,18 +198,28 @@ function EmergencyPage() {
                         />
                       )}
                     </AnimatePresence>
-                    
-                    <motion.div 
+
+                    <motion.div
                       animate={cprRunning ? { scale: [1, 0.9, 1] } : { scale: 1 }}
-                      transition={cprRunning ? { repeat: Infinity, duration: 60/105, ease: "easeInOut" } : {}}
+                      transition={
+                        cprRunning
+                          ? { repeat: Infinity, duration: 60 / 105, ease: "easeInOut" }
+                          : {}
+                      }
                       className={`w-32 h-32 rounded-full border-4 flex flex-col items-center justify-center transition-colors duration-300 ${
-                        cprRunning ? "border-red-500 bg-red-500/20 shadow-[0_0_30px_rgba(239,68,68,0.4)]" : "border-white/20 bg-white/5"
+                        cprRunning
+                          ? "border-red-500 bg-red-500/20 shadow-[0_0_30px_rgba(239,68,68,0.4)]"
+                          : "border-white/20 bg-white/5"
                       }`}
                     >
-                      <span className={`text-sm font-bold tracking-widest transition-colors ${cprRunning ? "text-red-500" : "text-[#8A8F98]"}`}>
+                      <span
+                        className={`text-sm font-bold tracking-widest transition-colors ${cprRunning ? "text-red-500" : "text-[#8A8F98]"}`}
+                      >
                         PUSH
                       </span>
-                      <span className={`text-5xl font-extrabold font-mono mt-1 transition-colors ${cprRunning ? "text-white" : "text-[#8A8F98]"}`}>
+                      <span
+                        className={`text-5xl font-extrabold font-mono mt-1 transition-colors ${cprRunning ? "text-white" : "text-[#8A8F98]"}`}
+                      >
                         {cprCount}
                       </span>
                     </motion.div>
@@ -207,7 +228,9 @@ function EmergencyPage() {
                   <button
                     onClick={() => setCprRunning(!cprRunning)}
                     className={`mt-8 w-full py-3 rounded-xl font-bold uppercase tracking-wider transition-colors ${
-                      cprRunning ? 'bg-white text-black hover:bg-gray-200' : 'bg-red-500 text-white hover:bg-red-600 shadow-[0_0_20px_rgba(239,68,68,0.3)]'
+                      cprRunning
+                        ? "bg-white text-black hover:bg-gray-200"
+                        : "bg-red-500 text-white hover:bg-red-600 shadow-[0_0_20px_rgba(239,68,68,0.3)]"
                     }`}
                   >
                     {cprRunning ? "Stop Pacer" : "Start Pacer"}
@@ -220,18 +243,17 @@ function EmergencyPage() {
             <button
               onClick={() => setIsCprExpanded(!isCprExpanded)}
               className={`flex items-center gap-3 px-6 py-4 rounded-full shadow-2xl transition-all ${
-                isCprExpanded || cprRunning 
-                  ? 'bg-red-500 text-white shadow-[0_0_30px_rgba(239,68,68,0.4)] hover:bg-red-600' 
-                  : 'bg-white text-black hover:bg-gray-100'
+                isCprExpanded || cprRunning
+                  ? "bg-red-500 text-white shadow-[0_0_30px_rgba(239,68,68,0.4)] hover:bg-red-600"
+                  : "bg-white text-black hover:bg-gray-100"
               }`}
             >
-              <HeartPulse className={`w-6 h-6 ${cprRunning ? 'animate-pulse' : ''}`} />
+              <HeartPulse className={`w-6 h-6 ${cprRunning ? "animate-pulse" : ""}`} />
               <span className="font-bold uppercase tracking-wider text-sm">
-                {isCprExpanded ? 'Close Pacer' : 'CPR Timer'}
+                {isCprExpanded ? "Close Pacer" : "CPR Timer"}
               </span>
             </button>
           </div>
-
         </div>
       </div>
     </div>

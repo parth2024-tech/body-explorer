@@ -1,8 +1,15 @@
 import { createServerFn } from "@tanstack/react-start";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
+interface ToxicologyReport {
+  pharmacokinetics: string;
+  toxicity_mechanism: string;
+  clinical_signs: string[];
+  regulatory_history: string;
+}
+
 // Simple in-memory cache to prevent duplicate Gemini calls
-const cache = new Map<string, any>();
+const cache = new Map<string, ToxicologyReport>();
 
 export const generateToxicologyReport = createServerFn({ method: "POST" })
   .validator((molecule: string) => molecule)
@@ -11,7 +18,8 @@ export const generateToxicologyReport = createServerFn({ method: "POST" })
       return cache.get(molecule);
     }
 
-    const apiKey = process.env.GEMINI_API_KEY || (import.meta as any).env?.VITE_GEMINI_API_KEY;
+    const metaEnv = (import.meta as unknown as { env?: Record<string, string | undefined> }).env;
+    const apiKey = process.env.GEMINI_API_KEY || metaEnv?.VITE_GEMINI_API_KEY;
     if (!apiKey) {
       throw new Error("Gemini API key is missing. Please set GEMINI_API_KEY in your environment.");
     }
@@ -37,13 +45,17 @@ Return ONLY the raw JSON string without markdown blocks.`;
       generationConfig: {
         temperature: 0.2,
         responseMimeType: "application/json",
-      }
+      },
     });
 
     const responseText = result.response.text();
-    const cleanedText = responseText.replace(/^```json/i, '').replace(/^```/, '').replace(/```$/, '').trim();
+    const cleanedText = responseText
+      .replace(/^```json/i, "")
+      .replace(/^```/, "")
+      .replace(/```$/, "")
+      .trim();
     const parsed = JSON.parse(cleanedText);
-    
+
     cache.set(molecule, parsed);
     return parsed;
   });

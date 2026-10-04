@@ -44,7 +44,11 @@ export function MobileBottomNav() {
 
   const t = (key: keyof typeof TRANSLATIONS.en) => {
     const dict = TRANSLATIONS[language] || TRANSLATIONS.en;
-    return (dict as Record<string, string>)[key] || (TRANSLATIONS.en as Record<string, string>)[key] || key;
+    return (
+      (dict as Record<string, string>)[key] ||
+      (TRANSLATIONS.en as Record<string, string>)[key] ||
+      key
+    );
   };
 
   const navItems = [
@@ -83,7 +87,10 @@ export function MobileBottomNav() {
     {
       to: "/explain",
       title: language === "hi" ? "चिकित्सा शब्दावली" : "Terminology Explainer",
-      subtitle: language === "hi" ? "सरल भाषा में चिकित्सा शब्दों को समझें" : "Demystify clinical jargon into plain terms",
+      subtitle:
+        language === "hi"
+          ? "सरल भाषा में चिकित्सा शब्दों को समझें"
+          : "Demystify clinical jargon into plain terms",
       icon: FileQuestion,
       color: "text-sky-400",
       bg: "bg-sky-400/10",
@@ -92,7 +99,8 @@ export function MobileBottomNav() {
     {
       to: "/facts",
       title: language === "hi" ? "तथ्य और मिथक" : "Facts & Myths",
-      subtitle: language === "hi" ? "290+ सत्यापित शारीरिक तथ्य" : "290+ verified physiological facts",
+      subtitle:
+        language === "hi" ? "290+ सत्यापित शारीरिक तथ्य" : "290+ verified physiological facts",
       icon: Sparkles,
       color: "text-amber-400",
       bg: "bg-amber-400/10",
@@ -101,7 +109,10 @@ export function MobileBottomNav() {
     {
       to: "/food-labels",
       title: language === "hi" ? "खाद्य लेबल डिकोडर" : "Food Label Decoder",
-      subtitle: language === "hi" ? "छिपे हुए योजक और शर्करा पहचानें" : "Uncover hidden additives and sugars",
+      subtitle:
+        language === "hi"
+          ? "छिपे हुए योजक और शर्करा पहचानें"
+          : "Uncover hidden additives and sugars",
       icon: CheckCircle2,
       color: "text-teal-400",
       bg: "bg-teal-400/10",
@@ -110,7 +121,8 @@ export function MobileBottomNav() {
     {
       to: "/grey-market",
       title: language === "hi" ? "पूरक सुरक्षा" : "Supplement Safety",
-      subtitle: language === "hi" ? "बाजार जोखिम और प्रमाण समीक्षा" : "Market risk and evidence rating",
+      subtitle:
+        language === "hi" ? "बाजार जोखिम और प्रमाण समीक्षा" : "Market risk and evidence rating",
       icon: ShieldAlert,
       color: "text-rose-400",
       bg: "bg-rose-400/10",
@@ -119,7 +131,10 @@ export function MobileBottomNav() {
     {
       to: "/about",
       title: language === "hi" ? "हमारे बारे में" : "Clinical Philosophy",
-      subtitle: language === "hi" ? "चिकित्सा पद्धति और समीक्षा बोर्ड" : "Medical governance and review board",
+      subtitle:
+        language === "hi"
+          ? "चिकित्सा पद्धति और समीक्षा बोर्ड"
+          : "Medical governance and review board",
       icon: Info,
       color: "text-sky-400",
       bg: "bg-sky-400/10",
@@ -128,7 +143,10 @@ export function MobileBottomNav() {
     {
       to: "/privacy",
       title: language === "hi" ? "गोपनीयता नीति" : "Privacy Protocol",
-      subtitle: language === "hi" ? "शून्य-ट्रैकिंग और स्थानीय डेटा भंडारण" : "Zero-tracking, local-only data storage",
+      subtitle:
+        language === "hi"
+          ? "शून्य-ट्रैकिंग और स्थानीय डेटा भंडारण"
+          : "Zero-tracking, local-only data storage",
       icon: FileText,
       color: "text-purple-400",
       bg: "bg-purple-400/10",
@@ -137,7 +155,10 @@ export function MobileBottomNav() {
     {
       to: "/terms",
       title: language === "hi" ? "उपयोग की शर्तें" : "Terms of Care",
-      subtitle: language === "hi" ? "चिकित्सा अस्वीकरण और जिम्मेदार उपयोग" : "Medical disclaimer and usage bounds",
+      subtitle:
+        language === "hi"
+          ? "चिकित्सा अस्वीकरण और जिम्मेदार उपयोग"
+          : "Medical disclaimer and usage bounds",
       icon: FileText,
       color: "text-[#8A8F98]",
       bg: "bg-white/5",
@@ -328,7 +349,9 @@ export function MobileBottomNav() {
                       onClick={() => setIsMenuOpen(false)}
                       className="flex items-center gap-3.5 rounded-2xl border border-white/5 bg-white/[0.02] p-3.5 hover:bg-white/[0.06] hover:border-white/15 transition-all min-h-[56px]"
                     >
-                      <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border ${link.border} ${link.bg} ${link.color}`}>
+                      <div
+                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border ${link.border} ${link.bg} ${link.color}`}
+                      >
                         <Icon className="w-5 h-5" />
                       </div>
                       <div className="flex-1 min-w-0">

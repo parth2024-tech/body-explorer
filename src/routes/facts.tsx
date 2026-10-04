@@ -17,27 +17,25 @@ export const Route = createFileRoute("/facts")({
   head: () => ({
     meta: [
       { title: "Body Facts Explorer — The Living Body Atlas" },
-      { name: "description", content: "Explore hundreds of fascinating, medically-backed anatomical facts about your 37 trillion cells." }
-    ]
+      {
+        name: "description",
+        content:
+          "Explore hundreds of fascinating, medically-backed anatomical facts about your 37 trillion cells.",
+      },
+    ],
   }),
   component: FactsPage,
 });
 
 function FactsPage() {
-  const {
-    language,
-    bookmarks,
-    addBookmark,
-    removeBookmark,
-    isBookmarked,
-    addHistoryEntry,
-  } = useBodyStore();
+  const { language, bookmarks, addBookmark, removeBookmark, isBookmarked, addHistoryEntry } =
+    useBodyStore();
 
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<Category | "all">("all");
   const [selectedRarity, setSelectedRarity] = useState<Rarity | "all">("all");
   const [selectedBodyPart, setSelectedBodyPart] = useState<string>("all");
-  
+
   // Random fact card state
   const [randomFactIndex, setRandomFactIndex] = useState(0);
   const [isRotating, setIsRotating] = useState(false);
@@ -47,7 +45,7 @@ function FactsPage() {
 
   useEffect(() => {
     addHistoryEntry("/facts");
-    
+
     // Shuffle facts array on mount
     const shuffleArray = <T,>(array: T[]): T[] => {
       const arr = [...array];
@@ -64,11 +62,11 @@ function FactsPage() {
     if (shuffled.length > 0) {
       setRandomFactIndex(Math.floor(Math.random() * shuffled.length));
     }
-  }, []);
+  }, [addHistoryEntry]);
 
-  const t = (key: keyof typeof TRANSLATIONS.en) => {
-    const dict = TRANSLATIONS[language] || TRANSLATIONS.en;
-    return (dict as any)[key] || (TRANSLATIONS.en as any)[key] || key;
+  const t = (key: keyof (typeof TRANSLATIONS)["en"]) => {
+    const dict = (TRANSLATIONS[language] || TRANSLATIONS.en) as Record<string, string>;
+    return dict[key] || TRANSLATIONS.en[key] || key;
   };
 
   const handleNextRandomFact = () => {
@@ -103,11 +101,11 @@ function FactsPage() {
     }
 
     window.speechSynthesis.cancel();
-    
+
     // Create utterance and store a strong reference to prevent garbage collection
     const utterance = new SpeechSynthesisUtterance(text);
     utteranceRef.current = utterance;
-    
+
     if (language === "hi") {
       utterance.lang = "hi-IN";
     } else {
@@ -144,11 +142,11 @@ function FactsPage() {
   const filteredFacts = useMemo(() => {
     return shuffledFacts.filter((fact) => {
       const part = BODY_PARTS.find((p) => p.id === fact.bodyPartId);
-      
+
       const matchesSearch =
         fact.text.toLowerCase().includes(searchQuery.toLowerCase()) ||
         (part?.name || "").toLowerCase().includes(searchQuery.toLowerCase());
-        
+
       const matchesCategory = selectedCategory === "all" || fact.category === selectedCategory;
       const matchesRarity = selectedRarity === "all" || fact.rarity === selectedRarity;
       const matchesBodyPart = selectedBodyPart === "all" || fact.bodyPartId === selectedBodyPart;
@@ -162,7 +160,6 @@ function FactsPage() {
 
   return (
     <div className="min-h-screen bg-[#030303] text-[#EAEAEA] font-sans selection:bg-[#A855F7]/30 pb-32">
-      
       <div className="max-w-7xl mx-auto px-5 pt-12 pb-8">
         {/* Header */}
         <header className="relative text-center max-w-3xl mx-auto mb-16">
@@ -175,7 +172,8 @@ function FactsPage() {
               Anatomy <span className="text-[#A855F7]">Archive</span>
             </h1>
             <p className="text-[#8A8F98] mt-6 font-mono text-sm leading-relaxed max-w-2xl mx-auto">
-              Explore a rich, medically-validated catalog of biological facts, records, health guidance, and anatomical mysteries across your 37 trillion cells.
+              Explore a rich, medically-validated catalog of biological facts, records, health
+              guidance, and anatomical mysteries across your 37 trillion cells.
             </p>
           </div>
         </header>
@@ -205,7 +203,7 @@ function FactsPage() {
                     <p className="text-2xl md:text-4xl font-space font-bold leading-tight text-white tracking-tight">
                       "{randomFact.text}"
                     </p>
-                    
+
                     <div className="mt-8 flex flex-wrap justify-center items-center gap-3">
                       {randomFactPart && (
                         <span className="inline-flex items-center gap-1.5 text-sm font-bold text-white bg-white/5 px-4 py-1.5 rounded-full border border-white/10">
@@ -213,11 +211,14 @@ function FactsPage() {
                           <span>{randomFactPart.name}</span>
                         </span>
                       )}
-                      <span className={`rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider border ${RARITY_META[randomFact.rarity].tokenClass}`}>
+                      <span
+                        className={`rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider border ${RARITY_META[randomFact.rarity].tokenClass}`}
+                      >
                         {RARITY_META[randomFact.rarity].label}
                       </span>
                       <span className="inline-flex items-center gap-1.5 text-xs font-bold bg-white/5 text-white border border-white/10 px-4 py-1.5 rounded-full">
-                        {CATEGORY_META[randomFact.category].icon} {CATEGORY_META[randomFact.category].label}
+                        {CATEGORY_META[randomFact.category].icon}{" "}
+                        {CATEGORY_META[randomFact.category].label}
                       </span>
                     </div>
                   </motion.div>
@@ -240,7 +241,11 @@ function FactsPage() {
                         : "border-white/10 bg-white/[0.02] text-white hover:bg-white/5"
                     }`}
                   >
-                    {speakingFactId === randomFact.id ? <Square className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                    {speakingFactId === randomFact.id ? (
+                      <Square className="w-4 h-4" />
+                    ) : (
+                      <Volume2 className="w-4 h-4" />
+                    )}
                     {speakingFactId === randomFact.id ? "Stop" : "Listen"}
                   </button>
                   <button
@@ -255,7 +260,9 @@ function FactsPage() {
                         : "border-white/10 bg-white/[0.02] text-white hover:bg-white/5 hover:text-rose-500"
                     }`}
                   >
-                    <Heart className={`w-5 h-5 ${isBookmarked(randomFact.id) ? "fill-rose-500" : ""}`} />
+                    <Heart
+                      className={`w-5 h-5 ${isBookmarked(randomFact.id) ? "fill-rose-500" : ""}`}
+                    />
                   </button>
                 </div>
               </div>
@@ -265,7 +272,6 @@ function FactsPage() {
 
         {/* Filters Panel (Glassmorphism) */}
         <div className="mb-12 rounded-[2rem] border border-white/10 bg-white/[0.02] p-6 md:p-8 backdrop-blur-xl relative z-10 max-w-5xl mx-auto">
-          
           {/* Search Input and Body Part selector */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
             <div className="md:col-span-2 relative">
@@ -292,14 +298,18 @@ function FactsPage() {
                   </option>
                 ))}
               </select>
-              <span className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-xs text-[#8A8F98]">▼</span>
+              <span className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-xs text-[#8A8F98]">
+                ▼
+              </span>
             </div>
           </div>
 
           <div className="space-y-6">
             {/* Categories Pills */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-[10px] font-bold text-[#8A8F98] mr-2 uppercase tracking-widest">Category</span>
+              <span className="text-[10px] font-bold text-[#8A8F98] mr-2 uppercase tracking-widest">
+                Category
+              </span>
               <button
                 onClick={() => setSelectedCategory("all")}
                 className={`rounded-full px-4 sm:px-5 py-2.5 text-xs font-bold transition-all border min-h-[40px] flex items-center ${
@@ -328,7 +338,9 @@ function FactsPage() {
 
             {/* Rarity Pills */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-[10px] font-bold text-[#8A8F98] mr-2 uppercase tracking-widest">Rarity Level</span>
+              <span className="text-[10px] font-bold text-[#8A8F98] mr-2 uppercase tracking-widest">
+                Rarity Level
+              </span>
               <button
                 onClick={() => setSelectedRarity("all")}
                 className={`rounded-full px-4 sm:px-5 py-2.5 text-xs font-bold transition-all border min-h-[40px] flex items-center ${
@@ -360,7 +372,10 @@ function FactsPage() {
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="mb-8 flex justify-between items-center border-b border-white/10 pb-4">
             <h2 className="text-xl font-bold text-white flex items-center gap-3">
-              Filtered Archive <span className="bg-white/10 text-white text-xs px-3 py-1 rounded-full">{filteredFacts.length}</span>
+              Filtered Archive{" "}
+              <span className="bg-white/10 text-white text-xs px-3 py-1 rounded-full">
+                {filteredFacts.length}
+              </span>
             </h2>
           </div>
 
@@ -368,7 +383,9 @@ function FactsPage() {
             <div className="rounded-[3rem] border border-white/10 bg-white/[0.02] p-16 text-center backdrop-blur-md">
               <Search className="w-12 h-12 text-[#8A8F98] mx-auto mb-4 opacity-50" />
               <h3 className="text-xl font-bold text-white">No facts matched your filters</h3>
-              <p className="text-sm text-[#8A8F98] mt-2">Try resetting the search terms or category selectors.</p>
+              <p className="text-sm text-[#8A8F98] mt-2">
+                Try resetting the search terms or category selectors.
+              </p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -386,7 +403,7 @@ function FactsPage() {
                           <span>{part?.emoji}</span>
                           <span>{part?.name}</span>
                         </span>
-                        
+
                         <div className="flex items-center gap-2 opacity-100 md:opacity-50 group-hover:opacity-100 transition-opacity">
                           <button
                             onClick={() => handleSpeak(fact.text, fact.id)}
@@ -397,7 +414,11 @@ function FactsPage() {
                             }`}
                             title="Read aloud"
                           >
-                            {speakingFactId === fact.id ? <Square className="w-3 h-3" /> : <Volume2 className="w-3 h-3" />}
+                            {speakingFactId === fact.id ? (
+                              <Square className="w-3 h-3" />
+                            ) : (
+                              <Volume2 className="w-3 h-3" />
+                            )}
                           </button>
                           <button
                             onClick={() =>
@@ -409,7 +430,9 @@ function FactsPage() {
                                 : "border-white/10 bg-white/5 text-white hover:border-white/30 hover:text-rose-500"
                             }`}
                           >
-                            <Heart className={`w-3 h-3 ${isBookmarked(fact.id) ? "fill-rose-500" : ""}`} />
+                            <Heart
+                              className={`w-3 h-3 ${isBookmarked(fact.id) ? "fill-rose-500" : ""}`}
+                            />
                           </button>
                         </div>
                       </div>
@@ -420,10 +443,12 @@ function FactsPage() {
                     </div>
 
                     <div className="mt-8 flex items-center justify-between">
-                      <span className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest border ${RARITY_META[fact.rarity].tokenClass}`}>
+                      <span
+                        className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest border ${RARITY_META[fact.rarity].tokenClass}`}
+                      >
                         {RARITY_META[fact.rarity].label}
                       </span>
-                      
+
                       <span className="text-xs font-bold text-[#8A8F98] flex items-center gap-1.5">
                         {CATEGORY_META[fact.category].icon} {CATEGORY_META[fact.category].label}
                       </span>

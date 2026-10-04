@@ -38,7 +38,11 @@ export function TestimonialsSection() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="relative py-24 overflow-hidden" aria-labelledby="editorial-heading">
+    <section
+      ref={ref}
+      className="relative py-24 overflow-hidden"
+      aria-labelledby="editorial-heading"
+    >
       <div className="relative z-10 mx-auto max-w-6xl px-5 lg:px-8">
         {/* Header */}
         <div className="mb-16 text-center max-w-2xl mx-auto">

@@ -27,7 +27,9 @@ export function FactCard({ fact, part }: FactCardProps) {
     >
       <div ref={cardRef} className="relative">
         <div className="mb-3 flex items-center justify-between gap-2">
-          <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${rarity.tokenClass}`}>
+          <span
+            className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${rarity.tokenClass}`}
+          >
             <span className="h-1.5 w-1.5 rounded-full bg-current" />
             {rarity.label}
           </span>

@@ -1,116 +1,181 @@
-# 🛰️ Body Explorer: Next-Gen Interactive Anatomy & Health Platform
+# The Living Body Atlas & Health Intelligence Platform
 
-> **A precision interactive anatomy and health platform** — combining cutting-edge client-side graphics with advanced Generative AI to deliver a world-class educational experience. Built for students, health enthusiasts, and anyone curious about the human body.
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/parth2024-tech/body-explorer)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue.svg)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19.2-61dafb.svg)](https://react.dev/)
+[![TanStack Start](https://img.shields.io/badge/TanStack_Start-SSR-ff4154.svg)](https://tanstack.com/start)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8.svg)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> **Clinical-grade, plain-language health exploration for everyone.**  
+> An open-access interactive anatomy, evidence-graded nutritional science, regulatory safety registry, and emergency triage platform built for patients, students, and health educators.
 
 ---
 
-## 🌟 The Vision
+## 🧭 Overview
 
-Body Explorer pushes the boundaries of web-based medical education. Moving beyond static textbooks and standard 2D charts, it provides an immersive, multi-layered **Living Body Atlas**. By leveraging Google Gemini AI, the platform does not just show anatomy—it helps users understand physiological mechanisms, analyze symptoms in real-time, track daily health metrics, and prepare for medical consultations.
-
-The design philosophy combines a premium, telemetry-inspired dark aesthetic with responsive performance, ensuring critical health information is readable, accessible, and stunningly presented on any device.
+**Body Explorer** transforms complex medical and physiological data into accessible, visually intuitive, and clinically verifiable education. Rather than dry medical textbooks or speculative wellness trends, the platform combines client-side interactive graphics with rigorous evidence standards (WHO, CDC, NIH, ICMR) translated for Grade 6–8 health literacy (the "Grandma Test").
 
 ---
 
-## ✨ Flagship Features
+## ⚡ Core Modules
 
-### 1. 🧠 AI Symptom Explorer (Powered by Gemini)
-* **Intelligent Physiology Mapping:** Describe physical sensations in plain language. The AI engine maps descriptions directly to the underlying organ systems and biological mechanisms.
-* **Doctor Visit Summaries:** Generates a structured pre-consultation report detailing severity, duration, and potential physiological triggers, complete with smart questions to ask your physician.
-* **Print-Optimized:** Custom `@media print` stylesheets hide UI layout elements, formatting a clean, ink-friendly report that you can print or save as a PDF to hand directly to your doctor.
+### 1. 🫀 Interactive Anatomy Atlas (`/explore`)
+* **Layered Biological Views:** Switch fluidly between **Skin**, **Muscles**, **Organs**, and **Skeletal** systems.
+* **Physiological Cross-Links:** Explore interactive SVG anatomy zones with real-time organ relationship mapping, physiological telemetry, and cellular descriptions.
+* **Personalized Health Annotations:** Pin localized clinical notes and observations directly to anatomical zones via client-side encrypted state.
 
-### 2. 🌐 Multi-Language Support & Deep Localization
-* **Dynamic Translation Engine:** Offers seamless website-wide translation between English and Hindi (हिंदी). Switch languages instantly in the header toolbar to translate all page elements, data structures, and map labels.
-* **Clean UI Integration:** Custom CSS overrides suppress default translation frames, banners, and tooltips, ensuring a completely clean, native user interface experience.
-* **Localized AI Output:** The backend symptom analyzer dynamically detects the active language, instructing the Gemini model to output clinical explanations, preventative steps, and doctor summaries directly in Hindi.
+### 2. 🥗 Food & Nutrition Spectrum (`/food`)
+* **4-Tier Evidence Hierarchy:**
+  * **Superfoods & Essentials:** Clinically proven high-density staples.
+  * **Daily Nutrition:** Balanced everyday macro/micronutrients.
+  * **Moderation:** Foods requiring portion mindfulness and sodium/sugar vigilance.
+  * **High-Risk / Ultra-Processed:** Trans-fats, synthetic emulsifiers, and carcinogenic additives.
+* **Biochemical Synergies:** Actionable food pairings that maximize bioavailability (e.g., Vitamin C + Non-Heme Iron, Piperine + Curcumin).
+* **Drug-Nutrient Contraindications:** Life-saving clinical alerts regarding food interactions with medications (e.g., Grapefruit with Statins, Vitamin K with Warfarin).
+* **Interactive Nutrition Calculators:** Real-time BMR, TDEE, macro split, and personalized hydration requirements based on clinical formulas (Mifflin-St Jeor).
 
-### 3. 🗺️ Interactive Human Body Map
-* **Layered Biological Views:** Toggle between Skin, Muscles, Organs, and Skeletal views to explore layered human anatomy.
-* **Interactive Anatomy Zones:** High-contrast SVG mapping with hover tooltips and connection lines showing system-wide biological relationships.
-* **Personal Annotations:** Pin custom notes locally to specific organs to maintain a personal body diary.
+### 3. 🚨 India Safety Watch & Regulatory Registry (`/grey-market`)
+* **Regulatory Discrepancy Index:** Tracks consumer foods, spices, ayurvedic formulations, and medications available in India that face severe bans or import restrictions in the US (FDA), EU (EFSA), Singapore (SFA), UK (FSA), and Hong Kong (CFS).
+* **Toxicology Deep-Dives:** Identifies chemical adulterants and hazardous contaminants (e.g., Ethylene Oxide, heavy metals, undeclared steroid analogues) with biological mechanism explanations and safe whole-food alternatives.
+* **Label & Ingredient Scanner:** Fast client-side keyword triage matching prescription ingredients and food packaging labels against flagged registries.
 
-### 4. 🚨 Emergency Precautions & First Aid
-* **Immediate Protocols:** Step-by-step guidance for critical medical events (Cardiac Arrest, Stroke, Anaphylaxis, Choking, Severe Bleeding).
-* **Visual CPR Pacer:** Integrated audio-visual metronome pulsing at exactly **105 BPM** to guide emergency chest compression timing.
-* **Smart Localized Helplines:** Automatically detects browser locale to display the correct emergency contact numbers.
+### 4. 🚑 Emergency SOS & First Aid Triage (`/emergency`)
+* **Life-Saving Protocols:** Instant step-by-step guidance for high-acuity medical crises: Cardiac Arrest, Acute Stroke (FAST protocol), Anaphylaxis, Severe Choking, and Arterial Bleeding.
+* **105 BPM CPR Metronome:** Integrated visual and audio pacer pulsing at the gold-standard 105 beats per minute to pace emergency chest compressions.
+* **Localized Emergency Helplines:** Real-time triage directory displaying verified regional emergency services (112, 102, 108, 999, 911).
 
-### 5. 🕵️‍♂️ The Grey Market Index
-* **Regulatory Database:** Tracks highly consumed Indian products and supplements (e.g., *MDH & Everest Spices*, *Chyawanprash*, *Safi*, *Shilajit*, *Mustard Oil*) that face bans or restrictions globally (US, EU, UK, Canada, Singapore).
-* **Consumer-First Design:** Features familiar retail brand names as primary keys and active chemical agents (e.g., *Ethylene Oxide*, *Heavy Metals*) as secondary metadata for instant recognition.
-* **AI Toxicology Deep-Dives:** Generates detailed toxicology reports detailing pharmacokinetics, toxicity mechanisms, clinical signs, and action plans.
+### 5. 🔍 Food Label Decoder (`/food-labels`)
+* **Consumer Defense System:** Translates confusing E-numbers, chemical additives, hidden sodium names, and refined sugars into plain-language health risk assessments.
+* **Clean-Label Guidance:** Practical tips for identifying whole-food substitutes and deciphering deceptive front-of-package marketing claims.
 
-### 6. 📚 Anatomy Library & Personalization
-* **Clinical Evidence Remedies:** Natural remedies categorized by studied, traditional, and anecdotal scientific evidence.
-* **Fisher-Yates Randomization:** Shuffles library facts, myths, and remedies on page load to keep content discovery engaging.
-* **Universal Bookmarks Hub:** Save remedies, myths, and daily facts to a unified local bookmarks tab.
+### 6. 📚 Anatomy Library & Daily Science (`/library`, `/facts`)
+* **Myth-Busting Compendium:** Clinical deconstructions of widespread health fallacies (e.g., cold water myths, detox cleanses, carbohydrate misconceptions).
+* **Studied Natural Remedies:** Herbal and traditional therapies classified by scientific trial evidence (Level 1: Systematically proven, Level 2: Traditional evidence, Level 3: Anecdotal).
+* **Accessible Audio Synthesizer:** Native Web Speech API integration to read daily facts and physiological marvels aloud.
+
+---
+
+## 📱 Mobile-First Ergonomics & Accessibility
+
+* **Thumb-Zone Navigation:** A fixed bottom navigation dock (`md:hidden`) with full safe-area inset support provides effortless one-handed control.
+* **Touch Target Standards:** Every interactive element adheres strictly to ≥48px minimum touch boundaries to eliminate tap errors on mobile devices.
+* **Slide-Over Health Drawer:** Fast access to language toggles, 1-tap ambulance dialing, legal policies, and safety indexes without page crowding.
+* **Zero AI-Slop Aesthetic:** Crisp SVG vector icons (Lucide), system-respecting dark telemetry palette, zero fabricated metrics, and complete preservation of native OS cursors.
 
 ---
 
 ## 🛠️ Technology Stack
 
-| Layer | Technology |
-|---|---|
-| **Core Framework** | React 19, TypeScript, Vite 8 |
-| **Server-Side Functions** | TanStack Start (SSR & server-side RPC functions) |
-| **Routing** | TanStack Router (File-based, type-safe routing) |
-| **Animation** | Framer Motion 12 |
-| **AI Integration** | Google Gemini API (`@google/generative-ai`) |
-| **State Management** | Zustand (with persistent localStorage middleware) |
-| **Styling** | Custom Vanilla CSS (Fluid layouts, media overrides) |
+| Layer | Technologies | Purpose |
+|:---|:---|:---|
+| **Core Framework** | React 19, TypeScript 5.8, Vite 8 | Modern concurrent React with strict static typing |
+| **Server & Routing** | TanStack Start (SSR), TanStack Router, Nitro | Full-stack type-safe file routing with server function primitives |
+| **Styling & Motion** | Tailwind CSS v4, Framer Motion 12 | CSS-first high-performance styling and responsive fluid UI |
+| **3D & Graphics** | Three.js, React Three Fiber, SVG | Hardware-accelerated anatomical models & particle fields |
+| **State Management** | Zustand (with LocalStorage persist) | Client-side reactive memory with zero server-side tracking |
+| **AI Integration** | Google Gemini API (`gemini-2.5-flash`) | Optional server-side toxicology & sensation analysis |
+| **Data Validation** | Zod 3.24 | Runtime schema verification for APIs and stores |
 
 ---
 
-## 🚀 Setup & Development
+## 🧬 Clinical Evidence Governance
+
+All health content published within this repository follows strict clinical curation standards:
+
+1. **Evidence Triangulation:**
+   * **Tier 1 (Gold):** Systematic reviews, meta-analyses, and major regulatory guidelines (WHO, CDC, NIH, NHS, Cochrane).
+   * **Tier 2 (Silver):** Peer-reviewed clinical trials and specialty medical association statements (AHA, ADA, FSSAI).
+   * **Tier 3 (Bronze):** Preliminary observational data and emerging laboratory studies (clearly labeled as preliminary).
+2. **Plain Language Mandate:** All clinical prose targets Grade 6–8 readability to ensure life-saving medical concepts are universally understood.
+3. **Harm Prevention:** The platform never dispenses prescription dosages, makes individual medical diagnoses, or presents alternative therapies as equivalent to emergency acute medicine.
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-* Node.js (v18+)
-* A Google Gemini API Key (set as `GEMINI_API_KEY` in your environment)
+* **Node.js**: v18.0.0 or higher
+* **npm**: v9.0.0 or higher
 
 ### Installation
+
 ```bash
 # Clone the repository
 git clone https://github.com/parth2024-tech/body-explorer.git
 cd body-explorer
 
-# Install dependencies
+# Install dependencies cleanly
 npm install
 ```
 
-### Environment Variables
-Create a `.env` file in the root directory:
+### Environment Configuration
+
+Create a `.env` file in the project root:
+
 ```env
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
+# Optional: Google Gemini API key for AI toxicology functions
 GEMINI_API_KEY=your_gemini_api_key_here
+VITE_GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-### Running Locally
+### Development Server
+
 ```bash
-# Start development server
 npm run dev
 ```
-Open **[http://localhost:8080](http://localhost:8080)** in your browser.
 
-### Building for Production
+Visit [http://localhost:8080](http://localhost:8080) to explore the application locally.
+
+---
+
+## 🧪 Verification & Code Quality
+
+The repository enforces strict linting, zero `any` types, and clean formatting:
+
 ```bash
-# Build the production SSR bundle
+# Run TypeScript compilation check
+npm run typecheck
+
+# Run ESLint validation
+npm run lint
+
+# Run code formatter
+npm run format
+
+# Run full project validation (types + linter)
+npm run validate
+
+# Build production SSR distribution
 npm run build
+```
+
+---
+
+## 📦 Deployment
+
+The application is optimized for zero-configuration deployment to **Vercel** via the native `@tanstack/react-start` Nitro preset:
+
+```bash
+# Build the production bundle
+npm run build
+
+# Preview the production build locally
 npm run preview
 ```
 
----
-
-## 🎨 Design System & Aesthetic
-
-The interface utilizes a premium telemetry-inspired aesthetic with high contrast and smooth micro-animations.
-
-*   **Deep Space Black** (`#030303`) — Main background void to elevate visual elements.
-*   **Telemetry Gold** (`#F5A623`) — Used for premium alerts, tips, and AI highlights.
-*   **NASA Red** (`#FC3D21`) — Reserved exclusively for critical emergency alerts, active states, and focus areas.
-*   **NASA Blue** (`#0B3D91`) — Secondary accent color for system indicators and connections.
-*   **Off-White** (`#EAEAEA`) — Primary high-contrast typography color.
-
-**Typography:** *Space Grotesk* for clean, modern titles; *Inter* and *Plus Jakarta Sans* for high-readability body copy; *Fira Mono* for clinical readouts and data tables.
+When connected to Vercel via GitHub, pushes to `main` automatically trigger production deployments with edge-rendered SSR.
 
 ---
 
-*Body Explorer © 2026 · All Systems Nominal*
+## 🔒 Privacy & Clinical Ethics
+
+* **Zero Personal Tracking:** No tracking cookies, no Google Analytics, no third-party user profiling.
+* **Local-First Storage:** User bookmarks, wellness preferences, and notes remain strictly on the user's local device.
+* **Medical Disclaimer:** The information on this platform is for educational and informational purposes only and does not constitute formal medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional regarding any medical condition. In a medical emergency, immediately contact your local emergency services (112, 911, or 999).
+
+---
+
+## 📄 License
+
+Distributed under the **MIT License**. See [`LICENSE`](./LICENSE) for more details.

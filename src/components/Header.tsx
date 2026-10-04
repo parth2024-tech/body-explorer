@@ -20,16 +20,27 @@ export function Header() {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
 
-  const t = (key: keyof typeof TRANSLATIONS.en) => {
-    const dict = TRANSLATIONS[language] || TRANSLATIONS.en;
-    return (dict as any)[key] || (TRANSLATIONS.en as any)[key] || key;
+  const t = (key: keyof (typeof TRANSLATIONS)["en"]) => {
+    const dict = (TRANSLATIONS[language] || TRANSLATIONS.en) as Record<string, string>;
+    return dict[key] || TRANSLATIONS.en[key] || key;
   };
 
   useEffect(() => {
     const tick = () => {
       const now = new Date();
-      setTime(now.toLocaleTimeString("en-US", { hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" }));
-      setDate(now.toLocaleDateString("en-US", { year: "numeric", month: "2-digit", day: "2-digit" }).replace(/\//g, "-"));
+      setTime(
+        now.toLocaleTimeString("en-US", {
+          hour12: false,
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        }),
+      );
+      setDate(
+        now
+          .toLocaleDateString("en-US", { year: "numeric", month: "2-digit", day: "2-digit" })
+          .replace(/\//g, "-"),
+      );
     };
     tick();
     const id = setInterval(tick, 1000);
@@ -41,15 +52,11 @@ export function Header() {
       {/* Desktop Top Bar */}
       <div className="hidden md:flex border-b border-[#222222] px-5 py-2 items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="font-medium text-xs text-[#8A8F98]">
-            Interactive Health Education
-          </span>
+          <span className="font-medium text-xs text-[#8A8F98]">Interactive Health Education</span>
         </div>
 
         <div className="flex items-center gap-4">
-          <span className="flex text-xs text-[#8A8F98]">
-            {date}
-          </span>
+          <span className="flex text-xs text-[#8A8F98]">{date}</span>
 
           {/* i18n Selector for Desktop */}
           <div className="flex items-center gap-1 bg-[#141826] rounded-full p-1 border border-[#222222]">
@@ -80,9 +87,20 @@ export function Header() {
       {/* Main header bar */}
       <div className="mx-auto flex items-center justify-between gap-0 px-4 md:px-5 max-w-7xl">
         {/* Logo */}
-        <Link to="/" className="group flex items-center gap-3 py-2.5 md:py-4 md:border-r border-[#222222] md:pr-6">
+        <Link
+          to="/"
+          className="group flex items-center gap-3 py-2.5 md:py-4 md:border-r border-[#222222] md:pr-6"
+        >
           <div className="relative flex h-8 w-8 items-center justify-center border border-[#FC3D21]/60 group-hover:border-[#FC3D21] transition-colors">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FC3D21" strokeWidth="2" strokeLinecap="square">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#FC3D21"
+              strokeWidth="2"
+              strokeLinecap="square"
+            >
               <path d="M12 2v20M5 8c3 0 4 2 7 2s4-2 7-2M5 16c3 0 4-2 7-2s4 2 7 2" />
             </svg>
           </div>
@@ -128,9 +146,7 @@ export function Header() {
                 key={to}
                 to={to}
                 className={`relative flex flex-col items-center px-3 py-3 md:py-4 text-center transition-all whitespace-nowrap border-r border-[#222222] group ${
-                  isActive
-                    ? "bg-[#FC3D21]/8"
-                    : "hover:bg-[#EAEAEA]/3"
+                  isActive ? "bg-[#FC3D21]/8" : "hover:bg-[#EAEAEA]/3"
                 }`}
               >
                 {isActive && (
@@ -140,9 +156,11 @@ export function Header() {
                     transition={{ type: "spring", stiffness: 400, damping: 35 }}
                   />
                 )}
-                <span className={`text-sm font-medium transition-colors ${
-                  isActive ? "text-[#EAEAEA]" : "text-[#8A8F98] group-hover:text-[#EAEAEA]"
-                }`}>
+                <span
+                  className={`text-sm font-medium transition-colors ${
+                    isActive ? "text-[#EAEAEA]" : "text-[#8A8F98] group-hover:text-[#EAEAEA]"
+                  }`}
+                >
                   {t(labelKey)}
                 </span>
               </Link>
@@ -152,9 +170,7 @@ export function Header() {
 
         {/* Desktop right side */}
         <div className="hidden xl:flex items-center border-l border-[#222222] pl-5 py-3 shrink-0">
-          <span className="text-sm font-medium text-[#00E5C4]">
-            Ready to learn
-          </span>
+          <span className="text-sm font-medium text-[#00E5C4]">Ready to learn</span>
         </div>
       </div>
     </header>

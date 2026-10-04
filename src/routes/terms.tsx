@@ -62,8 +62,8 @@ export function TermsPage() {
               Important Clinical and Medical Disclaimer
             </h2>
             <p className="text-xs leading-relaxed text-amber-200/90">
-              The Living Body Atlas is an educational, interactive anatomical reference tool. It does
-              not offer clinical diagnoses, treatment prescriptions, or individualized medical
+              The Living Body Atlas is an educational, interactive anatomical reference tool. It
+              does not offer clinical diagnoses, treatment prescriptions, or individualized medical
               consultation. The content here is designed to improve scientific literacy and help
               patients communicate more clearly with their healthcare team. If you are experiencing
               an acute medical emergency, severe chest pain, sudden difficulty breathing, or stroke
@@ -88,14 +88,16 @@ export function TermsPage() {
           <h2 className="text-lg font-bold text-[#E8E0D5] mb-2">2. Permitted Educational Use</h2>
           <p>
             The software, interactive body visualizations, curated medical facts, and educational
-            guides are provided for personal, non-commercial, and classroom instructional use. You may
-            utilize the reference material to learn, prepare doctor discussion questions, and teach
-            biological concepts.
+            guides are provided for personal, non-commercial, and classroom instructional use. You
+            may utilize the reference material to learn, prepare doctor discussion questions, and
+            teach biological concepts.
           </p>
         </div>
 
         <div>
-          <h2 className="text-lg font-bold text-[#E8E0D5] mb-2">3. No Doctor-Patient Relationship</h2>
+          <h2 className="text-lg font-bold text-[#E8E0D5] mb-2">
+            3. No Doctor-Patient Relationship
+          </h2>
           <p>
             Interaction with this application, including using search tools, viewing remedies, or
             exploring symptom education cards, does not create a doctor-patient, therapist-patient,
@@ -104,7 +106,9 @@ export function TermsPage() {
         </div>
 
         <div>
-          <h2 className="text-lg font-bold text-[#E8E0D5] mb-2">4. Scientific Accuracy and Sourcing</h2>
+          <h2 className="text-lg font-bold text-[#E8E0D5] mb-2">
+            4. Scientific Accuracy and Sourcing
+          </h2>
           <p>
             We curate facts and health information from recognized peer-reviewed sources, including
             the American Heart Association (AHA), World Health Organization (WHO), and the National
@@ -127,19 +131,19 @@ export function TermsPage() {
         <div>
           <h2 className="text-lg font-bold text-[#E8E0D5] mb-2">6. Limitation of Liability</h2>
           <p>
-            In no event shall The Living Body Atlas, its developers, or medical contributors be liable
-            for any damages (including direct, indirect, incidental, or consequential damages)
-            arising from the use or inability to use the educational materials provided on this
-            platform.
+            In no event shall The Living Body Atlas, its developers, or medical contributors be
+            liable for any damages (including direct, indirect, incidental, or consequential
+            damages) arising from the use or inability to use the educational materials provided on
+            this platform.
           </p>
         </div>
 
         <div>
           <h2 className="text-lg font-bold text-[#E8E0D5] mb-2">7. Updates and Modifications</h2>
           <p>
-            We reserve the right to revise these Terms of Service at any time without prior notice. By
-            continuing to use this website, you agree to be bound by the then-current version of these
-            Terms of Service.
+            We reserve the right to revise these Terms of Service at any time without prior notice.
+            By continuing to use this website, you agree to be bound by the then-current version of
+            these Terms of Service.
           </p>
         </div>
       </section>

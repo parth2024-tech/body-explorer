@@ -59,7 +59,14 @@ export function FactPanel() {
                 aria-label="Close"
                 className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-[#222222] bg-[#16181D] text-[#8A8F98] transition-colors hover:border-[#FC3D21]/50 hover:text-[#EAEAEA]"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                   <path d="M18 6L6 18M6 6l12 12" />
                 </svg>
               </button>
@@ -143,11 +150,15 @@ export function FactPanel() {
                       {/* Confidence Badge */}
                       {m.confidenceLevel && (
                         <div className="flex items-center gap-1.5 mb-2">
-                          <span className={`px-2 py-0.5 rounded text-[10px] font-bold tracking-widest ${
-                            m.confidenceLevel === 'HIGH' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
-                            m.confidenceLevel === 'MODERATE' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
-                            'bg-red-500/20 text-red-400 border border-red-500/30'
-                          }`}>
+                          <span
+                            className={`px-2 py-0.5 rounded text-[10px] font-bold tracking-widest ${
+                              m.confidenceLevel === "HIGH"
+                                ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                                : m.confidenceLevel === "MODERATE"
+                                  ? "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+                                  : "bg-red-500/20 text-red-400 border border-red-500/30"
+                            }`}
+                          >
                             {m.confidenceLevel} CONFIDENCE
                           </span>
                         </div>
@@ -164,7 +175,8 @@ export function FactPanel() {
                       {m.actionableTip && (
                         <div className="rounded-lg bg-[#2E8B57]/10 p-3 mt-2 border border-[#2E8B57]/20">
                           <p className="text-xs text-[#EAEAEA] leading-relaxed">
-                            <span className="font-bold text-[#2E8B57]">👉 TRY THIS:</span> {m.actionableTip}
+                            <span className="font-bold text-[#2E8B57]">👉 TRY THIS:</span>{" "}
+                            {m.actionableTip}
                           </p>
                         </div>
                       )}
@@ -182,14 +194,10 @@ export function FactPanel() {
                       {(m.evidenceStatement || m.clinicalDisclaimer) && (
                         <div className="mt-3 pt-3 border-t border-[#0B3D91]/20 space-y-2">
                           {m.evidenceStatement && (
-                            <p className="text-[10.5px] text-[#8A8F98]">
-                              {m.evidenceStatement}
-                            </p>
+                            <p className="text-[10.5px] text-[#8A8F98]">{m.evidenceStatement}</p>
                           )}
                           {m.clinicalDisclaimer && (
-                            <p className="text-[10.5px] text-[#8A8F98]">
-                              {m.clinicalDisclaimer}
-                            </p>
+                            <p className="text-[10.5px] text-[#8A8F98]">{m.clinicalDisclaimer}</p>
                           )}
                         </div>
                       )}

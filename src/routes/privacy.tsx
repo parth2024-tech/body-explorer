@@ -115,20 +115,22 @@ export function PrivacyPage() {
           <h2 className="text-lg font-bold text-[#E8E0D5] mb-2">2. Information Handled Locally</h2>
           <p>
             When you use interactive tools such as the Body Map or Symptom Guide, your selections
-            and inputs are processed within your client session. Any notes you enter are saved to your
-            browser's IndexedDB / LocalStorage. This data does not get transmitted to our servers or
-            any external analytics service.
+            and inputs are processed within your client session. Any notes you enter are saved to
+            your browser's IndexedDB / LocalStorage. This data does not get transmitted to our
+            servers or any external analytics service.
           </p>
         </div>
 
         <div>
-          <h2 className="text-lg font-bold text-[#E8E0D5] mb-2">3. Server Interactions and Telemetry</h2>
+          <h2 className="text-lg font-bold text-[#E8E0D5] mb-2">
+            3. Server Interactions and Telemetry
+          </h2>
           <p>
-            For features requiring server computation (such as plain-language health term translation
-            queries), queries are processed in memory and never linked to your personal identity.
-            Server access logs contain only standard technical headers (IP address, user-agent) for
-            security rate-limiting and DDoS mitigation, retained for no more than 14 days before
-            automatic purge.
+            For features requiring server computation (such as plain-language health term
+            translation queries), queries are processed in memory and never linked to your personal
+            identity. Server access logs contain only standard technical headers (IP address,
+            user-agent) for security rate-limiting and DDoS mitigation, retained for no more than 14
+            days before automatic purge.
           </p>
         </div>
 

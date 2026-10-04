@@ -93,7 +93,7 @@ const FAQS = [
   },
 ];
 
-function FAQItem({ faq, index }: { faq: typeof FAQS[0]; index: number }) {
+function FAQItem({ faq, index }: { faq: (typeof FAQS)[0]; index: number }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true });
@@ -144,7 +144,10 @@ export function PricingFAQSection() {
   const faqInView = useInView(faqRef, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24 overflow-hidden border-t border-[#1C2540]" aria-label="Access and FAQ">
+    <section
+      className="py-24 overflow-hidden border-t border-[#1C2540]"
+      aria-label="Access and FAQ"
+    >
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* ─── ACCESS PLANS ─── */}
         <div ref={pricingRef} className="mb-28">
@@ -172,7 +175,8 @@ export function PricingFAQSection() {
               transition={{ delay: 0.2 }}
               className="mt-3 text-xs md:text-sm text-[#7B8199] leading-relaxed"
             >
-              Essential medical knowledge belongs to the public. Explore without credit cards or paywalls.
+              Essential medical knowledge belongs to the public. Explore without credit cards or
+              paywalls.
             </motion.p>
           </div>
 

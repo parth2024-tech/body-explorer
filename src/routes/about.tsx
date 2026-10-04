@@ -50,9 +50,9 @@ function About() {
         <p>
           The Living Body Atlas is an interactive anatomy and health literacy platform designed to
           bridge the communication gap between everyday patients and healthcare providers. Too
-          often, medical literature is locked behind academic paywalls or dense clinical terminology,
-          while consumer health queries are bombarded with sponsored supplement ads and unsubstantiated
-          wellness trends.
+          often, medical literature is locked behind academic paywalls or dense clinical
+          terminology, while consumer health queries are bombarded with sponsored supplement ads and
+          unsubstantiated wellness trends.
         </p>
         <p>
           Our mission is straightforward: translate gold-standard peer-reviewed clinical medicine
@@ -62,8 +62,9 @@ function About() {
         </p>
         <p>
           Explore <span className="text-[#00E5C4] font-semibold">30+ anatomical structures</span>,
-          review <span className="text-[#00E5C4] font-semibold">290+ verified biological facts</span>,
-          and explore clinically debunked misconceptions with prominent safety alerts.
+          review{" "}
+          <span className="text-[#00E5C4] font-semibold">290+ verified biological facts</span>, and
+          explore clinically debunked misconceptions with prominent safety alerts.
         </p>
       </motion.div>
 
@@ -102,8 +103,8 @@ function About() {
           <div className="p-5 rounded-xl border border-[#1E2844] bg-[#0B0F19]/70">
             <h3 className="text-sm font-bold text-[#00E5C4] mb-1.5">1. Source Triangulation</h3>
             <p className="text-xs text-[#8B8FA3] leading-relaxed">
-              Every physiological claim is anchored to recognized public health bodies: the AHA, ADA,
-              WHO, CDC, and Cochrane Systematic Reviews.
+              Every physiological claim is anchored to recognized public health bodies: the AHA,
+              ADA, WHO, CDC, and Cochrane Systematic Reviews.
             </p>
           </div>
           <div className="p-5 rounded-xl border border-[#1E2844] bg-[#0B0F19]/70">
@@ -132,7 +133,8 @@ function About() {
       >
         <h2 className="text-xl font-bold text-[#E8E0D5]">Explore the Anatomical Reference</h2>
         <p className="mt-2 text-xs md:text-sm text-[#8B8FA3]">
-          Start examining anatomical structures, nutrition intelligence, and peer-reviewed biological insights.
+          Start examining anatomical structures, nutrition intelligence, and peer-reviewed
+          biological insights.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link

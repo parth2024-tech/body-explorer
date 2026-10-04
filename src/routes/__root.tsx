@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { lazy, Suspense, useEffect, type ReactNode } from "react";
 
@@ -14,16 +15,25 @@ import { Header } from "../components/Header";
 import { MobileBottomNav } from "../components/MobileBottomNav";
 import { useBodyStore } from "@/store/useBodyStore";
 
+interface GoogleTranslate {
+  translate?: {
+    TranslateElement?: new (
+      options: { pageLanguage: string; includedLanguages: string; autoDisplay: boolean },
+      elementId: string,
+    ) => void;
+  };
+}
+
 declare global {
   interface Window {
     googleTranslateElementInit?: () => void;
-    google?: any;
+    google?: GoogleTranslate;
   }
 }
 
 // Lazy load ParticleBackground for performance
 const ParticleBackground = lazy(() =>
-  import("../components/ParticleBackground").then((m) => ({ default: m.ParticleBackground }))
+  import("../components/ParticleBackground").then((m) => ({ default: m.ParticleBackground })),
 );
 
 function NotFoundComponent() {
@@ -49,7 +59,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
 
@@ -57,13 +67,27 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="max-w-md text-center">
         <div className="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-xl bg-[#FC3D21]/10 text-[#FC3D21]">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
         </div>
         <h1 className="text-xl font-semibold tracking-tight text-[#EAEAEA]">
           Something went wrong
         </h1>
         <p className="mt-2 text-sm text-[#8A8F98]">
-          A component encountered an unexpected error. You can try refreshing or returning to the home page.
+          A component encountered an unexpected error. You can try refreshing or returning to the
+          home page.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -87,56 +111,53 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
-  {
-    head: () => ({
-      meta: [
-        { charSet: "utf-8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
-        {
-          title:
-            "The Living Body Atlas: Interactive Human Anatomy & Physiology",
-        },
-        {
-          name: "description",
-          content:
-            "Interactive human anatomy and clinical physiology platform. Explore 30+ organs through layered vector maps, verified medical facts, and evidence-rated remedies.",
-        },
-        {
-          property: "og:title",
-          content: "The Living Body Atlas: Interactive Human Anatomy",
-        },
-        {
-          property: "og:description",
-          content:
-            "Clinically verified human anatomy and physiology reference vetted against AHA, CDC, and WHO guidelines.",
-        },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "theme-color", content: "#030303" },
-      ],
-      links: [
-        { rel: "manifest", href: "/manifest.json" },
-        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-        { rel: "stylesheet", href: appCss },
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
-        {
-          rel: "preconnect",
-          href: "https://fonts.gstatic.com",
-          crossOrigin: "anonymous",
-        },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap",
-        },
-      ],
-    }),
-    shellComponent: RootShell,
-    component: RootComponent,
-    notFoundComponent: NotFoundComponent,
-    errorComponent: ErrorComponent,
-  }
-);
+export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  head: () => ({
+    meta: [
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        title: "The Living Body Atlas: Interactive Human Anatomy & Physiology",
+      },
+      {
+        name: "description",
+        content:
+          "Interactive human anatomy and clinical physiology platform. Explore 30+ organs through layered vector maps, verified medical facts, and evidence-rated remedies.",
+      },
+      {
+        property: "og:title",
+        content: "The Living Body Atlas: Interactive Human Anatomy",
+      },
+      {
+        property: "og:description",
+        content:
+          "Clinically verified human anatomy and physiology reference vetted against AHA, CDC, and WHO guidelines.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#030303" },
+    ],
+    links: [
+      { rel: "manifest", href: "/manifest.json" },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+      },
+    ],
+  }),
+  shellComponent: RootShell,
+  component: RootComponent,
+  notFoundComponent: NotFoundComponent,
+  errorComponent: ErrorComponent,
+});
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
@@ -176,14 +197,16 @@ function RootComponent() {
   useEffect(() => {
     // 1. Define googleTranslateElementInit function
     window.googleTranslateElementInit = () => {
-      new window.google.translate.TranslateElement(
-        {
-          pageLanguage: "en",
-          includedLanguages: "en,hi",
-          autoDisplay: false,
-        },
-        "google_translate_element"
-      );
+      if (window.google?.translate?.TranslateElement) {
+        new window.google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "en,hi",
+            autoDisplay: false,
+          },
+          "google_translate_element",
+        );
+      }
     };
 
     // 2. Load Google Translate script

@@ -10,28 +10,35 @@ export function TrustSection() {
     {
       tier: "Tier 1: Gold Standard",
       sources: "Cochrane Reviews, WHO, CDC, NIH, USPSTF",
-      description: "Systematic reviews, meta-analyses, and national public health clinical guidelines.",
+      description:
+        "Systematic reviews, meta-analyses, and national public health clinical guidelines.",
       badge: "Highest Clinical Weight",
       color: "#00E5C4",
     },
     {
       tier: "Tier 2: Silver Standard",
       sources: "AHA, ADA, AAO, NASS, ACSM, Lancet, NEJM",
-      description: "Peer-reviewed randomized controlled trials and specialty medical association standards.",
+      description:
+        "Peer-reviewed randomized controlled trials and specialty medical association standards.",
       badge: "Clinical Specialty Rigor",
       color: "#38BDF8",
     },
     {
       tier: "Tier 3: Bronze Standard",
       sources: "Validated Pharmacological & Observational Data",
-      description: "Peer-reviewed biochemical mechanisms, pharmacokinetic data, and controlled human trials.",
+      description:
+        "Peer-reviewed biochemical mechanisms, pharmacokinetic data, and controlled human trials.",
       badge: "Explicitly Contextualized",
       color: "#F5A623",
     },
   ];
 
   return (
-    <section ref={ref} className="relative py-20 overflow-hidden border-y border-[#1C2540]" aria-label="Evidence and sourcing standards">
+    <section
+      ref={ref}
+      className="relative py-20 overflow-hidden border-y border-[#1C2540]"
+      aria-label="Evidence and sourcing standards"
+    >
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* Section label */}
         <div className="text-center max-w-2xl mx-auto mb-14">
@@ -45,18 +52,35 @@ export function TrustSection() {
             Every Claim Grounded in Tier 1 and Tier 2 Medical Evidence
           </h2>
           <p className="mt-3 text-xs md:text-sm text-[#7B8199] leading-relaxed">
-            We do not publish unverified viral claims, sponsored supplement hype, or fabricated statistics.
-            All anatomical statements and remedies are mapped to primary clinical literature.
+            We do not publish unverified viral claims, sponsored supplement hype, or fabricated
+            statistics. All anatomical statements and remedies are mapped to primary clinical
+            literature.
           </p>
         </div>
 
         {/* Real Stats Row (no fake animated count-ups) */}
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4 mb-14">
           {[
-            { value: "297", label: "Peer-Reviewed Anatomical Facts", note: "Indexed to primary citations" },
-            { value: "58", label: "Debunked Health Myths", note: "With danger alerts and evidence" },
-            { value: "39", label: "Evidence-Rated Remedies", note: "Studied, traditional & unproven" },
-            { value: "30+", label: "Anatomical Organs Mapped", note: "Vector layered visualization" },
+            {
+              value: "297",
+              label: "Peer-Reviewed Anatomical Facts",
+              note: "Indexed to primary citations",
+            },
+            {
+              value: "58",
+              label: "Debunked Health Myths",
+              note: "With danger alerts and evidence",
+            },
+            {
+              value: "39",
+              label: "Evidence-Rated Remedies",
+              note: "Studied, traditional & unproven",
+            },
+            {
+              value: "30+",
+              label: "Anatomical Organs Mapped",
+              note: "Vector layered visualization",
+            },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -65,9 +89,7 @@ export function TrustSection() {
               transition={{ duration: 0.4, delay: i * 0.08 }}
               className="p-5 rounded-xl border border-[#1E2844] bg-[#0D1428]/80 text-center"
             >
-              <div className="font-mono text-3xl font-bold text-[#00E5C4]">
-                {stat.value}
-              </div>
+              <div className="font-mono text-3xl font-bold text-[#00E5C4]">{stat.value}</div>
               <div className="mt-1.5 text-xs font-semibold text-[#E8E0D5]">{stat.label}</div>
               <div className="mt-1 text-[10px] text-[#7B8199]">{stat.note}</div>
             </motion.div>

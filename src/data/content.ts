@@ -6,11 +6,7 @@
 import generatedFactsJson from "./generated-facts.json";
 
 export type Category =
-  | "weird_wild"
-  | "health_tip"
-  | "what_damages_it"
-  | "superfood"
-  | "record_breaker";
+  "weird_wild" | "health_tip" | "what_damages_it" | "superfood" | "record_breaker";
 
 export type Rarity = "common" | "surprising" | "mind_blowing" | "almost_unknown";
 

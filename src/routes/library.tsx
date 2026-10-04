@@ -2,21 +2,26 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useBodyStore } from "@/store/useBodyStore";
+import { FACTS, MYTHS, REMEDIES, BODY_MARVELS, SENSORY_FACTS, TRANSLATIONS } from "@/data/content";
 import {
-  FACTS,
-  MYTHS,
-  REMEDIES,
-  BODY_MARVELS,
-  SENSORY_FACTS,
-  TRANSLATIONS,
-} from "@/data/content";
-import { BookOpen, Leaf, Zap, Bookmark as BookmarkIcon, Heart, Search, Volume2, Square } from "lucide-react";
+  BookOpen,
+  Leaf,
+  Zap,
+  Bookmark as BookmarkIcon,
+  Heart,
+  Search,
+  Volume2,
+  Square,
+} from "lucide-react";
 
 export const Route = createFileRoute("/library")({
   head: () => ({
     meta: [
       { title: "Core Library — The Living Body Atlas" },
-      { name: "description", content: "Explore anatomy facts, natural remedies, seasonal hacks, and health myths." },
+      {
+        name: "description",
+        content: "Explore anatomy facts, natural remedies, seasonal hacks, and health myths.",
+      },
     ],
   }),
   component: LibraryPage,
@@ -27,7 +32,9 @@ function LibraryPage() {
     useBodyStore();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<"remedies" | "myths" | "marvels" | "bookmarks">("remedies");
+  const [activeTab, setActiveTab] = useState<"remedies" | "myths" | "marvels" | "bookmarks">(
+    "remedies",
+  );
 
   const [shuffledRemedies, setShuffledRemedies] = useState<typeof REMEDIES>(REMEDIES);
   const [shuffledMyths, setShuffledMyths] = useState<typeof MYTHS>(MYTHS);
@@ -45,7 +52,7 @@ function LibraryPage() {
     };
     setShuffledRemedies(shuffleArray(REMEDIES));
     setShuffledMyths(shuffleArray(MYTHS));
-  }, []);
+  }, [addHistoryEntry]);
 
   useEffect(() => {
     return () => {
@@ -57,15 +64,15 @@ function LibraryPage() {
     };
   }, []);
 
-  const t = (key: keyof typeof TRANSLATIONS.en) => {
-    const dict = TRANSLATIONS[language] || TRANSLATIONS.en;
-    return (dict as any)[key] || (TRANSLATIONS.en as any)[key] || key;
+  const t = (key: keyof (typeof TRANSLATIONS)["en"]) => {
+    const dict = (TRANSLATIONS[language] || TRANSLATIONS.en) as Record<string, string>;
+    return dict[key] || TRANSLATIONS.en[key] || key;
   };
 
   const speakingIdRef = useRef<string | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
-  const handleSpeak = (marvel: typeof BODY_MARVELS[0]) => {
+  const handleSpeak = (marvel: (typeof BODY_MARVELS)[0]) => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
 
     if (speakingIdRef.current === marvel.id) {
@@ -79,17 +86,24 @@ function LibraryPage() {
     window.speechSynthesis.cancel();
 
     // Construct the text to read
-    const sectionsText = marvel.sections.map(s => `${s.heading}. ${s.body}`).join(" ");
+    const sectionsText = marvel.sections.map((s) => `${s.heading}. ${s.body}`).join(" ");
     const fullText = `${marvel.title}. ${marvel.introduction} ${sectionsText} ${marvel.conclusion}`;
 
     // Split text into sentences using Intl.Segmenter (with regex fallback)
     let sentences: string[] = [];
     if (typeof Intl !== "undefined" && "Segmenter" in Intl) {
-      const segmenter = new Intl.Segmenter(language === "hi" ? "hi" : "en", { granularity: "sentence" });
+      const segmenter = new Intl.Segmenter(language === "hi" ? "hi" : "en", {
+        granularity: "sentence",
+      });
       const segments = segmenter.segment(fullText);
-      sentences = Array.from(segments).map(s => s.segment.trim()).filter(Boolean);
+      sentences = Array.from(segments)
+        .map((s) => s.segment.trim())
+        .filter(Boolean);
     } else {
-      sentences = fullText.split(/[.!?]\s+/).map(s => s.trim()).filter(Boolean);
+      sentences = fullText
+        .split(/[.!?]\s+/)
+        .map((s) => s.trim())
+        .filter(Boolean);
     }
 
     if (sentences.length === 0) return;
@@ -152,7 +166,6 @@ function LibraryPage() {
 
   return (
     <div className="min-h-screen bg-[#030303] text-[#EAEAEA] font-sans selection:bg-[#00E5C4]/30 pb-32">
-      
       {/* Header */}
       <div className="max-w-7xl mx-auto px-5 pt-12 pb-8">
         <header className="relative text-center max-w-3xl mx-auto">
@@ -165,26 +178,26 @@ function LibraryPage() {
               Core Content <span className="text-[#00E5C4]">Engine</span>
             </h1>
             <p className="text-[#8A8F98] mt-6 font-mono text-sm leading-relaxed">
-              Browse evidence-based natural remedies, ancient healing arts, posture checks, body sensory anomalies, and myth-busting sciences.
+              Browse evidence-based natural remedies, ancient healing arts, posture checks, body
+              sensory anomalies, and myth-busting sciences.
             </p>
           </div>
         </header>
       </div>
 
       <div className="max-w-7xl mx-auto px-5">
-        
         {/* Navigation Tabs (Touch Scrollable on Mobile) */}
         <div className="flex gap-2.5 overflow-x-auto sm:flex-wrap sm:justify-center mb-10 relative z-10 touch-scroll px-1 pb-2">
           {[
             { id: "remedies", label: "Natural Remedies", icon: <Leaf className="w-4 h-4" /> },
             { id: "myths", label: "Medical Myths", icon: <Zap className="w-4 h-4" /> },
             { id: "marvels", label: "Body Marvels", icon: <BookOpen className="w-4 h-4" /> },
-            { id: "bookmarks", label: "Saved Items", icon: <BookmarkIcon className="w-4 h-4" /> }
+            { id: "bookmarks", label: "Saved Items", icon: <BookmarkIcon className="w-4 h-4" /> },
           ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => {
-                setActiveTab(tab.id as any);
+                setActiveTab(tab.id as "remedies" | "myths" | "marvels" | "bookmarks");
                 setSelectedTag(null);
               }}
               className={`flex items-center gap-2 px-5 py-3 rounded-full font-bold text-xs sm:text-sm whitespace-nowrap min-h-[44px] shrink-0 transition-all backdrop-blur-md border ${
@@ -222,7 +235,6 @@ function LibraryPage() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              
               {/* REMEDIES */}
               {activeTab === "remedies" && (
                 <div>
@@ -230,7 +242,9 @@ function LibraryPage() {
                     <button
                       onClick={() => setSelectedTag(null)}
                       className={`px-4 py-2 rounded-lg text-xs font-bold transition-all border ${
-                        !selectedTag ? "bg-white text-black border-white" : "bg-transparent text-[#8A8F98] border-white/10 hover:border-white/30 hover:text-white"
+                        !selectedTag
+                          ? "bg-white text-black border-white"
+                          : "bg-transparent text-[#8A8F98] border-white/10 hover:border-white/30 hover:text-white"
                       }`}
                     >
                       All Evidence
@@ -240,7 +254,9 @@ function LibraryPage() {
                         key={tag}
                         onClick={() => setSelectedTag(tag)}
                         className={`px-4 py-2 rounded-lg text-xs font-bold capitalize transition-all border ${
-                          selectedTag === tag ? "bg-white text-black border-white" : "bg-transparent text-[#8A8F98] border-white/10 hover:border-white/30 hover:text-white"
+                          selectedTag === tag
+                            ? "bg-white text-black border-white"
+                            : "bg-transparent text-[#8A8F98] border-white/10 hover:border-white/30 hover:text-white"
                         }`}
                       >
                         {tag}
@@ -250,42 +266,63 @@ function LibraryPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredRemedies.map((remedy) => (
-                      <div key={remedy.id} className="rounded-3xl border border-white/10 bg-[#0F0F0F]/80 p-6 backdrop-blur-xl flex flex-col justify-between hover:border-[#00E5C4]/30 transition-all hover:shadow-[0_0_30px_rgba(0,229,196,0.1)]">
+                      <div
+                        key={remedy.id}
+                        className="rounded-3xl border border-white/10 bg-[#0F0F0F]/80 p-6 backdrop-blur-xl flex flex-col justify-between hover:border-[#00E5C4]/30 transition-all hover:shadow-[0_0_30px_rgba(0,229,196,0.1)]"
+                      >
                         <div>
                           <div className="flex justify-between items-start mb-4">
-                            <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border ${
-                              remedy.evidenceRating === "studied" ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" :
-                              remedy.evidenceRating === "traditional" ? "bg-purple-500/10 text-purple-400 border-purple-500/20" :
-                              "bg-amber-500/10 text-amber-400 border-amber-500/20"
-                            }`}>
+                            <span
+                              className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border ${
+                                remedy.evidenceRating === "studied"
+                                  ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                                  : remedy.evidenceRating === "traditional"
+                                    ? "bg-purple-500/10 text-purple-400 border-purple-500/20"
+                                    : "bg-amber-500/10 text-amber-400 border-amber-500/20"
+                              }`}
+                            >
                               {remedy.evidenceRating}
                             </span>
                             <button
-                              onClick={() => isBookmarked(remedy.id) ? removeBookmark(remedy.id) : addBookmark(remedy.id)}
+                              onClick={() =>
+                                isBookmarked(remedy.id)
+                                  ? removeBookmark(remedy.id)
+                                  : addBookmark(remedy.id)
+                              }
                               className="text-[#8A8F98] hover:scale-110 transition-transform"
                             >
-                              <Heart className={`w-5 h-5 ${isBookmarked(remedy.id) ? 'fill-[#FC3D21] text-[#FC3D21]' : ''}`} />
+                              <Heart
+                                className={`w-5 h-5 ${isBookmarked(remedy.id) ? "fill-[#FC3D21] text-[#FC3D21]" : ""}`}
+                              />
                             </button>
                           </div>
-                          
+
                           <h3 className="text-xl font-bold text-white">{remedy.name}</h3>
-                          <p className="text-[10px] text-[#F5A623] uppercase tracking-widest font-bold mt-1">Target: {remedy.ailment}</p>
-                          
+                          <p className="text-[10px] text-[#F5A623] uppercase tracking-widest font-bold mt-1">
+                            Target: {remedy.ailment}
+                          </p>
+
                           <p className="mt-4 text-sm text-[#8A8F98] leading-relaxed">
                             {remedy.description}
                           </p>
 
                           {remedy.genZContext && (
                             <div className="mt-4 bg-[#A855F7]/10 border border-[#A855F7]/20 p-3 rounded-xl">
-                              <p className="text-[10px] font-bold text-[#A855F7] uppercase tracking-wider mb-1">Gen Z Context</p>
+                              <p className="text-[10px] font-bold text-[#A855F7] uppercase tracking-wider mb-1">
+                                Gen Z Context
+                              </p>
                               <p className="text-xs text-[#EAEAEA]">{remedy.genZContext}</p>
                             </div>
                           )}
                         </div>
-                        
+
                         <div className="mt-6 pt-4 border-t border-white/5">
-                          <p className="text-[10px] font-bold text-[#00E5C4] uppercase tracking-wider mb-1">Scientific Base</p>
-                          <p className="text-xs text-[#8A8F98] leading-relaxed">{remedy.evidenceDetails}</p>
+                          <p className="text-[10px] font-bold text-[#00E5C4] uppercase tracking-wider mb-1">
+                            Scientific Base
+                          </p>
+                          <p className="text-xs text-[#8A8F98] leading-relaxed">
+                            {remedy.evidenceDetails}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -297,16 +334,23 @@ function LibraryPage() {
               {activeTab === "myths" && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {filteredMyths.map((myth) => (
-                    <div key={myth.id} className="rounded-3xl border border-white/10 bg-[#0F0F0F]/80 p-6 backdrop-blur-xl hover:border-blue-500/30 transition-all hover:shadow-[0_0_30px_rgba(59,130,246,0.1)]">
+                    <div
+                      key={myth.id}
+                      className="rounded-3xl border border-white/10 bg-[#0F0F0F]/80 p-6 backdrop-blur-xl hover:border-blue-500/30 transition-all hover:shadow-[0_0_30px_rgba(59,130,246,0.1)]"
+                    >
                       <div className="flex justify-between items-start mb-4">
                         <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border bg-red-500/10 text-red-500 border-red-500/20">
                           Myth Busted
                         </span>
                         <button
-                          onClick={() => isBookmarked(myth.id) ? removeBookmark(myth.id) : addBookmark(myth.id)}
+                          onClick={() =>
+                            isBookmarked(myth.id) ? removeBookmark(myth.id) : addBookmark(myth.id)
+                          }
                           className="text-[#8A8F98] hover:scale-110 transition-transform"
                         >
-                          <Heart className={`w-5 h-5 ${isBookmarked(myth.id) ? 'fill-[#FC3D21] text-[#FC3D21]' : ''}`} />
+                          <Heart
+                            className={`w-5 h-5 ${isBookmarked(myth.id) ? "fill-[#FC3D21] text-[#FC3D21]" : ""}`}
+                          />
                         </button>
                       </div>
 
@@ -315,7 +359,9 @@ function LibraryPage() {
                       </h3>
 
                       <div className="bg-emerald-500/5 border border-emerald-500/20 p-4 rounded-2xl">
-                        <p className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider mb-2">✅ Science Truth</p>
+                        <p className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider mb-2">
+                          ✅ Science Truth
+                        </p>
                         <p className="text-sm text-emerald-50 leading-relaxed">{myth.reality}</p>
                       </div>
 
@@ -323,13 +369,17 @@ function LibraryPage() {
                         <div className="mt-4 space-y-3">
                           {myth.dangerAlert && (
                             <div className="bg-rose-500/10 border border-rose-500/20 p-3 rounded-xl">
-                              <p className="text-[10px] font-bold text-rose-500 uppercase tracking-wider mb-1">🚨 Danger Alert</p>
+                              <p className="text-[10px] font-bold text-rose-500 uppercase tracking-wider mb-1">
+                                🚨 Danger Alert
+                              </p>
                               <p className="text-xs text-rose-200">{myth.dangerAlert}</p>
                             </div>
                           )}
                           {myth.actionableTip && (
                             <div className="bg-blue-500/10 border border-blue-500/20 p-3 rounded-xl">
-                              <p className="text-[10px] font-bold text-blue-400 uppercase tracking-wider mb-1">🎯 Try This</p>
+                              <p className="text-[10px] font-bold text-blue-400 uppercase tracking-wider mb-1">
+                                🎯 Try This
+                              </p>
                               <p className="text-xs text-blue-100">{myth.actionableTip}</p>
                             </div>
                           )}
@@ -344,12 +394,15 @@ function LibraryPage() {
               {activeTab === "marvels" && (
                 <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
                   {BODY_MARVELS.map((marvel) => (
-                    <div key={marvel.id} className="rounded-[2.5rem] border border-white/10 bg-[#0F0F0F]/80 p-8 md:p-12 backdrop-blur-xl relative overflow-hidden">
+                    <div
+                      key={marvel.id}
+                      className="rounded-[2.5rem] border border-white/10 bg-[#0F0F0F]/80 p-8 md:p-12 backdrop-blur-xl relative overflow-hidden"
+                    >
                       <div className="flex justify-between items-center gap-4">
                         <span className="px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider border bg-purple-500/10 text-purple-400 border-purple-500/20">
                           Weekly Deep-Dive
                         </span>
-                        
+
                         <button
                           onClick={() => handleSpeak(marvel)}
                           className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold border transition-all active:scale-95 ${
@@ -358,24 +411,36 @@ function LibraryPage() {
                               : "border-white/10 bg-white/[0.02] text-white hover:bg-white/5"
                           }`}
                         >
-                          {speakingId === marvel.id ? <Square className="w-3 h-3" /> : <Volume2 className="w-3 h-3" />}
+                          {speakingId === marvel.id ? (
+                            <Square className="w-3 h-3" />
+                          ) : (
+                            <Volume2 className="w-3 h-3" />
+                          )}
                           {speakingId === marvel.id ? "Stop" : "Listen"}
                         </button>
                       </div>
-                      <h3 className="mt-6 text-3xl md:text-4xl font-space font-extrabold text-white">{marvel.title}</h3>
-                      <p className="mt-4 text-lg text-[#8A8F98] italic font-serif">"{marvel.introduction}"</p>
-                      
+                      <h3 className="mt-6 text-3xl md:text-4xl font-space font-extrabold text-white">
+                        {marvel.title}
+                      </h3>
+                      <p className="mt-4 text-lg text-[#8A8F98] italic font-serif">
+                        "{marvel.introduction}"
+                      </p>
+
                       <div className="mt-10 space-y-8">
                         {marvel.sections.map((sect, i) => (
                           <div key={i}>
-                            <h4 className="font-bold text-[#00E5C4] text-lg mb-2">{sect.heading}</h4>
+                            <h4 className="font-bold text-[#00E5C4] text-lg mb-2">
+                              {sect.heading}
+                            </h4>
                             <p className="text-[#EAEAEA] leading-relaxed">{sect.body}</p>
                           </div>
                         ))}
                       </div>
 
                       <div className="mt-10 p-6 bg-white/[0.02] border border-white/10 rounded-2xl text-center">
-                        <p className="text-sm text-[#8A8F98] font-medium leading-relaxed">{marvel.conclusion}</p>
+                        <p className="text-sm text-[#8A8F98] font-medium leading-relaxed">
+                          {marvel.conclusion}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -387,8 +452,10 @@ function LibraryPage() {
                 <div className="max-w-4xl mx-auto text-center py-20">
                   <BookmarkIcon className="w-16 h-16 text-white/20 mx-auto mb-6" />
                   <h2 className="text-2xl font-bold text-white mb-2">Your Saved Collection</h2>
-                  <p className="text-[#8A8F98] mb-8">Items you star across the library will appear here.</p>
-                  
+                  <p className="text-[#8A8F98] mb-8">
+                    Items you star across the library will appear here.
+                  </p>
+
                   {bookmarks.length === 0 ? (
                     <div className="inline-block px-6 py-3 rounded-full border border-white/10 bg-white/5 text-sm text-[#8A8F98]">
                       Collection is empty
@@ -399,9 +466,12 @@ function LibraryPage() {
                         const remedy = REMEDIES.find((r) => r.id === bId);
                         const fact = FACTS.find((f) => f.id === bId);
                         const myth = MYTHS.find((m) => m.id === bId);
-                        
+
                         return (
-                          <div key={bId} className="flex items-center justify-between bg-white/[0.02] p-4 rounded-2xl border border-white/10 hover:border-white/30 transition-all">
+                          <div
+                            key={bId}
+                            className="flex items-center justify-between bg-white/[0.02] p-4 rounded-2xl border border-white/10 hover:border-white/30 transition-all"
+                          >
                             <div className="truncate pr-4">
                               <p className="text-sm font-bold text-white truncate">
                                 {remedy ? remedy.name : myth ? myth.myth : "Saved Fact"}
@@ -423,7 +493,6 @@ function LibraryPage() {
                   )}
                 </div>
               )}
-
             </motion.div>
           </AnimatePresence>
         </div>

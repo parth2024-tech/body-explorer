@@ -1,5 +1,5 @@
-import { create } from 'zustand';
-import foodLabelsData from '../data/food_labels_db.json';
+import { create } from "zustand";
+import foodLabelsData from "../data/food_labels_db.json";
 
 export interface FoodLabelEntry {
   id: string;
@@ -9,7 +9,7 @@ export interface FoodLabelEntry {
   biological_impact: string;
   how_to_spot: string;
   common_products: string[];
-  confidenceLevel?: 'HIGH' | 'MODERATE' | 'LOW' | 'INSUFFICIENT';
+  confidenceLevel?: "HIGH" | "MODERATE" | "LOW" | "INSUFFICIENT";
   evidenceStatement?: string;
   clinicalDisclaimer?: string;
 }
@@ -26,7 +26,7 @@ interface FoodLabelState {
 export const useFoodLabelStore = create<FoodLabelState>((set, get) => ({
   entries: foodLabelsData as FoodLabelEntry[],
   selectedEntryId: null,
-  searchQuery: '',
+  searchQuery: "",
   setSearchQuery: (query) => set({ searchQuery: query }),
   selectEntry: (id) => set({ selectedEntryId: id }),
   get filteredEntries() {
@@ -37,7 +37,7 @@ export const useFoodLabelStore = create<FoodLabelState>((set, get) => ({
       (e) =>
         e.marketing_claim.toLowerCase().includes(lowerQ) ||
         e.real_meaning.toLowerCase().includes(lowerQ) ||
-        e.common_products.some((p) => p.toLowerCase().includes(lowerQ))
+        e.common_products.some((p) => p.toLowerCase().includes(lowerQ)),
     );
   },
 }));

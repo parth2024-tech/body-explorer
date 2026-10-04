@@ -1,15 +1,27 @@
 [
   {
-    "id": 1, "category": "food", "icon": "🌶️",
+    "id": 1,
+    "category": "food",
+    "icon": "🌶️",
     "product": "MDH & Everest Spice Mixes",
     "molecule": "Ethylene Oxide",
     "subtitle": "A pesticide linked to cancer.",
-    "brands": ["Everest Fish Curry Masala","MDH Madras Curry Powder","MDH Sambhar Masala","MDH Curry Powder"],
+    "brands": [
+      "Everest Fish Curry Masala",
+      "MDH Madras Curry Powder",
+      "MDH Sambhar Masala",
+      "MDH Curry Powder"
+    ],
     "risk": "CRITICAL",
     "organ": "Liver & Lymphatic System",
     "summary": "MDH and Everest Spice Mixes use Ethylene Oxide, a strong pesticide, to kill bugs and extend shelf life. The European Union banned this chemical from food over 30 years ago, but it is still found in these Indian spice blends.",
     "mechanism": "Ethylene Oxide acts like an invisible poison that permanently scrambles your cells' DNA. Because it breaks the DNA, the body can start growing cancer cells. There is no 'safe' amount to eat, which is why strict countries banned it entirely.",
-    "status_global": { "Singapore": "Recalled (2024)", "Hong Kong": "Banned (2024)", "US": "Import warnings", "EU": "Banned since 1991" },
+    "status_global": {
+      "Singapore": "Recalled (2024)",
+      "Hong Kong": "Banned (2024)",
+      "US": "Import warnings",
+      "EU": "Banned since 1991"
+    },
     "status_india": "FSSAI did quality checks after international outrage, but the brands remain on shelves.",
     "how_to_spot": "Look for MDH Madras Curry Powder, Sambhar Masala, or Everest Fish Curry Masala. When in doubt, buy whole spices and grind them at home.",
     "alternatives": ["Freshly ground whole spices", "Certified organic spice brands"],
@@ -19,35 +31,51 @@
     "clinicalDisclaimer": "📍 IMPORTANT: Not every batch is contaminated, but long-term repeated exposure carries severe health risks."
   },
   {
-    "id": 2, "category": "food", "icon": "🍯",
+    "id": 2,
+    "category": "food",
+    "icon": "🍯",
     "product": "Chyawanprash (Ayurvedic Supplements)",
     "molecule": "Lead, Mercury & Arsenic",
     "subtitle": "Heavy metals hidden in herbal jams.",
-    "brands": ["Dabur Chyawanprash","Baidyanath Chyawanprash","Patanjali Chyawanprash"],
+    "brands": ["Dabur Chyawanprash", "Baidyanath Chyawanprash", "Patanjali Chyawanprash"],
     "risk": "HIGH",
     "organ": "Kidneys & Brain",
     "summary": "Millions of families eat Chyawanprash daily for immunity. However, these herbal supplements often contain Lead, Mercury, and Arsenic. Canada completely banned importing them because these heavy metals can cause permanent brain damage in children.",
     "mechanism": "Some traditional recipes intentionally add crushed metals, or the herbs absorb toxic metals from dirty farm soil. When a child eats lead over time, it physically shrinks their growing brain and lowers their IQ permanently. Mercury silently destroys the kidneys' ability to filter blood.",
-    "status_global": { "Canada": "Banned since 2005", "US": "Import alerts", "EU": "Strict heavy metal limits" },
+    "status_global": {
+      "Canada": "Banned since 2005",
+      "US": "Import alerts",
+      "EU": "Strict heavy metal limits"
+    },
     "status_india": "Heavily advertised and consumed daily. No strict limits on heavy metals for domestic sales.",
     "how_to_spot": "Only buy brands that show independent lab tests proving they are free of heavy metals.",
-    "alternatives": ["Pure amla (Indian gooseberry)", "Lab-tested herbal brands", "Fresh fruits for Vitamin C"],
+    "alternatives": [
+      "Pure amla (Indian gooseberry)",
+      "Lab-tested herbal brands",
+      "Fresh fruits for Vitamin C"
+    ],
     "ref": "Ministry of AYUSH export standards",
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Health Canada issued massive recalls in 2005 due to lead and mercury levels far exceeding WHO limits.",
     "clinicalDisclaimer": "📍 IMPORTANT: Heavy metal poisoning builds up silently over years. Children are the most vulnerable."
   },
   {
-    "id": 3, "category": "food", "icon": "🫒",
+    "id": 3,
+    "category": "food",
+    "icon": "🫒",
     "product": "Mustard Oil (Sarson ka Tel)",
     "molecule": "Erucic Acid",
     "subtitle": "A fatty acid that damages the heart.",
-    "brands": ["Fortune Kachi Ghani","Dhara Mustard Oil","Engine Brand","Patanjali"],
+    "brands": ["Fortune Kachi Ghani", "Dhara Mustard Oil", "Engine Brand", "Patanjali"],
     "risk": "HIGH",
     "organ": "Heart Muscle",
     "summary": "Mustard Oil is the main cooking oil in North India. However, it naturally contains very high levels of Erucic Acid. In the USA, it is totally illegal to sell it for cooking—bottles must warn 'For External Use Only'.",
     "mechanism": "Erucic Acid is a long chain of fat that the heart struggles to digest. In animal tests, it forces fat to build up directly inside the heart's muscle walls. Over time, this makes the heart weak and floppy, preventing it from pumping blood properly.",
-    "status_global": { "US": "Banned for cooking", "EU": "Max 5% allowed", "Canada": "Strictly limited" },
+    "status_global": {
+      "US": "Banned for cooking",
+      "EU": "Max 5% allowed",
+      "Canada": "Strictly limited"
+    },
     "status_india": "The primary cooking oil for millions. Freely sold with no warning labels.",
     "how_to_spot": "Any bottle of 'Kachi Ghani'. If you use it, try mixing it with other safer oils.",
     "alternatives": ["Canola oil (low-erucic mustard variant)", "Groundnut oil", "Sesame oil"],
@@ -57,7 +85,9 @@
     "clinicalDisclaimer": "📍 IMPORTANT: While traditional use in India is widespread, international health bodies strictly limit its consumption."
   },
   {
-    "id": 4, "category": "food", "icon": "🥟",
+    "id": 4,
+    "category": "food",
+    "icon": "🥟",
     "product": "Street-Stall Pani Puri / Golgappa",
     "molecule": "Vibrio cholerae",
     "subtitle": "Water bugs that cause severe diarrhea.",
@@ -76,16 +106,23 @@
     "clinicalDisclaimer": "📍 IMPORTANT: Severe dehydration from cholera can be deadly, especially for young children and the elderly."
   },
   {
-    "id": 5, "category": "food", "icon": "🍞",
+    "id": 5,
+    "category": "food",
+    "icon": "🍞",
     "product": "Local Bakery Breads & Pav",
     "molecule": "Potassium Bromate (E924)",
     "subtitle": "A dough-riser linked to kidney cancer.",
-    "brands": ["Local bakery breads","Unbranded burger buns","Ladi Pav"],
+    "brands": ["Local bakery breads", "Unbranded burger buns", "Ladi Pav"],
     "risk": "CRITICAL",
     "organ": "Kidneys",
     "summary": "Local bakeries often use Potassium Bromate to make their Breads and Pav fluffy. The chemical is a known cancer causer and was banned in Europe in 1990. India finally banned it in 2016, but cheap, unbranded bakeries still secretly use it.",
     "mechanism": "When you eat bread baked with this chemical, it travels to your kidneys to be filtered out. Once inside the kidney tubes, it acts like tiny sparks, causing microscopic burns to the kidney cells. Over years, this constant burning can turn the cells into cancer.",
-    "status_global": { "EU": "Banned since 1990", "UK": "Banned", "Canada": "Banned", "China": "Banned" },
+    "status_global": {
+      "EU": "Banned since 1990",
+      "UK": "Banned",
+      "Canada": "Banned",
+      "China": "Banned"
+    },
     "status_india": "Banned by FSSAI in 2016, but undercover tests show it is still widely used in cheap bakeries.",
     "how_to_spot": "Avoid super cheap, unnaturally soft white bread from unbranded shops. Look for ingredient 'E924'.",
     "alternatives": ["Branded sliced breads", "Organic bread", "Home-baked bread"],
@@ -95,11 +132,13 @@
     "clinicalDisclaimer": "📍 IMPORTANT: The risk comes from eating it every day over many years, not from a single sandwich."
   },
   {
-    "id": 6, "category": "food", "icon": "🍬",
+    "id": 6,
+    "category": "food",
+    "icon": "🍬",
     "product": "Konjac Mini Jelly Cups",
     "molecule": "Konjac Glucomannan Gel",
     "subtitle": "A candy that causes deadly choking.",
-    "brands": ["Mini Jelly Cups","Fruit Jelly Sweets","Konnyaku Jelly"],
+    "brands": ["Mini Jelly Cups", "Fruit Jelly Sweets", "Konnyaku Jelly"],
     "risk": "CRITICAL",
     "organ": "Throat / Airway",
     "summary": "Konjac Mini Jelly Cups are colorful sweets marketed to kids. The jelly is made of Konjac Glucomannan Gel, which does not melt in the mouth. It is completely banned in the US, UK, and Australia because children have choked to death on them.",
@@ -114,16 +153,21 @@
     "clinicalDisclaimer": "🚨 DANGER: This is an immediate, fatal choking hazard for young children. Do not buy them."
   },
   {
-    "id": 7, "category": "food", "icon": "🐍",
+    "id": 7,
+    "category": "food",
+    "icon": "🐍",
     "product": "Dragon's Breath Smoking Snacks",
     "molecule": "Liquid Nitrogen",
     "subtitle": "A freezing chemical that burns your stomach.",
-    "brands": ["Dragon's Breath Biscuits","Nitro Puffs"],
+    "brands": ["Dragon's Breath Biscuits", "Nitro Puffs"],
     "risk": "CRITICAL",
     "organ": "Stomach / Mucous Membranes",
     "summary": "Dragon's Breath Snacks are dipped in Liquid Nitrogen so you can blow 'smoke' out of your mouth. It is so dangerous that the US FDA issued urgent warnings, and some Indian states banned it after it burned holes straight through people's stomachs.",
     "mechanism": "Liquid nitrogen is violently cold (-320°F). If you swallow a drop before it turns into gas, it instantly freezes your throat and stomach, killing the flesh like extreme frostbite. As it warms up inside your stomach, it expands 700 times in size, causing your stomach to explode from the pressure.",
-    "status_global": { "US": "FDA urgent consumer warnings", "Indonesia": "Banned at street stalls" },
+    "status_global": {
+      "US": "FDA urgent consumer warnings",
+      "Indonesia": "Banned at street stalls"
+    },
     "status_india": "Banned in Tamil Nadu and Karnataka. Still seen at food festivals elsewhere.",
     "how_to_spot": "Snacks served with thick, billowing white smoke.",
     "alternatives": ["Regular ice cream", "Dry ice effects (when supervised properly)"],
@@ -133,11 +177,13 @@
     "clinicalDisclaimer": "🚨 DANGER: Swallowing liquid nitrogen is a surgical emergency. Wait for all smoke to clear before eating."
   },
   {
-    "id": 8, "category": "food", "icon": "🪙",
+    "id": 8,
+    "category": "food",
+    "icon": "🪙",
     "product": "Silver-Leaf Sweets (Warq)",
     "molecule": "Lead, Cadmium & Chromium",
     "subtitle": "Fake silver hiding toxic heavy metals.",
-    "brands": ["Kaju Katli with Chandi Warq","Silver-foil Barfi"],
+    "brands": ["Kaju Katli with Chandi Warq", "Silver-foil Barfi"],
     "risk": "HIGH",
     "organ": "Liver & Kidneys",
     "summary": "The beautiful silver foil on your Kaju Katli (Silver-Leaf Sweets) is often completely fake. Instead of pure silver, cheap sweet shops use a mix of Lead, Cadmium, and Chromium to make it shiny. The US and EU strictly regulate food-grade silver.",
@@ -152,7 +198,9 @@
     "clinicalDisclaimer": "📍 IMPORTANT: Heavy metal toxicity from fake foil adds up over years of festival eating."
   },
   {
-    "id": 9, "category": "food", "icon": "🫘",
+    "id": 9,
+    "category": "food",
+    "icon": "🫘",
     "product": "Khesari Dal (Grass Pea)",
     "molecule": "ODAP Neurotoxin",
     "subtitle": "A cheap lentil that paralyzes your legs.",
@@ -171,16 +219,21 @@
     "clinicalDisclaimer": "📍 IMPORTANT: The paralysis is permanent and incurable. It occurs after eating the dal as a primary meal for several months."
   },
   {
-    "id": 10, "category": "food", "icon": "🌈",
+    "id": 10,
+    "category": "food",
+    "icon": "🌈",
     "product": "Artificially Coloured Candies & Drinks",
     "molecule": "Tartrazine & Sunset Yellow",
     "subtitle": "Food dyes linked to extreme hyperactivity.",
-    "brands": ["Mirinda Orange","Fanta","Jalebi","Cheap Candies"],
+    "brands": ["Mirinda Orange", "Fanta", "Jalebi", "Cheap Candies"],
     "risk": "MODERATE",
     "organ": "Brain (CNS / Behaviour)",
     "summary": "Artificially Coloured Candies and Drinks are packed with synthetic dyes like Tartrazine and Sunset Yellow. The European Union forces these products to carry a strict warning label stating they cause hyperactivity in children. India requires no warnings.",
     "mechanism": "These fake chemical colors trigger the brain and immune system, causing a tiny allergic reaction. In sensitive children, this chemical reaction makes their brain cells fire too quickly, leading to extreme bouncing-off-the-walls behavior and terrible focus (ADHD-like symptoms).",
-    "status_global": { "EU": "Warning label required for children", "UK": "Warning labels mandatory" },
+    "status_global": {
+      "EU": "Warning label required for children",
+      "UK": "Warning labels mandatory"
+    },
     "status_india": "Completely legal with zero warning labels required on the packaging.",
     "how_to_spot": "If the candy, drink, or Jalebi is glowing an unnaturally bright color, it's fake. Look for 'E102' or 'E110' on the back.",
     "alternatives": ["Foods colored with Turmeric (yellow) or Beetroot (red)"],
@@ -190,16 +243,22 @@
     "clinicalDisclaimer": "📍 IMPORTANT: Cutting out these dyes is often the first step doctors recommend for children with severe ADHD."
   },
   {
-    "id": 11, "category": "food", "icon": "🌱",
+    "id": 11,
+    "category": "food",
+    "icon": "🌱",
     "product": "Poppy Seeds (Khus Khus)",
     "molecule": "Morphine & Codeine traces",
     "subtitle": "A spice that can fail a drug test.",
-    "brands": ["White Poppy Seeds","Khus Khus"],
+    "brands": ["White Poppy Seeds", "Khus Khus"],
     "risk": "LOW",
     "organ": "Brain (Opioid receptors)",
     "summary": "Poppy Seeds (Khus Khus) are widely used to thicken Indian gravies. But because they come from the opium plant, they are coated in traces of Morphine and Codeine. They are completely banned in places like Singapore and Dubai.",
     "mechanism": "The seeds themselves don't make drugs, but the sticky drug juice from the plant gets smeared on them during harvest. If you eat a lot of them, your body processes the tiny bits of morphine. It won't get you high, but it will make your urine pop positive on a strict police or hospital drug test.",
-    "status_global": { "Singapore": "Strictly Banned", "UAE": "Strictly Banned", "Saudi Arabia": "Banned" },
+    "status_global": {
+      "Singapore": "Strictly Banned",
+      "UAE": "Strictly Banned",
+      "Saudi Arabia": "Banned"
+    },
     "status_india": "Fully legal and used daily in kitchens across the country.",
     "how_to_spot": "Be incredibly careful not to eat foods with Khus Khus if you are traveling to the Middle East or taking a job-related drug test.",
     "alternatives": ["Melon seeds (Magaz)", "Cashew paste"],
@@ -209,11 +268,13 @@
     "clinicalDisclaimer": "📍 IMPORTANT: You cannot get 'high' from culinary poppy seeds, but the legal trouble in foreign countries is real."
   },
   {
-    "id": 12, "category": "drug", "icon": "💊",
+    "id": 12,
+    "category": "drug",
+    "icon": "💊",
     "product": "Nimesulide Painkillers (Nise, Sumo)",
     "molecule": "Nimesulide",
     "subtitle": "A fever pill that destroys the liver.",
-    "brands": ["Nise","Sumo","Nimulid"],
+    "brands": ["Nise", "Sumo", "Nimulid"],
     "risk": "CRITICAL",
     "organ": "Liver",
     "summary": "Nimesulide Painkillers (like Nise) are wildly popular in India for fevers. The USA refused to ever approve this drug, and Europe heavily restricted it. It is infamous for causing sudden, completely unpredictable liver failure that kills healthy people.",
@@ -228,11 +289,13 @@
     "clinicalDisclaimer": "🚨 DANGER: Never give this medication to a child. The liver failure it causes is sudden and often fatal."
   },
   {
-    "id": 13, "category": "drug", "icon": "⚗️",
+    "id": 13,
+    "category": "drug",
+    "icon": "⚗️",
     "product": "Metamizole Painkillers (Novalgin)",
     "molecule": "Metamizole Sodium",
     "subtitle": "A painkiller that deletes your immune system.",
-    "brands": ["Novalgin","Baralgan","Ultragin"],
+    "brands": ["Novalgin", "Baralgan", "Ultragin"],
     "risk": "CRITICAL",
     "organ": "Blood (Bone Marrow)",
     "summary": "Metamizole Painkillers (like Novalgin) were banned in the USA in 1977. India banned it in 2013, but mysteriously brought it back a year later. It causes a terrifying disease where your body stops making white blood cells, leaving you defenseless against germs.",
@@ -247,11 +310,13 @@
     "clinicalDisclaimer": "📍 IMPORTANT: The immune collapse is unpredictable and can happen even on the very first pill."
   },
   {
-    "id": 14, "category": "drug", "icon": "❤️",
+    "id": 14,
+    "category": "drug",
+    "icon": "❤️",
     "product": "Sibutramine Slimming Pills",
     "molecule": "Sibutramine HCl",
     "subtitle": "A weight-loss drug that causes heart attacks.",
-    "brands": ["Reduce","Sibotrim","Hidden in herbal supplements"],
+    "brands": ["Reduce", "Sibotrim", "Hidden in herbal supplements"],
     "risk": "CRITICAL",
     "organ": "Heart & Brain",
     "summary": "Sibutramine Slimming Pills were banned worldwide in 2010 because they caused massive heart attacks and strokes in healthy people. India banned it too, but illegal companies still secretly crush it up and hide it inside '100% Herbal' weight-loss powders.",
@@ -266,11 +331,13 @@
     "clinicalDisclaimer": "🚨 DANGER: Do not take unverified 'fat burners' bought online or at a gym. The hidden drugs inside are lethal."
   },
   {
-    "id": 15, "category": "drug", "icon": "🧠",
+    "id": 15,
+    "category": "drug",
+    "icon": "🧠",
     "product": "Deanxit Anxiety Pills",
     "molecule": "Flupentixol + Melitracen",
     "subtitle": "An anxiety pill banned by its own inventors.",
-    "brands": ["Deanxit","Placida"],
+    "brands": ["Deanxit", "Placida"],
     "risk": "HIGH",
     "organ": "Brain (Movement Control)",
     "summary": "Deanxit Anxiety Pills combine Flupentixol and Melitracen. This combo is so dangerous it is banned in Denmark, the country that originally invented it! India tried to ban it in 2013, but legal loopholes keep it in pharmacies.",
@@ -285,11 +352,13 @@
     "clinicalDisclaimer": "📍 IMPORTANT: Never stop psychiatric medication abruptly without a doctor's supervision to avoid severe withdrawal."
   },
   {
-    "id": 16, "category": "drug", "icon": "🫀",
+    "id": 16,
+    "category": "drug",
+    "icon": "🫀",
     "product": "Cisapride Gastric Pills",
     "molecule": "Cisapride",
     "subtitle": "An acid reflux pill that stops your heart.",
-    "brands": ["Ciza","Syspride"],
+    "brands": ["Ciza", "Syspride"],
     "risk": "CRITICAL",
     "organ": "Heart (Electrical Rhythm)",
     "summary": "Cisapride Gastric Pills were pulled from shelves worldwide in the year 2000 because they caused perfectly healthy people to drop dead from sudden heart failure. It was banned in India, but sometimes old stocks or fake versions are still sold in rural areas.",
@@ -304,11 +373,13 @@
     "clinicalDisclaimer": "🚨 DANGER: Never take unmarked or expired medicine for stomach aches."
   },
   {
-    "id": 17, "category": "drug", "icon": "💉",
+    "id": 17,
+    "category": "drug",
+    "icon": "💉",
     "product": "Placentrex Gels & Injections",
     "molecule": "Human Placental Extract",
     "subtitle": "Human tissue extracts carrying disease risks.",
-    "brands": ["Placentrex Gel","Placentrex Injection"],
+    "brands": ["Placentrex Gel", "Placentrex Injection"],
     "risk": "HIGH",
     "organ": "Blood (Infection Risk)",
     "summary": "Placentrex Gels and Injections are made from mashed-up human placentas collected after childbirth. The USA and Canada banned these products because they are completely useless for healing and carry a horrifying risk of transmitting HIV and Hepatitis.",
@@ -323,11 +394,13 @@
     "clinicalDisclaimer": "📍 IMPORTANT: There is no medical reason to use human tissue extracts when safe, sterile modern medicines exist."
   },
   {
-    "id": 18, "category": "drug", "icon": "⚡",
+    "id": 18,
+    "category": "drug",
+    "icon": "⚡",
     "product": "Spasmo-Proxyvon Painkillers",
     "molecule": "Dextropropoxyphene",
     "subtitle": "An opioid painkiller that causes cardiac arrest.",
-    "brands": ["Spasmo-Proxyvon","Proxyvon"],
+    "brands": ["Spasmo-Proxyvon", "Proxyvon"],
     "risk": "CRITICAL",
     "organ": "Heart (Cardiac Conduction)",
     "summary": "Spasmo-Proxyvon Painkillers were banned across the US and Europe because the main chemical, Dextropropoxyphene, is an opioid that randomly stops the heart. India banned it, but it is still illegally manufactured and sold on the black market for abuse.",
@@ -342,11 +415,13 @@
     "clinicalDisclaimer": "🚨 DANGER: Do not take these pills. The line between pain relief and a fatal heart attack is incredibly thin."
   },
   {
-    "id": 19, "category": "drug", "icon": "🩺",
+    "id": 19,
+    "category": "drug",
+    "icon": "🩺",
     "product": "Pan-D & Rablet-D Antacids",
     "molecule": "Domperidone + PPI Combo",
     "subtitle": "Common acidity pills with a lethal cardiac warning.",
-    "brands": ["Pan-D","Pantocid-D","Rablet-D"],
+    "brands": ["Pan-D", "Pantocid-D", "Rablet-D"],
     "risk": "MODERATE",
     "organ": "Heart (Sudden Cardiac Death)",
     "summary": "Pan-D and Rablet-D Antacids are among India's best-selling drugs. The 'D' stands for Domperidone, a chemical that Europe slapped with a massive 'Sudden Cardiac Death' warning label. Yet in India, millions pop these pills daily for simple heartburn.",
@@ -361,7 +436,9 @@
     "clinicalDisclaimer": "📍 IMPORTANT: Do not panic if you take this, but absolutely discuss switching to a safer, plain antacid with your doctor."
   },
   {
-    "id": 20, "category": "food", "icon": "🥛",
+    "id": 20,
+    "category": "food",
+    "icon": "🥛",
     "product": "Uncertified Protein Powders",
     "molecule": "Heavy Metals (Lead, Arsenic, Cadmium)",
     "subtitle": "Toxic metals contaminating fitness supplements.",
@@ -370,14 +447,19 @@
     "organ": "Kidneys & Liver",
     "summary": "Many fitness enthusiasts consume cheap protein powders daily to build muscle. However, independent lab tests have repeatedly found high levels of Lead, Cadmium, and Arsenic in these uncertified supplements, which can cause permanent damage to your kidneys and liver.",
     "mechanism": "Heavy metals get into protein powders through poor filtration or contaminated soil where raw ingredients (like pea, soy, or whey) are sourced. Since these metals are not listed on the label, they build up in your body over time, slowly poisoning your kidney filters and causing tissue damage in your liver.",
-    "status_global": { "US": "Clean Label Project alerts", "EU": "Strict heavy metal testing limits" },
+    "status_global": {
+      "US": "Clean Label Project alerts",
+      "EU": "Strict heavy metal testing limits"
+    },
     "status_india": "FSSAI has issued warnings to several brands, but uncertified products are still sold at local gym shops.",
     "how_to_spot": "Look for third-party testing certifications (like Informed-Choice, NSF, or labdoor) on the tub. Avoid buying unbranded or incredibly cheap protein powder from local dealers.",
-    "alternatives": ["Third-party certified protein brands", "Natural protein sources like eggs, paneer, chicken, or lentils"],
+    "alternatives": [
+      "Third-party certified protein brands",
+      "Natural protein sources like eggs, paneer, chicken, or lentils"
+    ],
     "ref": "Clean Label Project Protein Powder Study",
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Multi-brand chemical analyses have detected toxic concentrations of heavy metals exceeding daily safe limits in several popular commercial protein powders.",
     "clinicalDisclaimer": "📍 IMPORTANT: Muscle building requires protein, but consuming toxic heavy metals daily will destroy your long-term health. Always check for independent lab verification."
   }
 ]
-

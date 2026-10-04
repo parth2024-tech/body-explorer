@@ -4,7 +4,11 @@ import { TrustSection } from "@/components/landing/TrustSection";
 import { FeaturesSection } from "@/components/landing/FeaturesSection";
 import { ProcessSection } from "@/components/landing/ProcessSection";
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
-import { ProductShowcaseSection, CTASection, FooterSection } from "@/components/landing/CTAFooterSection";
+import {
+  ProductShowcaseSection,
+  CTASection,
+  FooterSection,
+} from "@/components/landing/CTAFooterSection";
 import { PricingFAQSection } from "@/components/landing/PricingFAQSection";
 
 export const Route = createFileRoute("/")({

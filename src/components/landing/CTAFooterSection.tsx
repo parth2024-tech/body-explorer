@@ -64,16 +64,24 @@ export function ProductShowcaseSection() {
   ];
 
   return (
-    <section ref={ref} className="relative py-24 overflow-hidden" aria-labelledby="showcase-heading">
+    <section
+      ref={ref}
+      className="relative py-24 overflow-hidden"
+      aria-labelledby="showcase-heading"
+    >
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div
           className="absolute -right-40 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl opacity-30"
-          style={{ background: "radial-gradient(circle, rgba(0,229,196,0.12) 0%, transparent 70%)" }}
+          style={{
+            background: "radial-gradient(circle, rgba(0,229,196,0.12) 0%, transparent 70%)",
+          }}
         />
         <div
           className="absolute -left-40 top-1/3 w-80 h-80 rounded-full blur-3xl opacity-20"
-          style={{ background: "radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%)" }}
+          style={{
+            background: "radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%)",
+          }}
         />
       </div>
 
@@ -103,8 +111,8 @@ export function ProductShowcaseSection() {
             transition={{ delay: 0.2 }}
             className="mt-4 max-w-2xl mx-auto text-sm leading-relaxed text-[#7B8199]"
           >
-            Switch seamlessly between macro anatomy, cellular pathways, and real-world health literacy
-            without textbook clutter or confusing medical jargon.
+            Switch seamlessly between macro anatomy, cellular pathways, and real-world health
+            literacy without textbook clutter or confusing medical jargon.
           </motion.p>
         </div>
 

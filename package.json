@@ -1,15 +1,35 @@
 {
-  "name": "tanstack_start_ts",
+  "name": "body-explorer",
+  "version": "2.0.0",
+  "description": "The Living Body Atlas & Health Intelligence Platform: Interactive 2D/3D anatomy, evidence-graded food spectrum, regulatory safety registry, and emergency triage protocols.",
   "private": true,
   "sideEffects": false,
   "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parth2024-tech/body-explorer.git"
+  },
+  "keywords": [
+    "health",
+    "anatomy",
+    "interactive-body-map",
+    "clinical-evidence",
+    "nutrition",
+    "emergency-first-aid",
+    "tanstack-start",
+    "react-19",
+    "tailwind-css"
+  ],
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "validate": "npm run typecheck && npm run lint"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

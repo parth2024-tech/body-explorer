@@ -15,9 +15,12 @@ const explainSymptom = createServerFn({ method: "POST" })
   .validator((data: string) => data)
   .handler(async ({ data: input }) => {
     try {
-      const apiKey = process.env.GEMINI_API_KEY || (import.meta as any).env?.VITE_GEMINI_API_KEY;
+      const metaEnv = (import.meta as unknown as { env?: Record<string, string | undefined> }).env;
+      const apiKey = process.env.GEMINI_API_KEY || metaEnv?.VITE_GEMINI_API_KEY;
       if (!apiKey) {
-        throw new Error("Gemini API key is missing. Please set GEMINI_API_KEY in your environment.");
+        throw new Error(
+          "Gemini API key is missing. Please set GEMINI_API_KEY in your environment.",
+        );
       }
 
       const genAI = new GoogleGenerativeAI(apiKey);
@@ -40,17 +43,25 @@ CRITICAL: Do NOT provide medical advice or diagnose. Only explain the physiologi
         generationConfig: {
           temperature: 0.3,
           responseMimeType: "application/json",
-        }
+        },
       });
 
       const responseText = result.response.text();
-      const cleanedText = responseText.replace(/^```json/i, '').replace(/^```/, '').replace(/```$/, '').trim();
+      const cleanedText = responseText
+        .replace(/^```json/i, "")
+        .replace(/^```/, "")
+        .replace(/```$/, "")
+        .trim();
       const parsed = JSON.parse(cleanedText);
-      
+
       return {
         organs: Array.isArray(parsed.organs) ? parsed.organs : ["brain"],
-        facts: Array.isArray(parsed.facts) ? parsed.facts : ["Your body systems are interconnected."],
-        doctorQuestions: Array.isArray(parsed.doctorQuestions) ? parsed.doctorQuestions : ["What tests would you recommend?"]
+        facts: Array.isArray(parsed.facts)
+          ? parsed.facts
+          : ["Your body systems are interconnected."],
+        doctorQuestions: Array.isArray(parsed.doctorQuestions)
+          ? parsed.doctorQuestions
+          : ["What tests would you recommend?"],
       };
     } catch (error) {
       console.error("AI Explain Error:", error);
@@ -59,12 +70,12 @@ CRITICAL: Do NOT provide medical advice or diagnose. Only explain the physiologi
         organs: ["brain", "heart"],
         facts: [
           "The body's systems are highly interconnected. We couldn't reach the AI server to provide a specific explanation right now.",
-          "Stress activates the hypothalamic-pituitary-adrenal (HPA) axis, which can manifest as physical symptoms in almost any body region."
+          "Stress activates the hypothalamic-pituitary-adrenal (HPA) axis, which can manifest as physical symptoms in almost any body region.",
         ],
         doctorQuestions: [
           "I've been experiencing these symptoms — what initial tests would you recommend?",
-          "What should I track or document before my next visit to help with diagnosis?"
-        ]
+          "What should I track or document before my next visit to help with diagnosis?",
+        ],
       };
     }
   });
@@ -73,7 +84,11 @@ export const Route = createFileRoute("/explain")({
   head: () => ({
     meta: [
       { title: "Explain This — The Living Body Atlas" },
-      { name: "description", content: "Describe what you're feeling in plain language. Get educational context about your body and questions to ask your doctor." },
+      {
+        name: "description",
+        content:
+          "Describe what you're feeling in plain language. Get educational context about your body and questions to ask your doctor.",
+      },
     ],
   }),
   component: ExplainPage,
@@ -99,7 +114,6 @@ function ExplainPage() {
     }
   };
 
-
   return (
     <main className="mx-auto max-w-3xl px-5 pb-24 pt-10">
       <motion.div
@@ -112,7 +126,8 @@ function ExplainPage() {
           <span className="gradient-text">Explain This</span>
         </h1>
         <p className="mx-auto mt-3 max-w-lg text-sm text-[#8B8FA3]">
-          Describe what you're feeling — in plain language. We'll help you understand which body systems are involved and prepare questions for your doctor.
+          Describe what you're feeling — in plain language. We'll help you understand which body
+          systems are involved and prepare questions for your doctor.
         </p>
       </motion.div>
 
@@ -123,11 +138,10 @@ function ExplainPage() {
         transition={{ duration: 0.5, delay: 0.1 }}
         className="mt-6 rounded-xl border border-[#F5A623]/20 bg-[#F5A623]/5 p-4 text-center"
       >
-        <p className="text-sm text-[#F5A623] font-medium">
-          ⚠️ This is not medical advice.
-        </p>
+        <p className="text-sm text-[#F5A623] font-medium">⚠️ This is not medical advice.</p>
         <p className="mt-1 text-xs text-[#8B8FA3]">
-          This tool helps you learn about your body and prepare questions for your doctor. It does not diagnose conditions.
+          This tool helps you learn about your body and prepare questions for your doctor. It does
+          not diagnose conditions.
         </p>
       </motion.div>
 
@@ -182,13 +196,54 @@ function ExplainPage() {
                   </linearGradient>
                 </defs>
                 {/* Body outline */}
-                <ellipse cx="50" cy="20" rx="14" ry="16" fill="url(#fillGrad)" stroke="#1E2844" strokeWidth="1" />
-                <rect x="44" y="34" width="12" height="10" fill="url(#fillGrad)" stroke="#1E2844" strokeWidth="1" />
-                <path d="M30 45 L70 45 L75 120 L60 135 L40 135 L25 120 Z" fill="url(#fillGrad)" stroke="#1E2844" strokeWidth="1" />
-                <path d="M30 48 L20 90 L25 92 L38 55 Z" fill="url(#fillGrad)" stroke="#1E2844" strokeWidth="1" />
-                <path d="M70 48 L80 90 L75 92 L62 55 Z" fill="url(#fillGrad)" stroke="#1E2844" strokeWidth="1" />
-                <path d="M38 133 L35 190 L45 190 L48 133 Z" fill="url(#fillGrad)" stroke="#1E2844" strokeWidth="1" />
-                <path d="M52 133 L55 190 L65 190 L62 133 Z" fill="url(#fillGrad)" stroke="#1E2844" strokeWidth="1" />
+                <ellipse
+                  cx="50"
+                  cy="20"
+                  rx="14"
+                  ry="16"
+                  fill="url(#fillGrad)"
+                  stroke="#1E2844"
+                  strokeWidth="1"
+                />
+                <rect
+                  x="44"
+                  y="34"
+                  width="12"
+                  height="10"
+                  fill="url(#fillGrad)"
+                  stroke="#1E2844"
+                  strokeWidth="1"
+                />
+                <path
+                  d="M30 45 L70 45 L75 120 L60 135 L40 135 L25 120 Z"
+                  fill="url(#fillGrad)"
+                  stroke="#1E2844"
+                  strokeWidth="1"
+                />
+                <path
+                  d="M30 48 L20 90 L25 92 L38 55 Z"
+                  fill="url(#fillGrad)"
+                  stroke="#1E2844"
+                  strokeWidth="1"
+                />
+                <path
+                  d="M70 48 L80 90 L75 92 L62 55 Z"
+                  fill="url(#fillGrad)"
+                  stroke="#1E2844"
+                  strokeWidth="1"
+                />
+                <path
+                  d="M38 133 L35 190 L45 190 L48 133 Z"
+                  fill="url(#fillGrad)"
+                  stroke="#1E2844"
+                  strokeWidth="1"
+                />
+                <path
+                  d="M52 133 L55 190 L65 190 L62 133 Z"
+                  fill="url(#fillGrad)"
+                  stroke="#1E2844"
+                  strokeWidth="1"
+                />
               </svg>
               <p className="mt-2 text-center text-xs text-[#8B8FA3] animate-pulse">
                 Mapping body systems...
@@ -263,7 +318,8 @@ function ExplainPage() {
 
             {/* Reminder */}
             <p className="text-center text-xs text-[#8B8FA3]">
-              Remember: This information is educational only. Always consult a healthcare professional for medical concerns.
+              Remember: This information is educational only. Always consult a healthcare
+              professional for medical concerns.
             </p>
           </motion.div>
         )}

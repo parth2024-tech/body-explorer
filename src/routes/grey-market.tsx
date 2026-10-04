@@ -1,7 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { GreyMarketIndex } from '@/components/grey-market/GreyMarketIndex';
+import { createFileRoute } from "@tanstack/react-router";
+import { GreyMarketIndex } from "@/components/grey-market/GreyMarketIndex";
 
-export const Route = createFileRoute('/grey-market')({
+export const Route = createFileRoute("/grey-market")({
   component: GreyMarketRoute,
 });
 

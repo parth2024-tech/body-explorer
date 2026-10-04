@@ -6,7 +6,12 @@
     "risk_level": "CRITICAL",
     "biological_impact": "Maltodextrin is a highly processed powder that breaks down into sugar instantly. It hits your bloodstream like a freight train, causing a massive insulin spike that is actually higher than if you had just eaten a spoon of regular table sugar.",
     "how_to_spot": "Look at the ingredient list on the back. If you see 'Maltodextrin', 'Sucralose', 'Aspartame', or 'INS 955 / INS 951', it is chemically sweetened.",
-    "common_products": ["Diet Sodas", "Protein Bars", "Sugar-Free Biscuits", "Diabetic Supplements"],
+    "common_products": [
+      "Diet Sodas",
+      "Protein Bars",
+      "Sugar-Free Biscuits",
+      "Diabetic Supplements"
+    ],
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Clinical glycemic index (GI) tables confirm Maltodextrin has a GI of 105-136, significantly higher than sucrose (GI 65).",
     "clinicalDisclaimer": "🚨 DANGER: Diabetic patients should be extremely cautious of 'Sugar-Free' products containing Maltodextrin as they can cause unexpected, dangerous blood sugar spikes."
@@ -144,4 +149,3 @@
     "clinicalDisclaimer": "🚨 DANGER: If you have Celiac disease, you must eat gluten-free. If not, these processed gluten-free items are not a health food and may promote weight gain."
   }
 ]
-

@@ -89,7 +89,8 @@ export const useBodyStore = create<BodyState>()(
       // New state initialization
       bookmarks: [],
       addBookmark: (id) => set((state) => ({ bookmarks: [...state.bookmarks, id] })),
-      removeBookmark: (id) => set((state) => ({ bookmarks: state.bookmarks.filter((b) => b !== id) })),
+      removeBookmark: (id) =>
+        set((state) => ({ bookmarks: state.bookmarks.filter((b) => b !== id) })),
       isBookmarked: (id) => get().bookmarks.includes(id),
 
       streak: 0,
@@ -231,6 +232,6 @@ export const useBodyStore = create<BodyState>()(
         interests: state.interests,
         moodLogs: state.moodLogs,
       }),
-    }
-  )
+    },
+  ),
 );

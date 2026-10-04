@@ -1,6 +1,10 @@
 export function ParticleBackground() {
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true" style={{ background: "#030303" }}>
+    <div
+      className="fixed inset-0 z-0 pointer-events-none overflow-hidden"
+      aria-hidden="true"
+      style={{ background: "#030303" }}
+    >
       {/* CSS-only Particle Parallax */}
       <div className="absolute inset-0 opacity-40">
         <div className="stars-1"></div>
@@ -44,15 +48,14 @@ export function ParticleBackground() {
           .stars-1, .stars-2, .stars-3 { animation: none !important; }
         }
       `}</style>
-      
+
       {/* Glow effect */}
-      <div 
-        className="absolute inset-0" 
+      <div
+        className="absolute inset-0"
         style={{
-          background: 'radial-gradient(circle at center, transparent 0%, #030303 80%)'
+          background: "radial-gradient(circle at center, transparent 0%, #030303 80%)",
         }}
       />
     </div>
   );
 }
-

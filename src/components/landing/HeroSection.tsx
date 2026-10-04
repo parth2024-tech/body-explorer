@@ -4,10 +4,34 @@ import { Activity, Wind, Brain, Bone, ArrowRight, ShieldCheck, Apple } from "luc
 
 /* ─── Clinical Data Cards ─── */
 const FLOAT_CARDS = [
-  { icon: Activity, label: "Cardiac Output", value: "72 bpm / 5 L/min", color: "#F43F5E", delay: 0 },
-  { icon: Wind, label: "Pulmonary Capillaries", value: "100 m² surface", color: "#00E5C4", delay: 0.2 },
-  { icon: Brain, label: "Glymphatic Clearance", value: "Active in deep sleep", color: "#38BDF8", delay: 0.4 },
-  { icon: Bone, label: "Skeletal Framework", value: "206 articulating bones", color: "#F5A623", delay: 0.6 },
+  {
+    icon: Activity,
+    label: "Cardiac Output",
+    value: "72 bpm / 5 L/min",
+    color: "#F43F5E",
+    delay: 0,
+  },
+  {
+    icon: Wind,
+    label: "Pulmonary Capillaries",
+    value: "100 m² surface",
+    color: "#00E5C4",
+    delay: 0.2,
+  },
+  {
+    icon: Brain,
+    label: "Glymphatic Clearance",
+    value: "Active in deep sleep",
+    color: "#38BDF8",
+    delay: 0.4,
+  },
+  {
+    icon: Bone,
+    label: "Skeletal Framework",
+    value: "206 articulating bones",
+    color: "#F5A623",
+    delay: 0.6,
+  },
 ];
 
 /* ─── Anatomical Silhouette ─── */
@@ -18,7 +42,8 @@ function BodyGlyph() {
       <div
         className="absolute w-56 h-[420px] rounded-2xl opacity-20"
         style={{
-          background: "radial-gradient(ellipse, rgba(0,229,196,0.2) 0%, rgba(56,189,248,0.1) 50%, transparent 80%)",
+          background:
+            "radial-gradient(ellipse, rgba(0,229,196,0.2) 0%, rgba(56,189,248,0.1) 50%, transparent 80%)",
           filter: "blur(35px)",
         }}
       />
@@ -31,11 +56,36 @@ function BodyGlyph() {
         aria-label="Human body anatomical silhouette"
       >
         {/* Head */}
-        <ellipse cx="80" cy="38" rx="26" ry="30" fill="url(#bodyGrad)" stroke="#00E5C4" strokeWidth="0.8" strokeOpacity="0.6" />
+        <ellipse
+          cx="80"
+          cy="38"
+          rx="26"
+          ry="30"
+          fill="url(#bodyGrad)"
+          stroke="#00E5C4"
+          strokeWidth="0.8"
+          strokeOpacity="0.6"
+        />
         {/* Neck */}
-        <rect x="72" y="65" width="16" height="14" rx="4" fill="url(#bodyGrad)" stroke="#00E5C4" strokeWidth="0.6" strokeOpacity="0.5" />
+        <rect
+          x="72"
+          y="65"
+          width="16"
+          height="14"
+          rx="4"
+          fill="url(#bodyGrad)"
+          stroke="#00E5C4"
+          strokeWidth="0.6"
+          strokeOpacity="0.5"
+        />
         {/* Torso */}
-        <path d="M45 79 Q40 130 42 190 L118 190 Q120 130 115 79 Z" fill="url(#bodyGrad)" stroke="#00E5C4" strokeWidth="0.8" strokeOpacity="0.5" />
+        <path
+          d="M45 79 Q40 130 42 190 L118 190 Q120 130 115 79 Z"
+          fill="url(#bodyGrad)"
+          stroke="#00E5C4"
+          strokeWidth="0.8"
+          strokeOpacity="0.5"
+        />
 
         {/* Heart */}
         <path
@@ -45,7 +95,12 @@ function BodyGlyph() {
           stroke="#F43F5E"
           strokeWidth="0.5"
         >
-          <animate attributeName="fill-opacity" values="0.5;0.95;0.5" dur="1s" repeatCount="indefinite" />
+          <animate
+            attributeName="fill-opacity"
+            values="0.5;0.95;0.5"
+            dur="1s"
+            repeatCount="indefinite"
+          />
         </path>
 
         {/* Lungs */}
@@ -65,19 +120,68 @@ function BodyGlyph() {
         />
 
         {/* Stomach */}
-        <ellipse cx="78" cy="162" rx="18" ry="12" fill="#F5A623" fillOpacity="0.25" stroke="#F5A623" strokeWidth="0.5" strokeOpacity="0.6" />
+        <ellipse
+          cx="78"
+          cy="162"
+          rx="18"
+          ry="12"
+          fill="#F5A623"
+          fillOpacity="0.25"
+          stroke="#F5A623"
+          strokeWidth="0.5"
+          strokeOpacity="0.6"
+        />
 
         {/* Arms */}
-        <path d="M45 82 Q28 100 24 155 Q22 170 30 175" stroke="#00E5C4" strokeWidth="0.8" strokeOpacity="0.5" fill="none" />
-        <path d="M115 82 Q132 100 136 155 Q138 170 130 175" stroke="#00E5C4" strokeWidth="0.8" strokeOpacity="0.5" fill="none" />
+        <path
+          d="M45 82 Q28 100 24 155 Q22 170 30 175"
+          stroke="#00E5C4"
+          strokeWidth="0.8"
+          strokeOpacity="0.5"
+          fill="none"
+        />
+        <path
+          d="M115 82 Q132 100 136 155 Q138 170 130 175"
+          stroke="#00E5C4"
+          strokeWidth="0.8"
+          strokeOpacity="0.5"
+          fill="none"
+        />
 
         {/* Pelvis & Legs */}
-        <path d="M42 190 Q40 215 55 220 Q70 225 80 222 Q90 225 105 220 Q120 215 118 190 Z" fill="url(#bodyGrad)" stroke="#00E5C4" strokeWidth="0.7" strokeOpacity="0.4" />
-        <path d="M55 222 Q50 280 52 340 Q54 360 65 365" stroke="#00E5C4" strokeWidth="0.8" strokeOpacity="0.4" fill="none" />
-        <path d="M105 222 Q110 280 108 340 Q106 360 95 365" stroke="#00E5C4" strokeWidth="0.8" strokeOpacity="0.4" fill="none" />
+        <path
+          d="M42 190 Q40 215 55 220 Q70 225 80 222 Q90 225 105 220 Q120 215 118 190 Z"
+          fill="url(#bodyGrad)"
+          stroke="#00E5C4"
+          strokeWidth="0.7"
+          strokeOpacity="0.4"
+        />
+        <path
+          d="M55 222 Q50 280 52 340 Q54 360 65 365"
+          stroke="#00E5C4"
+          strokeWidth="0.8"
+          strokeOpacity="0.4"
+          fill="none"
+        />
+        <path
+          d="M105 222 Q110 280 108 340 Q106 360 95 365"
+          stroke="#00E5C4"
+          strokeWidth="0.8"
+          strokeOpacity="0.4"
+          fill="none"
+        />
 
         {/* Neural line */}
-        <line x1="78" y1="68" x2="78" y2="188" stroke="#38BDF8" strokeWidth="0.6" strokeOpacity="0.4" strokeDasharray="4 6" />
+        <line
+          x1="78"
+          y1="68"
+          x2="78"
+          y2="188"
+          stroke="#38BDF8"
+          strokeWidth="0.6"
+          strokeOpacity="0.4"
+          strokeDasharray="4 6"
+        />
 
         <defs>
           <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -93,13 +197,17 @@ function BodyGlyph() {
 /* ─── Hero Section ─── */
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden py-16 lg:py-24" aria-label="Hero">
+    <section
+      className="relative min-h-[90vh] flex items-center overflow-hidden py-16 lg:py-24"
+      aria-label="Hero"
+    >
       {/* Background gradients */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div
           className="absolute inset-0 opacity-20"
           style={{
-            background: "radial-gradient(ellipse 70% 50% at 50% -10%, rgba(0,229,196,0.15) 0%, transparent 70%)",
+            background:
+              "radial-gradient(ellipse 70% 50% at 50% -10%, rgba(0,229,196,0.15) 0%, transparent 70%)",
           }}
         />
         <div
@@ -130,9 +238,7 @@ export function HeroSection() {
                 Clinical Health Intelligence
               </span>
               <span className="h-3 w-px bg-[#1E2844]" />
-              <span className="font-mono text-[10px] text-[#8B8FA3]">
-                Tier 1 Medical Sources
-              </span>
+              <span className="font-mono text-[10px] text-[#8B8FA3]">Tier 1 Medical Sources</span>
             </motion.div>
 
             {/* Clear, specific, non-vague headline */}
@@ -152,8 +258,8 @@ export function HeroSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-5 max-w-xl text-base md:text-lg leading-relaxed text-[#8B8FA3]"
             >
-              Explore 30+ anatomical structures, 290+ peer-reviewed physiological mechanisms,
-              and evidence-rated natural remedies vetted against AHA, CDC, and WHO clinical guidelines.
+              Explore 30+ anatomical structures, 290+ peer-reviewed physiological mechanisms, and
+              evidence-rated natural remedies vetted against AHA, CDC, and WHO clinical guidelines.
             </motion.p>
 
             {/* Structured CTAs (no pill shapes) */}
@@ -194,9 +300,7 @@ export function HeroSection() {
                 { num: "39", label: "Studied Remedies" },
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col">
-                  <span className="font-mono text-2xl font-bold text-[#00E5C4]">
-                    {stat.num}
-                  </span>
+                  <span className="font-mono text-2xl font-bold text-[#00E5C4]">{stat.num}</span>
                   <span className="text-xs text-[#7B8199] mt-0.5">{stat.label}</span>
                 </div>
               ))}
@@ -245,9 +349,7 @@ export function HeroSection() {
                         <div className="font-mono text-[9px] uppercase tracking-wider text-[#7B8199]">
                           {card.label}
                         </div>
-                        <div className="font-semibold text-xs text-[#E8E0D5]">
-                          {card.value}
-                        </div>
+                        <div className="font-semibold text-xs text-[#E8E0D5]">{card.value}</div>
                       </div>
                     </div>
                   </div>
