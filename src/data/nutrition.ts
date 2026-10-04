@@ -22,58 +22,374 @@ export interface NutritionLevelMeta {
 export const NUTRITION_LEVELS: Record<NutritionLevel, NutritionLevelMeta> = {
   1: {
     level: 1,
-    title: "Tier 1: Foundational Whole Foods",
-    tagline: "Nutrient-Dense Unrefined Staples (NOVA Group 1)",
+    title: "Level 1: Natural Whole Foods",
+    tagline: "Fresh Fruits, Vegetables & Greens (Eat Generously)",
     description:
-      "Unprocessed or minimally processed whole foods with maximal micronutrient density per calorie, essential polyphenols, prebiotic fibers, and healthy fatty acid profiles.",
+      "Fresh, unprocessed foods directly from nature. Packed with natural water, vitamins, and gentle fiber that keep you full without excess calories.",
     targetShare: "60% - 70% of intake",
     badgeClass: "bg-teal-500/20 text-teal-300 border-teal-500/40",
     borderClass: "border-teal-500/30 hover:border-teal-500/60",
     bgClass: "bg-teal-500/5",
     accentColor: "#00E5C4",
-    recommendation: "Nutritional cornerstone. Emphasize diverse plant and lean protein sources.",
+    recommendation: "Your daily base. Make colorful vegetables and fresh fruits half your plate.",
   },
   2: {
     level: 2,
-    title: "Tier 2: Minimally Processed Staples",
-    tagline: "Complex Energy & Structural Nutrients",
+    title: "Level 2: Whole Grains & Staples",
+    tagline: "Millets, Dal, Curd & Eggs (Eat Every Meal)",
     description:
-      "Whole intact grains, legumes, and traditional dairy or clean animal proteins providing sustained glycemic release, satiety, and essential amino acids.",
+      "Wholesome grains, lentils, and traditional dairy. Digested slowly by your stomach to give steady, clean energy throughout the day without crashes.",
     targetShare: "25% - 30% of intake",
     badgeClass: "bg-sky-500/20 text-sky-300 border-sky-500/40",
     borderClass: "border-sky-500/30 hover:border-sky-500/60",
     bgClass: "bg-sky-500/5",
     accentColor: "#38BDF8",
-    recommendation: "Essential for sustained metabolic energy and tissue repair.",
+    recommendation: "Essential for all-day energy, strong muscles, and healthy digestion.",
   },
   3: {
     level: 3,
-    title: "Tier 3: Calorie-Dense Foods for Moderation",
-    tagline: "Portion-Sensitive Culinary Ingredients",
+    title: "Level 3: Cooking Fats & Natural Sweets",
+    tagline: "Ghee, Oils, Jaggery & Pickles (Eat in Small Spoons)",
     description:
-      "Foods offering valuable culinary context or specific nutrients, but characterized by high caloric density, concentrated saturated fats, or added sodium requiring mindful intake.",
+      "Concentrated culinary ingredients like cooking oils, ghee, jaggery, and achaar. Very high in energy, so enjoy them in measured, modest spoonfuls.",
     targetShare: "< 10% - 15% of intake",
     badgeClass: "bg-amber-500/20 text-amber-300 border-amber-500/40",
     borderClass: "border-amber-500/30 hover:border-amber-500/60",
     bgClass: "bg-amber-500/5",
     accentColor: "#F5A623",
-    recommendation: "Consume mindfully in measured portion sizes.",
+    recommendation: "Use a small spoon to measure cooking fats and sweet treats.",
   },
   4: {
     level: 4,
-    title: "Tier 4: Ultra-Processed Formulations",
-    tagline: "Industrial Formulations & Synthetic Additives (NOVA Group 4)",
+    title: "Level 4: Factory Packaged Snacks",
+    tagline: "Sodas, Chips & Instant Noodles (Eat Rarely)",
     description:
-      "Hyper-palatable formulations containing refined starches, added sugars, industrial trans fats, and cosmetic emulsifiers associated with metabolic deregulation.",
+      "Heavily processed factory foods made with refined flour, hidden sugars, and palm oil. They trick your brain into overeating and cause quick sugar spikes.",
     targetShare: "Strictly minimize (< 5%)",
     badgeClass: "bg-red-500/20 text-red-300 border-red-500/40",
     borderClass: "border-red-500/30 hover:border-red-500/60",
     bgClass: "bg-red-500/5",
     accentColor: "#FC3D21",
-    recommendation:
-      "Minimize or substitute with whole-food alternatives to protect metabolic and cardiovascular health.",
+    recommendation: "Swap with whole-food crunchy snacks like roasted chana or makhana.",
   },
 };
+
+export interface NutritionLevelTipFact {
+  id: string;
+  level: NutritionLevel;
+  type: "fact" | "tip";
+  title: {
+    en: string;
+    hi: string;
+  };
+  content: {
+    en: string;
+    hi: string;
+  };
+  takeaway: {
+    en: string;
+    hi: string;
+  };
+  readingGrade: string;
+}
+
+export const NUTRITION_LEVEL_TIPS_FACTS: NutritionLevelTipFact[] = [
+  // ─── Level 1: Foundational Whole Foods ───
+  {
+    id: "lvl1-fact-water-fiber",
+    level: 1,
+    type: "fact",
+    title: {
+      en: "Natural Water & Fiber Keep You Full",
+      hi: "प्राकृतिक पानी और फाइबर पेट भरा रखते हैं",
+    },
+    content: {
+      en: "Fresh vegetables and fruits are over 80% natural water and gentle fiber. They fill your belly comfortably without packing on unnecessary calories or artificial chemicals.",
+      hi: "ताजी सब्जियां और फल ज्यादातर प्राकृतिक पानी और फाइबर से भरे होते हैं। ये बिना गैर-जरूरी कैलोरी या केमिकल के आपका पेट आराम से भर देते हैं।",
+    },
+    takeaway: {
+      en: "Eat a hearty bowl of veggies without worrying about unwanted weight.",
+      hi: "वजन बढ़ने की चिंता किए बिना आप एक बड़ी कटोरी भरकर खा सकते हैं।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl1-tip-half-plate",
+    level: 1,
+    type: "tip",
+    title: {
+      en: "The Easy Half-Plate Rule",
+      hi: "आधी थाली का आसान नियम",
+    },
+    content: {
+      en: "When serving lunch or dinner, fill half your plate with colorful vegetables or a fresh salad first, before adding rice, dal, or roti.",
+      hi: "दोपहर या रात के खाने में सबसे पहले आधी थाली रंग-बिरंगी सब्जियों या सलाद से भरें, उसके बाद दाल, रोटी या चावल लें।",
+    },
+    takeaway: {
+      en: "Stops blood sugar spikes and keeps you from overeating naturally.",
+      hi: "यह शुगर को तेजी से बढ़ने से रोकता है और ज्यादा खाने से बचाता है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl1-fact-color-vitamins",
+    level: 1,
+    type: "fact",
+    title: {
+      en: "Bright Colors Mean Real Plant Shields",
+      hi: "सब्जियों के चटक रंग ही उनके असली विटामिन हैं",
+    },
+    content: {
+      en: "The deep red of tomatoes, bright orange of carrots, and dark green of spinach come from natural protective shields that keep your heart and cells healthy as you age.",
+      hi: "टमाटर का लाल रंग, गाजर का नारंगी रंग और पालक का हरा रंग प्राकृतिक रक्षक तत्वों से आता है जो आपके दिल और शरीर को स्वस्थ रखते हैं।",
+    },
+    takeaway: {
+      en: "Eating a rainbow of natural colors gives your body complete defense.",
+      hi: "हफ्ते भर अलग-अलग रंगों की सब्जियां खाने से शरीर को सभी जरूरी पोषक तत्व मिलते हैं।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl1-tip-gentle-cooking",
+    level: 1,
+    type: "tip",
+    title: {
+      en: "Steam or Sauté, Don't Boil Away Nutrients",
+      hi: "हल्का भाप में पकाएं, पानी फेंकने से बचें",
+    },
+    content: {
+      en: "Boiling vegetables in heavy water and throwing the liquid away washes away Vitamin C and B. Instead, lightly steam them or sauté with a few drops of oil.",
+      hi: "सब्जियों को बहुत ज्यादा पानी में उबालकर पानी फेंकने से उनके विटामिन नष्ट हो जाते हैं। उन्हें हल्का भाप में पकाएं या थोड़े तेल में हल्का भूनें।",
+    },
+    takeaway: {
+      en: "Veggies should stay slightly crunchy and vibrant on your plate.",
+      hi: "पकने के बाद भी सब्जियों का रंग चटक और स्वाद कुरकुरा रहना चाहिए।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+
+  // ─── Level 2: Whole Grains & Staples ───
+  {
+    id: "lvl2-fact-steady-energy",
+    level: 2,
+    type: "fact",
+    title: {
+      en: "Clean Energy for 3 to 4 Hours",
+      hi: "3 से 4 घंटे तक लगातार मिलती है ऊर्जा",
+    },
+    content: {
+      en: "Whole grains like bajra, oats, brown rice, and lentils take hours for your belly to digest. They release slow, steady energy without sudden sugar crashes.",
+      hi: "बाजरा, ओट्स, दालें और साबुत अनाज पचने में थोड़ा समय लेते हैं। इससे शरीर को बिना थकावट के धीरे-धीरे और लगातार ताकत मिलती रहती है।",
+    },
+    takeaway: {
+      en: "Keeps you energized and alert all through the afternoon.",
+      hi: "दोपहर के खाने के बाद सुस्ती या नींद आने से बचाता है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl2-tip-soaking-secret",
+    level: 2,
+    type: "tip",
+    title: {
+      en: "Soak Dal and Millets Before Cooking",
+      hi: "पकाने से पहले दाल और मिलेट्स को जरूर भिगोएं",
+    },
+    content: {
+      en: "Soaking dry lentils and millets in water for 4 to 8 hours washes away plant blockers that cause gas and bloating, making iron much easier to absorb.",
+      hi: "दालों और मिलेट्स को 4 से 8 घंटे पानी में भिगोकर रखने से गैस और पेट फूलने की समस्या खत्म होती है और शरीर ज्यादा आयरन सोख पाता है।",
+    },
+    takeaway: {
+      en: "Makes home-cooked meals feel light and easy on your stomach.",
+      hi: "खाना पेट के लिए हल्का और सुपाच्य बन जाता है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl2-fact-dal-rice-protein",
+    level: 2,
+    type: "fact",
+    title: {
+      en: "Dal + Rice Creates a Complete Protein",
+      hi: "दाल और चावल मिलकर बनाते हैं पूरा प्रोटीन",
+    },
+    content: {
+      en: "Rice is low in one protein building block, while lentils are low in another. Eating them together in a meal joins them into a 100% complete protein just like milk or eggs.",
+      hi: "चावल में एक जरूरी प्रोटीन ब्लॉक कम होता है और दाल में दूसरा। जब आप दोनों साथ खाते हैं, तो दूध या अंडे जैसा पूरा प्रोटीन तैयार हो जाता है।",
+    },
+    takeaway: {
+      en: "Traditional Indian khichdi or dal-chawal is already a complete muscle food.",
+      hi: "दाल-चावल या खिचड़ी शाकाहारी लोगों के लिए संपूर्ण प्रोटीन का उत्तम स्रोत है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl2-tip-curd-timing",
+    level: 2,
+    type: "tip",
+    title: {
+      en: "Have Fresh Curd or Chaas with Lunch",
+      hi: "दोपहर के भोजन के साथ ताजी छाछ या दही लें",
+    },
+    content: {
+      en: "Natural fermentation creates billions of friendly bacteria that help digest heavy grains. Whisk 1 cup curd with water, roasted cumin, and black salt.",
+      hi: "दही में अरबों अच्छे बैक्टीरिया होते हैं जो भोजन पचाने में मदद करते हैं। एक कटोरी दही या भुने जीरे वाली छाछ दोपहर में जरूर लें।",
+    },
+    takeaway: {
+      en: "Soothes your stomach and cools natural acidity.",
+      hi: "पेट की गर्मी शांत करता है और पाचन को दुरुस्त रखता है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+
+  // ─── Level 3: Cooking Fats & Natural Sweets ───
+  {
+    id: "lvl3-fact-spoon-calories",
+    level: 3,
+    type: "fact",
+    title: {
+      en: "One Spoon of Oil Packs 120 Calories",
+      hi: "एक चम्मच तेल में होती हैं 120 कैलोरी",
+    },
+    content: {
+      en: "Cooking oils and desi ghee are concentrated energy. A single tablespoon contains as many calories as a whole bowl of vegetables or a medium roti.",
+      hi: "तेल और देसी घी ऊर्जा का बहुत गाढ़ा रूप हैं। सिर्फ एक बड़ा चम्मच तेल उतनी ही कैलोरी देता है जितनी एक पूरी कटोरी सब्जी या एक रोटी।",
+    },
+    takeaway: {
+      en: "Healthy fats are essential, but a little spoon goes a very long way.",
+      hi: "अच्छी वसा जरूरी है, लेकिन थोड़ी सी मात्रा ही काफी होती है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl3-tip-spoon-measurement",
+    level: 3,
+    type: "tip",
+    title: {
+      en: "Use a Small Spoon, Don't Pour Freehand",
+      hi: "तेल हमेशा छोटी चम्मच से नापें, बोतल से सीधे न डालें",
+    },
+    content: {
+      en: "When tempering tadka or sautéing, measure 1 to 2 small teaspoons per person instead of tilting the oil bottle. This saves 200–300 hidden calories without changing taste.",
+      hi: "सब्जी या तड़का बनाते समय प्रति व्यक्ति 1-2 छोटी चम्मच तेल नापकर डालें। इससे स्वाद में बिना किसी कमी के रोज 200-300 अतिरिक्त कैलोरी बचती हैं।",
+    },
+    takeaway: {
+      en: "An effortless trick to maintain a healthy weight and light heart.",
+      hi: "वजन और कोलेस्ट्रॉल नियंत्रित रखने का सबसे आसान उपाय।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl3-fact-jaggery-sugar",
+    level: 3,
+    type: "fact",
+    title: {
+      en: "Desi Jaggery (Gur) Still Raises Blood Sugar",
+      hi: "देसी गुड़ भी खून में तेजी से शुगर बढ़ाता है",
+    },
+    content: {
+      en: "While unrefined jaggery is free of white sugar bleach chemicals and carries small minerals, it is still 80% sugar and enters your blood nearly as fast as table sugar.",
+      hi: "यद्यपि गुड़ में केमिकल नहीं होते और कुछ खनिज होते हैं, फिर भी यह 80% चीनी ही है और सफेद चीनी की तरह ही तेजी से खून में शुगर बढ़ाता है।",
+    },
+    takeaway: {
+      en: "Eat a small bite after food for taste, but never treat it as sugar-free.",
+      hi: "स्वाद के लिए एक छोटा टुकड़ा ठीक है, लेकिन इसे शुगर-फ्री समझकर अधिक न खाएं।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl3-tip-achaar-moderation",
+    level: 3,
+    type: "tip",
+    title: {
+      en: "Take the Vegetable Piece, Leave the Salty Oil",
+      hi: "अचार का टुकड़ा लें, नीचे जमा खारा तेल छोड़ दें",
+    },
+    content: {
+      en: "Sun-fermented achaar is packed with gut-friendly microbes, but the oil and salt at the bottom are very concentrated. Take just 1 small piece of mango or chili.",
+      hi: "धूप में पका पारंपरिक अचार पेट के लिए अच्छा है, लेकिन नीचे का तेल और नमक बहुत गाढ़ा होता है। सिर्फ एक छोटा टुकड़ा लें और अधिक तेल न लें।",
+    },
+    takeaway: {
+      en: "You get delicious probiotic tang without spiking your blood pressure.",
+      hi: "ब्लड प्रेशर बढ़ाए बिना आपको अचार का पूरा स्वाद और फायदा मिलता है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+
+  // ─── Level 4: Factory Packaged Snacks ───
+  {
+    id: "lvl4-fact-bliss-point",
+    level: 4,
+    type: "fact",
+    title: {
+      en: "Factory Snacks Are Made to Trick Your Brain",
+      hi: "पैकेटबंद स्नैक्स दिमाग को धोखा देने के लिए बने हैं",
+    },
+    content: {
+      en: "Industrial snacks blend refined white flour, palm oil, salt, and flavor enhancers in exact lab ratios that block your brain's natural fullness signal.",
+      hi: "कंपनियां पैकेट वाले चिप्स और बिस्कुट में मैदा, पाम ऑयल और नमक इस तरह मिलाती हैं कि पेट भरने के बाद भी दिमाग का रुकने का सिग्नल बंद हो जाता है।",
+    },
+    takeaway: {
+      en: "It is not your fault—these foods are engineered to make you overeat.",
+      hi: "यह आपकी कमजोरी नहीं है—ये खाद्य पदार्थ बनाए ही ऐसे जाते हैं कि आप खाते रहें।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl4-tip-kitchen-cupboard",
+    level: 4,
+    type: "tip",
+    title: {
+      en: "The 5-Ingredient Kitchen Cupboard Rule",
+      hi: "5 सामग्री का सरल किचन नियम",
+    },
+    content: {
+      en: "Flip the food box and scan the ingredient list. If it has more than 5 ingredients, or chemical names you would never cook with at home (like maltodextrin or emulsifiers), eat it only occasionally.",
+      hi: "पैकेट के पीछे लिखी सामग्री पढ़ें। अगर उसमें 5 से ज्यादा चीजें हैं या ऐसे रासायनिक नाम हैं जो आपकी रसोई में नहीं होते, तो इसे रोज का भोजन न बनाएं।",
+    },
+    takeaway: {
+      en: "If your grandmother wouldn't recognize it as food, enjoy it as a rare treat.",
+      hi: "जो चीजें दादी-नानी के जमाने में नहीं थीं, उन्हें कभी-कभार ही खाएं।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl4-fact-liquid-sugar",
+    level: 4,
+    type: "fact",
+    title: {
+      en: "Liquid Sugar in Bottled Drinks Hits Instantly",
+      hi: "बोतलबंद मीठे पेय की चीनी तुरंत खून में घुलती है",
+    },
+    content: {
+      en: "Packaged juices, energy drinks, and fizzy colas have zero fiber. Their 6 to 8 teaspoons of sugar dump straight into your bloodstream in minutes, stressing your liver.",
+      hi: "डिब्बाबंद जूस और कोल्ड ड्रिंक्स में कोई फाइबर नहीं होता। इनमें मौजूद 6 से 8 चम्मच चीनी कुछ ही मिनटों में सीधे खून और लिवर पर दबाव डालती है।",
+    },
+    takeaway: {
+      en: "A whole fruit with natural fiber is 10 times healthier than boxed juice.",
+      hi: "डिब्बाबंद जूस के बजाय पूरा फल चबाकर खाना 10 गुना ज्यादा फायदेमंद है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl4-tip-smart-crunchy-swaps",
+    level: 4,
+    type: "tip",
+    title: {
+      en: "Crunchy Healthy Swaps for Tea Time",
+      hi: "शाम की चाय के साथ कुरकुरे और पौष्टिक विकल्प",
+    },
+    content: {
+      en: "Craving something crispy? Swap fried potato chips for roasted chana, roasted makhana (fox nuts) with turmeric and a pinch of salt, or roasted peanuts.",
+      hi: "शाम को चाय के साथ कुरकुरा खाने का मन हो तो तले हुए चिप्स की जगह भुने चने, हल्दी-नमक वाले मखाने या भुनी मूंगफली खाएं।",
+    },
+    takeaway: {
+      en: "Gives you real protein, fiber, and crisp satisfaction without factory palm oil.",
+      hi: "शरीर को असली प्रोटीन और फाइबर मिलता है, बिना किसी मिलावटी तेल के।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+];
 
 export interface FoodFactEntry {
   id: string;

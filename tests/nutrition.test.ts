@@ -76,7 +76,38 @@ import {
   FOOD_SYNERGIES,
   DRUG_FOOD_WARNINGS,
   NUTRITION_LEVELS,
+  NUTRITION_LEVEL_TIPS_FACTS,
 } from "../src/data/nutrition";
+
+describe("Nutrition Level Small Facts and Tips Integrity", () => {
+  it("contains 16 curated facts and tips across all 4 nutrition levels", () => {
+    expect(NUTRITION_LEVEL_TIPS_FACTS.length).toBe(16);
+  });
+
+  it("ensures each level has both facts and actionable tips in plain language", () => {
+    for (const lvl of [1, 2, 3, 4] as const) {
+      const items = NUTRITION_LEVEL_TIPS_FACTS.filter((t) => t.level === lvl);
+      expect(items.length).toBeGreaterThanOrEqual(4);
+      expect(items.some((t) => t.type === "fact")).toBe(true);
+      expect(items.some((t) => t.type === "tip")).toBe(true);
+    }
+  });
+
+  it("validates bilingual clarity and takeaway for each fact and tip", () => {
+    for (const item of NUTRITION_LEVEL_TIPS_FACTS) {
+      expect(item.id).toBeTruthy();
+      expect([1, 2, 3, 4]).toContain(item.level);
+      expect(["fact", "tip"]).toContain(item.type);
+      expect(item.title.en.length).toBeGreaterThan(5);
+      expect(item.title.hi.length).toBeGreaterThan(5);
+      expect(item.content.en.length).toBeGreaterThan(15);
+      expect(item.content.hi.length).toBeGreaterThan(15);
+      expect(item.takeaway.en.length).toBeGreaterThan(10);
+      expect(item.takeaway.hi.length).toBeGreaterThan(10);
+      expect(item.readingGrade).toMatch(/Grade 6/);
+    }
+  });
+});
 
 describe("Indian Food Facts Clinical Database Integrity", () => {
   it("contains all 12 curated Indian superfoods and staples", () => {

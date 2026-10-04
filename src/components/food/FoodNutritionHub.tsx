@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { useBodyStore } from "@/store/useBodyStore";
 import {
   NUTRITION_LEVELS,
+  NUTRITION_LEVEL_TIPS_FACTS,
   FOOD_FACTS,
   FOOD_SYNERGIES,
   DRUG_FOOD_WARNINGS,
@@ -42,38 +43,17 @@ export function FoodNutritionHub() {
   const [selectedSituation, setSelectedSituation] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Calculator state
-  const [bodyWeight, setBodyWeight] = useState<number>(70);
-  const [activityFactor, setActivityFactor] = useState<"sedentary" | "moderate" | "active">(
-    "moderate",
-  );
+  // Small facts & tips filter state
+  const [levelTipsFilter, setLevelTipsFilter] = useState<NutritionLevel | "all">("all");
+  const [levelTipsType, setLevelTipsType] = useState<"all" | "fact" | "tip">("all");
 
-  // Calculate personalized nutrition benchmark ranges
-  const nutritionTargets = useMemo(() => {
-    const weight = Math.max(35, Math.min(140, bodyWeight || 70));
-    let proteinRange: [number, number];
-    let waterRange: [string, string];
-
-    if (activityFactor === "sedentary") {
-      proteinRange = [Math.round(weight * 0.8), Math.round(weight * 1.0)];
-      waterRange = [((weight * 30) / 1000).toFixed(1), ((weight * 35) / 1000).toFixed(1)];
-    } else if (activityFactor === "active") {
-      proteinRange = [Math.round(weight * 1.4), Math.round(weight * 1.8)];
-      waterRange = [((weight * 38) / 1000).toFixed(1), ((weight * 45) / 1000).toFixed(1)];
-    } else {
-      proteinRange = [Math.round(weight * 1.0), Math.round(weight * 1.3)];
-      waterRange = [((weight * 33) / 1000).toFixed(1), ((weight * 38) / 1000).toFixed(1)];
-    }
-
-    return {
-      proteinMin: proteinRange[0],
-      proteinMax: proteinRange[1],
-      fiberMin: 25,
-      fiberMax: 38,
-      waterMin: waterRange[0],
-      waterMax: waterRange[1],
-    };
-  }, [bodyWeight, activityFactor]);
+  const filteredLevelTipsFacts = useMemo(() => {
+    return NUTRITION_LEVEL_TIPS_FACTS.filter((item) => {
+      const matchesLevel = levelTipsFilter === "all" || item.level === levelTipsFilter;
+      const matchesType = levelTipsType === "all" || item.type === levelTipsType;
+      return matchesLevel && matchesType;
+    });
+  }, [levelTipsFilter, levelTipsType]);
 
   // Filtered Food Facts
   const filteredFacts = useMemo(() => {
@@ -206,12 +186,12 @@ export function FoodNutritionHub() {
           {[
             { id: "spectrum", label: language === "hi" ? "4 स्तर" : "4 Levels", icon: Layers },
             {
-              id: "calculator",
-              label: language === "hi" ? "कैलकुलेटर" : "Calculator",
-              icon: Scale,
+              id: "level-tips",
+              label: language === "hi" ? "टिप्स व फैक्ट्स" : "Tips & Facts",
+              icon: Sparkles,
             },
-            { id: "tips", label: language === "hi" ? "नियम व टिप्स" : "Tips & Rules", icon: Apple },
-            { id: "synergies", label: language === "hi" ? "तालमेल" : "Synergies", icon: Sparkles },
+            { id: "facts", label: language === "hi" ? "फूड फैक्ट्स" : "Food Facts", icon: Apple },
+            { id: "synergies", label: language === "hi" ? "तालमेल" : "Synergies", icon: Flame },
             {
               id: "interactions",
               label: language === "hi" ? "दवा चेतावनी" : "Drug Alerts",
@@ -326,196 +306,178 @@ export function FoodNutritionHub() {
           )}
         </section>
 
-        {/* ─── SECTION 2: Interactive Daily Nutrition Calculator ─── */}
+        {/* ─── SECTION 2: Small Facts & Practical Tips for Every Nutrition Level ─── */}
         <section
-          id="calculator"
-          aria-labelledby="calc-heading"
+          id="level-tips"
+          aria-labelledby="level-tips-heading"
           className="mb-12 sm:mb-16 scroll-mt-24"
         >
           <div className="rounded-2xl sm:rounded-3xl border border-white/10 bg-[#0A0E1A] p-4 sm:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="max-w-3xl mb-6 sm:mb-8">
-              <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#00E5C4] block">
-                {language === "hi" ? "दैनिक पोषण लक्ष्य" : "Clinical Target Calculator"}
-              </span>
-              <h2
-                id="calc-heading"
-                className="text-xl sm:text-3xl font-bold text-white tracking-tight mt-1"
-              >
-                {language === "hi"
-                  ? "अपनी व्यक्तिगत पोषण आवश्यकताएं जानें"
-                  : "Personalized Daily Nutrition Benchmarks"}
-              </h2>
-              <p className="text-xs sm:text-sm text-[#8A8F98] mt-2 leading-relaxed">
-                {language === "hi"
-                  ? "अपने वजन और शारीरिक सक्रियता के अनुसार दैनिक प्रोटीन, आहार फाइबर और पानी की अनुशंसित मात्रा की गणना करें।"
-                  : "Calculate baseline protein distribution, dietary fiber thresholds, and cellular hydration targets based on clinical RDA formulas."}
-              </p>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:mb-8">
+              <div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-400 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-2.5">
+                  <Sparkles className="w-3.5 h-3.5 text-teal-400" />
+                  <span>
+                    {language === "hi"
+                      ? "छोटे फैक्ट्स और रसोई टिप्स"
+                      : "Bite-Sized Facts & Kitchen Tips"}
+                  </span>
+                </div>
+                <h2
+                  id="level-tips-heading"
+                  className="text-xl sm:text-3xl font-bold text-white tracking-tight"
+                >
+                  {language === "hi"
+                    ? "प्रत्येक पोषण स्तर के आसान फैक्ट्स और टिप्स"
+                    : "Easy Facts & Tips for Every Nutrition Level"}
+                </h2>
+                <p className="text-xs sm:text-sm text-[#8A8F98] mt-1.5 max-w-2xl leading-relaxed">
+                  {language === "hi"
+                    ? "कठिन वैज्ञानिक शब्दों के बिना, अपनी दैनिक थाली और रसोई के लिए सरल, सिद्ध और आजमाने योग्य बातें।"
+                    : "Clear everyday wisdom for your kitchen table. Learn what each food level really does to your body without complicated words."}
+                </p>
+              </div>
+
+              {/* Type Toggle: All / Facts / Tips */}
+              <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white/5 border border-white/10 self-start md:self-auto shrink-0">
+                {(
+                  [
+                    { id: "all", label: language === "hi" ? "सभी (16)" : "All (16)" },
+                    { id: "fact", label: language === "hi" ? "💡 फैक्ट्स (8)" : "💡 Facts (8)" },
+                    { id: "tip", label: language === "hi" ? "⚡ टिप्स (8)" : "⚡ Tips (8)" },
+                  ] as const
+                ).map((tab) => (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    onClick={() => setLevelTipsType(tab.id)}
+                    className={`min-h-[38px] px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                      levelTipsType === tab.id
+                        ? "bg-[#00E5C4] text-black shadow-sm font-bold"
+                        : "text-[#8A8F98] hover:text-white"
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
-              {/* Inputs */}
-              <div className="lg:col-span-5 space-y-5 sm:space-y-6">
-                <div>
-                  <div className="flex justify-between items-center mb-2.5">
-                    <label
-                      htmlFor="weight-input"
-                      className="text-xs font-bold uppercase tracking-wider text-[#8A8F98]"
-                    >
-                      {language === "hi" ? "शरीर का वजन" : "Body Weight"}
-                    </label>
-                    <div className="flex items-center gap-1.5">
-                      <button
-                        type="button"
-                        onClick={() => setBodyWeight((w) => Math.max(35, w - 5))}
-                        aria-label="Decrease weight by 5 kg"
-                        className="h-7 w-7 rounded-md bg-white/5 border border-white/10 text-white font-mono font-bold text-xs flex items-center justify-center active:scale-95 active:bg-white/20 transition-all"
-                      >
-                        -5
-                      </button>
-                      <span className="text-xs sm:text-sm font-mono font-bold text-[#00E5C4] px-1">
-                        {bodyWeight} kg ({(bodyWeight * 2.20462).toFixed(0)} lbs)
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => setBodyWeight((w) => Math.min(140, w + 5))}
-                        aria-label="Increase weight by 5 kg"
-                        className="h-7 w-7 rounded-md bg-white/5 border border-white/10 text-white font-mono font-bold text-xs flex items-center justify-center active:scale-95 active:bg-white/20 transition-all"
-                      >
-                        +5
-                      </button>
+            {/* Level Selector Pills */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-2 mb-6 touch-scroll -mx-4 px-4 sm:mx-0 sm:px-0">
+              <span className="text-[11px] font-bold text-[#8A8F98] uppercase tracking-wider shrink-0 mr-1">
+                {language === "hi" ? "स्तर चुनें:" : "Filter Level:"}
+              </span>
+              {[
+                {
+                  id: "all",
+                  label: language === "hi" ? "सभी 4 स्तर" : "All 4 Levels",
+                  color: "border-white/20 text-white",
+                },
+                {
+                  id: 1,
+                  label: language === "hi" ? "स्तर 1: ताजी सब्जियां व फल" : "Level 1: Whole Foods",
+                  color: "border-teal-500/40 text-teal-300",
+                },
+                {
+                  id: 2,
+                  label: language === "hi" ? "स्तर 2: अनाज, दाल व दही" : "Level 2: Grains & Dal",
+                  color: "border-sky-500/40 text-sky-300",
+                },
+                {
+                  id: 3,
+                  label:
+                    language === "hi" ? "स्तर 3: तेल, घी व गुड़" : "Level 3: Fats & Moderation",
+                  color: "border-amber-500/40 text-amber-300",
+                },
+                {
+                  id: 4,
+                  label:
+                    language === "hi" ? "स्तर 4: पैकेटबंद स्नैक्स" : "Level 4: Packaged Snacks",
+                  color: "border-red-500/40 text-red-300",
+                },
+              ].map((pill) => {
+                const isActive = levelTipsFilter === pill.id;
+                return (
+                  <button
+                    key={String(pill.id)}
+                    type="button"
+                    onClick={() => setLevelTipsFilter(pill.id as NutritionLevel | "all")}
+                    className={`min-h-[40px] px-3.5 py-1.5 rounded-xl text-xs font-semibold shrink-0 border transition-all flex items-center gap-1.5 ${
+                      isActive
+                        ? "bg-white/15 border-white text-white shadow-md ring-1 ring-white/30"
+                        : `bg-white/[0.03] ${pill.color} hover:bg-white/[0.07]`
+                    }`}
+                  >
+                    <span>{pill.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Facts and Tips Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {filteredLevelTipsFacts.map((item) => {
+                const meta = NUTRITION_LEVELS[item.level];
+                const isFact = item.type === "fact";
+
+                return (
+                  <div
+                    key={item.id}
+                    className={`rounded-2xl border p-4 sm:p-5 flex flex-col justify-between transition-all hover:border-white/30 ${meta.borderClass} ${meta.bgClass}`}
+                  >
+                    <div>
+                      {/* Top Badges */}
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <span
+                          className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border ${meta.badgeClass}`}
+                        >
+                          Level {item.level}
+                        </span>
+                        <span
+                          className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border ${
+                            isFact
+                              ? "bg-purple-500/10 text-purple-300 border-purple-500/30"
+                              : "bg-emerald-500/10 text-emerald-300 border-emerald-500/30"
+                          }`}
+                        >
+                          {isFact
+                            ? language === "hi"
+                              ? "💡 छोटा फैक्ट"
+                              : "💡 Small Fact"
+                            : language === "hi"
+                              ? "⚡ आसान टिप"
+                              : "⚡ Kitchen Tip"}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-sm sm:text-base font-bold text-white mb-2 leading-snug">
+                        {item.title[language]}
+                      </h3>
+
+                      {/* Content in Simple Words */}
+                      <p className="text-xs text-[#C5C8CE] leading-relaxed mb-4">
+                        {item.content[language]}
+                      </p>
+                    </div>
+
+                    {/* Key Takeaway Pill */}
+                    <div className="pt-3 border-t border-white/10">
+                      <div className="rounded-xl bg-white/[0.04] border border-white/10 p-2.5">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#00E5C4] block mb-0.5">
+                          {language === "hi" ? "मुख्य सीख / टिप:" : "Easy takeaway:"}
+                        </span>
+                        <p className="text-[11px] font-medium text-white/90 leading-tight">
+                          {item.takeaway[language]}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <input
-                    id="weight-input"
-                    type="range"
-                    min="35"
-                    max="140"
-                    step="1"
-                    value={bodyWeight}
-                    onChange={(e) => setBodyWeight(Number(e.target.value))}
-                    className="w-full h-3 bg-white/10 rounded-lg cursor-pointer appearance-none accent-[#00E5C4] [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#00E5C4] [&::-webkit-slider-thumb]:shadow-lg active:[&::-webkit-slider-thumb]:scale-110"
-                  />
-                  <div className="flex justify-between text-[10px] text-[#8A8F98] font-mono mt-1.5">
-                    <span>35 kg</span>
-                    <span>70 kg</span>
-                    <span>140 kg</span>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#8A8F98] mb-2">
-                    {language === "hi" ? "शारीरिक सक्रियता स्तर" : "Physical Activity Level"}
-                  </label>
-                  <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
-                    {(
-                      [
-                        {
-                          id: "sedentary",
-                          label: language === "hi" ? "बैठे रहना" : "Desk / Light",
-                        },
-                        { id: "moderate", label: language === "hi" ? "मध्यम" : "Moderate" },
-                        { id: "active", label: language === "hi" ? "सक्रिय" : "Heavy / Sport" },
-                      ] as const
-                    ).map((lvl) => (
-                      <button
-                        key={lvl.id}
-                        type="button"
-                        onClick={() => setActivityFactor(lvl.id)}
-                        className={`min-h-[46px] px-2 sm:px-3 py-2 rounded-xl text-[11px] sm:text-xs font-bold border transition-all text-center leading-tight flex items-center justify-center ${
-                          activityFactor === lvl.id
-                            ? "bg-[#00E5C4] text-black border-[#00E5C4] shadow-md shadow-teal-500/20"
-                            : "bg-white/[0.03] text-[#8A8F98] border-white/10 hover:text-white"
-                        }`}
-                      >
-                        {lvl.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Output Cards */}
-              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-                {/* Protein Target */}
-                <div className="rounded-xl sm:rounded-2xl border border-teal-500/30 bg-teal-500/5 p-4 sm:p-5 flex flex-col justify-between">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-bold text-teal-400 uppercase tracking-widest">
-                      {language === "hi" ? "दैनिक प्रोटीन दायरा" : "Daily Protein Range"}
-                    </span>
-                    <Scale className="w-4 h-4 text-teal-400" />
-                  </div>
-                  <div>
-                    <span className="text-2xl sm:text-3xl font-mono font-black text-white">
-                      {nutritionTargets.proteinMin} – {nutritionTargets.proteinMax}
-                    </span>
-                    <span className="text-xs font-mono text-teal-300 ml-1">g / day</span>
-                  </div>
-                  <p className="text-[11px] text-[#8A8F98] mt-2.5 sm:mt-3 leading-tight">
-                    {language === "hi"
-                      ? "प्रति भोजन 25-30g बांटकर खाएं ताकि मांसपेशियों का रखरखाव हो सके।"
-                      : "Paced across meals (0.8–1.8 g/kg based on activity). Healthy adult reference only."}
-                  </p>
-                </div>
-
-                {/* Fiber Target */}
-                <div className="rounded-xl sm:rounded-2xl border border-sky-500/30 bg-sky-500/5 p-4 sm:p-5 flex flex-col justify-between">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-bold text-sky-400 uppercase tracking-widest">
-                      {language === "hi" ? "आहार फाइबर दायरा" : "Dietary Fiber Range"}
-                    </span>
-                    <Activity className="w-4 h-4 text-sky-400" />
-                  </div>
-                  <div>
-                    <span className="text-2xl sm:text-3xl font-mono font-black text-white">
-                      {nutritionTargets.fiberMin} – {nutritionTargets.fiberMax}
-                    </span>
-                    <span className="text-xs font-mono text-sky-300 ml-1">g / day</span>
-                  </div>
-                  <p className="text-[11px] text-[#8A8F98] mt-2.5 sm:mt-3 leading-tight">
-                    {language === "hi"
-                      ? "आंतों के अच्छे बैक्टीरिया को पोषित करने और शुगर स्पाइक रोकने के लिए आवश्यक।"
-                      : "Institute of Medicine standard for glycemic regulation and microbiome diversity."}
-                  </p>
-                </div>
-
-                {/* Water Target */}
-                <div className="rounded-xl sm:rounded-2xl border border-blue-500/30 bg-blue-500/5 p-4 sm:p-5 flex flex-col justify-between">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">
-                      {language === "hi" ? "जलयोजन दायरा" : "Hydration Range"}
-                    </span>
-                    <Droplets className="w-4 h-4 text-blue-400" />
-                  </div>
-                  <div>
-                    <span className="text-2xl sm:text-3xl font-mono font-black text-white">
-                      {nutritionTargets.waterMin} – {nutritionTargets.waterMax}
-                    </span>
-                    <span className="text-xs font-mono text-blue-300 ml-1">L / day</span>
-                  </div>
-                  <p className="text-[11px] text-[#8A8F98] mt-2.5 sm:mt-3 leading-tight">
-                    {language === "hi"
-                      ? "गुर्दे की निस्पंदन और कोशिका कार्यप्रणाली को बनाए रखने के लिए आधारभूत मात्रा।"
-                      : "General fluid intake. Restricted fluid protocols apply to CHF or kidney disease."}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Clinical Exclusion & Guardrail Banner */}
-            <div className="mt-6 pt-5 border-t border-white/10 bg-amber-500/5 rounded-xl p-4 border border-amber-500/20 text-xs text-amber-300 leading-relaxed">
-              <strong className="text-amber-200 uppercase tracking-wider block mb-1">
-                Clinical Exclusions & Boundary Notice:
-              </strong>
-              These calculated reference intervals apply strictly to healthy adults (age 18+). They
-              are{" "}
-              <strong>
-                NOT calibrated for children, pregnancy, lactation, active eating disorders, or
-                chronic kidney disease (CKD stages 3–5)
-              </strong>
-              . Individuals with renal impairment, liver failure, or congestive heart failure must
-              adhere to their clinical specialist's exact prescribed macro and fluid restrictions.
+                );
+              })}
             </div>
           </div>
         </section>
