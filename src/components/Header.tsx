@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { to: "/explore", labelKey: "explore" as const, code: "XPL-01" },
   { to: "/food", labelKey: "food" as const, code: "NTR-02" },
   { to: "/library", labelKey: "library" as const, code: "LIB-03" },
-  { to: "/symptoms", labelKey: "symptoms" as const, code: "SYM-04" },
   { to: "/emergency", labelKey: "emergency" as const, code: "EMG-05" },
   { to: "/facts", labelKey: "facts" as const, code: "FCT-06" },
   { to: "/food-labels", labelKey: "foodLabels" as const, code: "FL-10" },

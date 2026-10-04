@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
-import { Route as SymptomsRouteImport } from './routes/symptoms'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as LibraryRouteImport } from './routes/library'
@@ -27,11 +26,6 @@ import { Route as IndexRouteImport } from './routes/index'
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SymptomsRoute = SymptomsRouteImport.update({
-  id: '/symptoms',
-  path: '/symptoms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -108,7 +102,6 @@ export interface FileRoutesByFullPath {
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
   '/privacy': typeof PrivacyRoute
-  '/symptoms': typeof SymptomsRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRoutesByTo {
@@ -124,7 +117,6 @@ export interface FileRoutesByTo {
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
   '/privacy': typeof PrivacyRoute
-  '/symptoms': typeof SymptomsRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRoutesById {
@@ -141,7 +133,6 @@ export interface FileRoutesById {
   '/library': typeof LibraryRoute
   '/onboarding': typeof OnboardingRoute
   '/privacy': typeof PrivacyRoute
-  '/symptoms': typeof SymptomsRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
@@ -159,7 +150,6 @@ export interface FileRouteTypes {
     | '/library'
     | '/onboarding'
     | '/privacy'
-    | '/symptoms'
     | '/terms'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -175,7 +165,6 @@ export interface FileRouteTypes {
     | '/library'
     | '/onboarding'
     | '/privacy'
-    | '/symptoms'
     | '/terms'
   id:
     | '__root__'
@@ -191,7 +180,6 @@ export interface FileRouteTypes {
     | '/library'
     | '/onboarding'
     | '/privacy'
-    | '/symptoms'
     | '/terms'
   fileRoutesById: FileRoutesById
 }
@@ -208,7 +196,6 @@ export interface RootRouteChildren {
   LibraryRoute: typeof LibraryRoute
   OnboardingRoute: typeof OnboardingRoute
   PrivacyRoute: typeof PrivacyRoute
-  SymptomsRoute: typeof SymptomsRoute
   TermsRoute: typeof TermsRoute
 }
 
@@ -219,13 +206,6 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/symptoms': {
-      id: '/symptoms'
-      path: '/symptoms'
-      fullPath: '/symptoms'
-      preLoaderRoute: typeof SymptomsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -328,7 +308,6 @@ const rootRouteChildren: RootRouteChildren = {
   LibraryRoute: LibraryRoute,
   OnboardingRoute: OnboardingRoute,
   PrivacyRoute: PrivacyRoute,
-  SymptomsRoute: SymptomsRoute,
   TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport

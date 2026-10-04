@@ -17,6 +17,7 @@ import {
   CheckCircle2,
   Info,
   Apple,
+  FileQuestion,
 } from "lucide-react";
 
 export function MobileBottomNav() {
@@ -55,11 +56,11 @@ export function MobileBottomNav() {
       badgeColor: "bg-[#00E5C4]",
     },
     {
-      to: "/symptoms",
-      label: language === "hi" ? "लक्षण" : "Symptoms",
-      icon: Activity,
-      activeColor: "text-[#FC3D21]",
-      badgeColor: "bg-[#FC3D21]",
+      to: "/food",
+      label: language === "hi" ? "पोषण" : "Nutrition",
+      icon: Apple,
+      activeColor: "text-teal-400",
+      badgeColor: "bg-teal-400",
     },
     {
       to: "/library",
@@ -80,13 +81,13 @@ export function MobileBottomNav() {
 
   const secondaryLinks = [
     {
-      to: "/food",
-      title: language === "hi" ? "भोजन और पोषण स्तर" : "Food & Nutrition Levels",
-      subtitle: language === "hi" ? "4-स्तरीय वर्गीकरण, पोषक नियम और तालमेल" : "4-level food spectrum, metabolic hacks & targets",
-      icon: Apple,
-      color: "text-teal-400",
-      bg: "bg-teal-400/10",
-      border: "border-teal-400/20",
+      to: "/explain",
+      title: language === "hi" ? "चिकित्सा शब्दावली" : "Terminology Explainer",
+      subtitle: language === "hi" ? "सरल भाषा में चिकित्सा शब्दों को समझें" : "Demystify clinical jargon into plain terms",
+      icon: FileQuestion,
+      color: "text-sky-400",
+      bg: "bg-sky-400/10",
+      border: "border-sky-400/20",
     },
     {
       to: "/facts",

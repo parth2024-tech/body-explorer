@@ -268,7 +268,7 @@ export function FooterSection() {
       { label: "Verified Body Facts", to: "/facts" },
     ],
     Clinical: [
-      { label: "Symptom Guide", to: "/symptoms" },
+      { label: "Food & Nutrition", to: "/food" },
       { label: "Explain Terminology", to: "/explain" },
       { label: "Emergency Red Flags", to: "/emergency" },
     ],

@@ -5,7 +5,6 @@ import {
   Compass,
   FileQuestion,
   Calendar,
-  Layers,
   BookOpen,
   ArrowRight,
   ShieldAlert,
@@ -78,17 +77,6 @@ const FEATURES = [
     desc: "Peer-reviewed medical literature indexed by system, organ, and condition. Grounded in CDC, WHO, and AHA clinical standards.",
     stats: ["Tier 1/2 Sources", "Cross-Linked", "Peer-Reviewed"],
     link: "/library",
-  },
-  {
-    id: "symptoms",
-    icon: Layers,
-    code: "SYM",
-    color: "#38BDF8",
-    title: "Symptom Navigator",
-    tagline: "Organ-Guided Context",
-    desc: "Understand how localized symptoms correlate with specific anatomical structures, complete with discussion prompts for physicians.",
-    stats: ["Educational Focus", "Anatomy-Linked", "Doctor Questions"],
-    link: "/symptoms",
   },
 ];
 
