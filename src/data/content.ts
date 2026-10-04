@@ -4043,7 +4043,6 @@ export const TRANSLATIONS = {
     scienceBehind: "The Science Behind It",
     medicalReviewed: "Medically Reviewed",
     foodLabels: "Food Labels",
-    food: "Food & Nutrition",
   },
   hi: {
     home: "होम",
@@ -4074,7 +4073,6 @@ export const TRANSLATIONS = {
     scienceBehind: "इसके पीछे का विज्ञान",
     medicalReviewed: "चिकित्सकीय रूप से परीक्षित",
     foodLabels: "खाद्य लेबल",
-    food: "भोजन और पोषण",
   },
 } as const;
 

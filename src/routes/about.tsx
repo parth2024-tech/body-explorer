@@ -132,7 +132,7 @@ function About() {
       >
         <h2 className="text-xl font-bold text-[#E8E0D5]">Explore the Anatomical Reference</h2>
         <p className="mt-2 text-xs md:text-sm text-[#8B8FA3]">
-          Start examining anatomical structures, nutrition intelligence, and peer-reviewed biological insights.
+          Start examining anatomical structures, symptoms, and peer-reviewed biological insights.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
