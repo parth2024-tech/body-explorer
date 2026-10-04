@@ -80,14 +80,14 @@ import {
 } from "../src/data/nutrition";
 
 describe("Nutrition Level Small Facts and Tips Integrity", () => {
-  it("contains 16 curated facts and tips across all 4 nutrition levels", () => {
-    expect(NUTRITION_LEVEL_TIPS_FACTS.length).toBe(16);
+  it("contains 24 curated facts and tips across all 4 nutrition levels", () => {
+    expect(NUTRITION_LEVEL_TIPS_FACTS.length).toBe(24);
   });
 
   it("ensures each level has both facts and actionable tips in plain language", () => {
     for (const lvl of [1, 2, 3, 4] as const) {
       const items = NUTRITION_LEVEL_TIPS_FACTS.filter((t) => t.level === lvl);
-      expect(items.length).toBeGreaterThanOrEqual(4);
+      expect(items.length).toBeGreaterThanOrEqual(6);
       expect(items.some((t) => t.type === "fact")).toBe(true);
       expect(items.some((t) => t.type === "tip")).toBe(true);
     }
@@ -110,8 +110,8 @@ describe("Nutrition Level Small Facts and Tips Integrity", () => {
 });
 
 describe("Indian Food Facts Clinical Database Integrity", () => {
-  it("contains all 12 curated Indian superfoods and staples", () => {
-    expect(FOOD_FACTS.length).toBe(12);
+  it("contains all 24 curated Indian superfoods and staples", () => {
+    expect(FOOD_FACTS.length).toBe(24);
   });
 
   it("enforces the 6-part fixed card format and clinical safety criteria on every entry", () => {

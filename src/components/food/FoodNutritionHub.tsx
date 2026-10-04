@@ -41,6 +41,7 @@ export function FoodNutritionHub() {
   const [selectedLevel, setSelectedLevel] = useState<NutritionLevel | "all">("all");
   const [selectedSystem, setSelectedSystem] = useState<string>("all");
   const [selectedSituation, setSelectedSituation] = useState<string>("all");
+  const [selectedBenefit, setSelectedBenefit] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
 
   // Small facts & tips filter state
@@ -60,6 +61,67 @@ export function FoodNutritionHub() {
     return FOOD_FACTS.filter((entry) => {
       const matchesLevel = selectedLevel === "all" || entry.level === selectedLevel;
       const matchesSystem = selectedSystem === "all" || entry.system === selectedSystem;
+
+      let matchesBenefit = true;
+      if (selectedBenefit === "blood_sugar") {
+        matchesBenefit =
+          entry.system === "metabolism" ||
+          entry.situationTag.toLowerCase().includes("diabetes") ||
+          entry.situationTag.toLowerCase().includes("sugar") ||
+          entry.provenBenefit.toLowerCase().includes("sugar") ||
+          entry.provenBenefit.toLowerCase().includes("glucose") ||
+          entry.foodName.toLowerCase().includes("jamun") ||
+          entry.foodName.toLowerCase().includes("karela") ||
+          entry.foodName.toLowerCase().includes("methi") ||
+          entry.foodName.toLowerCase().includes("jowar");
+      } else if (selectedBenefit === "heart_bp") {
+        matchesBenefit =
+          entry.system === "heart" ||
+          entry.situationTag.toLowerCase().includes("bp") ||
+          entry.situationTag.toLowerCase().includes("pressure") ||
+          entry.situationTag.toLowerCase().includes("cholesterol") ||
+          entry.provenBenefit.toLowerCase().includes("blood pressure") ||
+          entry.provenBenefit.toLowerCase().includes("cholesterol") ||
+          entry.provenBenefit.toLowerCase().includes("arter") ||
+          entry.foodName.toLowerCase().includes("beetroot") ||
+          entry.foodName.toLowerCase().includes("alsi") ||
+          entry.foodName.toLowerCase().includes("makhana");
+      } else if (selectedBenefit === "gut_acidity") {
+        matchesBenefit =
+          entry.system === "gut" ||
+          entry.category === "fermented" ||
+          entry.situationTag.toLowerCase().includes("acid") ||
+          entry.situationTag.toLowerCase().includes("constipation") ||
+          entry.provenBenefit.toLowerCase().includes("digest") ||
+          entry.provenBenefit.toLowerCase().includes("bowel") ||
+          entry.provenBenefit.toLowerCase().includes("stomach") ||
+          entry.foodName.toLowerCase().includes("sabja") ||
+          entry.foodName.toLowerCase().includes("papaya") ||
+          entry.foodName.toLowerCase().includes("guava") ||
+          entry.foodName.toLowerCase().includes("adrak");
+      } else if (selectedBenefit === "bone_muscle") {
+        matchesBenefit =
+          entry.system === "muscle_bone" ||
+          entry.provenBenefit.toLowerCase().includes("muscle") ||
+          entry.provenBenefit.toLowerCase().includes("bone") ||
+          entry.provenBenefit.toLowerCase().includes("calcium") ||
+          entry.provenBenefit.toLowerCase().includes("protein") ||
+          entry.foodName.toLowerCase().includes("rajgira") ||
+          entry.foodName.toLowerCase().includes("sattu") ||
+          entry.foodName.toLowerCase().includes("ragi");
+      } else if (selectedBenefit === "immunity_skin") {
+        matchesBenefit =
+          entry.provenBenefit.toLowerCase().includes("immunity") ||
+          entry.provenBenefit.toLowerCase().includes("infection") ||
+          entry.provenBenefit.toLowerCase().includes("skin") ||
+          entry.provenBenefit.toLowerCase().includes("vitamin c") ||
+          entry.situationTag.toLowerCase().includes("immunity") ||
+          entry.situationTag.toLowerCase().includes("monsoon") ||
+          entry.category === "supergreen" ||
+          entry.foodName.toLowerCase().includes("amla") ||
+          entry.foodName.toLowerCase().includes("moringa") ||
+          entry.foodName.toLowerCase().includes("guava");
+      }
 
       let matchesSituation = true;
       if (selectedSituation === "bp") {
@@ -105,9 +167,9 @@ export function FoodNutritionHub() {
         entry.hi.foodName.includes(query) ||
         entry.hi.whatItContains.includes(query);
 
-      return matchesLevel && matchesSystem && matchesSituation && matchesSearch;
+      return matchesLevel && matchesSystem && matchesSituation && matchesBenefit && matchesSearch;
     });
-  }, [selectedLevel, selectedSystem, selectedSituation, searchQuery]);
+  }, [selectedLevel, selectedSystem, selectedSituation, selectedBenefit, searchQuery]);
 
   const systems = [
     { id: "all", label: language === "hi" ? "सभी प्रणालियां" : "All Systems", icon: Layers },
@@ -344,9 +406,9 @@ export function FoodNutritionHub() {
               <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white/5 border border-white/10 self-start md:self-auto shrink-0">
                 {(
                   [
-                    { id: "all", label: language === "hi" ? "सभी (16)" : "All (16)" },
-                    { id: "fact", label: language === "hi" ? "💡 फैक्ट्स (8)" : "💡 Facts (8)" },
-                    { id: "tip", label: language === "hi" ? "⚡ टिप्स (8)" : "⚡ Tips (8)" },
+                    { id: "all", label: language === "hi" ? "सभी (24)" : "All (24)" },
+                    { id: "fact", label: language === "hi" ? "💡 फैक्ट्स (12)" : "💡 Facts (12)" },
+                    { id: "tip", label: language === "hi" ? "⚡ टिप्स (12)" : "⚡ Tips (12)" },
                   ] as const
                 ).map((tab) => (
                   <button
@@ -373,29 +435,37 @@ export function FoodNutritionHub() {
               {[
                 {
                   id: "all",
-                  label: language === "hi" ? "सभी 4 स्तर" : "All 4 Levels",
+                  label: language === "hi" ? "सभी 4 स्तर (24)" : "All 4 Levels (24)",
                   color: "border-white/20 text-white",
                 },
                 {
                   id: 1,
-                  label: language === "hi" ? "स्तर 1: ताजी सब्जियां व फल" : "Level 1: Whole Foods",
+                  label:
+                    language === "hi"
+                      ? "स्तर 1: ताजी सब्जियां व फल (6)"
+                      : "Level 1: Whole Foods (6)",
                   color: "border-teal-500/40 text-teal-300",
                 },
                 {
                   id: 2,
-                  label: language === "hi" ? "स्तर 2: अनाज, दाल व दही" : "Level 2: Grains & Dal",
+                  label:
+                    language === "hi" ? "स्तर 2: अनाज, दाल व दही (6)" : "Level 2: Grains & Dal (6)",
                   color: "border-sky-500/40 text-sky-300",
                 },
                 {
                   id: 3,
                   label:
-                    language === "hi" ? "स्तर 3: तेल, घी व गुड़" : "Level 3: Fats & Moderation",
+                    language === "hi"
+                      ? "स्तर 3: तेल, घी व गुड़ (6)"
+                      : "Level 3: Fats & Moderation (6)",
                   color: "border-amber-500/40 text-amber-300",
                 },
                 {
                   id: 4,
                   label:
-                    language === "hi" ? "स्तर 4: पैकेटबंद स्नैक्स" : "Level 4: Packaged Snacks",
+                    language === "hi"
+                      ? "स्तर 4: पैकेटबंद स्नैक्स (6)"
+                      : "Level 4: Packaged Snacks (6)",
                   color: "border-red-500/40 text-red-300",
                 },
               ].map((pill) => {
@@ -488,26 +558,26 @@ export function FoodNutritionHub() {
             <div>
               <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#00E5C4] block">
                 {language === "hi"
-                  ? "आईसीएमआर व पबमेड साक्ष्य वेधशाला"
-                  : "ICMR-NIN & PubMed Evidence Observatory"}
+                  ? "आईसीएमआर व पबमेड साक्ष्य वेधशाला • 24 खाद्य पदार्थ"
+                  : "ICMR-NIN & PubMed Evidence Observatory • 24 Power Foods"}
               </span>
               <h2
                 id="facts-heading"
                 className="text-xl sm:text-3xl font-bold text-white tracking-tight"
               >
                 {language === "hi"
-                  ? "फूड फैक्ट्स: असल में क्या काम करता है प्रत्येक भोजन"
-                  : "Food Facts: What Each Food Really Does"}
+                  ? "खाद्य निर्देशिका: 24 भोजन और उनके वास्तविक लाभ"
+                  : "Food Directory: Discover 24 Foods & How You Benefit"}
               </h2>
               <p className="text-xs sm:text-sm text-[#8A8F98] mt-1 max-w-2xl">
                 {language === "hi"
-                  ? "भारतीय मिलेट्स, साग, घी और पारंपरिक खाद्य पदार्थों के पोषक तत्व, सिद्ध नैदानिक लाभ, मिथक जांच और व्यावहारिक सावधानियां।"
-                  : "Nutrients, proven clinical benefits, viral myth checks, Indian food pairings, and situational precautions for Indian staples, millets, and produce."}
+                  ? "अक्सर लोग सभी पारंपरिक खाद्य पदार्थों और उनके असली फायदों के बारे में नहीं जान पाते। 24 भारतीय अनाजों, साग, बीजों और फलों के वास्तविक लाभ, सही खाने का तरीका और सावधानियां सरल भाषा में जानें।"
+                  : "People often miss out on the incredible benefits of everyday staples. Explore 24 traditional Indian grains, seeds, greens, and fruits with proven health benefits, best food pairings, and who should limit them."}
               </p>
             </div>
 
             {/* Search Input */}
-            <div className="relative w-full md:w-72">
+            <div className="relative w-full md:w-80">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8A8F98]" />
               <input
                 type="text"
@@ -515,8 +585,8 @@ export function FoodNutritionHub() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={
                   language === "hi"
-                    ? "मिलेट, रागी, मोरिंगा, घी..."
-                    : "Search ragi, moringa, ghee, BP..."
+                    ? "सर्च: रागी, ज्वार, मखाना, सब्जा, पपीता, बीपी..."
+                    : "Search ragi, jowar, makhana, sabja, BP..."
                 }
                 className="w-full rounded-xl border border-white/10 bg-white/[0.03] pl-10 pr-9 py-2.5 text-base sm:text-sm text-white placeholder-[#8A8F98] outline-none focus:border-[#00E5C4]/50 transition-all"
               />
@@ -530,6 +600,68 @@ export function FoodNutritionHub() {
                   ✕
                 </button>
               )}
+            </div>
+          </div>
+
+          {/* Primary Filter Bar: "How Can I Benefit From These Foods?" */}
+          <div className="mb-4 p-3 sm:p-4 rounded-2xl bg-teal-500/[0.04] border border-teal-500/20">
+            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#00E5C4] mb-2.5 flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-teal-400" />
+              {language === "hi"
+                ? "आपको क्या लाभ चाहिए? (स्वास्थ्य लाभ अनुसार खाद्य पदार्थ चुनें):"
+                : "How Can I Benefit? (Discover Foods by Target Health Goal):"}
+            </span>
+            <div className="flex gap-2 overflow-x-auto pb-1 touch-scroll -mx-2 px-2 sm:mx-0 sm:px-0">
+              {[
+                { id: "all", label: language === "hi" ? "सभी 24 खाद्य पदार्थ" : "All 24 Foods" },
+                {
+                  id: "blood_sugar",
+                  label:
+                    language === "hi"
+                      ? "🩸 ब्लड शुगर व निरंतर ऊर्जा"
+                      : "🩸 Blood Sugar & Steady Energy",
+                },
+                {
+                  id: "heart_bp",
+                  label:
+                    language === "hi" ? "🫀 दिल, BP व कोलेस्ट्रॉल" : "🫀 Heart, BP & Cholesterol",
+                },
+                {
+                  id: "gut_acidity",
+                  label:
+                    language === "hi" ? "🌿 पेट, एसिडिटी व पाचन" : "🌿 Digestion & Acidity Relief",
+                },
+                {
+                  id: "bone_muscle",
+                  label:
+                    language === "hi"
+                      ? "🦴 मजबूत हड्डियां व मांसपेशियां"
+                      : "🦴 Bones & Muscle Strength",
+                },
+                {
+                  id: "immunity_skin",
+                  label:
+                    language === "hi"
+                      ? "🛡️ रोग प्रतिरोधक क्षमता व त्वचा"
+                      : "🛡️ Immunity & Skin Defense",
+                },
+              ].map((ben) => {
+                const isSelected = selectedBenefit === ben.id;
+                return (
+                  <button
+                    key={ben.id}
+                    type="button"
+                    onClick={() => setSelectedBenefit(ben.id)}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap border transition-all ${
+                      isSelected
+                        ? "bg-[#00E5C4] text-black border-[#00E5C4] shadow-md ring-1 ring-[#00E5C4]/30"
+                        : "bg-white/[0.03] text-[#C5C8CE] border-white/10 hover:text-white hover:bg-white/10"
+                    }`}
+                  >
+                    {ben.label}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -695,21 +827,23 @@ export function FoodNutritionHub() {
                         <p>{displayNutrients}</p>
                       </div>
 
-                      {/* Block 2: Proven Benefit */}
-                      <div className="mb-4 rounded-xl bg-teal-500/5 border border-teal-500/20 p-3.5 text-xs text-[#EAEAEA] leading-relaxed">
+                      {/* Block 2: How You Benefit (Proven Daily Benefit) */}
+                      <div className="mb-4 rounded-xl bg-teal-500/10 border-2 border-teal-500/30 p-3.5 text-xs text-[#EAEAEA] leading-relaxed shadow-sm">
                         <div className="flex items-center justify-between gap-2 mb-1.5">
-                          <strong className="text-teal-400 uppercase tracking-wider text-[10px] flex items-center gap-1.5">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-teal-400" />
+                          <strong className="text-teal-300 uppercase tracking-wider text-[11px] font-bold flex items-center gap-1.5">
+                            <Sparkles className="w-3.5 h-3.5 text-teal-400" />
                             {language === "hi"
-                              ? "प्रमाणित नैदानिक लाभ:"
-                              : "Proven Clinical Benefit:"}
+                              ? "✨ आपको क्या लाभ मिलेगा (स्वास्थ्य लाभ):"
+                              : "✨ How You Benefit (Proven Daily Value):"}
                           </strong>
                           <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 border border-teal-500/40">
                             {entry.evidenceTier}
                           </span>
                         </div>
-                        <p className="mb-2">{displayBenefit}</p>
-                        <div className="pt-2 border-t border-teal-500/10 flex items-center justify-between text-[10px] font-mono text-[#8A8F98]">
+                        <p className="mb-2 text-white font-medium text-xs sm:text-sm leading-relaxed">
+                          {displayBenefit}
+                        </p>
+                        <div className="pt-2 border-t border-teal-500/20 flex items-center justify-between text-[10px] font-mono text-[#8A8F98]">
                           <span className="truncate max-w-[280px]" title={entry.sourceCitation}>
                             {entry.sourceCitation}
                           </span>
@@ -717,7 +851,7 @@ export function FoodNutritionHub() {
                             href={entry.sourceUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-teal-400 hover:text-teal-300 underline underline-offset-2 shrink-0 ml-2"
+                            className="inline-flex items-center gap-1 text-teal-400 hover:text-teal-300 underline underline-offset-2 shrink-0 ml-2 font-semibold"
                           >
                             <span>Study</span>
                             <ExternalLink className="w-3 h-3" />

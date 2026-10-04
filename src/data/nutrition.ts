@@ -389,6 +389,158 @@ export const NUTRITION_LEVEL_TIPS_FACTS: NutritionLevelTipFact[] = [
     },
     readingGrade: "Grade 6 (Plain Language)",
   },
+
+  // ─── Level 1 Additions ───
+  {
+    id: "lvl1-fact-cooked-tomato-lycopene",
+    level: 1,
+    type: "fact",
+    title: {
+      en: "Cooking Tomatoes in Oil Unlocks Heart Shields",
+      hi: "तेल में पका टमाटर दिल के लिए 4 गुना बेहतर है",
+    },
+    content: {
+      en: "Lycopene is the deep red antioxidant in tomatoes that protects heart arteries. Raw tomatoes only release a little, but gently heating them with a drop of mustard oil or ghee boosts absorption by up to 400%.",
+      hi: "टमाटर का लाल रंग दिल की नसों को सुरक्षित रखने वाला तत्व है। कच्चे टमाटर की तुलना में थोड़े से तेल या घी में पकाने पर शरीर इसे 4 गुना बेहतर तरीके से सोख पाता है।",
+    },
+    takeaway: {
+      en: "Warm tomato gravies and rasam give your heart far stronger protection than raw salads.",
+      hi: "कच्चे सलाद की जगह पकी हुई टमाटर की ग्रेवी या रसम दिल को ज्यादा सुरक्षा देती है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl1-tip-whole-fruit-vs-juice",
+    level: 1,
+    type: "tip",
+    title: {
+      en: "Eat Whole Fruit, Don't Drink Fruit Juice",
+      hi: "फल पूरा चबाकर खाएं, डिब्बाबंद जूस से बचें",
+    },
+    content: {
+      en: "Juicing an orange strips away its fibrous 'brakes', dumping 5 teaspoons of liquid sugar straight into your blood. Eating the whole fruit keeps digestion slow and feeds friendly gut bacteria.",
+      hi: "संतरे या सेब का जूस निकालने से उसका फाइबर निकल जाता है, जिससे सारी चीनी तुरंत खून में पहुंच जाती है। पूरा फल चबाने से शुगर स्थिर रहती है।",
+    },
+    takeaway: {
+      en: "Natural fiber acts like a speed breaker for sugar in your stomach.",
+      hi: "प्राकृतिक फाइबर आपके पेट में शुगर की रफ्तार पर ब्रेक लगाने का काम करता है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+
+  // ─── Level 2 Additions ───
+  {
+    id: "lvl2-fact-sprouting-doubles-vitamins",
+    level: 2,
+    type: "fact",
+    title: {
+      en: "Sprouting Multiplies Vitamins and Cuts Gas",
+      hi: "अंकुरित करने से विटामिन चार गुना और गैस खत्म",
+    },
+    content: {
+      en: "Soaking and sprouting green moong or chana for 24 hours quadruples Vitamin C, makes iron 3 times easier to absorb, and breaks down hard starches so your belly stays completely flat without gas.",
+      hi: "हरी मूंग या चने को 24 घंटे भिगोकर अंकुरित करने से विटामिन C चार गुना बढ़ जाता है, आयरन आसानी से पचता है और पेट फूलने की समस्या खत्म हो जाती है।",
+    },
+    takeaway: {
+      en: "Sprouting turns everyday beans into living, easy-to-digest powerhouses.",
+      hi: "अंकुरित दालें सामान्य दालों से कहीं ज्यादा हल्की और ऊर्जावान बन जाती हैं।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl2-tip-rotate-grains",
+    level: 2,
+    type: "tip",
+    title: {
+      en: "Rotate 3 Grains Instead of Eating Only Wheat",
+      hi: "सिर्फ गेहूं नहीं, हफ्ते में 3 अनाज बदलकर खाएं",
+    },
+    content: {
+      en: "Eating only wheat every single day can make digestion sluggish. Rotate your plate: enjoy light Jowar for lunch, warming Bajra in winters, and calcium-rich Ragi for dinner. Different grains build a stronger, happier gut.",
+      hi: "रोज केवल गेहूं खाने के बजाय हफ्ते में बाजरा, ज्वार और रागी बदलकर खाएं। अलग-अलग अनाजों से पेट के अच्छे बैक्टीरिया बढ़ते हैं और पाचन मजबूत होता है।",
+    },
+    takeaway: {
+      en: "Variety in grains is the true secret of traditional Indian digestive health.",
+      hi: "अलग-अलग अनाजों का इस्तेमाल ही मजबूत पाचन की असली चाबी है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+
+  // ─── Level 3 Additions ───
+  {
+    id: "lvl3-fact-ghee-vitamin-carrier",
+    level: 3,
+    type: "fact",
+    title: {
+      en: "1 Spoon of Ghee Unlocks Essential Vitamins",
+      hi: "1 चम्मच घी चार जरूरी विटामिनों को सोखने में मदद करता है",
+    },
+    content: {
+      en: "Vitamins A, D, E, and K in green leaves and carrots cannot dissolve in water. Your body needs a teaspoon of healthy fat like desi ghee to carry these vitamins from your food into your bloodstream.",
+      hi: "पालक और गाजर के विटामिन A, D, E और K पानी में नहीं घुलते। इन्हें शरीर में पहुंचाने के लिए देसी घी या तेल की एक छोटी चम्मच बहुत जरूरी होती है।",
+    },
+    takeaway: {
+      en: "A touch of pure ghee on hot dal is real medicine, not just flavor.",
+      hi: "दाल में एक चम्मच शुद्ध घी डालना केवल स्वाद नहीं, बल्कि पोषण की जरूरत है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl3-tip-dry-roast-seeds",
+    level: 3,
+    type: "tip",
+    title: {
+      en: "Dry-Roast Seeds Instead of Deep-Frying Snacks",
+      hi: "तले नमकीन की जगह भुने बीजों का कुरकुरा नाश्ता लें",
+    },
+    content: {
+      en: "Instead of fried mixtures and namkeen dripping with palm oil, lightly dry-roast pumpkin seeds, flaxseeds, and sunflower seeds with a pinch of black salt and turmeric. You get crunchy satisfaction with heart-protecting omega fats.",
+      hi: "पाम ऑयल में तली भुजिया और नमकीन के बजाय कद्दू के बीज, अलसी और सूरजमुखी के बीज भूनकर खाएं। इससे कुरकुरा स्वाद और दिल को अच्छी वसा मिलती है।",
+    },
+    takeaway: {
+      en: "Satisfies your salty crunch craving while protecting your heart arteries.",
+      hi: "बिना नसों को नुकसान पहुंचाए शाम की चाय के साथ कुरकुरा स्वाद मिलता है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+
+  // ─── Level 4 Additions ───
+  {
+    id: "lvl4-fact-hidden-salt-in-sweets",
+    level: 4,
+    type: "fact",
+    title: {
+      en: "Sweet Bakery Biscuits Hide Surprisingly High Salt",
+      hi: "मीठे बिस्कुट और टोस्ट में छिपा होता है बहुत सारा नमक",
+    },
+    content: {
+      en: "Even biscuits that taste sweet hide high levels of baking soda and sodium to balance flavors and extend shelf life. Eating 4 packaged biscuits can quietly give you a quarter of your entire daily salt limit.",
+      hi: "मीठे लगने वाले बिस्कुट और रस्क में भी स्वाद और बेकिंग के लिए काफी मात्रा में नमक और सोडा मिलाया जाता है, जो चुपचाप ब्लड प्रेशर बढ़ा सकता है।",
+    },
+    takeaway: {
+      en: "Don't judge salt by sweet taste alone—always check sodium on the label.",
+      hi: "केवल मीठे स्वाद पर न जाएं, पैकेट के पीछे सोडियम (नमक) की मात्रा जरूर देखें।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl4-tip-check-serving-size",
+    level: 4,
+    type: "tip",
+    title: {
+      en: "Check the True Serving Size on the Packet",
+      hi: "पैकेट के पीछे लिखी 'सर्विंग साइज' जरूर जांचें",
+    },
+    content: {
+      en: "Manufacturers often list calories and fat for 'half a packet' or 'just 3 cookies' to make numbers look healthy. But most people finish the whole bag. Multiply the numbers by the real amount you eat.",
+      hi: "अक्सर कंपनियां कैलोरी और फैट सिर्फ 2-3 बिस्कुट के हिसाब से लिखती हैं ताकि नंबर कम दिखें, जबकि आप पूरा पैकेट खा जाते हैं। हमेशा पूरे पैकेट का हिसाब जोड़ें।",
+    },
+    takeaway: {
+      en: "Knowing what 1 serving really means protects you from eating 3 meals of calories in 1 snack.",
+      hi: "असली मात्रा जानने से आप अनजाने में सैकड़ों अतिरिक्त कैलोरी खाने से बच जाते हैं।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
 ];
 
 export interface FoodFactEntry {
@@ -397,7 +549,16 @@ export interface FoodFactEntry {
   hindiName: string;
   level: NutritionLevel;
   category:
-    "millet" | "supergreen" | "fat_oil" | "sweetener" | "fermented" | "spice_herb" | "vegetable";
+    | "millet"
+    | "supergreen"
+    | "fat_oil"
+    | "sweetener"
+    | "fermented"
+    | "spice_herb"
+    | "vegetable"
+    | "seed_nut"
+    | "legume"
+    | "fruit";
   categoryLabel: string;
   situationTag: string; // e.g., "If you're on BP medication...", "If you're fasting for a festival..."
   system: "gut" | "metabolism" | "heart" | "brain" | "muscle_bone" | "liver";
@@ -1144,6 +1305,681 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       dont: "गर्भावस्था में कच्चे करेले का तेज जूस बिल्कुल न पिएं।",
       askDoctorIf:
         "यदि आप इंसुलिन या शुगर की तेज दवा ले रहे हैं, तो डॉक्टर की सलाह से शुगर की नियमित जांच करते रहें।",
+    },
+  },
+
+  // 13. Jowar (Sorghum / Jowar Roti)
+  {
+    id: "food-jowar",
+    foodName: "Jowar (Sorghum / White Millet)",
+    hindiName: "ज्वार (सोरघम)",
+    level: 2,
+    category: "millet",
+    categoryLabel: "Gluten-Free Grain / मिलेट",
+    situationTag: "If you have Diabetes or Want a Light, Gluten-Free Roti...",
+    system: "metabolism",
+    systemLabel: "Metabolism & Steady Blood Sugar",
+    whatItContains:
+      "High natural plant fiber, resistant starch, copper, magnesium, and plant antioxidants. 100% naturally free of gluten.",
+    provenBenefit:
+      "Digests slowly in your belly to release clean, steady glucose. Prevents afternoon energy crashes and promotes easy, regular morning bowel movements.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation:
+      "Indian Council of Medical Research (ICMR-NIN) Millets Nutritional Atlas 2023 & Front Nutr 2021",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/34371900/",
+    mythCheck: {
+      claim: "Jowar rotis are rough, heavy, and cause hard stools.",
+      reality:
+        "Jowar is actually one of the gentlest grains for sensitive stomachs when kneaded with warm water and eaten fresh.",
+    },
+    whoShouldLimit: [
+      "People with untreated thyroid deficiency unless thoroughly cooked (heat deactivates mild natural goitrogenic compounds)",
+    ],
+    bestPairing:
+      "Warm freshly pressed Jowar bhakri served with cooked green moong dal, roasted garlic chutney, or baingan bharta.",
+    indianServingContext: "1 to 2 medium bhakris (rotis) for lunch.",
+    guidance: {
+      do: "Knead the dough with warm water to make soft, easily digestible rotis.",
+      dont: "Don't eat cold, stiff leftover bhakris as resistant starch can feel heavy on a slow stomach.",
+      askDoctorIf:
+        "Ask your doctor if you have celiac disease to ensure store-bought jowar flour is certified gluten-free from shared wheat mills.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "ज्वार (भाकरी)",
+      whatItContains:
+        "प्राकृतिक फाइबर, सुपाच्य स्टार्च, मैग्नीशियम, कॉपर और एंटीऑक्सीडेंट। पूरी तरह ग्लूटेन-मुक्त।",
+      provenBenefit:
+        "पेट में धीरे-धीरे पचकर खून में शुगर को नियंत्रित रखता है और रोज सुबह पेट खुलकर साफ करने में मदद करता है।",
+      mythClaim: "ज्वार की रोटी पचने में भारी होती है और कब्ज करती है।",
+      mythReality:
+        "गर्म पानी से गूंथी ताजी ज्वार की रोटी पेट के लिए गेहूं से भी हल्की और सुपाच्य होती है।",
+      whoShouldLimit: "थायरॉइड की गंभीर समस्या वाले लोग इसे अच्छी तरह पकाकर ही खाएं।",
+      bestPairing: "हरी मूंग दाल, भुनी लहसुन की चटनी या बैंगन के भर्ते के साथ ताजी ज्वार भाकरी।",
+      do: "आटा हमेशा गर्म पानी से गूंथें ताकि रोटियां मुलायम बनें।",
+      dont: "बासी और ठंडी हो चुकी कड़ी भाकरी खाने से बचें।",
+      askDoctorIf: "यदि आपको सीलिएक रोग है, तो सुनिश्चित करें कि आटा गेहूं की चक्की में न पिसा हो।",
+    },
+  },
+
+  // 14. Makhana (Fox Nuts / Phool Makhana)
+  {
+    id: "food-makhana",
+    foodName: "Makhana (Fox Nuts / Phool Makhana)",
+    hindiName: "फूल मखाना",
+    level: 1,
+    category: "seed_nut",
+    categoryLabel: "Water Lily Seed / मखाना",
+    situationTag: "If you're on BP Medication or Crave an Evening Crunch...",
+    system: "heart",
+    systemLabel: "Heart Health & Arterial Pressure",
+    whatItContains:
+      "Plant protein, magnesium, potassium, and slow-burning starch. Naturally very low in sodium, cholesterol, and saturated fat.",
+    provenBenefit:
+      "Calms evening hunger without spiking blood pressure. The high potassium and low sodium balance helps relax heart blood vessels.",
+    evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
+    sourceCitation: "ICMR-NIN Food Composition Tables & Front Nutr. (PMID: 34222304)",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/34222304/",
+    mythCheck: {
+      claim: "Eating a bowl of makhana burns stubborn belly fat immediately.",
+      reality:
+        "Makhana is a low-calorie, high-fullness snack that healthily replaces fried chips; it does not burn body fat by itself.",
+    },
+    whoShouldLimit: [
+      "Individuals suffering from severe constipation unless consumed with plenty of water",
+      "Rare cases of water lily seed allergy",
+    ],
+    bestPairing:
+      "Dry-roasted in a skillet with 1/2 teaspoon desi ghee, a pinch of turmeric (haldi), and crushed black pepper.",
+    indianServingContext: "1 medium bowl (around 25–30g) as an evening tea-time snack.",
+    guidance: {
+      do: "Roast till crisp in a drop of ghee and store in an airtight container for daily snacks.",
+      dont: "Don't buy factory-packaged flavoured makhana loaded with palm oil, excess salt, and artificial cheese powder.",
+      askDoctorIf:
+        "Ask your doctor if you are on strict fluid or potassium restriction for advanced kidney care.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "फूल मखाना",
+      whatItContains:
+        "पौष्टिक पादप प्रोटीन, पोटैशियम, मैग्नीशियम और प्राकृतिक स्टार्च। सोडियम और फैट बेहद कम।",
+      provenBenefit:
+        "शाम की भूख शांत करता है और हाई ब्लड प्रेशर को नियंत्रित रखने में दिल की मदद करता है।",
+      mythClaim: "मखाना खाने से पेट की चर्बी तुरंत पिघल जाती है।",
+      mythReality:
+        "मखाना तले हुए चिप्स की जगह एक बेहतरीन कम कैलोरी वाला नाश्ता है; यह अपने आप चर्बी नहीं पिघलाता।",
+      whoShouldLimit: "गंभीर कब्ज से पीड़ित लोग इसे भरपूर पानी पीने के साथ ही खाएं।",
+      bestPairing: "आधा चम्मच देसी घी, हल्दी और काली मिर्च के साथ तवे पर भुना हुआ कुरकुरा मखाना।",
+      do: "घर पर हल्का भूनकर एयरटाइट डिब्बे में रखें और शाम की चाय के साथ खाएं।",
+      dont: "बाजार में मिलने वाले पाम ऑयल और ज्यादा नमक वाले पैकेटबंद मखाने न खरीदें।",
+      askDoctorIf:
+        "यदि किडनी की बीमारी के कारण पोटैशियम सीमित करने को कहा गया है, तो डॉक्टर से सलाह लें।",
+    },
+  },
+
+  // 15. Sabja Seeds (Sweet Basil Seeds / Falooda Seeds)
+  {
+    id: "food-sabja",
+    foodName: "Sabja Seeds (Sweet Basil Seeds / Falooda Seeds)",
+    hindiName: "सब्जा के बीज (तुलसी बीज)",
+    level: 1,
+    category: "seed_nut",
+    categoryLabel: "Cooling Mucilage Seed / सब्जा",
+    situationTag: "If you Suffer from Acidity, Heartburn or Summer Heat...",
+    system: "gut",
+    systemLabel: "Gut Lining Defense & Acidity Relief",
+    whatItContains:
+      "Water-loving soluble mucilage fiber (swells 30x in water), plant omega-3 fatty acids, and natural cooling compounds.",
+    provenBenefit:
+      "Forms a thick soothing gel in the stomach that coats the stomach lining, shielding against fiery acid reflux and keeping body hydration high.",
+    evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
+    sourceCitation:
+      "Journal of Food Science and Technology (PMID: 27899732) & Int J Biol Macromol 2020",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/27899732/",
+    mythCheck: {
+      claim: "Sabja seeds and chia seeds are exactly the same thing.",
+      reality:
+        "Sabja is sweet basil seed that swells in 5 minutes with a jelly-like transparent halo and strong cooling effect; chia takes hours and has different nutritional profiles.",
+    },
+    whoShouldLimit: [
+      "Children and people with difficulty swallowing should NEVER eat dry unsoaked seeds (choking risk)",
+      "Pregnant women in high concentrated doses without clinical supervision",
+    ],
+    bestPairing:
+      "1 teaspoon soaked seeds stirred into fresh lemon water (nimbu pani) or tender coconut water.",
+    indianServingContext:
+      "1 teaspoon soaked seeds in 1 tall glass of water once daily, especially in hot weather.",
+    guidance: {
+      do: "Always soak seeds in clean water for at least 10–15 minutes until fully translucent with black centers before eating.",
+      dont: "Never swallow dry seeds directly with water.",
+      askDoctorIf:
+        "Ask your doctor if you take daily blood-thinning pills, as basil seeds have mild natural anti-clotting effects.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "सब्जा के बीज",
+      whatItContains:
+        "घुलनशील जेली जैसा फाइबर (पानी में 30 गुना फूलता है), ओमेगा-3 और पेट को ठंडक देने वाले तत्व।",
+      provenBenefit:
+        "पेट में एक सुरक्षात्मक जेल बनाकर सीने की जलन और एसिडिटी को शांत करता है और शरीर में पानी की कमी नहीं होने देता।",
+      mythClaim: "सब्जा और चिया सीड्स बिल्कुल एक ही चीज हैं।",
+      mythReality:
+        "सब्जा देसी तुलसी का बीज है जो 5 मिनट में फूलकर ठंडा जेल बनता है; चिया अलग बीज है।",
+      whoShouldLimit: "छोटे बच्चों को सूखे बिना भीगे बीज कभी न दें (गले में अटकने का खतरा)।",
+      bestPairing: "ताजे नींबू पानी या नारियल पानी में 1 चम्मच भीगे हुए सब्जा के बीज।",
+      do: "खाने से पहले कम से कम 10-15 मिनट पानी में पूरी तरह फूलने दें।",
+      dont: "सूखे बीज सीधे मुंह में डालकर पानी के साथ कभी न निगलें।",
+      askDoctorIf: "यदि आप खून पतला करने की दवा ले रहे हैं, तो डॉक्टर से सलाह लें।",
+    },
+  },
+
+  // 16. Sattu (Roasted Bengal Gram Flour)
+  {
+    id: "food-sattu",
+    foodName: "Sattu (Roasted Bengal Gram Super-Flour)",
+    hindiName: "देसी चना सत्तू",
+    level: 2,
+    category: "legume",
+    categoryLabel: "Roasted Legume Protein / सत्तू",
+    situationTag: "If you Need 4 Hours of Clean Stamina & Plant Protein...",
+    system: "muscle_bone",
+    systemLabel: "Muscle Repair & Sustained Energy",
+    whatItContains:
+      "Pure plant protein (over 20g per 100g), insoluble fiber, iron, manganese, and cooling minerals. Made from roasted kala chana.",
+    provenBenefit:
+      "Provides sustained muscular stamina for 4–5 hours without insulin spikes. Traditional cooling summer fuel that keeps energy high and hunger satisfied.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation: "ICMR-NIN Traditional Foods Database & Nutrients Journal (PMID: 35807869)",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/35807869/",
+    mythCheck: {
+      claim: "Sattu creates heavy gas and bloating just like raw besan (gram flour).",
+      reality:
+        "Because the chana is roasted over hot sand before grinding, gas-forming starches are already broken down, making sattu very easy on the stomach.",
+    },
+    whoShouldLimit: [
+      "People with severe uric acid buildup or active gout arthritis attacks",
+      "People with severe advanced kidney disease on strict protein restriction",
+    ],
+    bestPairing:
+      "Stirred into cold water with roasted jeera (cumin) powder, black salt, fresh mint, and a squeeze of lemon (Namkeen Sattu Sharbat).",
+    indianServingContext:
+      "2 tablespoons (around 30g) stirred in 250ml water for breakfast or pre-workout fuel.",
+    guidance: {
+      do: "Drink freshly stirred as a savory breakfast drink on busy mornings.",
+      dont: "Don't load it with refined white sugar syrups; keep it savory or lightly naturally sweetened.",
+      askDoctorIf:
+        "Ask your doctor if you have kidney disease requiring strict daily protein limits.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "देसी चना सत्तू",
+      whatItContains:
+        "उत्कृष्ट शाकाहारी प्रोटीन (20%), फाइबर, आयरन, मैंगनीज और पेट ठंडा रखने वाले खनिज। भुने चने से बना।",
+      provenBenefit:
+        "4-5 घंटे तक लगातार शारीरिक ताकत देता है, मांसपेशियों को मजबूत करता है और गर्मियों में लू से बचाता है।",
+      mythClaim: "सत्तू खाने से कच्चे बेसन की तरह पेट में बहुत गैस बनती है।",
+      mythReality:
+        "चने को भूनकर पीसने से गैस बनाने वाले तत्व पहले ही नष्ट हो जाते हैं, इसलिए सत्तू बहुत जल्दी पचता है।",
+      whoShouldLimit: "हाई यूरिक एसिड या गाउट (गठिया) के रोगी सीमित मात्रा में ही लें।",
+      bestPairing:
+        "भुने जीरे, काले नमक, पुदीने और नींबू के साथ ठंडे पानी में घुला नमकीन सत्तू शरबत।",
+      do: "सुबह नाश्ते में या काम पर निकलने से पहले तुरंत घोलकर पिएं।",
+      dont: "इसमें सफेद चीनी का गाढ़ा घोल मिलाकर अनहेल्दी न बनाएं।",
+      askDoctorIf:
+        "यदि आपको किडनी की बीमारी के कारण प्रोटीन कम खाने को कहा गया है, तो डॉक्टर से पूछें।",
+    },
+  },
+
+  // 17. Alsi (Flaxseeds / Tisi)
+  {
+    id: "food-flaxseed",
+    foodName: "Alsi (Flaxseeds / Tisi)",
+    hindiName: "अलसी के बीज (तीसी)",
+    level: 1,
+    category: "seed_nut",
+    categoryLabel: "Plant Omega-3 Seed / अलसी",
+    situationTag: "If you Want to Lower Cholesterol and Protect Your Heart...",
+    system: "heart",
+    systemLabel: "Heart Protection & Arterial Health",
+    whatItContains:
+      "Alpha-linolenic acid (essential plant omega-3 oil), soluble prebiotic fiber, and lignans (cellular protectors).",
+    provenBenefit:
+      "Helps lower total and bad LDL cholesterol, keeps blood vessels flexible, and provides gentle fiber bulk that keeps digestion moving smoothly.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation:
+      "Cochrane Database of Systematic Reviews (PMID: 30488422) & J Am Coll Cardiol 2021",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/30488422/",
+    mythCheck: {
+      claim: "Swallowing whole raw flaxseeds gives you all their heart oils.",
+      reality:
+        "The stomach cannot break the tough outer shell of whole seeds; they pass out undigested unless lightly roasted and freshly ground into powder.",
+    },
+    whoShouldLimit: [
+      "Pregnant women in high medicinal doses (lignans have mild estrogen-like activity)",
+      "People scheduled for surgery within 2 weeks or on high-dose blood thinners",
+    ],
+    bestPairing:
+      "1 tablespoon freshly roasted and ground powder stirred into warm dal, homemade curd, or rolled oats.",
+    indianServingContext:
+      "1 tablespoon (around 10g) ground powder daily with plenty of drinking water.",
+    guidance: {
+      do: "Lightly dry-roast the seeds for 2 minutes, grind into powder, and store in an airtight jar in the fridge.",
+      dont: "Don't eat raw unroasted flaxseeds in large spoonfuls as heat deactivates minor natural plant blockers.",
+      askDoctorIf:
+        "Ask your doctor if you take prescription blood thinners or hormone-sensitive medications.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "अलसी के बीज (तीसी)",
+      whatItContains:
+        "पौधों से मिलने वाला ओमेगा-3 (ALA), घुलनशील फाइबर और नसों को सुरक्षित रखने वाले लिग्नान।",
+      provenBenefit:
+        "खराब कोलेस्ट्रॉल (LDL) घटाने में मदद करता है, दिल की नसों को लचीला रखता है और पेट साफ करता है।",
+      mythClaim: "साबुत कच्चे अलसी के बीज चबाकर खाने से पूरा तेल मिल जाता है।",
+      mythReality:
+        "साबुत बीज पेट में नहीं पचते; इन्हें हल्का भूनकर और पीसकर पाउडर बनाकर खाने पर ही तेल शरीर में लगता है।",
+      whoShouldLimit: "गर्भवती महिलाएं अधिक मात्रा में न लें; सर्जरी से 2 हफ्ते पहले बंद करें।",
+      bestPairing: "1 चम्मच भुना और पिसा हुआ पाउडर दाल, दही या ओट्स में मिलाकर खाएं।",
+      do: "हल्का भूनकर पाउडर बनाएं और फ्रिज में एयरटाइट डिब्बे में रखें ताकि तेल खराब न हो।",
+      dont: "बिना भुने कच्चे बीज बड़ी मात्रा में न खाएं।",
+      askDoctorIf: "यदि आप खून पतला करने की दवा ले रहे हैं, तो डॉक्टर की सलाह लें।",
+    },
+  },
+
+  // 18. Papaya (Papeeta)
+  {
+    id: "food-papaya",
+    foodName: "Papaya (Ripe Papeeta)",
+    hindiName: "पका पपीता",
+    level: 1,
+    category: "fruit",
+    categoryLabel: "Digestive Enzyme Fruit / पपीता",
+    situationTag: "If you Suffer from Constipation, Heavy Meals or Slow Digestion...",
+    system: "gut",
+    systemLabel: "Digestive Enzymes & Bowel Motility",
+    whatItContains:
+      "Papain (a natural protein-digesting enzyme), Vitamin C, beta-carotene, and gentle water-soluble pectin fiber.",
+    provenBenefit:
+      "Helps your stomach break down heavy proteins and lentils, softens hard stools, and reduces painful bloating within 30 to 45 minutes of eating.",
+    evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
+    sourceCitation:
+      "Neuro Endocrinology Letters Clinical Trial (PMID: 23524622) & ICMR-NIN Food Atlas",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/23524622/",
+    mythCheck: {
+      claim: "Eating sweet ripe papaya is dangerous and causes miscarriage in all pregnant women.",
+      reality:
+        "Fully ripe papaya (yellow/orange skin) is completely safe and healthy; only unripe, raw green papaya contains concentrated white latex that can trigger uterine cramps.",
+    },
+    whoShouldLimit: [
+      "Women in early pregnancy should strictly avoid raw unripe green papaya",
+      "People with documented latex-fruit allergy syndrome",
+    ],
+    bestPairing:
+      "Freshly sliced ripe papaya eaten 30 minutes before or after lunch with a light squeeze of fresh lime juice.",
+    indianServingContext: "1 small to medium bowl (around 150g) of freshly peeled ripe fruit.",
+    guidance: {
+      do: "Eat when the peel is golden-yellow and flesh is pleasantly soft.",
+      dont: "Don't consume raw hard green papaya salads if pregnant.",
+      askDoctorIf:
+        "Ask your doctor if you experience itching or tingling in your mouth after eating tropical fruits.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "पका पपीता",
+      whatItContains:
+        "पपेन (प्रोटीन पचाने वाला प्राकृतिक एंजाइम), विटामिन C, कैरोटीन और आंतों को साफ करने वाला फाइबर।",
+      provenBenefit:
+        "भारी भोजन और दालों को तेजी से पचाता है, कब्ज से राहत दिलाता है और पेट का भारीपन दूर करता है।",
+      mythClaim: "मीठा पका पपीता खाने से गर्भपात हो जाता है और महिलाओं को इसे कभी नहीं खाना चाहिए।",
+      mythReality:
+        "पूरी तरह पका पीला पपीता बेहद सुरक्षित और गुणकारी है; केवल कच्चा हरा पपीता ही नुकसानदेह होता है।",
+      whoShouldLimit:
+        "गर्भावस्था में कच्चा हरा पपीता बिल्कुल न खाएं; लेटेक्स एलर्जी वाले लोग बचें।",
+      bestPairing: "दोपहर के भोजन से आधा घंटा पहले या बाद में नींबू के रस के साथ ताजी कटी फांकें।",
+      do: "हमेशा पका हुआ मुलायम पपीता खाएं जिसका छिलका पीला या नारंगी हो।",
+      dont: "गर्भवती होने पर कच्चे पपीते का सलाद न खाएं।",
+      askDoctorIf: "यदि फल खाने के बाद मुंह में खुजली महसूस होती है, तो डॉक्टर को दिखाएं।",
+    },
+  },
+
+  // 19. Rajgira (Amaranth / Ramdana)
+  {
+    id: "food-rajgira",
+    foodName: "Rajgira (Amaranth / Ramdana Grain)",
+    hindiName: "राजगिरा (रामदाना)",
+    level: 2,
+    category: "millet",
+    categoryLabel: "Complete Protein Grain / राजगिरा",
+    situationTag: "If you Need Calcium for Bones or Complete Plant Protein...",
+    system: "muscle_bone",
+    systemLabel: "Bone Density & Muscle Repair",
+    whatItContains:
+      "Complete plant protein with all 9 essential amino acids (rich in lysine), twice the calcium of milk, squalene, and iron.",
+    provenBenefit:
+      "Strengthens bone density and helps muscles repair after exertion without triggering gluten allergy or sluggish digestion.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation:
+      "Food Chemistry Systematic Review (PMID: 29329837) & ICMR-NIN Nutritive Value of Indian Foods",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/29329837/",
+    mythCheck: {
+      claim: "Rajgira is only for religious fasts (vrat) and has no place in daily meals.",
+      reality:
+        "It is one of the highest-protein ancestral super-grains on earth, excellent for everyday rotis, porridge, and children's growth.",
+    },
+    whoShouldLimit: [
+      "People prone to calcium oxalate kidney stones should drink plenty of water when consuming amaranth",
+    ],
+    bestPairing:
+      "Puffed rajgira mixed with warm milk or curd, or rajgira flour paratha made with a little boiled potato.",
+    indianServingContext: "1 medium bowl of puffed porridge or 2 small rotis.",
+    guidance: {
+      do: "Include weekly in place of wheat to get natural calcium and complete amino acids.",
+      dont: "Don't load it with heavy refined white sugar syrups; use a hint of jaggery or dates instead.",
+      askDoctorIf:
+        "Ask your doctor if you have a personal history of recurrent calcium oxalate kidney stones.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "राजगिरा (रामदाना)",
+      whatItContains:
+        "संपूर्ण पादप प्रोटीन (सभी 9 जरूरी अमीनो एसिड), दूध से दोगुना कैल्शियम, आयरन और स्क्वालीन।",
+      provenBenefit:
+        "हड्डियों को मजबूत बनाता है, मांसपेशियों की मरम्मत करता है और बिना किसी ग्लूटेन के हल्का रहता है।",
+      mythClaim: "राजगिरा केवल व्रत या उपवास का खाना है, रोज खाने लायक नहीं है।",
+      mythReality:
+        "यह धरती के सबसे पौष्टिक अनाजों में से एक है; बच्चों और बड़ों दोनों के लिए रोज खाने योग्य है।",
+      whoShouldLimit: "ऑक्सालेट पथरी की प्रवृत्ति वाले लोग इसे भरपूर पानी पीने के साथ ही खाएं।",
+      bestPairing: "गर्म दूध या दही के साथ भुना फूला हुआ रामदाना, या उबले आलू के साथ राजगिरा रोटी।",
+      do: "हड्डियों की मजबूती के लिए हफ्ते में 1-2 बार इसे भोजन में जरूर शामिल करें।",
+      dont: "इसे बाजार के ज्यादा मीठे और चाशनी वाले लड्‌डू के रूप में न खाएं।",
+      askDoctorIf: "यदि आपको बार-बार गुर्दे में पथरी की समस्या रहती है, तो डॉक्टर से परामर्श करें।",
+    },
+  },
+
+  // 20. Jamun (Indian Blackberry / Java Plum)
+  {
+    id: "food-jamun",
+    foodName: "Jamun (Indian Blackberry / Java Plum)",
+    hindiName: "देसी जामुन",
+    level: 1,
+    category: "fruit",
+    categoryLabel: "Glucose Balancing Fruit / जामुन",
+    situationTag: "If you have Diabetes or Want to Flatten Meal Sugar Spikes...",
+    system: "metabolism",
+    systemLabel: "Blood Sugar Stability & Pancreatic Health",
+    whatItContains:
+      "Jamboline and antimellin compounds, deep anthocyanin pigments, ellagic acid, and natural gentle tannins.",
+    provenBenefit:
+      "Slows down how fast starch turns into sugar in your gut, flattening post-lunch blood sugar spikes in people with diabetes.",
+    evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
+    sourceCitation:
+      "Complementary Therapies in Medicine (PMID: 30935532) & Indian J Clin Biochem 2017",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/30935532/",
+    mythCheck: {
+      claim: "Drinking powdered jamun seeds permanently cures Type 1 or Type 2 diabetes.",
+      reality:
+        "Jamun helps blunt meal sugar spikes; it does not replace prescribed insulin or doctor-prescribed diabetes pills.",
+    },
+    whoShouldLimit: [
+      "Never eat on an empty stomach (can cause throat acidity or nausea)",
+      "Do not drink milk immediately after eating jamun (can upset digestion)",
+    ],
+    bestPairing:
+      "Fresh ripe fruit eaten with a sprinkle of black salt about 20 minutes before a starchy lunch.",
+    indianServingContext: "8 to 10 fresh ripe jamun fruits during season (June–August).",
+    guidance: {
+      do: "Enjoy fresh whole seasonal fruits during monsoons.",
+      dont: "Don't consume on an empty stomach or swallow hard bitter inner seeds in huge amounts.",
+      askDoctorIf:
+        "Ask your doctor to help track your blood sugar levels as jamun can lower blood sugar when taken with medications.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "देसी जामुन",
+      whatItContains:
+        "जम्बोलिन, गहरा बैंगनी एंथोसायनिन, एलाजिक एसिड और आंतों में शुगर रोकने वाले प्राकृतिक टैनिन।",
+      provenBenefit:
+        "भोजन के स्टार्च को तेजी से शुगर में बदलने से रोकता है, जिससे खाने के बाद शुगर अचानक नहीं बढ़ती।",
+      mythClaim: "जामुन की गुठली का पाउडर खाने से डायबिटीज हमेशा के लिए जड़ से खत्म हो जाती है।",
+      mythReality:
+        "जामुन शुगर नियंत्रित करने में बहुत मददगार है, लेकिन यह डॉक्टर की दवाओं की जगह नहीं ले सकता।",
+      whoShouldLimit:
+        "खाली पेट कभी न खाएं (खट्टी डकारें आ सकती हैं); जामुन खाने के तुरंत बाद दूध न पिएं।",
+      bestPairing: "दोपहर के खाने से 20 मिनट पहले काले नमक के साथ 8-10 ताजे जामुन।",
+      do: "मानसून के मौसम में ताजा फल चबाकर खाएं।",
+      dont: "खाली पेट बहुत सारे जामुन खाने से बचें।",
+      askDoctorIf:
+        "यदि आप शुगर की दवा ले रहे हैं, तो शुगर लो होने से बचने के लिए नियमित जांच करें।",
+    },
+  },
+
+  // 21. Moong Sprouts (Ankurit Moong)
+  {
+    id: "food-moong-sprouts",
+    foodName: "Moong Sprouts (Living Ankurit Moong)",
+    hindiName: "अंकुरित हरी मूंग",
+    level: 1,
+    category: "legume",
+    categoryLabel: "Living Enzyme Sprout / अंकुरित",
+    situationTag: "If you Need Light, Gas-Free Plant Protein & Daytime Energy...",
+    system: "gut",
+    systemLabel: "Cellular Energy & Gentle Digestion",
+    whatItContains:
+      "Active live enzymes, Vitamin C (quadruples during sprouting), easily absorbable iron, and gentle prebiotic fiber.",
+    provenBenefit:
+      "Gives your body light, clean plant protein that is 3 times easier for the stomach to absorb than unsprouted beans, without gas or bloating.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation:
+      "Food Science & Nutrition Systematic Review (PMID: 31367310) & ICMR-NIN Indian Food Database",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/31367310/",
+    mythCheck: {
+      claim: "Raw unheated sprouts are always healthier than lightly steamed sprouts.",
+      reality:
+        "Steaming sprouts for 3 minutes kills surface bacteria, softens tough fiber, and makes iron much easier for your gut to absorb.",
+    },
+    whoShouldLimit: [
+      "People recovering from stomach infections, elderly individuals, or pregnant women should strictly avoid raw unsteamed sprouts (always steam them lightly)",
+    ],
+    bestPairing:
+      "Lightly steamed sprouts tossed with fresh lemon juice, grated ginger, pinch of black pepper, and pomegranate arils.",
+    indianServingContext: "1 medium cup (around 100g) as a breakfast bowl or pre-lunch salad.",
+    guidance: {
+      do: "Lightly steam for 3 minutes before eating for effortless digestion and safety.",
+      dont: "Never eat sprouts that smell sour, look slimy, or were kept warm and wet for over 48 hours.",
+      askDoctorIf:
+        "Ask your doctor if you have a compromised immune system before consuming uncooked raw produce.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "अंकुरित हरी मूंग",
+      whatItContains:
+        "सक्रिय जीवित एंजाइम, चौगुना विटामिन C, आसानी से पचने वाला आयरन और हल्का सुपाच्य प्रोटीन।",
+      provenBenefit:
+        "शरीर को बिना गैस या भारीपन के हल्का प्रोटीन देता है जो साधारण दालों की तुलना में 3 गुना तेजी से पचता है।",
+      mythClaim: "कच्चे अंकुरित दाने हमेशा भाप में पकाए गए दानों से ज्यादा फायदेमंद होते हैं।",
+      mythReality:
+        "3 मिनट भाप लगाने से बैक्टीरिया खत्म होते हैं और शरीर आयरन व खनिजों को ज्यादा आसानी से सोख पाता है।",
+      whoShouldLimit:
+        "गर्भवती महिलाएं और पेट की बीमारी से उबर रहे लोग कच्चे नहीं, सिर्फ हल्के उबले स्प्राउट्स खाएं।",
+      bestPairing:
+        "हल्के भाप लगे स्प्राउट्स में नींबू, कद्दूकस किया अदरक, काली मिर्च और अनार के दाने।",
+      do: "पाचन आसान बनाने के लिए 3 मिनट भाप में पकाकर ही खाएं।",
+      dont: "खट्टी महक वाले या चिपचिपे हो चुके बासी स्प्राउट्स कभी न खाएं।",
+      askDoctorIf: "कमजोर रोग प्रतिरोधक क्षमता वाले लोग कच्चा खाने से पहले डॉक्टर से पूछें।",
+    },
+  },
+
+  // 22. Guava (Amrood / Jamrukh)
+  {
+    id: "food-guava",
+    foodName: "Guava (Fresh Amrood / Jamrukh)",
+    hindiName: "अमरूद (जामफल)",
+    level: 1,
+    category: "fruit",
+    categoryLabel: "Immunity & Fiber Fruit / अमरूद",
+    situationTag: "If you Suffer from Constipation or Need Real Vitamin C...",
+    system: "gut",
+    systemLabel: "Colon Motility & Immune Fortress",
+    whatItContains:
+      "4 times more Vitamin C than fresh oranges (over 200mg per fruit), natural roughage fiber (pectin), potassium, and lycopene.",
+    provenBenefit:
+      "Wakes up sluggish intestinal muscles to clear stubborn constipation, protects heart arteries, and builds strong daily immunity against seasonal infections.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation:
+      "Journal of Human Hypertension Clinical Study (PMID: 8301535) & ICMR-NIN Food Profiles",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/8301535/",
+    mythCheck: {
+      claim: "Swallowing guava seeds causes appendicitis.",
+      reality:
+        "Normal smooth guava seeds pass cleanly through healthy intestines and provide gentle internal cleaning for the colon.",
+    },
+    whoShouldLimit: [
+      "People with active intestinal inflammation (diverticulitis) or delicate dental crowns should chew seeds carefully or strain them",
+    ],
+    bestPairing:
+      "Crisp, freshly washed ripe guava sliced with a sprinkle of rock salt (sendha namak) and black pepper.",
+    indianServingContext: "1 whole medium guava eaten mid-morning or 1 hour before lunch.",
+    guidance: {
+      do: "Eat the fruit with its skin on, as the peel holds most of the Vitamin C.",
+      dont: "Don't eat overripe mushy fruits with brown blemishes or exposed insect holes.",
+      askDoctorIf:
+        "Ask your doctor if you have severe intestinal strictures or bowel obstructions.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "अमरूद (जामफल)",
+      whatItContains:
+        "संतरे से 4 गुना ज्यादा विटामिन C (200mg+), प्राकृतिक आंत साफ करने वाला फाइबर (पेक्टिन) और पोटैशियम।",
+      provenBenefit:
+        "आंतों की सुस्ती दूर कर पुरानी कब्ज से राहत दिलाता है, ब्लड प्रेशर सामान्य रखता है और मौसमी जुकाम से बचाता है।",
+      mythClaim: "अमरूद के बीज निगलने से अपेंडिक्स की बीमारी हो जाती है।",
+      mythReality:
+        "अमरूद के बीज स्वस्थ आंतों से आसानी से बाहर निकल जाते हैं और पेट की सफाई में मदद करते हैं।",
+      whoShouldLimit:
+        "दांतों में कैप लगे लोग या आंत में गंभीर सूजन वाले लोग बीज चबाने में सावधानी बरतें।",
+      bestPairing: "सेंधा नमक और ताजी पिसी काली मिर्च के साथ कटी हुई अमरूद की फांकें।",
+      do: "हमेशा छिलके सहित खाएं, क्योंकि ज्यादातर विटामिन C छिलके के ठीक नीचे होता है।",
+      dont: "ज्यादा पके और सड़े-गले अमरूद न खाएं।",
+      askDoctorIf: "यदि आंतों में रुकावट की बीमारी है, तो डॉक्टर से सलाह लें।",
+    },
+  },
+
+  // 23. Beetroot (Chukandar)
+  {
+    id: "food-beetroot",
+    foodName: "Beetroot (Chukandar)",
+    hindiName: "चुकंदर",
+    level: 1,
+    category: "vegetable",
+    categoryLabel: "Nitric Oxide Endurance Root / चुकंदर",
+    situationTag: "If you Want Lower Blood Pressure & Better Workout Stamina...",
+    system: "heart",
+    systemLabel: "Nitric Oxide & Arterial Blood Flow",
+    whatItContains:
+      "Dietary nitrates, betalain antioxidants (liver shields), potassium, folate, and gentle plant fiber.",
+    provenBenefit:
+      "Relaxes and widens your blood pipes, making it easier for blood to circulate, lowering resting blood pressure, and boosting physical workout stamina.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation:
+      "Hypertension Clinical Trials (PMID: 25421976) & Sports Med Systematic Review 2017",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/25421976/",
+    mythCheck: {
+      claim: "Beetroot turns your urine pink because your kidneys are bleeding.",
+      reality:
+        "'Beeturia' is a completely harmless passage of natural red betacyanin pigment in urine that happens safely in about 14% of healthy people.",
+    },
+    whoShouldLimit: [
+      "People with a personal history of calcium oxalate kidney stones should consume in moderation due to high natural oxalates",
+    ],
+    bestPairing:
+      "Steamed or grated beetroot blended into fresh homemade curd (Beetroot Raita) with roasted cumin and fresh mint.",
+    indianServingContext: "1 small beetroot (steamed or in raita) 2 to 3 times per week.",
+    guidance: {
+      do: "Lightly steam or roast rather than boiling in heavy water to preserve blood-pressure-lowering nitrates.",
+      dont: "Don't panic if your urine or stool turns slightly reddish after eating beetroot.",
+      askDoctorIf: "Ask your doctor if you take prescription nitrate medicines for heart angina.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "चुकंदर",
+      whatItContains:
+        "प्राकृतिक नाइट्रेट, लिवर रक्षक बीटालिन एंटीऑक्सीडेंट, पोटैशियम, फोलेट और फाइबर।",
+      provenBenefit:
+        "खून की नलियों को चौड़ा और लचीला बनाता है, जिससे ब्लड प्रेशर घटता है और शरीर में फुर्ती आती है।",
+      mythClaim: "चुकंदर खाने से पेशाब लाल होना गुर्दे में खून आने का संकेत है।",
+      mythReality:
+        "यह केवल चुकंदर के प्राकृतिक लाल रंग का सुरक्षित निकास है जो लगभग 14% लोगों में सामान्य रूप से होता है।",
+      whoShouldLimit: "गुर्दे की पथरी (ऑक्सालेट स्टोन) वाले लोग सीमित मात्रा में ही सेवन करें।",
+      bestPairing: "ताजे दही, भुने जीरे और पुदीने के साथ बना चुकंदर का स्वादिष्ट रायता।",
+      do: "पानी में ज्यादा उबालने के बजाय हल्का भाप में पकाएं ताकि इसके गुण नष्ट न हों।",
+      dont: "पेशाब का रंग हल्का गुलाबी दिखने पर घबराएं नहीं।",
+      askDoctorIf: "यदि आप दिल के लिए नाइट्रेट दवाएं ले रहे हैं, तो डॉक्टर से सलाह लें।",
+    },
+  },
+
+  // 24. Adrak & Sonth (Fresh & Dry Ginger)
+  {
+    id: "food-ginger",
+    foodName: "Adrak & Sonth (Fresh & Dry Ginger Root)",
+    hindiName: "अदरक व सोंठ",
+    level: 1,
+    category: "spice_herb",
+    categoryLabel: "Digestive Spark & Joint Calm / अदरक",
+    situationTag: "If you Suffer from Nausea, Gas, or Stiff Morning Joints...",
+    system: "gut",
+    systemLabel: "Gastric Motility & Joint Inflammation",
+    whatItContains:
+      "Gingerols, shogaols, and aromatic terpenes that gently stimulate digestive enzymes and calm cellular inflammation.",
+    provenBenefit:
+      "Speeds up sluggish stomach emptying by nearly 50%, relieves travel nausea and morning sickness, and eases dull, aching joint stiffness.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
+    sourceCitation:
+      "World Journal of Gastroenterology (PMID: 21286598) & Arthritis Research Review 2016",
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/21286598/",
+    mythCheck: {
+      claim: "Ginger heats up your body dangerously and causes facial boils.",
+      reality:
+        "In everyday culinary amounts (1/2 to 1 inch daily), ginger aids gastric acid and bile circulation without harming internal body temperature.",
+    },
+    whoShouldLimit: [
+      "People taking high-dose prescription blood thinners (Warfarin/Aspirin) should avoid medicinal extract supplements",
+      "People with active bleeding stomach ulcers",
+    ],
+    bestPairing:
+      "Freshly grated ginger steeped in warm water with a squeeze of lemon, or crushed with tulsi into hot tea.",
+    indianServingContext: "1/2 to 1 inch of fresh ginger root grated into meals daily.",
+    guidance: {
+      do: "Add freshly grated ginger near the end of cooking to protect its delicate aromatic oils.",
+      dont: "Don't consume heavy concentrated ginger extract pills without medical guidance if on heart pills.",
+      askDoctorIf: "Ask your doctor if you take daily antiplatelet or blood-thinning pills.",
+    },
+    lastReviewed: "October 2024",
+    readingGrade: "Grade 6 (Plain Language)",
+    hi: {
+      foodName: "अदरक व सोंठ",
+      whatItContains:
+        "जिंजरॉल, शोगिओल और पाचक एंजाइमों को सक्रिय करने वाले प्राकृतिक सूजनरोधी तेल।",
+      provenBenefit:
+        "पेट खाली करने की रफ्तार 50% तेज करता है, उल्टी-मतली रोकता है और जोड़ों के दर्द व अकड़न को शांत करता है।",
+      mythClaim: "अदरक खाने से शरीर में बहुत तेज गर्मी पैदा होती है और चेहरे पर दाने निकल आते हैं।",
+      mythReality: "रोज 1 इंच अदरक भोजन में लेने से पाचन दुरुस्त रहता है और कोई नुकसान नहीं होता।",
+      whoShouldLimit:
+        "खून पतला करने की दवा (एस्पिरिन) लेने वाले लोग बहुत अधिक अर्क न लें; पेट में अल्सर वाले बचें।",
+      bestPairing: "गर्म पानी में कद्दूकस किया अदरक और नींबू, या तुलसी के साथ कड़क देसी चाय।",
+      do: "खाना पकने के अंतिम समय में अदरक डालें ताकि इसके गुण सुरक्षित रहें।",
+      dont: "दवाओं के साथ बाजार के बिना जांचे अदरक के कैप्सूल न खाएं।",
+      askDoctorIf: "यदि आप खून पतला करने वाली दवाएं ले रहे हैं, तो डॉक्टर से सलाह लें।",
     },
   },
 ];
