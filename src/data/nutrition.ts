@@ -148,11 +148,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     categoryLabel: "Ancient Millet",
     situationTag: "If you have prediabetes or bone density concerns...",
     system: "metabolism",
-    systemLabel: "Glycemic Stability & Bone Matrix",
+    systemLabel: "Blood Sugar Stability & Strong Bones",
     whatItContains:
-      "The highest calcium concentration among all cereals (~344 mg per 100g, over 30x higher than white rice), rich in slow-digesting resistant starch, polyphenols, and essential methionine.",
+      "Packed with natural calcium (over 30 times more than white rice), gentle fiber that digests slowly, and key minerals that keep your bones strong.",
     provenBenefit:
-      "Delays duodenal carbohydrate absorption, attenuating postprandial glycemic excursions by up to 28% in Type 2 diabetes trials while replenishing skeletal calcium stores.",
+      "Slows down sugar release in your belly to prevent sudden sugar spikes after eating (by up to 28% in studies), while giving your bones and teeth daily calcium.",
     evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
     sourceCitation:
       "ICMR-NIN Indian Food Composition Tables & Journal of Food Science and Technology (PMID: 24497746)",
@@ -160,24 +160,24 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     mythCheck: {
       claim: "Ragi flour can be eaten raw in morning smoothies for accelerated fat loss.",
       reality:
-        "Raw ragi contains enzyme-inhibiting phytates and tannins that block calcium and iron absorption; it must always be soaked, cooked, sprouted, or fermented.",
+        "Raw ragi contains natural plant blockers that stop your body from soaking up calcium and iron. It must always be soaked, cooked, sprouted, or fermented.",
     },
     whoShouldLimit: [
-      "Advanced Chronic Kidney Disease (CKD stage 3-5, due to high potassium/phosphorus load)",
-      "Individuals prone to recurrent calcium oxalate kidney stones",
+      "People with severe kidney disease (needs a doctor's limit on potassium and minerals)",
+      "People prone to calcium-based kidney stones",
     ],
     bestPairing:
       "Ragi Roti or Mudde paired with protein-rich Sambar or sprouted dal; squeeze fresh lemon juice to maximize non-heme iron uptake.",
     indianServingContext:
       "1-2 medium rotis or 1 small mudde ball (50-60g dry flour) for lunch 3-4 days per week.",
     guidance: {
-      do: "Soak flour or ferment ragi batter for 8-12 hours before steaming (idli/dosa) to degrade phytates and increase bioavailable iron.",
-      dont: "Don't consume heavy unfermented ragi porridge right before bedtime if you suffer from gastroesophageal reflux (GERD).",
+      do: "Soak flour or ferment ragi batter for 8-12 hours before steaming (idli/dosa) to break down plant blockers and absorb more iron.",
+      dont: "Avoid eating heavy ragi dishes right before bedtime if you often get heartburn or acid reflux.",
       askDoctorIf:
-        "Ask your nephrologist if you have an estimated GFR < 45 mL/min before incorporating daily high-mineral millets.",
+        "Ask your doctor if you have reduced kidney function before eating millets every single day.",
     },
     lastReviewed: "October 2024",
-    readingGrade: "Grade 7 (Plain Language)",
+    readingGrade: "Grade 6 (Plain Language)",
     hi: {
       foodName: "रागी (नाचनी)",
       whatItContains:
@@ -204,11 +204,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     categoryLabel: "Indigenous Supergreen",
     situationTag: "If you're on blood pressure medication...",
     system: "heart",
-    systemLabel: "Endothelial & Arterial Health",
+    systemLabel: "Blood Vessel & Heart Care",
     whatItContains:
-      "Concentrated beta-carotene, Vitamin C, quercetin, chlorogenic acid, and intact vegetable protein (9.4g per 100g fresh leaves) with abundant potassium and magnesium.",
+      "Rich in Vitamin C, beta-carotene, heart-friendly plant antioxidants, vegetable protein, potassium, and magnesium.",
     provenBenefit:
-      "Isothiocyanates and chlorogenic acid promote arterial vasodilation, modest reductions in systolic blood pressure (~4-6 mmHg), and cellular antioxidant protection.",
+      "Helps relax stiff blood vessels, gently brings down high blood pressure numbers (by about 4 to 6 points), and protects your heart cells from daily stress.",
     evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
     sourceCitation:
       "ICMR-NIN Bioactive Research & Phytotherapy Research Clinical Evaluation (PMID: 17089328)",
@@ -216,11 +216,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     mythCheck: {
       claim: "Moringa permanently cures 300 diseases and replaces all prescription medications.",
       reality:
-        "Moringa is a nutrient-dense traditional vegetable, not an acute pharmaceutical substitute for prescribed anti-hypertensives or insulin.",
+        "Moringa is a healthy traditional leafy vegetable, not a miracle cure or replacement for prescription blood pressure or diabetes medicine.",
     },
     whoShouldLimit: [
-      "Pregnant women (drumstick roots/bark contain alkaloid spirochin which can stimulate uterine spasms; leaves should be consumed only in culinary moderation)",
-      "Patients taking thyroid hormone replacement (Levothyroxine) or blood thinners",
+      "Pregnant women (drumstick roots and bark must be avoided; tender leaves should only be eaten in normal cooking amounts)",
+      "Anyone taking prescription thyroid pills or blood thinners (check with your doctor first)",
     ],
     bestPairing:
       "Sauté fresh moringa leaves into yellow moong dal tadka or cook tender pods in traditional rasam with black pepper and 1/2 tsp ghee.",
@@ -228,9 +228,9 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       "1/2 to 1 cup fresh leaves cooked in dal or sabzi 2-3 times per week, or 2 drumstick pods in sambar.",
     guidance: {
       do: "Add moringa leaves during the final 5 minutes of cooking dal to preserve delicate heat-sensitive Vitamin C.",
-      dont: "Don't consume unregulated high-dose commercial root or bark extracts marketed online as miracle cleansers.",
+      dont: "Never take unregulated root powders or extreme cleansing pills sold online as miracle cures.",
       askDoctorIf:
-        "Ask your physician if you take anti-hypertensive drugs (e.g. Amlodipine), as moringa has mild additive hypotensive actions.",
+        "Ask your doctor if you take blood pressure medicine, since moringa can also naturally lower blood pressure numbers.",
     },
     lastReviewed: "October 2024",
     readingGrade: "Grade 6 (Plain Language)",
@@ -262,11 +262,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     categoryLabel: "Traditional Unrefined Sugar",
     situationTag: "If you have diabetes or insulin resistance...",
     system: "metabolism",
-    systemLabel: "Glycemic Index & Mineral Matrix",
+    systemLabel: "Natural Sweetener & Sugar Level Check",
     whatItContains:
-      "Concentrated whole sugarcane syrup retaining trace iron (2.6 mg/100g), magnesium, potassium, and phenolics, alongside 70% to 85% sucrose and 10% to 15% fructose/glucose.",
+      "Made from natural boiled sugarcane juice. It keeps small amounts of iron and minerals, but is still 80% natural sugar.",
     provenBenefit:
-      "Provides natural minerals and zero chemical bleaching residues (unlike sulphur-treated white crystal sugar) and stimulates digestive enzyme secretion post-meal.",
+      "Unlike factory white sugar, it has no bleach or harsh chemicals, and a small bite after lunch helps spark natural digestion.",
     evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
     sourceCitation:
       "Indian Council of Medical Research (ICMR) Dietary Guidelines & Food Chemistry (PMID: 20627641)",
@@ -275,11 +275,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       claim:
         "Jaggery does not raise blood sugar and can be eaten without limit by diabetic individuals.",
       reality:
-        "Jaggery has a high Glycemic Index (~84) and is ~80% sucrose. It produces virtually the same rapid postprandial glucose spike as table sugar.",
+        "Jaggery is mostly pure natural sugar (~80%). It raises blood sugar levels almost as fast as regular white table sugar.",
     },
     whoShouldLimit: [
-      "Individuals with Type 1 or Type 2 Diabetes Mellitus",
-      "Patients with Non-Alcoholic Fatty Liver Disease (NAFLD) or elevated triglycerides",
+      "Anyone with diabetes or high blood sugar",
+      "People managing fatty liver or high blood fats (triglycerides)",
     ],
     bestPairing:
       "Pair 1 small cube (5-10g) with roasted chana (Bengal gram) or roasted sesame seeds (til) to buffer gastric absorption through protein and fat.",
@@ -287,9 +287,9 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       "Limit to 1 small coin or cube (max 5-10g) after lunch during cold winter months for healthy adults.",
     guidance: {
       do: "Choose dark brown, artisanal organic jaggery free of synthetic chemical clarifiers (sodium hydrosulphite) that produce artificial bright yellow tints.",
-      dont: "Don't replace white sugar with large ladlefuls of jaggery thinking it is calorie-free or safe for uncontrolled hyperglycemia.",
+      dont: "Never treat jaggery as sugar-free or safe for uncontrolled diabetes—it still raises blood sugar quickly.",
       askDoctorIf:
-        "Ask your diabetologist how to account for jaggery in your carbohydrate allotment if managing glycemic control.",
+        "Ask your doctor or dietitian how much jaggery fits into your daily meal plan if you have diabetes.",
     },
     lastReviewed: "October 2024",
     readingGrade: "Grade 6 (Plain Language)",
@@ -320,11 +320,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     categoryLabel: "High-Heat Cooking Lipid",
     situationTag: "If you're cooking over high heat or managing cholesterol...",
     system: "gut",
-    systemLabel: "Intestinal Epithelium & Lipid Profile",
+    systemLabel: "Healthy Gut Lining & Cooking Fat",
     whatItContains:
-      "Short- and medium-chain fatty acids including butyric acid (~3-4%), fat-soluble vitamins (A, D, E, K2), and conjugated linoleic acid (CLA), with casein and lactose milk solids removed.",
+      "Pure clarified butter fat with milk solids removed, containing gut-nourishing butyrate fat and vitamins A, D, E, and K.",
     provenBenefit:
-      "Butyrate provides direct cellular fuel to colonocytes, strengthening intestinal mucosal barrier tight junctions. High smoke point (250°C / 485°F) resists thermal degradation and toxic aldehyde formation.",
+      "Nourishes the lining of your gut, aids digestion, and can handle high cooking heat without burning or turning into harmful smoke.",
     evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
     sourceCitation:
       "Journal of Clinical and Diagnostic Research (PMID: 26816892) & American Heart Association (AHA) Fats Consensus",
@@ -332,11 +332,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     mythCheck: {
       claim: "Ghee instantly clogs heart arteries and should be 100% eliminated from all diets.",
       reality:
-        "In clinical moderation (1-2 tsp/day), ghee provides stable fats without industrial trans-fats; excessive intake (>3 tbsp/day) however raises circulating ApoB and LDL cholesterol.",
+        "In moderate amounts (1 to 2 teaspoons a day), ghee provides clean energy without harmful factory trans-fats; having too much can raise bad cholesterol.",
     },
     whoShouldLimit: [
-      "Individuals with familial hypercholesterolemia or elevated baseline LDL-C (>160 mg/dL)",
-      "Patients with acute pancreatitis or active gallstone obstruction",
+      "People with very high bad cholesterol (LDL over 160) or family history of heart artery disease",
+      "Anyone with active gallbladder stones or pancreas trouble",
     ],
     bestPairing:
       "Melt 1 teaspoon over warm whole-grain khichdi, dal tadka, or steamed bajra to facilitate the uptake of fat-soluble vitamins and curcumin.",
@@ -344,12 +344,12 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       "1 to 2 teaspoons (5-10 ml) daily distributed across cooked lunch and dinner.",
     guidance: {
       do: "Use traditional bilona ghee as a thermally stable cooking fat for home Indian tempering (tadka) instead of repeatedly reheated seed oils.",
-      dont: "Don't pour unlimited spoonfuls into your meals or bulletproof coffees if your blood tests reveal high cardiovascular risk markers.",
+      dont: "Avoid drinking large spoonfuls of melted ghee if your heart tests show high cholesterol.",
       askDoctorIf:
-        "Ask your cardiologist if you have existing coronary artery disease or high coronary calcium scores before altering saturated fat intake.",
+        "Ask your heart doctor about your daily fat limit if you have heart disease or stents.",
     },
     lastReviewed: "October 2024",
-    readingGrade: "Grade 7 (Plain Language)",
+    readingGrade: "Grade 6 (Plain Language)",
     hi: {
       foodName: "देसी घी (बिलौना)",
       whatItContains:
@@ -378,11 +378,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     categoryLabel: "Probiotic Condiment",
     situationTag: "If you're on blood pressure medication or salt restriction...",
     system: "gut",
-    systemLabel: "Gastric Motility & Sodium Balance",
+    systemLabel: "Stomach Juices & Salt Awareness",
     whatItContains:
-      "Wild lactic acid bacteria (Lactobacillus plantarum, L. brevis), bioavailable organic acids, cold-pressed mustard oil polyphenols, fenugreek/fennel bioactives, and high sodium content (~800-1200 mg/tbsp).",
+      "Healthy friendly bacteria from natural sun-fermenting, mustard oil, spices like methi and saunf, and a high amount of salt.",
     provenBenefit:
-      "Authentic sun-fermented lacto-pickles act as natural carminative condiments, stimulating salivary amylase, stomach acid production, and gut motility.",
+      "A small taste wakes up your mouth, helps your stomach produce digestive juices, and feeds good gut microbes.",
     evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
     sourceCitation:
       "Frontiers in Microbiology (PMID: 30079053) & ICMR Traditional Fermented Foods Survey",
@@ -390,11 +390,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     mythCheck: {
       claim: "Traditional homemade achaar is pure poison that directly destroys heart valves.",
       reality:
-        "Artisanal naturally fermented pickles are rich in live probiotic cultures and digestive enzymes; the actual physiological risk is exclusively the concentrated sodium load if overconsumed.",
+        "Sun-fermented pickles carry live friendly gut bacteria and digestive spices; the only real health risk is having too much salt if you eat large scoops.",
     },
     whoShouldLimit: [
-      "Individuals with Hypertension or Congestive Heart Failure on salt-restricted diets (<1,500 mg sodium/day)",
-      "Patients with Stage 3-5 Chronic Kidney Disease or active fluid retention/edema",
+      "People with high blood pressure who need to keep daily salt low",
+      "People with kidney trouble or water retention (swollen legs)",
     ],
     bestPairing:
       "A small dab alongside plain curd rice, khichdi, or dal-chawal to stimulate sluggish appetite and support digestion.",
@@ -402,9 +402,9 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       "Strictly 1 level teaspoon (5-10g) as a flavorful condiment, not as a main vegetable dish.",
     guidance: {
       do: "Choose traditional sun-ripened, mustard-oil cured pickles over factory-bottled industrial varieties packed with synthetic acetic acid and chemical preservatives.",
-      dont: "Don't scoop excess oil and salt brine pooling at the bottom of the jar; take only the fermented vegetable or mango piece.",
+      dont: "Avoid spooning the leftover salty oil from the bottom of the jar; eat only a small piece of the pickled fruit or veggie.",
       askDoctorIf:
-        "Ask your doctor if you take diuretic medications (e.g. Torsemide) or ACE inhibitors before adding high-sodium fermented condiments.",
+        "Ask your doctor about your daily salt limit if you take blood pressure water pills.",
     },
     lastReviewed: "October 2024",
     readingGrade: "Grade 6 (Plain Language)",
@@ -434,11 +434,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     categoryLabel: "Medium-Chain Triglyceride Oil",
     situationTag: "If you're managing cardiovascular risk or liver health...",
     system: "metabolism",
-    systemLabel: "Hepatic Portal Oxidation & Lipids",
+    systemLabel: "Clean Energy Fats & Heart Health",
     whatItContains:
-      "Medium-chain triglycerides (MCTs) including lauric acid (C12:0, ~48%), caprylic acid, and capric acid, with zero cholesterol and heat-stable saturated fatty bonds.",
+      "Quick-burning natural plant fats (MCTs like lauric acid) that give clean energy, with zero cholesterol.",
     provenBenefit:
-      "Lauric acid converts in the gut into monolaurin, which displays antibacterial and antifungal properties; MCTs are absorbed directly into the portal vein for rapid hepatic oxidation rather than lymphatic storage.",
+      "Your liver turns these fats into quick energy instead of storing them as body fat, and lauric acid helps fight bad gut bugs.",
     evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
     sourceCitation:
       "Cochrane Database of Systematic Reviews & American Journal of Clinical Nutrition (PMID: 32679803)",
@@ -446,11 +446,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     mythCheck: {
       claim: "Drinking raw coconut oil every morning instantly burns stubborn belly fat.",
       reality:
-        "Coconut oil is 90% saturated fat and delivers ~120 calories per tablespoon; while MCTs metabolize efficiently, excess calories still result in hepatic lipid storage and LDL elevation.",
+        "Coconut oil is 90% saturated fat with 120 calories per tablespoon; drinking extra spoonfuls can still raise bad cholesterol and add unwanted weight.",
     },
     whoShouldLimit: [
-      "Individuals with elevated baseline LDL cholesterol (>130 mg/dL) or ApoB",
-      "Patients with Non-Alcoholic Steatohepatitis (NASH) or familial lipid disorders",
+      "People with high bad cholesterol (LDL) or heart conditions",
+      "People with advanced fatty liver disease",
     ],
     bestPairing:
       "Traditional South Indian tadka for sambar, aviyal, or thoran using 1 teaspoon of virgin oil with mustard seeds, curry leaves, and green chilies.",
@@ -458,12 +458,12 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       "1 to 2 teaspoons (5-10 ml) per person when used as a cooking medium for coastal regional recipes.",
     guidance: {
       do: "Choose unrefined, cold-pressed virgin coconut oil with a fresh natural aroma rather than chemically bleached and deodorized (RBD) copra oils.",
-      dont: "Don't ingest large undiluted tablespoons on an empty stomach; use it culinary-style as part of balanced, fibrous meals.",
+      dont: "Avoid swallowing large gulps of oil on an empty stomach to lose weight; use a teaspoon in cooking instead.",
       askDoctorIf:
-        "Ask your physician if your lipid panel reveals elevated LDL-C before substituting other polyunsaturated oils with coconut oil.",
+        "Ask your doctor if your blood tests show high cholesterol before adding coconut oil daily.",
     },
     lastReviewed: "October 2024",
-    readingGrade: "Grade 7 (Plain Language)",
+    readingGrade: "Grade 6 (Plain Language)",
     hi: {
       foodName: "कोल्ड-प्रेस्ड नारियल तेल",
       whatItContains:
@@ -490,11 +490,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     categoryLabel: "Low-Glycemic Ancient Grains",
     situationTag: "If you're fasting for a festival or managing blood sugar...",
     system: "metabolism",
-    systemLabel: "Insulin Sensitivity & Satiety",
+    systemLabel: "Steady Energy & Sugar Control",
     whatItContains:
-      "Complex slow-digesting starches, high dietary fiber (11-13%), magnesium (~114 mg/100g), non-heme iron, zinc, and B-complex vitamins (niacin, thiamine).",
+      "Slow-burning whole grains packed with fiber, magnesium, natural iron, and energizing B vitamins.",
     provenBenefit:
-      "Magnesium acts as an essential cofactor for over 300 enzymes including insulin signaling kinases; low glycemic index prevents sharp post-meal blood sugar surges.",
+      "Digests very slowly to keep your energy steady without sugar crashes, and magnesium helps your body use insulin properly.",
     evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
     sourceCitation:
       "Frontiers in Nutrition Systematic Review & Meta-Analysis (PMID: 34395510) & ICMR-NIN Millet Taskforce",
@@ -502,11 +502,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     mythCheck: {
       claim: "Millets are dry and suppress thyroid function in every person who eats them.",
       reality:
-        "While uncooked pearl millet contains goitrogenic glycosylflavones, thorough culinary boiling, soaking, and consuming adequate dietary iodine (iodized salt) completely inactivates goitrogens.",
+        "Raw uncooked pearl millet has compounds that can bother the thyroid, but normal cooking, soaking, and using iodized salt completely makes them safe.",
     },
     whoShouldLimit: [
-      "Individuals with unmanaged Hypothyroidism (if consuming uncooked/unfermented bajra in very high amounts daily without iodine)",
-      "Severe irritable bowel syndrome (IBS) prone to sudden bloating from high coarse fiber",
+      "People with untreated thyroid problems (if eating raw or undercooked millet without iodized salt)",
+      "People with a very sensitive stomach prone to sudden bloating from high fiber",
     ],
     bestPairing:
       "Bajra Roti served with garlic-curd chutney or green moong dal; Foxtail millet pulao cooked with seasonal vegetables and roasted cumin raita.",
@@ -514,12 +514,12 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       "1-2 medium bajra rotis (50-60g dry flour) or 1 cup cooked foxtail millet for lunch 2-4 times a week.",
     guidance: {
       do: "Transition to millets gradually: begin by blending 30% millet flour with whole wheat or consuming millet grains 2-3 times weekly to allow your gut microbiome to adapt.",
-      dont: "Don't consume undercooked or unwashed pearl millet flour if you have documented Hashimoto's thyroiditis or low dietary iodine.",
+      dont: "Don't switch to 100% millets overnight; mix them slowly with regular flour so your stomach can adjust comfortably.",
       askDoctorIf:
-        "Ask your endocrinologist if you have active thyroid disorders on high-dose levothyroxine before adopting a 100% millet-exclusive grain diet.",
+        "Ask your doctor if you take thyroid medicine before making millets your only daily grain.",
     },
     lastReviewed: "October 2024",
-    readingGrade: "Grade 7 (Plain Language)",
+    readingGrade: "Grade 6 (Plain Language)",
     hi: {
       foodName: "बाजरा और कंगनी (मिलेट्स)",
       whatItContains:
@@ -547,11 +547,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     categoryLabel: "High-Potency Vitamin C Matrix",
     situationTag: "Monsoon & winter immunity protection...",
     system: "liver",
-    systemLabel: "Hepatic Protection & Iron Chelation",
+    systemLabel: "Liver Defense & Iron Absorption",
     whatItContains:
-      "One of the richest natural sources of Vitamin C (~600-800 mg per 100g, 20x higher than orange juice), heat-stable tannins (emblicanin A and B), gallic acid, and ellagic acid.",
+      "One of nature's richest sources of natural Vitamin C (20 times more than orange juice), plus protective plant antioxidants.",
     provenBenefit:
-      "Tannin-bound Vitamin C resists oxidation during gentle cooking; stimulates endothelial nitric oxide and dramatically converts non-heme plant iron into absorbable ferrous ions.",
+      "Shields liver cells from daily stress, strengthens your immune defense, and multiplies how much iron your body absorbs from dal by 4 times.",
     evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
     sourceCitation:
       "European Journal of Clinical Nutrition (PMID: 21490637) & ICMR-NIN Vitamin C Tables",
@@ -559,11 +559,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     mythCheck: {
       claim: "Drinking raw amla juice purges all toxins from your blood within 7 days.",
       reality:
-        "Your liver and kidneys perform all biochemical detoxification; amla simply supplies antioxidant cofactors that protect liver cells from free radical damage.",
+        "Your liver and kidneys do all natural detoxing; amla simply supplies antioxidants that protect liver cells from damage.",
     },
     whoShouldLimit: [
-      "Individuals taking prescription antiplatelet or anticoagulant medications (Warfarin, Clopidogrel, Aspirin)",
-      "Patients scheduled for surgery within 14 days due to mild platelet aggregation inhibition",
+      "People taking blood-thinning medicines (like Warfarin or Aspirin)",
+      "Anyone scheduled for surgery in the next two weeks",
     ],
     bestPairing:
       "Grate 1 fresh amla into fresh mint-coriander chutney, or eat fresh amla alongside dal-rice to boost plant iron absorption by 400%.",
@@ -571,9 +571,9 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       "1 whole fresh amla (or 15-20 ml freshly pressed juice diluted in a glass of water) once daily in the morning.",
     guidance: {
       do: "Consume fresh whole amla fruit or cold-pressed raw juice diluted in warm water rather than sugar-laden commercial amla murabba candies.",
-      dont: "Don't take concentrated acidic amla juice right before sleeping if you suffer from severe nocturnal acid reflux.",
+      dont: "Avoid drinking sour amla juice right before bed if you suffer from nighttime acid reflux or heartburn.",
       askDoctorIf:
-        "Ask your surgeon or hematologist before taking high-dose amla extracts if you take prescription blood thinners.",
+        "Ask your doctor before taking strong amla juice or powders if you take blood thinners.",
     },
     lastReviewed: "October 2024",
     readingGrade: "Grade 6 (Plain Language)",
@@ -605,11 +605,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     categoryLabel: "Live Probiotic Matrix",
     situationTag: "Monsoon gut safety & summer electrolyte replenishment...",
     system: "gut",
-    systemLabel: "Colonic Microbiome & Mucosal Lining",
+    systemLabel: "Friendly Gut Bacteria & Easy Digestion",
     whatItContains:
-      "Live probiotic strains (Lactobacillus bulgaricus, Streptococcus thermophilus), bioavailable calcium, lactic acid, easily digestible casein/whey peptides, and potassium.",
+      "Millions of live friendly gut bacteria, easy-to-absorb calcium, natural protein, and soothing lactic acid.",
     provenBenefit:
-      "Bacterial fermentation hydrolyzes milk proteins and lactose, making curd gentle on lactose-intolerant guts while fortifying intestinal barrier integrity against foodborne pathobionts.",
+      "Because bacteria break down milk sugars during culturing, curd is gentle on sensitive bellies, soothes the stomach, and fights bad food bugs.",
     evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
     sourceCitation:
       "Cell Host & Microbe Landmark Trial (PMID: 34260914) & ICMR Guidelines for Probiotic Foods",
@@ -617,21 +617,21 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     mythCheck: {
       claim: "Eating curd at dinner directly causes chest phlegm, sinus infections, and colds.",
       reality:
-        "Respiratory infections are caused by viruses, not dairy. Curd does not create mucus, although ice-cold refrigerated dairy can cause temporary throat irritation in sensitive vocal cords.",
+        "Colds and coughs come from viral infections, not curd. Cold curd right out of the fridge might irritate a sensitive throat, but room-temperature curd does not cause phlegm.",
     },
     whoShouldLimit: [
-      "Severe IgE-mediated dairy/casein allergy (anaphylaxis risk)",
-      "Patients currently taking Fluoroquinolone (Ciprofloxacin) or Tetracycline antibiotics (must space intake by at least 2 hours)",
+      "Anyone with a severe diagnosed milk protein allergy",
+      "People currently taking certain antibiotic pills (take curd at least 2 hours apart)",
     ],
     bestPairing:
       "Spiced Chaas churned with roasted cumin seeds (bhuna jeera), black salt (kala namak), and fresh coriander leaves, consumed with or right after lunch.",
     indianServingContext:
       "1 small katori (100-150g) of fresh dahi or 1 tall glass (250ml) of diluted spiced chaas daily.",
     guidance: {
-      do: "Consume freshly set room-temperature dahi or freshly churned chaas; temper with roasted cumin and asafoetida (hing) for superior carminative action.",
-      dont: "Don't buy ultra-sweetened packaged commercial yogurts that contain 15-20g of added refined sugar per cup.",
+      do: "Consume freshly set room-temperature dahi or freshly churned chaas; temper with roasted cumin and asafoetida (hing) for superior digestive support.",
+      dont: "Don't buy sugary packaged yogurts with 3 to 4 teaspoons of hidden factory sugar per cup.",
       askDoctorIf:
-        "Ask your doctor or pharmacist about timing if prescribed antibiotics, as dairy calcium binds and deactivates certain drug molecules.",
+        "Ask your doctor or pharmacist about pill timing if you take antibiotics with dairy.",
     },
     lastReviewed: "October 2024",
     readingGrade: "Grade 6 (Plain Language)",
@@ -662,11 +662,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     categoryLabel: "Glycemic Stabilizer",
     situationTag: "If you're managing diabetes or post-meal sugar spikes...",
     system: "metabolism",
-    systemLabel: "Pancreatic Beta Cells & Glucose Uptake",
+    systemLabel: "Pancreas Care & Blood Sugar Control",
     whatItContains:
-      "Soluble galactomannan dietary fiber (45-50%), 4-hydroxyisoleucine (an amino acid that stimulates glucose-dependent insulin release), trigonelline, and diosgenin saponins.",
+      "Jelly-like soluble fiber, natural plant nutrients that support insulin, and iron-rich green leaves.",
     provenBenefit:
-      "Galactomannan delays gastric emptying and glucose absorption, while 4-hydroxyisoleucine directly enhances insulin release from pancreatic beta cells in hyperglycemic states.",
+      "Forms a gentle gel in your stomach that slows down sugar absorption, preventing rapid blood sugar spikes after your meals.",
     evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
     sourceCitation:
       "Journal of Ethnopharmacology Systematic Review (PMID: 27496582) & American Diabetes Association (ADA)",
@@ -675,24 +675,24 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       claim:
         "Chewing methi seeds permanently cures diabetes so you can stop all prescription medicine.",
       reality:
-        "Fenugreek is a proven clinical adjunct that moderates glucose spikes, but abruptly discontinuing prescribed medication can cause dangerous hyperglycemic complications.",
+        "Methi is proven to help keep blood sugar steady, but suddenly stopping your prescribed medicine can cause dangerous sugar spikes.",
     },
     whoShouldLimit: [
-      "Pregnant women (therapeutic quantities of fenugreek seeds stimulate oxytocic uterine contractions)",
-      "Individuals with severe cross-allergies to legumes, peanuts, or chickpeas",
+      "Pregnant women (large medicinal amounts of methi seeds can trigger uterine contractions)",
+      "People allergic to chickpeas, peanuts, or related lentils",
     ],
     bestPairing:
       "1 teaspoon (5g) whole methi seeds soaked overnight in warm water, chewed in the morning followed by drinking the soak water; fresh methi leaves cooked into dal or whole wheat thepla.",
     indianServingContext:
       "1 teaspoon soaked seeds daily in the morning, or 1 cup fresh leaves in vegetable dishes 2-3 times weekly.",
     guidance: {
-      do: "Soak whole seeds overnight to soften the galactomannan gel matrix and reduce bitter saponin intensity.",
-      dont: "Don't consume concentrated medicinal fenugreek seed powders during pregnancy without explicit obstetric approval.",
+      do: "Soak whole seeds overnight to soften the gel fiber and make them less bitter.",
+      dont: "Never take high doses of concentrated methi seed powders during pregnancy.",
       askDoctorIf:
-        "Ask your diabetologist to monitor your blood sugar closely when starting daily methi, as oral hypoglycemic doses may need adjustment to prevent hypoglycemia.",
+        "Ask your doctor if you take sugar medications, as methi naturally lowers blood sugar and pills may need adjusting.",
     },
     lastReviewed: "October 2024",
-    readingGrade: "Grade 7 (Plain Language)",
+    readingGrade: "Grade 6 (Plain Language)",
     hi: {
       foodName: "मेथी दाना और हरी मेथी",
       whatItContains:
@@ -722,11 +722,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     categoryLabel: "Curcumin Bioavailability Engine",
     situationTag: "Winter respiratory wellness & joint inflammation...",
     system: "liver",
-    systemLabel: "Hepatic NF-κB Pathway & Joint Mobility",
+    systemLabel: "Joint Comfort & Calming Swelling",
     whatItContains:
-      "Curcuminoids (curcumin, demethoxycurcumin, bisdemethoxycurcumin), aromatic turmerones, and piperine alkaloid from cracked black pepper.",
+      "Healing golden curcumin from turmeric, piperine from fresh black pepper, and healthy fat from desi ghee.",
     provenBenefit:
-      "Downregulates nuclear factor kappa B (NF-κB), curbing systemic pro-inflammatory cytokines (TNF-alpha, IL-6); piperine temporarily halts hepatic glucuronidation to boost curcumin bioavailability by 2,000%.",
+      "Soothes everyday aches, stiffness, and joint swelling; black pepper stops your body from flushing out turmeric so you absorb 20 times more of it.",
     evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
     sourceCitation:
       "Planta Medica Landmark Bioavailability Trial (PMID: 9619120) & ICMR Phytomedicine Review",
@@ -734,21 +734,21 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     mythCheck: {
       claim: "Drinking raw turmeric powder in plain cold water delivers maximum medicinal potency.",
       reality:
-        "Curcumin is completely fat-soluble and hydrophobic; without black pepper and a healthy fat (ghee, oil, or whole milk), over 95% passes through the intestines unabsorbed.",
+        "Turmeric does not dissolve in plain water. Without black pepper and a healthy fat (like ghee or milk), over 95% passes right through without being absorbed.",
     },
     whoShouldLimit: [
-      "Patients with active gallstones or biliary colic obstruction",
-      "Individuals taking prescription anticoagulants or antiplatelet drugs (Warfarin, Aspirin)",
+      "People with active gallbladder stones or blocked bile ducts",
+      "People on prescription blood thinner medicines",
     ],
     bestPairing:
       "Traditional Haldi Doodh: 1 cup warm milk (or almond milk) simmered with 1/2 tsp freshly grated raw turmeric root, a pinch of freshly crushed black pepper, and 1/4 tsp desi ghee.",
     indianServingContext:
       "1/2 teaspoon raw grated turmeric (or 1/4 tsp pure powder) with a pinch of black pepper daily in cooking or warm milk.",
     guidance: {
-      do: "Always combine turmeric with a pinch of freshly cracked black pepper and a dietary lipid (ghee, mustard oil, or milk) for cellular uptake.",
-      dont: "Don't consume high-dose non-standardized turmeric pills or mega-extracts without clinical supervision.",
+      do: "Always combine turmeric with a pinch of freshly cracked black pepper and healthy fat (ghee, mustard oil, or milk) so your body can absorb it.",
+      dont: "Avoid taking high-potency factory turmeric extract pills without a doctor's advice.",
       askDoctorIf:
-        "Ask your gastroenterologist or surgeon if you have active gallstones or an upcoming surgery before taking concentrated turmeric supplements.",
+        "Ask your doctor if you take blood thinners or have gallbladder stones before taking turmeric supplements.",
     },
     lastReviewed: "October 2024",
     readingGrade: "Grade 6 (Plain Language)",
@@ -778,11 +778,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     categoryLabel: "Phyto-Insulin Vegetable",
     situationTag: "If you have elevated HbA1c or prediabetes...",
     system: "metabolism",
-    systemLabel: "Peripheral Glucose Transporters (GLUT-4)",
+    systemLabel: "Muscle Sugar Absorption & Blood Sugar Balance",
     whatItContains:
-      "Charantin, polypeptide-p (a plant-based insulin mimetic peptide), vicine, momordicin, dietary fiber, and Vitamin C.",
+      "Natural plant compounds that act like gentle insulin, cleansing dietary fiber, and Vitamin C.",
     provenBenefit:
-      "Polypeptide-p binds human insulin receptors to activate cellular GLUT-4 glucose transporters, facilitating peripheral glucose uptake in skeletal muscles.",
+      "Helps muscle cells take in sugar from your blood after meals, preventing sharp spikes in blood sugar readings.",
     evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
     sourceCitation:
       "Journal of Ethnopharmacology Systematic Review (PMID: 23684941) & ICMR Clinical Evaluation of Momordica",
@@ -791,11 +791,11 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       claim:
         "Drinking 1 glass of raw bitter gourd juice every morning completely cures diabetes in 30 days.",
       reality:
-        "Bitter gourd is an effective dietary adjunct for glycemic control, but it does not cure diabetes or permanently repair non-functional pancreatic beta cells.",
+        "Bitter gourd helps your body handle sugar better, but it does not cure diabetes or permanently repair the pancreas.",
     },
     whoShouldLimit: [
-      "Pregnant women (can induce uterine contractions and has potential abortifacient properties)",
-      "Individuals with G6PD deficiency (vicine can trigger favism / acute hemolytic anemia)",
+      "Pregnant women (can trigger uterine cramps)",
+      "People with rare enzyme deficiencies (G6PD deficiency)",
       "Young children",
     ],
     bestPairing:
@@ -803,13 +803,13 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     indianServingContext:
       "1/2 cup to 1 cup cooked vegetable 2-3 times per week as part of a balanced meal.",
     guidance: {
-      do: "Cook karela with carminative digestive spices (saunf, amchur, cumin) rather than boiling in heavy salt water and discarding the mineral-rich liquid.",
-      dont: "Don't drink large tumblers of raw concentrated karela juice during pregnancy or breastfeeding.",
+      do: "Cook karela with pleasant digestive spices (saunf, amchur, cumin) rather than boiling in heavy salt water and throwing away the liquid.",
+      dont: "Never drink huge glasses of raw bitter gourd juice during pregnancy.",
       askDoctorIf:
-        "Ask your doctor if you take sulfonylurea drugs (like Glimepiride) or insulin to avoid sudden hypoglycemia events.",
+        "Ask your doctor if you take diabetes medicines or insulin, so your blood sugar doesn't drop too low.",
     },
     lastReviewed: "October 2024",
-    readingGrade: "Grade 7 (Plain Language)",
+    readingGrade: "Grade 6 (Plain Language)",
     hi: {
       foodName: "करेला",
       whatItContains:
@@ -853,7 +853,7 @@ export const FOOD_SYNERGIES: FoodSynergyPair[] = [
     synergyOutcome: "Non-Heme Iron Absorption Surge",
     multiplier: "+400% Iron Uptake",
     mechanism:
-      "Plant-based non-heme iron exists in the insoluble ferric (Fe3+) state. Ascorbic acid in lemon juice reduces it to the bioavailable ferrous (Fe2+) state and chelates it against inhibitory phytates.",
+      "Iron in plants (dal and spinach) is hard for the gut to absorb on its own. Vitamin C in fresh lemon juice changes this iron into a form your body can easily soak up, boosting iron absorption by up to 400%.",
     culinaryIdea:
       "Squeeze half a fresh lemon directly over cooked dal tadka or sautéed palak immediately before serving.",
   },
@@ -864,7 +864,7 @@ export const FOOD_SYNERGIES: FoodSynergyPair[] = [
     synergyOutcome: "Curcumin Bioavailability Multiplier",
     multiplier: "+2,000% Plasma Peak",
     mechanism:
-      "Piperine in black pepper inhibits hepatic and intestinal glucuronidation enzymes, while lipids in ghee solubilize hydrophobic curcumin, enabling systemic uptake.",
+      "Curcumin in turmeric cannot be absorbed on its own and passes straight through your body. Black pepper stops your liver from breaking it down too quickly, and ghee dissolves it so your body can absorb up to 2,000% more of it.",
     culinaryIdea:
       "Warm milk or dal simmered with 1/2 tsp turmeric, a pinch of freshly crushed black pepper, and 1/2 tsp ghee.",
   },
@@ -875,7 +875,7 @@ export const FOOD_SYNERGIES: FoodSynergyPair[] = [
     synergyOutcome: "Complete Amino Acid Protein Matrix",
     multiplier: "100% Complete Protein",
     mechanism:
-      "Grains are rich in methionine but deficient in lysine; pulses are rich in lysine but low in methionine. Combining them in a meal creates a complete biological protein equivalent to animal protein.",
+      "Rice lacks one key protein building block, while lentils lack another. Eating dal and rice together gives your body all the building blocks it needs, making a 100% complete protein just like milk or eggs.",
     culinaryIdea:
       "Traditional Indian Khichdi or Dal-Chawal with 2:1 ratio of lentils to whole grains.",
   },
@@ -886,7 +886,7 @@ export const FOOD_SYNERGIES: FoodSynergyPair[] = [
     synergyOutcome: "Carminative Gut Motility Engine",
     multiplier: "Accelerated Gastric Emptying",
     mechanism:
-      "Cuminaldehyde in roasted cumin stimulates salivary bile acid secretion, while probiotic lactic acid in curd stabilizes duodenal pH for optimal enzymatic digestion.",
+      "Roasted cumin stimulates stomach juices to break down food, while soothing probiotic curd balances your belly. Together, they relieve bloating and help heavy meals digest smoothly.",
     culinaryIdea:
       "Whisk 1 cup dahi into spiced chaas with 1/2 tsp freshly roasted crushed cumin and black salt after lunch.",
   },
@@ -908,9 +908,9 @@ export const DRUG_FOOD_WARNINGS: DrugFoodWarning[] = [
     medicationClass: "Statins (Atorvastatin, Simvastatin) & Calcium Channel Blockers",
     riskSeverity: "CRITICAL",
     clinicalConsequence:
-      "Furanocoumarins in grapefruit irreversibly inhibit intestinal CYP3A4 enzymes, causing blood medication levels to surge up to 300-500%, risking severe rhabdomyolysis and acute kidney damage.",
+      "Grapefruit blocks your intestines from breaking down cholesterol and BP medicines. This makes medicine levels in your bloodstream rise dangerously high (3 to 5 times normal), which can harm your muscles and kidneys.",
     doctorDirective:
-      "Avoid grapefruit entirely if prescribed CYP3A4-metabolized statins. Discuss alternatives with your cardiologist.",
+      "Avoid grapefruit completely if you take statin cholesterol medicines. Ask your doctor for safe alternative fruits.",
   },
   {
     id: "warn-greens-warfarin",
@@ -918,9 +918,9 @@ export const DRUG_FOOD_WARNINGS: DrugFoodWarning[] = [
     medicationClass: "Warfarin / Coumadin (Anticoagulants)",
     riskSeverity: "CRITICAL",
     clinicalConsequence:
-      "Sudden large fluctuations in dietary Vitamin K intake antagonize the anticoagulant action of Warfarin, causing INR blood levels to drop below therapeutic thresholds and risking blood clots.",
+      "Vitamin K in dark greens helps blood clot, which directly opposes blood thinner pills like Warfarin. If your intake changes suddenly, your medicine may stop working properly, raising the risk of blood clots.",
     doctorDirective:
-      "Do NOT avoid greens, but keep daily intake consistent. Inform your physician before making sudden dietary shifts.",
+      "You don't need to stop greens, but eat the same steady amount each week. Never make sudden big dietary changes without telling your doctor.",
   },
   {
     id: "warn-dairy-antibiotics",
@@ -928,9 +928,9 @@ export const DRUG_FOOD_WARNINGS: DrugFoodWarning[] = [
     medicationClass: "Fluoroquinolones (Ciprofloxacin) & Tetracyclines",
     riskSeverity: "HIGH",
     clinicalConsequence:
-      "Calcium and magnesium ions chelate and bind with antibiotic molecules, forming insoluble complexes that your gut cannot absorb, leading to medication failure.",
+      "The calcium in milk and curd binds directly to certain antibiotics in your stomach like glue. This stops your body from absorbing the medicine, causing the antibiotic to fail.",
     doctorDirective:
-      "Consume dairy foods at least 2 hours before or 4 hours after taking these specific antibiotic doses.",
+      "Eat dairy foods at least 2 hours before or 4 hours after taking these specific antibiotic pills.",
   },
   {
     id: "warn-potassium-ace",
@@ -938,8 +938,8 @@ export const DRUG_FOOD_WARNINGS: DrugFoodWarning[] = [
     medicationClass: "ACE Inhibitors (Enalapril, Ramipril) & ARBs (Telmisartan)",
     riskSeverity: "HIGH",
     clinicalConsequence:
-      "These blood pressure medications reduce renal potassium excretion. Combining them with potassium chloride 'low sodium' salt substitutes can induce dangerous hyperkalemia and cardiac arrhythmias.",
+      "These blood pressure pills slow down how fast your kidneys remove potassium. Eating 'low sodium' fake salts made with potassium can make potassium build up in your blood to dangerous levels, causing abnormal heartbeats.",
     doctorDirective:
-      "Avoid potassium-chloride-based salt substitutes without explicit serum electrolyte monitoring from your physician.",
+      "Never use potassium-based 'low sodium' salt substitutes without explicit blood tests and advice from your doctor.",
   },
 ];

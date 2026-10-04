@@ -13,6 +13,7 @@
     "Hardware-Accelerated SVG & Web Audio API"
   ],
   "conventions": [
+    "Mandatory Plain Language: From now onwards, all added content, tips, UI text, and explanations must use simple, everyday words that are easy to understand for everyone (Grade 6-8 reading level, zero unexplained jargon)",
     "All components use named exports, never default exports",
     "File-based routing under /src/routes",
     "Server functions use createServerFn from @tanstack/react-start",
@@ -52,6 +53,7 @@
     "test-driven-development"
   ],
   "never_do": [
+    "Never use dense medical jargon, biochemical terms, or complicated words without immediate simple everyday explanations — all words must be easy to understand",
     "Never use useEffect for data fetching — use Server Components or SWR",
     "Never store secrets in .env files committed to git",
     "Never use inline styles — always use Tailwind classes",
@@ -64,6 +66,7 @@
     "Never run unsolicited background daemons, update pollers, or indexing services on Arch Linux"
   ],
   "preferred_patterns": [
+    "Always use simple, easy-to-understand words for all content and UI copy ('Kitchen Table Test') so anyone can understand without a medical background",
     "Practice extreme token economy: keep responses concise, high-signal, and directly answer user requests without unprompted changelogs or filler",
     "Use Zod for all schema validation",
     "Use Drizzle ORM for all database access",
