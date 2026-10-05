@@ -581,4 +581,417 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
       "You have to take insulin injections if you have diabetes",
     ],
   },
+  {
+    id: "d-34",
+    name: "Iron-Deficiency Anemia",
+    bodyPartId: "heart",
+    genZContext:
+      "Your red blood cells have zero battery charge left. You are basically running on 1% battery.",
+    overview:
+      "A condition where your body does not have enough iron to make hemoglobin, the protein in red blood cells that carries oxygen from your lungs to your muscles and brain.",
+    symptoms: [
+      { text: "Extreme, crushing tiredness and lack of energy", frequency: "always" },
+      { text: "Pale skin, especially inside the lower eyelids and gums", frequency: "often" },
+      {
+        text: "Cold hands and feet, brittle nails, or craving ice to chew",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If you feel exhausted despite sleeping well or feel dizzy when standing. 🚨 EMERGENCY WARNING: Go to the ER immediately if you experience shortness of breath with mild walking, chest pain, or faint.",
+    misconceptions: [
+      "Eating green spinach alone will instantly cure iron deficiency (plant iron needs vitamin C to absorb well)",
+      "Only women get iron-deficiency anemia",
+    ],
+  },
+  {
+    id: "d-35",
+    name: "Hypothyroidism (Underactive Thyroid)",
+    bodyPartId: "throat",
+    genZContext:
+      "Your metabolism is moving in slow motion. The internal battery furnace is barely giving off any heat.",
+    overview:
+      "When the small butterfly-shaped gland in your neck fails to produce enough thyroid hormone, causing your body's overall metabolism to slow down.",
+    symptoms: [
+      {
+        text: "Constant fatigue and feeling cold when others feel comfortable",
+        frequency: "always",
+      },
+      { text: "Unexplained weight gain and dry, coarse skin", frequency: "often" },
+      { text: "Brain fog, memory lapses, and brittle hair", frequency: "sometimes" },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If you notice ongoing fatigue, cold intolerance, and stubborn weight gain without dietary changes. A simple morning TSH blood test confirms it.",
+    misconceptions: [
+      "Thyroid issues only affect elderly people",
+      "Eating cabbage or cauliflower completely ruins your thyroid",
+    ],
+  },
+  {
+    id: "d-36",
+    name: "Hyperthyroidism (Overactive Thyroid)",
+    bodyPartId: "throat",
+    genZContext:
+      "Your body's motor is stuck at 10,000 RPM. Everything is running way too fast and shaking.",
+    overview:
+      "When your thyroid gland makes too much thyroid hormone, speeding up your heartbeat, digestive system, and nervous system into high gear.",
+    symptoms: [
+      { text: "Pounding, rapid heartbeat even while resting quietly", frequency: "always" },
+      { text: "Unintentional weight loss despite eating normally or more", frequency: "often" },
+      {
+        text: "Shaky hands, feeling hot, excess sweating, and sleep issues",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If you notice hand tremors, sudden weight loss, and feeling unusually anxious. 🚨 EMERGENCY WARNING: Go to the ER if your heart races over 130 beats per minute, or you develop high fever with confusion.",
+    misconceptions: [
+      "Hyperthyroidism is great because you can eat whatever you want and stay skinny",
+      "Overactive thyroid resolves on its own without medical treatment",
+    ],
+  },
+  {
+    id: "d-37",
+    name: "Irritable Bowel Syndrome (IBS)",
+    bodyPartId: "large-intestine",
+    genZContext:
+      "Your stomach and emotions are tied in a tight knot. One stressful email and your belly sends emergency alerts.",
+    overview:
+      "A common digestive disorder that causes stomach cramps, gas, bloating, and unpredictable swings between diarrhea and constipation, closely linked to stress.",
+    symptoms: [
+      {
+        text: "Stomach cramping or belly ache that eases after going to the bathroom",
+        frequency: "always",
+      },
+      { text: "Painful bloating, gas, and stomach swelling after meals", frequency: "often" },
+      {
+        text: "Unpredictable bowel habits (alternating loose stools and hard stools)",
+        frequency: "often",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If digestive cramps interfere with your daily routine or social life. 🚨 EMERGENCY WARNING: Seek immediate medical care if you notice blood in your stool, unexplained weight loss, or pain that wakes you from sleep.",
+    misconceptions: [
+      "IBS leads to colon cancer (it does not damage the physical tissue or cause cancer)",
+      "IBS is made up and just stress in your head",
+    ],
+  },
+  {
+    id: "d-38",
+    name: "Kidney Stones",
+    bodyPartId: "kidneys",
+    genZContext:
+      "Tiny salt crystals turned into sharp rocky pebbles inside your water filter. 10/10 level pain alert.",
+    overview:
+      "Hard deposits made of minerals and salts that form inside your kidneys when your urine is too concentrated from lack of fluids, scratching the urinary tube as they pass.",
+    symptoms: [
+      {
+        text: "Sudden, excruciating, sharp pain in your back or lower side below the ribs",
+        frequency: "always",
+      },
+      { text: "Pain radiating down to your lower belly and groin area", frequency: "often" },
+      {
+        text: "Pink, red, or cloudy urine with nausea and burning while peeing",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If you feel back or groin pain that comes in sharp waves. 🚨 EMERGENCY WARNING: Go to the ER immediately if you have unbearable pain, cannot pee at all, or have fever and chills alongside the pain.",
+    misconceptions: [
+      "Only men get kidney stones",
+      "Drinking beer dissolves kidney stones (alcohol actually dehydrates you and makes stone formation worse)",
+    ],
+  },
+  {
+    id: "d-39",
+    name: "Gout (Uric Acid Arthritis)",
+    bodyPartId: "feet",
+    genZContext:
+      "Your big toe joint feels like it is on fire and covered in microscopic needles. Even a bedsheet touching it hurts.",
+    overview:
+      "A very painful form of arthritis where needle-sharp crystals of uric acid build up inside a joint (most often the big toe), causing sudden swelling, redness, and heat.",
+    symptoms: [
+      {
+        text: "Sudden, severe throbbing joint pain that often begins in the middle of the night",
+        frequency: "always",
+      },
+      { text: "Swelling, redness, and warmth over the affected joint", frequency: "often" },
+      {
+        text: "Extreme tenderness where even the weight of a light bedsheet causes agony",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: Within 24 hours of a painful joint flare-up for anti-inflammatory treatment. 🚨 EMERGENCY WARNING: Seek urgent emergency care if the joint pain is accompanied by fever, which could indicate a dangerous joint infection.",
+    misconceptions: [
+      "Gout only happens to wealthy people who drink expensive wine",
+      "Once the pain goes away, the uric acid problem is completely resolved",
+    ],
+  },
+  {
+    id: "d-40",
+    name: "Sciatica & Lumbar Disc Herniation",
+    bodyPartId: "spine-lumbar",
+    genZContext:
+      "A spinal shockwave shooting straight down your leg like an exposed electric wire.",
+    overview:
+      "Pain that radiates along the path of the sciatic nerve, which branches from your lower back through your hips and buttocks and down each leg, usually caused by a slipped spinal disc.",
+    symptoms: [
+      {
+        text: "Sharp, shooting pain from your lower back through your buttock down the back of your leg",
+        frequency: "always",
+      },
+      {
+        text: "Numbness, tingling, or 'pins and needles' sensation in your calf or foot",
+        frequency: "often",
+      },
+      { text: "Pain that worsens when sitting, coughing, or sneezing", frequency: "sometimes" },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If leg pain lasts longer than a week or gets progressively worse. 🚨 EMERGENCY WARNING: Go to the ER immediately if you suddenly lose sensation in your inner thighs or lose control of your bladder or bowels.",
+    misconceptions: [
+      "Complete bed rest for weeks is the best cure (gentle walking and physical therapy heal discs much faster)",
+      "Everyone with sciatica needs surgery (over 90% heal with conservative care and exercise)",
+    ],
+  },
+  {
+    id: "d-41",
+    name: "Chronic Insomnia",
+    bodyPartId: "brain",
+    genZContext:
+      "Staring at the ceiling at 3:00 AM while your brain reviews every awkward conversation from 2017.",
+    overview:
+      "A sleep disorder characterized by ongoing difficulty falling asleep, staying asleep through the night, or waking up too early and being unable to get back to sleep.",
+    symptoms: [
+      {
+        text: "Difficulty falling asleep at night despite feeling physically exhausted",
+        frequency: "always",
+      },
+      {
+        text: "Waking up repeatedly during the night and struggling to drift back to sleep",
+        frequency: "often",
+      },
+      {
+        text: "Daytime fatigue, brain fog, irritability, and anxiety about bedtime",
+        frequency: "often",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If poor sleep affects your ability to function at work or drive safely during the day, or lasts longer than 4 weeks.",
+    misconceptions: [
+      "Drinking a nightcap of alcohol helps you sleep soundly (alcohol fragments sleep and ruins REM cycles)",
+      "Everyone strictly needs exactly 8 hours of sleep or their health is ruined",
+    ],
+  },
+  {
+    id: "d-42",
+    name: "PCOS / PCOD (Polycystic Ovary Syndrome)",
+    bodyPartId: "skin",
+    genZContext:
+      "Hormonal signals got crossed: stubborn breakouts, irregular calendar math, and unpredictable energy levels.",
+    overview:
+      "A common hormonal imbalance affecting women where the ovaries produce higher levels of male hormones (androgens) and cells become resistant to insulin.",
+    symptoms: [
+      { text: "Irregular, infrequent, or missed menstrual cycles", frequency: "always" },
+      { text: "Excess hair growth on the chin, upper lip, chest, or abdomen", frequency: "often" },
+      {
+        text: "Stubborn cystic acne along the jawline and thinning hair on the scalp",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If your periods are regularly late by months, or you notice sudden facial hair growth and stubborn acne. Early lifestyle changes and insulin management prevent future complications.",
+    misconceptions: [
+      "Women with PCOS can never have children (many conceive naturally or with simple medical guidance)",
+      "PCOS is purely a reproductive issue (it is fundamentally a metabolic and insulin sensitivity condition)",
+    ],
+  },
+  {
+    id: "d-43",
+    name: "Allergic Rhinitis (Dust & Pollen Allergy)",
+    bodyPartId: "sinuses",
+    genZContext:
+      "Your nose treats normal dust or spring pollen like a chemical weapon attack. Sneezing on repeat.",
+    overview:
+      "An allergic reaction where your immune system mistakenly treats harmless airborne particles (pollen, dust mites, pet dander) as dangerous invaders, causing swelling in your nasal passages.",
+    symptoms: [
+      {
+        text: "Frequent bouts of sneezing and a runny nose with clear, thin fluid",
+        frequency: "always",
+      },
+      { text: "Itchy, watery, red eyes and dark circles under the eyes", frequency: "often" },
+      { text: "Stuffy nasal congestion and an itchy throat or ears", frequency: "often" },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If over-the-counter allergy medicines do not clear your breathing or if sinus pressure causes severe headaches.",
+    misconceptions: [
+      "Allergies and common colds are the exact same thing (colds have fevers and body aches, allergies do not)",
+      "You will naturally outgrow allergies without any lifestyle adjustments",
+    ],
+  },
+  {
+    id: "d-44",
+    name: "Gallstones & Biliary Colic",
+    bodyPartId: "liver",
+    genZContext:
+      "Your bile fluid solidified into tiny marbles that get stuck right after you eat fried samosas or cheesy pizza.",
+    overview:
+      "Hardened pebble-like deposits of digestive bile that form in the gallbladder and cause intense cramps when they temporarily block the duct after a rich or fatty meal.",
+    symptoms: [
+      {
+        text: "Sudden, rapidly intensifying pain in the upper right side of your belly",
+        frequency: "always",
+      },
+      {
+        text: "Pain radiating straight through to your back or right shoulder blade",
+        frequency: "often",
+      },
+      {
+        text: "Nausea, vomiting, and stomach distress after heavy or oily meals",
+        frequency: "often",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If you experience stomach pains after eating fatty foods. 🚨 EMERGENCY WARNING: Go to the ER immediately if you develop yellowing of the skin or eyes (jaundice), high fever, or belly pain lasting over 4 hours.",
+    misconceptions: [
+      "Drinking lemon juice and olive oil 'flushes' out gallstones (this dangerous folk remedy does nothing and delays surgery)",
+      "Only elderly people get gallstones",
+    ],
+  },
+  {
+    id: "d-45",
+    name: "Gastroenteritis (Stomach Bug & Food Poisoning)",
+    bodyPartId: "stomach",
+    genZContext:
+      "Uninvited street food bacteria threw a wild party in your gut. Your stomach is in pure emergency evacuation mode.",
+    overview:
+      "An inflammation of the lining of your intestines caused by contaminated food, water, or viruses (such as norovirus), leading to quick fluid loss.",
+    symptoms: [
+      { text: "Watery, frequent diarrhea and stomach cramps", frequency: "always" },
+      { text: "Sudden nausea, vomiting, and mild fever", frequency: "often" },
+      {
+        text: "Dry mouth, lightheadedness, and general body weakness from fluid loss",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If you cannot keep any liquids down for more than 24 hours. 🚨 EMERGENCY WARNING: Go to the ER immediately if you notice blood in your vomit or stool, have a high fever over 102°F, or stop peeing completely.",
+    misconceptions: [
+      "Taking anti-diarrhea pills right away is always best (sometimes stopping diarrhea traps bacterial toxins inside your gut)",
+      "Drinking plain water alone is enough during food poisoning (you need salt and glucose like ORS to rehydrate)",
+    ],
+  },
+  {
+    id: "d-46",
+    name: "Cervical Spondylosis (Tech Neck & Spine Strain)",
+    bodyPartId: "spine-cervical",
+    genZContext:
+      "Hunching over your phone for 7 hours a day made your neck feel like a rusted hinge.",
+    overview:
+      "Age-related or posture-related wear and tear affecting the spinal discs and joints in your neck, worsened by constantly looking down at computer and smartphone screens.",
+    symptoms: [
+      {
+        text: "Neck stiffness and aching pain that gets worse when keeping your head in one position",
+        frequency: "always",
+      },
+      {
+        text: "Muscle spasms and tenderness across your shoulders and upper back",
+        frequency: "often",
+      },
+      { text: "Tingling, numbness, or weakness in your hands or fingers", frequency: "sometimes" },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If neck stiffness spreads down your arms or gives you frequent tension headaches. 🚨 EMERGENCY WARNING: Seek immediate medical care if you develop loss of coordination or difficulty using your fingers to button clothes.",
+    misconceptions: [
+      "Cracking your neck cures cervical spine wear and tear (ballistic cracking can injure blood vessels)",
+      "Only elderly people get cervical spondylosis (hours of screen hunching triggers it in teenagers and young adults)",
+    ],
+  },
+  {
+    id: "d-47",
+    name: "Carpal Tunnel Syndrome",
+    bodyPartId: "wrists",
+    genZContext:
+      "Your computer mouse and gaming controller squeezed the main nerve in your wrist until your fingers fell asleep.",
+    overview:
+      "A condition caused by compression of the median nerve as it travels through the carpal tunnel—a narrow passageway of bones and ligaments on the palm side of your wrist.",
+    symptoms: [
+      {
+        text: "Numbness, tingling, or burning sensation in your thumb, index, and middle fingers",
+        frequency: "always",
+      },
+      {
+        text: "Sensations that travel up your wrist and forearm, often waking you at night",
+        frequency: "often",
+      },
+      {
+        text: "Weakness in your hand and a tendency to drop objects like cups or phones",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If numbness or weak grip interferes with your normal work, typing, or sleep. Wearing a simple wrist splint at night often prevents permanent nerve injury.",
+    misconceptions: [
+      "Carpal tunnel is purely caused by typing on a keyboard (pregnancy, arthritis, and genetics are also major causes)",
+      "Surgery is the only treatment available (most mild cases improve with splinting and ergonomic changes)",
+    ],
+  },
+  {
+    id: "d-48",
+    name: "Plantar Fasciitis (Morning Heel Pain)",
+    bodyPartId: "feet",
+    genZContext:
+      "Taking your first step out of bed feels like stepping directly onto a bed of sharp thumb tacks.",
+    overview:
+      "Inflammation and microscopic tearing of the thick band of tissue (plantar fascia) that runs across the bottom of your foot and connects your heel bone to your toes.",
+    symptoms: [
+      {
+        text: "Stabbing pain in the bottom of your heel with your very first steps in the morning",
+        frequency: "always",
+      },
+      {
+        text: "Heel pain that eases after walking for a few minutes but returns after sitting down",
+        frequency: "often",
+      },
+      {
+        text: "Pain triggered after standing on hard floors for long periods or after intense exercise",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If heel pain persists for more than a few weeks despite supportive footwear and calf stretching.",
+    misconceptions: [
+      "Heel spurs are the direct cause of the pain (many people have heel spurs without any pain; the inflamed fascia band is the real issue)",
+      "Walking completely barefoot strengthens the foot arch during an active flare-up (it actually stretches and strains the torn tissue)",
+    ],
+  },
+  {
+    id: "d-49",
+    name: "Dry Eye Disease & Digital Eye Strain",
+    bodyPartId: "eyes",
+    genZContext:
+      "Staring at pixels without blinking made your eyeballs feel like dry sandpaper in a desert sandstorm.",
+    overview:
+      "A condition where your eyes either do not produce enough tears or produce poor-quality tears that evaporate too fast, greatly exacerbated by reduced blinking while staring at digital screens.",
+    symptoms: [
+      {
+        text: "A scratchy, gritty, burning sensation in your eyes like sand is trapped inside",
+        frequency: "always",
+      },
+      {
+        text: "Blurred vision that temporarily clears when you blink several times",
+        frequency: "often",
+      },
+      {
+        text: "Paradoxical watery eyes (reflex tears triggered by dry irritation)",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If eye burning, redness, or blurry vision does not improve with simple lubricating eye drops. 🚨 EMERGENCY WARNING: Seek immediate emergency eye care if you experience severe eye pain, extreme light sensitivity, or sudden vision loss.",
+    misconceptions: [
+      "Having watery eyes means your eyes cannot possibly be dry (watery tears are low-quality emergency reflex tears lacking lubricating oil)",
+      "Eye drops with redness relievers cure dry eyes (they constrict blood vessels and cause rebound redness)",
+    ],
+  },
 ];

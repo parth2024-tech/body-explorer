@@ -7,9 +7,11 @@ import {
   getMythsFor,
   getMicroActionFor,
   getDoctorQuestionFor,
+  getDiseasesFor,
   type Category,
 } from "@/data/content";
 import { FactCard } from "./FactCard";
+import { Stethoscope, AlertCircle } from "lucide-react";
 
 const CATEGORIES: Category[] = [
   "weird_wild",
@@ -27,6 +29,7 @@ export function FactPanel() {
   const part = selectedId ? getBodyPart(selectedId) : null;
   const facts = part ? getFactsFor(part.id, activeCategory) : [];
   const myths = part ? getMythsFor(part.id) : [];
+  const diseases = part ? getDiseasesFor(part.id) : [];
   const microAction = part ? getMicroActionFor(part.id) : null;
   const doctorQ = part ? getDoctorQuestionFor(part.id) : null;
 
@@ -199,6 +202,59 @@ export function FactPanel() {
                           {m.clinicalDisclaimer && (
                             <p className="text-[10.5px] text-[#8A8F98]">{m.clinicalDisclaimer}</p>
                           )}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Common Conditions & Clinical Overview */}
+              {diseases.length > 0 && (
+                <div className="space-y-3">
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-rose-400 flex items-center gap-1.5">
+                    <Stethoscope className="w-3.5 h-3.5" />
+                    Common Conditions & Warnings ({diseases.length})
+                  </h4>
+                  {diseases.map((d) => (
+                    <div
+                      key={d.id}
+                      className="rounded-xl border border-rose-500/20 bg-rose-500/[0.04] p-3.5 space-y-2.5"
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <h5 className="text-sm font-bold text-white tracking-tight">{d.name}</h5>
+                        <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-rose-500/10 text-rose-300 border border-rose-500/20 shrink-0">
+                          Condition
+                        </span>
+                      </div>
+                      <p className="text-xs text-[#8A8F98] leading-relaxed">{d.overview}</p>
+
+                      {d.symptoms && d.symptoms.length > 0 && (
+                        <div className="pt-2 border-t border-white/5">
+                          <span className="text-[10px] uppercase font-bold text-rose-300 block mb-1">
+                            Key Warning Signs:
+                          </span>
+                          <ul className="space-y-1">
+                            {d.symptoms.map((s, idx) => (
+                              <li
+                                key={idx}
+                                className="text-xs text-white/90 flex items-baseline gap-1.5"
+                              >
+                                <span className="text-rose-400 text-[10px]">•</span>
+                                <span>{s.text}</span>
+                                <span className="text-[10px] text-white/40 font-mono">
+                                  ({s.frequency})
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {d.whenToSeeDoctor && (
+                        <div className="rounded-lg bg-amber-500/10 border border-amber-500/20 p-2.5 text-[11px] text-amber-200/90 leading-relaxed flex items-start gap-1.5">
+                          <AlertCircle className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
+                          <span>{d.whenToSeeDoctor}</span>
                         </div>
                       )}
                     </div>

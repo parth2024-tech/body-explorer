@@ -147,5 +147,86 @@
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Clinical nutrition studies show that processed gluten-free products have a higher glycemic index and lower micronutrient density compared to their gluten-containing equivalents.",
     "clinicalDisclaimer": "🚨 DANGER: If you have Celiac disease, you must eat gluten-free. If not, these processed gluten-free items are not a health food and may promote weight gain."
+  },
+  {
+    "id": "fl-13",
+    "marketing_claim": "Digestive Biscuits",
+    "real_meaning": "Contains up to 25% refined table sugar and cheap palm oil; the tiny pinch of wheat bran fiber does nothing to help digestion.",
+    "risk_level": "HIGH",
+    "biological_impact": "People eat digestive biscuits thinking they are eating medicine for their bowels. In reality, two biscuits contain as much sugar and saturated fat as a small pastry. The high sugar spikes your insulin, while the refined palm oil slows gut movement and promotes fat storage.",
+    "how_to_spot": "Look at the back table under 'Sugars' and 'Total Fat'. If sugar is over 20g per 100g, or if 'Palm Oil' is listed in the top three ingredients, it is a normal tea cookie disguised with a medical name.",
+    "common_products": ["Commercial Digestive Biscuits", "Oatmeal Cookies", "Fiber Rusks"],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: Laboratory nutritional audits verify digestive biscuits derive less than 5% of their weight from dietary fiber, with over 45% derived from refined flour and sugar.",
+    "clinicalDisclaimer": "📍 IMPORTANT: For real gut fiber, eat whole apples, cooked dal, or fresh salads instead of factory biscuits."
+  },
+  {
+    "id": "fl-14",
+    "marketing_claim": "Made with Pure Desi Ghee",
+    "real_meaning": "Made with 95% cheap refined palm oil or cottonseed oil, blended with less than 2% actual ghee purely for artificial aroma.",
+    "risk_level": "HIGH",
+    "biological_impact": "Cheap refined seed and palm oils are heated to extreme industrial temperatures, creating oxidized fat byproducts that trigger inflammation in your artery walls. Eating sweets or snacks labeled 'Desi Ghee' gives people false confidence to eat large portions of unhealthy fats.",
+    "how_to_spot": "Check the ingredient percentages. The law requires companies to list ingredients in order of weight. If 'Vegetable Oil' or 'Palmolein' comes first, and 'Ghee (1.5%)' is at the very bottom, you are paying for cheap frying oil.",
+    "common_products": ["Packaged Soan Papdi", "Commercial Laddus", "Bakery Biscuits", "Samosas"],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: Food safety chromatography testing shows commercial sweets claiming ghee often contain high proportions of palmitic acid from cheap palm oil blends.",
+    "clinicalDisclaimer": "📍 IMPORTANT: Pure home-cooked ghee has a high smoke point, but packaged snacks rarely use 100% pure ghee due to commercial cost cutting."
+  },
+  {
+    "id": "fl-15",
+    "marketing_claim": "Growth Drink / 23 Vital Nutrients for Kids",
+    "real_meaning": "Up to 35% to 40% pure sugar powder sprayed with synthetic lab vitamins to trick parents into buying sugary chocolate milk.",
+    "risk_level": "CRITICAL",
+    "biological_impact": "Starting children's days with high sugar floods their bloodstream, creating immediate blood sugar spikes followed by brain fog and tantrums at school. It primes their developing brain to crave overly sweet foods and triples their lifetime risk of childhood obesity and fatty liver.",
+    "how_to_spot": "Look at the nutrition table for 'Added Sugars per 100g'. If sugar is 25g to 40g, more than one-third of the entire box is pure sugar. Check ingredients for 'Sugar', 'Maltodextrin', or 'Caramel Color'.",
+    "common_products": [
+      "Children's Malt Health Powders",
+      "Chocolate Milk Mixes",
+      "Kids Energy Drinks"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: World Health Organization (WHO) and ICMR-NIN guidelines state children should consume less than 25g of added sugar daily; one mug of sweetened malt drink often supplies over 60% of that ceiling.",
+    "clinicalDisclaimer": "🚨 DANGER: Real child growth comes from whole foods: whole milk, eggs, lentils, nuts, and fresh fruit, not factory sugar powder."
+  },
+  {
+    "id": "fl-16",
+    "marketing_claim": "Low Fat / 99% Fat-Free",
+    "real_meaning": "The natural fat was removed, so the factory added liquid sugar, corn syrup, and artificial thickeners to prevent the food from tasting like watery cardboard.",
+    "risk_level": "HIGH",
+    "biological_impact": "Fat helps you feel full and satisfied. When fat is removed and replaced with sugar and starch, your body absorbs the meal much faster. This causes a rapid surge in insulin, leaving you feeling ravenous and looking for snacks just an hour later.",
+    "how_to_spot": "Compare the 'Low Fat' version with the regular version. If the low-fat version has MORE grams of carbohydrates or sugar per serving than the original product, it is a metabolic trap.",
+    "common_products": ["Low-Fat Flavored Yogurt", "Fat-Free Salad Dressings", "Diet Ice Creams"],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: Clinical trials consistently show ultra-processed low-fat foods cause higher post-meal insulin spikes and lower satiety compared to whole, natural fat equivalents.",
+    "clinicalDisclaimer": "📍 IMPORTANT: Natural food fats (from nuts, seeds, yogurt, and olive oil) are vital for absorbing vitamins A, D, E, and K."
+  },
+  {
+    "id": "fl-17",
+    "marketing_claim": "100% Atta Instant Noodles",
+    "real_meaning": "The noodle block is flash-fried in cheap palm oil, and the spice packet contains extremely high levels of blood-pressure-spiking sodium.",
+    "risk_level": "HIGH",
+    "biological_impact": "Even if the flour is whole wheat atta, the noodle cake is deep-fried in palm oil at the factory so it cooks in 2 minutes at home. One single small packet delivers over 50% to 70% of your maximum daily sodium allowance in just 5 bites, putting immediate pressure on your kidneys and blood vessels.",
+    "how_to_spot": "Look at the back table for 'Sodium' per serving. If sodium is over 800mg (out of the 2,000mg daily limit) or if 'Palm Oil' is listed in the ingredients, it is an ultra-processed convenience food.",
+    "common_products": ["Atta Instant Noodles", "Multigrain Noodles", "Baked Snack Pellets"],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: ICMR-NIN and AHA guidelines link excessive dietary sodium from instant packaged seasonings directly to hypertension and arterial stiffness.",
+    "clinicalDisclaimer": "📍 IMPORTANT: Eating real handmade rotis or boiled whole wheat pasta with fresh vegetable sauce is infinitely healthier than factory instant noodles."
+  },
+  {
+    "id": "fl-18",
+    "marketing_claim": "Organic Raw Cane Sugar / Desi Khand",
+    "real_meaning": "Biologically identical to regular white table sugar; your liver, pancreas, and blood vessels process it the exact same way.",
+    "risk_level": "HIGH",
+    "biological_impact": "Brown, unrefined, or organic sugar still consists of 95% to 99% pure sucrose. Your gut breaks it down into glucose and fructose within seconds. It causes the exact same insulin surge, fatty liver fat accumulation, and tooth decay as cheap white sugar.",
+    "how_to_spot": "Do not let words like 'Raw', 'Organic', 'Unrefined', or 'Artisanal' trick you into thinking sugar is a health food. Sugar is sugar. Count the total grams of carbohydrates and sugar on the back label.",
+    "common_products": [
+      "Organic Cane Sugar",
+      "Desi Khand",
+      "Turbinado Sugar",
+      "Coconut Palm Sugar"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: Systematic reviews show negligible trace mineral differences between raw and refined sugars; the glycemic and insulinemic responses are clinically indistinguishable.",
+    "clinicalDisclaimer": "🚨 DANGER: People with diabetes must not consume organic raw sugar or khand thinking it will not spike their blood sugar."
   }
 ]

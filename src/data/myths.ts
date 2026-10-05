@@ -823,4 +823,88 @@ export const MYTHS: MythBusted[] = [
     evidenceStatement:
       "✅ EVIDENCE: Roberts et al. (J Physiol) and Peake et al. randomized trials confirming post-exercise cold immersion attenuates anabolic muscle signaling.",
   },
+  {
+    id: "m-knuckle-cracking",
+    bodyPartId: "hands",
+    myth: "Cracking your knuckles causes arthritis, swollen fingers, and weakened hand grip.",
+    reality:
+      "The popping sound when you crack your fingers is simply tiny bubbles of dissolved nitrogen gas collapsing inside your natural joint lubricating fluid. It does not cause arthritis or damage your cartilage. A famous doctor even cracked the knuckles of his left hand for sixty years while leaving his right hand alone, and x-rays showed zero difference between both hands.",
+    sources: ["Harvard Medical School", "American College of Rheumatology"],
+    actionableTip:
+      "Cracking your joints occasionally is harmless, but if cracking causes physical pain, swelling, or feels loose, have an orthopedic doctor check for joint inflammation or ligament sprains.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Unger et al. (2008 Ignobel Medical Prize study) and prospective observational trials show equal rates of osteoarthritis in habitual knuckle crackers versus non-crackers.",
+  },
+  {
+    id: "m-eight-glasses-water",
+    bodyPartId: "kidneys",
+    myth: "Every single person must drink at least 8 large glasses of plain water every day, not counting food or other drinks.",
+    reality:
+      "The '8 glasses a day' rule has no scientific origin. Around 20% to 30% of your daily hydration comes naturally from water-dense foods like cucumbers, tomatoes, oranges, watermelon, lentils, and soups. Coffee, tea, and milk also count toward hydration. Forcing yourself to drink gallons of water when you are not thirsty can dilute your blood sodium to dangerously low levels.",
+    sources: ["National Academies of Sciences, Engineering, and Medicine", "Mayo Clinic"],
+    actionableTip:
+      "Trust your natural thirst mechanism. Simply check the color of your urine: a pale yellow color like lemonade means you are well hydrated, while dark amber means drink a glass of water.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Dietary Reference Intakes (DRI) reports confirm total fluid requirements include dietary moisture from food; mandatory standalone water quotas lack clinical trial support.",
+  },
+  {
+    id: "m-wet-hair-cold",
+    bodyPartId: "sinuses",
+    myth: "Going outside with wet hair or walking barefoot on cold tile floors gives you a cold or chest flu.",
+    reality:
+      "Colds and flu are caused exclusively by living respiratory viruses, not by cool weather, damp hair, or cold floorboards. Viruses spread when an infected person sneezes or touches a surface, and you breathe it in or touch your eyes. People get more colds in the winter simply because we spend more time indoors close together with closed windows, giving viruses easy targets.",
+    sources: [
+      "Centers for Disease Control and Prevention (CDC)",
+      "National Institutes of Health (NIH)",
+    ],
+    actionableTip:
+      "To protect yourself from colds, wash your hands with soap before eating, avoid touching your eyes and nose in crowded public spaces, and open windows for fresh ventilation.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Human volunteer challenge trials by the UK Common Cold Research Unit showed exposure to cold air or damp conditions did not increase viral infection rates compared to warm controls.",
+  },
+  {
+    id: "m-detox-footpads-teas",
+    bodyPartId: "liver",
+    myth: "Detox foot pads, herbal cleanse teas, and charcoal drinks suck heavy metals and stored toxins out through your skin and bowels.",
+    reality:
+      "Your body already possesses two high-performance 24/7 detox systems: your liver and your kidneys. Detox foot pads turn dark brown simply because sweat and moisture from your foot react with wood vinegar powder inside the pad. Commercial detox teas are often just strong laxatives and diuretics that make you lose water weight and deplete healthy electrolytes.",
+    sources: ["Federal Trade Commission (FTC)", "British Dietetic Association (BDA)"],
+    actionableTip:
+      "Save your money. The best way to help your body naturally clean itself is drinking adequate water, eating fiber-rich vegetables, and cutting down on alcohol and cigarettes.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: FTC legal enforcement orders penalized commercial detox pad marketers for deceptive claims; laboratory audits found zero biological toxins in used pads.",
+  },
+  {
+    id: "m-chewing-gum-digest",
+    bodyPartId: "stomach",
+    myth: "If you accidentally swallow chewing gum, it sits undigested inside your stomach for 7 whole years.",
+    reality:
+      "While your stomach acid cannot break down the synthetic rubber base of chewing gum, your stomach does not keep it trapped. Your stomach and intestinal muscles squeeze and push it through your digestive tract just like corn kernels or fruit seeds, and it passes harmlessly in your stool within 2 to 3 days.",
+    sources: ["American Academy of Pediatrics (AAP)", "Cleveland Clinic"],
+    actionableTip:
+      "Do not panic if you accidentally swallow a single piece of gum. However, never swallow large wads of gum or give gum to toddlers who could choke on it or create an intestinal blockage.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Pediatric gastrointestinal reviews confirm swallowed gum traverses the normal gastrointestinal transit cycle within 40-72 hours without mucosal adhesion.",
+  },
+  {
+    id: "m-sugar-hyperactivity-kids",
+    bodyPartId: "brain",
+    myth: "Eating candy, soda, or cake immediately makes children hyperactive, wild, and out of control.",
+    reality:
+      "Extensive blind clinical studies where parents and children did not know whether foods had real sugar or artificial sweetener showed zero change in children's behavior or attention spans. The wild behavior at birthday parties or holidays is caused by the excitement of celebrations, party games, friends, and sensory excitement, not the sugar itself.",
+    sources: [
+      "Journal of the American Medical Association (JAMA)",
+      "American Academy of Pediatrics",
+    ],
+    actionableTip:
+      "Limit sugary treats for genuine health reasons (protecting teeth and preventing diabetes and obesity), rather than worrying that a birthday cupcake will make your child misbehave.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Wolraich et al. landmark double-blind meta-analysis (JAMA) demonstrated dietary sucrose does not affect the cognitive performance or behavior of children.",
+  },
 ];

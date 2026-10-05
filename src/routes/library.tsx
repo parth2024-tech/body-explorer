@@ -2,7 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useBodyStore } from "@/store/useBodyStore";
-import { FACTS, MYTHS, REMEDIES, BODY_MARVELS, SENSORY_FACTS, TRANSLATIONS } from "@/data/content";
+import {
+  FACTS,
+  MYTHS,
+  REMEDIES,
+  BODY_MARVELS,
+  SENSORY_FACTS,
+  TRANSLATIONS,
+  DISEASES,
+  getBodyPart,
+} from "@/data/content";
 import {
   BookOpen,
   Leaf,
@@ -13,6 +22,9 @@ import {
   Volume2,
   Square,
   AlertTriangle,
+  Stethoscope,
+  AlertCircle,
+  HelpCircle,
 } from "lucide-react";
 
 export const Route = createFileRoute("/library")({
@@ -33,9 +45,9 @@ function LibraryPage() {
     useBodyStore();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<"remedies" | "myths" | "marvels" | "bookmarks">(
-    "remedies",
-  );
+  const [activeTab, setActiveTab] = useState<
+    "conditions" | "remedies" | "myths" | "marvels" | "bookmarks"
+  >("conditions");
 
   const [shuffledRemedies, setShuffledRemedies] = useState<typeof REMEDIES>(REMEDIES);
   const [shuffledMyths, setShuffledMyths] = useState<typeof MYTHS>(MYTHS);
@@ -163,6 +175,16 @@ function LibraryPage() {
     );
   });
 
+  const filteredConditions = DISEASES.filter((d) => {
+    const q = searchQuery.toLowerCase();
+    const matchesSearch =
+      d.name.toLowerCase().includes(q) ||
+      d.overview.toLowerCase().includes(q) ||
+      d.symptoms.some((s) => s.text.toLowerCase().includes(q)) ||
+      (d.bodyPartId && d.bodyPartId.toLowerCase().includes(q));
+    return matchesSearch;
+  });
+
   const allTags = ["studied", "traditional", "anecdotal", "unproven"];
 
   return (
@@ -179,8 +201,8 @@ function LibraryPage() {
               Core Content <span className="text-[#00E5C4]">Engine</span>
             </h1>
             <p className="text-[#8A8F98] mt-6 font-mono text-sm leading-relaxed">
-              Browse evidence-based natural remedies, ancient healing arts, posture checks, body
-              sensory anomalies, and myth-busting sciences.
+              Browse evidence-based conditions & ailments, natural remedies, ancient healing arts,
+              and myth-busting health sciences.
             </p>
           </div>
         </header>
@@ -212,15 +234,30 @@ function LibraryPage() {
         {/* Navigation Tabs (Touch Scrollable on Mobile) */}
         <div className="flex gap-2.5 overflow-x-auto sm:flex-wrap sm:justify-center mb-10 relative z-10 touch-scroll px-1 pb-2">
           {[
-            { id: "remedies", label: "Natural Remedies", icon: <Leaf className="w-4 h-4" /> },
-            { id: "myths", label: "Medical Myths", icon: <Zap className="w-4 h-4" /> },
+            {
+              id: "conditions",
+              label: `Conditions & Ailments (${DISEASES.length})`,
+              icon: <Stethoscope className="w-4 h-4" />,
+            },
+            {
+              id: "remedies",
+              label: `Natural Remedies (${REMEDIES.length})`,
+              icon: <Leaf className="w-4 h-4" />,
+            },
+            {
+              id: "myths",
+              label: `Medical Myths (${MYTHS.length})`,
+              icon: <Zap className="w-4 h-4" />,
+            },
             { id: "marvels", label: "Body Marvels", icon: <BookOpen className="w-4 h-4" /> },
             { id: "bookmarks", label: "Saved Items", icon: <BookmarkIcon className="w-4 h-4" /> },
           ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => {
-                setActiveTab(tab.id as "remedies" | "myths" | "marvels" | "bookmarks");
+                setActiveTab(
+                  tab.id as "conditions" | "remedies" | "myths" | "marvels" | "bookmarks",
+                );
                 setSelectedTag(null);
               }}
               className={`flex items-center gap-2 px-5 py-3 rounded-full font-bold text-xs sm:text-sm whitespace-nowrap min-h-[44px] shrink-0 transition-all backdrop-blur-md border ${
@@ -235,11 +272,15 @@ function LibraryPage() {
         </div>
 
         {/* Global Search (Hidden on Marvels/Bookmarks) */}
-        {(activeTab === "remedies" || activeTab === "myths") && (
+        {(activeTab === "conditions" || activeTab === "remedies" || activeTab === "myths") && (
           <div className="relative mb-12 max-w-3xl mx-auto z-10">
             <input
               type="text"
-              placeholder={`Search ${activeTab}...`}
+              placeholder={`Search ${
+                activeTab === "conditions"
+                  ? "49 conditions, symptoms, or organs..."
+                  : `${activeTab}...`
+              }`}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full rounded-2xl border border-white/10 bg-white/[0.02] pl-14 pr-6 py-4 text-base sm:text-sm text-white placeholder-[#555] outline-none focus:border-[#00E5C4]/50 focus:bg-white/[0.04] transition-all backdrop-blur-md"
@@ -258,6 +299,107 @@ function LibraryPage() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
+              {/* CONDITIONS & AILMENTS */}
+              {activeTab === "conditions" && (
+                <div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {filteredConditions.map((condition) => {
+                      const organ = condition.bodyPartId ? getBodyPart(condition.bodyPartId) : null;
+                      return (
+                        <div
+                          key={condition.id}
+                          className="rounded-3xl border border-white/10 bg-[#0F0F0F]/80 p-6 backdrop-blur-xl flex flex-col justify-between hover:border-rose-500/30 transition-all hover:shadow-[0_0_30px_rgba(244,63,94,0.1)]"
+                        >
+                          <div>
+                            <div className="flex justify-between items-start gap-2 mb-3">
+                              {organ ? (
+                                <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-rose-500/10 text-rose-300 border border-rose-500/20 flex items-center gap-1.5">
+                                  <span>{organ.emoji}</span>
+                                  <span>{organ.name}</span>
+                                </span>
+                              ) : (
+                                <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/5 text-[#8A8F98] border border-white/10">
+                                  Whole Body
+                                </span>
+                              )}
+                              <button
+                                onClick={() =>
+                                  isBookmarked(condition.id)
+                                    ? removeBookmark(condition.id)
+                                    : addBookmark(condition.id)
+                                }
+                                aria-label="Bookmark condition"
+                                className="text-[#8A8F98] hover:text-white transition-colors"
+                              >
+                                <Heart
+                                  className={`w-5 h-5 ${
+                                    isBookmarked(condition.id)
+                                      ? "fill-[#FC3D21] text-[#FC3D21]"
+                                      : ""
+                                  }`}
+                                />
+                              </button>
+                            </div>
+
+                            <h3 className="text-lg font-bold text-white mb-2 tracking-tight">
+                              {condition.name}
+                            </h3>
+
+                            <p className="text-xs text-[#8A8F98] leading-relaxed mb-4">
+                              {condition.overview}
+                            </p>
+
+                            {/* Symptoms */}
+                            {condition.symptoms && condition.symptoms.length > 0 && (
+                              <div className="mb-4 pt-3 border-t border-white/5">
+                                <span className="text-[10px] font-bold uppercase tracking-wider text-rose-400 block mb-1.5">
+                                  Key Warning Signs:
+                                </span>
+                                <ul className="space-y-1.5">
+                                  {condition.symptoms.map((sym, sIdx) => (
+                                    <li
+                                      key={sIdx}
+                                      className="text-xs text-white/90 flex items-baseline gap-1.5"
+                                    >
+                                      <span className="text-rose-400 text-xs">•</span>
+                                      <span className="leading-snug">{sym.text}</span>
+                                      <span className="text-[10px] text-white/40 font-mono shrink-0">
+                                        ({sym.frequency})
+                                      </span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+
+                            {/* When to see doctor */}
+                            {condition.whenToSeeDoctor && (
+                              <div className="rounded-xl bg-amber-500/10 border border-amber-500/20 p-3 mb-4 text-[11px] text-amber-200/90 leading-relaxed flex items-start gap-2">
+                                <AlertCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                                <span>{condition.whenToSeeDoctor}</span>
+                              </div>
+                            )}
+
+                            {/* Misconceptions */}
+                            {condition.misconceptions && condition.misconceptions.length > 0 && (
+                              <div className="rounded-xl bg-white/[0.02] border border-white/5 p-3">
+                                <span className="text-[10px] font-bold uppercase tracking-wider text-teal-300 block mb-1 flex items-center gap-1">
+                                  <HelpCircle className="w-3 h-3 text-teal-400" />
+                                  Myth Check:
+                                </span>
+                                <p className="text-xs text-[#8A8F98] italic leading-relaxed">
+                                  "{condition.misconceptions[0]}"
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
               {/* REMEDIES */}
               {activeTab === "remedies" && (
                 <div>
@@ -486,6 +628,7 @@ function LibraryPage() {
                   ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                       {bookmarks.map((bId) => {
+                        const condition = DISEASES.find((d) => d.id === bId);
                         const remedy = REMEDIES.find((r) => r.id === bId);
                         const fact = FACTS.find((f) => f.id === bId);
                         const myth = MYTHS.find((m) => m.id === bId);
@@ -497,10 +640,24 @@ function LibraryPage() {
                           >
                             <div className="truncate pr-4">
                               <p className="text-sm font-bold text-white truncate">
-                                {remedy ? remedy.name : myth ? myth.myth : "Saved Fact"}
+                                {condition
+                                  ? condition.name
+                                  : remedy
+                                    ? remedy.name
+                                    : myth
+                                      ? myth.myth
+                                      : "Saved Fact"}
                               </p>
                               <p className="text-xs text-[#8A8F98] truncate mt-1">
-                                {remedy ? "Remedy" : myth ? "Myth" : fact ? "Fact" : ""}
+                                {condition
+                                  ? "Condition"
+                                  : remedy
+                                    ? "Remedy"
+                                    : myth
+                                      ? "Myth"
+                                      : fact
+                                        ? "Fact"
+                                        : ""}
                               </p>
                             </div>
                             <button

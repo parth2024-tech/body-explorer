@@ -606,5 +606,125 @@
     "confidenceLevel": "HIGH",
     "evidenceStatement": "Multi-center chemical profiling verified detectable elemental concentrations in uncertified commercial supplement batches.",
     "clinicalDisclaimer": "Third-party tested, compliant protein supplements are safe for dietary supplementation; vigilance is advised for uncertified brands."
+  },
+  {
+    "id": 21,
+    "category": "supplement",
+    "icon": "🍬",
+    "product": "Melatonin Mega-Dose Gummies (Sleep Aid Surveillance)",
+    "molecule": "Exogenous Melatonin (N-acetyl-5-methoxytryptamine)",
+    "subtitle": "Over-the-counter sleep candies containing unlisted doses up to 347% of label claim.",
+    "brands": ["Uncertified sleep gummies", "Mega-dose 10mg melatonin candies"],
+    "risk": "HIGH",
+    "organ": "Central Nervous System & Circadian Endocrine Axis",
+    "summary": "The US CDC and JAMA published warnings in 2023 following a 530% surge in pediatric hospital visits from candy-like melatonin gummies. Independent laboratory testing revealed that 88% of tested commercial gummy brands were inaccurately labeled, containing between 74% and 347% of the stated amount, with some even containing unlisted CBD.",
+    "mechanism": "Excessive exogenous melatonin floods brain melatonin receptors, disrupting natural circadian hormone production, inducing daytime grogginess, vivid nightmares, and potential hormonal axis alterations in developing children.",
+    "status_global": {
+      "US": "FDA Consumer Advisory on Pediatric Ingestions (2023)",
+      "EU": "Regulated as a Prescription Medication above 1mg",
+      "UK": "Prescription Only (POM) under MHRA"
+    },
+    "status_india": "Sold over-the-counter under FSSAI nutraceutical categories; CDSCO and pediatric associations advise keeping all sleep gummies in childproof containers.",
+    "how_to_spot": "Avoid products marketed as tasty candy treats without child-resistant safety caps. Avoid unverified 5mg or 10mg megadoses when physiological adult doses are 0.3mg to 1mg.",
+    "alternatives": [
+      "Consistent sleep routine (dark room, no screens 1 hour before bed)",
+      "Morning natural sunlight exposure for natural melatonin production",
+      "Chamomile tea or warm milk"
+    ],
+    "ref": "JAMA Network Analysis of Melatonin Gummy Formulations (2023) / CDC Morbidity and Mortality Weekly Report (2022)",
+    "regulatorAgency": "US CDC, FDA & MHRA",
+    "noticeDate": "2023",
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "Quantitative chemical analysis of 25 commercial melatonin gummy products found actual doses ranged from 1.3 mg to 13.1 mg per serving regardless of label claims.",
+    "clinicalDisclaimer": "📍 IMPORTANT: Store all sleep supplements strictly out of reach of children. Consult a pediatrician before giving sleep aids to minors."
+  },
+  {
+    "id": 22,
+    "category": "supplement",
+    "icon": "🌿",
+    "product": "High-Concentration Ashwagandha Alcohol Extracts",
+    "molecule": "Withanolides & Withaferin A Concentrates",
+    "subtitle": "High-potency botanical extracts subject to European liver surveillance advisories.",
+    "brands": ["Ultra-concentrated standardized ashwagandha extracts", "High-dose stress capsules"],
+    "risk": "UNDER-REVIEW",
+    "organ": "Hepatic Parenchyma & Biliary Canaliculi",
+    "summary": "Health authorities in Denmark (DTU Food), the Netherlands, and France (ANSES) published safety evaluations after medical hepatology registries documented cases of acute cholestatic jaundice and herb-induced liver injury (HILI) in individuals taking high-dose alcohol-extracted ashwagandha supplements.",
+    "mechanism": "While traditional whole-root powders consumed with milk have centuries of safe culinary use, modern chemical solvent extractions isolate withanolides at 10x to 20x natural levels, which can cause idiosyncratic hepatocyte toxicity in genetically susceptible individuals.",
+    "status_global": {
+      "Denmark": "Banned in Commercial Dietary Supplements (DTU 2020/2023)",
+      "France": "ANSES Hepatic Risk Warning Notice (2024)",
+      "Netherlands": "RIVM Advisory Against High-Dose Extracts (2024)"
+    },
+    "status_india": "Recognized under Ministry of AYUSH as a classical rasayana; commercial extracts must comply with Good Manufacturing Practices (GMP).",
+    "how_to_spot": "Look for ultra-high percentage claims like 'Standardized to 10% Withanolides' taken without medical supervision, especially if taken on an empty stomach.",
+    "alternatives": [
+      "Traditional whole root powder (churna) in modest doses with milk",
+      "Stress management through regular aerobic exercise and breathing exercises"
+    ],
+    "ref": "Danish Technical University (DTU) Risk Assessment / ANSES Phytovigilance Surveillance Report (2024)",
+    "regulatorAgency": "ANSES (France) & DTU Food (Denmark)",
+    "noticeDate": "2023 / 2024",
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "Liver toxicity registries across Scandinavia and the US Drug-Induced Liver Injury Network (DILIN) documented biopsy-confirmed cholestatic liver injury linked to concentrated ashwagandha.",
+    "clinicalDisclaimer": "🚨 DANGER: Stop use and see a doctor immediately if you notice yellowing of the eyes (jaundice), dark brown tea-colored urine, or upper right belly pain."
+  },
+  {
+    "id": 23,
+    "category": "supplement",
+    "icon": "💇",
+    "product": "Mega-Dose Biotin (Vitamin B7) Hair & Nail Supplements",
+    "molecule": "Biotin (Doses of 5,000 mcg - 10,000 mcg)",
+    "subtitle": "High-dose beauty gummies causing false-negative heart attack lab results.",
+    "brands": ["10,000 mcg Hair-Skin-Nail gummies", "Mega-Biotin beauty drops"],
+    "risk": "CRITICAL",
+    "organ": "Cardiovascular Diagnostics & Endocrine Laboratory Assays",
+    "summary": "The US FDA issued an urgent Safety Communication warning that high levels of biotin in patient blood severely interfere with hospital laboratory tests. Many blood tests (including cardiac Troponin, which detects active heart attacks, and thyroid TSH tests) rely on biotin-streptavidin technology. High biotin can falsely show normal troponin during a real heart attack, leading to missed diagnoses and death.",
+    "mechanism": "Excess circulating biotin in the bloodstream binds to test reagents in clinical analyzers, blocking the diagnostic signal and producing dangerously false results (falsely low cardiac enzymes or falsely altered thyroid hormones).",
+    "status_global": {
+      "US": "FDA Safety Communication on Lab Interference (2017, Updated 2019)",
+      "EU": "EMA Pharmacovigilance Labeling Requirement"
+    },
+    "status_india": "FSSAI RDA for Biotin is only 30-40 micrograms/day, yet over-the-counter beauty supplements sell doses containing up to 10,000 micrograms (330 times the daily need).",
+    "how_to_spot": "Look for front labels boasting '10,000 mcg' or '5,000 mcg' of Biotin. Check if your doctor or lab technician asks whether you take hair or nail vitamins.",
+    "alternatives": [
+      "Standard balanced diet (eggs, almonds, sweet potatoes, sunflower seeds)",
+      "Stopping high-dose biotin supplements at least 48 hours prior to planned medical blood tests"
+    ],
+    "ref": "US FDA Safety Communication: Biotin Interference with Troponin and Thyroid Lab Tests (2019)",
+    "regulatorAgency": "US FDA & European Medicines Agency (EMA)",
+    "noticeDate": "2019 / Updated Guidelines",
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "Clinical chemistry validation studies confirm serum biotin levels above 20 ng/mL cause up to 55% negative bias in cardiac troponin immunoassays.",
+    "clinicalDisclaimer": "🚨 CRITICAL: Always inform your emergency doctor, cardiologist, or phlebotomist if you take biotin or hair-growth gummies, especially if having chest pain."
+  },
+  {
+    "id": 24,
+    "category": "supplement",
+    "icon": "💧",
+    "product": "Colloidal Silver Liquid & Silver Hydrosol Sprays",
+    "molecule": "Elemental Silver Nanoparticles / Silver Salts",
+    "subtitle": "Unregulated grey-market liquids sold as 'miracle natural antibiotics'.",
+    "brands": ["Colloidal Silver Drops", "Silver Hydrosol Immune Sprays"],
+    "risk": "CRITICAL",
+    "organ": "Dermis (Permanent Argyria) & Renal Tubules",
+    "summary": "The US FDA and global regulatory bodies issued multiple warnings stating colloidal silver is neither safe nor effective for treating any disease. Silver has zero known essential function in the human body. Chronic intake causes silver particles to deposit permanently in internal organs and skin, turning the patient's skin irreversibly blue-gray (argyria), and causing kidney damage and neurological toxicity.",
+    "mechanism": "Ingested silver ions bind to tissue proteins and accumulate in the dermal basement membrane. Exposure to sunlight photochemically reduces the silver into insoluble black-silver deposits that cannot be cleared by the body, staining the skin permanently blue-gray for life.",
+    "status_global": {
+      "US": "FDA Final Rule: Not Recognized as Safe or Effective (21 CFR 310.548)",
+      "EU": "Prohibited as a Mineral Supplement under EFSA",
+      "Canada": "Health Canada Public Warning on Argyria Risk"
+    },
+    "status_india": "Not approved as an internal dietary supplement or drug by CDSCO; warning issued against misleading marketing on e-commerce platforms.",
+    "how_to_spot": "Liquid bottles claiming to be 'Nature's Antibiotic', 'Nano-Silver Immune Shield', or claiming to kill '650 disease-causing organisms'.",
+    "alternatives": [
+      "Clinically prescribed antibiotics for verified bacterial infections",
+      "Evidence-based immune support: vaccination, balanced nutrition, sleep"
+    ],
+    "ref": "US FDA Rule 21 CFR 310.548 / National Center for Complementary and Integrative Health (NCCIH)",
+    "regulatorAgency": "US FDA & EFSA",
+    "noticeDate": "Federal Regulation / Ongoing Enforcement",
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "Toxicological profiles from the Agency for Toxic Substances and Disease Registry (ATSDR) verify permanent tissue bioaccumulation of silver and nephrotoxicity.",
+    "clinicalDisclaimer": "🚨 DANGER: Never ingest colloidal silver. The blue-gray skin discoloration (argyria) is cosmetically disfiguring and completely irreversible."
   }
 ]
