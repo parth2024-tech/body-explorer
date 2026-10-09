@@ -56,10 +56,10 @@ function LandingPage() {
       {/* ─── PROCESS TIMELINE: How it works ─── */}
       <ProcessSection />
 
-      {/* ─── TESTIMONIALS: Auto-advancing carousel ─── */}
+      {/* ─── EDITORIAL PROTOCOL: Core clinical tenets ─── */}
       <TestimonialsSection />
 
-      {/* ─── PRICING + FAQ ─── */}
+      {/* ─── OPEN STANDARDS & FAQ: Guarantees & questions ─── */}
       <PricingFAQSection />
 
       {/* ─── FINAL CTA: Cinematic conversion section ─── */}

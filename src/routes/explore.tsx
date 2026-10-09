@@ -41,9 +41,6 @@ function Explore() {
 
   return (
     <div className="min-h-screen bg-[#030303] text-white overflow-x-clip relative selection:bg-[#00E5C4]/30 pb-32">
-      {/* Background glow for immersion */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00E5C4]/5 rounded-full blur-[150px] pointer-events-none" />
-
       <div className="mx-auto max-w-7xl px-4 sm:px-5 pb-24 pt-8 sm:pt-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 12 }}

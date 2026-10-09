@@ -163,7 +163,7 @@ function LibraryPage() {
       r.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       r.ailment.toLowerCase().includes(searchQuery.toLowerCase()) ||
       r.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (r.genZContext && r.genZContext.toLowerCase().includes(searchQuery.toLowerCase()));
+      (r.practicalContext && r.practicalContext.toLowerCase().includes(searchQuery.toLowerCase()));
     const matchesTag = !selectedTag || r.evidenceRating === selectedTag;
     return matchesSearch && matchesTag;
   });
@@ -192,17 +192,16 @@ function LibraryPage() {
       {/* Header */}
       <div className="max-w-7xl mx-auto px-5 pt-12 pb-8">
         <header className="relative text-center max-w-3xl mx-auto">
-          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-96 bg-[#00E5C4]/10 rounded-full blur-[120px] pointer-events-none" />
           <div className="relative z-10">
             <span className="text-xs font-bold uppercase tracking-widest text-[#00E5C4]">
               {t("library")}
             </span>
-            <h1 className="mt-4 text-5xl md:text-6xl font-space font-extrabold tracking-tighter text-white">
-              Core Content <span className="text-[#00E5C4]">Engine</span>
+            <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-space font-extrabold tracking-tight text-white">
+              Clinical Reference <span className="text-[#00E5C4]">Library</span>
             </h1>
-            <p className="text-[#8A8F98] mt-6 font-mono text-sm leading-relaxed">
-              Browse evidence-based conditions & ailments, natural remedies, ancient healing arts,
-              and myth-busting health sciences.
+            <p className="text-[#8A8F98] mt-4 font-mono text-xs sm:text-sm leading-relaxed">
+              Explore evidence-based conditions, peer-reviewed natural remedies, body marvels,
+              and clinically debunked health myths.
             </p>
           </div>
         </header>
@@ -232,7 +231,7 @@ function LibraryPage() {
         </div>
 
         {/* Navigation Tabs (Touch Scrollable on Mobile) */}
-        <div className="flex gap-2.5 overflow-x-auto sm:flex-wrap sm:justify-center mb-10 relative z-10 touch-scroll px-1 pb-2">
+        <div className="flex gap-2 overflow-x-auto sm:flex-wrap sm:justify-center mb-10 relative z-10 touch-scroll px-1 pb-2">
           {[
             {
               id: "conditions",
@@ -260,9 +259,9 @@ function LibraryPage() {
                 );
                 setSelectedTag(null);
               }}
-              className={`flex items-center gap-2 px-5 py-3 rounded-full font-bold text-xs sm:text-sm whitespace-nowrap min-h-[44px] shrink-0 transition-all backdrop-blur-md border ${
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-bold text-xs sm:text-sm whitespace-nowrap min-h-[42px] shrink-0 transition-all backdrop-blur-md border ${
                 activeTab === tab.id
-                  ? "bg-[#00E5C4] text-black border-[#00E5C4] shadow-[0_0_20px_rgba(0,229,196,0.3)]"
+                  ? "bg-[#00E5C4] text-black border-[#00E5C4] shadow-sm font-semibold"
                   : "bg-white/[0.02] text-[#8A8F98] border-white/10 hover:text-white hover:bg-white/[0.05]"
               }`}
             >
@@ -438,11 +437,11 @@ function LibraryPage() {
                         <div>
                           <div className="flex justify-between items-start mb-4">
                             <span
-                              className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border ${
+                              className={`px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border ${
                                 remedy.evidenceRating === "studied"
                                   ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
                                   : remedy.evidenceRating === "traditional"
-                                    ? "bg-purple-500/10 text-purple-400 border-purple-500/20"
+                                    ? "bg-sky-500/10 text-sky-400 border-sky-500/20"
                                     : "bg-amber-500/10 text-amber-400 border-amber-500/20"
                               }`}
                             >
@@ -471,12 +470,12 @@ function LibraryPage() {
                             {remedy.description}
                           </p>
 
-                          {remedy.genZContext && (
-                            <div className="mt-4 bg-[#A855F7]/10 border border-[#A855F7]/20 p-3 rounded-xl">
-                              <p className="text-[10px] font-bold text-[#A855F7] uppercase tracking-wider mb-1">
-                                Gen Z Context
+                          {remedy.practicalContext && (
+                            <div className="mt-4 bg-[#00E5C4]/5 border border-[#00E5C4]/20 p-3 rounded-xl">
+                              <p className="text-[10px] font-bold text-[#00E5C4] uppercase tracking-wider mb-1">
+                                Everyday Context
                               </p>
-                              <p className="text-xs text-[#EAEAEA]">{remedy.genZContext}</p>
+                              <p className="text-xs text-[#EAEAEA] leading-relaxed">{remedy.practicalContext}</p>
                             </div>
                           )}
                         </div>
@@ -564,13 +563,13 @@ function LibraryPage() {
                       className="rounded-[2.5rem] border border-white/10 bg-[#0F0F0F]/80 p-8 md:p-12 backdrop-blur-xl relative overflow-hidden"
                     >
                       <div className="flex justify-between items-center gap-4">
-                        <span className="px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider border bg-purple-500/10 text-purple-400 border-purple-500/20">
+                        <span className="px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider border bg-sky-500/10 text-sky-400 border-sky-500/20">
                           Weekly Deep-Dive
                         </span>
 
                         <button
                           onClick={() => handleSpeak(marvel)}
-                          className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold border transition-all active:scale-95 ${
+                          className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-semibold border transition-all active:scale-95 ${
                             speakingId === marvel.id
                               ? "bg-rose-500/10 border-rose-500 text-rose-400"
                               : "border-white/10 bg-white/[0.02] text-white hover:bg-white/5"

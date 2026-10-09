@@ -407,8 +407,8 @@ export function FoodNutritionHub() {
                 {(
                   [
                     { id: "all", label: language === "hi" ? "सभी (32)" : "All (32)" },
-                    { id: "fact", label: language === "hi" ? "💡 फैक्ट्स (16)" : "💡 Facts (16)" },
-                    { id: "tip", label: language === "hi" ? "⚡ टिप्स (16)" : "⚡ Tips (16)" },
+                    { id: "fact", label: language === "hi" ? "फैक्ट्स (16)" : "Facts (16)" },
+                    { id: "tip", label: language === "hi" ? "टिप्स (16)" : "Tips (16)" },
                   ] as const
                 ).map((tab) => (
                   <button
@@ -509,17 +509,17 @@ export function FoodNutritionHub() {
                         <span
                           className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border ${
                             isFact
-                              ? "bg-purple-500/10 text-purple-300 border-purple-500/30"
+                              ? "bg-sky-500/10 text-sky-300 border-sky-500/30"
                               : "bg-emerald-500/10 text-emerald-300 border-emerald-500/30"
                           }`}
                         >
                           {isFact
                             ? language === "hi"
-                              ? "💡 छोटा फैक्ट"
-                              : "💡 Small Fact"
+                              ? "छोटा फैक्ट"
+                              : "Quick Fact"
                             : language === "hi"
-                              ? "⚡ आसान टिप"
-                              : "⚡ Kitchen Tip"}
+                              ? "आसान टिप"
+                              : "Kitchen Tip"}
                         </span>
                       </div>
 
@@ -833,8 +833,8 @@ export function FoodNutritionHub() {
                           <strong className="text-teal-300 uppercase tracking-wider text-[11px] font-bold flex items-center gap-1.5">
                             <Sparkles className="w-3.5 h-3.5 text-teal-400" />
                             {language === "hi"
-                              ? "✨ आपको क्या लाभ मिलेगा (स्वास्थ्य लाभ):"
-                              : "✨ How You Benefit (Proven Daily Value):"}
+                              ? "स्वास्थ्य लाभ (प्रमाणित प्रभाव):"
+                              : "Proven Daily Value (Benefits):"}
                           </strong>
                           <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 border border-teal-500/40">
                             {entry.evidenceTier}
@@ -865,19 +865,19 @@ export function FoodNutritionHub() {
                           <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                           <span>
                             {language === "hi"
-                              ? "मिथक जांच (सोशल मीडिया दावों की सच्चाई):"
+                              ? "मिथक जांच (दावों की सच्चाई):"
                               : "Myth Check (Unproven / Overhyped Claims):"}
                           </span>
                         </div>
                         <p className="text-amber-200/90 text-[11px]">
                           <strong className="text-amber-400">
-                            ❌ {language === "hi" ? "दावा:" : "Claim:"}
+                            {language === "hi" ? "दावा:" : "Claim:"}
                           </strong>{" "}
                           {displayMythClaim}
                         </p>
                         <p className="text-amber-100 text-[11px]">
                           <strong className="text-emerald-400">
-                            💡 {language === "hi" ? "हकीकत:" : "Reality:"}
+                            {language === "hi" ? "हकीकत:" : "Reality:"}
                           </strong>{" "}
                           {displayMythReality}
                         </p>
@@ -1043,7 +1043,7 @@ export function FoodNutritionHub() {
                 </div>
 
                 <div className="pt-2.5 sm:pt-3 border-t border-white/5 text-[11px] text-white/80 italic">
-                  💡 "{syn.culinaryIdea}"
+                  "{syn.culinaryIdea}"
                 </div>
               </div>
             ))}

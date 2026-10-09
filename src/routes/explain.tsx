@@ -32,8 +32,8 @@ A user has provided this description of their physical sensation: "${input}"
 Provide a JSON response with exactly this structure:
 {
   "organs": ["brain", "heart"], // Array of lowercase organ IDs involved
-  "facts": ["Fact 1", "Fact 2", "Fact 3"], // 3 fascinating physiological facts about why this happens. Make it mind-blowing!
-  "doctorQuestions": ["Q1", "Q2", "Q3"] // 3 smart questions to ask a doctor
+  "facts": ["Fact 1", "Fact 2", "Fact 3"], // 3 clear, verified physiological facts explaining the bodily mechanism in plain language
+  "doctorQuestions": ["Q1", "Q2", "Q3"] // 3 practical questions to discuss with a healthcare provider
 }
 
 CRITICAL: Do NOT provide medical advice or diagnose. Only explain the physiological mechanisms. Return ONLY the raw JSON string.`;
@@ -147,8 +147,8 @@ function ExplainPage() {
           triage, symptom scoring, risk stratification, or clinical assessment.
         </p>
         <p className="mt-1 text-amber-300/80">
-          If you are experiencing acute chest discomfort, severe dyspnea, sudden neurological
-          weakness, or thunderclap cephalalgia, call emergency services (
+          If you are experiencing severe chest pain, sudden trouble breathing, sudden weakness or
+          numbness, or an unbearable sudden headache, call emergency services immediately (
           <strong>112 / 911 / 999</strong>) or navigate directly to Emergency SOS.
         </p>
       </motion.div>

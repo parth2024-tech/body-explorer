@@ -1,1 +1,242 @@
-[]
+[
+  {
+    "id": "gen-fact-stomach-acid-strength",
+    "bodyPartId": "stomach",
+    "category": "weird_wild",
+    "rarity": "mind_blowing",
+    "text": "Your stomach acid (hydrochloric acid, pH 1.5–2.0) is strong enough to dissolve zinc metal and soften razor blades in a test tube, yet a thick layer of alkaline bicarbonate mucus constantly protects your stomach walls.",
+    "source": "National Institutes of Health (NIH)"
+  },
+  {
+    "id": "gen-fact-peristalsis-zero-gravity",
+    "bodyPartId": "throat",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "You can swallow food and drink liquids while hanging upside down or floating in zero gravity, because muscular waves called peristalsis squeeze food into your stomach regardless of gravity.",
+    "source": "American Physiological Society"
+  },
+  {
+    "id": "gen-fact-skeleton-renewal-cycle",
+    "bodyPartId": "bones",
+    "category": "health_tip",
+    "rarity": "almost_unknown",
+    "text": "Your skeleton is completely dynamic living tissue—specialized cells break down worn bone while others lay down fresh mineral crystals, giving you a brand-new skeleton roughly every 10 years.",
+    "source": "National Institute of Arthritis and Musculoskeletal and Skin Diseases (NIAMS)"
+  },
+  {
+    "id": "gen-fact-kidney-blood-flow",
+    "bodyPartId": "kidneys",
+    "category": "record_breaker",
+    "rarity": "mind_blowing",
+    "text": "Although your two kidneys make up less than 0.5% of your total body weight, they receive 20% to 25% of all blood pumped by the heart every minute to filter waste and balance fluid.",
+    "source": "Cleveland Clinic"
+  },
+  {
+    "id": "gen-fact-one-trillion-scents",
+    "bodyPartId": "sinuses",
+    "category": "record_breaker",
+    "rarity": "mind_blowing",
+    "text": "While older medical textbooks claimed humans could only detect 10,000 odors, sensory testing shows the human nose can distinguish more than 1 trillion distinct scent combinations.",
+    "source": "Rockefeller University / Howard Hughes Medical Institute"
+  },
+  {
+    "id": "gen-fact-red-blood-cells-second",
+    "bodyPartId": "bones",
+    "category": "record_breaker",
+    "rarity": "mind_blowing",
+    "text": "Your bone marrow acts as an ultra-fast production line, manufacturing between 2 million and 3 million brand-new red blood cells every single second to replace aging cells.",
+    "source": "American Society of Hematology"
+  },
+  {
+    "id": "gen-fact-smallest-bone-stapes",
+    "bodyPartId": "ears",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "The smallest bone in your body is the stapes (stirrup) inside your middle ear; it measures just 3 millimeters across—smaller than an uncooked grain of rice.",
+    "source": "Johns Hopkins Medicine"
+  },
+  {
+    "id": "gen-fact-liver-regeneration-capacity",
+    "bodyPartId": "liver",
+    "category": "record_breaker",
+    "rarity": "mind_blowing",
+    "text": "The human liver is the only internal organ capable of full cellular regeneration; if up to 70% of healthy liver tissue is surgically removed, it can regrow to full functional mass in just a few months.",
+    "source": "Mayo Clinic"
+  },
+  {
+    "id": "gen-fact-gut-serotonin-factory",
+    "bodyPartId": "small-intestine",
+    "category": "health_tip",
+    "rarity": "almost_unknown",
+    "text": "Roughly 90% to 95% of your body's total serotonin—a major chemical messenger regulating mood, sleep, and bowel motility—is synthesized by specialized cells in your gut, not your brain.",
+    "source": "American Gastroenterological Association"
+  },
+  {
+    "id": "gen-fact-consensual-pupil-reflex",
+    "bodyPartId": "eyes",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "When you shine a small penlight into just one eye, both of your pupils automatically shrink at the same instant because optic nerve signals split and cross over deep inside your midbrain.",
+    "source": "American Academy of Ophthalmology"
+  },
+  {
+    "id": "gen-fact-rem-sleep-atonia",
+    "bodyPartId": "brain",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "During vivid dream sleep (REM sleep), your brain stem temporarily paralyzes your voluntary arm and leg muscles (REM atonia) to protect you from physically acting out your dreams.",
+    "source": "National Institute of Neurological Disorders and Stroke (NINDS)"
+  },
+  {
+    "id": "gen-fact-unique-tongue-print",
+    "bodyPartId": "jaw",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "Just like your fingerprints, every human tongue has a completely unique surface topography, ridge pattern, and geometric shape that belongs to only one person.",
+    "source": "Forensic Science International"
+  },
+  {
+    "id": "gen-fact-platelet-density-lifespan",
+    "bodyPartId": "heart",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "A single microscopic drop of human blood contains between 250,000 and 450,000 platelets, which circulate for only 8 to 10 days before being safely filtered out by your spleen.",
+    "source": "National Heart, Lung, and Blood Institute (NHLBI)"
+  },
+  {
+    "id": "gen-fact-blinking-tear-shield",
+    "bodyPartId": "eyes",
+    "category": "health_tip",
+    "rarity": "common",
+    "text": "You blink approximately 14,000 to 19,000 times a day; each blink coats the cornea in a microscopic, three-layered tear shield that washes away debris and kills airborne bacteria with lysozyme enzymes.",
+    "source": "American Academy of Ophthalmology"
+  },
+  {
+    "id": "gen-fact-spleen-blood-reservoir",
+    "bodyPartId": "liver",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "Your spleen stores an emergency reserve of red blood cells and up to half of your body's backup monocytes, ready to deploy into circulation within seconds if you suffer acute blood loss.",
+    "source": "Science / Harvard Medical School"
+  },
+  {
+    "id": "gen-fact-dna-length-single-cell",
+    "bodyPartId": "brain",
+    "category": "record_breaker",
+    "rarity": "mind_blowing",
+    "text": "The tightly coiled strands of DNA inside the nucleus of a single human cell measure roughly 6 feet (2 meters) long if unraveled end-to-end, packed into a microscopic space 100 times thinner than a human hair.",
+    "source": "National Human Genome Research Institute (NHGRI)"
+  },
+  {
+    "id": "gen-fact-emotional-tears-chemistry",
+    "bodyPartId": "eyes",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "Emotional tears shed during crying contain significantly higher concentrations of stress hormones and natural pain-relieving endorphins than reflex tears triggered by slicing onions.",
+    "source": "American Psychological Association"
+  },
+  {
+    "id": "gen-fact-heart-kinetic-energy",
+    "bodyPartId": "heart",
+    "category": "record_breaker",
+    "rarity": "surprising",
+    "text": "The mechanical work your heart performs pumping blood each day generates enough kinetic energy to power an electric vehicle for roughly 20 miles (32 kilometers).",
+    "source": "American Heart Association (AHA)"
+  },
+  {
+    "id": "gen-fact-fingerprint-tactile-ridges",
+    "bodyPartId": "hands",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "The friction ridges on your fingertips act like microscopic tire treads that increase tactile grip on slippery surfaces while amplifying micro-vibrations so your nerve endings can sense tiny textures.",
+    "source": "Proceedings of the National Academy of Sciences (PNAS)"
+  },
+  {
+    "id": "gen-fact-brown-fat-thermogenesis",
+    "bodyPartId": "muscles",
+    "category": "health_tip",
+    "rarity": "surprising",
+    "text": "Unlike regular white fat that stores excess calories, brown adipose tissue (brown fat) contains dense mitochondria that burn calories directly to generate internal heat when you are exposed to cold.",
+    "source": "National Institutes of Health (NIH)"
+  },
+  {
+    "id": "gen-fact-sciatic-nerve-length",
+    "bodyPartId": "spine-lumbar",
+    "category": "record_breaker",
+    "rarity": "mind_blowing",
+    "text": "A single sensory nerve axon running from the tip of your big toe into the base of your spinal cord along the sciatic path can measure over 3 feet (1 meter) in length, making it the longest single cell in your body.",
+    "source": "Gray's Anatomy"
+  },
+  {
+    "id": "gen-fact-saliva-enamel-remineralization",
+    "bodyPartId": "jaw",
+    "category": "health_tip",
+    "rarity": "common",
+    "text": "Your saliva constantly bathes teeth in dissolved calcium, phosphate, and fluoride ions, which naturally rebuild and remineralize microscopic acid wear on tooth enamel after every meal.",
+    "source": "American Dental Association (ADA)"
+  },
+  {
+    "id": "gen-fact-peyers-patches-immunity",
+    "bodyPartId": "small-intestine",
+    "category": "health_tip",
+    "rarity": "almost_unknown",
+    "text": "Up to 70% of your body's immune defenses are physically stationed along the walls of your digestive tract inside specialized lymph clusters called Peyer's patches to monitor ingested microbes.",
+    "source": "Nature Reviews Immunology"
+  },
+  {
+    "id": "gen-fact-gallbladder-bile-concentration",
+    "bodyPartId": "liver",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "Your gallbladder does not create bile; instead, it stores bile made by the liver and concentrates it by up to 10 to 20 times by extracting water, ready to squirt it into the intestine when you eat fats.",
+    "source": "Johns Hopkins Medicine"
+  },
+  {
+    "id": "gen-fact-vocal-folds-frequency",
+    "bodyPartId": "throat",
+    "category": "record_breaker",
+    "rarity": "surprising",
+    "text": "When you speak or sing, your vocal folds snap together and vibrate between 100 and 1,000 times per second, carving high-speed puffs of air into intelligible sound waves.",
+    "source": "National Institute on Deafness and Other Communication Disorders (NIDCD)"
+  },
+  {
+    "id": "gen-fact-fascia-sensory-web",
+    "bodyPartId": "muscles",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "The fibrous connective fascia wrapping around your muscles and organs contains up to six times more sensory nerve endings and position sensors (proprioceptors) than the muscle tissue itself.",
+    "source": "Journal of Bodywork and Movement Therapies"
+  },
+  {
+    "id": "gen-fact-melanin-uv-conversion",
+    "bodyPartId": "skin",
+    "category": "health_tip",
+    "rarity": "surprising",
+    "text": "The pigment melanin in your skin and eyes absorbs dangerous ultraviolet radiation and converts more than 99.9% of that solar energy into harmless heat within picoseconds.",
+    "source": "Biophysical Journal"
+  },
+  {
+    "id": "gen-fact-red-cells-no-nucleus",
+    "bodyPartId": "heart",
+    "category": "weird_wild",
+    "rarity": "surprising",
+    "text": "Human red blood cells eject their own nucleus and mitochondria before entering the bloodstream so they have maximum space to carry roughly 270 million oxygen-binding hemoglobin proteins each.",
+    "source": "Blood (Journal of the American Society of Hematology)"
+  },
+  {
+    "id": "gen-fact-deep-sleep-growth-hormone",
+    "bodyPartId": "brain",
+    "category": "health_tip",
+    "rarity": "surprising",
+    "text": "Up to 75% of your daily human growth hormone (HGH)—essential for repairing damaged muscle fibers and rebuilding skin collagen—is released in rhythmic pulses during slow-wave deep sleep.",
+    "source": "Endocrine Reviews"
+  },
+  {
+    "id": "gen-fact-cartilage-elongation-aging",
+    "bodyPartId": "ears",
+    "category": "weird_wild",
+    "rarity": "common",
+    "text": "While human bones stop growing in length after puberty, your nose and earlobes gradually appear longer throughout old age because gravity slowly stretches down their elastic cartilage and skin fibers.",
+    "source": "British Medical Journal (BMJ)"
+  }
+]

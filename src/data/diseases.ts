@@ -5,8 +5,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-1",
     name: "Asthma",
     bodyPartId: "lung-left",
-    genZContext:
-      "Your lungs are basically acting dramatic and ghosting your air supply. Not a vibe.",
     overview:
       "A long-lasting lung problem where your breathing tubes get swollen and narrow, making it hard to breathe.",
     symptoms: [
@@ -22,8 +20,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-2",
     name: "Fatty Liver Disease (NAFLD)",
     bodyPartId: "liver",
-    genZContext:
-      "Your liver has been binge-watching Netflix and snacking too much. Needs a serious detox era.",
     overview:
       "When too much fat builds up in your liver, even if you don't drink alcohol. This makes it hard for your liver to clean your blood.",
     symptoms: [
@@ -39,7 +35,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-3",
     name: "GERD (Acid Reflux)",
     bodyPartId: "stomach",
-    genZContext: "Your stomach acid said 'I'm coming over' when nobody invited it. Toxic behavior.",
     overview:
       "When harsh stomach acid constantly splashes backward up into your throat, causing a burning feeling in your chest.",
     symptoms: [
@@ -58,8 +53,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-4",
     name: "Migraine",
     bodyPartId: "brain",
-    genZContext:
-      "Your brain is throwing a massive tantrum with main character energy. 0/10 do not recommend.",
     overview:
       "A serious brain condition that causes intense, blinding headaches. It can also make you feel sick and see flashing lights.",
     symptoms: [
@@ -79,7 +72,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-5",
     name: "Celiac Disease",
     bodyPartId: "small-intestine",
-    genZContext: "Your immune system beefs with bread. Gluten is officially canceled.",
     overview:
       "A condition where eating gluten (found in bread and pasta) makes your own body attack and damage your stomach area.",
     symptoms: [
@@ -95,8 +87,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-6",
     name: "Osteoarthritis",
     bodyPartId: "knees",
-    genZContext:
-      "Your joints have left the chat. They're basically grinding like bad brakes on a scooter.",
     overview:
       "When the slippery cushions between your knee bones wear away, making it painful to walk or bend your knees.",
     symptoms: [
@@ -112,7 +102,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-7",
     name: "Glaucoma",
     bodyPartId: "eyes",
-    genZContext: "Your eye pressure is acting sus and slowly stealing your peripheral vision.",
     overview:
       "When pressure builds up inside your eye and slowly damages the nerve that connects your eye to your brain.",
     symptoms: [
@@ -128,7 +117,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-8",
     name: "Hypertension (High Blood Pressure)",
     bodyPartId: "heart",
-    genZContext: "Your blood is rushing through your veins with zero chill. Major red flag.",
     overview:
       "When your blood pushes way too hard against the walls of your blood vessels, which can eventually damage your heart.",
     symptoms: [
@@ -144,7 +132,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-9",
     name: "Carpal Tunnel Syndrome",
     bodyPartId: "wrists",
-    genZContext: "Your wrists are screaming 'touch grass' after too much doomscrolling or gaming.",
     overview:
       "When a nerve gets pinched or squeezed inside your wrist, causing your hand to feel numb and weak.",
     symptoms: [
@@ -160,7 +147,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-10",
     name: "Kidney Stones",
     bodyPartId: "kidneys",
-    genZContext: "Your kidneys made literal rocks. The pain is not giving.",
     overview:
       "When minerals build up inside your kidneys to form hard, sharp rocks that are incredibly painful to pee out.",
     symptoms: [
@@ -176,7 +162,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-11",
     name: "Atrial Fibrillation (AFib)",
     bodyPartId: "heart",
-    genZContext: "Your heart is glitching out of its regular rhythm. Needs a hard reset.",
     overview:
       "An irregular, often very rapid heart rhythm that can lead to blood clots in the heart.",
     symptoms: [
@@ -191,7 +176,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-12",
     name: "Irritable Bowel Syndrome (IBS)",
     bodyPartId: "large-intestine",
-    genZContext: "Your gut is having a chaotic era. Completely unpredictable energy.",
     overview:
       "A common disorder that affects the large intestine, causing cramping, abdominal pain, bloating, gas, and diarrhea or constipation.",
     symptoms: [
@@ -207,7 +191,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-13",
     name: "Melanoma",
     bodyPartId: "skin",
-    genZContext: "That sus mole needs an immediate vibe check from a dermatologist.",
     overview:
       "The most serious type of skin cancer, developing in the cells (melanocytes) that produce melanin.",
     symptoms: [
@@ -223,7 +206,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-14",
     name: "Tinnitus",
     bodyPartId: "ears",
-    genZContext: "Your ears are playing a high-pitched sound on loop and you can't hit skip.",
     overview: "The perception of noise or ringing in the ears without an external source.",
     symptoms: [
       { text: "Ringing, buzzing, or hissing sound", frequency: "always" },
@@ -241,7 +223,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-15",
     name: "Sciatica",
     bodyPartId: "spine-lumbar",
-    genZContext: "The nerve in your lower back is throwing a tantrum all the way down your leg.",
     overview:
       "Pain that radiates along the path of the sciatic nerve, which branches from your lower back through your hips and buttocks and down each leg.",
     symptoms: [
@@ -257,7 +238,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-16",
     name: "Type 2 Diabetes",
     bodyPartId: "whole-body",
-    genZContext: "Your body's insulin response left the chat. Sugar processing is glitching.",
     overview: "A chronic condition that affects the way the body processes blood sugar (glucose).",
     symptoms: [
       { text: "Increased thirst", frequency: "often" },
@@ -275,7 +255,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-17",
     name: "Osteoporosis",
     bodyPartId: "bones",
-    genZContext: "Your bones are losing their density and becoming fragile AF. Need calcium stat.",
     overview:
       "A disease that thins and weakens the bones, making them fragile and more likely to break.",
     symptoms: [
@@ -291,7 +270,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-18",
     name: "Chronic Sinusitis",
     bodyPartId: "sinuses",
-    genZContext: "Your face cavities are blocked and inflamed. A total congestion nightmare.",
     overview:
       "The spaces inside your nose and head are swollen and inflamed for three months or longer.",
     symptoms: [
@@ -307,7 +285,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-19",
     name: "Plantar Fasciitis",
     bodyPartId: "feet",
-    genZContext: "Your heel feels like it's stepping on Lego every morning. Huge L.",
     overview:
       "Inflammation of a thick band of tissue that runs across the bottom of your foot and connects your heel bone to your toes.",
     symptoms: [
@@ -322,8 +299,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-20",
     name: "Sleep Apnea",
     bodyPartId: "throat",
-    genZContext:
-      "Your throat keeps hitting pause on your breathing while you sleep. Nightmare rotation.",
     overview:
       "A potentially serious sleep disorder in which breathing repeatedly stops and starts.",
     symptoms: [
@@ -338,7 +313,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-21",
     name: "Rheumatoid Arthritis",
     bodyPartId: "hands",
-    genZContext: "Your immune system is friendly-firing your own joints. Super toxic.",
     overview:
       "An autoimmune and inflammatory disease where your immune system attacks healthy cells in your body by mistake, causing painful swelling in affected parts of the body.",
     symptoms: [
@@ -357,7 +331,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-22",
     name: "Ulcerative Colitis",
     bodyPartId: "large-intestine",
-    genZContext: "Your large intestine is permanently angry and inflamed. Truly a bad time.",
     overview:
       "An inflammatory bowel disease (IBD) that causes long-lasting inflammation and ulcers in your digestive tract.",
     symptoms: [
@@ -376,7 +349,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-23",
     name: "Psoriasis",
     bodyPartId: "skin",
-    genZContext: "Your skin cells are speedrunning their life cycle, leaving flaky patches.",
     overview:
       "A condition in which skin cells build up and form scales and itchy, dry patches. It's thought to be an immune system problem.",
     symptoms: [
@@ -392,7 +364,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-24",
     name: "Multiple Sclerosis (MS)",
     bodyPartId: "brain",
-    genZContext: "Your immune system is chewing on your nerves' Wi-Fi cables.",
     overview:
       "A potentially disabling disease of the brain and spinal cord where the immune system attacks the protective sheath (myelin) that covers nerve fibers.",
     symptoms: [
@@ -411,7 +382,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-25",
     name: "Chronic Kidney Disease",
     bodyPartId: "kidneys",
-    genZContext: "Your body's built-in water filters are slowly clocking out.",
     overview:
       "The gradual loss of kidney function over time, which means your kidneys can't filter dirt and excess fluid from your blood as well as they should.",
     symptoms: [
@@ -430,7 +400,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-26",
     name: "Peptic Ulcer Disease",
     bodyPartId: "stomach",
-    genZContext: "Your stomach lining literally has potholes. The burning is real.",
     overview:
       "A condition in which painful sores or ulcers develop in the lining of the stomach or the first part of the small intestine.",
     symptoms: [
@@ -449,7 +418,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-27",
     name: "Macular Degeneration",
     bodyPartId: "eyes",
-    genZContext: "Your central vision is getting nerfed as you age.",
     overview:
       "An eye disease that can blur your central vision. It happens when aging causes damage to the macula — the part of the eye that controls sharp, straight-ahead vision.",
     symptoms: [
@@ -468,7 +436,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-28",
     name: "Hypothyroidism",
     bodyPartId: "throat",
-    genZContext: "Your thyroid is moving at 0.5x speed. Fatigue is the main character.",
     overview:
       "A condition in which your thyroid gland (located in the lower front of your neck) doesn't produce enough of certain crucial hormones.",
     symptoms: [
@@ -487,7 +454,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-29",
     name: "Heart Failure",
     bodyPartId: "heart",
-    genZContext: "Your heart's pumping power got severely nerfed and can't keep up.",
     overview:
       "A chronic, progressive condition in which the heart muscle is unable to pump enough blood to meet the body's needs for blood and oxygen.",
     symptoms: [
@@ -506,7 +472,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-30",
     name: "Chronic Obstructive Pulmonary Disease (COPD)",
     bodyPartId: "lung-left",
-    genZContext: "Your lungs are perma-blocked and breathing feels like a massive chore.",
     overview:
       "A chronic inflammatory lung disease that causes obstructed airflow from the lungs, making it hard to breathe.",
     symptoms: [
@@ -525,8 +490,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-31",
     name: "Dehydration",
     bodyPartId: "kidneys",
-    genZContext:
-      "Your body is running on empty and desperately screaming for water. Stay hydrated besties.",
     overview:
       "A condition caused by the loss of too much water and essential salts from your body, preventing your organs from functioning properly.",
     symptoms: [
@@ -545,8 +508,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-32",
     name: "Hypertension (High Blood Pressure)",
     bodyPartId: "heart",
-    genZContext:
-      "Your arteries are feeling way too much pressure and are about to boil over. High key stressful.",
     overview:
       "A common condition where the force of the blood pushing against your artery walls is consistently too high, straining your heart.",
     symptoms: [
@@ -565,8 +526,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-33",
     name: "Type 2 Diabetes",
     bodyPartId: "liver",
-    genZContext:
-      "Your body's insulin key is broken and cells are ghosting glucose. High-key insulin resistance era.",
     overview:
       "A chronic condition that affects how your body processes blood sugar (glucose), leading to insulin resistance and high blood sugar levels.",
     symptoms: [
@@ -585,8 +544,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-34",
     name: "Iron-Deficiency Anemia",
     bodyPartId: "heart",
-    genZContext:
-      "Your red blood cells have zero battery charge left. You are basically running on 1% battery.",
     overview:
       "A condition where your body does not have enough iron to make hemoglobin, the protein in red blood cells that carries oxygen from your lungs to your muscles and brain.",
     symptoms: [
@@ -608,8 +565,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-35",
     name: "Hypothyroidism (Underactive Thyroid)",
     bodyPartId: "throat",
-    genZContext:
-      "Your metabolism is moving in slow motion. The internal battery furnace is barely giving off any heat.",
     overview:
       "When the small butterfly-shaped gland in your neck fails to produce enough thyroid hormone, causing your body's overall metabolism to slow down.",
     symptoms: [
@@ -631,8 +586,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-36",
     name: "Hyperthyroidism (Overactive Thyroid)",
     bodyPartId: "throat",
-    genZContext:
-      "Your body's motor is stuck at 10,000 RPM. Everything is running way too fast and shaking.",
     overview:
       "When your thyroid gland makes too much thyroid hormone, speeding up your heartbeat, digestive system, and nervous system into high gear.",
     symptoms: [
@@ -654,8 +607,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-37",
     name: "Irritable Bowel Syndrome (IBS)",
     bodyPartId: "large-intestine",
-    genZContext:
-      "Your stomach and emotions are tied in a tight knot. One stressful email and your belly sends emergency alerts.",
     overview:
       "A common digestive disorder that causes stomach cramps, gas, bloating, and unpredictable swings between diarrhea and constipation, closely linked to stress.",
     symptoms: [
@@ -680,8 +631,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-38",
     name: "Kidney Stones",
     bodyPartId: "kidneys",
-    genZContext:
-      "Tiny salt crystals turned into sharp rocky pebbles inside your water filter. 10/10 level pain alert.",
     overview:
       "Hard deposits made of minerals and salts that form inside your kidneys when your urine is too concentrated from lack of fluids, scratching the urinary tube as they pass.",
     symptoms: [
@@ -706,8 +655,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-39",
     name: "Gout (Uric Acid Arthritis)",
     bodyPartId: "feet",
-    genZContext:
-      "Your big toe joint feels like it is on fire and covered in microscopic needles. Even a bedsheet touching it hurts.",
     overview:
       "A very painful form of arthritis where needle-sharp crystals of uric acid build up inside a joint (most often the big toe), causing sudden swelling, redness, and heat.",
     symptoms: [
@@ -732,8 +679,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-40",
     name: "Sciatica & Lumbar Disc Herniation",
     bodyPartId: "spine-lumbar",
-    genZContext:
-      "A spinal shockwave shooting straight down your leg like an exposed electric wire.",
     overview:
       "Pain that radiates along the path of the sciatic nerve, which branches from your lower back through your hips and buttocks and down each leg, usually caused by a slipped spinal disc.",
     symptoms: [
@@ -758,8 +703,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-41",
     name: "Chronic Insomnia",
     bodyPartId: "brain",
-    genZContext:
-      "Staring at the ceiling at 3:00 AM while your brain reviews every awkward conversation from 2017.",
     overview:
       "A sleep disorder characterized by ongoing difficulty falling asleep, staying asleep through the night, or waking up too early and being unable to get back to sleep.",
     symptoms: [
@@ -787,8 +730,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-42",
     name: "PCOS / PCOD (Polycystic Ovary Syndrome)",
     bodyPartId: "skin",
-    genZContext:
-      "Hormonal signals got crossed: stubborn breakouts, irregular calendar math, and unpredictable energy levels.",
     overview:
       "A common hormonal imbalance affecting women where the ovaries produce higher levels of male hormones (androgens) and cells become resistant to insulin.",
     symptoms: [
@@ -810,8 +751,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-43",
     name: "Allergic Rhinitis (Dust & Pollen Allergy)",
     bodyPartId: "sinuses",
-    genZContext:
-      "Your nose treats normal dust or spring pollen like a chemical weapon attack. Sneezing on repeat.",
     overview:
       "An allergic reaction where your immune system mistakenly treats harmless airborne particles (pollen, dust mites, pet dander) as dangerous invaders, causing swelling in your nasal passages.",
     symptoms: [
@@ -833,8 +772,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-44",
     name: "Gallstones & Biliary Colic",
     bodyPartId: "liver",
-    genZContext:
-      "Your bile fluid solidified into tiny marbles that get stuck right after you eat fried samosas or cheesy pizza.",
     overview:
       "Hardened pebble-like deposits of digestive bile that form in the gallbladder and cause intense cramps when they temporarily block the duct after a rich or fatty meal.",
     symptoms: [
@@ -862,8 +799,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-45",
     name: "Gastroenteritis (Stomach Bug & Food Poisoning)",
     bodyPartId: "stomach",
-    genZContext:
-      "Uninvited street food bacteria threw a wild party in your gut. Your stomach is in pure emergency evacuation mode.",
     overview:
       "An inflammation of the lining of your intestines caused by contaminated food, water, or viruses (such as norovirus), leading to quick fluid loss.",
     symptoms: [
@@ -885,8 +820,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-46",
     name: "Cervical Spondylosis (Tech Neck & Spine Strain)",
     bodyPartId: "spine-cervical",
-    genZContext:
-      "Hunching over your phone for 7 hours a day made your neck feel like a rusted hinge.",
     overview:
       "Age-related or posture-related wear and tear affecting the spinal discs and joints in your neck, worsened by constantly looking down at computer and smartphone screens.",
     symptoms: [
@@ -911,8 +844,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-47",
     name: "Carpal Tunnel Syndrome",
     bodyPartId: "wrists",
-    genZContext:
-      "Your computer mouse and gaming controller squeezed the main nerve in your wrist until your fingers fell asleep.",
     overview:
       "A condition caused by compression of the median nerve as it travels through the carpal tunnel—a narrow passageway of bones and ligaments on the palm side of your wrist.",
     symptoms: [
@@ -940,8 +871,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-48",
     name: "Plantar Fasciitis (Morning Heel Pain)",
     bodyPartId: "feet",
-    genZContext:
-      "Taking your first step out of bed feels like stepping directly onto a bed of sharp thumb tacks.",
     overview:
       "Inflammation and microscopic tearing of the thick band of tissue (plantar fascia) that runs across the bottom of your foot and connects your heel bone to your toes.",
     symptoms: [
@@ -969,8 +898,6 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     id: "d-49",
     name: "Dry Eye Disease & Digital Eye Strain",
     bodyPartId: "eyes",
-    genZContext:
-      "Staring at pixels without blinking made your eyeballs feel like dry sandpaper in a desert sandstorm.",
     overview:
       "A condition where your eyes either do not produce enough tears or produce poor-quality tears that evaporate too fast, greatly exacerbated by reduced blinking while staring at digital screens.",
     symptoms: [

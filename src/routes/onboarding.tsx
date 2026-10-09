@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Sparkles } from "lucide-react";
 import { useBodyStore } from "@/store/useBodyStore";
 import { TRANSLATIONS } from "@/data/content";
 
@@ -263,9 +264,9 @@ function OnboardingPage() {
                   initial={{ scale: 0, rotate: -180 }}
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ type: "spring", bounce: 0.5 }}
-                  className="mx-auto flex h-16 w-16 place-items-center justify-center rounded-2xl bg-[#FC3D21]/15 text-3xl text-[#FC3D21]"
+                  className="mx-auto flex h-16 w-16 place-items-center justify-center rounded-2xl bg-[#00E5C4]/15 border border-[#00E5C4]/30"
                 >
-                  ✨
+                  <Sparkles className="w-8 h-8 text-[#00E5C4]" />
                 </motion.div>
 
                 <div className="space-y-2">

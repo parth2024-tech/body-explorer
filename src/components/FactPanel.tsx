@@ -11,7 +11,7 @@ import {
   type Category,
 } from "@/data/content";
 import { FactCard } from "./FactCard";
-import { Stethoscope, AlertCircle } from "lucide-react";
+import { Stethoscope, AlertCircle, Zap } from "lucide-react";
 
 const CATEGORIES: Category[] = [
   "weird_wild",
@@ -129,8 +129,8 @@ export function FactPanel() {
               {/* Micro Action */}
               {microAction && (
                 <div className="rounded-xl border border-[#FC3D21]/20 bg-[#FC3D21]/5 p-4">
-                  <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#FC3D21] font-semibold">
-                    <span>⚡</span>
+                  <div className="flex items-center gap-1.5 text-xs uppercase tracking-wider text-[#FC3D21] font-semibold">
+                    <Zap className="w-3.5 h-3.5 shrink-0" />
                     {microAction.duration} micro-action
                   </div>
                   <p className="mt-2 text-sm text-[#EAEAEA] leading-relaxed">

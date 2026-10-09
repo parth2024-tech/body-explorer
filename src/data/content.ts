@@ -73,7 +73,6 @@ export interface DiseaseEntry {
   whenToSeeDoctor: string;
   misconceptions: string[];
   bodyPartId?: string;
-  genZContext?: string;
 }
 
 export interface RemedyEntry {
@@ -84,7 +83,7 @@ export interface RemedyEntry {
   evidenceDetails: string;
   ailment: string;
   bodyPartId?: string;
-  genZContext?: string;
+  practicalContext?: string;
 }
 
 export interface HealthHack {
@@ -2971,8 +2970,8 @@ export const REMEDIES: RemedyEntry[] = [
       'Clinical trials in the Indian Journal of Psychological Medicine demonstrate that Ashwagandha root extract significantly reduces serum cortisol levels. It works by regulating the hypothalamic-pituitary-adrenal (HPA) axis, easing the nervous system out of "fight or flight" mode and improving resistance to daily stress.',
     ailment: 'Stress, Burnout & "Always-On" Anxiety',
     bodyPartId: "brain",
-    genZContext:
-      "With constant digital connectivity and heavy pressure to achieve, Gen Z faces record highs in chronic stress, anxiety, and emotional exhaustion.",
+    practicalContext:
+      "High demands and constant digital connectivity often lead to chronic stress, mental fatigue, and elevated nervous system strain.",
   },
   {
     id: "tart-cherry-insomnia",
@@ -2984,8 +2983,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Gadget screens emit blue light that tricks the brain into thinking it is still daytime, preventing it from producing sleep hormones. Tart cherries are one of the rare natural, food-based sources of melatonin. Drinking the juice naturally boosts your melatonin levels, helping you fall asleep faster and stay asleep longer, even if your internal clock is confused by screens.",
     ailment: 'Screen-Induced Insomnia & "Revenge Bedtime Procrastination"',
     bodyPartId: "brain",
-    genZContext:
-      "Studies show Gen Z can spend an average of 16 hours a day utilizing gadgets, and this extreme digital overload severely disrupts sleep quality.",
+    practicalContext:
+      "Extended daily screen exposure and nighttime device use disrupt natural melatonin release and delay sleep onset.",
   },
   {
     id: "bilberry-eye-strain",
@@ -2997,8 +2996,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Bilberries are packed with protective plant compounds called anthocyanins. Science shows these compounds specifically protect the retina and improve blood circulation in the tiny blood vessels of the eye. This reduces the physical fatigue, blurred vision, and dryness that comes from staring at pixels all day.",
     ailment: "Digital Eye Strain & Screen Fatigue",
     bodyPartId: "eyes",
-    genZContext:
-      "Hours of daily scrolling, studying, and working on devices lead to dry, tired, blurred, and physically strained eyes.",
+    practicalContext:
+      "Prolonged screen exposure reduces blink rates and strains delicate eye muscles, resulting in ocular fatigue.",
   },
   {
     id: "magnesium-tech-neck",
@@ -3010,8 +3009,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Poor posture over keyboards and phones restricts blood flow and causes muscle spasms. Clinical evidence supports that heat induces vasodilation (widening of blood vessels), while transdermal magnesium acts as a natural calcium channel blocker. This combination physically forces contracted muscle fibers to release and relax, alleviating tension headaches and neck stiffness.",
     ailment: '"Tech Neck" & Postural Muscle Tension',
     bodyPartId: "spine-cervical",
-    genZContext:
-      "Constantly looking down at phones and hunching over laptops creates chronic, painful tension in the neck, shoulders, and upper back.",
+    practicalContext:
+      "Forward-head posture from laptops and mobile devices creates sustained muscular tension across the neck and shoulders.",
   },
   {
     id: "lemon-balm-nervous-stomach",
@@ -3023,8 +3022,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Lemon balm contains active compounds like rosmarinic acid. Studies prove it has a dual-action effect: it increases calming chemicals in the brain to reduce anxiety, while simultaneously relaxing the smooth muscles of the digestive tract. This physically stops the painful stomach spasms and bloating that happen when you are highly stressed.",
     ailment: 'The "Nervous Stomach" & Stress-Induced Bloating',
     bodyPartId: "stomach",
-    genZContext:
-      "Because the brain and gut are deeply connected, the high rates of anxiety among young adults often show up physically as stomach cramps, severe bloating, or irregular digestion.",
+    practicalContext:
+      "Because the brain and gut share direct nerve pathways, emotional stress frequently manifests as stomach cramping, bloating, and digestive discomfort.",
   },
   {
     id: "tart-cherry-gout",
@@ -3047,8 +3046,8 @@ export const REMEDIES: RemedyEntry[] = [
       "The warmth helps unclog the meibomian glands (which stop secreting oil properly when blink rates drop during intense screen focus). Furthermore, ophthalmological studies show that the high concentration of EGCG (epigallocatechin gallate) in green tea provides powerful anti-inflammatory properties that reduce ocular surface swelling and redness.",
     ailment: "Digital Eye Strain & Screen Fatigue",
     bodyPartId: "eyes",
-    genZContext:
-      "Hours of daily scrolling, studying, debugging, and working on devices lead to dry, tired, blurred, and physically strained eyes.",
+    practicalContext:
+      "Long hours of computer and desk work reduce blinking, causing ocular dryness and surface irritation.",
   },
   {
     id: "bacopa-monnieri",
@@ -3060,8 +3059,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Multiple randomized, double-blind, placebo-controlled trials published in psychopharmacology journals confirm that Bacopa Monnieri improves spatial memory, working memory, and rapid visual information processing. It achieves this by promoting the growth of nerve endings (dendritic branching), enhancing neural communication.",
     ailment: "Brain Fog & Cognitive Fatigue",
     bodyPartId: "brain",
-    genZContext:
-      "With constant digital multitasking, study loads, and information overload, cognitive fatigue and brain fog frequently disrupt focus.",
+    practicalContext:
+      "Intense work sessions and continuous information flow often trigger mental exhaustion and temporary brain fog.",
   },
   {
     id: "lavender-anxiety",
@@ -3073,7 +3072,7 @@ export const REMEDIES: RemedyEntry[] = [
       "Clinical studies demonstrate that lavender oil inhalation interacts with the GABA neurotransmitter system in the brain to reduce heart rate, calm the autonomic nervous system, and improve sleep quality.",
     ailment: "Stress, Sleep Disruptions & Mild Anxiety",
     bodyPartId: "brain",
-    genZContext: "Perfect for wind-down routines to counteract late-night scrolling anxiety.",
+    practicalContext: "A calming addition to evening wind-down routines to help transition into restful sleep.",
   },
   {
     id: "cranberry-uti",
@@ -3127,8 +3126,8 @@ export const REMEDIES: RemedyEntry[] = [
       "While highly popular online, there is no robust clinical evidence showing ACV cures acid reflux or GERD. Some users claim it balances stomach acid, but drinking highly acidic vinegar can irritate the esophagus and damage tooth enamel.",
     ailment: "Acid Reflux & Heartburn",
     bodyPartId: "stomach",
-    genZContext:
-      "A massive TikTok trend that is often shared as a cure-all, but lacking solid scientific backing.",
+    practicalContext:
+      "Widely promoted on social media as a digestive cure-all, but lacking robust clinical support.",
   },
   {
     id: "cold-compress-migraine",
@@ -3151,8 +3150,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Activated charcoal is used in emergency medicine to bind to acute poisons in the stomach. However, consuming it for daily 'detoxification' is medically unproven and dangerous, as it binds to beneficial nutrients and blocks the absorption of prescription medications.",
     ailment: "Systemic Toxin Removal (Detoxification)",
     bodyPartId: "liver",
-    genZContext:
-      "Frequently marketed as an aesthetic 'detox drink' in social media health trends, despite having no clinical benefit for healthy livers.",
+    practicalContext:
+      "Marketed in viral wellness trends as a detox drink, though lacking clinical benefit for normal liver function.",
   },
   {
     id: "ear-candling",
@@ -3197,8 +3196,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Ginkgo biloba has been used in Traditional Chinese Medicine for thousands of years to improve blood flow to the brain and enhance memory. While modern clinical trials show mixed results for cognitive decline, its traditional reputation for sharpening focus remains strong.",
     ailment: "Brain Fog & Cognitive Enhancement",
     bodyPartId: "frontal-lobe",
-    genZContext:
-      "A classic herbal option favored by students during exam seasons to boost mental clarity.",
+    practicalContext:
+      "A traditional herbal preparation used during intensive study periods to support mental alertness.",
   },
   {
     id: "ginger-ale-nausea",
@@ -3210,8 +3209,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Many people swear by ginger ale for stomach issues, but most commercial sodas contain artificial ginger flavoring, high-fructose corn syrup, and carbonation, which can actually worsen bloating and acid reflux. Real ginger root is required for therapeutic effects.",
     ailment: "Nausea & Indigestion",
     bodyPartId: "stomach",
-    genZContext:
-      "A popular comfort drink when feeling sick, though medically it is mostly the cold temperature and fizz that soothe rather than real ginger.",
+    practicalContext:
+      "A popular comfort drink, though commercial varieties generally rely on artificial flavor and high sugar rather than real therapeutic ginger.",
   },
   {
     id: "alkaline-water-ph",
@@ -3223,8 +3222,8 @@ export const REMEDIES: RemedyEntry[] = [
       "There is no scientific proof that alkaline water alters the body's internal pH balance. The stomach's powerful hydrochloric acid immediately neutralizes alkaline liquids upon consumption, and the kidneys and lungs naturally maintain a tight blood pH range (7.35–7.45) regardless of diet.",
     ailment: "Systemic Acidity & Metabolic Detox",
     bodyPartId: "stomach",
-    genZContext:
-      "Highly marketed by wellness influencers and bottled water brands as a performance booster, despite lacking clinical support.",
+    practicalContext:
+      "Promoted by marketing campaigns as a health enhancer, but gastric acid quickly neutralizes alkalinity upon drinking.",
   },
   {
     id: "chamomile-insomnia",
@@ -3236,8 +3235,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Chamomile contains apigenin, an antioxidant that binds to specific receptors in the brain that may decrease anxiety and initiate sleep, as supported by several clinical trials.",
     ailment: "Insomnia & Sleeplessness",
     bodyPartId: "brain",
-    genZContext:
-      "Your brain is spinning at 3 AM and needs to hit the snooze button. Chamomile has your back, bestie.",
+    practicalContext:
+      "An accessible evening tea that gently encourages relaxation and eases nighttime restlessness.",
   },
   {
     id: "deglycyrrhizinated-licorice-dgl",
@@ -3249,8 +3248,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Systematic clinical trials demonstrate that DGL promotes gastric goblet cell mucus secretion and microvascular blood flow to the mucosal barrier, relieving dyspepsia and heartburn without elevating systemic blood pressure (glycyrrhizin removed).",
     ailment: "Gastric Irritation & Dyspepsia",
     bodyPartId: "stomach",
-    genZContext:
-      "A herbal shield for your stomach lining that coats your gut before eating spicy food.",
+    practicalContext:
+      "A supportive botanical preparation taken prior to meals to help soothe gastric sensitivity.",
   },
   {
     id: "menthol-chest-vapor-rub",
@@ -3262,8 +3261,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Randomized controlled pediatric and adult trials confirm inhaled menthol vapors stimulate upper airway TRPM8 cold-sensing receptors, providing a pronounced subjective sensation of open nasal airflow and decreasing nighttime cough reflex frequency.",
     ailment: "Nighttime Cough & Perceived Airway Resistance",
     bodyPartId: "lung-left",
-    genZContext:
-      "The classic comforting chest rub that activates your airway's cool-sensors so you can sleep through a cold.",
+    practicalContext:
+      "A widely used topical ointment that stimulates cold receptors in the nasal passage, creating a cooling sensation of clearer airflow.",
   },
   {
     id: "valerian-root-infusion",
@@ -3275,8 +3274,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Systematic reviews and meta-analyses show valerenic acid acts as an allosteric modulator of inhibitory GABA-A receptors, modestly decreasing sleep latency (time to fall asleep) without the cognitive sedation hangover of prescription hypnotics.",
     ailment: "Sleep Latency & Pre-Sleep Restlessness",
     bodyPartId: "brain",
-    genZContext:
-      "An earthy herbal root tea that gently turns down the nervous system volume when your brain won't shut off.",
+    practicalContext:
+      "A traditional botanical preparation used before bedtime to help quiet nervous tension and support sleep onset.",
   },
   {
     id: "bengay-methyl-salicylate",
@@ -3288,8 +3287,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Operates via the 'Gate Control Theory' of neurophysiology: topical menthol and methyl salicylate activate cutaneous thermal receptors (TRPM8 and TRPV1), effectively suppressing nociceptive pain signals transmitted by unmyelinated C-fibers at the spinal dorsal horn.",
     ailment: "Delayed Onset Muscle Soreness (DOMS)",
     bodyPartId: "muscles",
-    genZContext:
-      "The tingling gym balm that distracts your nervous system from delayed-onset muscle ache after heavy workouts.",
+    practicalContext:
+      "A widely used counter-irritant cream that produces warm and cooling sensory inputs to ease post-exercise muscle soreness.",
   },
   {
     id: "oral-rehydration-salts-who",
@@ -3301,8 +3300,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Gold-standard WHO Tier 1 intervention utilizing the intestinal sodium-glucose cotransporter (SGLT-1). Active co-transport of sodium and glucose across the intestinal lumen pulls water osmotically into mesenteric blood vessels, reversing severe dehydration even during active gastrointestinal infection.",
     ailment: "Acute Diarrheal Dehydration & Electrolyte Depletion",
     bodyPartId: "small-intestine",
-    genZContext:
-      "The clinical electrolyte formula that saves millions of lives globally by using your gut's molecular sugar-salt water pumps.",
+    practicalContext:
+      "The WHO-standardized electrolyte solution that utilizes intestinal sodium-glucose transporters to rapidly restore hydration.",
   },
   {
     id: "baking-soda-mouth-rinse",
@@ -3314,8 +3313,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Dental trials confirm an alkaline sodium bicarbonate rinse rapidly neutralizes low-pH gastric hydrochloric acid in the oral cavity. Brushing immediately after acid exposure causes mechanical loss of demineralized enamel; bicarbonate rinsing neutralizes acid safely and protects dentin.",
     ailment: "Enamel Acid Erosion Post-Reflux/Vomiting",
     bodyPartId: "jaw",
-    genZContext:
-      "A 30-second alkaline mouth rinse that shields your tooth enamel from being stripped by stomach acid after heartburn.",
+    practicalContext:
+      "A simple oral rinse that neutralizes acidic gastric residue, protecting dental enamel without abrasive brushing.",
   },
   {
     id: "witch-hazel-ice-pads",
@@ -3327,8 +3326,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Rich in astringent gallotannins that precipitate superficial cell membrane proteins, inducing localized vasoconstriction, soothing edema, and providing rapid thermal vasoconstriction to relieve burning discomfort.",
     ailment: "Postpartum Perineal Soreness & External Hemorrhoid Flares",
     bodyPartId: "large-intestine",
-    genZContext:
-      "Frozen herbal pads often called 'padsicles' that provide instant soothing cooling relief for pelvic swelling.",
+    practicalContext:
+      "A soothing topical compress combining astringent witch hazel and aloe to relieve localized swelling and tenderness.",
   },
   {
     id: "mustard-poultice-chest",
@@ -3340,8 +3339,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Releases volatile allyl isothiocyanate, which causes prominent dermal vasodilation and localized redness (counter-irritation). However, clinical trials show no internal pulmonary decongestion, and prolonged direct contact frequently causes severe second-degree chemical skin blisters.",
     ailment: "Deep Bronchial Congestion",
     bodyPartId: "lung-right",
-    genZContext:
-      "An old folk chest plaster that creates lots of skin burning and stinging heat without actually clearing your lung airways.",
+    practicalContext:
+      "A traditional folk remedy that produces skin irritation and warmth without providing proven airway clearance.",
   },
   {
     id: "hydrocolloid-acne-patch",
@@ -3353,8 +3352,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Dermatological wound healing studies confirm hydrocolloid dressings absorb inflammatory purulent exudate through capillary action, sustain an optimal moist healing matrix, and establish a physical barrier that prevents habitual skin picking and secondary bacterial contamination.",
     ailment: "Inflammatory Pustular Acne & Skin Picking",
     bodyPartId: "skin",
-    genZContext:
-      "The viral aesthetic pimple patches that absorb gunk from blemishes while physically stopping you from picking your skin.",
+    practicalContext:
+      "Protective hydrocolloid patches that absorb fluid while physically preventing friction and subconscious skin picking.",
   },
   {
     id: "epsom-foot-soak",
@@ -3366,8 +3365,138 @@ export const REMEDIES: RemedyEntry[] = [
       "Warm foot immersion stimulates cutaneous vasodilation and muscle relaxation, relieving plantar fascial strain. However, rigorous clinical evidence for transdermal magnesium absorption through thick plantar stratum corneum is lacking; therapeutic relief is primarily driven by hydrostatic thermal therapy.",
     ailment: "Plantar Foot Fatigue & Aching Heels",
     bodyPartId: "feet",
-    genZContext:
-      "A warm, comforting foot bath that relaxes sore arches after a long day on your feet, even if the minerals stay in the basin.",
+    practicalContext:
+      "A comforting warm foot soak that eases muscular tension and arch fatigue through hydrostatic thermal relaxation.",
+  },
+  {
+    id: "psyllium-husk-fiber",
+    name: "Psyllium Husk Soluble Fiber",
+    description:
+      "Dissolving one tablespoon of whole psyllium husk powder in a full glass of water, consumed once or twice daily followed by another glass of water.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Gold-standard Cochrane and American College of Gastroenterology reviews show psyllium acts as a bulk-forming soluble fiber. In the bowel, its mucilage absorbs water to create a soft gel matrix, significantly improving stool consistency, regulating bowel motility, and binding intestinal bile acids to lower LDL cholesterol.",
+    ailment: "Chronic Constipation & Irregular Bowel Habits",
+    bodyPartId: "large-intestine",
+    practicalContext:
+      "A widely studied plant fiber that absorbs water in the gut to ease bowel movements and support metabolic health.",
+  },
+  {
+    id: "saline-nasal-irrigation",
+    name: "Buffered Saline Nasal Irrigation",
+    description:
+      "Flushing the nasal passages with a distilled or boiled sterile saline solution using a nasal rinse bottle or neti pot.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Clinical otolaryngology guidelines confirm that isotonic or mild hypertonic saline physically rinses thick mucus, crusted debris, airborne allergens, and inflammatory cytokines from the nasal mucosa while stimulating natural microscopic ciliary beat frequency.",
+    ailment: "Allergic Rhinitis & Sinus Congestion",
+    bodyPartId: "sinuses",
+    practicalContext:
+      "A proven drug-free nasal wash that clears dust, allergens, and sticky mucus using sterile salt water.",
+  },
+  {
+    id: "elderberry-extract",
+    name: "Standardized Black Elderberry Extract (Sambucus nigra)",
+    description:
+      "Taking standardized elderberry syrup or extract at the very first onset of seasonal viral symptoms.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Randomized controlled clinical trials show elderberry flavonoids (specifically anthocyanins) inhibit viral hemagglutinin and neuraminidase enzymes in laboratory models. In human trials, early administration reduced upper respiratory viral illness duration by an average of 2 to 4 days compared to placebo.",
+    ailment: "Early Viral Cold & Flu Symptoms",
+    bodyPartId: "throat",
+    practicalContext:
+      "A berry-derived botanical syrup taken during the first 48 hours of illness to support natural immune defense.",
+  },
+  {
+    id: "clove-oil-eugenol",
+    name: "Diluted Clove Essential Oil (Eugenol)",
+    description:
+      "Dabbing a tiny drop of clove oil diluted in a carrier oil (such as olive oil) onto a clean cotton swab and gently pressing it against an aching tooth or gum.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Dental pharmacology trials confirm eugenol—the primary compound in clove oil—acts as a natural topical analgesic and antiseptic. It reversibly inhibits voltage-gated sodium channels in dental nerve fibers, providing rapid temporary numbing relief while waiting for a dentist visit.",
+    ailment: "Acute Toothache & Local Gum Soreness",
+    bodyPartId: "jaw",
+    practicalContext:
+      "A concentrated botanical oil used as a short-term numbing agent for temporary dental toothache relief.",
+  },
+  {
+    id: "warm-salt-water-gargle",
+    name: "Warm Salt Water Oral Gargle",
+    description:
+      "Dissolving half a teaspoon of plain salt in one cup of warm water, gargling deep in the throat for 30 seconds, and spitting it out.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Clinical trials and medical guidelines confirm that mild hypertonic saline gargling creates an osmotic gradient that pulls excess inflammatory fluid out of swollen throat tissues, rapidly easing painful edema while physically washing away viral particles and bacterial biofilms.",
+    ailment: "Acute Pharyngitis & Swollen Sore Throat",
+    bodyPartId: "throat",
+    practicalContext:
+      "An accessible kitchen staple gargle that draws fluid out of puffy throat tissue to reduce swallowing pain.",
+  },
+  {
+    id: "fenugreek-seed-water",
+    name: "Soaked Fenugreek Seed Infusion",
+    description:
+      "Soaking one tablespoon of whole fenugreek seeds in water overnight, then drinking the water and chewing the softened seeds in the morning.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Clinical nutrition trials show fenugreek seeds are rich in 4-hydroxyisoleucine and galactomannan soluble fiber. These compounds slow carbohydrate breakdown and gastric emptying, blunting rapid post-meal blood sugar spikes and modestly improving insulin sensitivity in type 2 diabetes management.",
+    ailment: "Post-Meal Blood Sugar Spikes & Metabolic Support",
+    bodyPartId: "stomach",
+    practicalContext:
+      "A traditional seed soak that slows carbohydrate absorption and helps stabilize post-meal glucose.",
+  },
+  {
+    id: "aloe-vera-topical-gel",
+    name: "Pure Aloe Vera Leaf Gel",
+    description:
+      "Applying fresh or 100% pure bottled aloe vera inner leaf gel directly onto pink, sun-exposed skin or minor first-degree thermal burns.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Dermatological reviews show aloe vera gel contains acemannan complex polysaccharides, bradykininase, and glucomannan. These natural compounds stimulate microvascular circulation, boost collagen synthesis in fibroblasts, and maintain skin barrier hydration to accelerate superficial skin healing.",
+    ailment: "Mild First-Degree Sunburn & Surface Skin Redness",
+    bodyPartId: "skin",
+    practicalContext:
+      "A soothing botanical gel that cools irritated skin and accelerates cellular barrier repair after sun exposure.",
+  },
+  {
+    id: "zinc-acetate-lozenges",
+    name: "Ionic Zinc Acetate / Gluconate Lozenges",
+    description:
+      "Slowly dissolving one zinc lozenge (releasing 10 to 15 mg of elemental ionic zinc) in the mouth every 2 to 3 hours during the first 24 hours of a cold.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Cochrane meta-analyses confirm that free ionic zinc (Zn2+) released in the oropharynx binds directly to rhinovirus surface capsid proteins. This blocks viral adhesion to ICAM-1 receptors on human nasal and throat epithelial cells, shortening cold duration by nearly 33% when started within 24 hours of symptom onset.",
+    ailment: "Acute Common Cold Duration",
+    bodyPartId: "throat",
+    practicalContext:
+      "Dissolvable oral lozenges that deliver free ionic zinc directly to the back of the throat to shorten a cold.",
+  },
+  {
+    id: "kava-kava-root",
+    name: "Standardized Kava Root Brew (Piper methysticum)",
+    description:
+      "Drinking a traditionally prepared aqueous brew or standardized herbal extract of South Pacific kava kava root.",
+    evidenceRating: "traditional",
+    evidenceDetails:
+      "Psychopharmacology trials show kavalactones cross the blood-brain barrier to modulate GABA-A receptors, reduce noradrenaline reuptake, and block voltage-gated sodium channels. This produces noticeable physical and mental relaxation without significant cognitive sedation, though excessive intake or poor-quality solvent extracts carry risks of hepatotoxicity.",
+    ailment: "Acute Situational Anxiety & Muscle Nervous Tension",
+    bodyPartId: "brain",
+    practicalContext:
+      "A traditional South Pacific ceremonial beverage used to quiet nervous tension and ease social apprehension.",
+  },
+  {
+    id: "colloidal-silver-ingestion",
+    name: "Oral Colloidal Silver Liquid Tonics",
+    description:
+      "Drinking bottled suspensions of microscopic silver nanoparticles promoted online as a 'universal natural antibiotic.'",
+    evidenceRating: "unproven",
+    evidenceDetails:
+      "Clear consensus from the US FDA, Mayo Clinic, and toxicology boards confirms that colloidal silver has no biological purpose or nutritional value in the human body. It is completely ineffective at treating viral or bacterial infections inside the body. Chronic ingestion causes irreversible argyria (permanent metallic silver accumulation turning the skin, eyes, and organs slate-blue/gray), neurological damage, and renal failure.",
+    ailment: "Systemic Infection Prevention & Immunity (Debunked)",
+    bodyPartId: "skin",
+    practicalContext:
+      "A heavily marketed internet cure-all that lacks efficacy and poses severe permanent toxicity risks including blue-gray skin discoloration.",
   },
 ];
 

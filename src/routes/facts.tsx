@@ -11,7 +11,7 @@ import {
   Category,
   Rarity,
 } from "@/data/content";
-import { Heart, Search, Volume2, Square, RefreshCcw } from "lucide-react";
+import { Heart, Search, Volume2, Square, RefreshCcw, Lightbulb } from "lucide-react";
 
 export const Route = createFileRoute("/facts")({
   head: () => ({
@@ -159,21 +159,20 @@ function FactsPage() {
   const raritiesList = Object.keys(RARITY_META) as Rarity[];
 
   return (
-    <div className="min-h-screen bg-[#030303] text-[#EAEAEA] font-sans selection:bg-[#A855F7]/30 pb-32">
+    <div className="min-h-screen bg-[#030303] text-[#EAEAEA] font-sans selection:bg-[#00E5C4]/30 pb-32">
       <div className="max-w-7xl mx-auto px-5 pt-12 pb-8">
         {/* Header */}
         <header className="relative text-center max-w-3xl mx-auto mb-16">
-          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-96 bg-[#A855F7]/10 rounded-full blur-[120px] pointer-events-none" />
           <div className="relative z-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#A855F7]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#00E5C4]">
               {t("facts")}
             </span>
-            <h1 className="mt-4 text-5xl md:text-7xl font-space font-black tracking-tighter text-white">
-              Anatomy <span className="text-[#A855F7]">Archive</span>
+            <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-space font-black tracking-tight text-white">
+              Anatomy <span className="text-[#00E5C4]">Archive</span>
             </h1>
-            <p className="text-[#8A8F98] mt-6 font-mono text-sm leading-relaxed max-w-2xl mx-auto">
-              Explore a rich, medically-validated catalog of biological facts, records, health
-              guidance, and anatomical mysteries across your 37 trillion cells.
+            <p className="text-[#8A8F98] mt-4 font-mono text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+              Explore a rich catalog of verified biological mechanisms, anatomical records,
+              and clinical facts across human organ systems.
             </p>
           </div>
         </header>
@@ -181,14 +180,11 @@ function FactsPage() {
         {/* Hero Interactive Segment: Random Fact Generator */}
         {randomFact && (
           <div className="mb-16 relative z-10">
-            <div className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-black/40 p-8 md:p-12 shadow-[0_0_80px_rgba(168,85,247,0.05)] backdrop-blur-xl max-w-4xl mx-auto">
-              {/* Background glowing gradients inside the card */}
-              <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#A855F7]/20 blur-3xl" />
-              <div className="absolute -left-32 -bottom-32 h-96 w-96 rounded-full bg-[#FC3D21]/15 blur-3xl" />
-
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0D1428]/80 p-6 md:p-10 shadow-lg backdrop-blur-xl max-w-4xl mx-auto">
               <div className="relative flex flex-col items-center text-center">
-                <span className="rounded-full bg-white/5 border border-white/10 px-4 py-1.5 text-[10px] font-bold text-white uppercase tracking-widest backdrop-blur-md">
-                  💡 Featured Fact
+                <span className="inline-flex items-center gap-1.5 rounded-md bg-[#00E5C4]/10 border border-[#00E5C4]/30 px-3 py-1 text-[10px] font-bold text-[#00E5C4] uppercase tracking-wider">
+                  <Lightbulb className="w-3 h-3 text-[#00E5C4]" />
+                  Featured Fact
                 </span>
 
                 <AnimatePresence mode="wait">
@@ -198,25 +194,25 @@ function FactsPage() {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95, y: -10 }}
                     transition={{ duration: 0.3, type: "spring", bounce: 0.3 }}
-                    className="mt-8 min-h-[160px] flex flex-col justify-center items-center max-w-3xl w-full"
+                    className="mt-6 min-h-[140px] flex flex-col justify-center items-center max-w-3xl w-full"
                   >
-                    <p className="text-2xl md:text-4xl font-space font-bold leading-tight text-white tracking-tight">
+                    <p className="text-xl sm:text-2xl md:text-3xl font-space font-bold leading-snug text-white tracking-tight">
                       "{randomFact.text}"
                     </p>
 
-                    <div className="mt-8 flex flex-wrap justify-center items-center gap-3">
+                    <div className="mt-6 flex flex-wrap justify-center items-center gap-2.5">
                       {randomFactPart && (
-                        <span className="inline-flex items-center gap-1.5 text-sm font-bold text-white bg-white/5 px-4 py-1.5 rounded-full border border-white/10">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-white/5 px-3 py-1 rounded-md border border-white/10">
                           <span>{randomFactPart.emoji}</span>
                           <span>{randomFactPart.name}</span>
                         </span>
                       )}
                       <span
-                        className={`rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider border ${RARITY_META[randomFact.rarity].tokenClass}`}
+                        className={`rounded-md px-3 py-1 text-[11px] font-bold uppercase tracking-wider border ${RARITY_META[randomFact.rarity].tokenClass}`}
                       >
                         {RARITY_META[randomFact.rarity].label}
                       </span>
-                      <span className="inline-flex items-center gap-1.5 text-xs font-bold bg-white/5 text-white border border-white/10 px-4 py-1.5 rounded-full">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-white/5 text-white border border-white/10 px-3 py-1 rounded-md">
                         {CATEGORY_META[randomFact.category].icon}{" "}
                         {CATEGORY_META[randomFact.category].label}
                       </span>
@@ -280,7 +276,7 @@ function FactsPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search facts or body parts..."
-                className="w-full rounded-2xl border border-white/10 bg-black/40 pl-12 pr-6 py-4 text-base sm:text-sm text-white placeholder-[#555] outline-none transition-all focus:border-[#A855F7]/50 focus:bg-black/60"
+                className="w-full rounded-xl border border-white/10 bg-black/40 pl-12 pr-6 py-4 text-base sm:text-sm text-white placeholder-[#555] outline-none transition-all focus:border-[#00E5C4]/50 focus:bg-black/60"
               />
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#8A8F98]" />
             </div>
@@ -289,7 +285,7 @@ function FactsPage() {
               <select
                 value={selectedBodyPart}
                 onChange={(e) => setSelectedBodyPart(e.target.value)}
-                className="w-full rounded-2xl border border-white/10 bg-black/40 px-6 py-4 text-base sm:text-sm text-white outline-none focus:border-[#A855F7]/50 appearance-none transition-all"
+                className="w-full rounded-xl border border-white/10 bg-black/40 px-6 py-4 text-base sm:text-sm text-white outline-none focus:border-[#00E5C4]/50 appearance-none transition-all"
               >
                 <option value="all">All Organs & Systems</option>
                 {BODY_PARTS.map((part) => (
@@ -312,9 +308,9 @@ function FactsPage() {
               </span>
               <button
                 onClick={() => setSelectedCategory("all")}
-                className={`rounded-full px-4 sm:px-5 py-2.5 text-xs font-bold transition-all border min-h-[40px] flex items-center ${
+                className={`rounded-lg px-4 sm:px-5 py-2 text-xs font-bold transition-all border min-h-[38px] flex items-center ${
                   selectedCategory === "all"
-                    ? "bg-white text-black border-white"
+                    ? "bg-[#00E5C4] text-black border-[#00E5C4]"
                     : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"
                 }`}
               >
@@ -324,9 +320,9 @@ function FactsPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`rounded-full px-4 sm:px-5 py-2.5 text-xs font-bold transition-all flex items-center gap-2 border min-h-[40px] ${
+                  className={`rounded-lg px-4 sm:px-5 py-2 text-xs font-bold transition-all flex items-center gap-2 border min-h-[38px] ${
                     selectedCategory === cat
-                      ? "bg-white text-black border-white"
+                      ? "bg-[#00E5C4] text-black border-[#00E5C4]"
                       : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"
                   }`}
                 >
@@ -343,7 +339,7 @@ function FactsPage() {
               </span>
               <button
                 onClick={() => setSelectedRarity("all")}
-                className={`rounded-full px-4 sm:px-5 py-2.5 text-xs font-bold transition-all border min-h-[40px] flex items-center ${
+                className={`rounded-lg px-4 sm:px-5 py-2 text-xs font-bold transition-all border min-h-[38px] flex items-center ${
                   selectedRarity === "all"
                     ? "bg-white text-black border-white"
                     : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"
@@ -355,7 +351,7 @@ function FactsPage() {
                 <button
                   key={rar}
                   onClick={() => setSelectedRarity(rar)}
-                  className={`rounded-full px-4 sm:px-5 py-2.5 text-xs font-bold transition-all border min-h-[40px] flex items-center ${
+                  className={`rounded-lg px-4 sm:px-5 py-2 text-xs font-bold transition-all border min-h-[38px] flex items-center ${
                     selectedRarity === rar
                       ? "bg-white text-black border-white"
                       : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"
@@ -373,14 +369,14 @@ function FactsPage() {
           <div className="mb-8 flex justify-between items-center border-b border-white/10 pb-4">
             <h2 className="text-xl font-bold text-white flex items-center gap-3">
               Filtered Archive{" "}
-              <span className="bg-white/10 text-white text-xs px-3 py-1 rounded-full">
+              <span className="bg-white/10 text-white text-xs px-2.5 py-0.5 rounded-md font-mono">
                 {filteredFacts.length}
               </span>
             </h2>
           </div>
 
           {filteredFacts.length === 0 ? (
-            <div className="rounded-[3rem] border border-white/10 bg-white/[0.02] p-16 text-center backdrop-blur-md">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-16 text-center backdrop-blur-md">
               <Search className="w-12 h-12 text-[#8A8F98] mx-auto mb-4 opacity-50" />
               <h3 className="text-xl font-bold text-white">No facts matched your filters</h3>
               <p className="text-sm text-[#8A8F98] mt-2">
@@ -395,11 +391,11 @@ function FactsPage() {
                   <motion.div
                     layout
                     key={fact.id}
-                    className="group relative rounded-3xl border border-white/10 bg-[#0F0F0F]/80 p-6 flex flex-col justify-between hover:border-[#A855F7]/40 transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(168,85,247,0.1)] backdrop-blur-xl"
+                    className="group relative rounded-2xl border border-white/10 bg-[#0F0F0F]/80 p-6 flex flex-col justify-between hover:border-[#00E5C4]/40 transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,229,196,0.08)] backdrop-blur-xl"
                   >
                     <div>
                       <div className="flex justify-between items-start mb-6">
-                        <span className="inline-flex items-center gap-2 text-xs text-white bg-white/5 border border-white/10 px-3 py-1 rounded-full font-bold">
+                        <span className="inline-flex items-center gap-2 text-xs text-white bg-white/5 border border-white/10 px-3 py-1 rounded-md font-semibold">
                           <span>{part?.emoji}</span>
                           <span>{part?.name}</span>
                         </span>
@@ -407,7 +403,7 @@ function FactsPage() {
                         <div className="flex items-center gap-2 opacity-100 md:opacity-50 group-hover:opacity-100 transition-opacity">
                           <button
                             onClick={() => handleSpeak(fact.text, fact.id)}
-                            className={`p-2 rounded-full border transition-all ${
+                            className={`p-2 rounded-lg border transition-all ${
                               speakingFactId === fact.id
                                 ? "bg-rose-500/10 border-rose-500 text-rose-500"
                                 : "border-white/10 bg-white/5 text-white hover:border-white/30"
@@ -424,7 +420,7 @@ function FactsPage() {
                             onClick={() =>
                               isBookmarked(fact.id) ? removeBookmark(fact.id) : addBookmark(fact.id)
                             }
-                            className={`p-2 rounded-full border transition-all ${
+                            className={`p-2 rounded-lg border transition-all ${
                               isBookmarked(fact.id)
                                 ? "bg-rose-500/10 border-rose-500 text-rose-500"
                                 : "border-white/10 bg-white/5 text-white hover:border-white/30 hover:text-rose-500"

@@ -3,65 +3,61 @@ import { motion, useInView } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { Check, ArrowRight, HelpCircle } from "lucide-react";
 
-/* ─── Pricing Plans ─── */
-const PLANS = [
+/* ─── Open Health Literacy Guarantees ─── */
+const PILLARS = [
   {
-    id: "explorer",
-    name: "Standard Access",
-    price: "Free",
-    period: "Forever",
-    desc: "Complete public access to all foundational anatomy and physiological tools.",
+    id: "open-access",
+    name: "100% Free Public Access",
+    subtitle: "Universal Health Literacy",
+    desc: "Essential anatomical and physiological knowledge must never be locked behind subscriptions, paywalls, or corporate accounts.",
     color: "#00E5C4",
     features: [
-      "All 30+ anatomical structures unlocked",
-      "290+ peer-reviewed biological facts",
-      "58 clinically debunked health myths",
+      "All 30+ anatomical organs fully accessible",
+      "297 peer-reviewed biological mechanisms",
+      "58 clinically debunked health misconceptions",
       "39 evidence-rated natural remedies",
       "Local-first private symptom logger",
-      "Emergency red flag triage guide",
+      "Emergency first-aid triage protocol",
     ],
-    cta: "Launch Free Atlas",
+    cta: "Launch Atlas",
     ctaLink: "/explore",
-    popular: false,
+    badge: "Public Educational Good",
   },
   {
-    id: "atlas",
-    name: "Educator & Student Edition",
-    price: "Free",
-    period: "Open Access",
-    desc: "Designed for biology teachers, medical students, and patient advocates.",
+    id: "evidence",
+    name: "Clinical Evidence Governance",
+    subtitle: "Oxford CEBM / GRADE Standards",
+    desc: "Every statement is cross-referenced against Tier 1 and Tier 2 medical literature from the WHO, CDC, AHA, and Cochrane reviews.",
     color: "#38BDF8",
     features: [
-      "Interactive organ vector diagrams",
-      "Doctor appointment discussion prep",
-      "Verified clinical citation index",
-      "Plain-language medical translations",
-      "WCAG 2.2 AA accessible interface",
-      "Offline progressive web app (PWA)",
+      "Zero sponsored supplement or pharma advice",
+      "Clear uncertainty ratings for emerging remedies",
+      "Separation of lifestyle tips from clinical red flags",
+      "Plain-language translations for patient empowerment",
+      "WCAG 2.2 AA accessible design",
+      "Direct citation mapping to clinical sources",
     ],
-    cta: "Explore Educational Tools",
+    cta: "Explore Library",
     ctaLink: "/library",
-    popular: true,
-    badge: "Open Health Initiative",
+    badge: "Clinical Rigor",
   },
   {
-    id: "institution",
-    name: "Institutional Deployment",
-    price: "Open Source",
-    period: "Self-Hostable",
-    desc: "For universities, clinics, and health literacy non-profits.",
+    id: "privacy",
+    name: "Local-First Patient Privacy",
+    subtitle: "Zero Surveillance or Tracking",
+    desc: "Your health curiosity is private. We do not track your searches, log your symptoms to remote servers, or profile your visits.",
     color: "#F5A623",
     features: [
-      "No proprietary lock-in",
-      "Zero third-party tracking scripts",
-      "Local browser data persistence",
-      "Customizable medical curricula",
-      "Transparent peer-reviewed database",
-      "MIT-compliant open knowledge",
+      "Private symptom notes stored solely in browser",
+      "Zero third-party advertising or retargeting pixels",
+      "Completely open-source and self-hostable",
+      "Offline progressive web app (PWA) architecture",
+      "No mandatory user login or tracking profiles",
+      "Compliant with digital privacy best practices",
     ],
-    cta: "Read Methodology",
-    ctaLink: "/about",
-    popular: false,
+    cta: "Read Privacy Policy",
+    ctaLink: "/privacy",
+    badge: "Privacy By Design",
   },
 ];
 
@@ -73,7 +69,7 @@ const FAQS = [
   },
   {
     q: "Does this application substitute for professional medical care?",
-    a: "No, and we are completely transparent about that. The Body Atlas is an educational literacy platform designed to help patients understand human biology and prepare informed questions for their healthcare providers. If you experience emergency symptoms, contact 911 or your local emergency department immediately.",
+    a: "No, and we are completely transparent about that. The Body Atlas is an educational literacy platform designed to help patients understand human biology and prepare informed questions for their healthcare providers. If you experience emergency symptoms, contact 911, 112, or your local emergency department immediately.",
   },
   {
     q: "What health information do you collect or track?",
@@ -149,7 +145,7 @@ export function PricingFAQSection() {
       aria-label="Access and FAQ"
     >
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        {/* ─── ACCESS PLANS ─── */}
+        {/* ─── OPEN HEALTH STANDARDS ─── */}
         <div ref={pricingRef} className="mb-28">
           <div className="mb-14 text-center max-w-2xl mx-auto">
             <motion.div
@@ -158,7 +154,7 @@ export function PricingFAQSection() {
               className="mb-4 inline-flex items-center gap-2 rounded-md border border-[#1E2844] bg-[#0D1428] px-3.5 py-1"
             >
               <span className="font-mono text-[10px] tracking-[0.2em] text-[#00E5C4] uppercase">
-                Access Options
+                Open Health Standards
               </span>
             </motion.div>
             <motion.h2
@@ -167,7 +163,7 @@ export function PricingFAQSection() {
               transition={{ delay: 0.1 }}
               className="text-[clamp(1.9rem,4vw,2.75rem)] font-bold tracking-tight text-[#E8E0D5]"
             >
-              Open Health Literacy, Free from Commercial Gatekeeping
+              Health Literacy Free from Commercial Gatekeeping
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -175,56 +171,48 @@ export function PricingFAQSection() {
               transition={{ delay: 0.2 }}
               className="mt-3 text-xs md:text-sm text-[#7B8199] leading-relaxed"
             >
-              Essential medical knowledge belongs to the public. Explore without credit cards or
-              paywalls.
+              Essential medical knowledge belongs to the public. Three foundational guarantees
+              protect our independence and your trust.
             </motion.p>
           </div>
 
           {/* Cards */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {PLANS.map((plan, i) => (
+            {PILLARS.map((pillar, i) => (
               <motion.div
-                key={plan.id}
+                key={pillar.id}
                 initial={{ opacity: 0, y: 24 }}
                 animate={pricingInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
-                className="relative flex flex-col rounded-xl border p-7 bg-[#0D1428]/70 backdrop-blur-sm justify-between"
-                style={{
-                  borderColor: plan.popular ? `${plan.color}40` : "#1E2844",
-                }}
+                className="relative flex flex-col rounded-xl border border-[#1E2844] p-7 bg-[#0D1428]/70 backdrop-blur-sm justify-between hover:border-[#1E2844]/80 transition-colors"
               >
                 <div>
-                  {plan.popular && (
-                    <div
-                      className="inline-block rounded-md px-2.5 py-0.5 font-mono text-[9px] font-bold tracking-wider uppercase mb-3 border"
-                      style={{
-                        background: `${plan.color}15`,
-                        borderColor: `${plan.color}40`,
-                        color: plan.color,
-                      }}
-                    >
-                      {plan.badge}
-                    </div>
-                  )}
+                  <div
+                    className="inline-block rounded-md px-2.5 py-0.5 font-mono text-[9px] font-bold tracking-wider uppercase mb-3 border"
+                    style={{
+                      background: `${pillar.color}15`,
+                      borderColor: `${pillar.color}40`,
+                      color: pillar.color,
+                    }}
+                  >
+                    {pillar.badge}
+                  </div>
+
+                  <h3 className="text-lg font-bold text-[#E8E0D5] mb-1">
+                    {pillar.name}
+                  </h3>
 
                   <div
-                    className="font-mono text-[10px] tracking-[0.18em] uppercase font-semibold mb-1"
-                    style={{ color: plan.color }}
+                    className="font-mono text-[11px] tracking-wider uppercase font-semibold mb-3"
+                    style={{ color: pillar.color }}
                   >
-                    {plan.name}
+                    {pillar.subtitle}
                   </div>
 
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span className="font-mono text-3xl font-bold text-[#E8E0D5]">
-                      {plan.price}
-                    </span>
-                    <span className="text-xs text-[#7B8199] font-mono">{plan.period}</span>
-                  </div>
-
-                  <p className="text-xs text-[#8B8FA3] leading-relaxed mb-6">{plan.desc}</p>
+                  <p className="text-xs text-[#8B8FA3] leading-relaxed mb-6">{pillar.desc}</p>
 
                   <div className="space-y-2.5 border-t border-[#1C2540] pt-5 mb-8">
-                    {plan.features.map((f) => (
+                    {pillar.features.map((f) => (
                       <div key={f} className="flex items-start gap-2.5 text-xs text-[#9DA3BA]">
                         <Check className="h-4 w-4 shrink-0 text-[#00E5C4] mt-0.5" />
                         <span>{f}</span>
@@ -234,22 +222,10 @@ export function PricingFAQSection() {
                 </div>
 
                 <Link
-                  to={plan.ctaLink}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg py-3 text-center text-xs font-semibold uppercase tracking-wider transition-colors"
-                  style={
-                    plan.popular
-                      ? {
-                          background: "#00E5C4",
-                          color: "#0A0E1A",
-                        }
-                      : {
-                          border: "1px solid #1E2844",
-                          background: "#111A33",
-                          color: "#E8E0D5",
-                        }
-                  }
+                  to={pillar.ctaLink}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg py-3 text-center text-xs font-semibold uppercase tracking-wider transition-colors border border-[#1E2844] bg-[#111A33] text-[#E8E0D5] hover:bg-[#162242] hover:text-[#00E5C4] hover:border-[#00E5C4]/40"
                 >
-                  <span>{plan.cta}</span>
+                  <span>{pillar.cta}</span>
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </motion.div>

@@ -198,18 +198,16 @@ function EmergencyPage() {
       <div className="max-w-[1600px] mx-auto p-4 sm:p-6 lg:p-8">
         {/* Header */}
         <header className="mb-8 sm:mb-12 relative text-center max-w-3xl mx-auto">
-          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-96 bg-red-500/10 rounded-full blur-[120px] pointer-events-none" />
-
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono uppercase tracking-wider mb-3">
               <ShieldCheck className="w-3.5 h-3.5" />
               Guidelines: AHA 2020 / ERC 2021 • Reviewed Oct 2026
             </div>
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-space font-extrabold uppercase tracking-tighter text-white">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-space font-extrabold uppercase tracking-tight text-white">
               Emergency <span className="text-red-500">First-Aid</span> Triage
             </h1>
             <p className="text-[#8A8F98] mt-3 font-mono text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
-              Precautionary bystander actions for high-acuity medical crises. Designed with high
+              Clear, step-by-step first-aid actions for medical emergencies. Designed with high
               contrast for high-stress readability. The audio pacer operates completely offline.
             </p>
           </div>

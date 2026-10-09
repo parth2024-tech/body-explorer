@@ -59,10 +59,10 @@ export function Header() {
           <span className="flex text-xs text-[#8A8F98]">{date}</span>
 
           {/* i18n Selector for Desktop */}
-          <div className="flex items-center gap-1 bg-[#141826] rounded-full p-1 border border-[#222222]">
+          <div className="flex items-center gap-1 bg-[#141826] rounded-md p-0.5 border border-[#222222]">
             <button
               onClick={() => setLanguage("en")}
-              className={`px-3 py-1 text-xs font-medium rounded-full transition-all ${
+              className={`px-2.5 py-1 text-xs font-medium rounded transition-all ${
                 language === "en"
                   ? "bg-[#FC3D21] text-white"
                   : "text-[#8A8F98] hover:text-[#EAEAEA]"
@@ -72,7 +72,7 @@ export function Header() {
             </button>
             <button
               onClick={() => setLanguage("hi")}
-              className={`px-3 py-1 text-xs font-medium rounded-full transition-all ${
+              className={`px-2.5 py-1 text-xs font-medium rounded transition-all ${
                 language === "hi"
                   ? "bg-[#FC3D21] text-white"
                   : "text-[#8A8F98] hover:text-[#EAEAEA]"

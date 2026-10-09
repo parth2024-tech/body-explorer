@@ -29,9 +29,6 @@ export function FoodLabelsIndex() {
       <div className="max-w-[1600px] mx-auto p-4 sm:p-6 lg:p-8">
         {/* Header */}
         <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 relative">
-          {/* Decorative ambient light */}
-          <div className="absolute -top-20 -left-20 w-96 h-96 bg-[#00E5C4]/10 rounded-full blur-[100px] pointer-events-none" />
-
           <div className="relative z-10">
             <h1 className="text-4xl md:text-6xl font-space font-extrabold uppercase tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-[#8A8F98]">
               Food Label <span className="text-[#00E5C4]">X-Ray</span>

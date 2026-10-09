@@ -824,7 +824,7 @@ export const MYTHS: MythBusted[] = [
       "✅ EVIDENCE: Roberts et al. (J Physiol) and Peake et al. randomized trials confirming post-exercise cold immersion attenuates anabolic muscle signaling.",
   },
   {
-    id: "m-knuckle-cracking",
+    id: "m-knuckle-cracking-expanded",
     bodyPartId: "hands",
     myth: "Cracking your knuckles causes arthritis, swollen fingers, and weakened hand grip.",
     reality:
@@ -906,5 +906,277 @@ export const MYTHS: MythBusted[] = [
     confidenceLevel: "HIGH",
     evidenceStatement:
       "✅ EVIDENCE: Wolraich et al. landmark double-blind meta-analysis (JAMA) demonstrated dietary sucrose does not affect the cognitive performance or behavior of children.",
+  },
+  {
+    id: "m-valsalva-equalize",
+    bodyPartId: "ears",
+    myth: "Blowing your nose as hard as you can or tilting your head sideways is the best way to pop blocked ears during airplane descents or scuba diving.",
+    reality:
+      "Forceful nose blowing can generate excessive pressure that ruptures your delicate eardrum or forces infectious mucus backward into the Eustachian tube. Safe methods include gentle swallowing, yawning, or the Valsalva maneuver (pinching nostrils, closing mouth, and exhaling very gently).",
+    sources: ["American Academy of Otolaryngology-Head and Neck Surgery (AAO-HNS)", "Divers Alert Network (DAN)"],
+    actionableTip:
+      "Chew gum, sip water, or pinch your nose and blow out very softly with the force of a gentle sigh to equalize middle ear pressure.",
+    dangerAlert:
+      "🚨 Never blow forcefully against pinched nostrils; sudden barotrauma can perforate the tympanic membrane or cause inner ear perilymph fistula.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Supported by AAO-HNS Clinical Guidelines on Barotrauma - Gentle Eustachian tube opening techniques prevent middle ear effusion and structural barotrauma.",
+  },
+  {
+    id: "m-potato-scald-burn",
+    bodyPartId: "skin",
+    myth: "Putting raw sliced potatoes, flour, or baking soda paste directly onto a severe kitchen scald cools the skin and stops blistering.",
+    reality:
+      "Raw food and dry powders trap searing heat inside deep dermal tissues and introduce soil bacteria directly into compromised skin, causing severe wound infections. The only evidence-based first aid is running cool (not ice-cold) tap water over the burn for 10 to 20 minutes.",
+    sources: ["World Health Organization (WHO) Burn Guidelines", "American Burn Association (ABA)"],
+    actionableTip:
+      "Immediately cool the burn under gently flowing cool tap water for 15-20 minutes. Cover loosely with sterile cling film or a clean cloth and seek medical care for blisters larger than a coin.",
+    dangerAlert:
+      "🚨 URGENT WARNING: Never put food, grease, or baking soda on burns. They trap heat and cause severe bacterial wound infections.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Systematic reviews by the Cochrane Collaboration confirm cool running water (10-20 mins) minimizes tissue necrosis and improves clinical re-epithelialization.",
+  },
+  {
+    id: "m-vitaminc-cure-cold",
+    bodyPartId: "throat",
+    myth: "Taking massive megadoses of Vitamin C (2,000 to 5,000 mg) completely protects you from catching winter colds and flus.",
+    reality:
+      "Large-scale Cochrane systematic reviews spanning over 11,000 participants show that high-dose Vitamin C does not prevent common colds in the general public. It only marginally reduces symptom duration by about 8% (roughly half a day), while mega-dosing can trigger acute osmotic diarrhea and painful kidney stones.",
+    sources: ["Cochrane Database of Systematic Reviews", "Harvard Medical School"],
+    actionableTip:
+      "Get your Vitamin C from whole foods like oranges, bell peppers, kiwi, and broccoli. Avoid taking more than 2,000 mg of supplements per day to protect your kidneys and gut.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Cochrane Review (Hemilä & Chalker) confirms prophylactic vitamin C does not reduce cold incidence in normal community populations.",
+  },
+  {
+    id: "m-sanitizer-superbugs",
+    bodyPartId: "hands",
+    myth: "Using alcohol-based hand sanitizer frequently creates antibiotic-resistant 'superbug' bacteria in your home.",
+    reality:
+      "Alcohol-based hand rubs (60% to 70% ethanol or isopropanol) kill microbes through non-specific physical protein denaturation and cell membrane dissolution—like dropping an anvil on a cell. Because the mechanism is physical cell destruction rather than biochemical inhibition, bacteria cannot develop genetic antibiotic resistance against alcohol.",
+    sources: ["Centers for Disease Control and Prevention (CDC)", "World Health Organization (WHO)"],
+    actionableTip:
+      "Use an alcohol rub with at least 60% alcohol when soap and water are not available. Rub hands together covering all surfaces until completely dry (about 20 seconds).",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: CDC/WHO Hand Hygiene Guidelines demonstrate mechanical membrane lysis by alcohol prevents development of acquired bacterial resistance mechanisms.",
+  },
+  {
+    id: "m-watermelon-seed-sprout",
+    bodyPartId: "stomach",
+    myth: "Swallowing watermelon seeds or apple seeds will cause them to take root and sprout inside your warm stomach.",
+    reality:
+      "Seeds require oxygen, moist soil, and specific environmental triggers to germinate. The human stomach is a completely dark, intensely acidic chamber (pH 1.5 to 2.0) with powerful digestive enzymes that sterilize seeds and push them out through normal bowel movements within 24 to 48 hours.",
+    sources: ["Mayo Clinic Gastroenterology", "Cleveland Clinic"],
+    actionableTip:
+      "Swallowing accidental fruit seeds is completely harmless for adults and older children. However, keep hard pits and small seeds away from infants who could choke on them.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Medical physiology confirms human gastric acidity and lack of oxygen prevent botanical seed germination.",
+  },
+  {
+    id: "m-water-cramps-workout",
+    bodyPartId: "muscles",
+    myth: "Drinking plain tap water during intense workouts causes debilitating muscle cramps by diluting your body's salt.",
+    reality:
+      "Exercise-associated muscle cramps are primarily caused by neuromuscular fatigue and nervous system motor-neuron hyper-excitability from repetitive muscle contraction, not simple hydration dilution. Drinking plain water to stay hydrated is essential for regulating core body temperature and cardiovascular performance.",
+    sources: ["American College of Sports Medicine (ACSM)", "British Journal of Sports Medicine"],
+    actionableTip:
+      "Pace your physical exertion, perform active dynamic warm-ups, and drink fluid according to thirst during exercise. If training intensely for over 60 minutes in hot weather, include electrolyte fluids.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: ACSM Position Stand shows neuromuscular fatigue theory is the primary etiology for exercise-associated muscle cramping (EAMC).",
+  },
+  {
+    id: "m-negative-calorie-celery",
+    bodyPartId: "stomach",
+    myth: "Chewing and digesting celery burns significantly more calories than the celery contains, making it a 'negative calorie' fat-burning food.",
+    reality:
+      "While celery is mostly water and dietary fiber, the thermic effect of food (the metabolic energy your body expends to chew, digest, and absorb it) accounts for only 10% to 15% of the food's total caloric content. A stalk containing 10 calories still provides roughly 8 to 9 net calories to your body.",
+    sources: ["Academy of Nutrition and Dietetics", "Mayo Clinic"],
+    actionableTip:
+      "Eat crunchy raw vegetables like celery, cucumber, and carrots as high-fiber, nutrient-dense snacks that keep you full without excessive calories, but do not rely on mythical 'negative calorie' math.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Nutritional metabolic chamber studies confirm thermic effect of food (TEF) never exceeds total caloric substrate value.",
+  },
+  {
+    id: "m-tattoo-mri-forbidden",
+    bodyPartId: "skin",
+    myth: "Having permanent tattoos completely disqualifies you from ever having an MRI scan because the ink will rip out through your skin.",
+    reality:
+      "Millions of people with decorative tattoos safely undergo MRI scans every year. Modern cosmetic inks rarely contain iron oxide compounds in quantities that react with magnetic fields. In rare cases (less than 0.1%), minor local tingling or mild heating can occur, which technicians manage with cold compresses.",
+    sources: ["US Food and Drug Administration (FDA)", "Radiological Society of North America (RSNA)"],
+    actionableTip:
+      "Always inform your MRI technologist if you have tattoos or permanent makeup so they can monitor you, but never skip a medically necessary diagnostic MRI scan out of fear.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: FDA Center for Devices and Radiological Health safety guidelines confirm tattooing is not an absolute contraindication for diagnostic magnetic resonance imaging.",
+  },
+  {
+    id: "m-toe-popping-flatfeet",
+    bodyPartId: "feet",
+    myth: "Cracking your toes stretches your foot ligaments, weakens your arch, and causes painful flat feet.",
+    reality:
+      "Toe popping occurs when synovial fluid inside the toe joints undergoes rapid pressure shifts, causing microscopic nitrogen gas bubbles to form and collapse (cavitation). This process does not alter the structural strength of the plantar fascia, bone geometry, or longitudinal arch integrity.",
+    sources: ["American Podiatric Medical Association (APMA)", "Orthopaedic Journal of Sports Medicine"],
+    actionableTip:
+      "Gentle joint cavitation is harmless, but if popping is accompanied by sharp pain, redness, or joint swelling, consult a podiatrist to check for arthritis or turf toe.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Biomechanical imaging confirms joint cavitation involves synovial gas bubble dynamics without ligamentous strain or arch collapse.",
+  },
+  {
+    id: "m-alcohol-baby-gums",
+    bodyPartId: "jaw",
+    myth: "Rubbing a drop of whiskey, brandy, or rubbing alcohol onto a baby's gums is a safe, time-tested home remedy to soothe teething pain.",
+    reality:
+      "Even minuscule quantities of alcohol are potent central nervous system depressants in infants, carrying risks of seizures, hypoglycemia, breathing depression, and liver toxicity. Pediatricians strongly advise against any oral alcohol or topical benzocaine gels in babies.",
+    sources: ["American Academy of Pediatrics (AAP)", "US Food and Drug Administration (FDA)"],
+    actionableTip:
+      "Give your teething baby a firm chilled rubber or silicone teething ring, or gently massage their gums with a clean, cool finger.",
+    dangerAlert:
+      "🚨 DANGEROUS MISINFORMATION ALERT: Never apply alcohol or numbing gels containing benzocaine to infant gums. Alcohol can cause fatal respiratory depression and toxic seizures in babies.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: AAP guidelines explicitly prohibit ethanol and topical anesthetics for infant teething due to systemic toxicity and methemoglobinemia risks.",
+  },
+  {
+    id: "m-milk-mucus-phlegm",
+    bodyPartId: "throat",
+    myth: "Drinking cow's milk stimulates excessive thick phlegm and mucus production in your respiratory airways when you have a cold.",
+    reality:
+      "Multiple double-blind clinical trials show milk consumption does not increase respiratory secretions or nasal mucus weight. Milk is an emulsion of water, fats, and proteins that temporarily mixes with saliva, creating a slightly thicker sensory coating in the mouth and throat that people mistake for mucus.",
+    sources: ["American Review of Respiratory Disease", "Australasian Society of Clinical Immunology and Allergy"],
+    actionableTip:
+      "You do not need to cut out milk, yogurt, or dairy during a cold unless you have a diagnosed dairy allergy or personal intolerance. Dairy provides easy-to-digest calories and hydration.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Pinnock et al. double-blind crossover trials confirmed milk consumption has no correlation with measured nasal secretion weight or pulmonary mucus volume.",
+  },
+  {
+    id: "m-onion-sock-absorb-flu",
+    bodyPartId: "feet",
+    myth: "Putting sliced raw onions in your socks overnight or placing cut onions in your bedroom sucks airborne flu viruses and toxins right out of your body.",
+    reality:
+      "Viruses require living mammalian host cells to bind, enter, and replicate; a dead cut vegetable possesses no electromagnetic, gravitational, or biochemical draw to attract airborne microscopic pathogens. The strong aroma comes from sulfur compounds (syn-propanethial-S-oxide) that irritate eyes, not toxic absorption.",
+    sources: ["Centers for Disease Control and Prevention (CDC)", "National Center for Complementary and Integrative Health (NCCIH)"],
+    actionableTip:
+      "Wash hands frequently with soap, ensure good room ventilation, get an annual influenza vaccination, and stay home to rest when you are sick.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Virology research proves viral replication requires active cellular receptor binding (e.g., sialic acid); allium plants exert zero external suction or antiviral absorption.",
+  },
+  {
+    id: "m-plants-bedroom-suffocation",
+    bodyPartId: "lung-left",
+    myth: "Keeping houseplants or fresh flowers in your bedroom is dangerous because they absorb all your oxygen while you sleep and cause nocturnal suffocation.",
+    reality:
+      "While green plants switch from photosynthesis to cellular respiration in the dark (releasing small amounts of CO2 and consuming tiny amounts of O2), the volume of oxygen consumed by a dozen potted plants is negligible. A sleeping human or small household pet consumes hundreds of times more oxygen.",
+    sources: ["NASA Clean Air Study", "Royal Horticultural Society"],
+    actionableTip:
+      "Keep houseplants in your bedroom if you enjoy them; they help brighten living spaces and regulate indoor humidity without any risk to your breathing.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Physiological atmospheric modeling demonstrates biological oxygen consumption of household flora is physiologically insignificant to human respiration.",
+  },
+  {
+    id: "m-sauna-burns-fat",
+    bodyPartId: "skin",
+    myth: "Sitting in a scorching dry sauna or steam room melts and burns away stubborn subcutaneous body fat.",
+    reality:
+      "The immediate weight loss observed on the bathroom scale after 20 minutes in a sauna is 100% water loss from active sweat gland perspiration. Fat loss requires a sustained caloric deficit through metabolic cellular oxidation; the water weight returns as soon as you rehydrate.",
+    sources: ["American College of Sports Medicine (ACSM)", "Harvard Health Publishing"],
+    actionableTip:
+      "Enjoy the sauna for cardiovascular relaxation, mild blood pressure reduction, and muscle recovery, but drink 16 to 24 ounces of water afterward to replace lost fluids.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: ACSM exercise physiology demonstrates sweat-induced weight loss represents acute fluid compartment depletion, not lipid oxidation.",
+  },
+  {
+    id: "m-turkey-tryptophan-coma",
+    bodyPartId: "brain",
+    myth: "Eating roasted turkey causes intense holiday drowsiness because turkey contains massive, unique amounts of the sleep chemical L-tryptophan.",
+    reality:
+      "Turkey has approximately the same amount of tryptophan per ounce as common chicken, beef, cheddar cheese, or soybeans. Post-feast sleepiness is primarily triggered by heavy carbohydrate and high-calorie consumption, which diverts significant blood flow to the digestive tract and elevates serotonin indirectly through insulin spikes.",
+    sources: ["Johns Hopkins Medicine", "Tufts University School of Medicine"],
+    actionableTip:
+      "To avoid the afternoon holiday food coma, balance your plate with lean protein and leafy vegetables, avoid overloading on refined starches, and take a gentle 15-minute walk after eating.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Nutritional biochemical analyses confirm turkey tryptophan levels (0.24 g/100g) are comparable to standard poultry, dairy, and red meat.",
+  },
+  {
+    id: "m-copper-magnets-arthritis",
+    bodyPartId: "wrists",
+    myth: "Wearing copper bracelets or magnetic wristbands pulls inflammation out of your joints and heals chronic osteoarthritis.",
+    reality:
+      "Extensive randomized, double-blind, sham-controlled clinical trials demonstrate copper jewelry and static magnetic bands provide zero objective reduction in joint cartilage inflammation or pain beyond the psychological placebo effect. Copper is not absorbed transdermally in therapeutic doses.",
+    sources: ["National Institute for Health and Care Excellence (NICE)", "Arthritis Research UK / BMJ"],
+    actionableTip:
+      "Focus on proven arthritis management: low-impact aerobic exercise, resistance training to support surrounding joints, weight management, and evidence-backed physical therapy.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Richmond et al. randomized double-blind placebo-controlled trial (PLOS ONE) proved copper bracelets and magnetic devices produce zero clinical improvement in rheumatoid or osteoarthritis.",
+  },
+  {
+    id: "m-hot-lemon-sterilize-virus",
+    bodyPartId: "throat",
+    myth: "Drinking boiling hot water with lemon kills respiratory viruses in your throat before they can travel down into your lungs.",
+    reality:
+      "Respiratory viruses enter mucosal epithelial cells within seconds to minutes of inhalation. Drinking hot liquids cannot reach cells already infected with intracellular viral loads, and boiling fluids can scald delicate esophageal tissues. Warm fluids only provide soothing symptomatic relief for inflamed nerve endings.",
+    sources: ["World Health Organization (WHO)", "American Academy of Family Physicians (AAFP)"],
+    actionableTip:
+      "Sip soothing warm teas with honey to coat an irritated throat, but do not drink scalding liquids or expect citric acid to sterilize an active viral infection.",
+    dangerAlert:
+      "⚠️ Scalding drinks above 149°F (65°C) can cause thermal esophageal injury and increase long-term cellular irritation risks.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Virology and mucosal immunology demonstrate intracellular viral replication cannot be aborted by oral liquids or topical citric acid.",
+  },
+  {
+    id: "m-mayo-lice-cure",
+    bodyPartId: "skin",
+    myth: "Smearing thick mayonnaise, butter, or olive oil over your child's scalp overnight completely suffocates head lice and clears the infestation.",
+    reality:
+      "Head lice can enter a low-oxygen metabolic state, closing their respiratory breathing pores (spiracles) and surviving without ambient air for over 8 hours. While kitchen oils make the hair slippery, they fail to kill microscopic nits (lice eggs), leading to rapid recurrence.",
+    sources: ["Centers for Disease Control and Prevention (CDC)", "American Academy of Pediatrics (AAP)"],
+    actionableTip:
+      "Use clinically approved pediculicides or non-toxic silicone-based dimethicone lotions, which physically coat and suffocate lice within minutes, combined with fine-toothed metal nit combing.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Pediatric dermatology clinical trials confirm household condiments achieve inadequate spiracle occlusion and zero ovicidal activity against lice eggs.",
+  },
+  {
+    id: "m-neck-cracking-spine-toxins",
+    bodyPartId: "spine-cervical",
+    myth: "Forcefully cracking your neck releases trapped metabolic toxins from your spinal vertebrae into your lymphatic system.",
+    reality:
+      "The loud popping sound during neck manipulation is simply the rapid depressurization and collapse of microscopic gas bubbles within the synovial fluid of cervical facet joints. Spinal joints do not store 'toxins,' and aggressive, high-velocity twisting carries a rare but serious risk of injuring the vertebral arteries that feed your brain.",
+    sources: ["American Heart Association (AHA) Stroke Council", "Spine Journal"],
+    actionableTip:
+      "Relieve neck stiffness with gentle chin tucks, upper back stretches, and posture adjustments. Never forcefully twist or whip your neck to force popping sounds.",
+    dangerAlert:
+      "🚨 Seek immediate emergency care if neck manipulation is followed by dizziness, visual disturbances, slurred speech, or unilateral arm numbness (signs of vertebral artery dissection).",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: AHA Scientific Statement on Cervical Spine Manipulation identifies mechanical cavitation acoustics and cautions against aggressive high-velocity rotational thrusts.",
+  },
+  {
+    id: "m-stout-beer-breastmilk",
+    bodyPartId: "liver",
+    myth: "Drinking dark stout beer or ale stimulates hormones and dramatically increases breast milk production in nursing mothers.",
+    reality:
+      "Alcohol actually inhibits the secretion of oxytocin from the pituitary gland, which reduces the letdown reflex and decreases total milk output by roughly 20%. While barley contains trace beta-glucans, alcohol passes directly into breast milk at levels matching maternal blood, which can disrupt infant sleep and motor development.",
+    sources: ["American Academy of Pediatrics (AAP)", "Centers for Disease Control and Prevention (CDC)"],
+    actionableTip:
+      "Support healthy lactation through frequent nursing or pumping, staying well-hydrated with water, and consuming nutritious whole grains like oatmeal.",
+    dangerAlert:
+      "⚠️ Alcohol passes freely into breast milk. If consuming an occasional alcoholic drink, wait at least 2 hours per drink before nursing.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Mennella et al. clinical lactation studies demonstrate maternal alcohol ingestion reduces infant milk intake by 20% and disrupts neonatal sleep-wake cycles.",
   },
 ];
