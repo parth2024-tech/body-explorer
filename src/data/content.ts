@@ -3072,7 +3072,8 @@ export const REMEDIES: RemedyEntry[] = [
       "Clinical studies demonstrate that lavender oil inhalation interacts with the GABA neurotransmitter system in the brain to reduce heart rate, calm the autonomic nervous system, and improve sleep quality.",
     ailment: "Stress, Sleep Disruptions & Mild Anxiety",
     bodyPartId: "brain",
-    practicalContext: "A calming addition to evening wind-down routines to help transition into restful sleep.",
+    practicalContext:
+      "A calming addition to evening wind-down routines to help transition into restful sleep.",
   },
   {
     id: "cranberry-uti",

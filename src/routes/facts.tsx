@@ -171,8 +171,8 @@ function FactsPage() {
               Anatomy <span className="text-[#00E5C4]">Archive</span>
             </h1>
             <p className="text-[#8A8F98] mt-4 font-mono text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
-              Explore a rich catalog of verified biological mechanisms, anatomical records,
-              and clinical facts across human organ systems.
+              Explore a rich catalog of verified biological mechanisms, anatomical records, and
+              clinical facts across human organ systems.
             </p>
           </div>
         </header>

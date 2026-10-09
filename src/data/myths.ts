@@ -913,7 +913,10 @@ export const MYTHS: MythBusted[] = [
     myth: "Blowing your nose as hard as you can or tilting your head sideways is the best way to pop blocked ears during airplane descents or scuba diving.",
     reality:
       "Forceful nose blowing can generate excessive pressure that ruptures your delicate eardrum or forces infectious mucus backward into the Eustachian tube. Safe methods include gentle swallowing, yawning, or the Valsalva maneuver (pinching nostrils, closing mouth, and exhaling very gently).",
-    sources: ["American Academy of Otolaryngology-Head and Neck Surgery (AAO-HNS)", "Divers Alert Network (DAN)"],
+    sources: [
+      "American Academy of Otolaryngology-Head and Neck Surgery (AAO-HNS)",
+      "Divers Alert Network (DAN)",
+    ],
     actionableTip:
       "Chew gum, sip water, or pinch your nose and blow out very softly with the force of a gentle sigh to equalize middle ear pressure.",
     dangerAlert:
@@ -956,7 +959,10 @@ export const MYTHS: MythBusted[] = [
     myth: "Using alcohol-based hand sanitizer frequently creates antibiotic-resistant 'superbug' bacteria in your home.",
     reality:
       "Alcohol-based hand rubs (60% to 70% ethanol or isopropanol) kill microbes through non-specific physical protein denaturation and cell membrane dissolution—like dropping an anvil on a cell. Because the mechanism is physical cell destruction rather than biochemical inhibition, bacteria cannot develop genetic antibiotic resistance against alcohol.",
-    sources: ["Centers for Disease Control and Prevention (CDC)", "World Health Organization (WHO)"],
+    sources: [
+      "Centers for Disease Control and Prevention (CDC)",
+      "World Health Organization (WHO)",
+    ],
     actionableTip:
       "Use an alcohol rub with at least 60% alcohol when soap and water are not available. Rub hands together covering all surfaces until completely dry (about 20 seconds).",
     confidenceLevel: "HIGH",
@@ -1008,7 +1014,10 @@ export const MYTHS: MythBusted[] = [
     myth: "Having permanent tattoos completely disqualifies you from ever having an MRI scan because the ink will rip out through your skin.",
     reality:
       "Millions of people with decorative tattoos safely undergo MRI scans every year. Modern cosmetic inks rarely contain iron oxide compounds in quantities that react with magnetic fields. In rare cases (less than 0.1%), minor local tingling or mild heating can occur, which technicians manage with cold compresses.",
-    sources: ["US Food and Drug Administration (FDA)", "Radiological Society of North America (RSNA)"],
+    sources: [
+      "US Food and Drug Administration (FDA)",
+      "Radiological Society of North America (RSNA)",
+    ],
     actionableTip:
       "Always inform your MRI technologist if you have tattoos or permanent makeup so they can monitor you, but never skip a medically necessary diagnostic MRI scan out of fear.",
     confidenceLevel: "HIGH",
@@ -1021,7 +1030,10 @@ export const MYTHS: MythBusted[] = [
     myth: "Cracking your toes stretches your foot ligaments, weakens your arch, and causes painful flat feet.",
     reality:
       "Toe popping occurs when synovial fluid inside the toe joints undergoes rapid pressure shifts, causing microscopic nitrogen gas bubbles to form and collapse (cavitation). This process does not alter the structural strength of the plantar fascia, bone geometry, or longitudinal arch integrity.",
-    sources: ["American Podiatric Medical Association (APMA)", "Orthopaedic Journal of Sports Medicine"],
+    sources: [
+      "American Podiatric Medical Association (APMA)",
+      "Orthopaedic Journal of Sports Medicine",
+    ],
     actionableTip:
       "Gentle joint cavitation is harmless, but if popping is accompanied by sharp pain, redness, or joint swelling, consult a podiatrist to check for arthritis or turf toe.",
     confidenceLevel: "HIGH",
@@ -1049,7 +1061,10 @@ export const MYTHS: MythBusted[] = [
     myth: "Drinking cow's milk stimulates excessive thick phlegm and mucus production in your respiratory airways when you have a cold.",
     reality:
       "Multiple double-blind clinical trials show milk consumption does not increase respiratory secretions or nasal mucus weight. Milk is an emulsion of water, fats, and proteins that temporarily mixes with saliva, creating a slightly thicker sensory coating in the mouth and throat that people mistake for mucus.",
-    sources: ["American Review of Respiratory Disease", "Australasian Society of Clinical Immunology and Allergy"],
+    sources: [
+      "American Review of Respiratory Disease",
+      "Australasian Society of Clinical Immunology and Allergy",
+    ],
     actionableTip:
       "You do not need to cut out milk, yogurt, or dairy during a cold unless you have a diagnosed dairy allergy or personal intolerance. Dairy provides easy-to-digest calories and hydration.",
     confidenceLevel: "HIGH",
@@ -1062,7 +1077,10 @@ export const MYTHS: MythBusted[] = [
     myth: "Putting sliced raw onions in your socks overnight or placing cut onions in your bedroom sucks airborne flu viruses and toxins right out of your body.",
     reality:
       "Viruses require living mammalian host cells to bind, enter, and replicate; a dead cut vegetable possesses no electromagnetic, gravitational, or biochemical draw to attract airborne microscopic pathogens. The strong aroma comes from sulfur compounds (syn-propanethial-S-oxide) that irritate eyes, not toxic absorption.",
-    sources: ["Centers for Disease Control and Prevention (CDC)", "National Center for Complementary and Integrative Health (NCCIH)"],
+    sources: [
+      "Centers for Disease Control and Prevention (CDC)",
+      "National Center for Complementary and Integrative Health (NCCIH)",
+    ],
     actionableTip:
       "Wash hands frequently with soap, ensure good room ventilation, get an annual influenza vaccination, and stay home to rest when you are sick.",
     confidenceLevel: "HIGH",
@@ -1114,7 +1132,10 @@ export const MYTHS: MythBusted[] = [
     myth: "Wearing copper bracelets or magnetic wristbands pulls inflammation out of your joints and heals chronic osteoarthritis.",
     reality:
       "Extensive randomized, double-blind, sham-controlled clinical trials demonstrate copper jewelry and static magnetic bands provide zero objective reduction in joint cartilage inflammation or pain beyond the psychological placebo effect. Copper is not absorbed transdermally in therapeutic doses.",
-    sources: ["National Institute for Health and Care Excellence (NICE)", "Arthritis Research UK / BMJ"],
+    sources: [
+      "National Institute for Health and Care Excellence (NICE)",
+      "Arthritis Research UK / BMJ",
+    ],
     actionableTip:
       "Focus on proven arthritis management: low-impact aerobic exercise, resistance training to support surrounding joints, weight management, and evidence-backed physical therapy.",
     confidenceLevel: "HIGH",
@@ -1142,7 +1163,10 @@ export const MYTHS: MythBusted[] = [
     myth: "Smearing thick mayonnaise, butter, or olive oil over your child's scalp overnight completely suffocates head lice and clears the infestation.",
     reality:
       "Head lice can enter a low-oxygen metabolic state, closing their respiratory breathing pores (spiracles) and surviving without ambient air for over 8 hours. While kitchen oils make the hair slippery, they fail to kill microscopic nits (lice eggs), leading to rapid recurrence.",
-    sources: ["Centers for Disease Control and Prevention (CDC)", "American Academy of Pediatrics (AAP)"],
+    sources: [
+      "Centers for Disease Control and Prevention (CDC)",
+      "American Academy of Pediatrics (AAP)",
+    ],
     actionableTip:
       "Use clinically approved pediculicides or non-toxic silicone-based dimethicone lotions, which physically coat and suffocate lice within minutes, combined with fine-toothed metal nit combing.",
     confidenceLevel: "HIGH",
@@ -1170,7 +1194,10 @@ export const MYTHS: MythBusted[] = [
     myth: "Drinking dark stout beer or ale stimulates hormones and dramatically increases breast milk production in nursing mothers.",
     reality:
       "Alcohol actually inhibits the secretion of oxytocin from the pituitary gland, which reduces the letdown reflex and decreases total milk output by roughly 20%. While barley contains trace beta-glucans, alcohol passes directly into breast milk at levels matching maternal blood, which can disrupt infant sleep and motor development.",
-    sources: ["American Academy of Pediatrics (AAP)", "Centers for Disease Control and Prevention (CDC)"],
+    sources: [
+      "American Academy of Pediatrics (AAP)",
+      "Centers for Disease Control and Prevention (CDC)",
+    ],
     actionableTip:
       "Support healthy lactation through frequent nursing or pumping, staying well-hydrated with water, and consuming nutritious whole grains like oatmeal.",
     dangerAlert:

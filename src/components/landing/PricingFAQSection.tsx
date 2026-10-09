@@ -198,9 +198,7 @@ export function PricingFAQSection() {
                     {pillar.badge}
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#E8E0D5] mb-1">
-                    {pillar.name}
-                  </h3>
+                  <h3 className="text-lg font-bold text-[#E8E0D5] mb-1">{pillar.name}</h3>
 
                   <div
                     className="font-mono text-[11px] tracking-wider uppercase font-semibold mb-3"

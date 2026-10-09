@@ -200,8 +200,8 @@ function LibraryPage() {
               Clinical Reference <span className="text-[#00E5C4]">Library</span>
             </h1>
             <p className="text-[#8A8F98] mt-4 font-mono text-xs sm:text-sm leading-relaxed">
-              Explore evidence-based conditions, peer-reviewed natural remedies, body marvels,
-              and clinically debunked health myths.
+              Explore evidence-based conditions, peer-reviewed natural remedies, body marvels, and
+              clinically debunked health myths.
             </p>
           </div>
         </header>
@@ -475,7 +475,9 @@ function LibraryPage() {
                               <p className="text-[10px] font-bold text-[#00E5C4] uppercase tracking-wider mb-1">
                                 Everyday Context
                               </p>
-                              <p className="text-xs text-[#EAEAEA] leading-relaxed">{remedy.practicalContext}</p>
+                              <p className="text-xs text-[#EAEAEA] leading-relaxed">
+                                {remedy.practicalContext}
+                              </p>
                             </div>
                           )}
                         </div>

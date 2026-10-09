@@ -120,7 +120,7 @@ export function Header() {
           <a
             href="tel:112"
             aria-label="Call Emergency 112"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-500/15 border border-red-500/40 text-red-400 text-xs font-bold transition-transform active:scale-95"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-500/15 border border-red-500/40 text-red-400 text-xs font-bold transition-transform active:scale-95"
           >
             <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
             <span>112 SOS</span>
@@ -130,7 +130,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setLanguage(language === "en" ? "hi" : "en")}
-            className="flex items-center justify-center h-8 px-2.5 rounded-full border border-white/10 bg-white/5 text-xs font-semibold text-[#EAEAEA] active:scale-95 transition-all"
+            className="flex items-center justify-center h-8 px-2.5 rounded-lg border border-white/10 bg-white/5 text-xs font-semibold text-[#EAEAEA] active:scale-95 transition-all"
             aria-label="Toggle language"
           >
             {language === "en" ? "हिं" : "EN"}
