@@ -3683,6 +3683,101 @@ export const BODY_MARVELS: BodyMarvel[] = [
       "This natural pacemaker adjusts your heart rate in real-time, instantly speeding up during exercise or slowing down while you sleep.",
     bodyPartId: "heart",
   },
+  {
+    id: "glymphatic-night-wash",
+    title: "The Nighttime Brain Wash: The Glymphatic System",
+    introduction:
+      "While you are asleep, your brain turns on a specialized internal plumbing system that literally washes away the day's toxic metabolic waste.",
+    sections: [
+      {
+        heading: "1. The Nighttime Space Expansion",
+        body: "During deep slow-wave sleep, the space between your brain cells expands by up to 60%. This allows cerebrospinal fluid to surge through brain tissue like water through a sponge.",
+      },
+      {
+        heading: "2. Clearing Metabolic Waste",
+        body: "This fluid wash actively sweeps away amyloid-beta and tau proteins—metabolic waste products linked to memory decline and cognitive fatigue.",
+      },
+    ],
+    conclusion:
+      "Deep sleep isn't passive downtime; it is an active mechanical cleaning cycle that your brain cannot perform while you are awake.",
+    bodyPartId: "brain",
+  },
+  {
+    id: "brown-fat-furnace",
+    title: "Brown Fat: Your Body's Secret Calorie Furnace",
+    introduction:
+      "Most fat stores calories, but brown adipose tissue (brown fat) is an active metabolic furnace that burns calories specifically to generate heat.",
+    sections: [
+      {
+        heading: "1. Packed with Cellular Powerhouses",
+        body: "Brown fat is brown because it is packed with iron-rich mitochondria. These cellular power plants burn glucose and fatty acids directly to produce heat rather than storing energy.",
+      },
+      {
+        heading: "2. Activated by Cold Exposure",
+        body: "Mild cool exposure—such as a cool shower, walking in crisp weather, or sleeping in a cool room—activates brown fat to keep your internal core temperature stable.",
+      },
+    ],
+    conclusion:
+      "Maintaining healthy brown fat activity through regular cool exposure and daily movement boosts metabolic health and insulin sensitivity.",
+    bodyPartId: "muscles",
+  },
+  {
+    id: "fascia-sensory-web",
+    title: "The Fascia Highway: The Body's Hidden Sensory Web",
+    introduction:
+      "Fascia is a continuous, web-like sheet of collagen and connective tissue that wraps around every muscle, bone, nerve, and organ from head to toe.",
+    sections: [
+      {
+        heading: "1. More Sensitive Than Muscle",
+        body: "Fascia contains up to six times more sensory nerve endings and movement sensors (proprioceptors) than the muscles it wraps around, constantly reporting your body's position to your brain.",
+      },
+      {
+        heading: "2. The Elastic Spring System",
+        body: "Healthy, hydrated fascia stores and returns elastic recoil energy with every step you take, working like natural internal springs that make walking and running efficient.",
+      },
+    ],
+    conclusion:
+      "Staying well-hydrated and moving across diverse planes of motion keeps your fascia supple and prevents the stiffness associated with sedentary desk work.",
+    bodyPartId: "muscles",
+  },
+  {
+    id: "microbiome-immunity-shield",
+    title: "Peyer's Patches: Your Gut's Internal Border Patrol",
+    introduction:
+      "Up to 70% of your entire immune system is stationed directly along the walls of your intestines inside specialized immune clusters called Peyer's patches.",
+    sections: [
+      {
+        heading: "1. Sampling Ingested Microbes",
+        body: "Specialized cells in Peyer's patches continuously sample tiny particles from passing food, teaching your immune system what is a harmless nutrient and what is a dangerous pathogen.",
+      },
+      {
+        heading: "2. Training Immune Memory",
+        body: "This constant sampling trains your B-cells to produce protective antibodies (secretory IgA) that coat your mucous membranes and neutralize bacteria before they enter your bloodstream.",
+      },
+    ],
+    conclusion:
+      "A diverse diet rich in soluble plant fiber and fermented foods directly supports the immune sentinels guarding your digestive barrier.",
+    bodyPartId: "small-intestine",
+  },
+  {
+    id: "vascular-nitric-oxide",
+    title: "The Endothelium: Master Controller of Blood Pressure",
+    introduction:
+      "The inner lining of all 60,000 miles of your blood vessels is covered by a single layer of cells called the endothelium, weighing as much as your liver combined.",
+    sections: [
+      {
+        heading: "1. The Nitric Oxide Signal",
+        body: "When you exercise or eat nitrate-rich vegetables, endothelial cells produce a tiny burst of nitric oxide gas. This gas tells surrounding smooth muscle cells to relax, opening up blood vessels within milliseconds.",
+      },
+      {
+        heading: "2. Protecting Against Plaque",
+        body: "A healthy, active endothelium keeps blood flowing smoothly like a non-stick pan, preventing white blood cells and oxidized cholesterol from adhering to arterial walls.",
+      },
+    ],
+    conclusion:
+      "Aerobic movement and a diet rich in leafy greens directly nourish your endothelium, keeping your arteries flexible and your blood pressure healthy.",
+    bodyPartId: "heart",
+  },
 ];
 
 export const SENSORY_FACTS: SensoryFact[] = [
