@@ -2872,6 +2872,61 @@ export const FOOD_SYNERGIES: FoodSynergyPair[] = [
     culinaryIdea:
       "Squeeze a fresh lemon wedge directly into freshly steeped green or mint tea right before drinking.",
   },
+  {
+    id: "syn-tomato-olive-ghee",
+    foodA: "Cooked Tomatoes (Lycopene Carotenoid)",
+    foodB: "Healthy Fats (Extra Virgin Olive Oil, Avocado, or Ghee)",
+    synergyOutcome: "Heart & Skin Lycopene Absorption Surge",
+    multiplier: "+400% Bioavailability",
+    mechanism:
+      "Lycopene is a powerful antioxidant that protects arteries and skin from sun damage, but it is strictly fat-soluble. Simmering tomatoes gently with a teaspoon of healthy oil unlocks lycopene from tough plant cell walls and carries it directly across your intestinal lining.",
+    culinaryIdea:
+      "Slow-simmer fresh ripe tomatoes with a teaspoon of olive oil or pure ghee when making soup, curry base, or pasta sauce.",
+  },
+  {
+    id: "syn-garlic-crush-wait",
+    foodA: "Raw Garlic Cloves (Alliin Precursor)",
+    foodB: "10-Minute Chopping Rest Before Heat (Alliinase Enzyme)",
+    synergyOutcome: "Active Allicin Heart & Immune Compound",
+    multiplier: "+300% Active Allicin Retention",
+    mechanism:
+      "Whole garlic cloves contain two separate compounds that only merge to create protective allicin when you crush or chop the clove. If you throw chopped garlic straight into hot oil, the heat destroys the enzyme instantly; waiting 10 minutes before cooking locks in the heart-protective benefits.",
+    culinaryIdea:
+      "Chop or crush your garlic first, let it sit on the cutting board for 10 minutes while prepping vegetables, and add it toward the end of cooking.",
+  },
+  {
+    id: "syn-oats-berries-vitc",
+    foodA: "Whole Rolled Oats / Daliya (Beta-Glucan Fiber & Avenanthramides)",
+    foodB: "Fresh Berries, Guava, or Orange Slices (Vitamin C)",
+    synergyOutcome: "LDL Cholesterol Oxidation Shield",
+    multiplier: "+250% Arterial Protection",
+    mechanism:
+      "Oat antioxidants work hand-in-hand with Vitamin C in fresh fruit to stop 'bad' LDL cholesterol particles from oxidizing and sticking to your blood vessel walls, while soluble beta-glucan fiber slows down morning glucose absorption.",
+    culinaryIdea:
+      "Top warm cooked oatmeal or broken wheat daliya with fresh pomegranate arils, strawberries, or diced guava.",
+  },
+  {
+    id: "syn-broccoli-mustard",
+    foodA: "Steamed Broccoli or Cabbage (Glucoraphanin)",
+    foodB: "Crushed Mustard Seeds / Rai (Myrosinase Enzyme)",
+    synergyOutcome: "Sulforaphane Cellular Detox Activation",
+    multiplier: "+400% Sulforaphane Yield",
+    mechanism:
+      "Cooking broccoli over high heat deactivates the natural plant enzyme needed to create sulforaphane—a compound that switches on your liver's protective antioxidant pathways. Sprinkling a pinch of powdered or tempered mustard seeds restores the exact enzyme needed to reactivate sulforaphane.",
+    culinaryIdea:
+      "Toss lightly steamed broccoli or cabbage with a pinch of freshly ground mustard seed powder and lemon juice.",
+  },
+  {
+    id: "syn-apple-skin-walnuts",
+    foodA: "Unpeeled Apple Slices (Quercetin + Pectin Fiber)",
+    foodB: "Raw Walnuts (Plant Omega-3 ALA + Healthy Fats)",
+    synergyOutcome: "Blood Vessel Protection & Steady Afternoon Energy",
+    multiplier: "+200% Quercetin Uptake & Flatter Glucose Curve",
+    mechanism:
+      "Apple skin is packed with quercetin (a plant antioxidant that keeps blood vessels flexible), while walnuts provide healthy fats and protein. Eating them together slows down how fast the apple's natural sugar enters your blood and helps your gut absorb fat-friendly plant nutrients.",
+    culinaryIdea:
+      "Pair a sliced unpeeled apple with a small handful (about 7 whole walnuts) for a 3 PM snack instead of biscuits or crackers.",
+  },
 ];
 
 export interface DrugFoodWarning {
@@ -2944,4 +2999,45 @@ export const DRUG_FOOD_WARNINGS: DrugFoodWarning[] = [
     doctorDirective:
       "Take your thyroid pill on an empty stomach with plain water at least 4 hours apart from dairy foods or calcium supplements.",
   },
+  {
+    id: "warn-alcohol-paracetamol",
+    food: "Alcoholic Beverages (Beer, Wine, Spirits)",
+    medicationClass: "Paracetamol / Acetaminophen & NSAID Painkillers (Ibuprofen)",
+    riskSeverity: "CRITICAL",
+    clinicalConsequence:
+      "Your liver uses the exact same enzyme pathway to process both alcohol and paracetamol. Combining them forces your liver to convert paracetamol into a toxic chemical byproduct that can cause acute, life-threatening liver failure or severe stomach bleeding.",
+    doctorDirective:
+      "Never take paracetamol for a hangover or combine painkillers with alcohol. Wait at least 24 hours after heavy drinking.",
+  },
+  {
+    id: "warn-coffee-iron-pills",
+    food: "Black Tea, Green Tea & Coffee (Tannins & Chlorogenic Acid)",
+    medicationClass: "Oral Iron Supplements (Ferrous Sulfate / Ferrous Ascorbate)",
+    riskSeverity: "HIGH",
+    clinicalConsequence:
+      "Plant tannins in tea and coffee bind to iron in your stomach and form an insoluble compound that your intestines cannot absorb, slashing iron absorption by up to 60% to 80%.",
+    doctorDirective:
+      "Take iron tablets with plain water or a splash of orange/lemon juice, and wait at least 1 to 2 hours before drinking tea or coffee.",
+  },
+  {
+    id: "warn-fiber-med-timing",
+    food: "Concentrated Psyllium Husk (Isabgol) & Bran Supplements",
+    medicationClass: "Oral Prescription Medications (Heart, Diabetes, Seizure & Thyroid Pills)",
+    riskSeverity: "MODERATE",
+    clinicalConsequence:
+      "Thick gel-forming fibers like Isabgol trap dissolved medicine tablets inside their viscous gel matrix in the gut, delaying or blocking the medicine from crossing into your bloodstream.",
+    doctorDirective:
+      "Always take psyllium husk or concentrated fiber supplements at least 2 hours before or 2 hours after your daily prescription pills.",
+  },
+  {
+    id: "warn-licorice-bp-diuretics",
+    food: "True Black Licorice Root (Mulethi Teas, Candies & Throat Pastilles)",
+    medicationClass: "Blood Pressure Medications & Loop/Thiazide Diuretics",
+    riskSeverity: "HIGH",
+    clinicalConsequence:
+      "Natural glycyrrhizic acid in mulethi/licorice tricks your kidneys into holding onto sodium and flushing out potassium, driving blood pressure up and opposing your blood pressure medicines.",
+    doctorDirective:
+      "Avoid daily concentrated mulethi teas or black licorice candies if you have high blood pressure or take water pills; choose DGL (deglycyrrhizinated) licorice instead.",
+  },
 ];
+

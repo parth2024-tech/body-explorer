@@ -435,4 +435,11 @@ export const DAILY_INSIGHTS: DailyInsight[] = [
     action: "Incorporate leafy greens like spinach or arugula into dinner to provide dietary nitrates that support vascular relaxation.",
     actionDuration: "N/A",
   },
+  {
+    dayOfYear: 61,
+    bodyPartId: "sinuses",
+    fact: "Your sinus cavities constantly brew nitric oxide—a natural gas that widens airways and fights germs—and humming on your exhale boosts its release 15-fold.",
+    action: "Take a slow breath in through your nose, then hum a low 'mmmm' sound for 6 seconds as you breathe out. Repeat 5 times.",
+    actionDuration: "30s",
+  },
 ];

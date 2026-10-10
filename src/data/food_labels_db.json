@@ -23,7 +23,11 @@
     "risk_level": "HIGH",
     "biological_impact": "Refined flour has all the healthy fiber and vitamins completely stripped away. Inside your body, it acts exactly like eating pure sugar, leading to rapid fat storage around your belly and a crash in your energy levels two hours later.",
     "how_to_spot": "Check the very first ingredient on the back. If it says 'Refined Wheat Flour' or 'Maida', it is junk food. A true healthy bread will list '100% Whole Wheat Flour' as the FIRST and ONLY flour.",
-    "common_products": ["Brown Bread", "Multigrain Biscuits", "Healthy Cereals"],
+    "common_products": [
+      "Brown Bread",
+      "Multigrain Biscuits",
+      "Healthy Cereals"
+    ],
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Nutritional guidelines define refined carbohydrates as simple sugars that rapidly convert to glucose, driving hyperinsulinemia.",
     "clinicalDisclaimer": "📍 IMPORTANT: The color brown in bread is often just caramel coloring (INS 150), not whole grain fiber."
@@ -35,7 +39,11 @@
     "risk_level": "HIGH",
     "biological_impact": "Massive amounts of sugar actually paralyze your immune system. Sugar stops your white blood cells from eating bacteria for up to 5 hours after you drink it. This completely cancels out any tiny benefit the artificial vitamin might have given you.",
     "how_to_spot": "Check the 'Total Sugars' per 100g on the nutrition panel. If it is over 10g, the product will harm your immunity, no matter what cartoon shield is on the front box.",
-    "common_products": ["Fruit Juices", "Health Drinks for Kids", "Flavored Milk"],
+    "common_products": [
+      "Fruit Juices",
+      "Health Drinks for Kids",
+      "Flavored Milk"
+    ],
     "confidenceLevel": "MODERATE",
     "evidenceStatement": "✅ EVIDENCE: Studies show simple sugars reduce the phagocytic index (bacteria-eating ability) of neutrophils.",
     "clinicalDisclaimer": "📍 IMPORTANT: You cannot 'boost' immunity with sugar-laden products; you can only suppress it."
@@ -47,7 +55,11 @@
     "risk_level": "MEDIUM",
     "biological_impact": "Fruit concentrate is essentially just fruit sugar (fructose) with all the healthy fiber boiled away. Without fiber, fructose goes straight to your liver, where it is instantly converted into visceral fat (belly fat) and can cause fatty liver disease.",
     "how_to_spot": "Read the ingredient percentages. If 'Fruit Pulp/Concentrate' is listed at 2% or 5%, you are paying a premium price for flavored sugar water.",
-    "common_products": ["Packaged Juices", "Fruit Yogurts", "Breakfast Cereals"],
+    "common_products": [
+      "Packaged Juices",
+      "Fruit Yogurts",
+      "Breakfast Cereals"
+    ],
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: The WHO strongly recommends limiting free sugars, specifically grouping fruit juice concentrates with added sugars due to the lack of intact cellular fiber.",
     "clinicalDisclaimer": "📍 IMPORTANT: Eating a whole piece of fruit is completely different and much healthier than drinking its concentrated juice."
@@ -59,7 +71,11 @@
     "risk_level": "HIGH",
     "biological_impact": "Baked snacks are often made of puffed corn or rice that melts in your mouth—meaning it hits your bloodstream instantly as sugar. Even worse, they are often heavily coated in cheap Palmolein or Refined Sunflower oil, which causes silent inflammation throughout your entire body.",
     "how_to_spot": "Look for 'Edible Vegetable Oil (Palmolein)' or 'Refined Oil' in the ingredients. Check the calorie count; a bag of 'baked' diet chips often has the exact same calories as regular fried chips.",
-    "common_products": ["Diet Chips", "Roasted Makhana (Flavored)", "Baked Namkeen"],
+    "common_products": [
+      "Diet Chips",
+      "Roasted Makhana (Flavored)",
+      "Baked Namkeen"
+    ],
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Extruded (puffed/baked) grain snacks have extremely high glycemic indices, and high omega-6 seed oils drive systemic inflammatory markers like CRP.",
     "clinicalDisclaimer": "📍 IMPORTANT: 'Baked' simply refers to the cooking method. It does not mean low-calorie or healthy."
@@ -71,7 +87,11 @@
     "risk_level": "CRITICAL",
     "biological_impact": "Trans fats are artificial, plastic-like fats that your body literally cannot digest. Instead of burning for energy, they permanently stick to the inside walls of your blood vessels, clogging your arteries like old cooking grease and causing heart attacks.",
     "how_to_spot": "Ignore the 'Zero' claim on the front. If the ingredients list 'Partially Hydrogenated Vegetable Oil', 'Hydrogenated Fat', or 'Vanaspati', it contains dangerous trans fats.",
-    "common_products": ["Margarine", "Packaged Bakery Items", "Microwave Popcorn"],
+    "common_products": [
+      "Margarine",
+      "Packaged Bakery Items",
+      "Microwave Popcorn"
+    ],
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: The American Heart Association states there is no safe level of artificial trans fat consumption, as it uniquely raises LDL (bad) and lowers HDL (good) cholesterol.",
     "clinicalDisclaimer": "🚨 DANGER: Even small amounts of trans fats consumed daily accumulate to cause severe cardiovascular disease."
@@ -83,7 +103,11 @@
     "risk_level": "MEDIUM",
     "biological_impact": "Companies use cheap chemicals like Calcium Carbonate (which is basically chalk) instead of forms your body can actually use. Most of these 'added vitamins' pass straight through your digestive system into the toilet, while the product delivers a massive dose of sugar.",
     "how_to_spot": "Look at the specific chemical names in brackets next to the vitamins on the back. If it says 'Ferrous Fumarate' (cheap iron) or 'Calcium Carbonate' (cheap calcium), the company is cutting corners.",
-    "common_products": ["Kids Health Powders", "Corn Flakes", "Fortified Biscuits"],
+    "common_products": [
+      "Kids Health Powders",
+      "Corn Flakes",
+      "Fortified Biscuits"
+    ],
     "confidenceLevel": "MODERATE",
     "evidenceStatement": "✅ EVIDENCE: Bioavailability studies show significant differences in absorption rates between different salt forms of minerals (e.g., citrate vs. carbonate).",
     "clinicalDisclaimer": "📍 IMPORTANT: Do not rely on fortified junk food for your daily vitamins. Real, whole foods are always superior."
@@ -95,7 +119,11 @@
     "risk_level": "MEDIUM",
     "biological_impact": "While legally allowed to be called 'natural', these extracts are heavily manipulated. Some 'natural' colors like Carmine (INS 120, made from crushed bugs) or Annatto (INS 160b) can still trigger severe allergic reactions or stomach cramps in sensitive people.",
     "how_to_spot": "Look for generic terms like 'Added Flavors (Natural & Nature Identical)' or INS numbers. 'Nature Identical' simply means it was chemically built in a lab to mimic a natural molecule.",
-    "common_products": ["Ice Creams", "Candies", "Flavored Yogurts"],
+    "common_products": [
+      "Ice Creams",
+      "Candies",
+      "Flavored Yogurts"
+    ],
     "confidenceLevel": "MODERATE",
     "evidenceStatement": "✅ EVIDENCE: The FDA defines 'natural flavors' broadly, allowing for extensive chemical extraction and the inclusion of up to 80% synthetic solvents/carriers in the final flavoring mixture.",
     "clinicalDisclaimer": "📍 IMPORTANT: 'Natural' on a food label is a marketing term with very little strict regulatory definition regarding health."
@@ -107,7 +135,11 @@
     "risk_level": "HIGH",
     "biological_impact": "Even if the product used 100% real jaggery, your liver cannot tell the difference between jaggery and refined white sugar. They both break down into the exact same glucose and fructose molecules, causing the exact same fat storage and insulin spikes.",
     "how_to_spot": "Check the ingredient list order. Ingredients are listed by weight. If 'Invert Sugar', 'Liquid Glucose', or 'Sugar' comes BEFORE 'Honey' or 'Jaggery', you're being scammed.",
-    "common_products": ["Health Bars", "Oats/Muesli", "Ayurvedic Syrups"],
+    "common_products": [
+      "Health Bars",
+      "Oats/Muesli",
+      "Ayurvedic Syrups"
+    ],
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Endocrinologists confirm that all caloric sweeteners (honey, jaggery, maple syrup, cane sugar) elicit nearly identical insulin responses and caloric loads per gram.",
     "clinicalDisclaimer": "📍 IMPORTANT: Replacing white sugar with jaggery or honey does NOT make a dessert healthy or diabetic-friendly."
@@ -119,7 +151,11 @@
     "risk_level": "MEDIUM",
     "biological_impact": "Cheap plant protein isolates often lack the complete set of amino acids your body needs to actually build muscle. Furthermore, these products are often so packed with sugar that the sugar spike completely ruins any metabolic benefit the protein might have provided.",
     "how_to_spot": "Look at the 'Protein per 100g' row. Anything less than 15g-20g per 100g is NOT a high protein food. Also check if the box says 'Protein *when consumed with 200ml milk'.",
-    "common_products": ["Protein Biscuits", "Health Drinks for Kids", "Breakfast Cereals"],
+    "common_products": [
+      "Protein Biscuits",
+      "Health Drinks for Kids",
+      "Breakfast Cereals"
+    ],
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Muscle protein synthesis (MPS) requires a complete essential amino acid profile (specifically Leucine), which is often deficient in cheap plant isolates.",
     "clinicalDisclaimer": "📍 IMPORTANT: Read the fine print. Many products claim 'High Protein' based on the milk you add to them, not the powder itself."
@@ -131,7 +167,12 @@
     "risk_level": "MEDIUM",
     "biological_impact": "Cholesterol only exists in animal cells. Labeling vegetable cooking oils (like Sunflower or Soybean oil) as 'Cholesterol Free' is a marketing trick to make them look heart-healthy. These oils are actually refined at extremely high temperatures, creating inflammatory trans-fat compounds and high levels of Omega-6 fatty acids that can damage your arteries.",
     "how_to_spot": "Ignore the 'Zero Cholesterol' banner on cooking oil bottles or peanut butter. Look instead at the refining method (refined vs. cold-pressed/kachi ghani) and check if the ingredients contain 'refined vegetable oil'.",
-    "common_products": ["Refined Sunflower Oil", "Peanut Butter", "Potato Chips", "Vegetable Oils"],
+    "common_products": [
+      "Refined Sunflower Oil",
+      "Peanut Butter",
+      "Potato Chips",
+      "Vegetable Oils"
+    ],
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Biochemistry textbooks confirm cholesterol is synthesized exclusively in animal cells; plant membranes contain phytosterols which do not contribute to serum LDL cholesterol.",
     "clinicalDisclaimer": "📍 IMPORTANT: A product labeled 'Cholesterol Free' can still raise your bad cholesterol if it is high in saturated or refined trans-fats."
@@ -143,7 +184,11 @@
     "risk_level": "HIGH",
     "biological_impact": "Gluten is just a protein found in wheat, rye, and barley. Unless you have Celiac disease or gluten sensitivity, avoiding it is unnecessary. To replace gluten, manufacturers often use cheap, high-glycemic starches like potato starch or tapioca starch, which cause your blood sugar to spike much faster and contain almost zero fiber or vitamins.",
     "how_to_spot": "Check the ingredients. If you see 'starch', 'sugar', or 'xanthan gum' near the top, it is a highly processed gluten alternative that is worse for your metabolism than normal whole wheat.",
-    "common_products": ["Gluten-Free Bread", "Gluten-Free Cookies", "Gluten-Free Pasta"],
+    "common_products": [
+      "Gluten-Free Bread",
+      "Gluten-Free Cookies",
+      "Gluten-Free Pasta"
+    ],
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Clinical nutrition studies show that processed gluten-free products have a higher glycemic index and lower micronutrient density compared to their gluten-containing equivalents.",
     "clinicalDisclaimer": "🚨 DANGER: If you have Celiac disease, you must eat gluten-free. If not, these processed gluten-free items are not a health food and may promote weight gain."
@@ -155,7 +200,11 @@
     "risk_level": "HIGH",
     "biological_impact": "People eat digestive biscuits thinking they are eating medicine for their bowels. In reality, two biscuits contain as much sugar and saturated fat as a small pastry. The high sugar spikes your insulin, while the refined palm oil slows gut movement and promotes fat storage.",
     "how_to_spot": "Look at the back table under 'Sugars' and 'Total Fat'. If sugar is over 20g per 100g, or if 'Palm Oil' is listed in the top three ingredients, it is a normal tea cookie disguised with a medical name.",
-    "common_products": ["Commercial Digestive Biscuits", "Oatmeal Cookies", "Fiber Rusks"],
+    "common_products": [
+      "Commercial Digestive Biscuits",
+      "Oatmeal Cookies",
+      "Fiber Rusks"
+    ],
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Laboratory nutritional audits verify digestive biscuits derive less than 5% of their weight from dietary fiber, with over 45% derived from refined flour and sugar.",
     "clinicalDisclaimer": "📍 IMPORTANT: For real gut fiber, eat whole apples, cooked dal, or fresh salads instead of factory biscuits."
@@ -167,7 +216,12 @@
     "risk_level": "HIGH",
     "biological_impact": "Cheap refined seed and palm oils are heated to extreme industrial temperatures, creating oxidized fat byproducts that trigger inflammation in your artery walls. Eating sweets or snacks labeled 'Desi Ghee' gives people false confidence to eat large portions of unhealthy fats.",
     "how_to_spot": "Check the ingredient percentages. The law requires companies to list ingredients in order of weight. If 'Vegetable Oil' or 'Palmolein' comes first, and 'Ghee (1.5%)' is at the very bottom, you are paying for cheap frying oil.",
-    "common_products": ["Packaged Soan Papdi", "Commercial Laddus", "Bakery Biscuits", "Samosas"],
+    "common_products": [
+      "Packaged Soan Papdi",
+      "Commercial Laddus",
+      "Bakery Biscuits",
+      "Samosas"
+    ],
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Food safety chromatography testing shows commercial sweets claiming ghee often contain high proportions of palmitic acid from cheap palm oil blends.",
     "clinicalDisclaimer": "📍 IMPORTANT: Pure home-cooked ghee has a high smoke point, but packaged snacks rarely use 100% pure ghee due to commercial cost cutting."
@@ -195,7 +249,11 @@
     "risk_level": "HIGH",
     "biological_impact": "Fat helps you feel full and satisfied. When fat is removed and replaced with sugar and starch, your body absorbs the meal much faster. This causes a rapid surge in insulin, leaving you feeling ravenous and looking for snacks just an hour later.",
     "how_to_spot": "Compare the 'Low Fat' version with the regular version. If the low-fat version has MORE grams of carbohydrates or sugar per serving than the original product, it is a metabolic trap.",
-    "common_products": ["Low-Fat Flavored Yogurt", "Fat-Free Salad Dressings", "Diet Ice Creams"],
+    "common_products": [
+      "Low-Fat Flavored Yogurt",
+      "Fat-Free Salad Dressings",
+      "Diet Ice Creams"
+    ],
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Clinical trials consistently show ultra-processed low-fat foods cause higher post-meal insulin spikes and lower satiety compared to whole, natural fat equivalents.",
     "clinicalDisclaimer": "📍 IMPORTANT: Natural food fats (from nuts, seeds, yogurt, and olive oil) are vital for absorbing vitamins A, D, E, and K."
@@ -207,7 +265,11 @@
     "risk_level": "HIGH",
     "biological_impact": "Even if the flour is whole wheat atta, the noodle cake is deep-fried in palm oil at the factory so it cooks in 2 minutes at home. One single small packet delivers over 50% to 70% of your maximum daily sodium allowance in just 5 bites, putting immediate pressure on your kidneys and blood vessels.",
     "how_to_spot": "Look at the back table for 'Sodium' per serving. If sodium is over 800mg (out of the 2,000mg daily limit) or if 'Palm Oil' is listed in the ingredients, it is an ultra-processed convenience food.",
-    "common_products": ["Atta Instant Noodles", "Multigrain Noodles", "Baked Snack Pellets"],
+    "common_products": [
+      "Atta Instant Noodles",
+      "Multigrain Noodles",
+      "Baked Snack Pellets"
+    ],
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: ICMR-NIN and AHA guidelines link excessive dietary sodium from instant packaged seasonings directly to hypertension and arterial stiffness.",
     "clinicalDisclaimer": "📍 IMPORTANT: Eating real handmade rotis or boiled whole wheat pasta with fresh vegetable sauce is infinitely healthier than factory instant noodles."
@@ -228,5 +290,118 @@
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Systematic reviews show negligible trace mineral differences between raw and refined sugars; the glycemic and insulinemic responses are clinically indistinguishable.",
     "clinicalDisclaimer": "🚨 DANGER: People with diabetes must not consume organic raw sugar or khand thinking it will not spike their blood sugar."
+  },
+  {
+    "id": "fl-19",
+    "marketing_claim": "Zero Trans Fat (0g Trans Fat)",
+    "real_meaning": "Contains up to 0.49 grams of artificial trans fat per tiny serving, legally rounded down to '0g' on the label.",
+    "risk_level": "CRITICAL",
+    "biological_impact": "Artificial trans fats (partially hydrogenated oils) are the single most dangerous fat for human arteries. They simultaneously raise bad LDL cholesterol and strip away protective HDL cholesterol, sharply increasing heart attack and stroke risk even at 1 to 2 grams a day.",
+    "how_to_spot": "Ignore the '0g Trans Fat' boast on the front. Flip the box and read the ingredient list: if you see the words 'Partially Hydrogenated Vegetable Oil', 'Shortening', or 'Vanaspati', the product contains artificial trans fats.",
+    "common_products": [
+      "Microwave Popcorn",
+      "Commercial Puff Pastries",
+      "Non-Dairy Coffee Creamers",
+      "Bakery Biscuits"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: WHO REPLACE action package and FDA/FSSAI labeling rules allow products with <0.2g to <0.5g trans fat per serving to declare '0g', allowing cumulative daily intake across multiple servings.",
+    "clinicalDisclaimer": "🚨 CRITICAL: There is no safe threshold for industrial partially hydrogenated trans fats according to the World Health Organization."
+  },
+  {
+    "id": "fl-20",
+    "marketing_claim": "100% Pure Fruit Juice — No Added Sugar",
+    "real_meaning": "Stripped of all whole-fruit fiber, leaving behind a concentrated liquid fructose bomb with as much sugar per cup as a can of cola.",
+    "risk_level": "HIGH",
+    "biological_impact": "When you eat a whole orange, the fibrous pulp slows down digestion so sugar enters your blood gently. When factory machines squeeze out the juice and throw away the fiber pulp, the liquid fructose hits your liver in seconds, triggering rapid insulin spikes and liver fat creation.",
+    "how_to_spot": "Check 'Total Sugars' on the nutrition panel. A 250ml glass of 'No Added Sugar' apple or orange juice still packs 22g to 26g of free liquid sugar—equal to 6 teaspoons of table sugar.",
+    "common_products": [
+      "Carton Orange Juice",
+      "100% Apple Juice Boxes",
+      "Cold-Pressed Fruit Blends"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: American Academy of Pediatrics (AAP) and WHO classify fruit juice sugars as 'free sugars' with metabolic impacts comparable to sugar-sweetened beverages.",
+    "clinicalDisclaimer": "📍 IMPORTANT: Always eat the whole fruit with its natural fiber intact rather than drinking concentrated fruit juice."
+  },
+  {
+    "id": "fl-21",
+    "marketing_claim": "Baked, Not Fried! (50% Less Fat)",
+    "real_meaning": "Ultra-processed potato starch and refined flour baked at scorching temperatures, trading fat for fast-digesting starch and high sodium.",
+    "risk_level": "MEDIUM",
+    "biological_impact": "Removing half the oil doesn't make a chip healthy. To make baked chips crispy, manufacturers use refined potato flakes, cornstarch, sugar, and extra salt, baking them at high heat that forms acrylamide. They digest into blood glucose faster than regular chips.",
+    "how_to_spot": "Check the first three ingredients: if you see 'Dehydrated Potato Flakes', 'Modified Starch', or 'Maltodextrin' instead of whole sliced vegetables, it is an ultra-processed starch wafer.",
+    "common_products": [
+      "Baked Potato Crisps",
+      "Popped Corn Chips",
+      "Veggie Straws"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: Glycemic index testing shows extruded and baked starch snacks produce higher post-meal blood glucose excursions than whole-food snacks like roasted nuts.",
+    "clinicalDisclaimer": "📍 IMPORTANT: Swap extruded 'veggie straws' and baked crisps for lightly salted roasted chana, almonds, or air-popped whole popcorn."
+  },
+  {
+    "id": "fl-22",
+    "marketing_claim": "High Protein Energy Bar",
+    "real_meaning": "A glorified chocolate candy bar packed with sugar syrups, palm kernel oil, and cheap incomplete collagen or soy isolates.",
+    "risk_level": "MEDIUM",
+    "biological_impact": "Many commercial protein bars pack 15g to 22g of added sugar or sugar alcohols (like maltitol) that cause severe stomach gas, bloating, and blood sugar swings, while using low-grade gelatin protein that does not effectively build skeletal muscle.",
+    "how_to_spot": "Apply the 'Protein-to-Sugar Test': if the grams of total sugar (or sugar alcohols) are nearly as high as the grams of protein, or if chocolate coating and syrup top the ingredient list, it is a candy bar in gym clothing.",
+    "common_products": [
+      "Chocolate Coated Protein Bars",
+      "Meal Replacement Snack Bars",
+      "Granola Protein Squares"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: Sports nutrition analyses confirm bars relying on hydrolyzed gelatin/collagen lack essential branched-chain amino acids (leucine) required for muscle protein synthesis.",
+    "clinicalDisclaimer": "📍 IMPORTANT: Two boiled eggs, a bowl of Greek curd/dahi, or a handful of roasted peanuts offer cleaner, complete protein without synthetic syrups."
+  },
+  {
+    "id": "fl-23",
+    "marketing_claim": "Made with Real Fruit",
+    "real_meaning": "Contains 1% to 3% boiled fruit puree concentrate for legal marketing, while the rest is corn syrup, gelatin, and artificial food dyes.",
+    "risk_level": "HIGH",
+    "biological_impact": "Sticky gummy snacks and fruit leather cling tightly to the grooves of children's molars, feeding acid-producing mouth bacteria for hours and accelerating dental cavities while delivering zero intact fruit vitamins.",
+    "how_to_spot": "Look for 'Fruit Puree Concentrate' near the bottom of the ingredient list, preceded by Glucose Syrup, Sucrose, and Artificial Flavors.",
+    "common_products": [
+      "Fruit Snacks & Gummies",
+      "Fruit Roll-Ups",
+      "Fruit-Filled Breakfast Pastries"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: Pediatric dental research ranks sticky fruit-flavored gummies among the highest cariogenic (cavity-causing) foods due to prolonged enamel adhesion.",
+    "clinicalDisclaimer": "📍 IMPORTANT: Give children real sliced berries, bananas, or apple wedges rather than sticky factory 'fruit' gummies."
+  },
+  {
+    "id": "fl-24",
+    "marketing_claim": "Immunity-Boosting Bread / Fortified Cereal",
+    "real_meaning": "Ultra-refined white flour or puffed sugar sprayed with a tiny fraction of synthetic zinc or vitamin D to justify a health halo.",
+    "risk_level": "MEDIUM",
+    "biological_impact": "Your immune system relies on a healthy gut microbiome fed by diverse whole-food fibers. Eating refined flour and sugar spiked with a penny's worth of synthetic vitamins spikes blood glucose and starves beneficial gut bacteria.",
+    "how_to_spot": "If a brightly colored cereal box or soft white loaf screams 'Immunity Shield' on the front, check 'Dietary Fiber' and 'Added Sugars' on the back. Less than 3g of fiber per serving means the grain was stripped bare.",
+    "common_products": [
+      "Fortified Kids Breakfast Cereals",
+      "Vitamin-Enriched White Sandwich Bread",
+      "Immunity Biscuits"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: NOVA food classification studies demonstrate ultra-processed fortified foods do not replicate the immunological benefits of whole-food dietary patterns.",
+    "clinicalDisclaimer": "📍 IMPORTANT: True immune resilience comes from sleep, vaccinations, vegetables, pulses, citrus fruits, and natural fermented foods."
+  },
+  {
+    "id": "fl-25",
+    "marketing_claim": "'Light' Olive Oil",
+    "real_meaning": "Has the exact same 120 calories and 14 grams of fat per tablespoon as regular olive oil—'Light' only refers to pale color and mild flavor.",
+    "risk_level": "MEDIUM",
+    "biological_impact": "Because shoppers assume 'Light' means low-calorie, they often pour twice as much onto salads and pans. Worse, 'Light' olive oil is heavily heated and refined, which strips away the natural heart-protecting antioxidants (polyphenols) found in extra-virgin olive oil.",
+    "how_to_spot": "Compare the Nutrition Facts panel on 'Light' olive oil against 'Extra-Virgin' olive oil—both list 120 calories and 14g total fat per 1 tablespoon (15 ml). Look for 'refined olive oil' in the ingredient list.",
+    "common_products": [
+      "Light Tasting Olive Oil",
+      "Extra Light Olive Oil Baking Sprays",
+      "Blended Salad Oils"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: US FDA and USDA labeling standards allow 'Light' on oils to describe color or flavor intensity so long as the label specifies 'light in taste/color', even with zero calorie reduction.",
+    "clinicalDisclaimer": "📍 IMPORTANT: Choose 100% Extra-Virgin Olive Oil in a dark glass bottle and use a measuring spoon if watching total calorie intake."
   }
 ]

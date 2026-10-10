@@ -238,5 +238,33 @@
     "rarity": "common",
     "text": "While human bones stop growing in length after puberty, your nose and earlobes gradually appear longer throughout old age because gravity slowly stretches down their elastic cartilage and skin fibers.",
     "source": "British Medical Journal (BMJ)"
+  },
+  {
+    "id": "gen-daily-vagus-ear",
+    "bodyPartId": "ears",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "A tiny branch of your calming vagus nerve runs right beneath the skin of your outer ear—which is why gently massaging your outer ear can slow your heart rate and trigger a cough reflex."
+  },
+  {
+    "id": "gen-daily-sinus-nitric",
+    "bodyPartId": "sinuses",
+    "category": "health_tip",
+    "rarity": "surprising",
+    "text": "Humming quietly while breathing out through your nose increases nitric oxide gas inside your sinuses by 15 times, helping open stuffed nasal passages and fight germs naturally."
+  },
+  {
+    "id": "gen-daily-jaw-masseter",
+    "bodyPartId": "jaw",
+    "category": "record_breaker",
+    "rarity": "common",
+    "text": "Pound for pound, your main chewing muscle (the masseter) is the strongest muscle in your body, capable of snapping your back molars shut with up to 200 pounds of force."
+  },
+  {
+    "id": "gen-daily-cervical-text-neck",
+    "bodyPartId": "spine-cervical",
+    "category": "what_damages_it",
+    "rarity": "surprising",
+    "text": "Tilting your head forward 45 degrees to look down at your phone makes your 11-pound head pull on your upper neck bones with the force of a 49-pound bag of cement."
   }
 ]

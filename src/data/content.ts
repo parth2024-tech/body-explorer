@@ -3547,6 +3547,58 @@ export const HACKS: HealthHack[] = [
       "Regulates autonomic nervous system activity. The equal ratio of breathing stages increases heart rate variability (HRV) and suppresses the amygdala, stopping stress loops instantly.",
     bodyPartId: "lung-right",
   },
+  {
+    id: "physiological-sigh",
+    title: "The Double-Inhale Sigh for Instant Calm",
+    practice:
+      "Take two quick breaths in through your nose—one deep breath followed immediately by a sharp 'top-off' sniff—then let out a long, slow breath through your mouth.",
+    scienceBasis:
+      "Pops open tiny collapsed air sacs (alveoli) in your lungs, dumping trapped carbon dioxide and signaling your brain's calming nerve (the vagus nerve) to slow your heart rate in under 15 seconds.",
+    bodyPartId: "lung-left",
+  },
+  {
+    id: "rule-20-20-20",
+    title: "The 20-20-20 Eye Strain Reset",
+    practice:
+      "Every 20 minutes of screen time, look away at an object at least 20 feet (6 meters) away for a full 20 seconds while blinking deliberately.",
+    scienceBasis:
+      "Relaxes the tiny focusing muscle inside your eye (the ciliary muscle) that stays locked in a tight cramp during close-up screen work, while blinking restores your protective tear film.",
+    bodyPartId: "eyes",
+  },
+  {
+    id: "calf-soleus-pushup",
+    title: "Seated Heel Raises for Blood Sugar Control",
+    practice:
+      "While sitting flat in a chair, keep your toes on the floor and repeatedly lift and lower your heels at a steady pace for 5 to 10 minutes after eating.",
+    scienceBasis:
+      "Activates the deep calf muscle (the soleus muscle), which acts like a second heart to pump blood back up your legs and pulls sugar directly out of your bloodstream without making you tired.",
+    bodyPartId: "ankles",
+  },
+  {
+    id: "left-side-digestion",
+    title: "Left-Side Lying to Stop Acid Reflux",
+    practice:
+      "If you feel heartburn after a meal or at bedtime, lie down on your left side rather than your right side or flat on your back.",
+    scienceBasis:
+      "Because of how your stomach curves, lying on your left side keeps the connection between your food pipe (esophagus) and stomach above the pool of stomach acid, gravity-locking acid down.",
+    bodyPartId: "stomach",
+  },
+  {
+    id: "morning-sunlight-anchor",
+    title: "10-Minute Morning Sunlight Clock Reset",
+    practice:
+      "Step outside into natural daylight (without sunglasses if safe) within 30 to 60 minutes of waking up for 10 minutes.",
+    scienceBasis:
+      "Light receptors in the back of your eyes signal your brain's master clock (suprachiasmatic nucleus) to boost daytime alertness and start a 14-hour timer for nighttime sleep hormone (melatonin) release.",
+    bodyPartId: "brain",
+  },
+  {
+    "id": "humming-nitric-boost",
+    "title": "6-Second Sinus Humming for Nasal Congestion",
+    "practice": "Keep your lips closed, inhale gently through your nose, and hum a low, steady 'mmmm' sound as you breathe out slowly for 6 seconds. Repeat 10 times.",
+    "scienceBasis": "Sound vibrations shake the air inside your sinus cavities, mixing out 15 times more natural nitric oxide gas to shrink swollen nasal linings and fight bacteria.",
+    "bodyPartId": "sinuses"
+  },
 ];
 
 export const BODY_MARVELS: BodyMarvel[] = [
@@ -3796,6 +3848,61 @@ export const SENSORY_FACTS: SensoryFact[] = [
       "The sound of gas and fluid moving through the intestines as the peristaltic muscles contract, even when the stomach is empty (housekeeping wave).",
     tip: "Drink a warm glass of water; it helps soothe the digestive waves.",
     bodyPartId: "stomach",
+  },
+  {
+    id: "sphenopalatine-ganglioneuralgia",
+    sensation: "Brain Freeze (Ice Cream Headache)",
+    cause:
+      "When something freezing touches the roof of your mouth, the blood vessels there suddenly shrink and then snap wide open. Your main facial nerve (trigeminal nerve) panics and mistakenly tells your brain the pain is coming from your forehead.",
+    tip: "Press your warm tongue firmly against the roof of your mouth for 10 seconds to warm the blood vessels back up.",
+    bodyPartId: "brain",
+  },
+  {
+    id: "paresthesia",
+    sensation: "Pins and Needles (Limb 'Falling Asleep')",
+    cause:
+      "Sitting or leaning on a limb squeezes the tiny blood vessels feeding your nerves, temporarily pausing their messages. When you move and blood rushes back in, the nerves fire chaotic 'reboot' sparks all at once.",
+    tip: "Gently flex and circle your ankle or wrist to pump fresh blood back to the nerves without jarring them.",
+    bodyPartId: "hands",
+  },
+  {
+    id: "hypnic-jerk",
+    sensation: "Sudden Falling Jolt Right Before Sleep (Hypnic Jerk)",
+    cause:
+      "As your breathing slows and your muscles go limp quickly when falling asleep, your ancient survival brain sometimes misreads that sudden relaxation as falling out of a tree and fires a wakeup jolt.",
+    tip: "Cut out afternoon caffeine and do 2 minutes of slow stretching before getting under the covers.",
+    bodyPartId: "muscles",
+  },
+  {
+    id: "piloerection",
+    sensation: "Goosebumps From Cold or Music (Piloerection)",
+    cause:
+      "Tiny muscles attached to the base of each hair follicle contract when triggered by cold air or a rush of emotion, pulling the hair upright—a leftover reflex from when our furry ancestors puffed up their coat to trap heat.",
+    tip: "If triggered by chills without cold air, sip warm water and check if you are fighting off a mild fever.",
+    bodyPartId: "skin",
+  },
+  {
+    id: "phosphenes",
+    sensation: "Seeing Stars When You Rub Your Eyes (Phosphenes)",
+    cause:
+      "The light-detecting cells at the back of your eye (the retina) only know how to speak one language to your brain: light. Gentle physical pressure tricks them into sending flash signals even in total darkness.",
+    tip: "Avoid rubbing your eyes hard, which can scratch your cornea; use lubricating eye drops if your eyes feel itchy.",
+    bodyPartId: "eyes",
+  },
+  {
+    id: "transient-ear-noise",
+    sensation: "Brief Sudden Ringing in One Ear",
+    cause:
+      "Tiny sound-detecting hair cells inside your inner ear (cochlea) occasionally recalibrate their electrical gain, producing a harmless 15-to-30-second high-pitched tone that fades on its own.",
+    tip: "Take a slow deep breath and relax your jaw; if ringing lasts for days or comes with dizziness, have a doctor check your ears.",
+    bodyPartId: "ears",
+  },
+  {
+    "id": "palmar-erythema-blush",
+    "sensation": "Warm, Tingly Hands After Coming Inside From the Cold",
+    "cause": "When your hands get freezing cold, your body narrows the tiny blood vessels in your fingers to keep your heart and organs warm. Once you step inside, those vessels open wide all at once (rebound vasodilation), rushing warm blood back into cold nerves.",
+    "tip": "Warm cold hands under lukewarm water—never hot water—so blood vessels open gradually without throbbing.",
+    "bodyPartId": "hands"
   },
 ];
 
@@ -4192,6 +4299,60 @@ export const EMERGENCY_SCENARIOS: EmergencyScenario[] = [
       "Wait for paramedics even if the person feels fine, as electrical shocks can cause delayed heart arrhythmias.",
     ],
   },
+  {
+    id: "severe-nosebleed",
+    name: "Uncontrolled Nosebleed (Epistaxis)",
+    warningSigns: [
+      "Heavy bleeding from one or both nostrils that does not slow after 15-20 minutes of firm pinching",
+      "Blood pouring down the back of the throat causing coughing or vomiting blood",
+      "Bleeding after a strong blow to the head or face",
+      "Dizziness, pale skin, or rapid heart rate (especially if taking blood thinners)",
+    ],
+    steps: [
+      "Sit upright and lean slightly FORWARD at the waist so blood drains out the nose instead of down your throat.",
+      "Use your thumb and index finger to firmly pinch the soft, fleshy lower part of your nose (just below the bony bridge) shut against your face.",
+      "Breathe calmly through your mouth and hold that pinch continuously for a full 10 to 15 minutes without peeking.",
+      "Place an ice pack or cold cloth across the bridge of the nose and cheeks to help narrow the blood vessels.",
+      "If bleeding continues past 20 minutes or is very heavy, seek urgent medical care or call emergency services.",
+    ],
+    beforeAmbulance: [
+      "Do NOT tilt the head backward—swallowing blood irritates the stomach and can cause vomiting or choking.",
+      "Do NOT stuff tissues or cotton deep inside the nostrils, as pulling them out later rips the healing clot off.",
+      "Keep a list of any blood-thinning medications (like aspirin, warfarin, or apixaban) ready for the medical team.",
+    ],
+    ifAlone: [
+      "Sit upright leaning over a sink or bowl and pinch the soft lower nostrils firmly without letting go.",
+      "Set a 15-minute timer on your phone so you don't let go early to check.",
+      "If you feel dizzy, weak, or the bleeding won't stop after 20 minutes, call emergency services on speakerphone.",
+    ],
+  },
+  {
+    id: "chemical-eye-splash",
+    name: "Chemical Splash in the Eye",
+    warningSigns: [
+      "Intense burning, stinging, or sharp pain in the eye after contact with cleaner, bleach, acid, or lime/cement",
+      "Uncontrollable tearing and inability to keep the eyelids open",
+      "Redness, swelling, or cloudiness on the clear front surface of the eye",
+      "Blurred or rapidly dimming vision",
+    ],
+    steps: [
+      "Start flushing the eye with clean, lukewarm running water IMMEDIATELY—every second counts to prevent permanent blindness.",
+      "Hold the eyelids wide open with your fingers and roll the eyeball in all directions while water runs gently from the inner corner (near the nose) outward.",
+      "Remove contact lenses as soon as water starts flushing, if they haven't washed out already.",
+      "Continue non-stop water flushing for at least 15 to 20 minutes (or 30 minutes for strong drain/oven cleaners).",
+      "Call emergency services or Poison Control while flushing, and go straight to the emergency room afterward.",
+    ],
+    beforeAmbulance: [
+      "Do NOT rub the eye or try to 'neutralize' a chemical with another substance (like vinegar or baking soda)—only use clean water or saline.",
+      "Do NOT bandage the eye tightly.",
+      "Take a photo of the chemical container or bring the label with you so doctors know the exact pH of the chemical.",
+    ],
+    ifAlone: [
+      "Step straight into the shower with your clothes on or put your face directly under a gentle sink faucet immediately.",
+      "Use one hand to hold your eyelids open under the water and your other hand to dial emergency services on speakerphone.",
+      "Keep flushing for a full 15-20 minutes until paramedics arrive.",
+    ],
+  },
 ];
 
 export const QA_ENTRIES: QAEntry[] = [
@@ -4203,6 +4364,59 @@ export const QA_ENTRIES: QAEntry[] = [
     expertName: "Dr. Sarah Patel",
     expertTitle: "Sleep Specialist & Neuroscientist",
     bodyPartId: "brain",
+  },
+  {
+    id: "resting-heart-rate-expert",
+    question: "What does my resting heart rate actually tell me about my heart health?",
+    answer:
+      "A normal adult resting heart rate sits between 60 and 100 beats per minute, though fit people often see 50 to 60 because each squeeze pumps more blood. If your resting rate suddenly jumps by 7 to 10 beats per minute for several days in a row, it is often an early clue of dehydration, poor sleep, high stress, or a brewing viral infection.",
+    expertName: "Dr. Marcus Vance",
+    expertTitle: "Preventive Cardiologist",
+    bodyPartId: "heart",
+  },
+  {
+    id: "gut-antibiotic-recovery-expert",
+    question: "How do I rebuild my gut bacteria after taking a course of antibiotics?",
+    answer:
+      "Antibiotics act like a forest fire—they clear out bad bacteria, but they also wipe out helpful ones. Skip random high-dose probiotic pills unless prescribed; instead, eat 2 to 3 servings daily of live fermented foods (like plain yogurt, kefir, or sauerkraut) alongside prebiotic soluble fibers (oats, bananas, lentils, and cooked-and-cooled potatoes) which feed your native good bacteria so they regrow.",
+    expertName: "Dr. Elena Rostova",
+    expertTitle: "Clinical Gastroenterologist",
+    bodyPartId: "large-intestine",
+  },
+  {
+    id: "joint-clicking-pain-expert",
+    question: "Why do my knees click or pop when I squat, and is it damaging my joints?",
+    answer:
+      "Painless popping or crackling (called crepitus) is usually just tiny gas bubbles popping in the joint fluid or tendons sliding smoothly over bone bumps—it does NOT mean your cartilage is wearing out. You only need a doctor's check if the clicking comes with sharp pain, swelling, warmth, or the knee feeling like it catches or locks up.",
+    expertName: "Dr. David Chen",
+    expertTitle: "Orthopedic Sports Physician",
+    bodyPartId: "knees",
+  },
+  {
+    id: "blue-light-eye-strain-expert",
+    question: "Do blue-light glasses actually protect my eyes from computer screens?",
+    answer:
+      "Major eye studies (including Cochrane reviews) show that blue light from screens does not damage your retina and blue-light glasses rarely stop digital eye strain. The real reason your eyes ache at a computer is that you blink 60% less often and lock your focusing muscle at one distance. Follow the 20-20-20 rule and keep screens an arm's length away for real relief, while dimming screens at night to protect sleep.",
+    expertName: "Dr. Priya Nair",
+    expertTitle: "Board-Certified Ophthalmologist",
+    bodyPartId: "eyes",
+  },
+  {
+    id: "hydration-urine-color-expert",
+    question: "Do I really need to force down 8 glasses of water if I'm not thirsty?",
+    answer:
+      "Your kidneys and brain have a finely tuned thirst sensor, and about 20% of your daily water comes from food like fruits, vegetables, and soups. Instead of forcing a strict glass count, check the toilet bowl: pale straw-yellow pee means you are well hydrated, dark apple-juice yellow means drink up, and crystal-clear pee all day means you may be drinking more than you need.",
+    expertName: "Dr. Samuel Okafor",
+    expertTitle: "Clinical Nephrologist (Kidney Specialist)",
+    bodyPartId: "kidneys",
+  },
+  {
+    "id": "mouth-taping-sleep-expert",
+    "question": "Is the social media trend of taping your mouth shut at night safe for better sleep?",
+    "answer": "Breathing through your nose warms, filters, and moistens air, which is healthier than mouth breathing. However, taping your mouth shut can be dangerous if you have undiagnosed sleep apnea, a deviated septum, or nasal allergies. Instead of tape, clear your nose before bed with a saline spray or nasal strips, and ask a sleep doctor to check your airway if you wake up with a bone-dry mouth.",
+    "expertName": "Dr. Alan Sterling",
+    "expertTitle": "Ear, Nose & Throat (ENT) Surgeon",
+    "bodyPartId": "sinuses"
   },
 ];
 

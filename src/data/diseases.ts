@@ -921,4 +921,167 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
       "Eye drops with redness relievers cure dry eyes (they constrict blood vessels and cause rebound redness)",
     ],
   },
+  {
+    id: "d-50",
+    name: "Positional Vertigo (BPPV / Loose Ear Crystals)",
+    bodyPartId: "ears",
+    overview:
+      "A common inner-ear balance condition where tiny calcium crystals break loose and float into the fluid-filled balance canals of your ear, tricking your brain into feeling like the whole room is spinning when you tilt your head or roll over in bed.",
+    symptoms: [
+      {
+        text: "Sudden, intense sensation that the room is spinning for 10 to 60 seconds when rolling over in bed or looking up",
+        frequency: "always",
+      },
+      {
+        text: "Mild nausea, unsteadiness, or feeling off-balance right after a spinning episode",
+        frequency: "often",
+      },
+      {
+        text: "Involuntary rhythmic jerking of the eyes during the dizzy spell",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: A doctor or physical therapist can perform a simple 5-minute head-turning exercise (the Epley maneuver) to guide the loose ear crystals back into place. 🚨 EMERGENCY WARNING: Call 911/112 immediately if dizziness is accompanied by double vision, slurred speech, a severe headache, or numbness in your face or limbs (signs of a stroke).",
+    misconceptions: [
+      "Vertigo is just a fear of heights (clinical vertigo is a physical inner-ear balance illusion, whereas fear of heights is acrophobia)",
+      "You must stay completely still in bed for weeks to heal vertigo (targeted head-repositioning maneuvers resolve BPPV much faster)",
+    ],
+  },
+  {
+    id: "d-51",
+    name: "TMJ Disorder (Jaw Joint & Muscle Strain)",
+    bodyPartId: "jaw",
+    overview:
+      "Pain and stiffness in the hinge joint that connects your lower jawbone to your skull, often triggered by nighttime teeth grinding, subconscious stress clenching, or joint disc misalignment.",
+    symptoms: [
+      {
+        text: "Aching pain in the jaw muscles, around the ear, or across the temples when chewing",
+        frequency: "always",
+      },
+      {
+        text: "Clicking, popping, or grating sounds when opening or closing your mouth wide",
+        frequency: "often",
+      },
+      {
+        text: "Temporary stiffness or difficulty opening the mouth all the way upon waking",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR OR DENTIST: If you have persistent pain when chewing, or if your jaw locks open or shut.",
+    misconceptions: [
+      "Every clicking jaw requires surgery (most TMJ flare-ups heal with soft foods, warm compresses, jaw relaxation, and a custom nightguard)",
+      "Chewing tough gum strengthens a sore jaw joint (gum chewing overworks inflamed masseter muscles and worsens TMJ pain)",
+    ],
+  },
+  {
+    id: "d-52",
+    name: "Restless Legs Syndrome (Nighttime Leg Urge)",
+    bodyPartId: "muscles",
+    overview:
+      "A neurological sensory condition causing an irresistible urge to move your legs, usually appearing in the evening or while lying still in bed, often linked to low brain iron stores or dopamine signaling shifts.",
+    symptoms: [
+      {
+        text: "An overwhelming urge to move or kick the legs when sitting or lying down at night",
+        frequency: "always",
+      },
+      {
+        text: "Creeping, crawling, pulling, or fizzing sensations deep inside the calves or thighs",
+        frequency: "often",
+      },
+      {
+        text: "Temporary relief as soon as you stand up, pace around, or stretch the legs",
+        frequency: "always",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If leg discomfort repeatedly ruins your sleep. Ask your doctor to check your blood ferritin (iron storage) levels, as correcting mild iron deficiency often improves symptoms.",
+    misconceptions: [
+      "Restless legs are just normal muscle cramps or nervousness (it is a distinct neurological condition tied to iron and dopamine pathways)",
+      "Taking over-the-counter antihistamine sleep aids helps restless legs (diphenhydramine actually blocks dopamine receptors and makes restless legs significantly worse)",
+    ],
+  },
+  {
+    id: "d-53",
+    name: "Rotator Cuff Tendinitis (Shoulder Impingement)",
+    bodyPartId: "shoulders",
+    overview:
+      "Irritation, swelling, and micro-fraying of the four stabilizing tendons that wrap around your shoulder ball-and-socket joint, frequently caused by repetitive overhead reaching or rounded-shoulder desk posture.",
+    symptoms: [
+      {
+        text: "Dull ache deep in the outer shoulder that worsens when reaching overhead or behind your back",
+        frequency: "always",
+      },
+      {
+        text: "Shoulder pain that wakes you up when you roll onto that side at night",
+        frequency: "often",
+      },
+      {
+        text: "Weakness when lifting objects away from your body",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If shoulder pain lasts more than two weeks, or immediately if you suffer a fall and suddenly cannot lift your arm sideways at all.",
+    misconceptions: [
+      "Keeping your arm in a sling for weeks heals rotator cuff tendinitis (prolonged immobilization causes a 'frozen shoulder'; gentle physical therapy exercises are essential)",
+      "Pushing through sharp overhead pain builds shoulder strength (it pinches the swollen tendon further under the shoulder blade bone)",
+    ],
+  },
+  {
+    id: "d-54",
+    name: "Vitamin B12 Deficiency & Nerve Tingling",
+    bodyPartId: "hands",
+    overview:
+      "A nutritional and neurological condition where low levels of Vitamin B12 prevent your body from making healthy red blood cells and maintaining the protective myelin insulation around your nerves.",
+    symptoms: [
+      {
+        text: "Symmetric 'pins and needles' tingling or numbness in the fingertips and toes",
+        frequency: "often",
+      },
+      {
+        text: "Persistent physical fatigue, brain fog, and pale skin",
+        frequency: "always",
+      },
+      {
+        text: "A smooth, sore, or beefy-red tongue and mild balance unsteadiness",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "⚠️ SEE A DOCTOR: If you follow a strict vegetarian/vegan diet, take long-term Metformin or acid-blocker pills, and notice hand/foot tingling or chronic exhaustion. Simple blood tests and B12 supplements prevent permanent nerve damage.",
+    misconceptions: [
+      "Plant vegetables and unfortified spirulina algae provide active Vitamin B12 (unfortified plants contain pseudo-B12 that humans cannot use; fortified foods or B12 supplements are required on plant-based diets)",
+      "Tingling hands are always caused by a pinched neck nerve (systemic B12 deficiency is a very common, reversible cause of nerve tingling)",
+    ],
+  },
+  {
+    id: "d-55",
+    name: "Diverticulosis & Diverticulitis (Colon Pockets)",
+    bodyPartId: "large-intestine",
+    overview:
+      "Small, pea-sized pouches (diverticula) that bulge outward through weak spots in the muscular wall of the lower large intestine due to years of high pressure from low-fiber diets; when a pouch gets infected or inflamed, it becomes diverticulitis.",
+    symptoms: [
+      {
+        text: "Steady, tender aching pain in the lower-left side of the abdomen during a flare-up",
+        frequency: "always",
+      },
+      {
+        text: "Fever, nausea, and a sudden change in bowel habits (constipation or loose stools)",
+        frequency: "often",
+      },
+      {
+        text: "Bloating and mild abdominal cramping relieved by passing gas",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "🚨 EMERGENCY WARNING: Seek prompt medical care if you develop persistent lower-left belly pain accompanied by a fever, chills, or blood in your stool.",
+    misconceptions: [
+      "People with colon pouches must never eat nuts, seeds, or popcorn (large modern clinical studies prove nuts, seeds, and corn do NOT get trapped in pouches and actually protect the colon via fiber)",
+      "Every case of diverticulitis requires immediate strong antibiotics or surgery (mild uncomplicated cases are often managed safely with bowel rest and medical supervision)",
+    ],
+  },
 ];
+

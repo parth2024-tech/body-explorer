@@ -1206,4 +1206,17 @@ export const MYTHS: MythBusted[] = [
     evidenceStatement:
       "✅ EVIDENCE: Mennella et al. clinical lactation studies demonstrate maternal alcohol ingestion reduces infant milk intake by 20% and disrupts neonatal sleep-wake cycles.",
   },
+  {
+    id: "m-detox-foot-pads",
+    bodyPartId: "feet",
+    myth: "Detox foot pads pull heavy metals and toxins out through the soles of your feet overnight.",
+    reality:
+      "The pads turn dark brown because of wood vinegar reacting to normal foot sweat—not toxins leaving your body. Your liver and kidneys clean your blood internally and dump waste into your pee and poop, while sweat glands on your feet only release water and a tiny pinch of salt.",
+    sources: ["Federal Trade Commission (FTC)", "Mayo Clinic"],
+    actionableTip:
+      "Save your money on detox foot pads. Support your body's real detox organs (your liver and kidneys) by drinking plenty of plain water and eating fiber-rich foods.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: FTC consumer protection rulings and Mayo Clinic evaluations confirm foot pad discoloration is a chemical reaction between pyroligneous acid (wood vinegar) and sweat moisture.",
+  },
 ];

@@ -1,8 +1,8 @@
-name: Daily Facts Generator
+name: Daily Full-Website Content Scheduler
 
 on:
   schedule:
-    # Run every day at 00:00 UTC
+    # Run once every day at 00:00 UTC
     - cron: "0 0 * * *"
   # Allow manual trigger for testing
   workflow_dispatch:
@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 jobs:
-  generate-facts:
+  generate-daily-site-content:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,16 +27,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate daily facts
+      - name: Generate daily clinical content across all website sections
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: npx tsx scripts/generate-daily-facts.ts
 
-      - name: Commit and push changes
+      - name: Validate data integrity and tests
+        run: npm test
+
+      - name: Commit and push daily website update
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add src/data/generated-facts.json
-          # Only commit if there are changes
-          git diff --quiet && git diff --staged --quiet || git commit -m "chore: auto-generate 20 daily facts [skip ci for this commit]"
-          git push
+          git add src/data/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(content): daily automated full-website clinical content update [skip ci]" && git push)
