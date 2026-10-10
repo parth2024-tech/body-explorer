@@ -266,5 +266,26 @@
     "category": "what_damages_it",
     "rarity": "surprising",
     "text": "Tilting your head forward 45 degrees to look down at your phone makes your 11-pound head pull on your upper neck bones with the force of a 49-pound bag of cement."
+  },
+  {
+    "id": "gen-daily-cornea-oxygen",
+    "bodyPartId": "eyes",
+    "category": "weird_wild",
+    "rarity": "mind_blowing",
+    "text": "The clear front window of your eye (the cornea) has zero blood vessels so it stays crystal-clear—it breathes oxygen directly out of the open air."
+  },
+  {
+    "id": "gen-daily-kidney-filtration",
+    "bodyPartId": "kidneys",
+    "category": "record_breaker",
+    "rarity": "surprising",
+    "text": "Your two fist-sized kidneys filter your entire 5-liter blood supply up to 40 times every single day—cleaning about 180 liters of fluid every 24 hours."
+  },
+  {
+    "id": "gen-daily-grip-longevity",
+    "bodyPartId": "hands",
+    "category": "health_tip",
+    "rarity": "almost_unknown",
+    "text": "Large global studies (The Lancet PURE study) found that hand grip strength is a stronger predictor of heart health and healthy aging than blood pressure alone."
   }
 ]

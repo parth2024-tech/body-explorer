@@ -1219,4 +1219,17 @@ export const MYTHS: MythBusted[] = [
     evidenceStatement:
       "✅ EVIDENCE: FTC consumer protection rulings and Mayo Clinic evaluations confirm foot pad discoloration is a chemical reaction between pyroligneous acid (wood vinegar) and sweat moisture.",
   },
+  {
+    id: "m-shaving-thickens-hair",
+    bodyPartId: "skin",
+    myth: "Shaving body or facial hair makes it grow back thicker, darker, and faster.",
+    reality:
+      "A razor blade only slices dead hair above the skin's surface; it never touches the living hair root (follicle) deep under the skin that controls thickness, color, and growth speed. Regrowing hair only feels stubbly because the razor cut the hair shaft with a flat, blunt tip instead of its natural tapered point.",
+    sources: ["Mayo Clinic Dermatology", "American Academy of Dermatology (AAD)"],
+    actionableTip:
+      "Shave after a warm shower using a moisturizing cream and a sharp blade moving in the direction of hair growth to prevent ingrown hairs.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Clinical dermatological trials since 1928 (Trotter) and Mayo Clinic guidance confirm shaving has zero effect on follicular shaft diameter, melanin density, or growth rate.",
+  },
 ];

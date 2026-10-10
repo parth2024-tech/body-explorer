@@ -1,0 +1,25 @@
+{
+  "lastUploadDate": "2026-10-10",
+  "frequency": "once_daily",
+  "totalUploads": 1,
+  "history": [
+    {
+      "date": "2026-10-10",
+      "summary": {
+        "facts": 3,
+        "foodLabels": 1,
+        "greyMarket": 1,
+        "insights": 1,
+        "myths": 1,
+        "diseases": 0,
+        "remedies": 1,
+        "hacks": 1,
+        "bodyMarvels": 1,
+        "sensoryFacts": 1,
+        "qaEntries": 1,
+        "foodSynergies": 1,
+        "drugWarnings": 1
+      }
+    }
+  ]
+}

@@ -76,9 +76,7 @@
     "product": "Traditional Cold-Pressed Mustard Oil (Kachi Ghani)",
     "molecule": "Erucic Acid (C22:1 Fatty Acid)",
     "subtitle": "Traditional cooking oil subject to international dietary intake thresholds.",
-    "brands": [
-      "Traditional Kachi Ghani Mustard Oils"
-    ],
+    "brands": ["Traditional Kachi Ghani Mustard Oils"],
     "risk": "HIGH",
     "organ": "Myocardial Tissue (Cardiac Lipid Metabolism)",
     "summary": "Mustard seed oil naturally contains 30% to 50% erucic acid. The US FDA prohibits mustard oil containing erucic acid from being marketed for human culinary consumption (21 CFR 172.859), requiring imported containers to bear 'For External Use Only' labels. The European Union limits erucic acid to 20 g/kg (2%) in vegetable oils under Regulation (EU) 2019/1602.",
@@ -109,10 +107,7 @@
     "product": "Unregulated Street Food Water & Condiments",
     "molecule": "Waterborne Enteropathogens (Vibrio cholerae, Salmonella spp.)",
     "subtitle": "Microbial hazards linked to unpotable municipal or vendor water sources.",
-    "brands": [
-      "Uncertified street-vended snacks",
-      "Informal water vendors"
-    ],
+    "brands": ["Uncertified street-vended snacks", "Informal water vendors"],
     "risk": "HIGH",
     "organ": "Gastrointestinal Mucosa & Enterocytes",
     "summary": "Municipal public health authorities periodically issue temporary suspensions on street-vended snacks during seasonal monsoon cholera outbreaks due to non-potable water supplies (e.g., Kathmandu Metropolitan City order, 2022).",
@@ -141,10 +136,7 @@
     "product": "Bakery Dough Conditioners (Potassium Bromate Residues)",
     "molecule": "Potassium Bromate (E924 / KBrO3)",
     "subtitle": "Flour oxidizing agent subject to statutory food additive bans.",
-    "brands": [
-      "Non-compliant artisanal bakery flours",
-      "Unbranded industrial doughs"
-    ],
+    "brands": ["Non-compliant artisanal bakery flours", "Unbranded industrial doughs"],
     "risk": "CRITICAL",
     "organ": "Renal Parenchyma & Thyroid Gland",
     "summary": "Potassium bromate was traditionally utilized as a flour maturing agent to strengthen gluten elasticity. The European Union prohibited it under Directive 90/496/EEC, followed by the UK, Canada, and China. FSSAI formally prohibited potassium bromate in all food products in India in June 2016.",
@@ -176,10 +168,7 @@
     "product": "Mini Cup Jelly Confectionery (Konjac Gel Geometry)",
     "molecule": "Konjac Glucomannan (E425)",
     "subtitle": "Confectionery format presenting mechanical pediatric choking risks.",
-    "brands": [
-      "Imported unlabelled mini-cup jellies",
-      "Konnyaku mouth-cup sweets"
-    ],
+    "brands": ["Imported unlabelled mini-cup jellies", "Konnyaku mouth-cup sweets"],
     "risk": "CRITICAL",
     "organ": "Upper Airway (Tracheobronchial Tree)",
     "summary": "The US FDA issued Import Alerts 33-15 and 33-16 establishing automatic detention on mini-cup jelly confections containing konjac. The European Commission prohibited placing mini-cup jellies containing konjac on the market under Decision 2002/271/EC following documented pediatric asphyxiation fatalities.",
@@ -192,11 +181,7 @@
     },
     "status_india": "Available in informal retail channels without specific geometry-based packaging warnings.",
     "how_to_spot": "Rigid plastic mini cups (typically 2-3 cm diameter) with peel-off foil lids containing firm konjac jelly intended to be squeezed directly into the mouth.",
-    "alternatives": [
-      "Pectin-based confections",
-      "Agar-agar fruit jellies",
-      "Fresh sliced fruits"
-    ],
+    "alternatives": ["Pectin-based confections", "Agar-agar fruit jellies", "Fresh sliced fruits"],
     "ref": "US FDA Import Alert 33-15 / European Commission Decision 2002/271/EC",
     "regulatorAgency": "US FDA & European Commission",
     "noticeDate": "2002 / Ongoing Enforcement",
@@ -211,10 +196,7 @@
     "product": "Liquid Nitrogen Point-of-Sale Food Products",
     "molecule": "Cryogenic Liquid Nitrogen (LN2)",
     "subtitle": "Cryogenic agent posing gastrointestinal perforation and frostbite hazards.",
-    "brands": [
-      "Fairground 'Dragon's Breath' puffs",
-      "Cryogenic novelty desserts"
-    ],
+    "brands": ["Fairground 'Dragon's Breath' puffs", "Cryogenic novelty desserts"],
     "risk": "CRITICAL",
     "organ": "Oropharynx, Esophagus & Gastric Wall",
     "summary": "The US FDA issued an official Safety Alert in August 2018 warning consumers against eating or handling foods prepared with liquid nitrogen at the point of sale. Indian state food safety authorities (e.g. Tamil Nadu and Karnataka in 2024) prohibited serving liquid nitrogen directly in ready-to-eat foods under FSSAI Section 34.",
@@ -225,10 +207,7 @@
     },
     "status_india": "Prohibited in ready-to-eat foods by multiple state food safety commissioners under FSSAI emergency powers (2024).",
     "how_to_spot": "Foods or cocktails emitting dense, billowing white vapor immediately upon table service.",
-    "alternatives": [
-      "Standard flash-frozen desserts",
-      "Conventionally chilled ice cream"
-    ],
+    "alternatives": ["Standard flash-frozen desserts", "Conventionally chilled ice cream"],
     "ref": "US FDA Safety Alert (Aug 2018) / Tamil Nadu Food Safety Commissioner Order (Apr 2024)",
     "regulatorAgency": "US FDA & State Food Safety Commissioners (India)",
     "noticeDate": "August 2018 / April 2024",
@@ -243,10 +222,7 @@
     "product": "Confectionery Silver Leaf (Chandi ka Warq)",
     "molecule": "Elemental Impurities (Aluminium, Lead, Cadmium Substitutes)",
     "subtitle": "Decorative metallic leaf subject to FSSAI 99.9% silver purity standards.",
-    "brands": [
-      "Uncertified artisanal sweet shop foil",
-      "Loose decorative metallic leaf"
-    ],
+    "brands": ["Uncertified artisanal sweet shop foil", "Loose decorative metallic leaf"],
     "risk": "HIGH",
     "organ": "Renal Cortex & Hepatic Parenchyma",
     "summary": "The European Union authorizes silver (E174) with strict purity specifications, while the US FDA regulates silver under 21 CFR 73.2500 with defined limitations. In India, FSSAI established mandatory standards requiring a minimum 99.9% silver purity and prohibiting animal-origin processing methods in 2016.",
@@ -275,10 +251,7 @@
     "product": "Grass Pea Legumes (Lathyrus sativus / Khesari Dal)",
     "molecule": "Beta-ODAP (Beta-N-oxalyl-L-alpha,beta-diaminopropionic acid)",
     "subtitle": "Drought-hardy pulse containing neurotoxic amino acid derivative.",
-    "brands": [
-      "Traditional high-ODAP Khesari dal varieties",
-      "Unverified split pulse mixtures"
-    ],
+    "brands": ["Traditional high-ODAP Khesari dal varieties", "Unverified split pulse mixtures"],
     "risk": "HIGH",
     "organ": "Corticospinal Tract & Upper Motor Neurons",
     "summary": "Monotonous dietary reliance on Lathyrus sativus (>30% of caloric intake for over 2 months) causes neurolathyrism. India instituted a statutory ban under the Prevention of Food Adulteration Act in 1961. In 2016, FSSAI authorized agricultural cultivars scientifically bred for low ODAP content (<0.1%).",
@@ -308,10 +281,7 @@
     "product": "Synthetic Azo Food Colorants (Southampton Six)",
     "molecule": "Tartrazine (E102), Sunset Yellow (E110), Carmoisine (E122)",
     "subtitle": "Synthetic colorants subject to European behavioral warning regulations.",
-    "brands": [
-      "High-intensity neon confections",
-      "Unstandardized colored syrups"
-    ],
+    "brands": ["High-intensity neon confections", "Unstandardized colored syrups"],
     "risk": "UNDER-REVIEW",
     "organ": "Central Nervous System (Pediatric Behavioral Modulation)",
     "summary": "Under European Parliament Regulation (EC) 1333/2008, foodstuffs containing six synthetic azo colorants must bear the statutory warning: 'May have an adverse effect on activity and attention in children.' In India, FSSAI permits these colorants up to a statutory maximum limit of 100 mg/kg without behavioral warning statements.",
@@ -342,9 +312,7 @@
     "product": "Culinary Poppy Seeds (Papaver somniferum)",
     "molecule": "Morphine & Codeine Surface Trace Alkaloids",
     "subtitle": "Culinary seeds subject to international border narcotics controls.",
-    "brands": [
-      "White and blue culinary poppy seeds (Khus Khus)"
-    ],
+    "brands": ["White and blue culinary poppy seeds (Khus Khus)"],
     "risk": "UNDER-REVIEW",
     "organ": "Central Nervous System (Forensic Drug Screen Cross-Reactivity)",
     "summary": "While poppy seeds do not produce significant opioids internally, harvest processing can transfer plant latex containing morphine and codeine to seed surfaces. Jurisdictions including Singapore (CNB), UAE, and Saudi Arabia classify poppy seeds as controlled substances. The European Union established maximum morphine equivalent levels in 2022 (Regulation EU 2021/2143).",
@@ -357,11 +325,7 @@
     },
     "status_india": "Permitted culinary ingredient regulated domestically by Central Bureau of Narcotics (CBN) production quotas.",
     "how_to_spot": "Exercise travel awareness: do not transport culinary poppy seeds across international borders to the Middle East or Singapore.",
-    "alternatives": [
-      "Melon seed paste (Magaz)",
-      "Cashew paste",
-      "White sesame seeds"
-    ],
+    "alternatives": ["Melon seed paste (Magaz)", "Cashew paste", "White sesame seeds"],
     "ref": "European Commission Regulation (EU) 2021/2143 / Singapore Central Narcotics Bureau Advisory",
     "regulatorAgency": "European Commission & Singapore CNB",
     "noticeDate": "2021 / 2022 Enforcement",
@@ -376,11 +340,7 @@
     "product": "Nimesulide Analgesics & Antipyretics",
     "molecule": "Nimesulide (Selective COX-2 Inhibitor)",
     "subtitle": "Non-steroidal anti-inflammatory associated with idiosyncratic hepatotoxicity.",
-    "brands": [
-      "Nise",
-      "Sumo",
-      "Nimulid"
-    ],
+    "brands": ["Nise", "Sumo", "Nimulid"],
     "risk": "CRITICAL",
     "organ": "Hepatic Parenchyma (Hepatocytes)",
     "summary": "Nimesulide was never approved by the US FDA due to liver toxicity concerns. The European Medicines Agency (EMA) concluded safety assessments in 2012 restricting oral therapy to acute pain for a maximum duration of 15 days. India's CDSCO prohibited nimesulide formulations in pediatric patients under 12 years of age in February 2011 (Gazette Notification GSR 82(E)).",
@@ -410,11 +370,7 @@
     "product": "Metamizole Analgesics (Analgin)",
     "molecule": "Metamizole Sodium (Dipyrone)",
     "subtitle": "Antipyretic and analgesic associated with drug-induced agranulocytosis.",
-    "brands": [
-      "Novalgin",
-      "Baralgan-M",
-      "Analgin"
-    ],
+    "brands": ["Novalgin", "Baralgan-M", "Analgin"],
     "risk": "CRITICAL",
     "organ": "Bone Marrow (Granulopoiesis)",
     "summary": "The US FDA withdrew metamizole marketing authorization in 1977 due to the risk of agranulocytosis. It was similarly withdrawn in the UK, Australia, and Sweden. In India, CDSCO suspended Analgin in June 2013 (GSR 378(E)), but revoked the suspension in February 2014, placing it under Schedule H1 with mandatory box warnings.",
@@ -479,10 +435,7 @@
     "product": "Flupentixol + Melitracen Combination",
     "molecule": "Flupentixol + Melitracen",
     "subtitle": "Fixed-dose psychotropic combination subject to disputed regulatory approvals.",
-    "brands": [
-      "Deanxit",
-      "Placida"
-    ],
+    "brands": ["Deanxit", "Placida"],
     "risk": "HIGH",
     "organ": "Central Nervous System (Extrapyramidal Motor Pathways)",
     "summary": "This fixed-dose combination was never authorized by the US FDA or UK MHRA, and was discontinued in Denmark. CDSCO issued a suspension in India in July 2013 (GSR 475(E)), which was subsequently stayed and reassessed following manufacturer litigation and Parliamentary Standing Committee inquiries.",
@@ -512,10 +465,7 @@
     "product": "Cisapride Prokinetic Agents",
     "molecule": "Cisapride Monohydrate",
     "subtitle": "Prokinetic agent withdrawn for QT-interval prolongation and cardiac arrest.",
-    "brands": [
-      "Ciza",
-      "Syspride (Historical Preparations)"
-    ],
+    "brands": ["Ciza", "Syspride (Historical Preparations)"],
     "risk": "CRITICAL",
     "organ": "Cardiac Electrophysiology (hERG Ion Channels)",
     "summary": "Cisapride was withdrawn in the US in 2000 and the EU in 2002 after post-marketing surveillance documented over 300 instances of ventricular arrhythmias and Torsades de Pointes. India's CDSCO statutorily prohibited cisapride manufacture, sale, and distribution in February 2011 (GSR 81(E)).",
@@ -545,10 +495,7 @@
     "product": "Human Placental Extract Formulations",
     "molecule": "Human Placental Extract Peptides & Nucleotides",
     "subtitle": "Biologic tissue extract approved in India but unapproved in US/EU markets.",
-    "brands": [
-      "Placentrex Gel",
-      "Placentrex Injection"
-    ],
+    "brands": ["Placentrex Gel", "Placentrex Injection"],
     "risk": "HIGH",
     "organ": "Dermatological / Hematologic Bio-Safety",
     "summary": "Human placental extract preparations are approved and marketed in India under CDSCO biologics oversight for chronic wound healing and pelvic inflammatory conditions. The US FDA and EMA have not authorized human placental extracts for topical or systemic wound healing, citing donor tissue standardization and biological pathogen safety parameters.",
@@ -578,10 +525,7 @@
     "product": "Dextropropoxyphene Analgesics",
     "molecule": "Dextropropoxyphene Hydrochloride",
     "subtitle": "Synthetic opioid analgesic withdrawn for cardiac conduction toxicity.",
-    "brands": [
-      "Spasmo-Proxyvon (Historical Formulation)",
-      "Proxyvon"
-    ],
+    "brands": ["Spasmo-Proxyvon (Historical Formulation)", "Proxyvon"],
     "risk": "CRITICAL",
     "organ": "Cardiac Conduction System & CNS",
     "summary": "Dextropropoxyphene was withdrawn from the European market in 2009 (EMA recommendation) and the US in November 2010 following FDA clinical safety data demonstrating cardiotoxicity at therapeutic dosages. India's CDSCO prohibited dextropropoxyphene formulations in May 2013 (GSR 320(E)).",
@@ -611,12 +555,7 @@
     "product": "Domperidone + Proton Pump Inhibitor Combinations",
     "molecule": "Domperidone + Omeprazole / Pantoprazole / Rabeprazole",
     "subtitle": "Prokinetic fixed combination subject to European cardiac safety limitations.",
-    "brands": [
-      "Pan-D",
-      "Pantocid-D",
-      "Rablet-D",
-      "Omez-D"
-    ],
+    "brands": ["Pan-D", "Pantocid-D", "Rablet-D", "Omez-D"],
     "risk": "UNDER-REVIEW",
     "organ": "Cardiac Electrophysiology (Ventricular Repolarization)",
     "summary": "Fixed-dose combinations of domperidone with PPIs are widely prescribed in India for GERD and dyspepsia. In Europe, the EMA restricted domperidone to nausea and vomiting alone at a maximum dose of 30 mg/day for up to 7 days, warning against use in patients with cardiac conduction issues. Domperidone is not approved by the US FDA.",
@@ -646,10 +585,7 @@
     "product": "Commercial Protein Powders & Dietary Supplements",
     "molecule": "Heavy Metal Trace Impurities (Lead, Cadmium, Arsenic)",
     "subtitle": "Sports nutrition supplements lacking third-party batch verification.",
-    "brands": [
-      "Uncertified sports supplements",
-      "Unverified bulk protein powders"
-    ],
+    "brands": ["Uncertified sports supplements", "Unverified bulk protein powders"],
     "risk": "HIGH",
     "organ": "Renal Glomeruli & Hepatic Parenchyma",
     "summary": "Independent investigative analyses of commercial dietary supplements (including studies published in Clinical and Experimental Hepatology in 2024 and Clean Label Project assessments in the US) documented heavy metal residues in uncertified protein formulations. FSSAI issues recurring compliance notices for non-compliant nutraceutical claims.",
@@ -678,10 +614,7 @@
     "product": "Melatonin Mega-Dose Gummies (Sleep Aid Surveillance)",
     "molecule": "Exogenous Melatonin (N-acetyl-5-methoxytryptamine)",
     "subtitle": "Over-the-counter sleep candies containing unlisted doses up to 347% of label claim.",
-    "brands": [
-      "Uncertified sleep gummies",
-      "Mega-dose 10mg melatonin candies"
-    ],
+    "brands": ["Uncertified sleep gummies", "Mega-dose 10mg melatonin candies"],
     "risk": "HIGH",
     "organ": "Central Nervous System & Circadian Endocrine Axis",
     "summary": "The US CDC and JAMA published warnings in 2023 following a 530% surge in pediatric hospital visits from candy-like melatonin gummies. Independent laboratory testing revealed that 88% of tested commercial gummy brands were inaccurately labeled, containing between 74% and 347% of the stated amount, with some even containing unlisted CBD.",
@@ -712,10 +645,7 @@
     "product": "High-Concentration Ashwagandha Alcohol Extracts",
     "molecule": "Withanolides & Withaferin A Concentrates",
     "subtitle": "High-potency botanical extracts subject to European liver surveillance advisories.",
-    "brands": [
-      "Ultra-concentrated standardized ashwagandha extracts",
-      "High-dose stress capsules"
-    ],
+    "brands": ["Ultra-concentrated standardized ashwagandha extracts", "High-dose stress capsules"],
     "risk": "UNDER-REVIEW",
     "organ": "Hepatic Parenchyma & Biliary Canaliculi",
     "summary": "Health authorities in Denmark (DTU Food), the Netherlands, and France (ANSES) published safety evaluations after medical hepatology registries documented cases of acute cholestatic jaundice and herb-induced liver injury (HILI) in individuals taking high-dose alcohol-extracted ashwagandha supplements.",
@@ -745,10 +675,7 @@
     "product": "Mega-Dose Biotin (Vitamin B7) Hair & Nail Supplements",
     "molecule": "Biotin (Doses of 5,000 mcg - 10,000 mcg)",
     "subtitle": "High-dose beauty gummies causing false-negative heart attack lab results.",
-    "brands": [
-      "10,000 mcg Hair-Skin-Nail gummies",
-      "Mega-Biotin beauty drops"
-    ],
+    "brands": ["10,000 mcg Hair-Skin-Nail gummies", "Mega-Biotin beauty drops"],
     "risk": "CRITICAL",
     "organ": "Cardiovascular Diagnostics & Endocrine Laboratory Assays",
     "summary": "The US FDA issued an urgent Safety Communication warning that high levels of biotin in patient blood severely interfere with hospital laboratory tests. Many blood tests (including cardiac Troponin, which detects active heart attacks, and thyroid TSH tests) rely on biotin-streptavidin technology. High biotin can falsely show normal troponin during a real heart attack, leading to missed diagnoses and death.",
@@ -777,10 +704,7 @@
     "product": "Colloidal Silver Liquid & Silver Hydrosol Sprays",
     "molecule": "Elemental Silver Nanoparticles / Silver Salts",
     "subtitle": "Unregulated grey-market liquids sold as 'miracle natural antibiotics'.",
-    "brands": [
-      "Colloidal Silver Drops",
-      "Silver Hydrosol Immune Sprays"
-    ],
+    "brands": ["Colloidal Silver Drops", "Silver Hydrosol Immune Sprays"],
     "risk": "CRITICAL",
     "organ": "Dermis (Permanent Argyria) & Renal Tubules",
     "summary": "The US FDA and global regulatory bodies issued multiple warnings stating colloidal silver is neither safe nor effective for treating any disease. Silver has zero known essential function in the human body. Chronic intake causes silver particles to deposit permanently in internal organs and skin, turning the patient's skin irreversibly blue-gray (argyria), and causing kidney damage and neurological toxicity.",
@@ -810,11 +734,7 @@
     "product": "Unregulated Kratom Concentrates & Liquid Shots",
     "molecule": "Mitragynine & 7-Hydroxymitragynine",
     "subtitle": "Botanical opioid-receptor agonist sold in smoke shops and online as a 'natural mood & energy booster'.",
-    "brands": [
-      "Concentrated Kratom Extract Shots",
-      "7-OH Tablets",
-      "Maeng Da Capsules"
-    ],
+    "brands": ["Concentrated Kratom Extract Shots", "7-OH Tablets", "Maeng Da Capsules"],
     "risk": "CRITICAL",
     "organ": "Central Nervous System (Mu-Opioid Receptors) & Liver",
     "summary": "The US FDA, DEA, and multiple European health agencies warn consumers against using Mitragyna speciosa (kratom). Its active alkaloids bind directly to the same brain receptors as morphine, carrying severe risks of physical addiction, opioid-like withdrawal, respiratory depression, seizures, and acute drug-induced liver injury.",
@@ -844,12 +764,7 @@
     "product": "Tianeptine Dietary Supplements ('Gas Station Heroin')",
     "molecule": "Tianeptine Sodium / Tianeptine Sulfate",
     "subtitle": "Unapproved tricyclic antidepressant illegally spiked into over-the-counter 'nootropic brain boosters'.",
-    "brands": [
-      "ZaZa Red",
-      "Tianaa",
-      "Pegasus",
-      "TD Red"
-    ],
+    "brands": ["ZaZa Red", "Tianaa", "Pegasus", "TD Red"],
     "risk": "CRITICAL",
     "organ": "Central Nervous System & Cardiovascular System",
     "summary": "The US FDA issued urgent nationwide warnings against convenience-store supplements containing tianeptine. Although prescribed in tiny doses in a few countries, grey-market capsules contain massive, unstandardized doses that act like a hard opioid, causing rapid addiction, coma, dangerously slow breathing, and fatal overdoses.",
@@ -879,10 +794,7 @@
     "product": "Aristolochia-Contaminated Herbal Slimming Teas",
     "molecule": "Aristolochic Acid I & II",
     "subtitle": "Potent kidney toxin and Group 1 human carcinogen found in misidentified traditional weight-loss herbs.",
-    "brands": [
-      "Unverified 'Stephania / Fang Ji' Slimming Teas",
-      "Unlicensed Detox Herbal Powders"
-    ],
+    "brands": ["Unverified 'Stephania / Fang Ji' Slimming Teas", "Unlicensed Detox Herbal Powders"],
     "risk": "CRITICAL",
     "organ": "Renal Cortex (Proximal Tubules) & Urothelial Tract",
     "summary": "Global health authorities (WHO, FDA, EMA, AYUSH) strictly ban Aristolochia plant species after thousands of patients suffered permanent kidney failure ('aristolochic acid nephropathy') and upper urinary tract cancers from contaminated herbal weight-loss and joint formulas.",
@@ -912,10 +824,7 @@
     "product": "Over-the-Counter Melatonin Sleep Gummies (Dose Discrepancy)",
     "molecule": "Synthetic N-acetyl-5-methoxytryptamine (Melatonin) & Unlisted CBD",
     "subtitle": "Master brain hormone sold as unregulated candy gummies with up to 347% of the labeled dose.",
-    "brands": [
-      "Unverified Kids Sleep Gummies",
-      "High-Dose 10mg–20mg Melatonin Chews"
-    ],
+    "brands": ["Unverified Kids Sleep Gummies", "High-Dose 10mg–20mg Melatonin Chews"],
     "risk": "HIGH",
     "organ": "Pineal Gland, Suprachiasmatic Nucleus & Endocrine Axis",
     "summary": "While melatonin is a prescription-only medicine in the UK, EU, Australia, and Japan, it is sold loosely as a dietary supplement in the US and online. Landmark JAMA laboratory testing of 25 commercial melatonin gummies found actual melatonin levels ranged from 74% to 347% of the printed label, with several products secretly containing unlisted serotonin or cannabidiol (CBD).",
@@ -974,5 +883,41 @@
     "confidenceLevel": "HIGH",
     "evidenceStatement": "FDA and NIH studies demonstrated thyroid follicular cell hypertrophy and tissue bromine bioaccumulation at dietary exposure levels.",
     "clinicalDisclaimer": "Manufacturers were given a 1-year compliance window to reformulate legacy inventory; check shelf-stable soda labels carefully."
+  },
+  {
+    "id": 30,
+    "category": "cosmetics",
+    "icon": "🧴",
+    "product": "Unregulated Skin-Lightening Creams (Inorganic Mercury Compounds)",
+    "molecule": "Ammoniated Mercury / Mercurous Chloride",
+    "subtitle": "Illicit melanogenesis inhibitors detected in imported fairness creams.",
+    "brands": [
+      "Unlabeled Imported Night Fairness Creams",
+      "Counterfeit Online Brightening Ointments",
+      "Grey-Market Spot Bleaching Jars"
+    ],
+    "risk": "CRITICAL",
+    "organ": "Kidneys & Central Nervous System",
+    "summary": "The WHO, US FDA, and state drug controllers repeatedly seize imported skin-lightening creams containing up to 10,000–30,000 ppm of toxic mercury—thousands of times above the 1 ppm legal trace limit.",
+    "mechanism": "Mercury salts block the skin enzyme tyrosinase to stop pigment production, but absorb directly through your skin into your bloodstream. The mercury collects in your kidneys (causing nephrotic syndrome and kidney damage) and crosses into your brain, causing hand tremors, memory loss, and nerve tingling.",
+    "status_global": {
+      "WHO": "Minamata Convention Global Ban (>1 ppm in Cosmetics)",
+      "US": "FDA Import Alert 53-18 (Detention Without Physical Examination)",
+      "EU": "Strictly Prohibited (Regulation EC 1223/2009)",
+      "ASEAN": "Banned & Subject to Mandatory Recall"
+    },
+    "status_india": "Prohibited in cosmetics under the Drugs and Cosmetics Rules, 1945 (CDSCO); BIS IS 4707 prohibits mercury compounds.",
+    "how_to_spot": "Avoid any cream without a full ingredient list or look out for words like 'Mercurous chloride', 'Calomel', 'Mercuric', 'Mercurio', or 'Hg'. Never buy unsealed jars sold via social media.",
+    "alternatives": [
+      "Dermatologist-approved Niacinamide (2–5%) serums",
+      "Vitamin C (L-Ascorbic Acid) + Broad-Spectrum SPF 50 sunscreen",
+      "Azelaic acid or Kojic acid formulations from licensed pharmacies"
+    ],
+    "ref": "World Health Organization (WHO) Mercury in Skin Lightening Products Sheet / US FDA Import Alert 53-18",
+    "regulatorAgency": "WHO, US FDA & CDSCO",
+    "noticeDate": "2024 Ongoing Surveillance",
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "WHO and FDA laboratory testing confirms transdermal mercury absorption from fairness creams causes membranous nephropathy and peripheral neuropathy.",
+    "clinicalDisclaimer": "Stop using unlabeled fairness creams immediately and consult a doctor for a urine mercury test if you experience foamy urine, numbness, or tremors."
   }
 ]

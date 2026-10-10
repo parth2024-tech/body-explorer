@@ -473,4 +473,12 @@ export const DAILY_INSIGHTS: DailyInsight[] = [
       "Take a slow breath in through your nose, then hum a low 'mmmm' sound for 6 seconds as you breathe out. Repeat 5 times.",
     actionDuration: "30s",
   },
+  {
+    dayOfYear: 62,
+    bodyPartId: "eyes",
+    fact: "The clear front window of your eye (the cornea) has zero blood vessels and absorbs its oxygen straight from the air around you.",
+    action:
+      "Blink slowly and fully 10 times right now to spread fresh oxygen-rich tear film across your corneas.",
+    actionDuration: "10s",
+  },
 ];

@@ -2927,6 +2927,17 @@ export const FOOD_SYNERGIES: FoodSynergyPair[] = [
     culinaryIdea:
       "Pair a sliced unpeeled apple with a small handful (about 7 whole walnuts) for a 3 PM snack instead of biscuits or crackers.",
   },
+  {
+    id: "syn-dark-chocolate-berries",
+    foodA: "70%+ Dark Chocolate (Cocoa Flavanols)",
+    foodB: "Fresh Raspberries or Pomegranate (Anthocyanins + Fiber)",
+    synergyOutcome: "Nitric Oxide Blood Flow & Vascular Elasticity",
+    multiplier: "+180% Endothelial Nitric Oxide Support",
+    mechanism:
+      "Cocoa flavanols and berry anthocyanins work on complementary pathways in your blood vessel lining (endothelium) to boost natural nitric oxide gas, helping arteries relax while the fruit fiber slows down sugar absorption.",
+    culinaryIdea:
+      "Pair two small squares (15g) of 70%+ dark chocolate with a handful of fresh berries or pomegranate seeds after lunch.",
+  },
 ];
 
 export interface DrugFoodWarning {
@@ -3038,5 +3049,16 @@ export const DRUG_FOOD_WARNINGS: DrugFoodWarning[] = [
       "Natural glycyrrhizic acid in mulethi/licorice tricks your kidneys into holding onto sodium and flushing out potassium, driving blood pressure up and opposing your blood pressure medicines.",
     doctorDirective:
       "Avoid daily concentrated mulethi teas or black licorice candies if you have high blood pressure or take water pills; choose DGL (deglycyrrhizinated) licorice instead.",
+  },
+  {
+    id: "warn-st-johns-wort-meds",
+    food: "St. John's Wort Herbal Teas & Mood Supplements",
+    medicationClass:
+      "Birth Control Pills, Antidepressants (SSRIs), Blood Thinners & Heart Medications",
+    riskSeverity: "CRITICAL",
+    clinicalConsequence:
+      "St. John's Wort switches your liver's drug-clearing enzymes (CYP3A4) into overdrive, chewing up and flushing out vital prescription medicines before they can work—or triggering a dangerous serotonin overload when mixed with antidepressants.",
+    doctorDirective:
+      "Never start herbal mood supplements like St. John's Wort without checking with your doctor or pharmacist first.",
   },
 ];

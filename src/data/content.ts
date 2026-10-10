@@ -3499,6 +3499,19 @@ export const REMEDIES: RemedyEntry[] = [
     practicalContext:
       "A heavily marketed internet cure-all that lacks efficacy and poses severe permanent toxicity risks including blue-gray skin discoloration.",
   },
+  {
+    id: "warm-eyelid-compress",
+    name: "Warm Moist Compress for Dry, Tired Eyes",
+    description:
+      "Resting a clean washcloth soaked in comfortably warm water over closed eyelids for 5 to 10 minutes melts hardened natural oils inside your eyelid glands (meibomian glands) so your tears stop evaporating so fast.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "American Academy of Ophthalmology (AAO) and Tear Film & Ocular Surface Society (TFOS DEWS II) guidelines recommend daily warm eyelid compresses as first-line care for evaporative dry eye and eyelid gland sluggishness.",
+    ailment: "Dry Eyes & Screen Fatigue",
+    bodyPartId: "eyes",
+    practicalContext:
+      "Use a clean cloth warmed to about bathwater temperature (40°C / 104°F)—never scalding hot—for 5 minutes each evening, followed by gentle blinking.",
+  },
 ];
 
 export const HACKS: HealthHack[] = [
@@ -3600,6 +3613,15 @@ export const HACKS: HealthHack[] = [
     scienceBasis:
       "Sound vibrations shake the air inside your sinus cavities, mixing out 15 times more natural nitric oxide gas to shrink swollen nasal linings and fight bacteria.",
     bodyPartId: "sinuses",
+  },
+  {
+    id: "chin-tuck-posture-reset",
+    title: "The 5-Second Chin Tuck for 'Text Neck' Relief",
+    practice:
+      "Sit or stand tall, look straight ahead, and gently glide your chin straight backward (like making a polite double chin) without tilting your nose up or down. Hold for 5 seconds and repeat 5 times.",
+    scienceBasis:
+      "Re-aligns your heavy skull directly over your neck bones (cervical spine), instantly taking up to 30 pounds of pulling strain off the tired muscles at the base of your skull.",
+    bodyPartId: "spine-cervical",
   },
 ];
 
@@ -3832,6 +3854,25 @@ export const BODY_MARVELS: BodyMarvel[] = [
       "Aerobic movement and a diet rich in leafy greens directly nourish your endothelium, keeping your arteries flexible and your blood pressure healthy.",
     bodyPartId: "heart",
   },
+  {
+    id: "cornea-air-breathing",
+    title: "The Cornea: The Living Window That Breathes Air",
+    introduction:
+      "Every tissue in your body needs oxygen to stay alive, yet the clear front dome of your eye (the cornea) contains zero blood vessels so light can pass through without a single shadow.",
+    sections: [
+      {
+        heading: "1. Breathing Directly From the Sky",
+        body: "Instead of getting oxygen from red blood cells, the outer cells of your cornea absorb oxygen gas directly from the open air, dissolving it into your microscopic tear film with every blink.",
+      },
+      {
+        heading: "2. The Fastest Healer on Your Body",
+        body: "Packed with more nerve endings per square millimeter than anywhere else on your body, corneal surface cells can slide and zip shut minor surface scratches within 24 to 48 hours.",
+      },
+    ],
+    conclusion:
+      "Never sleep in contact lenses unless specifically approved by your eye doctor—contacts act like a plastic blanket that can starve your cornea of nighttime oxygen.",
+    bodyPartId: "eyes",
+  },
 ];
 
 export const SENSORY_FACTS: SensoryFact[] = [
@@ -3906,6 +3947,14 @@ export const SENSORY_FACTS: SensoryFact[] = [
       "When your hands get freezing cold, your body narrows the tiny blood vessels in your fingers to keep your heart and organs warm. Once you step inside, those vessels open wide all at once (rebound vasodilation), rushing warm blood back into cold nerves.",
     tip: "Warm cold hands under lukewarm water—never hot water—so blood vessels open gradually without throbbing.",
     bodyPartId: "hands",
+  },
+  {
+    id: "photic-sneeze-reflex",
+    sensation: "Sudden Sneeze When Stepping Into Bright Sunlight (ACHOO Syndrome)",
+    cause:
+      "In about 1 in 4 people, the optic nerve carrying bright light signals from the eyes runs so close to the facial trigeminal nerve that a sudden burst of sunlight 'cross-wires' and tricks the brain into thinking the nose is being tickled.",
+    tip: "Put on polarized sunglasses before stepping out of a dark building into bright midday sun, especially when driving.",
+    bodyPartId: "sinuses",
   },
 ];
 
@@ -4421,6 +4470,16 @@ export const QA_ENTRIES: QAEntry[] = [
     expertName: "Dr. Alan Sterling",
     expertTitle: "Ear, Nose & Throat (ENT) Surgeon",
     bodyPartId: "sinuses",
+  },
+  {
+    id: "contact-lens-tap-water-expert",
+    question:
+      "Why is it dangerous to rinse contact lenses in tap water or wear them in the shower?",
+    answer:
+      "Clean drinking tap water is safe for your stomach, but it is not sterile. Tap water can carry a tough microscopic organism called Acanthamoeba that sticks to soft contact lenses and burrows into the clear front window of your eye (cornea), causing a painful, sight-threatening infection. Always use sterile contact lens solution and take lenses out before showering or swimming.",
+    expertName: "Dr. Priya Nair",
+    expertTitle: "Board-Certified Ophthalmologist",
+    bodyPartId: "eyes",
   },
 ];
 

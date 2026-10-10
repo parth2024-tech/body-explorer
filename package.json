@@ -29,7 +29,8 @@
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "validate": "npm run typecheck && npm run lint && npm run test"
+    "validate": "npm run typecheck && npm run lint && npm run test",
+    "daily:upload": "tsx scripts/generate-daily-facts.ts"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
