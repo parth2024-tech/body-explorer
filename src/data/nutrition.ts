@@ -3040,4 +3040,3 @@ export const DRUG_FOOD_WARNINGS: DrugFoodWarning[] = [
       "Avoid daily concentrated mulethi teas or black licorice candies if you have high blood pressure or take water pills; choose DGL (deglycyrrhizinated) licorice instead.",
   },
 ];
-

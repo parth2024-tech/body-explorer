@@ -3593,11 +3593,13 @@ export const HACKS: HealthHack[] = [
     bodyPartId: "brain",
   },
   {
-    "id": "humming-nitric-boost",
-    "title": "6-Second Sinus Humming for Nasal Congestion",
-    "practice": "Keep your lips closed, inhale gently through your nose, and hum a low, steady 'mmmm' sound as you breathe out slowly for 6 seconds. Repeat 10 times.",
-    "scienceBasis": "Sound vibrations shake the air inside your sinus cavities, mixing out 15 times more natural nitric oxide gas to shrink swollen nasal linings and fight bacteria.",
-    "bodyPartId": "sinuses"
+    id: "humming-nitric-boost",
+    title: "6-Second Sinus Humming for Nasal Congestion",
+    practice:
+      "Keep your lips closed, inhale gently through your nose, and hum a low, steady 'mmmm' sound as you breathe out slowly for 6 seconds. Repeat 10 times.",
+    scienceBasis:
+      "Sound vibrations shake the air inside your sinus cavities, mixing out 15 times more natural nitric oxide gas to shrink swollen nasal linings and fight bacteria.",
+    bodyPartId: "sinuses",
   },
 ];
 
@@ -3898,11 +3900,12 @@ export const SENSORY_FACTS: SensoryFact[] = [
     bodyPartId: "ears",
   },
   {
-    "id": "palmar-erythema-blush",
-    "sensation": "Warm, Tingly Hands After Coming Inside From the Cold",
-    "cause": "When your hands get freezing cold, your body narrows the tiny blood vessels in your fingers to keep your heart and organs warm. Once you step inside, those vessels open wide all at once (rebound vasodilation), rushing warm blood back into cold nerves.",
-    "tip": "Warm cold hands under lukewarm water—never hot water—so blood vessels open gradually without throbbing.",
-    "bodyPartId": "hands"
+    id: "palmar-erythema-blush",
+    sensation: "Warm, Tingly Hands After Coming Inside From the Cold",
+    cause:
+      "When your hands get freezing cold, your body narrows the tiny blood vessels in your fingers to keep your heart and organs warm. Once you step inside, those vessels open wide all at once (rebound vasodilation), rushing warm blood back into cold nerves.",
+    tip: "Warm cold hands under lukewarm water—never hot water—so blood vessels open gradually without throbbing.",
+    bodyPartId: "hands",
   },
 ];
 
@@ -4411,12 +4414,13 @@ export const QA_ENTRIES: QAEntry[] = [
     bodyPartId: "kidneys",
   },
   {
-    "id": "mouth-taping-sleep-expert",
-    "question": "Is the social media trend of taping your mouth shut at night safe for better sleep?",
-    "answer": "Breathing through your nose warms, filters, and moistens air, which is healthier than mouth breathing. However, taping your mouth shut can be dangerous if you have undiagnosed sleep apnea, a deviated septum, or nasal allergies. Instead of tape, clear your nose before bed with a saline spray or nasal strips, and ask a sleep doctor to check your airway if you wake up with a bone-dry mouth.",
-    "expertName": "Dr. Alan Sterling",
-    "expertTitle": "Ear, Nose & Throat (ENT) Surgeon",
-    "bodyPartId": "sinuses"
+    id: "mouth-taping-sleep-expert",
+    question: "Is the social media trend of taping your mouth shut at night safe for better sleep?",
+    answer:
+      "Breathing through your nose warms, filters, and moistens air, which is healthier than mouth breathing. However, taping your mouth shut can be dangerous if you have undiagnosed sleep apnea, a deviated septum, or nasal allergies. Instead of tape, clear your nose before bed with a saline spray or nasal strips, and ask a sleep doctor to check your airway if you wake up with a bone-dry mouth.",
+    expertName: "Dr. Alan Sterling",
+    expertTitle: "Ear, Nose & Throat (ENT) Surgeon",
+    bodyPartId: "sinuses",
   },
 ];
 

@@ -229,217 +229,248 @@ export const DAILY_INSIGHTS: DailyInsight[] = [
     dayOfYear: 31,
     bodyPartId: "brain",
     fact: "During slow-wave deep sleep, cerebrospinal fluid washes through brain tissue like a dishwasher, sweeping away metabolic waste.",
-    action: "Keep your bedroom dark, quiet, and cool (around 65°F / 18°C) tonight to promote deeper slow-wave sleep cycles.",
+    action:
+      "Keep your bedroom dark, quiet, and cool (around 65°F / 18°C) tonight to promote deeper slow-wave sleep cycles.",
     actionDuration: "1m",
   },
   {
     dayOfYear: 32,
     bodyPartId: "eyes",
     fact: "Your tear film has three distinct layers—oil, water, and mucus—preventing your tears from evaporating into thin air.",
-    action: "Practice 10 deliberate full blinks while working at your screen to spread a fresh oily tear shield across both eyes.",
+    action:
+      "Practice 10 deliberate full blinks while working at your screen to spread a fresh oily tear shield across both eyes.",
     actionDuration: "20s",
   },
   {
     dayOfYear: 33,
     bodyPartId: "heart",
     fact: "Every time you take a slow, prolonged exhale, your heart rate naturally slows down through vagus nerve stimulation.",
-    action: "Inhale for 4 seconds, then exhale smoothly for 6 seconds; repeat 4 times to immediately steady your pulse.",
+    action:
+      "Inhale for 4 seconds, then exhale smoothly for 6 seconds; repeat 4 times to immediately steady your pulse.",
     actionDuration: "40s",
   },
   {
     dayOfYear: 34,
     bodyPartId: "lung-left",
     fact: "Your left lung is about 10% smaller than your right lung to leave comfortable anatomical room for your beating heart.",
-    action: "Stand tall, interlace your fingers behind your back, and draw your shoulders gently back to expand your rib cage.",
+    action:
+      "Stand tall, interlace your fingers behind your back, and draw your shoulders gently back to expand your rib cage.",
     actionDuration: "30s",
   },
   {
     dayOfYear: 35,
     bodyPartId: "liver",
     fact: "Your liver stores emergency glucose (glycogen) that it releases steadily to keep your brain fueled while you sleep overnight.",
-    action: "Avoid heavy refined sugary snacks right before bed so your liver can focus on cellular repair rather than processing sugar surges.",
+    action:
+      "Avoid heavy refined sugary snacks right before bed so your liver can focus on cellular repair rather than processing sugar surges.",
     actionDuration: "N/A",
   },
   {
     dayOfYear: 36,
     bodyPartId: "stomach",
     fact: "Your stomach acid activates digestive enzymes that break down dietary proteins while neutralizing common foodborne bacteria.",
-    action: "Sip water gently during meals rather than chugging large iced glasses to keep your digestive enzymes working comfortably.",
+    action:
+      "Sip water gently during meals rather than chugging large iced glasses to keep your digestive enzymes working comfortably.",
     actionDuration: "1m",
   },
   {
     dayOfYear: 37,
     bodyPartId: "skin",
     fact: "Your skin naturally synthesizes vitamin D when ultraviolet-B light contacts cholesterol precursors in epidermal cells.",
-    action: "Step outside into natural morning daylight for 10 minutes to help anchor your circadian rhythm and support bone wellness.",
+    action:
+      "Step outside into natural morning daylight for 10 minutes to help anchor your circadian rhythm and support bone wellness.",
     actionDuration: "10m",
   },
   {
     dayOfYear: 38,
     bodyPartId: "bones",
     fact: "Weight-bearing physical movement generates microscopic electrical currents in bones that signal cells to pull in strengthening minerals.",
-    action: "Take the stairs instead of the elevator today to give your hip and leg bones a mineral-strengthening workout.",
+    action:
+      "Take the stairs instead of the elevator today to give your hip and leg bones a mineral-strengthening workout.",
     actionDuration: "2m",
   },
   {
     dayOfYear: 39,
     bodyPartId: "spine-thoracic",
     fact: "Your mid-back spine articulates with all 12 pairs of ribs, forming a protective dynamic cage for your heart and lungs.",
-    action: "Gently rotate your upper torso side-to-side while seated upright to maintain healthy thoracic spine mobility.",
+    action:
+      "Gently rotate your upper torso side-to-side while seated upright to maintain healthy thoracic spine mobility.",
     actionDuration: "30s",
   },
   {
     dayOfYear: 40,
     bodyPartId: "shoulders",
     fact: "Your shoulder blade (scapula) floats across your posterior rib cage supported entirely by 17 distinct muscular attachments.",
-    action: "Perform 5 scapular squeezes: draw your shoulder blades together like pinching a pencil, hold 3 seconds, and release.",
+    action:
+      "Perform 5 scapular squeezes: draw your shoulder blades together like pinching a pencil, hold 3 seconds, and release.",
     actionDuration: "30s",
   },
   {
     dayOfYear: 41,
     bodyPartId: "wrists",
     fact: "The flexor tendons that curl your fingers travel through a narrow rigid fibrous tunnel in your wrist alongside the median nerve.",
-    action: "Rest your forearms flat on your desk and gently bend your wrists up and down to keep carpal tendons gliding smoothly.",
+    action:
+      "Rest your forearms flat on your desk and gently bend your wrists up and down to keep carpal tendons gliding smoothly.",
     actionDuration: "30s",
   },
   {
     dayOfYear: 42,
     bodyPartId: "hands",
     fact: "There are no skeletal muscles inside your fingers; finger movements are powered by muscular cables located in your forearm and palm.",
-    action: "Spread your fingers wide apart for 5 seconds, make a gentle fist, and shake your hands out to relieve keyboard strain.",
+    action:
+      "Spread your fingers wide apart for 5 seconds, make a gentle fist, and shake your hands out to relieve keyboard strain.",
     actionDuration: "20s",
   },
   {
     dayOfYear: 43,
     bodyPartId: "hips",
     fact: "Prolonged sitting keeps your hip flexors chronically shortened, tilting your pelvis forward and increasing lower back strain.",
-    action: "Perform a standing hip flexor stretch: step one leg back, gently tuck your pelvis under, and hold 20 seconds per side.",
+    action:
+      "Perform a standing hip flexor stretch: step one leg back, gently tuck your pelvis under, and hold 20 seconds per side.",
     actionDuration: "40s",
   },
   {
     dayOfYear: 44,
     bodyPartId: "knees",
     fact: "Knee cartilage has no direct blood supply; it absorbs oxygen and nutrients from joint fluid circulated during movement.",
-    action: "Take a 2-minute movement or standing break every hour of desk work to pump nourishing fluid through your knee cartilage.",
+    action:
+      "Take a 2-minute movement or standing break every hour of desk work to pump nourishing fluid through your knee cartilage.",
     actionDuration: "2m",
   },
   {
     dayOfYear: 45,
     bodyPartId: "feet",
     fact: "The soles of your feet contain over 200,000 sensory nerve endings that continuously feed balance telemetry to your brain.",
-    action: "Take off your shoes at home and walk barefoot across a firm surface for a few minutes to stimulate foot nerve receptors.",
+    action:
+      "Take off your shoes at home and walk barefoot across a firm surface for a few minutes to stimulate foot nerve receptors.",
     actionDuration: "2m",
   },
   {
     dayOfYear: 46,
     bodyPartId: "ears",
     fact: "Microscopic sensory hair cells in your inner ear convert fluid ripples into sound and cannot regrow once permanently damaged.",
-    action: "Follow the 60/60 headphone rule: keep headphone volume below 60% and pause for a quiet rest after 60 minutes of listening.",
+    action:
+      "Follow the 60/60 headphone rule: keep headphone volume below 60% and pause for a quiet rest after 60 minutes of listening.",
     actionDuration: "N/A",
   },
   {
     dayOfYear: 47,
     bodyPartId: "sinuses",
     fact: "Inhaled nasal air is conditioned to near body temperature and 90% humidity within milliseconds before entering delicate lung airways.",
-    action: "Switch to breathing primarily through your nose during restful desk activities to filter and warm the air naturally.",
+    action:
+      "Switch to breathing primarily through your nose during restful desk activities to filter and warm the air naturally.",
     actionDuration: "1m",
   },
   {
     dayOfYear: 48,
     bodyPartId: "jaw",
     fact: "Subconscious teeth clenching during intense screen focus strains the temporalis muscle, triggering dull tension headaches.",
-    action: "Rest the tip of your tongue against the roof of your mouth just behind your front teeth to naturally disengage jaw clenching.",
+    action:
+      "Rest the tip of your tongue against the roof of your mouth just behind your front teeth to naturally disengage jaw clenching.",
     actionDuration: "15s",
   },
   {
     dayOfYear: 49,
     bodyPartId: "throat",
     fact: "Your epiglottis folds down like a protective trapdoor every time you swallow to seal your vocal cords and lungs from food particles.",
-    action: "Avoid talking or laughing while chewing to give your epiglottis adequate time to seal your airway with each swallow.",
+    action:
+      "Avoid talking or laughing while chewing to give your epiglottis adequate time to seal your airway with each swallow.",
     actionDuration: "N/A",
   },
   {
     dayOfYear: 50,
     bodyPartId: "small-intestine",
     fact: "Villi and microvilli along your intestinal lining create a massive absorptive surface area equivalent to a regulation tennis court.",
-    action: "Enjoy a relaxed 10-minute walk after lunch to encourage regular gastrointestinal muscle contractions (peristalsis).",
+    action:
+      "Enjoy a relaxed 10-minute walk after lunch to encourage regular gastrointestinal muscle contractions (peristalsis).",
     actionDuration: "10m",
   },
   {
     dayOfYear: 51,
     bodyPartId: "large-intestine",
     fact: "Beneficial gut microbes ferment prebiotic fibers into short-chain fatty acids that fuel the cells lining your colon.",
-    action: "Add a serving of fiber-rich legumes, oats, or a fresh crisp apple to your meals today to nourish beneficial gut microbes.",
+    action:
+      "Add a serving of fiber-rich legumes, oats, or a fresh crisp apple to your meals today to nourish beneficial gut microbes.",
     actionDuration: "N/A",
   },
   {
     dayOfYear: 52,
     bodyPartId: "kidneys",
     fact: "Your two kidneys maintain strict mineral balance by reabsorbing 99% of the fluid and electrolytes they filter each minute.",
-    action: "Sip water steadily across your waking hours rather than chugging large amounts at once to give your kidneys steady fluid balance.",
+    action:
+      "Sip water steadily across your waking hours rather than chugging large amounts at once to give your kidneys steady fluid balance.",
     actionDuration: "30s",
   },
   {
     dayOfYear: 53,
     bodyPartId: "bladder",
     fact: "Your bladder wall contains sensory stretch receptors that signal your brain when volume reaches around 200 to 300 milliliters.",
-    action: "Avoid habitual 'just-in-case' bathroom trips every 20 minutes; allowing normal filling supports healthy pelvic sensory tone.",
+    action:
+      "Avoid habitual 'just-in-case' bathroom trips every 20 minutes; allowing normal filling supports healthy pelvic sensory tone.",
     actionDuration: "N/A",
   },
   {
     dayOfYear: 54,
     bodyPartId: "frontal-lobe",
     fact: "Your prefrontal cortex governs executive focus and willpower, and its performance dips rapidly during sharp blood sugar swings.",
-    action: "Pair complex carbohydrates with protein or healthy fats for breakfast to avoid the mid-morning mental energy drop.",
+    action:
+      "Pair complex carbohydrates with protein or healthy fats for breakfast to avoid the mid-morning mental energy drop.",
     actionDuration: "N/A",
   },
   {
     dayOfYear: 55,
     bodyPartId: "temporal-lobe",
     fact: "The hippocampus inside your temporal lobe replays and solidifies newly learned facts into long-term memories during sleep.",
-    action: "Review key ideas or study points for 5 minutes before winding down tonight; sleep helps cement those memory pathways.",
+    action:
+      "Review key ideas or study points for 5 minutes before winding down tonight; sleep helps cement those memory pathways.",
     actionDuration: "5m",
   },
   {
     dayOfYear: 56,
     bodyPartId: "muscles",
     fact: "Contracting skeletal muscles act like an internal endocrine gland, releasing anti-inflammatory signaling proteins called myokines.",
-    action: "Do 10 bodyweight air squats or a 30-second wall-sit right now to release energy-regulating myokines into your bloodstream.",
+    action:
+      "Do 10 bodyweight air squats or a 30-second wall-sit right now to release energy-regulating myokines into your bloodstream.",
     actionDuration: "45s",
   },
   {
     dayOfYear: 57,
     bodyPartId: "skin",
     fact: "Your outer skin barrier relies on a delicate lipid matrix of ceramides and fatty acids that prevents excessive water evaporation.",
-    action: "Wash hands with comfortable lukewarm water rather than scalding water to preserve your skin's natural protective lipid barrier.",
+    action:
+      "Wash hands with comfortable lukewarm water rather than scalding water to preserve your skin's natural protective lipid barrier.",
     actionDuration: "20s",
   },
   {
     dayOfYear: 58,
     bodyPartId: "spine-cervical",
     fact: "Tilting your head forward by just two inches doubles the mechanical pulling force on your cervical neck muscles to nearly 40 pounds.",
-    action: "Perform a gentle chin tuck: look straight forward and slide your head back like creating a mild double chin; hold 5 seconds.",
+    action:
+      "Perform a gentle chin tuck: look straight forward and slide your head back like creating a mild double chin; hold 5 seconds.",
     actionDuration: "30s",
   },
   {
     dayOfYear: 59,
     bodyPartId: "ankles",
     fact: "Your ankle joints house hundreds of sensory proprioceptors that communicate foot angle and ground texture to your cerebellum.",
-    action: "Stand balanced on one foot for 30 seconds while brushing your teeth to train your ankle proprioception and stability pathways.",
+    action:
+      "Stand balanced on one foot for 30 seconds while brushing your teeth to train your ankle proprioception and stability pathways.",
     actionDuration: "30s",
   },
   {
     dayOfYear: 60,
     bodyPartId: "heart",
     fact: "The endothelial cells lining your blood vessels release nitric oxide gas, which signals vascular smooth muscle to relax and widen.",
-    action: "Incorporate leafy greens like spinach or arugula into dinner to provide dietary nitrates that support vascular relaxation.",
+    action:
+      "Incorporate leafy greens like spinach or arugula into dinner to provide dietary nitrates that support vascular relaxation.",
     actionDuration: "N/A",
   },
   {
     dayOfYear: 61,
     bodyPartId: "sinuses",
     fact: "Your sinus cavities constantly brew nitric oxide—a natural gas that widens airways and fights germs—and humming on your exhale boosts its release 15-fold.",
-    action: "Take a slow breath in through your nose, then hum a low 'mmmm' sound for 6 seconds as you breathe out. Repeat 5 times.",
+    action:
+      "Take a slow breath in through your nose, then hum a low 'mmmm' sound for 6 seconds as you breathe out. Repeat 5 times.",
     actionDuration: "30s",
   },
 ];

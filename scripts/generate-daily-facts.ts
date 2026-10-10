@@ -293,7 +293,8 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
   qaEntries: [
     {
       id: "mouth-taping-sleep-expert",
-      question: "Is the social media trend of taping your mouth shut at night safe for better sleep?",
+      question:
+        "Is the social media trend of taping your mouth shut at night safe for better sleep?",
       answer:
         "Breathing through your nose warms, filters, and moistens air, which is healthier than mouth breathing. However, taping your mouth shut can be dangerous if you have undiagnosed sleep apnea, a deviated septum, or nasal allergies. Instead of tape, clear your nose before bed with a saline spray or nasal strips, and ask a sleep doctor to check your airway if you wake up with a bone-dry mouth.",
       expertName: "Dr. Alan Sterling",
@@ -416,7 +417,10 @@ Return a single JSON object matching this exact structure:
     const parsed = JSON.parse(result.response.text().trim()) as DailyPayload;
     return parsed;
   } catch (err) {
-    console.warn("⚠️ Gemini API call failed or timed out, falling back to clinical reserve pool:", err);
+    console.warn(
+      "⚠️ Gemini API call failed or timed out, falling back to clinical reserve pool:",
+      err,
+    );
     return null;
   }
 }
@@ -442,7 +446,10 @@ async function main() {
   });
 
   if (validNewFacts.length > 0) {
-    fs.writeFileSync(FACTS_FILE, JSON.stringify([...existingFacts, ...validNewFacts], null, 2) + "\n");
+    fs.writeFileSync(
+      FACTS_FILE,
+      JSON.stringify([...existingFacts, ...validNewFacts], null, 2) + "\n",
+    );
   }
 
   // 2. Update food_labels_db.json
@@ -461,7 +468,10 @@ async function main() {
     return true;
   });
   if (newLabels.length > 0) {
-    fs.writeFileSync(FOOD_LABELS_FILE, JSON.stringify([...existingLabels, ...newLabels], null, 2) + "\n");
+    fs.writeFileSync(
+      FOOD_LABELS_FILE,
+      JSON.stringify([...existingLabels, ...newLabels], null, 2) + "\n",
+    );
   }
 
   // 3. Update grey_market_db.json
@@ -478,7 +488,10 @@ async function main() {
     return true;
   });
   if (newGrey.length > 0) {
-    fs.writeFileSync(GREY_MARKET_FILE, JSON.stringify([...existingGrey, ...newGrey], null, 2) + "\n");
+    fs.writeFileSync(
+      GREY_MARKET_FILE,
+      JSON.stringify([...existingGrey, ...newGrey], null, 2) + "\n",
+    );
   }
 
   // 4. Update TypeScript data modules across the website
