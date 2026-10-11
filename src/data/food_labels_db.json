@@ -353,5 +353,21 @@
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: AHA Dietary Fats Advisory confirms dietary saturated fatty acids (especially palmitic acid) are the primary driver of endogenous hepatic LDL-C synthesis, regardless of zero dietary cholesterol.",
     "clinicalDisclaimer": "📍 IMPORTANT: A 'Cholesterol-Free' plant food can still raise your blood cholesterol if it is high in saturated palm fat or refined starch."
+  },
+  {
+    "id": "fl-27",
+    "marketing_claim": "Sea Salt / Himalayan Pink Salt — 'Low Sodium Alternative'",
+    "real_meaning": "Contains 98% pure sodium chloride—virtually the exact same blood-pressure-raising sodium load by weight as regular white table salt.",
+    "risk_level": "HIGH",
+    "biological_impact": "Pink Himalayan salt gets its pretty color from a tiny 2% trace of iron oxide (rust) and minerals. Gram for gram, it raises blood pressure and stresses your kidneys just like regular salt—and because it is rarely iodized, switching to it completely can leave your thyroid gland starved of iodine.",
+    "how_to_spot": "Check the Sodium mg per 1/4 teaspoon on the back label (usually 500–580 mg). Also check whether the label states 'Supplies Iodine, a necessary nutrient.'",
+    "common_products": [
+      "Pink Himalayan Salt Grinders",
+      "Artisanal Sea Salt Crisps",
+      "Gourmet Rock Salt Mixes"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: Chemical composition analyses and WHO Sodium Intake Guidelines confirm gourmet rock and sea salts contain ~97-99% NaCl with clinically negligible trace mineral benefits.",
+    "clinicalDisclaimer": "📍 IMPORTANT: Keep total salt from all sources (white, pink, black, or sea salt) under 1 teaspoon (5 grams) per day, and ensure your household uses iodized salt."
   }
 ]

@@ -287,5 +287,26 @@
     "category": "health_tip",
     "rarity": "almost_unknown",
     "text": "Large global studies (The Lancet PURE study) found that hand grip strength is a stronger predictor of heart health and healthy aging than blood pressure alone."
+  },
+  {
+    "id": "gen-daily-stomach-blush",
+    "bodyPartId": "stomach",
+    "category": "weird_wild",
+    "rarity": "almost_unknown",
+    "text": "When your face blushes from embarrassment, the inner lining of your stomach also turns bright red at the exact same moment because both react to the same adrenaline surge."
+  },
+  {
+    "id": "gen-daily-foot-sweat-glands",
+    "bodyPartId": "feet",
+    "category": "record_breaker",
+    "rarity": "surprising",
+    "text": "Your two feet house over 250,000 sweat glands—more per square inch than anywhere else on your body—capable of producing half a pint of moisture on a hot day."
+  },
+  {
+    "id": "gen-daily-thoracic-rib-cage",
+    "bodyPartId": "spine-thoracic",
+    "category": "health_tip",
+    "rarity": "common",
+    "text": "Rotating your mid-back (thoracic spine) gently in a chair for 60 seconds every afternoon unlocks stiff rib-cage joints and lets your lungs expand up to 15% more deeply."
   }
 ]

@@ -1232,4 +1232,17 @@ export const MYTHS: MythBusted[] = [
     evidenceStatement:
       "✅ EVIDENCE: Clinical dermatological trials since 1928 (Trotter) and Mayo Clinic guidance confirm shaving has zero effect on follicular shaft diameter, melanin density, or growth rate.",
   },
+  {
+    id: "m-tilt-head-back-nosebleed",
+    bodyPartId: "sinuses",
+    myth: "When you get a nosebleed, you should immediately tilt your head far back to keep the blood inside.",
+    reality:
+      "Tilting your head backward makes blood drain straight down the back of your throat into your windpipe (risking choking) or into your stomach (where blood irritates the stomach lining and triggers vomiting). Instead, sit upright, lean slightly forward, and pinch the soft lower wings of your nose shut for 10 to 15 minutes.",
+    sources: ["American Red Cross First Aid Guidelines", "NHS Ear, Nose & Throat Guidance"],
+    actionableTip:
+      "Lean forward at the waist, pinch the soft fleshy part of your nostrils right below the bony bridge, and breathe calmly through your mouth for 10–15 minutes.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: American Red Cross and Emergency Medicine guidelines contraindicate head extension during epistaxis due to airway aspiration and emesis risks.",
+  },
 ];

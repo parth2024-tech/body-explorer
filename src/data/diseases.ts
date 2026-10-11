@@ -1083,4 +1083,34 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
       "Every case of diverticulitis requires immediate strong antibiotics or surgery (mild uncomplicated cases are often managed safely with bowel rest and medical supervision)",
     ],
   },
+  {
+    id: "d-56",
+    name: "Digital Eye Strain (Computer Vision Syndrome)",
+    overview:
+      "A very common condition where your eyes feel dry, tired, burning, or blurry after staring at phones, tablets, or computer screens for hours without a break. Normally, you blink about 15 to 20 times a minute to wipe a fresh layer of soothing tears across your eyes, but when staring at a bright screen, your blink rate drops by more than half while your inner focusing muscles stay locked in a tight cramp.",
+    symptoms: [
+      {
+        text: "Dry, gritty, burning, or watery eyes after screen use",
+        frequency: "always",
+      },
+      {
+        text: "Mild headache behind the forehead or temples in the afternoon",
+        frequency: "often",
+      },
+      {
+        text: "Brief blurry vision when looking up from a screen to a far wall",
+        frequency: "often",
+      },
+      {
+        text: "Stiff neck and tight shoulders from leaning toward the monitor",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "See an eye doctor (optometrist or ophthalmologist) if eye strain comes with double vision, sudden flashes of light, eye pain that does not improve after resting, or headaches that wake you from sleep.",
+    misconceptions: [
+      "Myth: Expensive blue-light blocking glasses cure digital eye strain. Reality: Clinical trials (Cochrane 2023) show blue-light glasses do not stop eye fatigue—blinking more often, taking 20-20-20 breaks, and fixing screen glare are what actually work.",
+    ],
+    bodyPartId: "eyes",
+  },
 ];

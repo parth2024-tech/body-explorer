@@ -2938,6 +2938,17 @@ export const FOOD_SYNERGIES: FoodSynergyPair[] = [
     culinaryIdea:
       "Pair two small squares (15g) of 70%+ dark chocolate with a handful of fresh berries or pomegranate seeds after lunch.",
   },
+  {
+    id: "syn-beans-citrus-iron",
+    foodA: "Lentils, Beans, or Spinach (Non-Heme Iron)",
+    foodB: "Fresh Lemon Juice or Bell Peppers (Vitamin C)",
+    synergyOutcome: "Non-Heme Iron Absorption Multiplier",
+    multiplier: "+300% to +400% Iron Uptake",
+    mechanism:
+      "Plant-based non-heme iron exists in an oxidized ferric form (Fe3+) that is poorly absorbed by human intestines. Vitamin C chemically reduces it into soluble ferrous iron (Fe2+) right in your stomach, shielding it from inhibitory phytates and boosting absorption up to fourfold.",
+    culinaryIdea:
+      "Always squeeze fresh lemon juice over cooked dal, bean chili, or sauteed palak right before serving.",
+  },
 ];
 
 export interface DrugFoodWarning {
@@ -3060,5 +3071,15 @@ export const DRUG_FOOD_WARNINGS: DrugFoodWarning[] = [
       "St. John's Wort switches your liver's drug-clearing enzymes (CYP3A4) into overdrive, chewing up and flushing out vital prescription medicines before they can work—or triggering a dangerous serotonin overload when mixed with antidepressants.",
     doctorDirective:
       "Never start herbal mood supplements like St. John's Wort without checking with your doctor or pharmacist first.",
+  },
+  {
+    id: "warn-aged-cheese-maoi",
+    food: "Aged Cheeses, Cured Salami & Fermented Soy (High Tyramine)",
+    medicationClass: "MAOI Antidepressants (Phenelzine, Tranylcypromine, Selegiline)",
+    riskSeverity: "CRITICAL",
+    clinicalConsequence:
+      "Aged foods contain high amounts of tyramine. MAOI medicines block the digestive enzyme needed to break down tyramine, causing it to flood your bloodstream and trigger a dangerous, emergency spike in blood pressure (hypertensive crisis) with severe headache.",
+    doctorDirective:
+      "Strictly avoid aged cheeses, tap beers, and cured meats if you take an MAOI antidepressant, and seek emergency care for severe sudden headaches.",
   },
 ];

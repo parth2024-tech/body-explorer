@@ -274,46 +274,44 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
   ],
   greyMarket: [
     {
-      id: 30,
-      category: "cosmetics",
-      icon: "🧴",
-      product: "Unregulated Skin-Lightening Creams (Inorganic Mercury Compounds)",
-      molecule: "Ammoniated Mercury / Mercurous Chloride",
-      subtitle: "Illicit melanogenesis inhibitors detected in imported fairness creams.",
+      id: 31,
+      category: "supplements",
+      icon: "💨",
+      product: "Unregulated Semi-Synthetic Cannabinoid Vapes & Gummies (HHC / Delta-8)",
+      molecule: "Hexahydrocannabinol (HHC) / Isomerized Hemp Distillates",
+      subtitle:
+        "Semi-synthetic psychoactive cannabinoids sold without standardized safety or heavy metal testing.",
       brands: [
-        "Unlabeled Imported Night Fairness Creams",
-        "Counterfeit Online Brightening Ointments",
-        "Grey-Market Spot Bleaching Jars",
+        "Gas-Station HHC Disposable Vapes",
+        "Unlicensed Delta-8 Gummy Rings",
+        "Online 'Legal Hemp High' Cartridges",
       ],
-      risk: "CRITICAL",
-      organ: "Kidneys & Central Nervous System",
+      risk: "HIGH",
+      organ: "Brain & Respiratory System",
       summary:
-        "The WHO, US FDA, and state drug controllers repeatedly seize imported skin-lightening creams containing up to 10,000–30,000 ppm of toxic mercury—thousands of times above the 1 ppm legal trace limit.",
+        "European health authorities (France, Austria, Sweden, Czechia) and multiple US state regulators have issued statutory bans against HHC and unregulated semi-synthetic cannabinoid vapes due to toxic heavy-metal catalyst residues and acute psychiatric emergency room visits.",
       mechanism:
-        "Mercury salts block the skin enzyme tyrosinase to stop pigment production, but absorb directly through your skin into your bloodstream. The mercury collects in your kidneys (causing nephrotic syndrome and kidney damage) and crosses into your brain, causing hand tremors, memory loss, and nerve tingling.",
+        "HHC is manufactured by hydrogenating hemp CBD using metal catalysts (palladium, platinum, nickel). Poorly purified batches carry toxic heavy-metal residues and synthetic isomers that overstimulate brain CB1 receptors, triggering severe tachycardia, anxiety crises, and lung irritation.",
       status_global: {
-        WHO: "Minamata Convention Global Ban (>1 ppm in Cosmetics)",
-        US: "FDA Import Alert 53-18 (Detention Without Physical Examination)",
-        EU: "Strictly Prohibited (Regulation EC 1223/2009)",
-        ASEAN: "Banned & Subject to Mandatory Recall",
+        EU: "Classified as a Controlled Substance in France, Austria, Sweden, Switzerland, Finland, Czechia",
+        US: "Subject to state-level consumer bans and ongoing DEA synthetic cannabinoid classification reviews",
+        UK: "Controlled under the Psychoactive Substances Act 2016",
       },
-      status_india:
-        "Prohibited in cosmetics under the Drugs and Cosmetics Rules, 1945 (CDSCO); BIS IS 4707 prohibits mercury compounds.",
+      status_india: "Prohibited under the Narcotic Drugs and Psychotropic Substances (NDPS) Act.",
       how_to_spot:
-        "Avoid any cream without a full ingredient list or look out for words like 'Mercurous chloride', 'Calomel', 'Mercuric', 'Mercurio', or 'Hg'. Never buy unsealed jars sold via social media.",
+        "Look for neon vape packaging claiming '100% Legal Hemp High' with zero ISO-accredited third-party laboratory Certificate of Analysis (CoA) testing for heavy metals or residual solvents.",
       alternatives: [
-        "Dermatologist-approved Niacinamide (2–5%) serums",
-        "Vitamin C (L-Ascorbic Acid) + Broad-Spectrum SPF 50 sunscreen",
-        "Azelaic acid or Kojic acid formulations from licensed pharmacies",
+        "Evidence-based breathwork and sleep hygiene for nervous tension",
+        "Consultation with a licensed physician for chronic anxiety or sleep disorders",
       ],
-      ref: "World Health Organization (WHO) Mercury in Skin Lightening Products Sheet / US FDA Import Alert 53-18",
-      regulatorAgency: "WHO, US FDA & CDSCO",
-      noticeDate: "2024 Ongoing Surveillance",
+      ref: "European Monitoring Centre for Drugs and Drug Addiction (EMCDDA) Technical Report / French ANSM Directive",
+      regulatorAgency: "EMCDDA & National Drug Regulatory Agencies",
+      noticeDate: "2024 Regulatory Crackdown",
       confidenceLevel: "HIGH",
       evidenceStatement:
-        "WHO and FDA laboratory testing confirms transdermal mercury absorption from fairness creams causes membranous nephropathy and peripheral neuropathy.",
+        "EMCDDA pharmacovigilance confirms acute cardiovascular and psychiatric toxicity from non-standardized synthetic cannabinoid isomers.",
       clinicalDisclaimer:
-        "Stop using unlabeled fairness creams immediately and consult a doctor for a urine mercury test if you experience foamy urine, numbness, or tremors.",
+        "Never inhale or ingest unregulated psychoactive vape oils or candies sold outside licensed pharmacy or statutory regulatory channels.",
     },
   ],
   insights: [
@@ -393,97 +391,96 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
   ],
   remedies: [
     {
-      id: "warm-eyelid-compress",
-      name: "Warm Moist Compress for Dry, Tired Eyes",
+      id: "prunes-sorbitol-constipation",
+      name: "Stewed Prunes & Natural Sorbitol for Sluggish Digestion",
       description:
-        "Resting a clean washcloth soaked in comfortably warm water over closed eyelids for 5 to 10 minutes melts hardened natural oils inside your eyelid glands (meibomian glands) so your tears stop evaporating so fast.",
+        "Eating 4 to 6 whole dried prunes (about 50 grams) daily with a glass of water to promote gentle, regular bowel movements without harsh chemical laxatives.",
       evidenceRating: "studied",
       evidenceDetails:
-        "American Academy of Ophthalmology (AAO) and Tear Film & Ocular Surface Society (TFOS DEWS II) guidelines recommend daily warm eyelid compresses as first-line care for evaporative dry eye and eyelid gland sluggishness.",
-      ailment: "Dry Eyes & Screen Fatigue",
-      bodyPartId: "eyes",
+        "Randomized clinical trials (Alimentary Pharmacology & Therapeutics) show prunes are more effective than psyllium husk at improving stool frequency and consistency due to natural osmotic sorbitol, insoluble cellulose, and chlorogenic acids that stimulate colonic motility.",
+      ailment: "Sluggish Bowel Motility & Mild Constipation",
+      bodyPartId: "large-intestine",
       practicalContext:
-        "Use a clean cloth warmed to about bathwater temperature (40°C / 104°F)—never scalding hot—for 5 minutes each evening, followed by gentle blinking.",
+        "Eat 4 to 5 dried prunes with breakfast alongside a tall glass of lukewarm water. Avoid sudden megadoses over 10 prunes to prevent gas and bloating.",
     },
   ],
   hacks: [
     {
-      id: "chin-tuck-posture-reset",
-      title: "The 5-Second Chin Tuck for 'Text Neck' Relief",
+      id: "palming-eye-relaxation",
+      title: "30-Second Warm Palming Eye Reset",
       practice:
-        "Sit or stand tall, look straight ahead, and gently glide your chin straight backward (like making a polite double chin) without tilting your nose up or down. Hold for 5 seconds and repeat 5 times.",
+        "Rub your palms together briskly for 10 seconds until warm, then cup your hollowed palms gently over your closed eyes without pressing on your eyeballs. Breathe slowly in total dark warmth for 30 seconds.",
       scienceBasis:
-        "Re-aligns your heavy skull directly over your neck bones (cervical spine), instantly taking up to 30 pounds of pulling strain off the tired muscles at the base of your skull.",
-      bodyPartId: "spine-cervical",
+        "Complete darkness combined with soothing mild palm warmth allows the light-sensitive rhodopsin pigments in your retinal rods to fully reset while relaxing tense facial and orbital muscles.",
+      bodyPartId: "eyes",
     },
   ],
   bodyMarvels: [
     {
-      id: "cornea-air-breathing",
-      title: "The Cornea: The Living Window That Breathes Air",
+      id: "kidney-nephron-recycler",
+      title: "The Nephron Network: 1 Million Microscopic Filters",
       introduction:
-        "Every tissue in your body needs oxygen to stay alive, yet the clear front dome of your eye (the cornea) contains zero blood vessels so light can pass through without a single shadow.",
+        "Inside each fist-sized kidney sits an intricate labyrinth of over 1 million microscopic filtering units called nephrons, which inspect and recycle your entire blood volume every 30 minutes.",
       sections: [
         {
-          heading: "1. Breathing Directly From the Sky",
-          body: "Instead of getting oxygen from red blood cells, the outer cells of your cornea absorb oxygen gas directly from the open air, dissolving it into your microscopic tear film with every blink.",
+          heading: "1. The 99% Reabsorption Miracle",
+          body: "Every single day, your nephrons pull about 180 liters of liquid out of your blood. But they don't dump it; their tubular cells painstakingly reabsorb 99% of that water, returning essential sugars, salts, and amino acids safely back into your circulation.",
         },
         {
-          heading: "2. The Fastest Healer on Your Body",
-          body: "Packed with more nerve endings per square millimeter than anywhere else on your body, corneal surface cells can slide and zip shut minor surface scratches within 24 to 48 hours.",
+          heading: "2. The Master Chemist",
+          body: "While recycling water, nephrons precisely meter out hydrogen and bicarbonate ions down to the microgram, keeping your blood pH strictly between 7.35 and 7.45—a life-or-death balance.",
         },
       ],
       conclusion:
-        "Never sleep in contact lenses unless specifically approved by your eye doctor—contacts act like a plastic blanket that can starve your cornea of nighttime oxygen.",
-      bodyPartId: "eyes",
+        "Nephrons do not grow back once permanently scarred by uncontrolled high blood pressure or chronic dehydration. Keep them healthy by drinking water and limiting excess table salt.",
+      bodyPartId: "kidneys",
     },
   ],
   sensoryFacts: [
     {
-      id: "photic-sneeze-reflex",
-      sensation: "Sudden Sneeze When Stepping Into Bright Sunlight (ACHOO Syndrome)",
+      id: "orthostatic-headrush",
+      sensation: "Brief Head-Rush or Dizzy Spell When Standing Up Fast",
       cause:
-        "In about 1 in 4 people, the optic nerve carrying bright light signals from the eyes runs so close to the facial trigeminal nerve that a sudden burst of sunlight 'cross-wires' and tricks the brain into thinking the nose is being tickled.",
-      tip: "Put on polarized sunglasses before stepping out of a dark building into bright midday sun, especially when driving.",
-      bodyPartId: "sinuses",
+        "When you stand up abruptly from lying or sitting, gravity temporarily pulls about half a liter of blood down into your legs and belly. Before your heart and neck sensors (baroreceptors) can clamp blood vessels shut, blood pressure in your head drops for 2 to 3 seconds.",
+      tip: "Pause on the edge of the bed for 5 seconds before standing, and flex your calf muscles to pump blood back up toward your heart.",
+      bodyPartId: "heart",
     },
   ],
   qaEntries: [
     {
-      id: "contact-lens-tap-water-expert",
+      id: "creatine-hair-loss-expert",
       question:
-        "Why is it dangerous to rinse contact lenses in tap water or wear them in the shower?",
+        "Does taking creatine powder for muscle strength actually cause baldness or hair loss?",
       answer:
-        "Clean drinking tap water is safe for your stomach, but it is not sterile. Tap water can carry a tough microscopic organism called Acanthamoeba that sticks to soft contact lenses and burrows into the clear front window of your eye (cornea), causing a painful, sight-threatening infection. Always use sterile contact lens solution and take lenses out before showering or swimming.",
-      expertName: "Dr. Priya Nair",
-      expertTitle: "Board-Certified Ophthalmologist",
-      bodyPartId: "eyes",
+        "No. The myth began from a single small 2009 rugby study that observed a modest rise in DHT hormone levels, but it never measured actual hair loss. Since then, over a dozen clinical trials and systematic reviews have studied creatine supplementation, and none have found evidence that creatine damages hair follicles or causes hair thinning. Hair loss is almost entirely driven by genetics and age.",
+      expertName: "Dr. Rachel Simmons",
+      expertTitle: "Sports Nutritionist & Exercise Physiologist",
+      bodyPartId: "muscles",
     },
   ],
   foodSynergies: [
     {
-      id: "syn-dark-chocolate-berries",
-      foodA: "70%+ Dark Chocolate (Cocoa Flavanols)",
-      foodB: "Fresh Raspberries or Pomegranate (Anthocyanins + Fiber)",
-      synergyOutcome: "Nitric Oxide Blood Flow & Vascular Elasticity",
-      multiplier: "+180% Endothelial Nitric Oxide Support",
+      id: "syn-beans-citrus-iron",
+      foodA: "Lentils, Beans, or Spinach (Non-Heme Iron)",
+      foodB: "Fresh Lemon Juice or Bell Peppers (Vitamin C)",
+      synergyOutcome: "Non-Heme Iron Absorption Multiplier",
+      multiplier: "+300% to +400% Iron Uptake",
       mechanism:
-        "Cocoa flavanols and berry anthocyanins work on complementary pathways in your blood vessel lining (endothelium) to boost natural nitric oxide gas, helping arteries relax while the fruit fiber slows down sugar absorption.",
+        "Plant-based non-heme iron exists in an oxidized ferric form (Fe3+) that is poorly absorbed by human intestines. Vitamin C chemically reduces it into soluble ferrous iron (Fe2+) right in your stomach, shielding it from inhibitory phytates and boosting absorption up to fourfold.",
       culinaryIdea:
-        "Pair two small squares (15g) of 70%+ dark chocolate with a handful of fresh berries or pomegranate seeds after lunch.",
+        "Always squeeze fresh lemon juice over cooked dal, bean chili, or sauteed palak right before serving.",
     },
   ],
   drugWarnings: [
     {
-      id: "warn-st-johns-wort-meds",
-      food: "St. John's Wort Herbal Teas & Mood Supplements",
-      medicationClass:
-        "Birth Control Pills, Antidepressants (SSRIs), Blood Thinners & Heart Medications",
+      id: "warn-aged-cheese-maoi",
+      food: "Aged Cheeses, Cured Salami & Fermented Soy (High Tyramine)",
+      medicationClass: "MAOI Antidepressants (Phenelzine, Tranylcypromine, Selegiline)",
       riskSeverity: "CRITICAL",
       clinicalConsequence:
-        "St. John's Wort switches your liver's drug-clearing enzymes (CYP3A4) into overdrive, chewing up and flushing out vital prescription medicines before they can work—or triggering a dangerous serotonin overload when mixed with antidepressants.",
+        "Aged foods contain high amounts of tyramine. MAOI medicines block the digestive enzyme needed to break down tyramine, causing it to flood your bloodstream and trigger a dangerous, emergency spike in blood pressure (hypertensive crisis) with severe headache.",
       doctorDirective:
-        "Never start herbal mood supplements like St. John's Wort without checking with your doctor or pharmacist first.",
+        "Strictly avoid aged cheeses, tap beers, and cured meats if you take an MAOI antidepressant, and seek emergency care for severe sudden headaches.",
     },
   ],
 };

@@ -481,4 +481,12 @@ export const DAILY_INSIGHTS: DailyInsight[] = [
       "Blink slowly and fully 10 times right now to spread fresh oxygen-rich tear film across your corneas.",
     actionDuration: "10s",
   },
+  {
+    dayOfYear: 63,
+    bodyPartId: "hands",
+    fact: "Your hand grip strength reflects your overall muscle vitality and is one of medicine's strongest predictors of long-term heart health.",
+    action:
+      "Make a tight fist with both hands, squeeze firmly for 5 seconds, then spread your fingers wide. Repeat 5 times.",
+    actionDuration: "30s",
+  },
 ];

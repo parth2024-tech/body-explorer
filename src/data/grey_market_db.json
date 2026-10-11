@@ -919,5 +919,39 @@
     "confidenceLevel": "HIGH",
     "evidenceStatement": "WHO and FDA laboratory testing confirms transdermal mercury absorption from fairness creams causes membranous nephropathy and peripheral neuropathy.",
     "clinicalDisclaimer": "Stop using unlabeled fairness creams immediately and consult a doctor for a urine mercury test if you experience foamy urine, numbness, or tremors."
+  },
+  {
+    "id": 31,
+    "category": "supplements",
+    "icon": "💨",
+    "product": "Unregulated Semi-Synthetic Cannabinoid Vapes & Gummies (HHC / Delta-8)",
+    "molecule": "Hexahydrocannabinol (HHC) / Isomerized Hemp Distillates",
+    "subtitle": "Semi-synthetic psychoactive cannabinoids sold without standardized safety or heavy metal testing.",
+    "brands": [
+      "Gas-Station HHC Disposable Vapes",
+      "Unlicensed Delta-8 Gummy Rings",
+      "Online 'Legal Hemp High' Cartridges"
+    ],
+    "risk": "HIGH",
+    "organ": "Brain & Respiratory System",
+    "summary": "European health authorities (France, Austria, Sweden, Czechia) and multiple US state regulators have issued statutory bans against HHC and unregulated semi-synthetic cannabinoid vapes due to toxic heavy-metal catalyst residues and acute psychiatric emergency room visits.",
+    "mechanism": "HHC is manufactured by hydrogenating hemp CBD using metal catalysts (palladium, platinum, nickel). Poorly purified batches carry toxic heavy-metal residues and synthetic isomers that overstimulate brain CB1 receptors, triggering severe tachycardia, anxiety crises, and lung irritation.",
+    "status_global": {
+      "EU": "Classified as a Controlled Substance in France, Austria, Sweden, Switzerland, Finland, Czechia",
+      "US": "Subject to state-level consumer bans and ongoing DEA synthetic cannabinoid classification reviews",
+      "UK": "Controlled under the Psychoactive Substances Act 2016"
+    },
+    "status_india": "Prohibited under the Narcotic Drugs and Psychotropic Substances (NDPS) Act.",
+    "how_to_spot": "Look for neon vape packaging claiming '100% Legal Hemp High' with zero ISO-accredited third-party laboratory Certificate of Analysis (CoA) testing for heavy metals or residual solvents.",
+    "alternatives": [
+      "Evidence-based breathwork and sleep hygiene for nervous tension",
+      "Consultation with a licensed physician for chronic anxiety or sleep disorders"
+    ],
+    "ref": "European Monitoring Centre for Drugs and Drug Addiction (EMCDDA) Technical Report / French ANSM Directive",
+    "regulatorAgency": "EMCDDA & National Drug Regulatory Agencies",
+    "noticeDate": "2024 Regulatory Crackdown",
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "EMCDDA pharmacovigilance confirms acute cardiovascular and psychiatric toxicity from non-standardized synthetic cannabinoid isomers.",
+    "clinicalDisclaimer": "Never inhale or ingest unregulated psychoactive vape oils or candies sold outside licensed pharmacy or statutory regulatory channels."
   }
 ]

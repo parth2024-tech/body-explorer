@@ -3512,6 +3512,19 @@ export const REMEDIES: RemedyEntry[] = [
     practicalContext:
       "Use a clean cloth warmed to about bathwater temperature (40°C / 104°F)—never scalding hot—for 5 minutes each evening, followed by gentle blinking.",
   },
+  {
+    id: "prunes-sorbitol-constipation",
+    name: "Stewed Prunes & Natural Sorbitol for Sluggish Digestion",
+    description:
+      "Eating 4 to 6 whole dried prunes (about 50 grams) daily with a glass of water to promote gentle, regular bowel movements without harsh chemical laxatives.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Randomized clinical trials (Alimentary Pharmacology & Therapeutics) show prunes are more effective than psyllium husk at improving stool frequency and consistency due to natural osmotic sorbitol, insoluble cellulose, and chlorogenic acids that stimulate colonic motility.",
+    ailment: "Sluggish Bowel Motility & Mild Constipation",
+    bodyPartId: "large-intestine",
+    practicalContext:
+      "Eat 4 to 5 dried prunes with breakfast alongside a tall glass of lukewarm water. Avoid sudden megadoses over 10 prunes to prevent gas and bloating.",
+  },
 ];
 
 export const HACKS: HealthHack[] = [
@@ -3622,6 +3635,15 @@ export const HACKS: HealthHack[] = [
     scienceBasis:
       "Re-aligns your heavy skull directly over your neck bones (cervical spine), instantly taking up to 30 pounds of pulling strain off the tired muscles at the base of your skull.",
     bodyPartId: "spine-cervical",
+  },
+  {
+    id: "palming-eye-relaxation",
+    title: "30-Second Warm Palming Eye Reset",
+    practice:
+      "Rub your palms together briskly for 10 seconds until warm, then cup your hollowed palms gently over your closed eyes without pressing on your eyeballs. Breathe slowly in total dark warmth for 30 seconds.",
+    scienceBasis:
+      "Complete darkness combined with soothing mild palm warmth allows the light-sensitive rhodopsin pigments in your retinal rods to fully reset while relaxing tense facial and orbital muscles.",
+    bodyPartId: "eyes",
   },
 ];
 
@@ -3873,6 +3895,25 @@ export const BODY_MARVELS: BodyMarvel[] = [
       "Never sleep in contact lenses unless specifically approved by your eye doctor—contacts act like a plastic blanket that can starve your cornea of nighttime oxygen.",
     bodyPartId: "eyes",
   },
+  {
+    id: "kidney-nephron-recycler",
+    title: "The Nephron Network: 1 Million Microscopic Filters",
+    introduction:
+      "Inside each fist-sized kidney sits an intricate labyrinth of over 1 million microscopic filtering units called nephrons, which inspect and recycle your entire blood volume every 30 minutes.",
+    sections: [
+      {
+        heading: "1. The 99% Reabsorption Miracle",
+        body: "Every single day, your nephrons pull about 180 liters of liquid out of your blood. But they don't dump it; their tubular cells painstakingly reabsorb 99% of that water, returning essential sugars, salts, and amino acids safely back into your circulation.",
+      },
+      {
+        heading: "2. The Master Chemist",
+        body: "While recycling water, nephrons precisely meter out hydrogen and bicarbonate ions down to the microgram, keeping your blood pH strictly between 7.35 and 7.45—a life-or-death balance.",
+      },
+    ],
+    conclusion:
+      "Nephrons do not grow back once permanently scarred by uncontrolled high blood pressure or chronic dehydration. Keep them healthy by drinking water and limiting excess table salt.",
+    bodyPartId: "kidneys",
+  },
 ];
 
 export const SENSORY_FACTS: SensoryFact[] = [
@@ -3955,6 +3996,14 @@ export const SENSORY_FACTS: SensoryFact[] = [
       "In about 1 in 4 people, the optic nerve carrying bright light signals from the eyes runs so close to the facial trigeminal nerve that a sudden burst of sunlight 'cross-wires' and tricks the brain into thinking the nose is being tickled.",
     tip: "Put on polarized sunglasses before stepping out of a dark building into bright midday sun, especially when driving.",
     bodyPartId: "sinuses",
+  },
+  {
+    id: "orthostatic-headrush",
+    sensation: "Brief Head-Rush or Dizzy Spell When Standing Up Fast",
+    cause:
+      "When you stand up abruptly from lying or sitting, gravity temporarily pulls about half a liter of blood down into your legs and belly. Before your heart and neck sensors (baroreceptors) can clamp blood vessels shut, blood pressure in your head drops for 2 to 3 seconds.",
+    tip: "Pause on the edge of the bed for 5 seconds before standing, and flex your calf muscles to pump blood back up toward your heart.",
+    bodyPartId: "heart",
   },
 ];
 
@@ -4480,6 +4529,16 @@ export const QA_ENTRIES: QAEntry[] = [
     expertName: "Dr. Priya Nair",
     expertTitle: "Board-Certified Ophthalmologist",
     bodyPartId: "eyes",
+  },
+  {
+    id: "creatine-hair-loss-expert",
+    question:
+      "Does taking creatine powder for muscle strength actually cause baldness or hair loss?",
+    answer:
+      "No. The myth began from a single small 2009 rugby study that observed a modest rise in DHT hormone levels, but it never measured actual hair loss. Since then, over a dozen clinical trials and systematic reviews have studied creatine supplementation, and none have found evidence that creatine damages hair follicles or causes hair thinning. Hair loss is almost entirely driven by genetics and age.",
+    expertName: "Dr. Rachel Simmons",
+    expertTitle: "Sports Nutritionist & Exercise Physiologist",
+    bodyPartId: "muscles",
   },
 ];
 
