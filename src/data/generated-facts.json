@@ -308,5 +308,26 @@
     "category": "health_tip",
     "rarity": "common",
     "text": "Rotating your mid-back (thoracic spine) gently in a chair for 60 seconds every afternoon unlocks stiff rib-cage joints and lets your lungs expand up to 15% more deeply."
+  },
+  {
+    "id": "gen-daily-liver-regeneration",
+    "bodyPartId": "liver",
+    "category": "weird_wild",
+    "rarity": "mind_blowing",
+    "text": "Your liver is the only organ that can completely regrow itself—even if doctors surgically remove 70% of it, healthy liver tissue grows back to 100% full size in just a few weeks."
+  },
+  {
+    "id": "gen-daily-saliva-production",
+    "bodyPartId": "jaw",
+    "category": "record_breaker",
+    "rarity": "surprising",
+    "text": "Your mouth glands make about 1 to 1.5 liters of watery spit (saliva) every single day—enough to fill two sports water bottles—coating your teeth with protective minerals and kicking off digestion."
+  },
+  {
+    "id": "gen-daily-skeletal-remodeling",
+    "bodyPartId": "bones",
+    "category": "health_tip",
+    "rarity": "almost_unknown",
+    "text": "Your skeleton is completely replaced every 10 years; microscopic clean-up cells (osteoclasts) break down worn-out bone while builder cells (osteoblasts) lay down fresh calcium so your frame stays strong."
   }
 ]

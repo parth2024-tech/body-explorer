@@ -1245,4 +1245,17 @@ export const MYTHS: MythBusted[] = [
     evidenceStatement:
       "✅ EVIDENCE: American Red Cross and Emergency Medicine guidelines contraindicate head extension during epistaxis due to airway aspiration and emesis risks.",
   },
+  {
+    id: "m-feed-fever-starve-cold",
+    bodyPartId: "brain",
+    myth: "You should feed a cold and starve a fever.",
+    reality:
+      "Starving a fever is dangerous advice. When your body fights an infection, your internal thermostat goes up to create a fever, which speeds up your metabolism and burns calories and fluids much faster than normal. Starving yourself deprives your immune cells of the energy they need to produce germ-fighting antibodies and causes dehydration.",
+    sources: ["Mayo Clinic Infectious Disease", "Scientific American Medicine"],
+    actionableTip:
+      "Sip warm soups, herbal teas, or electrolyte water every 1 to 2 hours, and eat easy-to-digest nutritious foods whenever you feel hungry.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Clinical physiology proves basal metabolic rate rises by approximately 10-12% for each 1°C increase in core body temperature, necessitating adequate caloric and fluid intake.",
+  },
 ];

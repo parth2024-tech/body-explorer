@@ -3525,6 +3525,19 @@ export const REMEDIES: RemedyEntry[] = [
     practicalContext:
       "Eat 4 to 5 dried prunes with breakfast alongside a tall glass of lukewarm water. Avoid sudden megadoses over 10 prunes to prevent gas and bloating.",
   },
+  {
+    id: "peppermint-oil-tension-headache",
+    name: "Topical Diluted Peppermint Oil for Forehead Tension",
+    description:
+      "Applying 2 to 3 drops of diluted peppermint essential oil (mixed into a teaspoon of carrier oil like coconut or olive oil) across your forehead and temples to ease tension headache tightness.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Double-blind clinical trials (Cephalalgia & Der Nervenarzt) showed a 10% topical peppermint oil solution was as effective as 1,000 mg of acetaminophen (paracetamol) in reducing tension headache pain after 15 to 30 minutes, because natural menthol stimulates cold-sensing skin receptors (TRPM8) that block local pain signals and relax tight forehead muscles.",
+    ailment: "Mild Tension Headaches & Forehead Muscle Tightness",
+    bodyPartId: "frontal-lobe",
+    practicalContext:
+      "Always mix pure essential oil into a carrier oil first (never apply undiluted oil directly to your skin) and keep it well away from your eyes to prevent stinging.",
+  },
 ];
 
 export const HACKS: HealthHack[] = [
@@ -3644,6 +3657,15 @@ export const HACKS: HealthHack[] = [
     scienceBasis:
       "Complete darkness combined with soothing mild palm warmth allows the light-sensitive rhodopsin pigments in your retinal rods to fully reset while relaxing tense facial and orbital muscles.",
     bodyPartId: "eyes",
+  },
+  {
+    id: "physiological-sigh-de-stress",
+    title: "The Two-Inhale Physiological Sigh (Rapid Heart Rate Deceleration)",
+    practice:
+      "Take two deep breaths in through your nose (one long deep inhale, followed immediately by a sharp second inhale to pop open your tiny lung sacs), then let out one long, slow sigh through your mouth for 6 to 8 seconds. Repeat 2 to 3 times.",
+    scienceBasis:
+      "Stanford University neurobiology research showed that this cyclic double-inhale sigh immediately reinflates collapsed lung alveoli (tiny air bubbles) and triggers vagus nerve signaling that slows your heart rate faster than standard breathwork or meditation.",
+    bodyPartId: "lung-right",
   },
 ];
 
@@ -3914,6 +3936,25 @@ export const BODY_MARVELS: BodyMarvel[] = [
       "Nephrons do not grow back once permanently scarred by uncontrolled high blood pressure or chronic dehydration. Keep them healthy by drinking water and limiting excess table salt.",
     bodyPartId: "kidneys",
   },
+  {
+    id: "liver-metabolic-powerhouse",
+    title: "The Liver: Your Body's 500-Function Chemical Factory",
+    introduction:
+      "Weighing about 3 pounds, your liver is your largest internal organ and performs over 500 vital jobs simultaneously—from neutralizing chemicals and brewing digestive bile to storing glucose energy for your brain.",
+    sections: [
+      {
+        heading: "1. The Master Chemical Recycler",
+        body: "Every minute, about 1.5 liters of blood from your intestines flow straight into your liver. Liver cells (hepatocytes) screen every drop, neutralizing toxic metabolic wastes, breaking down medications, and recycling red blood cell iron so it can be reused safely.",
+      },
+      {
+        heading: "2. The 24-Hour Sugar Battery",
+        body: "Your liver stores excess sugar from your meals as glycogen (animal starch). While you sleep, it slowly meters out glucose molecules into your bloodstream at a steady trickle so your brain has constant fuel without running out.",
+      },
+    ],
+    conclusion:
+      "Your liver has incredible self-healing power, but chronic excess alcohol and ultra-processed sugary drinks can silently scar liver tissue (cirrhosis). Protect it by staying active and eating whole fiber-rich foods.",
+    bodyPartId: "liver",
+  },
 ];
 
 export const SENSORY_FACTS: SensoryFact[] = [
@@ -4004,6 +4045,14 @@ export const SENSORY_FACTS: SensoryFact[] = [
       "When you stand up abruptly from lying or sitting, gravity temporarily pulls about half a liter of blood down into your legs and belly. Before your heart and neck sensors (baroreceptors) can clamp blood vessels shut, blood pressure in your head drops for 2 to 3 seconds.",
     tip: "Pause on the edge of the bed for 5 seconds before standing, and flex your calf muscles to pump blood back up toward your heart.",
     bodyPartId: "heart",
+  },
+  {
+    id: "brain-freeze-sphenopalatine",
+    sensation: "Ice Cream Headache (Sudden Brain Freeze)",
+    cause:
+      "When cold food or ice cream touches the warm roof of your mouth, local blood vessels rapidly constrict to save heat and then violently dilate to restore warmth. Pain sensors in your palate bundle (the sphenopalatine ganglion) interpret this rapid temperature shift as danger, and the trigeminal nerve mistakenly refers the pain upward to your forehead and temples.",
+    tip: "Press the flat, warm underside of your tongue firmly against the roof of your mouth for 10 seconds to warm the nerve bundle and end the freeze.",
+    bodyPartId: "throat",
   },
 ];
 
@@ -4539,6 +4588,16 @@ export const QA_ENTRIES: QAEntry[] = [
     expertName: "Dr. Rachel Simmons",
     expertTitle: "Sports Nutritionist & Exercise Physiologist",
     bodyPartId: "muscles",
+  },
+  {
+    id: "cracking-knuckles-arthritis-expert",
+    question:
+      "Does cracking your knuckles or fingers cause arthritis or swollen joints later in life?",
+    answer:
+      "No. The popping sound does not come from bones rubbing together; it is caused by tiny gas bubbles (mostly nitrogen) popping inside the lubricating fluid (synovial fluid) that cushions your finger joints. Famous clinical studies, including a doctor who cracked the knuckles of only his left hand for 50 years, showed zero difference in arthritis rates between his two hands. However, pulling your joints with excessive force can irritate surrounding tendons.",
+    expertName: "Dr. Marcus Vance",
+    expertTitle: "Board-Certified Orthopedic Surgeon & Hand Specialist",
+    bodyPartId: "hands",
   },
 ];
 

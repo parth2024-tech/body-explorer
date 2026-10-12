@@ -489,4 +489,12 @@ export const DAILY_INSIGHTS: DailyInsight[] = [
       "Make a tight fist with both hands, squeeze firmly for 5 seconds, then spread your fingers wide. Repeat 5 times.",
     actionDuration: "30s",
   },
+  {
+    dayOfYear: 64,
+    bodyPartId: "lung-left",
+    fact: "Taking two quick inhales through your nose followed by one long slow sigh out your mouth pops open collapsed microscopic lung sacs (alveoli) and immediately slows a racing pulse.",
+    action:
+      "Try 3 physiological sighs right now: double-inhale through your nose, then a gentle 6-second sigh out your mouth.",
+    actionDuration: "30s",
+  },
 ];

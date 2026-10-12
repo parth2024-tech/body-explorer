@@ -1113,4 +1113,34 @@ export const DISEASE_ENTRIES: DiseaseEntry[] = [
     ],
     bodyPartId: "eyes",
   },
+  {
+    id: "d-57",
+    name: "Tension Headache (Stress & Neck Muscle Headache)",
+    overview:
+      "The most common type of headache in the world, causing a steady, dull ache that feels like a tight rubber band squeezing around your forehead, temples, or the back of your neck. It usually happens when tight neck, shoulder, or jaw muscles become overworked from stress, bad screen posture, or clenching your teeth.",
+    symptoms: [
+      {
+        text: "Dull, aching pressure that feels like a tight band wrapped around both sides of your head",
+        frequency: "always",
+      },
+      {
+        text: "Tenderness or soreness in your neck, shoulders, and scalp when touched",
+        frequency: "often",
+      },
+      {
+        text: "Mild stiffness when turning your head from side to side",
+        frequency: "often",
+      },
+      {
+        text: "Worsening tightness toward late afternoon or after long hours on computers",
+        frequency: "sometimes",
+      },
+    ],
+    whenToSeeDoctor:
+      "🚨 EMERGENCY WARNING - CALL 112 / 911 IMMEDIATELY: If you feel a sudden, explosive 'thunderclap' headache (the worst pain of your life in seconds), or if a headache comes with fever, stiff neck, confusion, weakness on one side of your face or body, or difficulty speaking. ⚠️ SEE A DOCTOR WITHIN 48 HOURS: If you need headache pills more than twice a week.",
+    misconceptions: [
+      "Myth: You should take pain pills every single day for tension headaches. Reality: Taking over-the-counter painkillers (like ibuprofen or paracetamol) more than 2 to 3 days a week causes 'medication overuse headaches' (rebound headaches) where the pills themselves trigger worse headaches every morning.",
+    ],
+    bodyPartId: "spine-cervical",
+  },
 ];

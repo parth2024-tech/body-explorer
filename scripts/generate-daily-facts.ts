@@ -227,6 +227,48 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
       rarity: "common",
       text: "Rotating your mid-back (thoracic spine) gently in a chair for 60 seconds every afternoon unlocks stiff rib-cage joints and lets your lungs expand up to 15% more deeply.",
     },
+    {
+      id: "gen-daily-liver-regeneration",
+      bodyPartId: "liver",
+      category: "weird_wild",
+      rarity: "mind_blowing",
+      text: "Your liver is the only organ that can completely regrow itself—even if doctors surgically remove 70% of it, healthy liver tissue grows back to 100% full size in just a few weeks.",
+    },
+    {
+      id: "gen-daily-saliva-production",
+      bodyPartId: "jaw",
+      category: "record_breaker",
+      rarity: "surprising",
+      text: "Your mouth glands make about 1 to 1.5 liters of watery spit (saliva) every single day—enough to fill two sports water bottles—coating your teeth with protective minerals and kicking off digestion.",
+    },
+    {
+      id: "gen-daily-skeletal-remodeling",
+      bodyPartId: "bones",
+      category: "health_tip",
+      rarity: "almost_unknown",
+      text: "Your skeleton is completely replaced every 10 years; microscopic clean-up cells (osteoclasts) break down worn-out bone while builder cells (osteoblasts) lay down fresh calcium so your frame stays strong.",
+    },
+    {
+      id: "gen-daily-retina-speed",
+      bodyPartId: "eyes",
+      category: "record_breaker",
+      rarity: "mind_blowing",
+      text: "The light-sensitive cells in the back of your eyes (the retina) process visual scenes in just 13 milliseconds—faster than a camera shutter—and send over 10 million bits of data to your brain every second.",
+    },
+    {
+      id: "gen-daily-heart-muscle-pumping",
+      bodyPartId: "heart",
+      category: "record_breaker",
+      rarity: "surprising",
+      text: "Your heart beats about 100,000 times a day without taking a single break, pumping roughly 7,500 liters of oxygen-rich blood through 60,000 miles of blood vessels.",
+    },
+    {
+      id: "gen-daily-blinking-eyelid",
+      bodyPartId: "eyes",
+      category: "health_tip",
+      rarity: "common",
+      text: "You spend about 10% of your waking hours with your eyes closed just from natural blinking, which wipes clean tears across your eyes to wash away dust and deliver fresh air.",
+    },
   ],
   foodLabels: [
     {
@@ -271,6 +313,48 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
       clinicalDisclaimer:
         "📍 IMPORTANT: Keep total salt from all sources (white, pink, black, or sea salt) under 1 teaspoon (5 grams) per day, and ensure your household uses iodized salt.",
     },
+    {
+      id: "fl-28",
+      marketing_claim: "Gluten-Free Packaged Cookies & Chips — 'Healthy Weight Loss Choice'",
+      real_meaning:
+        "Gluten is only a health problem for people with celiac disease (a digestive autoimmune condition) or diagnosed wheat allergy. Most packaged gluten-free snacks replace wheat with ultra-refined white rice flour, potato starch, and extra sugar to mimic gluten's chewiness, making them spike blood sugar even faster than regular cookies.",
+      risk_level: "MEDIUM",
+      biological_impact:
+        "Swapping whole wheat flour for ultra-refined tapioca or rice starch strips out natural dietary fiber while increasing the glycemic load. Unless you have celiac disease, eating processed gluten-free packaged snacks often triggers rapid blood sugar swings and increased hunger.",
+      how_to_spot:
+        "Check the first three ingredients: if refined rice flour, corn starch, or sugar come before any whole grains or seeds, it is an ultra-processed sweet treat rather than a health food.",
+      common_products: [
+        "Gluten-Free Packaged Cookies",
+        "Gluten-Free Pretzel Crisps",
+        "Gluten-Free Packaged Snack Cakes",
+      ],
+      confidenceLevel: "HIGH",
+      evidenceStatement:
+        "✅ EVIDENCE: Systematic reviews in the Journal of Human Nutrition and Dietetics confirm commercial gluten-free processed foods frequently contain higher saturated fat, sodium, and simple starch with less dietary fiber than gluten-containing equivalents.",
+      clinicalDisclaimer:
+        "📍 IMPORTANT: If you have celiac disease, strict gluten avoidance is medically mandatory. For others, naturally gluten-free whole foods (like brown rice, millets, beans, and vegetables) are far healthier than processed gluten-free packaged snacks.",
+    },
+    {
+      id: "fl-29",
+      marketing_claim: "Plant-Based & Vegan Frozen Burgers — 'Naturally Heart-Healthy'",
+      real_meaning:
+        "Even though made from soy or pea protein, many commercial vegan burger patties are packed with heavy amounts of saturated coconut oil and high salt to mimic beef juice, matching or exceeding the saturated fat of a real beef burger.",
+      risk_level: "HIGH",
+      biological_impact:
+        "Coconut oil is over 80% saturated fat. Consuming ultra-processed plant patties high in saturated fat and sodium drives up arterial LDL cholesterol and blood pressure just like greasy processed meat.",
+      how_to_spot:
+        "Check the Nutrition Facts panel for Saturated Fat (over 5g per patty) and look for 'Coconut Oil' or 'Refined Palm Fat' in the ingredient list.",
+      common_products: [
+        "Frozen Plant-Based Burger Patties",
+        "Commercial Vegan Sausage Links",
+        "Plant-Based Slider Patties",
+      ],
+      confidenceLevel: "HIGH",
+      evidenceStatement:
+        "✅ EVIDENCE: American Heart Association dietary advisories show that replacing dietary unsaturated fats with tropical saturated oils (coconut/palm) raises serum LDL-C regardless of whether the source is vegan.",
+      clinicalDisclaimer:
+        "📍 IMPORTANT: For cardiovascular wellness, choose whole-food plant proteins (lentils, chickpeas, tofu, edamame) instead of ultra-processed fake meat patties high in saturated oil.",
+    },
   ],
   greyMarket: [
     {
@@ -313,6 +397,88 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
       clinicalDisclaimer:
         "Never inhale or ingest unregulated psychoactive vape oils or candies sold outside licensed pharmacy or statutory regulatory channels.",
     },
+    {
+      id: 32,
+      category: "supplements",
+      icon: "⚠️",
+      product: "Illegal 'Herbal' Male Enhancement Pills Spiked with Synthetic Sildenafil (Viagra)",
+      molecule: "Hidden Unlisted Sildenafil & Tadalafil Analogs",
+      subtitle:
+        "Over-the-counter capsules sold as '100% all-natural herbs' secretly spiked with prescription erectile dysfunction drugs.",
+      brands: [
+        "Rhino 69 / Kangaroo Extreme",
+        "Titan 3000 'All-Natural' Gold Capsules",
+        "Gas-Station Sexual Enhancement Shots",
+      ],
+      risk: "CRITICAL",
+      organ: "Heart & Blood Vessels (Cardiovascular System)",
+      summary:
+        "FDA laboratory testing consistently finds over 80% of gas-station 'all-natural herbal' male enhancement supplements contain unlisted, dangerous doses of sildenafil (the active drug in Viagra) or untested chemical mimics. When taken by anyone using heart medicines like nitroglycerin, this causes a fatal drop in blood pressure.",
+      mechanism:
+        "Sildenafil strongly widens blood vessels. If someone taking prescription nitrate heart drugs or alpha-blockers takes this hidden drug, blood pressure plummets catastrophically (severe hypotension), cutting off blood flow to the heart and brain, triggering fatal cardiac arrest.",
+      status_global: {
+        US: "FDA Public Warning Notifications & statutory border seizures",
+        EU: "Banned under European Medicines Agency (EMA) Directives",
+        UK: "MHRA Public Health Alerts & Customs confiscations",
+      },
+      status_india:
+        "Prohibited under the Drugs and Cosmetics Act as spurious and adulterated drugs.",
+      how_to_spot:
+        "Metallic holographic blister packs sold at gas stations or convenience stores claiming '100% Natural Herbal Formula' that promise instant multi-day sexual performance.",
+      alternatives: [
+        "Cardiovascular aerobic exercise and lifestyle optimization",
+        "Consultation with a licensed physician or urologist for safe, regulated treatment",
+      ],
+      ref: "US FDA Public Notification: Tainted Sexual Enhancement Products / MHRA Medicines Safety Alert",
+      regulatorAgency: "US FDA, UK MHRA & Interpol Operation Pangea",
+      noticeDate: "Ongoing Statutory Enforcement Alert",
+      confidenceLevel: "HIGH",
+      evidenceStatement:
+        "FDA laboratory spectrometry confirms illicit chemical adulteration with PDE-5 inhibitors in over 300 named OTC products.",
+      clinicalDisclaimer:
+        "Never consume over-the-counter sexual enhancement pills; they are frequently tainted with prescription chemicals that interact lethally with heart medications.",
+    },
+    {
+      id: 33,
+      category: "supplements",
+      icon: "☠️",
+      product: "Miracle Mineral Solution (MMS) / Industrial Chlorine Dioxide Water",
+      molecule: "Sodium Chlorite (28%) & Citric Acid Activator (Chlorine Dioxide)",
+      subtitle:
+        "Industrial bleaching solution dangerously marketed online as an unproven cure for autism, cancer, and viral infections.",
+      brands: [
+        "Miracle Mineral Solution (MMS)",
+        "Water Purification Drops (CD/CDS Protocol)",
+        "MMS1 / MMS2 Starter Kits",
+      ],
+      risk: "CRITICAL",
+      organ: "Gastrointestinal Lining, Kidneys & Red Blood Cells",
+      summary:
+        "Global regulators (US FDA, Health Canada, UK FSA, Australian TGA) have issued urgent criminal and consumer warnings against MMS. Drinking this chemical mixture produces chlorine dioxide—an industrial bleach used to whiten paper pulp. Swallowing it causes chemical burns to the stomach lining, acute kidney failure, and life-threatening destruction of red blood cells (hemolysis).",
+      mechanism:
+        "Chlorine dioxide is a powerful industrial oxidizing agent. When swallowed, it corrodes the mucosal lining of the esophagus and stomach, oxidizes red blood cell hemoglobin into non-functional methemoglobin (blocking oxygen delivery), and triggers acute tubular necrosis in the kidneys.",
+      status_global: {
+        US: "FDA Warning Letters & Federal Criminal Convictions for distribution",
+        Canada: "Health Canada Recall and Warning on MMS (Sodium Chlorite)",
+        UK: "UK Food Standards Agency (FSA) Statutory Warning",
+      },
+      status_india:
+        "Not authorized for human consumption; hazardous industrial chemical under CDSCO/FSSAI oversight.",
+      how_to_spot:
+        "Two-bottle kits sold online claiming that mixing 'sodium chlorite' with an acid activator (citric acid or lemon juice) makes a 'miracle disease cure'.",
+      alternatives: [
+        "Evidence-based clinical medicine from accredited hospitals and physicians",
+        "Approved pediatric and oncological supportive care pathways",
+      ],
+      ref: "US FDA Consumer Update: Drinking MMS Is the Same as Drinking Bleach / Health Canada Public Alert",
+      regulatorAgency: "US FDA, Health Canada, UK FSA & TGA",
+      noticeDate: "Ongoing Criminal & Statutory Enforcement",
+      confidenceLevel: "HIGH",
+      evidenceStatement:
+        "Poison control databases and peer-reviewed clinical toxicology reports document methemoglobinemia, gastrointestinal perforation, and fatal acute kidney failure following MMS ingestion.",
+      clinicalDisclaimer:
+        "🚨 DANGER: Never drink sodium chlorite or chlorine dioxide solutions. Ingesting industrial bleaching agents can cause permanent organ destruction or death.",
+    },
   ],
   insights: [
     {
@@ -330,6 +496,22 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
       action:
         "Make a tight fist with both hands, squeeze firmly for 5 seconds, then spread your fingers wide. Repeat 5 times.",
       actionDuration: "30s",
+    },
+    {
+      dayOfYear: 64,
+      bodyPartId: "lung-left",
+      fact: "Taking two quick inhales through your nose followed by one long slow sigh out your mouth pops open collapsed microscopic lung sacs (alveoli) and immediately slows a racing pulse.",
+      action:
+        "Try 3 physiological sighs right now: double-inhale through your nose, then a gentle 6-second sigh out your mouth.",
+      actionDuration: "30s",
+    },
+    {
+      dayOfYear: 65,
+      bodyPartId: "liver",
+      fact: "Your liver stores about 100 grams of glucose (sugar) as glycogen—a reserve fuel tank that quietly drips clean energy into your blood while you sleep so your brain never starves.",
+      action:
+        "Drink a tall glass of water first thing in the morning to help your liver rehydrate and clear nighttime waste products.",
+      actionDuration: "20s",
     },
   ],
   myths: [
@@ -358,6 +540,32 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
       confidenceLevel: "HIGH",
       evidenceStatement:
         "✅ EVIDENCE: American Red Cross and Emergency Medicine guidelines contraindicate head extension during epistaxis due to airway aspiration and emesis risks.",
+    },
+    {
+      id: "m-feed-fever-starve-cold",
+      bodyPartId: "brain",
+      myth: "You should feed a cold and starve a fever.",
+      reality:
+        "Starving a fever is dangerous advice. When your body fights an infection, your internal thermostat goes up to create a fever, which speeds up your metabolism and burns calories and fluids much faster than normal. Starving yourself deprives your immune cells of the energy they need to produce germ-fighting antibodies and causes dehydration.",
+      sources: ["Mayo Clinic Infectious Disease", "Scientific American Medicine"],
+      actionableTip:
+        "Sip warm soups, herbal teas, or electrolyte water every 1 to 2 hours, and eat easy-to-digest nutritious foods whenever you feel hungry.",
+      confidenceLevel: "HIGH",
+      evidenceStatement:
+        "✅ EVIDENCE: Clinical physiology proves basal metabolic rate rises by approximately 10-12% for each 1°C increase in core body temperature, necessitating adequate caloric and fluid intake.",
+    },
+    {
+      id: "m-swallowed-gum-seven-years",
+      bodyPartId: "stomach",
+      myth: "Swallowed chewing gum stays trapped inside your stomach for seven years.",
+      reality:
+        "Your stomach cannot break down the rubbery synthetic base of gum, but your digestive tract treats it just like insoluble fiber. Smooth muscular waves squeeze the gum through your intestines, and it passes harmlessly out in your stool in 24 to 48 hours.",
+      sources: ["American Academy of Pediatrics (AAP)", "Mayo Clinic Gastroenterology"],
+      actionableTip:
+        "Do not panic if you accidentally swallow a piece of gum. Only seek medical attention if a child swallows multiple pieces at once alongside coins or objects that could cause a physical blockage.",
+      confidenceLevel: "HIGH",
+      evidenceStatement:
+        "✅ EVIDENCE: Pediatric gastroenterology case reviews confirm swallowed gum transit time mirrors normal gastrointestinal motility (24-48 hours) without tissue adherence.",
     },
   ],
   diseases: [
@@ -388,6 +596,63 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
       ],
       bodyPartId: "eyes",
     },
+    {
+      id: "d-57",
+      name: "Tension Headache (Stress & Neck Muscle Headache)",
+      overview:
+        "The most common type of headache in the world, causing a steady, dull ache that feels like a tight rubber band squeezing around your forehead, temples, or the back of your neck. It usually happens when tight neck, shoulder, or jaw muscles become overworked from stress, bad screen posture, or clenching your teeth.",
+      symptoms: [
+        {
+          text: "Dull, aching pressure that feels like a tight band wrapped around both sides of your head",
+          frequency: "always",
+        },
+        {
+          text: "Tenderness or soreness in your neck, shoulders, and scalp when touched",
+          frequency: "often",
+        },
+        { text: "Mild stiffness when turning your head from side to side", frequency: "often" },
+        {
+          text: "Worsening tightness toward late afternoon or after long hours on computers",
+          frequency: "sometimes",
+        },
+      ],
+      whenToSeeDoctor:
+        "🚨 EMERGENCY WARNING - CALL 112 / 911 IMMEDIATELY: If you feel a sudden, explosive 'thunderclap' headache (the worst pain of your life in seconds), or if a headache comes with fever, stiff neck, confusion, weakness on one side of your face or body, or difficulty speaking. ⚠️ SEE A DOCTOR WITHIN 48 HOURS: If you need headache pills more than twice a week.",
+      misconceptions: [
+        "Myth: You should take pain pills every single day for tension headaches. Reality: Taking over-the-counter painkillers (like ibuprofen or paracetamol) more than 2 to 3 days a week causes 'medication overuse headaches' (rebound headaches) where the pills themselves trigger worse headaches every morning.",
+      ],
+      bodyPartId: "spine-cervical",
+    },
+    {
+      id: "d-58",
+      name: "Gastroesophageal Reflux Disease (GERD / Chronic Acid Reflux)",
+      overview:
+        "A digestive condition where the muscular ring at the bottom of your food pipe (lower esophageal sphincter) becomes loose or relaxes at the wrong time, allowing harsh stomach acid and digestive juices to splash backward up into your throat and chest.",
+      symptoms: [
+        {
+          text: "Burning sensation in your chest (heartburn), especially after eating or lying down",
+          frequency: "always",
+        },
+        {
+          text: "Sour or bitter liquid backing up into the back of your throat or mouth",
+          frequency: "often",
+        },
+        {
+          text: "Morning hoarseness or a chronic dry tickling cough",
+          frequency: "sometimes",
+        },
+        {
+          text: "Feeling like there is a small lump stuck in the back of your throat",
+          frequency: "sometimes",
+        },
+      ],
+      whenToSeeDoctor:
+        "🚨 EMERGENCY WARNING - CALL 112 / 911 IMMEDIATELY: If you experience chest pain that spreads to your left arm, shoulder, neck, or jaw, or comes with shortness of breath or cold sweats (this can be a heart attack mimicking heartburn). ⚠️ SEE A DOCTOR WITHIN 48 HOURS: If food gets stuck when you swallow, if you vomit blood, or if you lose weight without trying.",
+      misconceptions: [
+        "Myth: Drinking a tall glass of milk cures acid reflux. Reality: While milk feels soothing for 5 minutes, its protein and calcium stimulate your stomach to produce even more acid an hour later (acid rebound).",
+      ],
+      bodyPartId: "stomach",
+    },
   ],
   remedies: [
     {
@@ -403,6 +668,32 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
       practicalContext:
         "Eat 4 to 5 dried prunes with breakfast alongside a tall glass of lukewarm water. Avoid sudden megadoses over 10 prunes to prevent gas and bloating.",
     },
+    {
+      id: "peppermint-oil-tension-headache",
+      name: "Topical Diluted Peppermint Oil for Forehead Tension",
+      description:
+        "Applying 2 to 3 drops of diluted peppermint essential oil (mixed into a teaspoon of carrier oil like coconut or olive oil) across your forehead and temples to ease tension headache tightness.",
+      evidenceRating: "studied",
+      evidenceDetails:
+        "Double-blind clinical trials (Cephalalgia & Der Nervenarzt) showed a 10% topical peppermint oil solution was as effective as 1,000 mg of acetaminophen (paracetamol) in reducing tension headache pain after 15 to 30 minutes, because natural menthol stimulates cold-sensing skin receptors (TRPM8) that block local pain signals and relax tight forehead muscles.",
+      ailment: "Mild Tension Headaches & Forehead Muscle Tightness",
+      bodyPartId: "frontal-lobe",
+      practicalContext:
+        "Always mix pure essential oil into a carrier oil first (never apply undiluted oil directly to your skin) and keep it well away from your eyes to prevent stinging.",
+    },
+    {
+      id: "ginger-tea-nausea-motility",
+      name: "Fresh Ginger Root Tea for Nausea & Stomach Settling",
+      description:
+        "Steeping 1 to 2 grams of freshly sliced ginger root in hot water for 10 minutes to relieve mild nausea, car sickness, and sluggish gastric emptying.",
+      evidenceRating: "studied",
+      evidenceDetails:
+        "Systematic reviews (Cochrane & Critical Reviews in Food Science and Nutrition) demonstrate that gingerols and shogaols in fresh ginger bind to serotonin 5-HT3 receptors in the digestive tract, gently accelerating stomach emptying and reducing nausea signals to the brainstem.",
+      ailment: "Mild Digestive Nausea & Post-Meal Heaviness",
+      bodyPartId: "stomach",
+      practicalContext:
+        "Sip freshly steeped ginger tea slowly 20 minutes before a car trip or after a heavy meal. Limit to under 4 grams of raw ginger daily if taking blood thinners.",
+    },
   ],
   hacks: [
     {
@@ -413,6 +704,24 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
       scienceBasis:
         "Complete darkness combined with soothing mild palm warmth allows the light-sensitive rhodopsin pigments in your retinal rods to fully reset while relaxing tense facial and orbital muscles.",
       bodyPartId: "eyes",
+    },
+    {
+      id: "physiological-sigh-de-stress",
+      title: "The Two-Inhale Physiological Sigh (Rapid Heart Rate Deceleration)",
+      practice:
+        "Take two deep breaths in through your nose (one long deep inhale, followed immediately by a sharp second inhale to pop open your tiny lung sacs), then let out one long, slow sigh through your mouth for 6 to 8 seconds. Repeat 2 to 3 times.",
+      scienceBasis:
+        "Stanford University neurobiology research showed that this cyclic double-inhale sigh immediately reinflates collapsed lung alveoli (tiny air bubbles) and triggers vagus nerve signaling that slows your heart rate faster than standard breathwork or meditation.",
+      bodyPartId: "lung-right",
+    },
+    {
+      id: "box-breathing-autonomic-reset",
+      title: "4x4 Box Breathing (Navy SEAL Autonomic Reset)",
+      practice:
+        "Inhale through your nose for 4 seconds, hold your breath gently for 4 seconds, exhale through your mouth for 4 seconds, and hold empty for 4 seconds. Repeat for 4 cycles.",
+      scienceBasis:
+        "Paced equal-ratio breathing balances blood carbon dioxide levels and dampens sympathetic nervous system (fight-or-flight) arousal, bringing rapid mental clarity during high-stress moments.",
+      bodyPartId: "brain",
     },
   ],
   bodyMarvels: [
@@ -435,6 +744,44 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
         "Nephrons do not grow back once permanently scarred by uncontrolled high blood pressure or chronic dehydration. Keep them healthy by drinking water and limiting excess table salt.",
       bodyPartId: "kidneys",
     },
+    {
+      id: "liver-metabolic-powerhouse",
+      title: "The Liver: Your Body's 500-Function Chemical Factory",
+      introduction:
+        "Weighing about 3 pounds, your liver is your largest internal organ and performs over 500 vital jobs simultaneously—from neutralizing chemicals and brewing digestive bile to storing glucose energy for your brain.",
+      sections: [
+        {
+          heading: "1. The Master Chemical Recycler",
+          body: "Every minute, about 1.5 liters of blood from your intestines flow straight into your liver. Liver cells (hepatocytes) screen every drop, neutralizing toxic metabolic wastes, breaking down medications, and recycling red blood cell iron so it can be reused safely.",
+        },
+        {
+          heading: "2. The 24-Hour Sugar Battery",
+          body: "Your liver stores excess sugar from your meals as glycogen (animal starch). While you sleep, it slowly meters out glucose molecules into your bloodstream at a steady trickle so your brain has constant fuel without running out.",
+        },
+      ],
+      conclusion:
+        "Your liver has incredible self-healing power, but chronic excess alcohol and ultra-processed sugary drinks can silently scar liver tissue (cirrhosis). Protect it by staying active and eating whole fiber-rich foods.",
+      bodyPartId: "liver",
+    },
+    {
+      id: "vagus-nerve-superhighway",
+      title: "The Vagus Nerve: Your Body's Master Calming Superhighway",
+      introduction:
+        "Wandering from your brainstem all the way down through your heart, lungs, stomach, and intestines, the vagus nerve is the longest cranial nerve in your body and serves as your master parasympathetic brake.",
+      sections: [
+        {
+          heading: "1. The Direct Heart Brake",
+          body: "Whenever you take a long, slow exhale or hum, the vagus nerve releases a neurotransmitter called acetylcholine directly onto your heart's natural pacemaker (the SA node), telling your heart to slow its beats within seconds.",
+        },
+        {
+          heading: "2. The Gut-to-Brain Telephone Line",
+          body: "Over 80% of vagus nerve fibers are sensory wires traveling upward—sending real-time reports about gut bacteria, stomach fullness, and inflammation straight to your emotional brain centers.",
+        },
+      ],
+      conclusion:
+        "You can tone your vagus nerve naturally through slow exhales, singing, cold face splashes, and eating prebiotic fibers that feed friendly gut bacteria.",
+      bodyPartId: "brain",
+    },
   ],
   sensoryFacts: [
     {
@@ -444,6 +791,22 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
         "When you stand up abruptly from lying or sitting, gravity temporarily pulls about half a liter of blood down into your legs and belly. Before your heart and neck sensors (baroreceptors) can clamp blood vessels shut, blood pressure in your head drops for 2 to 3 seconds.",
       tip: "Pause on the edge of the bed for 5 seconds before standing, and flex your calf muscles to pump blood back up toward your heart.",
       bodyPartId: "heart",
+    },
+    {
+      id: "photic-sneeze-reflex",
+      sensation: "The Sun Sneeze (Sneezing When Stepping into Bright Sunlight)",
+      cause:
+        "Known scientifically as the photic sneeze reflex, about 1 in 4 people sneeze whenever they walk from a dim room into bright sunlight. The nerve that carries light signals from your eyes (optic nerve) runs directly next to the nerve that senses tickles inside your nose (trigeminal nerve); intense electrical signals from bright light accidentally cross over and trigger a fake sneeze reflex in your brainstem.",
+      tip: "Wearing UV-rated sunglasses before stepping outside stops the sudden light burst from triggering the sneeze reflex.",
+      bodyPartId: "eyes",
+    },
+    {
+      id: "brain-freeze-sphenopalatine",
+      sensation: "Ice Cream Headache (Sudden Brain Freeze)",
+      cause:
+        "When cold food or ice cream touches the warm roof of your mouth, local blood vessels rapidly constrict to save heat and then violently dilate to restore warmth. Pain sensors in your palate bundle (the sphenopalatine ganglion) interpret this rapid temperature shift as danger, and the trigeminal nerve mistakenly refers the pain upward to your forehead and temples.",
+      tip: "Press the flat, warm underside of your tongue firmly against the roof of your mouth for 10 seconds to warm the nerve bundle and end the freeze.",
+      bodyPartId: "throat",
     },
   ],
   qaEntries: [
@@ -456,6 +819,26 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
       expertName: "Dr. Rachel Simmons",
       expertTitle: "Sports Nutritionist & Exercise Physiologist",
       bodyPartId: "muscles",
+    },
+    {
+      id: "cracking-knuckles-arthritis-expert",
+      question:
+        "Does cracking your knuckles or fingers cause arthritis or swollen joints later in life?",
+      answer:
+        "No. The popping sound does not come from bones rubbing together; it is caused by tiny gas bubbles (mostly nitrogen) popping inside the lubricating fluid (synovial fluid) that cushions your finger joints. Famous clinical studies, including a doctor who cracked the knuckles of only his left hand for 50 years, showed zero difference in arthritis rates between his two hands. However, pulling your joints with excessive force can irritate surrounding tendons.",
+      expertName: "Dr. Marcus Vance",
+      expertTitle: "Board-Certified Orthopedic Surgeon & Hand Specialist",
+      bodyPartId: "hands",
+    },
+    {
+      id: "cold-weather-catch-cold-expert",
+      question:
+        "Does going outside in cold weather with wet hair actually make you catch a cold or the flu?",
+      answer:
+        "No. Colds and flu are caused exclusively by viral infections (rhinoviruses and influenza viruses), not cold air or damp hair. However, cold, dry winter air does two things: it cools the nasal lining, slightly slowing down the protective microscopic hairs (cilia) that sweep viruses out of your nose, and it drives people indoors into crowded, poorly ventilated rooms where airborne viruses spread easily.",
+      expertName: "Dr. Anthony Morales",
+      expertTitle: "Clinical Immunologist & Infectious Disease Specialist",
+      bodyPartId: "throat",
     },
   ],
   foodSynergies: [
@@ -470,6 +853,28 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
       culinaryIdea:
         "Always squeeze fresh lemon juice over cooked dal, bean chili, or sauteed palak right before serving.",
     },
+    {
+      id: "syn-carrots-avocado-beta-carotene",
+      foodA: "Cooked Carrots or Sweet Potatoes (Beta-Carotene Provitamin A)",
+      foodB: "Avocado, Nuts, or Olive Oil (Healthy Plant Fats)",
+      synergyOutcome: "Beta-Carotene Eye & Skin Nutrient Surge",
+      multiplier: "+600% Beta-Carotene Absorption",
+      mechanism:
+        "Beta-carotene is fat-soluble and trapped inside rigid fibrous plant walls. Eating carrots with healthy dietary fats like avocado or cold-pressed oil stimulates digestive bile and micelle formation, boosting absorption by up to 6 times compared to eating fat-free raw carrots.",
+      culinaryIdea:
+        "Roast baby carrots with a drizzle of olive oil, or blend cooked carrots into soups with a spoonful of pumpkin seeds or sliced avocado.",
+    },
+    {
+      id: "syn-yogurt-banana-synbiotic",
+      foodA: "Fermented Yogurt or Kefir (Live Probiotics)",
+      foodB: "Slightly Green Underripe Bananas (Prebiotic Resistant Starch)",
+      synergyOutcome: "Synbiotic Colon Microbiome Colonization",
+      multiplier: "+300% Probiotic Survival & SCFA Yield",
+      mechanism:
+        "Live probiotic bacteria need soluble fuel to survive the harsh stomach acid barrier. Resistant starch in underripe bananas acts as a protective shield and fertilizer in the colon, allowing beneficial bacteria to produce protective short-chain fatty acids (SCFAs).",
+      culinaryIdea:
+        "Slice half an underripe banana into a cup of plain unsweetened Greek yogurt or homemade curd for a morning gut-shield breakfast.",
+    },
   ],
   drugWarnings: [
     {
@@ -481,6 +886,26 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
         "Aged foods contain high amounts of tyramine. MAOI medicines block the digestive enzyme needed to break down tyramine, causing it to flood your bloodstream and trigger a dangerous, emergency spike in blood pressure (hypertensive crisis) with severe headache.",
       doctorDirective:
         "Strictly avoid aged cheeses, tap beers, and cured meats if you take an MAOI antidepressant, and seek emergency care for severe sudden headaches.",
+    },
+    {
+      id: "warn-activated-charcoal-meds",
+      food: "Activated Charcoal Smoothies, Black Breads & Detox Lattes",
+      medicationClass: "Oral Birth Control Pills, Blood Pressure & Thyroid Medications",
+      riskSeverity: "CRITICAL",
+      clinicalConsequence:
+        "Activated charcoal is an unselective, super-absorbent powder used in hospital emergency rooms to bind poisons. Drinking it in trendy 'detox' black smoothies or lattes absorbs your morning medications directly in your stomach, rendering contraceptive pills and heart drugs completely inactive and leading to unplanned pregnancies or blood pressure spikes.",
+      doctorDirective:
+        "Never consume trendy activated charcoal drinks or baked foods within 4 to 6 hours of taking any daily prescription medication.",
+    },
+    {
+      id: "warn-cbd-liver-metabolism",
+      food: "Over-the-Counter CBD Oils, Tinctures & Gummies",
+      medicationClass: "Blood Thinners (Warfarin), Anti-Epileptic Drugs & Immunosuppressants",
+      riskSeverity: "HIGH",
+      clinicalConsequence:
+        "Cannabidiol (CBD) strongly competes for CYP450 liver enzymes (specifically CYP3A4 and CYP2C19) that your body uses to clear prescription drugs. Taking high-dose CBD blocks these enzymes, causing prescription blood thinner or seizure drug levels in your blood to build up dangerously high.",
+      doctorDirective:
+        "Always inform your doctor or pharmacist before using CBD supplements if you take prescription medications, and get routine therapeutic blood level checks.",
     },
   ],
 };

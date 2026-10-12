@@ -369,5 +369,21 @@
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Chemical composition analyses and WHO Sodium Intake Guidelines confirm gourmet rock and sea salts contain ~97-99% NaCl with clinically negligible trace mineral benefits.",
     "clinicalDisclaimer": "📍 IMPORTANT: Keep total salt from all sources (white, pink, black, or sea salt) under 1 teaspoon (5 grams) per day, and ensure your household uses iodized salt."
+  },
+  {
+    "id": "fl-28",
+    "marketing_claim": "Gluten-Free Packaged Cookies & Chips — 'Healthy Weight Loss Choice'",
+    "real_meaning": "Gluten is only a health problem for people with celiac disease (a digestive autoimmune condition) or diagnosed wheat allergy. Most packaged gluten-free snacks replace wheat with ultra-refined white rice flour, potato starch, and extra sugar to mimic gluten's chewiness, making them spike blood sugar even faster than regular cookies.",
+    "risk_level": "MEDIUM",
+    "biological_impact": "Swapping whole wheat flour for ultra-refined tapioca or rice starch strips out natural dietary fiber while increasing the glycemic load. Unless you have celiac disease, eating processed gluten-free packaged snacks often triggers rapid blood sugar swings and increased hunger.",
+    "how_to_spot": "Check the first three ingredients: if refined rice flour, corn starch, or sugar come before any whole grains or seeds, it is an ultra-processed sweet treat rather than a health food.",
+    "common_products": [
+      "Gluten-Free Packaged Cookies",
+      "Gluten-Free Pretzel Crisps",
+      "Gluten-Free Packaged Snack Cakes"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ EVIDENCE: Systematic reviews in the Journal of Human Nutrition and Dietetics confirm commercial gluten-free processed foods frequently contain higher saturated fat, sodium, and simple starch with less dietary fiber than gluten-containing equivalents.",
+    "clinicalDisclaimer": "📍 IMPORTANT: If you have celiac disease, strict gluten avoidance is medically mandatory. For others, naturally gluten-free whole foods (like brown rice, millets, beans, and vegetables) are far healthier than processed gluten-free packaged snacks."
   }
 ]

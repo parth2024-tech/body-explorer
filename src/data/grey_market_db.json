@@ -953,5 +953,39 @@
     "confidenceLevel": "HIGH",
     "evidenceStatement": "EMCDDA pharmacovigilance confirms acute cardiovascular and psychiatric toxicity from non-standardized synthetic cannabinoid isomers.",
     "clinicalDisclaimer": "Never inhale or ingest unregulated psychoactive vape oils or candies sold outside licensed pharmacy or statutory regulatory channels."
+  },
+  {
+    "id": 32,
+    "category": "supplements",
+    "icon": "⚠️",
+    "product": "Illegal 'Herbal' Male Enhancement Pills Spiked with Synthetic Sildenafil (Viagra)",
+    "molecule": "Hidden Unlisted Sildenafil & Tadalafil Analogs",
+    "subtitle": "Over-the-counter capsules sold as '100% all-natural herbs' secretly spiked with prescription erectile dysfunction drugs.",
+    "brands": [
+      "Rhino 69 / Kangaroo Extreme",
+      "Titan 3000 'All-Natural' Gold Capsules",
+      "Gas-Station Sexual Enhancement Shots"
+    ],
+    "risk": "CRITICAL",
+    "organ": "Heart & Blood Vessels (Cardiovascular System)",
+    "summary": "FDA laboratory testing consistently finds over 80% of gas-station 'all-natural herbal' male enhancement supplements contain unlisted, dangerous doses of sildenafil (the active drug in Viagra) or untested chemical mimics. When taken by anyone using heart medicines like nitroglycerin, this causes a fatal drop in blood pressure.",
+    "mechanism": "Sildenafil strongly widens blood vessels. If someone taking prescription nitrate heart drugs or alpha-blockers takes this hidden drug, blood pressure plummets catastrophically (severe hypotension), cutting off blood flow to the heart and brain, triggering fatal cardiac arrest.",
+    "status_global": {
+      "US": "FDA Public Warning Notifications & statutory border seizures",
+      "EU": "Banned under European Medicines Agency (EMA) Directives",
+      "UK": "MHRA Public Health Alerts & Customs confiscations"
+    },
+    "status_india": "Prohibited under the Drugs and Cosmetics Act as spurious and adulterated drugs.",
+    "how_to_spot": "Metallic holographic blister packs sold at gas stations or convenience stores claiming '100% Natural Herbal Formula' that promise instant multi-day sexual performance.",
+    "alternatives": [
+      "Cardiovascular aerobic exercise and lifestyle optimization",
+      "Consultation with a licensed physician or urologist for safe, regulated treatment"
+    ],
+    "ref": "US FDA Public Notification: Tainted Sexual Enhancement Products / MHRA Medicines Safety Alert",
+    "regulatorAgency": "US FDA, UK MHRA & Interpol Operation Pangea",
+    "noticeDate": "Ongoing Statutory Enforcement Alert",
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "FDA laboratory spectrometry confirms illicit chemical adulteration with PDE-5 inhibitors in over 300 named OTC products.",
+    "clinicalDisclaimer": "Never consume over-the-counter sexual enhancement pills; they are frequently tainted with prescription chemicals that interact lethally with heart medications."
   }
 ]

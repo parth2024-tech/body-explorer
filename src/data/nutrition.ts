@@ -2949,6 +2949,17 @@ export const FOOD_SYNERGIES: FoodSynergyPair[] = [
     culinaryIdea:
       "Always squeeze fresh lemon juice over cooked dal, bean chili, or sauteed palak right before serving.",
   },
+  {
+    id: "syn-carrots-avocado-beta-carotene",
+    foodA: "Cooked Carrots or Sweet Potatoes (Beta-Carotene Provitamin A)",
+    foodB: "Avocado, Nuts, or Olive Oil (Healthy Plant Fats)",
+    synergyOutcome: "Beta-Carotene Eye & Skin Nutrient Surge",
+    multiplier: "+600% Beta-Carotene Absorption",
+    mechanism:
+      "Beta-carotene is fat-soluble and trapped inside rigid fibrous plant walls. Eating carrots with healthy dietary fats like avocado or cold-pressed oil stimulates digestive bile and micelle formation, boosting absorption by up to 6 times compared to eating fat-free raw carrots.",
+    culinaryIdea:
+      "Roast baby carrots with a drizzle of olive oil, or blend cooked carrots into soups with a spoonful of pumpkin seeds or sliced avocado.",
+  },
 ];
 
 export interface DrugFoodWarning {
@@ -3081,5 +3092,15 @@ export const DRUG_FOOD_WARNINGS: DrugFoodWarning[] = [
       "Aged foods contain high amounts of tyramine. MAOI medicines block the digestive enzyme needed to break down tyramine, causing it to flood your bloodstream and trigger a dangerous, emergency spike in blood pressure (hypertensive crisis) with severe headache.",
     doctorDirective:
       "Strictly avoid aged cheeses, tap beers, and cured meats if you take an MAOI antidepressant, and seek emergency care for severe sudden headaches.",
+  },
+  {
+    id: "warn-activated-charcoal-meds",
+    food: "Activated Charcoal Smoothies, Black Breads & Detox Lattes",
+    medicationClass: "Oral Birth Control Pills, Blood Pressure & Thyroid Medications",
+    riskSeverity: "CRITICAL",
+    clinicalConsequence:
+      "Activated charcoal is an unselective, super-absorbent powder used in hospital emergency rooms to bind poisons. Drinking it in trendy 'detox' black smoothies or lattes absorbs your morning medications directly in your stomach, rendering contraceptive pills and heart drugs completely inactive and leading to unplanned pregnancies or blood pressure spikes.",
+    doctorDirective:
+      "Never consume trendy activated charcoal drinks or baked foods within 4 to 6 hours of taking any daily prescription medication.",
   },
 ];
