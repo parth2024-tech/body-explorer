@@ -1,13 +1,10 @@
 import { useState, useMemo } from "react";
 import { useBodyStore } from "@/store/useBodyStore";
 import {
-  NUTRITION_LEVELS,
   NUTRITION_LEVEL_TIPS_FACTS,
   FOOD_FACTS,
   FOOD_SYNERGIES,
   DRUG_FOOD_WARNINGS,
-  NutritionLevel,
-  FoodFactEntry,
 } from "@/data/nutrition";
 import {
   Apple,
@@ -40,7 +37,6 @@ import { useShuffledList } from "@/lib/shuffle";
 
 export function FoodNutritionHub() {
   const { language } = useBodyStore();
-  const [selectedLevel, setSelectedLevel] = useState<NutritionLevel | "all">("all");
   const [selectedSystem, setSelectedSystem] = useState<string>("all");
   const [selectedSituation, setSelectedSituation] = useState<string>("all");
   const [selectedBenefit, setSelectedBenefit] = useState<string>("all");
@@ -57,21 +53,18 @@ export function FoodNutritionHub() {
     useShuffledList(DRUG_FOOD_WARNINGS);
 
   // Small facts & tips filter state
-  const [levelTipsFilter, setLevelTipsFilter] = useState<NutritionLevel | "all">("all");
   const [levelTipsType, setLevelTipsType] = useState<"all" | "fact" | "tip">("all");
 
   const filteredLevelTipsFacts = useMemo(() => {
     return shuffledLevelTipsFacts.filter((item) => {
-      const matchesLevel = levelTipsFilter === "all" || item.level === levelTipsFilter;
       const matchesType = levelTipsType === "all" || item.type === levelTipsType;
-      return matchesLevel && matchesType;
+      return matchesType;
     });
-  }, [shuffledLevelTipsFacts, levelTipsFilter, levelTipsType]);
+  }, [shuffledLevelTipsFacts, levelTipsType]);
 
   // Filtered Food Facts
   const filteredFacts = useMemo(() => {
     return shuffledFoods.filter((entry) => {
-      const matchesLevel = selectedLevel === "all" || entry.level === selectedLevel;
       const matchesSystem = selectedSystem === "all" || entry.system === selectedSystem;
 
       let matchesBenefit = true;
@@ -179,16 +172,9 @@ export function FoodNutritionHub() {
         entry.hi.foodName.includes(query) ||
         entry.hi.whatItContains.includes(query);
 
-      return matchesLevel && matchesSystem && matchesSituation && matchesBenefit && matchesSearch;
+      return matchesSystem && matchesSituation && matchesBenefit && matchesSearch;
     });
-  }, [
-    shuffledFoods,
-    selectedLevel,
-    selectedSystem,
-    selectedSituation,
-    selectedBenefit,
-    searchQuery,
-  ]);
+  }, [shuffledFoods, selectedSystem, selectedSituation, selectedBenefit, searchQuery]);
 
   const systems = [
     { id: "all", label: language === "hi" ? "सभी प्रणालियां" : "All Systems", icon: Layers },
@@ -254,8 +240,8 @@ export function FoodNutritionHub() {
 
           <p className="mt-3 sm:mt-6 text-xs sm:text-base text-[#8A8F98] leading-relaxed">
             {language === "hi"
-              ? "कोशिकीय जैव रसायन को अपनी रसोई की थाली में बदलें। 4-स्तरीय पोषण वर्गीकरण, शुगर नियंत्रित करने वाले भोजन नियम, और खाद्य-दवा इंटरैक्शन का वैज्ञानिक विश्लेषण।"
-              : "Translating cellular biochemistry into kitchen-table clarity. Explore the 4-level food spectrum, glucose-balancing protocols, synergistic pairings, and life-saving food-medication safety bounds."}
+              ? "दैनिक पोषण और रसोई की थाली के लिए सरल विज्ञान। सभी प्रमाणित खाद्य पदार्थ, रसोई टिप्स, और जीवन रक्षक दवा सावधानियां एक ही स्थान पर।"
+              : "Translating cellular nutrition into kitchen-table clarity. Explore verified Indian power foods, kitchen tips, synergistic food pairings, and critical food-medication safety alerts in one place."}
           </p>
         </header>
 
@@ -265,13 +251,12 @@ export function FoodNutritionHub() {
           className="md:hidden sticky top-[48px] z-20 -mx-4 px-4 py-2 bg-[#030303]/90 backdrop-blur-md border-y border-white/10 mb-8 flex items-center gap-1.5 overflow-x-auto touch-scroll"
         >
           {[
-            { id: "spectrum", label: language === "hi" ? "4 स्तर" : "4 Levels", icon: Layers },
             {
-              id: "level-tips",
+              id: "tips",
               label: language === "hi" ? "टिप्स व फैक्ट्स" : "Tips & Facts",
               icon: Sparkles,
             },
-            { id: "facts", label: language === "hi" ? "फूड फैक्ट्स" : "Food Facts", icon: Apple },
+            { id: "facts", label: language === "hi" ? "36 फूड्स" : "36 Foods", icon: Apple },
             { id: "synergies", label: language === "hi" ? "तालमेल" : "Synergies", icon: Flame },
             {
               id: "interactions",
@@ -290,109 +275,8 @@ export function FoodNutritionHub() {
           ))}
         </nav>
 
-        {/* ─── SECTION 1: The 4-Tier Nutrition Level Spectrum ─── */}
-        <section
-          id="spectrum"
-          aria-labelledby="levels-heading"
-          className="mb-12 sm:mb-16 scroll-mt-24"
-        >
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-3 mb-4 sm:mb-6">
-            <div>
-              <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#00E5C4] block">
-                {language === "hi" ? "वर्गीकरण ढांचा" : "Nutritional Hierarchy"}
-              </span>
-              <h2
-                id="levels-heading"
-                className="text-xl sm:text-3xl font-bold text-white tracking-tight"
-              >
-                {language === "hi" ? "4-स्तरीय पोषण स्पेक्ट्रम" : "The 4-Level Food Spectrum"}
-              </h2>
-            </div>
-            <p className="text-xs sm:text-sm text-[#8A8F98] max-w-md">
-              {language === "hi"
-                ? "प्रत्येक स्तर दर्शाता है कि कोई खाद्य पदार्थ आपके शरीर में कोशिका स्तर पर क्या प्रभाव छोड़ता है।"
-                : "A clinical grading of foods based on micronutrient density, glycemic index, and inflammatory load."}
-            </p>
-          </div>
-
-          {/* Swipeable Carousel on Mobile Phones, Grid on Tablet/Desktop */}
-          <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory touch-scroll">
-            {([1, 2, 3, 4] as NutritionLevel[]).map((lvl) => {
-              const meta = NUTRITION_LEVELS[lvl];
-              const isSelected = selectedLevel === lvl;
-
-              return (
-                <button
-                  key={lvl}
-                  type="button"
-                  onClick={() => setSelectedLevel(selectedLevel === lvl ? "all" : lvl)}
-                  className={`w-[82vw] max-w-[290px] shrink-0 sm:w-auto snap-center sm:snap-align-none text-left rounded-2xl border p-4 sm:p-5 transition-all flex flex-col justify-between min-h-[210px] sm:min-h-[220px] active:scale-[0.98] ${meta.borderClass} ${meta.bgClass} ${
-                    isSelected ? "ring-2 ring-white/40 shadow-xl" : ""
-                  }`}
-                >
-                  <div>
-                    <div className="flex items-center justify-between gap-2 mb-2.5 sm:mb-3">
-                      <span
-                        className={`px-2.5 py-1 rounded-md text-[10px] sm:text-[11px] font-bold uppercase tracking-wider border ${meta.badgeClass}`}
-                      >
-                        Level {lvl}
-                      </span>
-                      <span className="text-xs font-mono text-[#8A8F98]">{meta.targetShare}</span>
-                    </div>
-
-                    <h3 className="text-base sm:text-lg font-bold text-white mb-1.5 leading-snug">
-                      {meta.title}
-                    </h3>
-                    <p className="text-xs text-[#8A8F98] leading-relaxed mb-3 sm:mb-4">
-                      {meta.description}
-                    </p>
-                  </div>
-
-                  <div className="pt-2.5 sm:pt-3 border-t border-white/10 flex items-center justify-between text-xs font-semibold">
-                    <span className="text-white/80">{meta.recommendation}</span>
-                    <span className="text-white font-mono shrink-0 ml-2">
-                      {isSelected ? "Active ✓" : "Filter →"}
-                    </span>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Mobile phone swipe hint */}
-          <div className="flex sm:hidden items-center justify-between text-[11px] text-[#8A8F98] mt-2 px-1">
-            <span>
-              {language === "hi"
-                ? "👈 स्तरों की तुलना के लिए स्वाइप करें 👉"
-                : "👈 Swipe to compare levels 👉"}
-            </span>
-            <span className="font-mono text-teal-400">1 — 4</span>
-          </div>
-
-          {selectedLevel !== "all" && (
-            <div className="mt-3 sm:mt-4 flex items-center justify-end">
-              <button
-                type="button"
-                onClick={() => setSelectedLevel("all")}
-                className="min-h-[44px] px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-xs text-[#EAEAEA] hover:text-white flex items-center gap-1.5 transition-colors"
-              >
-                <span>✕</span>
-                <span>
-                  {language === "hi"
-                    ? "सभी स्तर दिखाएं (फिल्टर हटाएं)"
-                    : "Show all levels (Clear filter)"}
-                </span>
-              </button>
-            </div>
-          )}
-        </section>
-
-        {/* ─── SECTION 2: Small Facts & Practical Tips for Every Nutrition Level ─── */}
-        <section
-          id="level-tips"
-          aria-labelledby="level-tips-heading"
-          className="mb-12 sm:mb-16 scroll-mt-24"
-        >
+        {/* ─── SECTION 1: Kitchen Tips & Nutrition Facts (Unified) ─── */}
+        <section id="tips" aria-labelledby="tips-heading" className="mb-12 sm:mb-16 scroll-mt-24">
           <div className="rounded-2xl sm:rounded-3xl border border-white/10 bg-[#0A0E1A] p-4 sm:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -407,124 +291,69 @@ export function FoodNutritionHub() {
                   </span>
                 </div>
                 <h2
-                  id="level-tips-heading"
+                  id="tips-heading"
                   className="text-xl sm:text-3xl font-bold text-white tracking-tight"
                 >
                   {language === "hi"
-                    ? "प्रत्येक पोषण स्तर के आसान फैक्ट्स और टिप्स"
-                    : "Easy Facts & Tips for Every Nutrition Level"}
+                    ? "दैनिक पोषण के सरल फैक्ट्स और रसोई टिप्स"
+                    : "Essential Nutrition Facts & Kitchen Tips"}
                 </h2>
                 <p className="text-xs sm:text-sm text-[#8A8F98] mt-1.5 max-w-2xl leading-relaxed">
                   {language === "hi"
                     ? "कठिन वैज्ञानिक शब्दों के बिना, अपनी दैनिक थाली और रसोई के लिए सरल, सिद्ध और आजमाने योग्य बातें।"
-                    : "Clear everyday wisdom for your kitchen table. Learn what each food level really does to your body without complicated words."}
+                    : "Clear everyday wisdom for your kitchen table. Simple, proven nutrition facts and actionable tips without complicated words."}
                 </p>
               </div>
 
-              {/* Type Toggle: All / Facts / Tips */}
-              <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white/5 border border-white/10 self-start md:self-auto shrink-0">
-                {(
-                  [
-                    { id: "all", label: language === "hi" ? "सभी (32)" : "All (32)" },
-                    { id: "fact", label: language === "hi" ? "फैक्ट्स (16)" : "Facts (16)" },
-                    { id: "tip", label: language === "hi" ? "टिप्स (16)" : "Tips (16)" },
-                  ] as const
-                ).map((tab) => (
-                  <button
-                    key={tab.id}
-                    type="button"
-                    onClick={() => setLevelTipsType(tab.id)}
-                    className={`min-h-[38px] px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                      levelTipsType === tab.id
-                        ? "bg-[#00E5C4] text-black shadow-sm font-bold"
-                        : "text-[#8A8F98] hover:text-white"
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
+              {/* Type Toggle: All / Facts / Tips & Shuffle */}
+              <div className="flex items-center gap-2 self-start md:self-auto shrink-0">
+                <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white/5 border border-white/10">
+                  {(
+                    [
+                      { id: "all", label: language === "hi" ? "सभी (32)" : "All (32)" },
+                      { id: "fact", label: language === "hi" ? "फैक्ट्स (16)" : "Facts (16)" },
+                      { id: "tip", label: language === "hi" ? "टिप्स (16)" : "Tips (16)" },
+                    ] as const
+                  ).map((tab) => (
+                    <button
+                      key={tab.id}
+                      type="button"
+                      onClick={() => setLevelTipsType(tab.id)}
+                      className={`min-h-[38px] px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                        levelTipsType === tab.id
+                          ? "bg-[#00E5C4] text-black shadow-sm font-bold"
+                          : "text-[#8A8F98] hover:text-white"
+                      }`}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  onClick={reshuffleTips}
+                  className="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] hover:border-[#00E5C4]/40 text-xs font-mono text-[#EAEAEA] transition-all cursor-pointer"
+                  title="Shuffle tips and facts"
+                >
+                  <Shuffle className="w-3.5 h-3.5 text-[#00E5C4]" />
+                  <span className="hidden sm:inline">Shuffle</span>
+                </button>
               </div>
-            </div>
-
-            {/* Level Selector Pills */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-2 mb-6 touch-scroll -mx-4 px-4 sm:mx-0 sm:px-0">
-              <span className="text-[11px] font-bold text-[#8A8F98] uppercase tracking-wider shrink-0 mr-1">
-                {language === "hi" ? "स्तर चुनें:" : "Filter Level:"}
-              </span>
-              {[
-                {
-                  id: "all",
-                  label: language === "hi" ? "सभी 4 स्तर (32)" : "All 4 Levels (32)",
-                  color: "border-white/20 text-white",
-                },
-                {
-                  id: 1,
-                  label:
-                    language === "hi"
-                      ? "स्तर 1: ताजी सब्जियां व फल (8)"
-                      : "Level 1: Whole Foods (8)",
-                  color: "border-teal-500/40 text-teal-300",
-                },
-                {
-                  id: 2,
-                  label:
-                    language === "hi" ? "स्तर 2: अनाज, दाल व दही (8)" : "Level 2: Grains & Dal (8)",
-                  color: "border-sky-500/40 text-sky-300",
-                },
-                {
-                  id: 3,
-                  label:
-                    language === "hi"
-                      ? "स्तर 3: तेल, घी व गुड़ (8)"
-                      : "Level 3: Fats & Moderation (8)",
-                  color: "border-amber-500/40 text-amber-300",
-                },
-                {
-                  id: 4,
-                  label:
-                    language === "hi"
-                      ? "स्तर 4: पैकेटबंद स्नैक्स (8)"
-                      : "Level 4: Packaged Snacks (8)",
-                  color: "border-red-500/40 text-red-300",
-                },
-              ].map((pill) => {
-                const isActive = levelTipsFilter === pill.id;
-                return (
-                  <button
-                    key={String(pill.id)}
-                    type="button"
-                    onClick={() => setLevelTipsFilter(pill.id as NutritionLevel | "all")}
-                    className={`min-h-[40px] px-3.5 py-1.5 rounded-xl text-xs font-semibold shrink-0 border transition-all flex items-center gap-1.5 ${
-                      isActive
-                        ? "bg-white/15 border-white text-white shadow-md ring-1 ring-white/30"
-                        : `bg-white/[0.03] ${pill.color} hover:bg-white/[0.07]`
-                    }`}
-                  >
-                    <span>{pill.label}</span>
-                  </button>
-                );
-              })}
             </div>
 
             {/* Facts and Tips Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {filteredLevelTipsFacts.map((item) => {
-                const meta = NUTRITION_LEVELS[item.level];
                 const isFact = item.type === "fact";
 
                 return (
                   <div
                     key={item.id}
-                    className={`rounded-2xl border p-4 sm:p-5 flex flex-col justify-between transition-all hover:border-white/30 ${meta.borderClass} ${meta.bgClass}`}
+                    className="rounded-2xl border border-white/10 bg-white/[0.02] p-4 sm:p-5 flex flex-col justify-between transition-all hover:border-teal-500/30 hover:bg-white/[0.04]"
                   >
                     <div>
                       {/* Top Badges */}
                       <div className="flex items-center justify-between gap-2 mb-3">
-                        <span
-                          className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border ${meta.badgeClass}`}
-                        >
-                          Level {item.level}
-                        </span>
                         <span
                           className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border ${
                             isFact
@@ -539,6 +368,9 @@ export function FoodNutritionHub() {
                             : language === "hi"
                               ? "आसान टिप"
                               : "Kitchen Tip"}
+                        </span>
+                        <span className="text-[10px] font-mono text-[#8A8F98]">
+                          Evidence-backed
                         </span>
                       </div>
 
@@ -789,7 +621,6 @@ export function FoodNutritionHub() {
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
               {filteredFacts.map((entry) => {
-                const levelMeta = NUTRITION_LEVELS[entry.level];
                 const displayName = language === "hi" ? entry.hi.foodName : entry.foodName;
                 const displayNutrients =
                   language === "hi" ? entry.hi.whatItContains : entry.whatItContains;
@@ -814,12 +645,7 @@ export function FoodNutritionHub() {
                       {/* Top Badges */}
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                         <div className="flex items-center gap-1.5 sm:gap-2">
-                          <span
-                            className={`px-2.5 py-1 rounded-md text-[10px] sm:text-[11px] font-bold uppercase tracking-wider border ${levelMeta.badgeClass}`}
-                          >
-                            Level {entry.level}
-                          </span>
-                          <span className="px-2.5 py-1 rounded-md text-[10px] sm:text-[11px] font-mono text-[#8A8F98] bg-white/5 border border-white/10">
+                          <span className="px-2.5 py-1 rounded-md text-[10px] sm:text-[11px] font-semibold text-teal-300 bg-teal-500/10 border border-teal-500/30">
                             {entry.categoryLabel}
                           </span>
                         </div>

@@ -6,21 +6,21 @@ export const Route = createFileRoute("/food")({
   head: () => ({
     meta: [
       {
-        title: "Food & Nutrition Intelligence: 4-Level Spectrum & Clinical Protocols",
+        title: "Food & Nutrition Directory — The Living Body Atlas",
       },
       {
         name: "description",
         content:
-          "Evidence-based nutrition levels, glucose-balancing eating orders, bioavailable protein benchmarks, synergistic food pairings, and drug-food safety alerts.",
+          "Evidence-based Indian food guide, proven benefits, practical kitchen tips, food synergies, and drug-food safety alerts all in one place.",
       },
       {
         property: "og:title",
-        content: "Food & Nutrition Intelligence Hub — The Living Body Atlas",
+        content: "Food & Nutrition Directory — The Living Body Atlas",
       },
       {
         property: "og:description",
         content:
-          "Clinically verified dietary protocols vetted against AHA, WHO, and ADA standards. Explore the 4-tier food spectrum and personalized nutrient targets.",
+          "Clinically verified dietary guide vetted against ICMR-NIN and WHO standards. Explore 36 power foods, kitchen tips, synergies, and safety alerts all in one place.",
       },
       { property: "og:type", content: "website" },
     ],
