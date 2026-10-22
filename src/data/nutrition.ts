@@ -693,6 +693,116 @@ export const NUTRITION_LEVEL_TIPS_FACTS: NutritionLevelTipFact[] = [
     },
     readingGrade: "Grade 6 (Plain Language)",
   },
+
+  // ─── Digestion, Kidney & Liver Clinical Tips ───
+  {
+    id: "lvl1-tip-digestion-chew-well",
+    level: 1,
+    type: "tip",
+    title: {
+      en: "Chew Each Bite 15 Times (Your Stomach Has No Teeth)",
+      hi: "हर कौर को 15 बार चबाएं (पेट के पास दांत नहीं होते)",
+    },
+    content: {
+      en: "Digestion starts in your mouth. Enzymes in your spit (saliva) break down starches, and chewing turns food into a soft puree. Gulping big chunks forces your stomach to work twice as hard, causing gas, cramps, and acid reflux.",
+      hi: "पाचन मुंह से ही शुरू होता है। लार में मौजूद पाचक तत्व भोजन को पचाने में मदद करते हैं। भोजन को अच्छी तरह चबाकर खाने से पेट हल्का रहता है और गैस, खट्टी डकार या भारीपन नहीं होता।",
+    },
+    takeaway: {
+      en: "Chewing thoroughly turns meals into smooth energy without bloating.",
+      hi: "भोजन को धीरे-धीरे और अच्छी तरह चबाकर खाने से पाचन मजबूत रहता है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl1-tip-kidney-lemon-citrate",
+    level: 1,
+    type: "tip",
+    title: {
+      en: "Warm Lemon Water Shields Against Kidney Stones",
+      hi: "गुनगुना नींबू पानी किडनी की पथरी से बचाता है",
+    },
+    content: {
+      en: "Fresh lemon juice is loaded with natural citrate. Citrate binds to calcium in your urine, stopping it from forming sharp calcium-oxalate crystals (kidney stones) and helping flush out tiny mineral grains before they grow.",
+      hi: "ताजे नींबू के रस में प्राकृतिक साइट्रेट होता है। यह पेशाब में कैल्शियम के साथ मिलकर पथरी बनने से रोकता है और छोटे कणों को आसानी से बाहर निकाल देता है।",
+    },
+    takeaway: {
+      en: "Squeeze half a fresh lemon into a glass of plain water every morning.",
+      hi: "रोज सुबह एक गिलास पानी में आधा नींबू निचोड़कर पीना गुर्दे के लिए अमृत समान है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl1-tip-liver-cruciferous-veggies",
+    level: 1,
+    type: "tip",
+    title: {
+      en: "Cabbage, Broccoli & Radish Boost Liver Detox Enzymes",
+      hi: "पत्तागोभी, मूली और ब्रोकोली लिवर की सफाई तेज करती हैं",
+    },
+    content: {
+      en: "You don't need expensive detox juices to clean your liver. Everyday crunchy vegetables like cabbage, cauliflower, and mooli (radish) contain natural sulfur compounds that power up your liver's built-in detox enzymes.",
+      hi: "लिवर को किसी महंगे डिटॉक्स जूस की जरूरत नहीं है। पत्तागोभी, मूली और गोभी में प्राकृतिक सल्फर होता है जो लिवर के सफाई तंत्र को दोगुना तेज कर देता है।",
+    },
+    takeaway: {
+      en: "Include a small bowl of lightly cooked cruciferous vegetables with lunch.",
+      hi: "दोपहर के भोजन में थोड़ी पत्तागोभी, मूली या ब्रोकोली जरूर शामिल करें।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl2-tip-digestion-post-meal-walk",
+    level: 2,
+    type: "tip",
+    title: {
+      en: "The 10-Minute Post-Meal Stroll (Shatapadi)",
+      hi: "भोजन के बाद 10 मिनट की आसान चहलकदमी (शतपावली)",
+    },
+    content: {
+      en: "Walking gently for 10 to 15 minutes after eating speeds up how fast your stomach empties and smooths out post-meal blood sugar spikes by 30%. Never collapse into a chair or sleep right after a heavy meal.",
+      hi: "खाने के तुरंत बाद बैठने या सोने की जगह 10 से 15 मिनट टहलने से पाचन तेजी से होता है और ब्लड शुगर तेजी से नहीं बढ़ता। आयुर्वेद में इसे 'शतपावली' (100 कदम चलना) कहा गया है।",
+    },
+    takeaway: {
+      en: "A short, easy stroll clears stomach heaviness and keeps your gut light.",
+      hi: "भोजन के बाद हल्की सैर से पेट फूलने की समस्या कभी नहीं होती।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl2-tip-kidney-hydration-color-test",
+    level: 2,
+    type: "tip",
+    title: {
+      en: "The Pale Straw Urine Test for Kidney Hydration",
+      hi: "पेशाब का रंग देखकर जानें किडनी का स्वास्थ्य",
+    },
+    content: {
+      en: "Your kidneys filter your entire blood supply 40 times a day. Check your urine color: it should look like pale straw or light lemonade. Dark amber means your kidneys are stressed and need water; clear water all day means you are over-drinking.",
+      hi: "आपकी किडनियां दिन भर में 40 बार पूरा खून साफ करती हैं। पेशाब का रंग हल्का पीला होना चाहिए। गहरा पीला रंग पानी की कमी दिखाता है, जबकि बिल्कुल पानी जैसा साफ होना दिखाता है कि आप बहुत तेजी से पानी पी रहे हैं।",
+    },
+    takeaway: {
+      en: "Sip water steadily throughout the day rather than chugging giant bottles all at once.",
+      hi: "दिन भर घूंट-घूंट करके पानी पिएं ताकि गुर्दे पर अचानक दबाव न पड़े।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
+  {
+    id: "lvl2-tip-liver-12hr-fasting-window",
+    level: 2,
+    type: "tip",
+    title: {
+      en: "Give Your Liver a 12-Hour Nightly Break",
+      hi: "रात में लिवर को 12 घंटे का आराम दें",
+    },
+    content: {
+      en: "If you finish dinner by 8 PM and eat breakfast at 8 AM, your liver gets a full 12-hour rest. Once it finishes digesting your dinner, it turns on its self-cleaning mode (autophagy) and burns off stored droplets of liver fat.",
+      hi: "यदि आप रात 8 बजे तक खाना खा लें और सुबह 8 बजे नाश्ता करें, तो लिवर को 12 घंटे का विश्राम मिलता है। इस दौरान लिवर जमा चर्बी को जलाता है और अपनी अंदरूनी मरम्मत करता है।",
+    },
+    takeaway: {
+      en: "Avoiding late-night snacks is the single easiest way to reverse fatty liver.",
+      hi: "देर रात कुछ भी खाने से बचना फैटी लिवर को ठीक करने का सबसे आसान उपाय है।",
+    },
+    readingGrade: "Grade 6 (Plain Language)",
+  },
 ];
 
 export interface FoodFactEntry {
@@ -2959,6 +3069,39 @@ export const FOOD_SYNERGIES: FoodSynergyPair[] = [
       "Beta-carotene is fat-soluble and trapped inside rigid fibrous plant walls. Eating carrots with healthy dietary fats like avocado or cold-pressed oil stimulates digestive bile and micelle formation, boosting absorption by up to 6 times compared to eating fat-free raw carrots.",
     culinaryIdea:
       "Roast baby carrots with a drizzle of olive oil, or blend cooked carrots into soups with a spoonful of pumpkin seeds or sliced avocado.",
+  },
+  {
+    id: "syn-lemon-water-calcium-kidney",
+    foodA: "Fresh Lemon Juice (Natural Citrate)",
+    foodB: "Plain Drinking Water (Dilution Volume)",
+    synergyOutcome: "Urinary Calcium Oxalate Crystal Inhibitor",
+    multiplier: "+250% Urinary Citrate / Crystal Dissolution",
+    mechanism:
+      "Citrate from fresh lemon juice binds tightly to free calcium in your urine, preventing it from binding with oxalates to form jagged kidney stones. Consuming it with water dilutes mineral concentrations so microscopic crystals flush out painlessly.",
+    culinaryIdea:
+      "Squeeze half a fresh lemon into 500 ml of lukewarm water every morning and sip it continuously.",
+  },
+  {
+    id: "syn-ginger-mint-digestion",
+    foodA: "Fresh Ginger Slices (Gingerols & Shogaols)",
+    foodB: "Fresh Mint Leaves / Pudina (Menthol)",
+    synergyOutcome: "Gastric Motility & Antispasmodic Synergy",
+    multiplier: "+200% Accelerated Stomach Emptying",
+    mechanism:
+      "Ginger stimulates natural stomach contractions to empty food faster, while mint relaxes tense lower intestinal smooth muscle. Together, they clear trapped gas, prevent acid reflux, and stop heavy meal cramping.",
+    culinaryIdea:
+      "Steep crushed fresh ginger slices and 6 to 8 mint leaves in hot water for 5 minutes after a rich lunch or dinner.",
+  },
+  {
+    id: "syn-coffee-liver-defense",
+    foodA: "Fresh Filtered Black Coffee (Chlorogenic Acid Polyphenols)",
+    foodB: "Ground Ceylon Cinnamon (Cinnamaldehyde & Insulin Sensitizer)",
+    synergyOutcome: "Hepatic Stellate Cell Fibrosis & Lipid Accumulation Shield",
+    multiplier: "-40% Risk of Liver Enzyme (ALT/AST) Spikes",
+    mechanism:
+      "Coffee polyphenols signal liver stellate cells to halt the production of collagen scar tissue, while cinnamon improves peripheral insulin sensitivity, reducing the flood of free fatty acids entering the liver.",
+    culinaryIdea:
+      "Brew your daily cup of unsweetened black or lightly milked coffee with a dash of pure Ceylon cinnamon powder.",
   },
 ];
 

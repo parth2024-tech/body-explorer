@@ -80,8 +80,8 @@ import {
 } from "../src/data/nutrition";
 
 describe("Nutrition Level Small Facts and Tips Integrity", () => {
-  it("contains 32 curated facts and tips across all 4 nutrition levels", () => {
-    expect(NUTRITION_LEVEL_TIPS_FACTS.length).toBe(32);
+  it("contains curated facts and tips across all 4 nutrition levels", () => {
+    expect(NUTRITION_LEVEL_TIPS_FACTS.length).toBeGreaterThanOrEqual(32);
   });
 
   it("ensures each level has both facts and actionable tips in plain language", () => {

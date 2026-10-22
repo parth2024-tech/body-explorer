@@ -269,6 +269,27 @@ const CLINICAL_RESERVE_BANK: DailyPayload = {
       rarity: "common",
       text: "You spend about 10% of your waking hours with your eyes closed just from natural blinking, which wipes clean tears across your eyes to wash away dust and deliver fresh air.",
     },
+    {
+      id: "gen-daily-kidney-pale-straw-hydration",
+      bodyPartId: "kidneys",
+      category: "health_tip",
+      rarity: "common",
+      text: "Your two kidneys filter 180 liters of liquid every day; sipping water steadily until your urine is pale straw yellow ensures your nephrons filter blood without pressure strain.",
+    },
+    {
+      id: "gen-daily-digestion-100-steps",
+      bodyPartId: "stomach",
+      category: "health_tip",
+      rarity: "surprising",
+      text: "Taking a gentle 10-minute walk after meals stimulates natural muscular waves in your digestive tract, clearing stomach heaviness 30% faster than sitting down.",
+    },
+    {
+      id: "gen-daily-liver-cruciferous-sulfur",
+      bodyPartId: "liver",
+      category: "health_tip",
+      rarity: "almost_unknown",
+      text: "Cruciferous vegetables like cabbage and radish contain natural sulfur compounds that trigger phase-2 liver enzymes to package up fat-soluble toxins so they can be safely excreted.",
+    },
   ],
   foodLabels: [
     {

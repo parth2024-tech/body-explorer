@@ -1258,4 +1258,43 @@ export const MYTHS: MythBusted[] = [
     evidenceStatement:
       "✅ EVIDENCE: Clinical physiology proves basal metabolic rate rises by approximately 10-12% for each 1°C increase in core body temperature, necessitating adequate caloric and fluid intake.",
   },
+  {
+    id: "m-gallbladder-liver-cleanse",
+    bodyPartId: "liver",
+    myth: "Drinking large doses of olive oil and lemon juice flushes dozens of gallstones and liver toxins into the toilet.",
+    reality:
+      "The green, waxy lumps people see in the toilet are NOT gallstones; they are 'soap stones' created inside your gut when large amounts of olive oil react with lemon juice and digestive enzymes (a chemical reaction called saponification). Real gallstones are hard calcified minerals that cannot pass painlessly through narrow 2-millimeter bile ducts, and drinking large amounts of oil can trigger severe gallbladder attacks.",
+    sources: ["The Lancet Medical Journal", "Mayo Clinic Gastroenterology"],
+    actionableTip:
+      "Never attempt olive oil liver flushes. Protect your liver and gallbladder naturally by maintaining a healthy weight, eating plenty of fiber, and limiting deep-fried foods.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Laboratory chemical analyses published in The Lancet confirmed that expelled 'stones' from olive oil flushes consist entirely of potassium oleate soap complexes with zero cholesterol or bilirubin stone matrix.",
+  },
+  {
+    id: "m-cranberry-juice-kidney-infection",
+    bodyPartId: "kidneys",
+    myth: "Drinking sweet bottled cranberry juice cures active bladder and kidney infections.",
+    reality:
+      "Bottled cranberry cocktails are loaded with sugar (which actually feeds bacteria) and contain almost none of the active plant compound (A-type proanthocyanidins). While pure cranberry extract may help prevent bacteria from sticking to the bladder wall in recurrent mild UTIs, it CANNOT kill active bacterial infections once they reach the kidneys. Kidney infections require prompt doctor evaluation and prescription antibiotics to prevent permanent kidney scarring.",
+    sources: ["Cochrane Systematic Reviews 2023", "National Kidney Foundation (NKF)"],
+    actionableTip:
+      "Drink plain water to flush your bladder. If you experience burning with a fever, chills, or lower back pain, see a doctor within 24 hours rather than drinking sugary juice.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Cochrane Review (2023) and AUA guidelines confirm cranberry products cannot treat active established urinary or pyelonephritic (kidney) infections.",
+  },
+  {
+    id: "m-cold-water-solidifies-fat",
+    bodyPartId: "stomach",
+    myth: "Drinking cold water during meals solidifies fats in your stomach and permanently stops digestion.",
+    reality:
+      "Your stomach is an internal incubator held at a constant 37°C (98.6°F). Cold water reaches body temperature within minutes of hitting your stomach. It does not freeze fats or harm digestion. Drinking modest sips of water during meals actually helps soften food, dissolve nutrients, and smooth digestion.",
+    sources: ["American Physiological Society", "Cleveland Clinic Gastroenterology"],
+    actionableTip:
+      "Sip water comfortably when thirsty during meals; just avoid chugging multiple large glasses quickly if it makes you feel overly full.",
+    confidenceLevel: "HIGH",
+    evidenceStatement:
+      "✅ EVIDENCE: Gastric thermography trials demonstrate ingested cold liquids equilibrate to intra-abdominal core temperature within 3 to 5 minutes without impairing enzymatic lipase activity.",
+  },
 ];

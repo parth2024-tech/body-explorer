@@ -2663,6 +2663,46 @@ const HARDCODED_FACTS: Fact[] = [
     "When your brain activates a motor unit in a muscle, every single muscle fiber innervated by that motor neuron contracts at 100% maximum power or not at all (the 'all-or-none law'); to lift something heavier, your central nervous system simply recruits additional motor units.",
     "Guyton and Hall Textbook of Medical Physiology",
   ),
+  f(
+    "fact-digestion-left-side-sleep",
+    "stomach",
+    "health_tip",
+    "surprising",
+    "Sleeping on your left side prevents nighttime acid reflux: because your stomach naturally curves to the left, this posture keeps the junction between your food pipe and stomach elevated above acid levels, using gravity to keep acid down.",
+    "The American Journal of Gastroenterology",
+  ),
+  f(
+    "fact-gut-30-plants-weekly",
+    "large-intestine",
+    "health_tip",
+    "almost_unknown",
+    "People who eat 30 or more different plant foods weekly (including vegetables, fruits, lentils, nuts, seeds, and spices) have a significantly richer, more protective gut microbiome than those eating 10 or fewer.",
+    "American Gut Project / mSystems",
+  ),
+  f(
+    "fact-small-intestine-gentle-chewing",
+    "small-intestine",
+    "health_tip",
+    "common",
+    "Chewing each mouthful until it is completely liquid protects your small intestine's delicate lining (villi) by ensuring food arrives thoroughly mixed with digestive saliva enzymes, preventing unabsorbed sugars from causing cramps and gas.",
+    "American Journal of Clinical Nutrition",
+  ),
+  f(
+    "fact-kidney-hydration-straw-color",
+    "kidneys",
+    "health_tip",
+    "common",
+    "Your kidneys filter your entire 5-liter blood volume 40 times every 24 hours; checking that your urine looks like pale straw ensures you're giving them the steady water volume they need without over-diluting vital blood minerals.",
+    "National Kidney Foundation (NKF)",
+  ),
+  f(
+    "fact-liver-coffee-polyphenols",
+    "liver",
+    "health_tip",
+    "surprising",
+    "Drinking 2 to 3 cups of unsweetened filtered coffee daily provides powerful chlorogenic acid polyphenols that stop liver cells from depositing collagen scar tissue, lowering the risk of liver stiffness and fatty liver progression.",
+    "World Journal of Hepatology / BMJ",
+  ),
 ];
 
 export const FACTS: Fact[] = [...HARDCODED_FACTS, ...(generatedFactsJson as Fact[])];
@@ -3538,6 +3578,45 @@ export const REMEDIES: RemedyEntry[] = [
     practicalContext:
       "Always mix pure essential oil into a carrier oil first (never apply undiluted oil directly to your skin) and keep it well away from your eyes to prevent stinging.",
   },
+  {
+    id: "fennel-ajwain-bloating-digest",
+    name: "Warm Roasted Fennel (Saunf) & Ajwain Infusion for Gas & Bloating",
+    description:
+      "Steeping 1/2 teaspoon each of lightly crushed fennel seeds (saunf) and carom seeds (ajwain) in hot water for 5 minutes after a heavy or spicy meal.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Clinical pharmacological studies confirm anethole in fennel and thymol in ajwain relax intestinal smooth muscle (spasmolytic action) and promote digestive enzyme secretion, dispelling trapped gas and speeding up stomach transit.",
+    ailment: "Post-Meal Gas, Bloating & Flatulence",
+    bodyPartId: "stomach",
+    practicalContext:
+      "Sip warm 15 minutes after lunch or dinner. You can chew the soft seeds directly after finishing the liquid.",
+  },
+  {
+    id: "barley-water-kidney-rinse",
+    name: "Traditional Boiled Barley Water for Kidney Filtration & Bladder Comfort",
+    description:
+      "Simmering 2 tablespoons of pearl barley in 1 liter of water for 20 minutes, straining, and sipping the cooled, soothing liquid through the day.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Barley water acts as a mild, potassium-sparing natural diuretic that gently increases urine volume without electrolyte depletion, helping wash out cellular debris and burning sensations in the urinary tract.",
+    ailment: "Mild Urine Burning, Fluid Heaviness & Sluggish Kidney Flushing",
+    bodyPartId: "kidneys",
+    practicalContext:
+      "Drink 1 to 2 glasses daily. Do not add refined white sugar; flavor with a squeeze of fresh lemon.",
+  },
+  {
+    id: "beetroot-ginger-liver-bile-tonic",
+    name: "Fresh Beetroot & Ginger Salad for Bile Flow & Liver Protection",
+    description:
+      "Eating a small bowl of raw grated beetroot tossed with grated fresh ginger, lemon juice, and a pinch of roasted cumin before lunch.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Beetroot is rich in betaine (trimethylglycine), which protects liver cells from fatty infiltration, while betalains and gingerols stimulate bile production and gallbladder emptying, helping digest dietary fats smoothly.",
+    ailment: "Sluggish Bile Flow, Heavy Fat Digestion & Early Fatty Liver Support",
+    bodyPartId: "liver",
+    practicalContext:
+      "Eat 2 to 3 tablespoons before your heaviest meal of the day. Note that betalain pigment may harmlessly tint urine or stool pink (beeturia).",
+  },
 ];
 
 export const HACKS: HealthHack[] = [
@@ -3666,6 +3745,33 @@ export const HACKS: HealthHack[] = [
     scienceBasis:
       "Stanford University neurobiology research showed that this cyclic double-inhale sigh immediately reinflates collapsed lung alveoli (tiny air bubbles) and triggers vagus nerve signaling that slows your heart rate faster than standard breathwork or meditation.",
     bodyPartId: "lung-right",
+  },
+  {
+    id: "post-meal-stroll-digestion",
+    title: "The 10-Minute Post-Meal Stroll (Accelerated Gastric Emptying)",
+    practice:
+      "Take a relaxed, gentle 10 to 15 minute walk right after finishing lunch or dinner. Keep your posture upright and breathe naturally through your nose without jogging or power walking.",
+    scienceBasis:
+      "Gentle upright walking stimulates peristalsis (smooth muscle waves in your digestive tract) to empty your stomach up to 30% faster and shuttles glucose straight into leg muscles without needing massive insulin surges.",
+    bodyPartId: "stomach",
+  },
+  {
+    id: "citrus-citrate-kidney-flush",
+    title: "The Morning Citrus-Citrate Kidney Flush",
+    practice:
+      "Squeeze half a fresh lemon or lime into a tall glass (350–500 ml) of lukewarm water right after waking up, and drink it before your morning tea or breakfast.",
+    scienceBasis:
+      "Natural citrate binds tightly to free calcium ions in urine, stopping them from forming jagged calcium oxalate stones while alkalinizing urine pH to dissolve microscopic uric acid crystals.",
+    bodyPartId: "kidneys",
+  },
+  {
+    id: "overnight-liver-fast-window",
+    title: "The 12-Hour Overnight Liver Fast Window",
+    practice:
+      "Leave a clear 12-hour gap between your last bite of dinner (e.g., 8 PM) and your first bite of breakfast (8 AM). Drink only plain water or unsweetened herbal tea in between.",
+    scienceBasis:
+      "After 10 to 12 hours of digestive rest, liver glycogen stores drop, prompting hepatocytes (liver cells) to switch from storing fat to burning accumulated triglycerides and activating autophagy (cellular cleanup).",
+    bodyPartId: "liver",
   },
 ];
 
@@ -4598,6 +4704,33 @@ export const QA_ENTRIES: QAEntry[] = [
     expertName: "Dr. Marcus Vance",
     expertTitle: "Board-Certified Orthopedic Surgeon & Hand Specialist",
     bodyPartId: "hands",
+  },
+  {
+    id: "bloating-after-healthy-meals-expert",
+    question: "Why do I feel bloated and gassy even when I eat healthy salads and lentils?",
+    answer:
+      "Eating lots of raw vegetables, beans, and whole grains suddenly dumps huge amounts of fermentable fibers and plant oligosaccharides into your gut. If your gut bacteria are not used to this volume, they produce heavy hydrogen gas while breaking it down. To fix it, soak lentils for 8 hours before cooking, steam your vegetables lightly instead of eating them raw, chew thoroughly, and increase fiber gradually over 3 to 4 weeks.",
+    expertName: "Dr. Alistair Vance",
+    expertTitle: "Consultant Gastroenterologist & Gut Microbiome Specialist",
+    bodyPartId: "stomach",
+  },
+  {
+    id: "painkillers-kidney-damage-expert",
+    question: "Can taking regular ibuprofen or pain relievers really damage my kidneys?",
+    answer:
+      "Yes. NSAID painkillers (like ibuprofen, naproxen, and diclofenac) work by blocking prostaglandins—the exact chemicals your body needs to keep kidney blood vessels open. If you take them frequently or when dehydrated, blood flow to your kidney filters drops drastically, causing acute kidney injury or chronic scarring. If you have headaches or body aches, stay hydrated, try natural relief first, and discuss safer alternatives like paracetamol with your doctor.",
+    expertName: "Dr. Samuel Okafor",
+    expertTitle: "Clinical Nephrologist (Kidney Specialist)",
+    bodyPartId: "kidneys",
+  },
+  {
+    id: "reversing-fatty-liver-expert",
+    question: "Can fatty liver disease be completely reversed without prescription medications?",
+    answer:
+      "Yes! The liver has an unmatched power to heal and regenerate. In clinical trials, losing just 7% to 10% of body weight completely clears liver fat and reverses early inflammation in over 85% of patients with non-alcoholic fatty liver disease (NAFLD). The most potent steps are: cutting out liquid fructose (sodas and sweet juices), drinking 2 cups of plain black coffee daily, walking 30 minutes a day, and maintaining a 12-hour overnight digestive rest window.",
+    expertName: "Dr. Sunita Mehta",
+    expertTitle: "Senior Hepatologist & Liver Transplant Physician",
+    bodyPartId: "liver",
   },
 ];
 
