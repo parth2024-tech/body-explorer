@@ -18,7 +18,8 @@
     "File-based routing under /src/routes",
     "Server functions use createServerFn from @tanstack/react-start",
     "Strict TypeScript typing - zero use of 'any'",
-    "Clinical evidence compliance - Tier 1/2 sourcing"
+    "Clinical evidence compliance - Tier 1/2 sourcing",
+    "Hindi translations paused: all newly added content and UI copy must remain English-only until explicit resumption is requested by user"
   ],
   "architecture_patterns": [
     "SSR via TanStack Start and Nitro Vercel preset",
@@ -54,6 +55,7 @@
   ],
   "never_do": [
     "Never use dense medical jargon, biochemical terms, or complicated words without immediate simple everyday explanations — all words must be easy to understand",
+    "Never add Hindi translations (hi: ...) to content, tips, or UI text — Hindi translation is strictly paused until the user explicitly asks to resume",
     "Never use useEffect for data fetching — use Server Components or SWR",
     "Never store secrets in .env files committed to git",
     "Never use inline styles — always use Tailwind classes",

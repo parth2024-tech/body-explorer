@@ -70,6 +70,7 @@ Execute all 12 tasks for every health topic/condition requested. Do not skip ste
 - **ALWAYS** differentiate evidence levels per claim, not just once at the top.
 - **ALWAYS** include a visible "this is not a substitute for professional medical advice" disclaimer.
 - **ALWAYS** flag conflicting or evolving evidence rather than presenting one view as settled fact.
+- **HINDI TRANSLATIONS PAUSED (MANDATORY)**: Do NOT generate, add, or provide Hindi translations (`hi: ...`) in any content, tips, or UI text. All content must remain English-only until the user explicitly requests to resume Hindi translations.
 
 ## Output Format Default
 
