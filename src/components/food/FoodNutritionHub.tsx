@@ -558,21 +558,19 @@ export function FoodNutritionHub() {
             <div>
               <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#00E5C4] block">
                 {language === "hi"
-                  ? "आईसीएमआर व पबमेड साक्ष्य वेधशाला • 36 खाद्य पदार्थ"
-                  : "ICMR-NIN & PubMed Evidence Observatory • 36 Power Foods"}
+                  ? "प्रमाणित विज्ञान • 36 प्रमुख भोजन"
+                  : "Evidence-Backed • 36 Power Foods"}
               </span>
               <h2
                 id="facts-heading"
                 className="text-xl sm:text-3xl font-bold text-white tracking-tight"
               >
-                {language === "hi"
-                  ? "खाद्य निर्देशिका: 36 भोजन और उनके वास्तविक लाभ"
-                  : "Food Directory: Discover 36 Foods & How You Benefit"}
+                {language === "hi" ? "36 भोजन और उनके वास्तविक लाभ" : "36 Foods & Their Benefits"}
               </h2>
               <p className="text-xs sm:text-sm text-[#8A8F98] mt-1 max-w-2xl">
                 {language === "hi"
-                  ? "अक्सर लोग सभी पारंपरिक खाद्य पदार्थों और उनके असली फायदों के बारे में नहीं जान पाते। 36 भारतीय अनाजों, साग, बीजों और फलों के वास्तविक लाभ, सही खाने का तरीका और सावधानियां सरल भाषा में जानें।"
-                  : "People often miss out on the incredible benefits of everyday staples. Explore 36 traditional Indian grains, seeds, greens, and fruits with proven health benefits, best food pairings, and who should limit them."}
+                  ? "36 पारंपरिक भोजनों के प्रमाणित लाभ, सही मेल और सावधानियां।"
+                  : "Proven health benefits, best pairings, and who should limit each food."}
               </p>
             </div>
 
