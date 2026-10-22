@@ -80,6 +80,14 @@ import {
   INDIAN_NUTRITION_GAPS,
   NUTRITIONAL_DOMAINS,
   ESSENTIAL_NUTRIENTS_LIBRARY,
+  WHOLE_BODY_ATLAS,
+  FOOD_SCIENCE_FEATURES,
+  FOOD_JOURNEY_FOODS,
+  FOOD_JOURNEY_SYSTEMS,
+  FOOD_JOURNEY_CONNECTIONS,
+  EDITORIAL_SERIES,
+  WEBSITE_RULE_QUESTIONS,
+  FOOD_PAGE_POSITIONING,
 } from "../src/data/nutrition";
 
 describe("Nutrition Level Small Facts and Tips Integrity", () => {
@@ -284,5 +292,108 @@ describe("Indian Food Intelligence: Gaps, Domains, and Nutrient Library", () => 
     const salt = FOOD_FACTS.find((f) => f.id === "food-iodized-salt");
     expect(salt?.takeaway).toBeTruthy();
     expect(salt?.whatItDoesNotDo).toContain("salt");
+  });
+
+  it("covers all 15 organs/systems in the Whole-Body Food Atlas with actionable tips", () => {
+    expect(WHOLE_BODY_ATLAS.length).toBe(15);
+    const organs = WHOLE_BODY_ATLAS.map((a) => a.organ.toLowerCase());
+    expect(organs).toContain("brain");
+    expect(organs).toContain("eyes");
+    expect(organs).toContain("blood");
+    expect(organs).toContain("heart");
+    expect(organs).toContain("bones");
+    expect(organs).toContain("muscles");
+    expect(organs).toContain("gut");
+    expect(organs).toContain("liver");
+    expect(organs).toContain("thyroid");
+    expect(organs).toContain("skin");
+    expect(organs).toContain("kidneys");
+    expect(organs).toContain("pancreas");
+    expect(organs).toContain("nerves");
+    expect(organs).toContain("reproductive health");
+    expect(organs).toContain("immune system");
+
+    for (const entry of WHOLE_BODY_ATLAS) {
+      expect(entry.id).toBeTruthy();
+      expect(entry.organ).toBeTruthy();
+      expect(entry.subtitle).toBeTruthy();
+      expect(entry.foodFocus.length).toBeGreaterThan(0);
+      expect(entry.keyNutrient).toBeTruthy();
+      expect(entry.whereItWorks.length).toBeGreaterThan(15);
+      expect(entry.surprisingInsight.length).toBeGreaterThan(15);
+      expect(entry.tryThisAction.length).toBeGreaterThan(15);
+      expect(entry.clinicalCaution.length).toBeGreaterThan(10);
+    }
+  });
+
+  it("covers all 6 unusual food science features with chemical mechanisms and practical kitchen rules", () => {
+    expect(FOOD_SCIENCE_FEATURES.length).toBe(6);
+    const titles = FOOD_SCIENCE_FEATURES.map((f) => f.title.toLowerCase());
+    expect(titles.some((t) => t.includes("lemon"))).toBe(true);
+    expect(titles.some((t) => t.includes("cooling") || t.includes("starch"))).toBe(true);
+    expect(titles.some((t) => t.includes("soaking"))).toBe(true);
+    expect(titles.some((t) => t.includes("escape"))).toBe(true);
+    expect(titles.some((t) => t.includes("interfere") || t.includes("drink"))).toBe(true);
+    expect(titles.some((t) => t.includes("probiotic") || t.includes("fermented"))).toBe(true);
+
+    for (const feat of FOOD_SCIENCE_FEATURES) {
+      expect(feat.id).toBeTruthy();
+      expect(feat.title).toBeTruthy();
+      expect(feat.scienceMechanism.length).toBeGreaterThan(25);
+      expect(feat.everydayFoods.length).toBeGreaterThan(0);
+      expect(feat.surprisingReality.length).toBeGreaterThan(20);
+      expect(feat.practicalRule.length).toBeGreaterThan(15);
+      expect(feat.clinicalDisclaimer.length).toBeGreaterThan(15);
+    }
+  });
+
+  it("validates interactive food journey data connections and educational disclaimer", () => {
+    expect(FOOD_JOURNEY_FOODS.length).toBeGreaterThanOrEqual(6);
+    expect(FOOD_JOURNEY_SYSTEMS.length).toBeGreaterThanOrEqual(6);
+    expect(Object.keys(FOOD_JOURNEY_CONNECTIONS).length).toBeGreaterThanOrEqual(8);
+
+    // Verify curd to nerves connection
+    const curdNerves = FOOD_JOURNEY_CONNECTIONS["curd-nerves"];
+    expect(curdNerves).toBeDefined();
+    expect(curdNerves.keyNutrients.some((n) => n.includes("B12"))).toBe(true);
+    expect(curdNerves.limitationNote).toContain("Educational information only");
+
+    // Verify chana to blood connection
+    const chanaBlood = FOOD_JOURNEY_CONNECTIONS["chana-blood"];
+    expect(chanaBlood).toBeDefined();
+    expect(chanaBlood.keyNutrients.some((n) => n.includes("Iron"))).toBe(true);
+  });
+
+  it("covers all 5 recurring editorial series with real Indian food examples", () => {
+    expect(EDITORIAL_SERIES.length).toBe(5);
+    const seriesTitles = EDITORIAL_SERIES.map((s) => s.title.toLowerCase());
+    expect(seriesTitles.some((t) => t.includes("₹10") || t.includes("10 rupee"))).toBe(true);
+    expect(seriesTitles.some((t) => t.includes("hidden deficiency"))).toBe(true);
+    expect(seriesTitles.some((t) => t.includes("food chemistry"))).toBe(true);
+    expect(seriesTitles.some((t) => t.includes("marketing"))).toBe(true);
+    expect(seriesTitles.some((t) => t.includes("preparation"))).toBe(true);
+
+    for (const series of EDITORIAL_SERIES) {
+      expect(series.id).toBeTruthy();
+      expect(series.title).toBeTruthy();
+      expect(series.theme).toBeTruthy();
+      expect(series.description.length).toBeGreaterThan(20);
+      expect(series.exampleFood).toBeTruthy();
+      expect(series.whatItProvides.length).toBeGreaterThan(15);
+      expect(series.importantLimitation.length).toBeGreaterThan(15);
+      expect(series.coreRule.length).toBeGreaterThan(15);
+    }
+  });
+
+  it("defines the 4 core questions rule and website positioning statement", () => {
+    expect(WEBSITE_RULE_QUESTIONS.length).toBe(4);
+    expect(WEBSITE_RULE_QUESTIONS[0].question).toContain("scientific fact");
+    expect(WEBSITE_RULE_QUESTIONS[1].question).toContain("ordinary Indian eat");
+    expect(WEBSITE_RULE_QUESTIONS[2].question).toContain("limitation");
+    expect(WEBSITE_RULE_QUESTIONS[3].question).toContain("reader do");
+
+    expect(FOOD_PAGE_POSITIONING.headline).toBeTruthy();
+    expect(FOOD_PAGE_POSITIONING.statement).toContain("Explore every part of the human body");
+    expect(FOOD_PAGE_POSITIONING.icmrCitation).toContain("ICMR–NIN");
   });
 });

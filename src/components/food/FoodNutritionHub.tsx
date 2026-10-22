@@ -7,10 +7,21 @@ import {
   INDIAN_NUTRITION_GAPS,
   NUTRITIONAL_DOMAINS,
   ESSENTIAL_NUTRIENTS_LIBRARY,
+  WHOLE_BODY_ATLAS,
+  FOOD_SCIENCE_FEATURES,
+  FOOD_JOURNEY_FOODS,
+  FOOD_JOURNEY_SYSTEMS,
+  FOOD_JOURNEY_CONNECTIONS,
+  EDITORIAL_SERIES,
+  WEBSITE_RULE_QUESTIONS,
+  FOOD_PAGE_POSITIONING,
   IndianNutritionGap,
   NutritionalDomain,
   EssentialNutrient,
   FoodFactEntry,
+  WholeBodyAtlasEntry,
+  FoodScienceFeature,
+  EditorialSeries,
 } from "@/data/nutrition";
 import {
   Apple,
@@ -44,6 +55,22 @@ import {
   Bone,
   ShieldCheck,
   Info,
+  Compass,
+  Beaker,
+  Coffee,
+  Microscope,
+  Coins,
+  HeartHandshake,
+  HelpCircle,
+  CheckCircle2,
+  RotateCcw,
+  Wheat,
+  Shield,
+  Zap,
+  Milk,
+  Nut,
+  Beef,
+  Citrus,
 } from "lucide-react";
 import { useShuffledList } from "@/lib/shuffle";
 
@@ -75,6 +102,67 @@ export function FoodNutritionHub() {
     useShuffledList(FOOD_SYNERGIES);
   const { items: shuffledWarnings, reshuffle: reshuffleWarnings } =
     useShuffledList(DRUG_FOOD_WARNINGS);
+  const { items: shuffledAtlas, reshuffle: reshuffleAtlas } = useShuffledList(WHOLE_BODY_ATLAS);
+  const { items: shuffledScience, reshuffle: reshuffleScience } =
+    useShuffledList(FOOD_SCIENCE_FEATURES);
+  const { items: shuffledSeries, reshuffle: reshuffleSeries } = useShuffledList(EDITORIAL_SERIES);
+
+  // Whole-Body Atlas search & filters
+  const [atlasSearchQuery, setAtlasSearchQuery] = useState("");
+
+  // Interactive Food Journey selector state
+  const [selectedJourneyFood, setSelectedJourneyFood] = useState<string>("curd");
+  const [selectedJourneySystem, setSelectedJourneySystem] = useState<string>("nerves");
+
+  // Pick random food & system combination
+  const pickRandomJourney = () => {
+    const randomFood = FOOD_JOURNEY_FOODS[Math.floor(Math.random() * FOOD_JOURNEY_FOODS.length)];
+    const randomSystem =
+      FOOD_JOURNEY_SYSTEMS[Math.floor(Math.random() * FOOD_JOURNEY_SYSTEMS.length)];
+    setSelectedJourneyFood(randomFood.id);
+    setSelectedJourneySystem(randomSystem.id);
+  };
+
+  // Resolved Food Journey Connection
+  const activeJourneyConnection = useMemo(() => {
+    const key = `${selectedJourneyFood}-${selectedJourneySystem}`;
+    if (FOOD_JOURNEY_CONNECTIONS[key]) {
+      return FOOD_JOURNEY_CONNECTIONS[key];
+    }
+    const foodObj =
+      FOOD_JOURNEY_FOODS.find((f) => f.id === selectedJourneyFood) || FOOD_JOURNEY_FOODS[0];
+    const sysObj =
+      FOOD_JOURNEY_SYSTEMS.find((s) => s.id === selectedJourneySystem) || FOOD_JOURNEY_SYSTEMS[0];
+    return {
+      foodId: foodObj.id,
+      foodName: foodObj.name,
+      systemId: sysObj.id,
+      systemName: sysObj.name,
+      keyNutrients: ["Essential Macronutrients", "Dietary Fibre & Minerals", "Antioxidants"],
+      whatHappensInside: `When you consume ${foodObj.name}, your digestive system breaks down its cellular structure to release vital micronutrients that travel via your bloodstream to support ${sysObj.name.toLowerCase()}.`,
+      surprisingInsight: `Even wholesome staples like ${foodObj.name} do not work in isolation. The biological benefit depends on overall diet quality, cooking temperature, and gut health.`,
+      practicalTip: `Enjoy ${foodObj.name} as part of a varied, balanced plate alongside plenty of water and seasonal vegetables.`,
+      limitationNote:
+        "Educational information only. The displayed connection is not a prediction of an individual's health outcome.",
+    };
+  }, [selectedJourneyFood, selectedJourneySystem]);
+
+  // Filtered Whole-Body Atlas
+  const filteredAtlas = useMemo(() => {
+    return shuffledAtlas.filter((entry) => {
+      const q = atlasSearchQuery.toLowerCase().trim();
+      if (!q) return true;
+      return (
+        entry.organ.toLowerCase().includes(q) ||
+        entry.subtitle.toLowerCase().includes(q) ||
+        entry.keyNutrient.toLowerCase().includes(q) ||
+        entry.whereItWorks.toLowerCase().includes(q) ||
+        entry.surprisingInsight.toLowerCase().includes(q) ||
+        entry.tryThisAction.toLowerCase().includes(q) ||
+        entry.foodFocus.some((f) => f.toLowerCase().includes(q))
+      );
+    });
+  }, [shuffledAtlas, atlasSearchQuery]);
 
   // Filtered Food Intelligence Entries
   const filteredFoods = useMemo(() => {
@@ -216,6 +304,93 @@ export function FoodNutritionHub() {
     }
   };
 
+  // Organ icon resolver helper
+  const getOrganIcon = (organName: string) => {
+    switch (organName.toLowerCase()) {
+      case "brain":
+      case "nerves":
+        return Brain;
+      case "eyes":
+        return Eye;
+      case "blood":
+        return Droplets;
+      case "heart":
+        return HeartPulse;
+      case "bones":
+        return Bone;
+      case "muscles":
+        return Activity;
+      case "gut":
+        return HeartHandshake;
+      case "liver":
+        return ShieldAlert;
+      case "thyroid":
+        return Flame;
+      case "skin":
+        return Sparkles;
+      case "kidneys":
+        return Droplets;
+      case "pancreas":
+        return Activity;
+      case "reproductive health":
+        return Dna;
+      case "immune system":
+        return ShieldCheck;
+      default:
+        return Compass;
+    }
+  };
+
+  // Journey food icon resolver
+  const getJourneyFoodIcon = (foodId: string) => {
+    switch (foodId) {
+      case "curd":
+        return Milk;
+      case "chana":
+        return Nut;
+      case "amla":
+        return Citrus;
+      case "flaxseed":
+        return Sparkles;
+      case "ragi":
+        return Wheat;
+      case "soy":
+        return Beef;
+      case "salt":
+        return Flame;
+      case "spinach":
+        return Leaf;
+      default:
+        return Apple;
+    }
+  };
+
+  // Journey system icon resolver
+  const getJourneySystemIcon = (systemId: string) => {
+    switch (systemId) {
+      case "nerves":
+        return Brain;
+      case "blood":
+        return Droplets;
+      case "bones":
+        return Bone;
+      case "gut":
+        return HeartHandshake;
+      case "heart":
+        return HeartPulse;
+      case "liver":
+        return ShieldAlert;
+      case "skin":
+        return Sparkles;
+      case "thyroid":
+        return Flame;
+      case "kidneys":
+        return Droplets;
+      default:
+        return Activity;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#030303] text-[#EAEAEA] font-sans selection:bg-[#00E5C4]/30 pb-32 pb-[calc(7.5rem+env(safe-area-inset-bottom))]">
       {/* ─── Clinical Medical Disclaimer Banner ─── */}
@@ -300,6 +475,60 @@ export function FoodNutritionHub() {
             </p>
           </div>
 
+          {/* Official Positioning Manifesto */}
+          <div className="mt-4 p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-[#00E5C4]/30 text-left">
+            <div className="flex items-center gap-2 mb-2">
+              <Compass className="w-4 h-4 text-[#00E5C4]" />
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#00E5C4]">
+                {FOOD_PAGE_POSITIONING.headline}
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-white/95 leading-relaxed font-medium">
+              "{FOOD_PAGE_POSITIONING.statement}"
+            </p>
+            <div className="mt-3 pt-2.5 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[10px] font-mono text-[#8A8F98]">
+              <span>{FOOD_PAGE_POSITIONING.icmrCitation}</span>
+              <a
+                href={FOOD_PAGE_POSITIONING.icmrLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-400 hover:text-teal-300 inline-flex items-center gap-1"
+              >
+                <span>Read Official PDF Guidelines</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+          </div>
+
+          {/* The 4 Golden Questions Rule */}
+          <div className="mt-4 p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 text-left">
+            <div className="flex items-center justify-between gap-2 mb-3">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#00E5C4] flex items-center gap-1.5">
+                <HelpCircle className="w-4 h-4 text-teal-400" />
+                The 4 Golden Questions Behind Every Food Entry
+              </span>
+              <span className="text-[10px] font-mono text-[#8A8F98]">Our Permanent Standard</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+              {WEBSITE_RULE_QUESTIONS.map((q) => (
+                <div
+                  key={q.number}
+                  className="p-3 rounded-xl bg-white/[0.02] border border-white/5"
+                >
+                  <span className="text-teal-300 font-bold block mb-1 text-[11px]">
+                    Q{q.number}. {q.question}
+                  </span>
+                  <p className="text-[#8A8F98] text-[11px] leading-relaxed mb-1.5">
+                    {q.explanation}
+                  </p>
+                  <span className="text-[10px] text-teal-200/90 font-mono block">
+                    e.g. {q.exampleInPractice}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* The 5 Diagnostic Questions Banner */}
           <div className="mt-4 p-3 sm:p-4 rounded-xl bg-teal-500/[0.04] border border-teal-500/20 text-left">
             <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-teal-400 mb-2 block">
@@ -336,8 +565,12 @@ export function FoodNutritionHub() {
           className="sticky top-[48px] z-20 -mx-4 px-4 py-2 bg-[#030303]/90 backdrop-blur-md border-y border-white/10 mb-8 flex items-center gap-2 overflow-x-auto touch-scroll"
         >
           {[
+            { id: "atlas", label: "Whole-Body Atlas (15)", icon: Compass },
+            { id: "science", label: "Unusual Science (6)", icon: Beaker },
+            { id: "journey", label: "Inside Your Body", icon: Zap },
+            { id: "series", label: "Editorial Series (5)", icon: BookOpen },
             { id: "gaps", label: "Indian Gaps (6)", icon: Sparkles },
-            { id: "domains", label: "9 Body Domains", icon: Layers },
+            { id: "domains", label: "9 Domains", icon: Layers },
             { id: "nutrients", label: "Nutrient Library", icon: BookOpen },
             { id: "foods", label: "36 Foods Directory", icon: Apple },
             { id: "synergies", label: "Synergies", icon: Flame },
@@ -353,6 +586,484 @@ export function FoodNutritionHub() {
             </a>
           ))}
         </nav>
+
+        {/* ─── SECTION 1: The Whole-Body Food Atlas (15 Organs & Systems) ─── */}
+        <section id="atlas" aria-labelledby="atlas-heading" className="mb-14 sm:mb-20 scroll-mt-24">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 sm:mb-8">
+            <div>
+              <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#00E5C4] block">
+                Whole-Body Food Atlas • 15 Organs & Systems
+              </span>
+              <h2
+                id="atlas-heading"
+                className="text-xl sm:text-3xl font-bold text-white tracking-tight mt-1"
+              >
+                The Whole-Body Food Atlas
+              </h2>
+              <p className="text-xs sm:text-sm text-[#8A8F98] mt-1.5 max-w-2xl leading-relaxed">
+                Explore food by the part of your body it helps nourish, the key nutrient involved,
+                the surprising science behind it, and one affordable action you can take today.
+              </p>
+            </div>
+            <div className="flex items-center gap-2 self-start sm:self-auto shrink-0">
+              <button
+                type="button"
+                onClick={reshuffleAtlas}
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] hover:border-[#00E5C4]/40 text-xs font-mono text-[#EAEAEA] transition-all cursor-pointer"
+                title="Shuffle atlas order"
+              >
+                <Shuffle className="w-3.5 h-3.5 text-[#00E5C4]" />
+                <span>Shuffle Atlas</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Atlas Search Input */}
+          <div className="relative w-full max-w-md mb-6">
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8A8F98]" />
+            <input
+              type="text"
+              value={atlasSearchQuery}
+              onChange={(e) => setAtlasSearchQuery(e.target.value)}
+              placeholder="Search organ, brain, eyes, liver, kidneys, potassium, B12..."
+              className="w-full rounded-xl border border-white/10 bg-white/[0.03] pl-10 pr-9 py-2.5 text-sm text-white placeholder-[#8A8F98] outline-none focus:border-[#00E5C4]/50 transition-all"
+            />
+            {atlasSearchQuery && (
+              <button
+                type="button"
+                onClick={() => setAtlasSearchQuery("")}
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#8A8F98] hover:text-white p-1 text-xs"
+              >
+                ✕
+              </button>
+            )}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {filteredAtlas.map((entry) => {
+              const OrganIcon = getOrganIcon(entry.organ);
+              return (
+                <article
+                  key={entry.id}
+                  className="rounded-2xl border border-white/10 bg-[#0A0E1A] p-5 sm:p-6 flex flex-col justify-between hover:border-teal-500/40 transition-all"
+                >
+                  <div>
+                    {/* Organ Title & Subtitle */}
+                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-lg bg-teal-500/10 border border-teal-500/30 flex items-center justify-center shrink-0">
+                          <OrganIcon className="w-4 h-4 text-[#00E5C4]" />
+                        </div>
+                        <h3 className="text-base sm:text-lg font-bold text-white">{entry.organ}</h3>
+                      </div>
+                      <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-teal-500/10 text-teal-300 border border-teal-500/20 shrink-0">
+                        {entry.keyNutrient}
+                      </span>
+                    </div>
+
+                    <p className="text-xs text-teal-300 font-medium mb-3">{entry.subtitle}</p>
+
+                    {/* Food Focus Pills */}
+                    <div className="mb-3">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-white/70 block mb-1">
+                        Everyday Food Focus:
+                      </span>
+                      <div className="flex flex-wrap gap-1">
+                        {entry.foodFocus.map((food, idx) => (
+                          <span
+                            key={idx}
+                            className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[10px] text-[#EAEAEA]"
+                          >
+                            {food}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Where It Works in Your Body */}
+                    <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 text-xs text-[#C5C8CE] leading-relaxed mb-3">
+                      <strong className="text-white block text-[11px] mb-0.5">
+                        🧬 Where It Works in Your Body:
+                      </strong>
+                      <p>{entry.whereItWorks}</p>
+                    </div>
+
+                    {/* Surprising Scientific Insight */}
+                    <div className="p-3 rounded-xl bg-teal-500/[0.04] border border-teal-500/20 text-xs text-teal-100 leading-relaxed mb-3">
+                      <strong className="text-teal-300 block text-[11px] mb-0.5">
+                        💡 Surprising Scientific Insight:
+                      </strong>
+                      <p>{entry.surprisingInsight}</p>
+                    </div>
+
+                    {/* Highlighted Box: Try This Action */}
+                    <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs text-amber-100 leading-relaxed mb-3">
+                      <strong className="text-amber-400 block text-[11px] mb-0.5 flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                        Try This Action:
+                      </strong>
+                      <p>{entry.tryThisAction}</p>
+                    </div>
+                  </div>
+
+                  {/* Clinical Caution */}
+                  <div className="pt-2.5 border-t border-white/10 text-[10px] text-red-300/90 leading-snug">
+                    <strong className="text-red-400">Clinical Caution:</strong>{" "}
+                    {entry.clinicalCaution}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* ─── SECTION 2: Unusual Food Science (6 Dedicated Editorial Features) ─── */}
+        <section
+          id="science"
+          aria-labelledby="science-heading"
+          className="mb-14 sm:mb-20 scroll-mt-24"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 sm:mb-8">
+            <div>
+              <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#00E5C4] block">
+                Kitchen Biochemistry • Editorial Deep Dives
+              </span>
+              <h2
+                id="science-heading"
+                className="text-xl sm:text-3xl font-bold text-white tracking-tight mt-1"
+              >
+                The Unusual Food Science That Makes Real Life Simpler
+              </h2>
+              <p className="text-xs sm:text-sm text-[#8A8F98] mt-1.5 max-w-2xl leading-relaxed">
+                Why food preparation, cooling, soaking, and drink timing change how much nutrition
+                your gut actually absorbs. Science-proven kitchen rules that save money and health.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={reshuffleScience}
+              className="self-start sm:self-auto shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] hover:border-[#00E5C4]/40 text-xs font-mono text-[#EAEAEA] transition-all cursor-pointer"
+              title="Shuffle science features"
+            >
+              <Shuffle className="w-3.5 h-3.5 text-[#00E5C4]" />
+              <span>Shuffle Science</span>
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {shuffledScience.map((feat) => (
+              <article
+                key={feat.id}
+                className="rounded-2xl border border-white/10 bg-[#0A0E1A] p-5 sm:p-6 flex flex-col justify-between hover:border-teal-500/40 transition-all"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-teal-500/10 text-teal-300 border border-teal-500/30">
+                      {feat.category}
+                    </span>
+                    <Beaker className="w-4 h-4 text-teal-400" />
+                  </div>
+
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-1 leading-snug">
+                    {feat.title}
+                  </h3>
+                  <p className="text-xs text-teal-300/90 font-medium mb-3">{feat.subtitle}</p>
+
+                  {/* Biological Mechanism */}
+                  <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 text-xs text-[#C5C8CE] leading-relaxed mb-3">
+                    <strong className="text-white block text-[11px] mb-0.5">
+                      🔬 What Actually Happens:
+                    </strong>
+                    <p>{feat.scienceMechanism}</p>
+                  </div>
+
+                  {/* Everyday Foods Involved */}
+                  <div className="mb-3">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-white/70 block mb-1">
+                      Everyday Foods Involved:
+                    </span>
+                    <div className="flex flex-wrap gap-1">
+                      {feat.everydayFoods.map((f, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[10px] text-[#EAEAEA]"
+                        >
+                          {f}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Surprising Reality */}
+                  <div className="p-3 rounded-xl bg-teal-500/[0.04] border border-teal-500/20 text-xs text-teal-100 leading-relaxed mb-3">
+                    <strong className="text-teal-300 block text-[11px] mb-0.5">
+                      💡 Surprising Reality:
+                    </strong>
+                    <p>{feat.surprisingReality}</p>
+                  </div>
+
+                  {/* Practical Kitchen Rule */}
+                  <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs text-amber-100 leading-relaxed mb-3">
+                    <strong className="text-amber-400 block text-[11px] mb-0.5 flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      Kitchen Rule:
+                    </strong>
+                    <p>{feat.practicalRule}</p>
+                  </div>
+                </div>
+
+                <div className="pt-2.5 border-t border-white/10 text-[10px] text-[#8A8F98] leading-snug">
+                  <strong className="text-white/60">Reality Check:</strong>{" "}
+                  {feat.clinicalDisclaimer}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* ─── SECTION 3: Interactive Feature: What Happens Inside Your Body? ─── */}
+        <section
+          id="journey"
+          aria-labelledby="journey-heading"
+          className="mb-14 sm:mb-20 scroll-mt-24"
+        >
+          <div className="rounded-2xl sm:rounded-3xl border border-teal-500/30 bg-[#0A0E1A] p-4 sm:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 sm:mb-8">
+              <div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-400 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-2.5">
+                  <Zap className="w-3.5 h-3.5 text-teal-400" />
+                  <span>Interactive Biological Simulator</span>
+                </div>
+                <h2
+                  id="journey-heading"
+                  className="text-xl sm:text-3xl font-bold text-white tracking-tight"
+                >
+                  What Happens Inside Your Body?
+                </h2>
+                <p className="text-xs sm:text-sm text-[#8A8F98] mt-1.5 max-w-2xl leading-relaxed">
+                  Choose an everyday Indian food and a body system to discover the biological
+                  connection, nutrient pathway, surprising insight, and real limitation.
+                </p>
+              </div>
+
+              <button
+                type="button"
+                onClick={pickRandomJourney}
+                className="self-start sm:self-auto shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl border border-teal-500/40 bg-teal-500/10 hover:bg-teal-500/20 text-xs font-mono text-teal-200 transition-all cursor-pointer"
+                title="Random food & system pair"
+              >
+                <Shuffle className="w-3.5 h-3.5 text-[#00E5C4]" />
+                <span>🎲 Random Journey</span>
+              </button>
+            </div>
+
+            {/* Step 1: Choose Food */}
+            <div className="mb-5">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-teal-300 block mb-2.5">
+                Step 1: Choose an Everyday Food
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {FOOD_JOURNEY_FOODS.map((food) => {
+                  const FoodIcon = getJourneyFoodIcon(food.id);
+                  const isSelected = selectedJourneyFood === food.id;
+                  return (
+                    <button
+                      key={food.id}
+                      type="button"
+                      onClick={() => setSelectedJourneyFood(food.id)}
+                      className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                        isSelected
+                          ? "bg-[#00E5C4] text-black shadow-md font-bold"
+                          : "bg-white/5 border border-white/10 text-white/90 hover:bg-white/10"
+                      }`}
+                    >
+                      <FoodIcon
+                        className={`w-3.5 h-3.5 ${isSelected ? "text-black" : "text-[#00E5C4]"}`}
+                      />
+                      <span>{food.name}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Step 2: Choose Body System */}
+            <div className="mb-6">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-teal-300 block mb-2.5">
+                Step 2: Choose a Body System
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {FOOD_JOURNEY_SYSTEMS.map((sys) => {
+                  const SysIcon = getJourneySystemIcon(sys.id);
+                  const isSelected = selectedJourneySystem === sys.id;
+                  return (
+                    <button
+                      key={sys.id}
+                      type="button"
+                      onClick={() => setSelectedJourneySystem(sys.id)}
+                      className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                        isSelected
+                          ? "bg-[#00E5C4] text-black shadow-md font-bold"
+                          : "bg-white/5 border border-white/10 text-white/90 hover:bg-white/10"
+                      }`}
+                    >
+                      <SysIcon
+                        className={`w-3.5 h-3.5 ${isSelected ? "text-black" : "text-[#00E5C4]"}`}
+                      />
+                      <span>{sys.name}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Step 3: Interactive Journey Outcome Card */}
+            <div className="rounded-2xl border border-teal-500/40 bg-white/[0.02] p-5 sm:p-7">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 mb-4 border-b border-white/10">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-10 h-10 rounded-xl bg-teal-500/20 border border-teal-500/40 flex items-center justify-center">
+                    <Zap className="w-5 h-5 text-[#00E5C4]" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-mono uppercase text-teal-400">
+                      Food Journey Connection
+                    </span>
+                    <h3 className="text-base sm:text-xl font-bold text-white">
+                      {activeJourneyConnection.foodName} ➔ {activeJourneyConnection.systemName}
+                    </h3>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-1">
+                  {activeJourneyConnection.keyNutrients.map((nut, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/5 border border-white/10 text-teal-300"
+                    >
+                      {nut}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5">
+                  <strong className="text-white block mb-1 text-[11px]">
+                    🧬 What Happens Inside:
+                  </strong>
+                  <p className="text-[#C5C8CE] leading-relaxed">
+                    {activeJourneyConnection.whatHappensInside}
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-teal-500/[0.04] border border-teal-500/20">
+                  <strong className="text-teal-300 block mb-1 text-[11px]">
+                    💡 The Surprising Insight:
+                  </strong>
+                  <p className="text-teal-100 leading-relaxed">
+                    {activeJourneyConnection.surprisingInsight}
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30">
+                  <strong className="text-amber-400 block mb-1 text-[11px] flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                    Practical Kitchen Tip:
+                  </strong>
+                  <p className="text-amber-100 leading-relaxed">
+                    {activeJourneyConnection.practicalTip}
+                  </p>
+                </div>
+              </div>
+
+              {/* Mandatory Educational Disclaimer Box */}
+              <div className="mt-4 p-3 rounded-xl bg-red-950/40 border border-red-500/30 text-[11px] text-red-200 flex items-start gap-2">
+                <AlertTriangle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                <p>
+                  <strong>Notice:</strong> {activeJourneyConnection.limitationNote}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── SECTION 4: The Recurring Editorial Series (5 Core Pillars) ─── */}
+        <section
+          id="series"
+          aria-labelledby="series-heading"
+          className="mb-14 sm:mb-20 scroll-mt-24"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 sm:mb-8">
+            <div>
+              <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#00E5C4] block">
+                Editorial Categories • Recurring Series
+              </span>
+              <h2
+                id="series-heading"
+                className="text-xl sm:text-3xl font-bold text-white tracking-tight mt-1"
+              >
+                The Recurring Series: Keeping Nutrition Honest
+              </h2>
+              <p className="text-xs sm:text-sm text-[#8A8F98] mt-1.5 max-w-2xl leading-relaxed">
+                Core editorial themes designed to debunk marketing gimmicks, investigate hidden
+                deficiencies, and celebrate affordable Indian staples.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={reshuffleSeries}
+              className="self-start sm:self-auto shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] hover:border-[#00E5C4]/40 text-xs font-mono text-[#EAEAEA] transition-all cursor-pointer"
+              title="Shuffle series order"
+            >
+              <Shuffle className="w-3.5 h-3.5 text-[#00E5C4]" />
+              <span>Shuffle Series</span>
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {shuffledSeries.map((series) => (
+              <article
+                key={series.id}
+                className="rounded-2xl border border-white/10 bg-[#0A0E1A] p-5 sm:p-6 flex flex-col justify-between hover:border-teal-500/40 transition-all"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-teal-500/10 text-teal-300 border border-teal-500/30">
+                      {series.theme}
+                    </span>
+                    <BookOpen className="w-4 h-4 text-teal-400" />
+                  </div>
+
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-2 leading-snug">
+                    {series.title}
+                  </h3>
+
+                  <p className="text-xs text-[#8A8F98] leading-relaxed mb-3">
+                    {series.description}
+                  </p>
+
+                  {/* Real-Life Food Example Box */}
+                  <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 text-xs text-[#C5C8CE] mb-3">
+                    <div className="text-[11px] font-bold text-teal-300 mb-1">
+                      Example: {series.exampleFood} ({series.exampleServing})
+                    </div>
+                    <div className="mb-1 text-[11px]">
+                      <strong className="text-white">What it provides:</strong>{" "}
+                      {series.whatItProvides}
+                    </div>
+                    <div className="text-[11px] text-amber-200">
+                      <strong className="text-amber-400">Important limitation:</strong>{" "}
+                      {series.importantLimitation}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-2.5 border-t border-white/10 text-[10px] font-mono text-teal-300/90 leading-snug">
+                  📌 <strong>Core Rule:</strong> {series.coreRule}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
 
         {/* ─── SECTION 1: Special Indian Nutrition Series (6 Gaps) ─── */}
         <section id="gaps" aria-labelledby="gaps-heading" className="mb-14 sm:mb-20 scroll-mt-24">
