@@ -4,6 +4,8 @@
 // Situational Guidance, and Clinical Exclusions for Indian Foods.
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+export * from "./foodIntelligence";
+
 export type NutritionLevel = 1 | 2 | 3 | 4;
 
 export interface NutritionLevelMeta {
@@ -857,6 +859,15 @@ export interface FoodFactEntry {
     askDoctorIf: string;
   };
 
+  // 7. Individual Food Intelligence Additions (The 5 Core Questions)
+  takeaway?: string;
+  keyNutrientsList?: string[];
+  nutritionalGap?: string;
+  howToMaximize?: string;
+  budgetEstimate?: string;
+  whatItDoesNotDo?: string;
+  domainIds?: string[];
+
   lastReviewed: string;
   readingGrade: string;
 
@@ -1109,115 +1120,135 @@ export const FOOD_FACTS: FoodFactEntry[] = [
     },
   },
   {
-    id: "food-pickles",
-    foodName: "Traditional Indian Pickles (Naturally Fermented Achaar)",
-    hindiName: "पारंपरिक किण्वित अचार",
+    id: "food-iodized-salt",
+    foodName: "Iodized Salt (Universal Fortification)",
+    hindiName: "आयोडाइज्ड नमक (टाटा नमक)",
     level: 3,
-    category: "fermented",
-    categoryLabel: "Probiotic Condiment",
-    situationTag: "If you're on blood pressure medication or salt restriction...",
-    system: "gut",
-    systemLabel: "Stomach Juices & Salt Awareness",
-    whatItContains:
-      "Healthy friendly bacteria from natural sun-fermenting, mustard oil, spices like methi and saunf, and a high amount of salt.",
+    category: "spice_herb",
+    categoryLabel: "Thyroid Mineral Essential",
+    situationTag: "If you need thyroid hormone support & metabolic regulation...",
+    system: "metabolism",
+    systemLabel: "Thyroid & Cellular Energy",
+    whatItContains: "Essential trace iodine (~15 to 30 mcg per gram) blended with sodium chloride.",
     provenBenefit:
-      "A small taste wakes up your mouth, helps your stomach produce digestive juices, and feeds good gut microbes.",
-    evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
+      "Supplies the trace iodine required for your thyroid gland to produce metabolic hormones, preventing goitre and supporting child brain development.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
     sourceCitation:
-      "Frontiers in Microbiology (PMID: 30079053) & ICMR Traditional Fermented Foods Survey",
-    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/30079053/",
+      "WHO Universal Salt Iodization Guidelines & ICMR-NIN Dietary Guidelines for Indians, 2024",
+    sourceUrl: "https://nin.res.in/dietaryguidelines/pdfjs/locale/DGI_2024.pdf",
     mythCheck: {
-      claim: "Traditional homemade achaar is pure poison that directly destroys heart valves.",
+      claim: "Pink Himalayan salt or rock salt is far superior to ordinary iodized table salt.",
       reality:
-        "Sun-fermented pickles carry live friendly gut bacteria and digestive spices; the only real health risk is having too much salt if you eat large scoops.",
+        "Rock and pink salts are naturally deficient in iodine; switching entirely to unfortified salts increases the risk of clinical iodine deficiency.",
     },
     whoShouldLimit: [
-      "People with high blood pressure who need to keep daily salt low",
-      "People with kidney trouble or water retention (swollen legs)",
+      "People with hypertension (high blood pressure) or congestive heart failure",
+      "People with Chronic Kidney Disease (CKD) or water retention",
     ],
     bestPairing:
-      "A small dab alongside plain curd rice, khichdi, or dal-chawal to stimulate sluggish appetite and support digestion.",
+      "Added in small, measured amounts to cooked dals, vegetables, and soups toward the end of cooking.",
     indianServingContext:
-      "Strictly 1 level teaspoon (5-10g) as a flavorful condiment, not as a main vegetable dish.",
+      "Strictly under 1 level teaspoon (<5g total salt, providing <2,000mg sodium) per adult across all meals in a day.",
     guidance: {
-      do: "Choose traditional sun-ripened, mustard-oil cured pickles over factory-bottled industrial varieties packed with synthetic acetic acid and chemical preservatives.",
-      dont: "Avoid spooning the leftover salty oil from the bottom of the jar; eat only a small piece of the pickled fruit or veggie.",
+      do: "Use iodized salt in daily cooking and store it in an airtight, opaque container away from stove heat and moisture to protect iodine from evaporating.",
+      dont: "Never consume extra salt thinking it provides more health benefits; excess sodium elevates blood pressure and damages kidneys.",
       askDoctorIf:
-        "Ask your doctor about your daily salt limit if you take blood pressure water pills.",
+        "Ask your doctor or nephrologist about daily sodium targets if you have high blood pressure or kidney disease.",
     },
+    takeaway:
+      "A vital public-health food fortification vehicle providing trace iodine for thyroid hormone production, strictly requiring moderation to stay under safe sodium limits.",
+    keyNutrientsList: ["Trace Iodine (~15–30 mcg/g)", "Sodium (~390 mg/g)"],
+    nutritionalGap:
+      "Universal prevention of iodine deficiency disorders, sluggish thyroid metabolism, and child cognitive impairment.",
+    howToMaximize:
+      "Store in a dry, cool, sealed jar. Add to foods during normal cooking without adding raw table salt at the dining table.",
+    budgetEstimate: "₹0.15 per daily 5g serving (extremely affordable nationwide)",
+    whatItDoesNotDo:
+      "This is not a reason to eat more salt; it does not replace a balanced diet, and excess sodium increases stroke and hypertension risk.",
+    domainIds: ["thyroid_metabolism", "brain_nerves"],
     lastReviewed: "October 2024",
     readingGrade: "Grade 6 (Plain Language)",
     hi: {
-      foodName: "पारंपरिक देसी अचार",
-      whatItContains:
-        "प्राकृतिक लैक्टिक एसिड बैक्टीरिया (प्रोबायोटिक्स), सरसों के तेल के पॉलीफेनॉल्स, मेथी-सौंफ और नमक।",
-      provenBenefit:
-        "पाचन रसों और लार को उत्तेजित करता है और आंतों में अच्छे बैक्टीरिया का संतुलन बनाता है।",
-      mythClaim: "अचार पूरी तरह जहर है और इससे तुरंत दिल का दौरा पड़ता है।",
+      foodName: "आयोडाइज्ड नमक",
+      whatItContains: "थायरॉयड के लिए आवश्यक आयोडीन और सोडियम क्लोराइड।",
+      provenBenefit: "थायरॉयड ग्रंथि को सुचारू रूप से चलाता है और घेंघा रोग से बचाता है।",
+      mythClaim: "सेंधा या काला नमक आयोडाइज्ड नमक से हर मामले में बहुत बेहतर है।",
       mythReality:
-        "धूप में पका देसी अचार एक गुणकारी प्रोबायोटिक है; मुख्य समस्या सिर्फ इसमें मौजूद अधिक नमक की है।",
-      whoShouldLimit: "हाई ब्लड प्रेशर (BP), सूजन (एडिमा) और किडनी की बीमारी से पीड़ित मरीज।",
-      bestPairing: "दही-चावल, खिचड़ी या सादी दाल-रोटी के साथ आधा चम्मच।",
-      do: "सिरके वाले डिब्बाबंद अचार के बजाय पारंपरिक धूप में पके तेल-मसाले के अचार का छोटा टुकड़ा खाएं।",
-      dont: "अचार के जार के नीचे जमा हुआ अधिक तेल और नमक का गाढ़ा मसाला न खाएं।",
-      askDoctorIf:
-        "यदि आप BP की दवा या पेशाब बढ़ाने वाली दवा ले रहे हैं, तो डॉक्टर से नमक की सीमा पूछें।",
+        "सेंधा नमक में आयोडीन बहुत कम होता है; केवल वही खाने से आयोडीन की कमी हो सकती है।",
+      whoShouldLimit: "हाई ब्लड प्रेशर और किडनी रोग के मरीजों को नमक कम खाना चाहिए।",
+      bestPairing: "दाल और सब्जियों में पकाने के दौरान सीमित मात्रा में।",
+      do: "रोजाना कुल 5 ग्राम (एक छोटा चम्मच) से कम नमक ही खाएं।",
+      dont: "थाली में ऊपर से कच्चा नमक छिड़क कर न खाएं।",
+      askDoctorIf: "यदि आपको BP या किडनी की समस्या है तो डॉक्टर से नमक की सीमा पूछें।",
     },
   },
   {
-    id: "food-coconut-oil",
-    foodName: "Virgin Coconut Oil (Cold-Pressed Nariyal Tel)",
-    hindiName: "कोल्ड-प्रेस्ड नारियल का तेल",
-    level: 3,
-    category: "fat_oil",
-    categoryLabel: "Medium-Chain Triglyceride Oil",
-    situationTag: "If you're managing cardiovascular risk or liver health...",
-    system: "metabolism",
-    systemLabel: "Clean Energy Fats & Heart Health",
+    id: "food-soy-chunks",
+    foodName: "Soy Chunks (Soya Vadi / Textured Soy Protein)",
+    hindiName: "सोया चंक्स / सोया बड़ी",
+    level: 2,
+    category: "legume",
+    categoryLabel: "High-Protein Plant Food",
+    situationTag: "If you need concentrated budget-friendly vegetarian protein...",
+    system: "muscle_bone",
+    systemLabel: "Muscle Strength & Tissue Repair",
     whatItContains:
-      "Quick-burning natural plant fats (MCTs like lauric acid) that give clean energy, with zero cholesterol.",
+      "Over 50% plant protein by dry weight (~52g per 100g), non-haem iron, calcium, dietary fibre, and potassium.",
     provenBenefit:
-      "Your liver turns these fats into quick energy instead of storing them as body fat, and lauric acid helps fight bad gut bugs.",
-    evidenceTier: "Tier 2 Silver (Cohort Studies / ICMR Guidelines)",
+      "Supplies a dense concentration of muscle-building amino acids at an affordable cost, helping vegetarian families meet daily protein requirements.",
+    evidenceTier: "Tier 1 Gold (Clinical Trial / Meta-Analysis)",
     sourceCitation:
-      "Cochrane Database of Systematic Reviews & American Journal of Clinical Nutrition (PMID: 32679803)",
-    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/32679803/",
+      "ICMR-NIN Indian Food Composition Tables (IFCT) & J Agric Food Chem (PMID: 30125439)",
+    sourceUrl: "https://nin.res.in/dietaryguidelines/pdfjs/locale/DGI_2024.pdf",
     mythCheck: {
-      claim: "Drinking raw coconut oil every morning instantly burns stubborn belly fat.",
+      claim: "Eating soy chunks disrupts male hormones and causes thyroid disease in everyone.",
       reality:
-        "Coconut oil is 90% saturated fat with 120 calories per tablespoon; drinking extra spoonfuls can still raise bad cholesterol and add unwanted weight.",
+        "Extensive clinical meta-analyses show moderate soy intake (1–2 servings daily) does not alter male testosterone or estrogen levels; ensure adequate iodine intake for thyroid health.",
     },
     whoShouldLimit: [
-      "People with high bad cholesterol (LDL) or heart conditions",
-      "People with advanced fatty liver disease",
+      "People with severe diagnosed soy protein allergy",
+      "People with advanced Chronic Kidney Disease (CKD) on strict protein limits",
     ],
     bestPairing:
-      "Traditional South Indian tadka for sambar, aviyal, or thoran using 1 teaspoon of virgin oil with mustard seeds, curry leaves, and green chilies.",
+      "Boiled, rinsed, and squeezed soy chunks cooked with tomatoes, onions, garlic, and fresh coriander for iron and flavour synergy.",
     indianServingContext:
-      "1 to 2 teaspoons (5-10 ml) per person when used as a cooking medium for coastal regional recipes.",
+      "25 to 30g dry weight (expands to ~75g cooked, supplying ~14g protein) 2 to 3 times weekly.",
     guidance: {
-      do: "Choose unrefined, cold-pressed virgin coconut oil with a fresh natural aroma rather than chemically bleached and deodorized (RBD) copra oils.",
-      dont: "Avoid swallowing large gulps of oil on an empty stomach to lose weight; use a teaspoon in cooking instead.",
+      do: "Always boil in salted water for 5 minutes and squeeze out the cloudy water thoroughly before cooking to remove bitter saponins and oligosaccharides.",
+      dont: "Don't cook dry soy chunks directly in curry without boiling and squeezing first, as this causes digestive heaviness.",
       askDoctorIf:
-        "Ask your doctor if your blood tests show high cholesterol before adding coconut oil daily.",
+        "Ask your doctor if you take thyroid medication (levothyroxine), as soy can interfere with absorption if taken within 4 hours.",
     },
+    takeaway:
+      "A concentrated, economical plant protein source containing ~52% protein by dry weight that supports muscle maintenance on vegetarian diets.",
+    keyNutrientsList: [
+      "Protein (~52g/100g dry)",
+      "Iron (~9mg/100g)",
+      "Calcium (~210mg/100g)",
+      "Fibre (~13g/100g)",
+    ],
+    nutritionalGap:
+      "Bridges daily protein deficits in budget-conscious Indian vegetarian households without requiring animal products.",
+    howToMaximize:
+      "Boil for 5 minutes, rinse in cold water, squeeze out all cloudy moisture, and cook with Vitamin C-rich tomatoes and onions.",
+    budgetEstimate: "₹8–₹12 per 30g dry serving (delivering ~15g protein)",
+    whatItDoesNotDo:
+      "Soy chunks are not a complete substitute for a varied diet; they do not contain Vitamin B12 and require iodine sufficiency.",
+    domainIds: ["bones_teeth", "blood_oxygen", "skin_connective"],
     lastReviewed: "October 2024",
     readingGrade: "Grade 6 (Plain Language)",
     hi: {
-      foodName: "कोल्ड-प्रेस्ड नारियल तेल",
-      whatItContains:
-        "मीडियम-चेन ट्राइग्लिसराइड्स (MCTs), लॉरिक एसिड (~48%), कैप्रिक एसिड और प्राकृतिक एंटीऑक्सीडेंट्स।",
-      provenBenefit:
-        "लॉरिक एसिड आंतों में रोगाणुओं से लड़ता है और यह तेल शरीर को तुरंत ऊर्जा देने में सक्षम है।",
-      mythClaim: "सुबह खाली पेट नारियल तेल पीने से पेट की चर्बी अपने आप पिघल जाती है।",
+      foodName: "सोया चंक्स (सोया बड़ी)",
+      whatItContains: "52% शाकाहारी प्रोटीन, आयरन, कैल्शियम और फाइबर।",
+      provenBenefit: "कम खर्च में मांसपेशियों को मजबूत बनाता है और प्रोटीन की कमी दूर करता है।",
+      mythClaim: "सोया खाने से पुरुषों के हार्मोन्स में गड़बड़ी हो जाती है।",
       mythReality:
-        "नारियल तेल में 90% संतृप्त वसा (सैचुरेटेड फैट) और प्रति चम्मच 120 कैलोरी होती है; अधिक पीने से कोलेस्ट्रॉल बढ़ सकता है।",
-      whoShouldLimit: "हाई कोलेस्ट्रॉल (LDL), हृदय रोग और फैटी लिवर के मरीज।",
-      bestPairing: "सांभर, नारियल की चटनी या कढ़ी में राई और करी पत्ते के साथ हल्का तड़का।",
-      do: "केमिकल से साफ किए गए तेल के बजाय कच्चा घानी (कोल्ड-प्रेस्ड) शुद्ध नारियल तेल इस्तेमाल करें।",
-      dont: "वजन घटाने के भ्रम में इसे दवा की तरह चम्मच भरकर खाली पेट न पिएं।",
-      askDoctorIf:
-        "यदि आपका कोलेस्ट्रॉल बढ़ा हुआ है, तो डॉक्टर से सलाह लेकर ही इसे भोजन में शामिल करें।",
+        "सामान्य मात्रा (हफ्ते में 2-3 बार) में खाने से हार्मोन्स पर कोई बुरा असर नहीं पड़ता।",
+      whoShouldLimit: "सोया से एलर्जी वाले और गंभीर किडनी रोग के मरीज।",
+      bestPairing: "टमाटर और प्याज की ग्रेवी के साथ अच्छी तरह पकाकर।",
+      do: "पकाने से पहले 5 मिनट उबालकर झाग वाला पानी पूरी तरह निचोड़ लें।",
+      dont: "बिना उबाले सीधे सब्जी में न डालें, इससे गैस और भारीपन हो सकता है।",
+      askDoctorIf: "थायरॉयड की दवा (थायरॉक्सिन) लेते हैं तो दवा और सोया में 4 घंटे का अंतर रखें।",
     },
   },
   {
@@ -1314,6 +1345,21 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       askDoctorIf:
         "Ask your doctor before taking strong amla juice or powders if you take blood thinners.",
     },
+    takeaway:
+      "One of nature's most concentrated natural Vitamin C sources, acting as an essential plant antioxidant and iron-absorption catalyst.",
+    keyNutrientsList: [
+      "Vitamin C (~600mg/100g)",
+      "Polyphenols & Gallic acid",
+      "Dietary fibre (~4.3g/100g)",
+    ],
+    nutritionalGap:
+      "Bridges the daily Vitamin C gap and multiplies the absorption of non-haem iron from lentils, beans, and spinach.",
+    howToMaximize:
+      "Eat raw or freshly grated with meals; combine with dal-chawal to unlock plant iron. Avoid long boiling or sugary murabba.",
+    budgetEstimate: "₹3–₹5 per whole fruit",
+    whatItDoesNotDo:
+      "Amla is not a cure for anaemia by itself; its Vitamin C content falls with prolonged boiling, open-pan cooking, or storage.",
+    domainIds: ["blood_oxygen", "skin_connective", "immunity_defense"],
     lastReviewed: "October 2024",
     readingGrade: "Grade 6 (Plain Language)",
     hi: {
@@ -1372,6 +1418,22 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       askDoctorIf:
         "Ask your doctor or pharmacist about pill timing if you take antibiotics with dairy.",
     },
+    takeaway:
+      "An accessible everyday fermented dairy food supplying bioavailable calcium, digestible protein, and friendly live cultures.",
+    keyNutrientsList: [
+      "Protein (~3.5g/100g)",
+      "Calcium (~120mg/100g)",
+      "Vitamin B12 in variable amounts",
+      "Lactic acid",
+    ],
+    nutritionalGap:
+      "Provides calcium and digestible protein on vegetarian diets; supports gut flora without needing commercial supplements.",
+    howToMaximize:
+      "Consume freshly set dahi at room temperature; pair with lunch or churn into spiced chaas with roasted cumin. Avoid heating or boiling.",
+    budgetEstimate: "₹8–₹12 per 150g homemade katori",
+    whatItDoesNotDo:
+      "Curd is not a guaranteed fix for Vitamin B12 deficiency; B12 amounts vary by milk source and fermentation, and true deficiency requires clinical treatment.",
+    domainIds: ["bones_teeth", "digestion_gut", "brain_nerves"],
     lastReviewed: "October 2024",
     readingGrade: "Grade 6 (Plain Language)",
     hi: {
@@ -1834,6 +1896,17 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       askDoctorIf:
         "Ask your doctor if you take prescription blood thinners or hormone-sensitive medications.",
     },
+    takeaway:
+      "The premier Indian plant source of Alpha-Linolenic Acid (ALA omega-3 fat) and soluble lignan fibre for cardiovascular and bowel support.",
+    keyNutrientsList: ["Plant Omega-3 (ALA ~22g/100g)", "Dietary fibre (~27g/100g)", "Lignans"],
+    nutritionalGap:
+      "Provides essential plant omega-3 fatty acids for individuals who do not eat fish or marine algae.",
+    howToMaximize:
+      "Always consume coarsely ground into powder, because whole seeds pass through the digestive system undigested. Store ground flaxseed in an airtight jar in the fridge.",
+    budgetEstimate: "₹3–₹5 per tablespoon (10g) serving",
+    whatItDoesNotDo:
+      "Plant ALA is not biologically equivalent to marine EPA and DHA (conversion in humans is typically under 5%); does not act as an instant cholesterol cure.",
+    domainIds: ["heart_circulation", "brain_nerves", "digestion_gut"],
     lastReviewed: "October 2024",
     readingGrade: "Grade 6 (Plain Language)",
     hi: {
@@ -2280,6 +2353,22 @@ export const FOOD_FACTS: FoodFactEntry[] = [
       dont: "Don't cook unsoaked hard chana as it can cause heavy stomach cramps.",
       askDoctorIf: "Ask your doctor if you have high uric acid or severe gout arthritis.",
     },
+    takeaway:
+      "An affordable, portable whole-legume snack providing slow-digesting plant protein, insoluble fibre, and minerals without refrigeration.",
+    keyNutrientsList: [
+      "Plant protein (~18–20g/100g dry)",
+      "Dietary fibre (~12g/100g)",
+      "Folate (B9)",
+      "Non-haem iron (~5mg/100g)",
+    ],
+    nutritionalGap:
+      "Supplies steady satiety, daily plant protein, and digestive fibre for vegetarians on the go.",
+    howToMaximize:
+      "Eat roasted or boiled with the skin intact; squeeze fresh lemon juice on top to dramatically increase non-haem iron absorption.",
+    budgetEstimate: "₹5–₹8 per 50g snack serving",
+    whatItDoesNotDo:
+      "Its iron is non-haem with low baseline bioavailability; it contains zero Vitamin B12 and cannot replace a varied diet.",
+    domainIds: ["blood_oxygen", "bones_teeth", "digestion_gut"],
     lastReviewed: "October 2024",
     readingGrade: "Grade 6 (Plain Language)",
     hi: {

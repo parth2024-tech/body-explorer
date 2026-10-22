@@ -77,6 +77,9 @@ import {
   DRUG_FOOD_WARNINGS,
   NUTRITION_LEVELS,
   NUTRITION_LEVEL_TIPS_FACTS,
+  INDIAN_NUTRITION_GAPS,
+  NUTRITIONAL_DOMAINS,
+  ESSENTIAL_NUTRIENTS_LIBRARY,
 } from "../src/data/nutrition";
 
 describe("Nutrition Level Small Facts and Tips Integrity", () => {
@@ -191,5 +194,95 @@ describe("Indian Food Facts Clinical Database Integrity", () => {
       expect(lvl.description).toBeTruthy();
       expect(lvl.targetShare).toBeTruthy();
     }
+  });
+});
+
+describe("Indian Food Intelligence: Gaps, Domains, and Nutrient Library", () => {
+  it("covers all 6 major Indian nutrition gap series (B12, Iron, Vit D, Calcium, Iodine, Folate)", () => {
+    expect(INDIAN_NUTRITION_GAPS.length).toBe(6);
+    const gapIds = INDIAN_NUTRITION_GAPS.map((g) => g.id);
+    expect(gapIds).toContain("gap-b12");
+    expect(gapIds).toContain("gap-iron");
+    expect(gapIds).toContain("gap-vit-d");
+    expect(gapIds).toContain("gap-calcium");
+    expect(gapIds).toContain("gap-iodine");
+    expect(gapIds).toContain("gap-folate");
+
+    for (const gap of INDIAN_NUTRITION_GAPS) {
+      expect(gap.title).toBeTruthy();
+      expect(gap.subtitle).toBeTruthy();
+      expect(gap.coreInsight.length).toBeGreaterThan(20);
+      expect(gap.whyItMatters.length).toBeGreaterThan(20);
+      expect(gap.clinicalReality.length).toBeGreaterThan(20);
+      expect(gap.icmrStandard.length).toBeGreaterThan(15);
+      expect(gap.sourceUrl).toMatch(/^https:\/\//);
+      expect(gap.foodExamples.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("covers all 9 body nutritional domains with functions and clinical cautions", () => {
+    expect(NUTRITIONAL_DOMAINS.length).toBe(9);
+    for (const domain of NUTRITIONAL_DOMAINS) {
+      expect(domain.id).toBeTruthy();
+      expect(domain.title).toBeTruthy();
+      expect(domain.keyNutrients.length).toBeGreaterThan(0);
+      expect(domain.bodyFunctionSummary.length).toBeGreaterThan(20);
+      expect(domain.foodExamples.length).toBeGreaterThan(0);
+      expect(domain.clinicalCaution.length).toBeGreaterThan(10);
+    }
+  });
+
+  it("includes all 13 recognized vitamins in the searchable nutrient library", () => {
+    const vitamins = ESSENTIAL_NUTRIENTS_LIBRARY.filter((n) => n.category === "vitamin");
+    expect(vitamins.length).toBe(13);
+    const vitaminNames = vitamins.map((v) => v.name.toLowerCase());
+    expect(vitaminNames.some((v) => v.includes("vitamin a"))).toBe(true);
+    expect(vitaminNames.some((v) => v.includes("thiamin"))).toBe(true);
+    expect(vitaminNames.some((v) => v.includes("b12"))).toBe(true);
+    expect(vitaminNames.some((v) => v.includes("vitamin c"))).toBe(true);
+    expect(vitaminNames.some((v) => v.includes("vitamin d"))).toBe(true);
+  });
+
+  it("includes all 11 major minerals and 5 essential dietary components in the library", () => {
+    const minerals = ESSENTIAL_NUTRIENTS_LIBRARY.filter((n) => n.category === "mineral");
+    expect(minerals.length).toBe(11);
+    const essentials = ESSENTIAL_NUTRIENTS_LIBRARY.filter(
+      (n) => n.category === "essential_component",
+    );
+    expect(essentials.length).toBe(5);
+
+    for (const nut of ESSENTIAL_NUTRIENTS_LIBRARY) {
+      expect(nut.id).toBeTruthy();
+      expect(nut.name).toBeTruthy();
+      expect(nut.indianFoodExamples.length).toBeGreaterThan(0);
+      expect(nut.keyFunction.length).toBeGreaterThan(10);
+      expect(nut.absorptionTip.length).toBeGreaterThan(10);
+    }
+  });
+
+  it("contains curated individual foods matching prompt standards (Curd, Amla, Chana, Soy Chunks, Flaxseed, Iodized Salt)", () => {
+    const foodIds = FOOD_FACTS.map((f) => f.id);
+    expect(foodIds).toContain("food-curd-chaas");
+    expect(foodIds).toContain("food-amla");
+    expect(foodIds).toContain("food-kala-chana");
+    expect(foodIds).toContain("food-soy-chunks");
+    expect(foodIds).toContain("food-flaxseed");
+    expect(foodIds).toContain("food-iodized-salt");
+
+    const curd = FOOD_FACTS.find((f) => f.id === "food-curd-chaas");
+    expect(curd?.takeaway).toBeTruthy();
+    expect(curd?.whatItDoesNotDo).toContain("B12");
+
+    const amla = FOOD_FACTS.find((f) => f.id === "food-amla");
+    expect(amla?.takeaway).toBeTruthy();
+    expect(amla?.whatItDoesNotDo).toBeTruthy();
+
+    const soy = FOOD_FACTS.find((f) => f.id === "food-soy-chunks");
+    expect(soy?.takeaway).toBeTruthy();
+    expect(soy?.whatItDoesNotDo).toBeTruthy();
+
+    const salt = FOOD_FACTS.find((f) => f.id === "food-iodized-salt");
+    expect(salt?.takeaway).toBeTruthy();
+    expect(salt?.whatItDoesNotDo).toContain("salt");
   });
 });
