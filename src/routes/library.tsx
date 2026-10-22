@@ -25,7 +25,9 @@ import {
   Stethoscope,
   AlertCircle,
   HelpCircle,
+  Shuffle,
 } from "lucide-react";
+import { useShuffledList } from "@/lib/shuffle";
 
 export const Route = createFileRoute("/library")({
   head: () => ({
@@ -49,23 +51,23 @@ function LibraryPage() {
     "conditions" | "remedies" | "myths" | "marvels" | "bookmarks"
   >("conditions");
 
-  const [shuffledRemedies, setShuffledRemedies] = useState<typeof REMEDIES>(REMEDIES);
-  const [shuffledMyths, setShuffledMyths] = useState<typeof MYTHS>(MYTHS);
+  // Dynamic shuffled decks across all library categories
+  const { items: shuffledConditions, reshuffle: reshuffleConditions } = useShuffledList(DISEASES);
+  const { items: shuffledRemedies, reshuffle: reshuffleRemedies } = useShuffledList(REMEDIES);
+  const { items: shuffledMyths, reshuffle: reshuffleMyths } = useShuffledList(MYTHS);
+  const { items: shuffledMarvels, reshuffle: reshuffleMarvels } = useShuffledList(BODY_MARVELS);
   const [speakingId, setSpeakingId] = useState<string | null>(null);
 
   useEffect(() => {
     addHistoryEntry("/library");
-    const shuffleArray = <T,>(array: T[]): T[] => {
-      const arr = [...array];
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-      return arr;
-    };
-    setShuffledRemedies(shuffleArray(REMEDIES));
-    setShuffledMyths(shuffleArray(MYTHS));
   }, [addHistoryEntry]);
+
+  const handleReshuffleActive = () => {
+    if (activeTab === "conditions") reshuffleConditions();
+    else if (activeTab === "remedies") reshuffleRemedies();
+    else if (activeTab === "myths") reshuffleMyths();
+    else if (activeTab === "marvels") reshuffleMarvels();
+  };
 
   useEffect(() => {
     return () => {
@@ -175,7 +177,7 @@ function LibraryPage() {
     );
   });
 
-  const filteredConditions = DISEASES.filter((d) => {
+  const filteredConditions = shuffledConditions.filter((d) => {
     const q = searchQuery.toLowerCase();
     const matchesSearch =
       d.name.toLowerCase().includes(q) ||
@@ -270,23 +272,39 @@ function LibraryPage() {
           ))}
         </div>
 
-        {/* Global Search (Hidden on Marvels/Bookmarks) */}
-        {(activeTab === "conditions" || activeTab === "remedies" || activeTab === "myths") && (
-          <div className="relative mb-12 max-w-3xl mx-auto z-10">
-            <input
-              type="text"
-              placeholder={`Search ${
-                activeTab === "conditions"
-                  ? "49 conditions, symptoms, or organs..."
-                  : `${activeTab}...`
-              }`}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-2xl border border-white/10 bg-white/[0.02] pl-14 pr-6 py-4 text-base sm:text-sm text-white placeholder-[#555] outline-none focus:border-[#00E5C4]/50 focus:bg-white/[0.04] transition-all backdrop-blur-md"
-            />
-            <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#8A8F98]" />
-          </div>
-        )}
+        {/* Global Search & Shuffle Bar */}
+        <div className="flex flex-col sm:flex-row items-center gap-3 mb-12 max-w-3xl mx-auto z-10">
+          {activeTab === "conditions" || activeTab === "remedies" || activeTab === "myths" ? (
+            <div className="relative flex-1 w-full">
+              <input
+                type="text"
+                placeholder={`Search ${
+                  activeTab === "conditions"
+                    ? "49 conditions, symptoms, or organs..."
+                    : `${activeTab}...`
+                }`}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full rounded-2xl border border-white/10 bg-white/[0.02] pl-14 pr-6 py-4 text-base sm:text-sm text-white placeholder-[#555] outline-none focus:border-[#00E5C4]/50 focus:bg-white/[0.04] transition-all backdrop-blur-md"
+              />
+              <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#8A8F98]" />
+            </div>
+          ) : (
+            <div className="flex-1" />
+          )}
+
+          {activeTab !== "bookmarks" && (
+            <button
+              type="button"
+              onClick={handleReshuffleActive}
+              className="shrink-0 flex items-center justify-center gap-2 px-5 py-4 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] hover:border-[#00E5C4]/40 text-xs font-mono text-[#EAEAEA] transition-all cursor-pointer w-full sm:w-auto"
+              title="Shuffle items in this section"
+            >
+              <Shuffle className="w-4 h-4 text-[#00E5C4]" />
+              <span>Shuffle Deck</span>
+            </button>
+          )}
+        </div>
 
         {/* Main Content Grid */}
         <div className="relative z-10">
@@ -559,7 +577,7 @@ function LibraryPage() {
               {/* MARVELS */}
               {activeTab === "marvels" && (
                 <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
-                  {BODY_MARVELS.map((marvel) => (
+                  {shuffledMarvels.map((marvel) => (
                     <div
                       key={marvel.id}
                       className="rounded-[2.5rem] border border-white/10 bg-[#0F0F0F]/80 p-8 md:p-12 backdrop-blur-xl relative overflow-hidden"

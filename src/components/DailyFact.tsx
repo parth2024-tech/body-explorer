@@ -1,12 +1,27 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
-import { getDailyFact, getBodyPart, RARITY_META, CATEGORY_META } from "@/data/content";
+import {
+  getDailyFact,
+  getBodyPart,
+  RARITY_META,
+  CATEGORY_META,
+  FACTS,
+  type Fact,
+} from "@/data/content";
+import { Shuffle } from "lucide-react";
 
 export function DailyFact() {
-  const fact = getDailyFact();
-  const part = getBodyPart(fact.bodyPartId)!;
-  const rarity = RARITY_META[fact.rarity];
-  const category = CATEGORY_META[fact.category];
+  const [currentFact, setCurrentFact] = useState<Fact>(() => getDailyFact());
+  const part = getBodyPart(currentFact.bodyPartId) || getBodyPart("brain")!;
+  const rarity = RARITY_META[currentFact.rarity];
+  const category = CATEGORY_META[currentFact.category];
+
+  const handleShuffle = () => {
+    const candidates = FACTS.filter((f) => f.id !== currentFact.id);
+    const next = candidates[Math.floor(Math.random() * candidates.length)];
+    if (next) setCurrentFact(next);
+  };
 
   // Countdown to next UTC day
   const now = new Date();
@@ -28,9 +43,20 @@ export function DailyFact() {
       />
 
       <div className="flex items-center justify-between gap-2">
-        <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-widest text-primary">
-          <span className="floaty">✶</span> Fact of the Day
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-widest text-primary">
+            <span className="floaty">✶</span> Fact of the Day
+          </span>
+          <button
+            type="button"
+            onClick={handleShuffle}
+            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-primary/30 bg-primary/5 hover:bg-primary/20 text-[11px] font-mono text-primary transition-all cursor-pointer"
+            title="Discover another verified body fact"
+          >
+            <Shuffle className="w-3 h-3" />
+            <span>Shuffle</span>
+          </button>
+        </div>
         <span className="text-xs text-muted-foreground">~{hoursLeft}h until next</span>
       </div>
 
@@ -44,7 +70,7 @@ export function DailyFact() {
         </div>
       </div>
 
-      <p className="mt-5 text-xl leading-relaxed text-foreground md:text-2xl">{fact.text}</p>
+      <p className="mt-5 text-xl leading-relaxed text-foreground md:text-2xl">{currentFact.text}</p>
 
       <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
         <span

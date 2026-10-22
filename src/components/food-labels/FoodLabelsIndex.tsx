@@ -1,9 +1,15 @@
+import { useEffect } from "react";
 import { useFoodLabelStore } from "@/store/useFoodLabelStore";
-import { AlertTriangle, Printer, Search } from "lucide-react";
+import { AlertTriangle, Printer, Search, Shuffle } from "lucide-react";
 import { FoodLabelCard } from "./FoodLabelCard";
 
 export function FoodLabelsIndex() {
-  const { entries, searchQuery, setSearchQuery, filteredEntries } = useFoodLabelStore();
+  const { entries, searchQuery, setSearchQuery, filteredEntries, shuffleEntries } =
+    useFoodLabelStore();
+
+  useEffect(() => {
+    shuffleEntries();
+  }, [shuffleEntries]);
 
   const handlePrint = () => {
     window.print();
@@ -52,6 +58,14 @@ export function FoodLabelsIndex() {
                 className="w-full bg-white/[0.03] border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm text-[#EAEAEA] placeholder:text-[#8A8F98] focus:outline-none focus:border-[#00E5C4]/50 focus:bg-white/[0.05] transition-all"
               />
             </div>
+
+            <button
+              onClick={shuffleEntries}
+              className="shrink-0 flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 hover:border-[#00E5C4]/40 border border-white/10 rounded-full text-sm font-mono text-[#EAEAEA] transition-colors print:hidden cursor-pointer"
+              title="Shuffle labels order"
+            >
+              <Shuffle className="w-4 h-4 text-[#00E5C4]" /> Shuffle Labels
+            </button>
 
             <button
               onClick={handlePrint}

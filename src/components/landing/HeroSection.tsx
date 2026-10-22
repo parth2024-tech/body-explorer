@@ -1,9 +1,22 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
-import { Activity, Wind, Brain, Bone, ArrowRight, ShieldCheck, Apple } from "lucide-react";
+import {
+  Activity,
+  Wind,
+  Brain,
+  Bone,
+  ArrowRight,
+  ShieldCheck,
+  Apple,
+  Droplets,
+  Flame,
+  Sparkles,
+} from "lucide-react";
+import { sampleRandom } from "@/lib/shuffle";
 
-/* ─── Clinical Data Cards ─── */
-const FLOAT_CARDS = [
+/* ─── Clinical Data Cards (Rotating Pool) ─── */
+const FLOAT_CARDS_POOL = [
   {
     icon: Activity,
     label: "Cardiac Output",
@@ -31,6 +44,34 @@ const FLOAT_CARDS = [
     value: "206 articulating bones",
     color: "#F5A623",
     delay: 0.6,
+  },
+  {
+    icon: Flame,
+    label: "Liver Regeneration",
+    value: "Regrows from 25% mass",
+    color: "#10B981",
+    delay: 0.1,
+  },
+  {
+    icon: Droplets,
+    label: "Renal Filtration",
+    value: "180 L plasma daily",
+    color: "#06B6D4",
+    delay: 0.3,
+  },
+  {
+    icon: Sparkles,
+    label: "Gut Microbiome",
+    value: "38 trillion bacterial cells",
+    color: "#8B5CF6",
+    delay: 0.5,
+  },
+  {
+    icon: Activity,
+    label: "Erythrocyte Turnover",
+    value: "2M red cells / sec",
+    color: "#EC4899",
+    delay: 0.7,
   },
 ];
 
@@ -196,6 +237,12 @@ function BodyGlyph() {
 
 /* ─── Hero Section ─── */
 export function HeroSection() {
+  const [activeCards, setActiveCards] = useState(() => FLOAT_CARDS_POOL.slice(0, 4));
+
+  useEffect(() => {
+    setActiveCards(sampleRandom(FLOAT_CARDS_POOL, 4));
+  }, []);
+
   return (
     <section
       className="relative min-h-[90vh] flex items-center overflow-hidden py-16 lg:py-24"
@@ -317,8 +364,8 @@ export function HeroSection() {
             <div className="relative w-full max-w-md h-[460px] rounded-2xl border border-[#1E2844] bg-[#0D1428]/60 p-6 backdrop-blur-sm flex items-center justify-center">
               <BodyGlyph />
 
-              {/* Verified clinical cards */}
-              {FLOAT_CARDS.map((card, i) => {
+              {/* Verified clinical cards (dynamically shuffled on visit) */}
+              {activeCards.map((card, i) => {
                 const Icon = card.icon;
                 return (
                   <div

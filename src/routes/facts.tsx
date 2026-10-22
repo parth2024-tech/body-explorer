@@ -11,7 +11,7 @@ import {
   Category,
   Rarity,
 } from "@/data/content";
-import { Heart, Search, Volume2, Square, RefreshCcw, Lightbulb } from "lucide-react";
+import { Heart, Search, Volume2, Square, RefreshCcw, Lightbulb, Shuffle } from "lucide-react";
 
 export const Route = createFileRoute("/facts")({
   head: () => ({
@@ -373,6 +373,23 @@ function FactsPage() {
                 {filteredFacts.length}
               </span>
             </h2>
+            <button
+              onClick={() => {
+                setShuffledFacts((prev) => {
+                  const arr = [...prev];
+                  for (let i = arr.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [arr[i], arr[j]] = [arr[j], arr[i]];
+                  }
+                  return arr;
+                });
+              }}
+              className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] hover:border-[#00E5C4]/40 text-xs font-mono text-[#EAEAEA] transition-all cursor-pointer"
+              title="Reshuffle facts order"
+            >
+              <Shuffle className="w-3.5 h-3.5 text-[#00E5C4]" />
+              <span>Shuffle Archive</span>
+            </button>
           </div>
 
           {filteredFacts.length === 0 ? (

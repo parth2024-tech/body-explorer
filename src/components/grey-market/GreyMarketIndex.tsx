@@ -3,6 +3,8 @@ import { useGreyMarketStore } from "../../store/useGreyMarketStore";
 import greyMarketDataRaw from "../../data/grey_market_db.json";
 import { MoleculeEntry } from "../../store/useGreyMarketStore";
 import { GreyMarketCard } from "./GreyMarketCard";
+import { useShuffledList } from "@/lib/shuffle";
+import { Shuffle } from "lucide-react";
 import "./GreyMarket.css";
 
 const greyMarketData = greyMarketDataRaw as unknown as MoleculeEntry[];
@@ -19,8 +21,11 @@ export const GreyMarketIndex: React.FC = () => {
     setSortBy,
   } = useGreyMarketStore();
 
+  const { items: shuffledMolecules, reshuffle: reshuffleMolecules } =
+    useShuffledList(greyMarketData);
+
   const filteredData = useMemo(() => {
-    let result = greyMarketData;
+    let result = [...shuffledMolecules];
 
     if (searchTerm) {
       const lowerQuery = searchTerm.toLowerCase();
@@ -40,22 +45,18 @@ export const GreyMarketIndex: React.FC = () => {
       result = result.filter((item) => riskFilters.includes(item.risk));
     }
 
-    result.sort((a, b) => {
-      if (sortBy === "risk") {
-        const riskWeights = { CRITICAL: 3, HIGH: 2, "UNDER-REVIEW": 1 };
-        return riskWeights[b.risk] - riskWeights[a.risk];
-      }
-      if (sortBy === "az") {
-        return a.product.localeCompare(b.product);
-      }
-      if (sortBy === "cat") {
-        return a.category.localeCompare(b.category);
-      }
-      return 0;
-    });
+    if (sortBy === "risk") {
+      const riskWeights = { CRITICAL: 3, HIGH: 2, "UNDER-REVIEW": 1 };
+      result.sort((a, b) => riskWeights[b.risk] - riskWeights[a.risk]);
+    } else if (sortBy === "az") {
+      result.sort((a, b) => a.product.localeCompare(b.product));
+    } else if (sortBy === "cat") {
+      result.sort((a, b) => a.category.localeCompare(b.category));
+    }
+    // If sortBy === "shuffle", keeps current shuffledMolecules order
 
     return result;
-  }, [searchTerm, categoryFilter, riskFilters, sortBy]);
+  }, [shuffledMolecules, searchTerm, categoryFilter, riskFilters, sortBy]);
 
   return (
     <div className="gm-container">
@@ -190,12 +191,33 @@ export const GreyMarketIndex: React.FC = () => {
             <select
               className="gm-sort-select"
               value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as "risk" | "az" | "cat")}
+              onChange={(e) => setSortBy(e.target.value as "risk" | "az" | "cat" | "shuffle")}
             >
               <option value="risk">Highest Risk First</option>
+              <option value="shuffle">Shuffled / Random Order</option>
               <option value="az">A-Z by Product</option>
               <option value="cat">Group by Category</option>
             </select>
+            <button
+              type="button"
+              className="gm-pill"
+              onClick={() => {
+                setSortBy("shuffle");
+                reshuffleMolecules();
+              }}
+              style={{
+                cursor: "pointer",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                borderColor: "rgba(0, 229, 196, 0.4)",
+                color: "#00E5C4",
+              }}
+              title="Shuffle watchlist order"
+            >
+              <Shuffle style={{ width: 14, height: 14 }} />
+              <span>Shuffle</span>
+            </button>
           </div>
         </div>
       </div>

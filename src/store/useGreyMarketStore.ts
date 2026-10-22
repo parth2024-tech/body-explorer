@@ -28,12 +28,12 @@ interface GreyMarketState {
   searchTerm: string;
   categoryFilter: "all" | "food" | "drug";
   riskFilters: string[];
-  sortBy: "risk" | "az" | "cat";
+  sortBy: "risk" | "az" | "cat" | "shuffle";
   selectedMolecule: MoleculeEntry | null;
   setSearchTerm: (term: string) => void;
   setCategoryFilter: (cat: "all" | "food" | "drug") => void;
   toggleRiskFilter: (risk: string) => void;
-  setSortBy: (sort: "risk" | "az" | "cat") => void;
+  setSortBy: (sort: "risk" | "az" | "cat" | "shuffle") => void;
   setSelectedMolecule: (molecule: MoleculeEntry | null) => void;
 }
 

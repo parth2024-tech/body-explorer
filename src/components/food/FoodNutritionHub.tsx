@@ -34,7 +34,9 @@ import {
   Check,
   X,
   Filter,
+  Shuffle,
 } from "lucide-react";
+import { useShuffledList } from "@/lib/shuffle";
 
 export function FoodNutritionHub() {
   const { language } = useBodyStore();
@@ -44,21 +46,31 @@ export function FoodNutritionHub() {
   const [selectedBenefit, setSelectedBenefit] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Shuffled dynamic lists (hydrated safely so each visit discovers fresh foods & insights)
+  const { items: shuffledFoods, reshuffle: reshuffleFoods } = useShuffledList(FOOD_FACTS);
+  const { items: shuffledLevelTipsFacts, reshuffle: reshuffleTips } = useShuffledList(
+    NUTRITION_LEVEL_TIPS_FACTS,
+  );
+  const { items: shuffledSynergies, reshuffle: reshuffleSynergies } =
+    useShuffledList(FOOD_SYNERGIES);
+  const { items: shuffledWarnings, reshuffle: reshuffleWarnings } =
+    useShuffledList(DRUG_FOOD_WARNINGS);
+
   // Small facts & tips filter state
   const [levelTipsFilter, setLevelTipsFilter] = useState<NutritionLevel | "all">("all");
   const [levelTipsType, setLevelTipsType] = useState<"all" | "fact" | "tip">("all");
 
   const filteredLevelTipsFacts = useMemo(() => {
-    return NUTRITION_LEVEL_TIPS_FACTS.filter((item) => {
+    return shuffledLevelTipsFacts.filter((item) => {
       const matchesLevel = levelTipsFilter === "all" || item.level === levelTipsFilter;
       const matchesType = levelTipsType === "all" || item.type === levelTipsType;
       return matchesLevel && matchesType;
     });
-  }, [levelTipsFilter, levelTipsType]);
+  }, [shuffledLevelTipsFacts, levelTipsFilter, levelTipsType]);
 
   // Filtered Food Facts
   const filteredFacts = useMemo(() => {
-    return FOOD_FACTS.filter((entry) => {
+    return shuffledFoods.filter((entry) => {
       const matchesLevel = selectedLevel === "all" || entry.level === selectedLevel;
       const matchesSystem = selectedSystem === "all" || entry.system === selectedSystem;
 
@@ -169,7 +181,14 @@ export function FoodNutritionHub() {
 
       return matchesLevel && matchesSystem && matchesSituation && matchesBenefit && matchesSearch;
     });
-  }, [selectedLevel, selectedSystem, selectedSituation, selectedBenefit, searchQuery]);
+  }, [
+    shuffledFoods,
+    selectedLevel,
+    selectedSystem,
+    selectedSituation,
+    selectedBenefit,
+    searchQuery,
+  ]);
 
   const systems = [
     { id: "all", label: language === "hi" ? "सभी प्रणालियां" : "All Systems", icon: Layers },
@@ -574,30 +593,41 @@ export function FoodNutritionHub() {
               </p>
             </div>
 
-            {/* Search Input */}
-            <div className="relative w-full md:w-80">
-              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8A8F98]" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder={
-                  language === "hi"
-                    ? "सर्च: रागी, काला चना, जीरा, सौंफ, तिल, मखाना, बीपी..."
-                    : "Search ragi, chana, jeera, saunf, til, BP..."
-                }
-                className="w-full rounded-xl border border-white/10 bg-white/[0.03] pl-10 pr-9 py-2.5 text-base sm:text-sm text-white placeholder-[#8A8F98] outline-none focus:border-[#00E5C4]/50 transition-all"
-              />
-              {searchQuery && (
-                <button
-                  type="button"
-                  onClick={() => setSearchQuery("")}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#8A8F98] hover:text-white p-1 text-xs"
-                  aria-label="Clear search"
-                >
-                  ✕
-                </button>
-              )}
+            {/* Search Input & Shuffle */}
+            <div className="flex items-center gap-2 w-full md:w-auto">
+              <div className="relative w-full md:w-80">
+                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8A8F98]" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder={
+                    language === "hi"
+                      ? "सर्च: रागी, काला चना, जीरा, सौंफ, तिल, मखाना, बीपी..."
+                      : "Search ragi, chana, jeera, saunf, til, BP..."
+                  }
+                  className="w-full rounded-xl border border-white/10 bg-white/[0.03] pl-10 pr-9 py-2.5 text-base sm:text-sm text-white placeholder-[#8A8F98] outline-none focus:border-[#00E5C4]/50 transition-all"
+                />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery("")}
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#8A8F98] hover:text-white p-1 text-xs"
+                    aria-label="Clear search"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
+              <button
+                type="button"
+                onClick={reshuffleFoods}
+                className="shrink-0 flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] hover:border-[#00E5C4]/40 text-xs font-mono text-[#EAEAEA] transition-all cursor-pointer"
+                title="Shuffle foods order"
+              >
+                <Shuffle className="w-3.5 h-3.5 text-[#00E5C4]" />
+                <span className="hidden sm:inline">Shuffle</span>
+              </button>
             </div>
           </div>
 
@@ -991,28 +1021,39 @@ export function FoodNutritionHub() {
           aria-labelledby="synergy-heading"
           className="mb-12 sm:mb-16 scroll-mt-24"
         >
-          <div className="max-w-3xl mb-6 sm:mb-8">
-            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#00E5C4] block">
-              {language === "hi" ? "पोषक तत्वों का तालमेल" : "Biochemical Synergy"}
-            </span>
-            <h2
-              id="synergy-heading"
-              className="text-xl sm:text-3xl font-bold text-white tracking-tight mt-1"
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 sm:mb-8">
+            <div className="max-w-3xl">
+              <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#00E5C4] block">
+                {language === "hi" ? "पोषक तत्वों का तालमेल" : "Biochemical Synergy"}
+              </span>
+              <h2
+                id="synergy-heading"
+                className="text-xl sm:text-3xl font-bold text-white tracking-tight mt-1"
+              >
+                {language === "hi"
+                  ? "खाद्य तालमेल: 1 + 1 = 10 का विज्ञान"
+                  : "The Food Synergy Multiplier Matrix"}
+              </h2>
+              <p className="text-xs sm:text-sm text-[#8A8F98] mt-2 leading-relaxed">
+                {language === "hi"
+                  ? "कुछ पोषक तत्व अकेले खाने पर ठीक से अवशोषित नहीं होते, लेकिन सही भोजन के साथ मिलते ही उनका लाभ कई गुना तक बढ़ जाता है।"
+                  : "Certain vitamins and minerals are difficult for your body to absorb on their own. But when paired with healthy fats, herbs, or lemon drops, your body absorbs up to 20 times more."}
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={reshuffleSynergies}
+              className="self-start sm:self-auto shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] hover:border-[#00E5C4]/40 text-xs font-mono text-[#EAEAEA] transition-all cursor-pointer"
+              title="Shuffle synergies order"
             >
-              {language === "hi"
-                ? "खाद्य तालमेल: 1 + 1 = 10 का विज्ञान"
-                : "The Food Synergy Multiplier Matrix"}
-            </h2>
-            <p className="text-xs sm:text-sm text-[#8A8F98] mt-2 leading-relaxed">
-              {language === "hi"
-                ? "कुछ पोषक तत्व अकेले खाने पर ठीक से अवशोषित नहीं होते, लेकिन सही भोजन के साथ मिलते ही उनका लाभ कई गुना तक बढ़ जाता है।"
-                : "Certain vitamins and minerals are difficult for your body to absorb on their own. But when paired with healthy fats, herbs, or lemon drops, your body absorbs up to 20 times more."}
-            </p>
+              <Shuffle className="w-3.5 h-3.5 text-[#00E5C4]" />
+              <span>Shuffle Pairs</span>
+            </button>
           </div>
 
           {/* Swipeable Carousel on Mobile Phones, Grid on Tablet/Desktop */}
           <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory touch-scroll">
-            {FOOD_SYNERGIES.map((syn) => (
+            {shuffledSynergies.map((syn) => (
               <div
                 key={syn.id}
                 className="w-[82vw] max-w-[280px] shrink-0 sm:w-auto snap-center sm:snap-align-none rounded-2xl border border-white/10 bg-[#0A0E1A] p-4 sm:p-5 flex flex-col justify-between hover:border-teal-500/40 transition-all"
@@ -1054,7 +1095,7 @@ export function FoodNutritionHub() {
                 ? "👈 तालमेल देखने के लिए स्वाइप करें 👉"
                 : "👈 Swipe to view synergies 👉"}
             </span>
-            <span className="font-mono text-amber-400">1 — {FOOD_SYNERGIES.length}</span>
+            <span className="font-mono text-amber-400">1 — {shuffledSynergies.length}</span>
           </div>
         </section>
 
@@ -1065,23 +1106,34 @@ export function FoodNutritionHub() {
           className="mb-12 sm:mb-16 scroll-mt-24"
         >
           <div className="rounded-2xl sm:rounded-3xl border border-red-500/30 bg-red-500/5 p-4 sm:p-8 backdrop-blur-xl">
-            <div className="flex items-start sm:items-center gap-3 mb-4 sm:mb-6">
-              <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl bg-red-500 text-white font-bold mt-0.5 sm:mt-0">
-                <ShieldAlert className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse" />
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 sm:mb-6">
+              <div className="flex items-start sm:items-center gap-3">
+                <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl bg-red-500 text-white font-bold mt-0.5 sm:mt-0">
+                  <ShieldAlert className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-red-400 block">
+                    {language === "hi" ? "महत्वपूर्ण सुरक्षा चेतावनी" : "Life-Saving Medical Alert"}
+                  </span>
+                  <h2
+                    id="drug-food-heading"
+                    className="text-lg sm:text-2xl font-bold text-white tracking-tight"
+                  >
+                    {language === "hi"
+                      ? "घातक खाद्य-दवा परस्पर क्रिया (इंटरैक्शन)"
+                      : "Dangerous Food-Medication Interactions"}
+                  </h2>
+                </div>
               </div>
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-red-400 block">
-                  {language === "hi" ? "महत्वपूर्ण सुरक्षा चेतावनी" : "Life-Saving Medical Alert"}
-                </span>
-                <h2
-                  id="drug-food-heading"
-                  className="text-lg sm:text-2xl font-bold text-white tracking-tight"
-                >
-                  {language === "hi"
-                    ? "घातक खाद्य-दवा परस्पर क्रिया (इंटरैक्शन)"
-                    : "Dangerous Food-Medication Interactions"}
-                </h2>
-              </div>
+              <button
+                type="button"
+                onClick={reshuffleWarnings}
+                className="self-start sm:self-auto shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-red-500/30 bg-red-500/10 hover:bg-red-500/20 text-xs font-mono text-red-200 transition-all cursor-pointer"
+                title="Shuffle warnings order"
+              >
+                <Shuffle className="w-3.5 h-3.5 text-red-400" />
+                <span>Shuffle Alerts</span>
+              </button>
             </div>
 
             <p className="text-xs sm:text-sm text-[#8A8F98] mb-4 sm:mb-6 leading-relaxed max-w-3xl">
@@ -1091,7 +1143,7 @@ export function FoodNutritionHub() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-              {DRUG_FOOD_WARNINGS.map((warn) => (
+              {shuffledWarnings.map((warn) => (
                 <div
                   key={warn.id}
                   className="rounded-xl sm:rounded-2xl border border-red-500/20 bg-black/40 p-4 sm:p-5 flex flex-col justify-between"

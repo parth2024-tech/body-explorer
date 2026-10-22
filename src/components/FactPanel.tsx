@@ -1,3 +1,4 @@
+import { useState, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useBodyStore } from "@/store/useBodyStore";
 import {
@@ -11,7 +12,8 @@ import {
   type Category,
 } from "@/data/content";
 import { FactCard } from "./FactCard";
-import { Stethoscope, AlertCircle, Zap } from "lucide-react";
+import { Stethoscope, AlertCircle, Zap, Shuffle } from "lucide-react";
+import { shuffleArray } from "@/lib/shuffle";
 
 const CATEGORIES: Category[] = [
   "weird_wild",
@@ -27,9 +29,29 @@ export function FactPanel() {
   const setCategory = useBodyStore((s) => s.setCategory);
   const close = useBodyStore((s) => s.closePanel);
   const part = selectedId ? getBodyPart(selectedId) : null;
-  const facts = part ? getFactsFor(part.id, activeCategory) : [];
-  const myths = part ? getMythsFor(part.id) : [];
-  const diseases = part ? getDiseasesFor(part.id) : [];
+  const [shuffleSeed, setShuffleSeed] = useState(0);
+
+  const facts = useMemo(() => {
+    if (!part) return [];
+    const base = getFactsFor(part.id, activeCategory);
+    return shuffleArray(base);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [part?.id, activeCategory, shuffleSeed]);
+
+  const myths = useMemo(() => {
+    if (!part) return [];
+    const base = getMythsFor(part.id);
+    return shuffleArray(base);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [part?.id, shuffleSeed]);
+
+  const diseases = useMemo(() => {
+    if (!part) return [];
+    const base = getDiseasesFor(part.id);
+    return shuffleArray(base);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [part?.id, shuffleSeed]);
+
   const microAction = part ? getMicroActionFor(part.id) : null;
   const doctorQ = part ? getDoctorQuestionFor(part.id) : null;
 
@@ -107,6 +129,15 @@ export function FactPanel() {
                   </button>
                 );
               })}
+              <button
+                type="button"
+                onClick={() => setShuffleSeed((s) => s + 1)}
+                className="relative whitespace-nowrap rounded-full px-3 py-1.5 text-[11px] font-mono font-medium min-h-[36px] flex items-center gap-1.5 border border-white/10 bg-white/5 hover:bg-white/10 hover:border-[#00E5C4]/40 text-[#00E5C4] transition-all shrink-0 ml-auto cursor-pointer"
+                title="Shuffle facts and insights for this organ"
+              >
+                <Shuffle className="w-3.5 h-3.5" />
+                <span>Shuffle</span>
+              </button>
             </div>
 
             {/* Scrollable content with mobile bottom navigation clearance */}

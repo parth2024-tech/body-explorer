@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import foodLabelsData from "../data/food_labels_db.json";
+import { shuffleArray } from "@/lib/shuffle";
 
 export interface FoodLabelEntry {
   id: string;
@@ -20,6 +21,7 @@ interface FoodLabelState {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   selectEntry: (id: string | null) => void;
+  shuffleEntries: () => void;
   filteredEntries: FoodLabelEntry[];
 }
 
@@ -29,6 +31,7 @@ export const useFoodLabelStore = create<FoodLabelState>((set, get) => ({
   searchQuery: "",
   setSearchQuery: (query) => set({ searchQuery: query }),
   selectEntry: (id) => set({ selectedEntryId: id }),
+  shuffleEntries: () => set((state) => ({ entries: shuffleArray(state.entries) })),
   get filteredEntries() {
     const { entries, searchQuery } = get();
     if (!searchQuery) return entries;
