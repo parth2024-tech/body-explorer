@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { DISEASE_ENTRIES } from "../src/data/diseases";
 import { MYTHS } from "../src/data/myths";
+import { FACTS, REMEDIES, HACKS, BODY_MARVELS, BODY_PARTS } from "../src/data/content";
 import foodLabelsRaw from "../src/data/food_labels_db.json";
 import greyMarketRaw from "../src/data/grey_market_db.json";
 
@@ -55,6 +56,29 @@ describe("Content & Knowledge Base Integrity", () => {
       expect(m.myth.length).toBeGreaterThan(10);
       expect(m.reality.length).toBeGreaterThan(20);
       expect(m.actionableTip).toBeTruthy();
+    }
+  });
+
+  it("validates comprehensive anatomy coverage across all 31 body parts", () => {
+    expect(BODY_PARTS.length).toBe(31);
+    expect(FACTS.length).toBeGreaterThanOrEqual(380);
+    expect(REMEDIES.length).toBeGreaterThanOrEqual(80);
+    expect(DISEASE_ENTRIES.length).toBeGreaterThanOrEqual(85);
+    expect(HACKS.length).toBeGreaterThanOrEqual(35);
+    expect(BODY_MARVELS.length).toBeGreaterThanOrEqual(20);
+
+    for (const part of BODY_PARTS) {
+      const partFacts = FACTS.filter((f) => f.bodyPartId === part.id);
+      expect(partFacts.length).toBeGreaterThanOrEqual(8);
+
+      const partDiseases = DISEASE_ENTRIES.filter((d) => d.bodyPartId === part.id);
+      expect(partDiseases.length).toBeGreaterThanOrEqual(1);
+
+      const partRemedies = REMEDIES.filter((r) => r.bodyPartId === part.id);
+      expect(partRemedies.length).toBeGreaterThanOrEqual(1);
+
+      const partHacks = HACKS.filter((h) => h.bodyPartId === part.id);
+      expect(partHacks.length).toBeGreaterThanOrEqual(1);
     }
   });
 });

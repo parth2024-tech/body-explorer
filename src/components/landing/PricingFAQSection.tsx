@@ -13,9 +13,9 @@ const PILLARS = [
     color: "#00E5C4",
     features: [
       "All 30+ anatomical organs fully accessible",
-      "345 peer-reviewed biological mechanisms",
+      "385 peer-reviewed biological mechanisms",
       "91 clinically debunked health misconceptions",
-      "55 evidence-rated natural remedies",
+      "80 evidence-rated natural remedies",
       "Local-first private symptom logger",
       "Emergency first-aid triage protocol",
     ],

@@ -2703,6 +2703,326 @@ const HARDCODED_FACTS: Fact[] = [
     "Drinking 2 to 3 cups of unsweetened filtered coffee daily provides powerful chlorogenic acid polyphenols that stop liver cells from depositing collagen scar tissue, lowering the risk of liver stiffness and fatty liver progression.",
     "World Journal of Hepatology / BMJ",
   ),
+  f(
+    "fact-frontal-lobe-glucose-willpower",
+    "frontal-lobe",
+    "weird_wild",
+    "surprising",
+    "Your frontal lobe weighs less than a pound but consumes over 20% of your body's total blood sugar, which is why making hard decisions when hungry makes you feel irritable and quick-tempered.",
+    "Harvard Medical School",
+  ),
+  f(
+    "fact-frontal-lobe-sleep-impulse",
+    "frontal-lobe",
+    "what_damages_it",
+    "common",
+    "Losing just two hours of sleep shuts down communication between your frontal lobe and emotional centers, making you 60% more reactive to daily stress and sugary food cravings.",
+    "Nature Neuroscience",
+  ),
+  f(
+    "fact-frontal-lobe-deep-work-blocks",
+    "frontal-lobe",
+    "health_tip",
+    "mind_blowing",
+    "Your prefrontal cortex can only maintain peak creative concentration for about 45 to 90 minutes before its neurotransmitter fuel temporarily runs low, meaning short walking breaks actually improve mental stamina.",
+    "Stanford Medicine Neuroscience",
+  ),
+  f(
+    "fact-temporal-lobe-language-speed",
+    "temporal-lobe",
+    "record_breaker",
+    "mind_blowing",
+    "Your temporal lobes process human speech sounds in less than 50 milliseconds—faster than the blink of an eye—instantly decoding accents, tone, and emotions before you even realize you've heard them.",
+    "Journal of Neuroscience",
+  ),
+  f(
+    "fact-temporal-lobe-music-memory",
+    "temporal-lobe",
+    "weird_wild",
+    "surprising",
+    "Musical memories are stored in a specialized pocket of the temporal lobe that stays preserved even in advanced memory loss, allowing people who forget words to still sing songs from their childhood.",
+    "Brain: A Journal of Neurology",
+  ),
+  f(
+    "fact-temporal-lobe-noise-hair-fatigue",
+    "temporal-lobe",
+    "what_damages_it",
+    "common",
+    "Listening to loud audio with earbuds without resting overworks the inner ear hair cells, causing the temporal lobe to artificially turn up its internal gain volume and generate a constant phantom ringing sound (tinnitus).",
+    "American Speech-Language-Hearing Association (ASHA)",
+  ),
+  f(
+    "fact-lung-right-three-lobes-surface",
+    "lung-right",
+    "weird_wild",
+    "surprising",
+    "Your right lung is broader and heavier than your left lung and is divided into three separate lobes (superior, middle, and inferior) because it doesn't need to leave room for your heart.",
+    "Gray's Anatomy",
+  ),
+  f(
+    "fact-lung-right-posture-air-trapping",
+    "lung-right",
+    "health_tip",
+    "common",
+    "Slouching forward while working at a desk compresses the lower lobe of your right lung, trapping up to 30% of stale air and forcing your neck muscles to work twice as hard to pull air in.",
+    "American Thoracic Society",
+  ),
+  f(
+    "fact-throat-larynx-swallow-valve",
+    "throat",
+    "record_breaker",
+    "mind_blowing",
+    "Your epiglottis (the leaf-shaped cartilage valve in your throat) snaps shut over your windpipe up to 2,000 times a day with robotic precision every time you swallow food, drink, or saliva.",
+    "Cleveland Clinic Otolaryngology",
+  ),
+  f(
+    "fact-throat-vocal-cord-vibration-speed",
+    "throat",
+    "weird_wild",
+    "almost_unknown",
+    "When you talk, your vocal cords in your larynx collide together 100 to 300 times every single second, cushioned only by a microscopic layer of fluid that requires steady water intake to prevent raspy voice fatigue.",
+    "National Institute on Deafness (NIDCD)",
+  ),
+  f(
+    "fact-bladder-nerve-stretch-signals",
+    "bladder",
+    "weird_wild",
+    "surprising",
+    "Your bladder walls send their first gentle 'you have to pee' nerve signal when only halfway full (around 200 ml); it doesn't send urgent alarm signals until reaching 400 to 500 ml.",
+    "Mayo Clinic Urology",
+  ),
+  f(
+    "fact-bladder-irritant-caffeine-acid",
+    "bladder",
+    "what_damages_it",
+    "common",
+    "Artificial sweeteners, spicy chili oil, and cold sodas contain chemical compounds that irritate sensitive bladder lining cells, making you feel the urge to pee twice as frequently even when your bladder is empty.",
+    "Cleveland Clinic Urology",
+  ),
+  f(
+    "fact-bladder-pelvic-floor-support",
+    "bladder",
+    "health_tip",
+    "common",
+    "Your bladder sits like a water balloon suspended on a woven hammock of pelvic floor muscles; practicing 10 daily pelvic floor squeezes (Kegels) prevents nighttime bathroom trips and coughing leaks.",
+    "NHS Women's & Men's Health",
+  ),
+  f(
+    "fact-spine-cervical-head-weight-angle",
+    "spine-cervical",
+    "record_breaker",
+    "mind_blowing",
+    "Your head weighs about 10 to 12 pounds when sitting upright, but tilting your neck forward at a 60-degree angle to read your phone increases the mechanical weight on your cervical vertebrae to 60 pounds.",
+    "Surgical Technology International",
+  ),
+  f(
+    "fact-spine-cervical-vertebral-arteries",
+    "spine-cervical",
+    "health_tip",
+    "surprising",
+    "Your seven neck vertebrae have unique bony holes (transverse foramina) on both sides that act as protective tunnels carrying the vertebral arteries directly into the back of your brain.",
+    "Johns Hopkins Medicine",
+  ),
+  f(
+    "fact-spine-thoracic-rib-cage-armor",
+    "spine-thoracic",
+    "weird_wild",
+    "common",
+    "Your 12 thoracic vertebrae are the only spinal bones connected directly to your ribs, forming an elastic bony cage that expands and contracts 20,000 times a day to protect your heart and lungs.",
+    "Gray's Anatomy",
+  ),
+  f(
+    "fact-spine-thoracic-desk-slump-breathing",
+    "spine-thoracic",
+    "what_damages_it",
+    "surprising",
+    "Sitting slumped in a rounded posture stiffens the small joints where your ribs meet your thoracic spine, reducing your chest's ability to expand and cutting your full breathing capacity by up to 20%.",
+    "Journal of Physical Therapy Science",
+  ),
+  f(
+    "fact-spine-thoracic-extension-foam-roll",
+    "spine-thoracic",
+    "health_tip",
+    "common",
+    "Gently arching your upper back over a foam roller for just 2 minutes every afternoon opens restricted rib joints and reverses the burning ache between your shoulder blades.",
+    "American Physical Therapy Association (APTA)",
+  ),
+  f(
+    "fact-spine-lumbar-disc-water-cushion",
+    "spine-lumbar",
+    "weird_wild",
+    "mind_blowing",
+    "The thick gelatinous discs between your five lumbar vertebrae are 80% water when you wake up in the morning, but daily standing pressure squeezes water out, making you up to half an inch shorter by bedtime.",
+    "Spine Journal / NIH",
+  ),
+  f(
+    "fact-spine-lumbar-sitting-vs-standing-load",
+    "spine-lumbar",
+    "what_damages_it",
+    "surprising",
+    "Slouching in an office chair places 40% to 90% more compressive load on your lower lumbar discs than standing tall, because your back muscles stop supporting your spine and dump your upper body weight onto your discs.",
+    "European Spine Journal",
+  ),
+  f(
+    "fact-spine-lumbar-walking-disc-pump",
+    "spine-lumbar",
+    "health_tip",
+    "common",
+    "Because spinal discs have zero direct blood supply, they rely entirely on the gentle up-and-down compression of daily walking to pump in fresh fluid and nutrients and flush out metabolic waste.",
+    "Mayo Clinic Orthopedics",
+  ),
+  f(
+    "fact-shoulders-ball-socket-shallow-freedom",
+    "shoulders",
+    "weird_wild",
+    "surprising",
+    "Your shoulder is the most mobile joint in your entire body, designed like a golf ball sitting on a shallow golf tee, allowing your arm to rotate in a full 360-degree circle.",
+    "American Academy of Orthopaedic Surgeons (AAOS)",
+  ),
+  f(
+    "fact-shoulders-rotator-cuff-overhead-pinching",
+    "shoulders",
+    "what_damages_it",
+    "common",
+    "Slumping your shoulders forward narrows the tiny subacromial space inside the shoulder joint by up to 50%, causing the upper arm bone to pinch your rotator cuff tendons every time you reach overhead.",
+    "Journal of Shoulder and Elbow Surgery",
+  ),
+  f(
+    "fact-shoulders-dead-hang-traction",
+    "shoulders",
+    "health_tip",
+    "mind_blowing",
+    "Hanging from an overhead pull-up bar for just 30 seconds uses gravity to naturally widen the shoulder joint space, remodeling the acromion bone and preventing painful shoulder impingement.",
+    "Kirsch Orthopedic Shoulder Protocol",
+  ),
+  f(
+    "fact-elbows-three-joints-in-one",
+    "elbows",
+    "weird_wild",
+    "almost_unknown",
+    "Your elbow isn't just a simple hinge; it is three separate joints enclosed in a single capsule that let you bend your arm, straighten it, and rotate your palm completely face-up and face-down.",
+    "Gray's Anatomy",
+  ),
+  f(
+    "fact-elbows-funny-bone-exposed-nerve",
+    "elbows",
+    "weird_wild",
+    "common",
+    "Your 'funny bone' isn't a bone at all—it is the ulnar nerve running through a bare skin-deep groove on the inside of your elbow with no muscle padding, which is why bumping it sends electric shocks to your pinky finger.",
+    "Cleveland Clinic Neurological Institute",
+  ),
+  f(
+    "fact-elbows-wrist-extensor-mouse-strain",
+    "elbows",
+    "what_damages_it",
+    "surprising",
+    "Tennis elbow pain on the outside of your elbow actually comes from the muscles in your hand and wrist; repeatedly lifting your fingers to click a flat computer mouse causes micro-tears in the elbow tendon.",
+    "Lancet Rheumatology",
+  ),
+  f(
+    "fact-wrists-eight-pebble-bones",
+    "wrists",
+    "weird_wild",
+    "surprising",
+    "Your wrist is formed by eight tiny, pebble-shaped carpal bones arranged in two tightly knit rows, gliding against one another with microscopic precision like a set of polished ball bearings.",
+    "American Society for Surgery of the Hand",
+  ),
+  f(
+    "fact-wrists-night-curling-nerve-pressure",
+    "wrists",
+    "what_damages_it",
+    "common",
+    "Curling your wrists inward while you sleep (the 'fetal tuck') triples the pressure inside the carpal tunnel, which is why carpal tunnel numbness and tingling almost always wake people up at 3 AM.",
+    "Journal of Hand Surgery",
+  ),
+  f(
+    "fact-hands-twenty-nine-bones-no-muscles",
+    "hands",
+    "weird_wild",
+    "mind_blowing",
+    "There are almost no muscles inside your fingers; the muscles that move your fingers are located in your forearm, pulling your finger bones through long, thin tendons like puppeteer strings.",
+    "Harvard Health Publishing",
+  ),
+  f(
+    "fact-hands-fingerprint-moisture-grip",
+    "hands",
+    "record_breaker",
+    "surprising",
+    "The microscopic ridges of your fingerprints channel moisture away and generate friction like car tire treads, allowing you to grip smooth, wet objects without them slipping from your fingers.",
+    "Proceedings of the National Academy of Sciences (PNAS)",
+  ),
+  f(
+    "fact-hips-ball-socket-two-ton-strength",
+    "hips",
+    "record_breaker",
+    "mind_blowing",
+    "Your hip joint is your body's largest ball-and-socket joint, supported by ligaments so thick and strong that they can support over two tons of mechanical force during running and jumping.",
+    "Mayo Clinic Orthopedics",
+  ),
+  f(
+    "fact-hips-glute-amnesia-sitting",
+    "hips",
+    "what_damages_it",
+    "common",
+    "Sitting on your buttock muscles for hours every day shuts off communication between your nervous system and your glute muscles (gluteal amnesia), forcing your lower back and hamstrings to overwork.",
+    "British Journal of Sports Medicine",
+  ),
+  f(
+    "fact-knees-largest-sesamoid-bone",
+    "knees",
+    "weird_wild",
+    "surprising",
+    "Your kneecap (patella) is the largest floating bone (sesamoid bone) in your body, acting as a natural lever that increases the pulling efficiency of your thigh quad muscles by up to 30%.",
+    "Gray's Anatomy",
+  ),
+  f(
+    "fact-knees-cartilage-no-blood-vessels",
+    "knees",
+    "health_tip",
+    "mind_blowing",
+    "The articular cartilage in your knees contains zero blood vessels and zero nerves; it can only absorb fresh joint fluid and oxygen when you walk, like a kitchen sponge soaking up water when squeezed and released.",
+    "Osteoarthritis and Cartilage Journal",
+  ),
+  f(
+    "fact-ankles-twenty-six-bones-foot",
+    "ankles",
+    "weird_wild",
+    "surprising",
+    "Your ankle and foot contain 26 bones, 33 joints, and over 100 ligaments and tendons, functioning together as both a flexible shock absorber when landing and a rigid lever when pushing off.",
+    "American Podiatric Medical Association (APMA)",
+  ),
+  f(
+    "fact-ankles-calf-vein-second-heart",
+    "ankles",
+    "record_breaker",
+    "mind_blowing",
+    "The soleus calf muscles right above your ankles are known as your 'second heart' because contracting them while walking squeezes deep leg veins, pumping pooled blood back up to your chest against gravity.",
+    "Journal of Vascular Surgery",
+  ),
+  f(
+    "fact-feet-two-hundred-thousand-nerves",
+    "feet",
+    "record_breaker",
+    "surprising",
+    "The soles of your feet contain over 200,000 nerve endings—the same density as your palms—telling your brain every millisecond about ground texture, slope, and balance so you don't fall over.",
+    "Cleveland Clinic Podiatry",
+  ),
+  f(
+    "fact-muscles-six-hundred-muscles-furnace",
+    "muscles",
+    "record_breaker",
+    "mind_blowing",
+    "You have over 600 skeletal muscles making up roughly 40% of your body weight; they are your body's primary metabolic furnace, burning up to 80% of dietary glucose and producing all resting body heat.",
+    "Cell Metabolism",
+  ),
+  f(
+    "fact-muscles-myokine-healing-chemicals",
+    "muscles",
+    "health_tip",
+    "almost_unknown",
+    "When your muscles contract during exercise, they release dozens of hormone-like proteins called myokines that travel through your bloodstream to reduce brain inflammation, improve mood, and strengthen bones.",
+    "Nature Reviews Endocrinology",
+  ),
 ];
 
 export const FACTS: Fact[] = [...HARDCODED_FACTS, ...(generatedFactsJson as Fact[])];
@@ -3617,6 +3937,330 @@ export const REMEDIES: RemedyEntry[] = [
     practicalContext:
       "Eat 2 to 3 tablespoons before your heaviest meal of the day. Note that betalain pigment may harmlessly tint urine or stool pink (beeturia).",
   },
+  {
+    id: "pink-noise-tinnitus-soother",
+    name: "Pink Noise Sound Masking for Ear Ringing",
+    description:
+      "Listening to soft pink noise (sounds like falling rain or ocean waves) through a speaker at low volume while resting or working in quiet rooms.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Audiology research shows that pink noise plays equal energy per octave, matching natural brainwave rhythms. This gently blends with the high-pitched ringing sound of tinnitus, giving the temporal lobe's sound centers a chance to relax so the brain stops focusing on the ringing.",
+    ailment: "Ear Ringing (Tinnitus) & Sound Sensitivity",
+    bodyPartId: "temporal-lobe",
+    practicalContext:
+      "Keep volume below conversational level (under 60 dB). Do not use deep-ear headphones for tinnitus masking; room speakers or pillow speakers work best.",
+  },
+  {
+    id: "foam-roller-thoracic-extension",
+    name: "Foam Roller Mid-Back Opener & Doorway Chest Stretch",
+    description:
+      "Lying gently on a foam roller placed crosswise under your mid-back with your hands supporting your neck, taking 5 deep belly breaths, followed by a gentle doorway pec stretch.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Physical therapy trials demonstrate that passive thoracic extension Mobilizes the rib-spine facet joints and lengthens the tight anterior chest muscles, relieving burning muscular fatigue between the shoulder blades and expanding lung volume.",
+    ailment: "Hunched Desk Posture & Upper-Back Burning Tightness",
+    bodyPartId: "spine-thoracic",
+    practicalContext:
+      "Perform for 2 minutes after every 3 hours of computer work. Never roll directly on the lower back (lumbar spine); keep the roller between the shoulder blades.",
+  },
+  {
+    id: "pendulum-shoulder-release",
+    name: "Codman Pendulum Shoulder Swings & Warm Moisture Pack",
+    description:
+      "Leaning forward with your good arm resting on a table, letting your stiff arm hang loose like a clock pendulum, and gently swaying it in small circles using gravity rather than muscle power.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Orthopedic rehabilitation studies prove that gravity-assisted pendulum circles create gentle joint traction without firing tense rotator cuff muscles. This circulates warm synovial fluid through the shoulder joint capsule, lubricating tight tissues.",
+    ailment: "Rotator Cuff Stiffness, Shoulder Impingement & Early Frozen Shoulder",
+    bodyPartId: "shoulders",
+    practicalContext:
+      "Do 20 small clockwise circles and 20 counter-clockwise circles twice daily. Follow with a warm, damp towel over the shoulder for 10 minutes.",
+  },
+  {
+    id: "contrast-elbow-therapy",
+    name: "Ice & Warm Water Contrast for Tennis Elbow",
+    description:
+      "Alternating between a cold ice massage for 3 minutes and a warm water compress for 3 minutes over the outer tendon bump of your elbow.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Sports medicine clinical reviews indicate that temperature contrast therapy causes rapid alternation between blood vessel narrowing (vasoconstriction) and widening (vasodilation). This acts as a vascular pump that flushes out inflammatory waste products and speeds collagen repair in slow-healing elbow tendons.",
+    ailment: "Tennis Elbow, Mouse Clicking Strain & Outer Elbow Soreness",
+    bodyPartId: "elbows",
+    practicalContext:
+      "Repeat 3 cycles ending with cold. Use a computer mouse with an ergonomic vertical grip to stop twisting the forearm bones.",
+  },
+  {
+    id: "neutral-night-wrist-splinting",
+    name: "Neutral Wrist Splinting & Tendon-Gliding Exercises",
+    description:
+      "Wearing a lightweight, straight-brace wrist splint during sleep to keep your wrist in a completely neutral (unbent) position, combined with gentle daytime finger-stretching flows.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Cochrane systematic reviews confirm that neutral wrist splinting prevents the wrist from curling inward during deep sleep. Sleeping with curled wrists increases carpal tunnel pressure by over 300%; keeping it neutral keeps pressure low, allowing the median nerve to recover.",
+    ailment: "Carpal Tunnel Tingling, Smartphone Thumb & Morning Hand Numbness",
+    bodyPartId: "wrists",
+    practicalContext:
+      "Wear the splint every night for 4 to 6 weeks. Avoid wearing rigid splints during active typing, as muscles need to move freely during the day.",
+  },
+  {
+    id: "epsom-hand-soak",
+    name: "Warm Epsom Salt Hand Soak for Morning Finger Stiffness",
+    description:
+      "Soaking both hands in a basin of warm water with half a cup of dissolved Epsom salts (magnesium sulfate) for 10 minutes, gently opening and closing fingers into loose fists.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Warm moist heat increases local blood flow to small finger joints by up to 200%, thinning thick joint fluid (synovial fluid) so finger cartilage glides with less friction. Transdermal magnesium ions soothe tense hand muscles.",
+    ailment: "Finger Knuckle Stiffness, Trigger Finger Tightness & Hand Fatigue",
+    bodyPartId: "hands",
+    practicalContext:
+      "Do this first thing upon waking. Follow by rubbing a pea-sized drop of warm sesame or olive oil into knuckle joints.",
+  },
+  {
+    id: "ninety-ninety-hip-flow",
+    name: "The 90/90 Hip Flow & Glute Bridge Reset",
+    description:
+      "Sitting on the floor with both knees bent at 90-degree angles (one in front, one to the side) and gently leaning forward, followed by 10 slow lying glute bridges.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Physical therapy trials show that the 90/90 stretch restores internal and external rotation in the hip socket. Combining this with glute bridges wakes up sleepy buttock muscles (reciprocal inhibition), which automatically releases chronically tight front hip flexors.",
+    ailment: "Desk Worker Tight Hips, Anterior Pelvic Tilt & Lower Back Pulling",
+    bodyPartId: "hips",
+    practicalContext:
+      "Spend 60 seconds per side after prolonged sitting. Keep your spine long and tall without rounding your lower back.",
+  },
+  {
+    id: "quad-activation-knee-relief",
+    name: "Straight-Leg Quad Raises & Cold Ice Massage for Knees",
+    description:
+      "Lying on your back with one leg bent and tightening the front thigh of the straight leg to lift it 6 inches off the floor, holding for 3 seconds, followed by an ice massage.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Clinical trials in the British Journal of Sports Medicine demonstrate that strengthening the vastus medialis (inner thigh muscle) directly stabilizes how the kneecap tracks inside its groove, reducing patellofemoral knee friction by up to 40%.",
+    ailment: "Runner's Knee, Kneecap Grinding & Stair Climbing Discomfort",
+    bodyPartId: "knees",
+    practicalContext:
+      "Complete 3 sets of 10 lifts daily. Apply ice wrapped in a thin towel for 10 minutes if the knee feels warm or puffy after long walks.",
+  },
+  {
+    id: "ankle-alphabet-mobility",
+    name: "Ankle Alphabet Drawing & Calf Stretch Flow",
+    description:
+      "Lifting your foot off the floor and tracing the letters of the alphabet in the air with your big toe, moving only your ankle joint.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Sports physical therapy protocols show that active multidirectional mobility exercises stimulate the joint's balance sensors (proprioceptors) in ankle ligaments, dramatically reducing the risk of repeat ankle sprains and pumping away fluid swelling.",
+    ailment: "Ankle Sprain Recovery, Morning Ankle Stiffness & Wobbly Balance",
+    bodyPartId: "ankles",
+    practicalContext:
+      "Trace capital letters A to Z once per foot while sitting at your desk. If recovering from an acute sprain, start after the first 48 hours once swelling stabilizes.",
+  },
+  {
+    id: "weight-bearing-stomp-bone-stimulus",
+    name: "Gentle Heel Drops & Daily Vitamin D3/K2 for Bone Strength",
+    description:
+      "Rising up onto your toes and dropping down onto your heels with a gentle, firm bump 20 times daily, paired with safe morning sunlight for natural vitamin D.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Bone biology research demonstrates Wolff's Law: bone is living tissue that grows denser in response to mechanical vibration and weight impact. Gentle heel drops send piezoelectric signals through leg bones and the spine, stimulating osteoblast cells to build new bone mineral matrix.",
+    ailment: "Osteopenia, Thinning Bone Density & Skeletal Weakness",
+    bodyPartId: "bones",
+    practicalContext:
+      "Perform 20 gentle drops while holding onto a kitchen counter for balance. Consult your physician if you have severe osteoporosis or spinal fractures.",
+  },
+  {
+    id: "cranberry-pac-extract-bladder",
+    name: "Standardized Cranberry Proanthocyanidin (PAC) Extract",
+    description:
+      "Taking a standardized cranberry supplement containing at least 36 mg of Type-A Proanthocyanidins (PACs) with a tall glass of plain water.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Cochrane systematic reviews confirm that Type-A PAC compounds act like a Teflon coating on the inner lining of your bladder. They physically prevent E. coli bacteria from hooking onto bladder wall cells, so bacteria get harmlessly flushed out in urine.",
+    ailment: "Recurrent Bladder Infections & Burning Urination Tendency",
+    bodyPartId: "bladder",
+    practicalContext:
+      "Choose standardized extract capsules rather than sugary supermarket juices. Drink alongside 2 to 2.5 liters of clean water daily.",
+  },
+  {
+    id: "d-mannose-urinary-wash",
+    name: "Pure D-Mannose Powder in Water",
+    description:
+      "Dissolving 2 grams of pure D-mannose (a natural, non-caloric plant sugar) in a glass of lukewarm water and drinking every morning.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Double-blind clinical trials in the European Review for Medical and Pharmacological Sciences show that D-mannose binds like a magnet to the hair-like fingers (pili) of E. coli bacteria, sweeping them out of the bladder during normal urination as effectively as preventive antibiotics.",
+    ailment: "Bladder Discomfort, Frequency & Post-Intimacy Urinary Irritation",
+    bodyPartId: "bladder",
+    practicalContext:
+      "Take with plenty of water. Because D-mannose is mostly excreted unchanged in urine, it does not spike blood sugar levels in diabetics.",
+  },
+  {
+    id: "lemon-citrate-kidney-flush",
+    name: "Fresh Lemon Juice Water for Kidney Citrate",
+    description:
+      "Squeezing the juice of half a fresh lemon into a large glass of warm water twice daily, particularly after waking and before bedtime.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Clinical urology trials show that natural citric acid in lemons increases urinary citrate levels. Citrate binds with free calcium in your urine, preventing calcium crystals from clumping together to form painful kidney stones.",
+    ailment: "Kidney Stone Prevention & Highly Acidic Concentrated Urine",
+    bodyPartId: "kidneys",
+    practicalContext:
+      "Drink through a straw to protect tooth enamel from citric acid. Do not add sugar; sweeten with a hint of stevia or mint leaves if desired.",
+  },
+  {
+    id: "milk-thistle-silymarin-liver",
+    name: "Standardized Milk Thistle (Silymarin Extract)",
+    description:
+      "Taking a clinically standardized milk thistle extract containing 70% to 80% silymarin with meals.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Phytotherapy research indicates that silymarin acts as an antioxidant and cell-membrane stabilizer in hepatocytes (liver cells). It stimulates protein synthesis in liver tissue, supporting the liver's natural phase-1 and phase-2 enzyme detoxification pathways.",
+    ailment: "Sluggish Liver Function, Toxic Exposure & Metabolic Liver Strain",
+    bodyPartId: "liver",
+    practicalContext:
+      "Ask your doctor or pharmacist if taking prescription medications, as silymarin can affect how certain medicines are cleared by the liver.",
+  },
+  {
+    id: "dgl-licorice-stomach-coat",
+    name: "Chewable Deglycyrrhizinated Licorice (DGL)",
+    description: "Slowly chewing one or two DGL tablets 15 to 20 minutes before meals.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Gastroenterology studies show that DGL stimulates the stomach's natural mucus-producing cells (goblet cells). This forms a soothing, protective slime barrier over the stomach wall, shielding sensitive tissues from stomach acid without suppressing necessary acid digestion.",
+    ailment: "Heartburn, Stomach Burning & Gastritis Discomfort",
+    bodyPartId: "stomach",
+    practicalContext:
+      "Always choose DGL (deglycyrrhizinated), which has the glycyrrhizin compound removed so it does not raise blood pressure or deplete potassium.",
+  },
+  {
+    id: "stewed-apple-pectin-gut-barrier",
+    name: "Warm Stewed Apples with Cinnamon for Gut Lining",
+    description:
+      "Gently simmering diced fresh apples with their skin on in water with a pinch of Ceylon cinnamon until soft, eaten as a morning snack.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Cooking apples releases high amounts of soluble pectin fiber. Research demonstrates that beneficial gut microbes ferment pectin into short-chain fatty acids (particularly butyrate), which directly fuels and seals the single-cell lining of the small and large intestines.",
+    ailment: "Sluggish Digestion, Leaky Gut Concerns & Loose Sensitive Bowels",
+    bodyPartId: "small-intestine",
+    practicalContext:
+      "Do not peel the apples; the skin contains the highest concentration of prebiotic polyphenols. Eat warm with breakfast.",
+  },
+  {
+    id: "isabgol-psyllium-bowel-lubricant",
+    name: "Whole Isabgol (Psyllium Husk) with Abundant Water",
+    description:
+      "Stirring one tablespoon of whole psyllium husk into a tall glass of lukewarm water or buttermilk and drinking immediately before bedtime.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "The American Journal of Clinical Nutrition notes that psyllium is a pure hydrophilic soluble fiber that absorbs up to 10 times its weight in water, forming a soft, slippery gel. This gently expands stool volume and lubricates the colon, stimulating natural bowel motility.",
+    ailment: "Chronic Constipation, Hemorrhoid Strain & Irregular Stools",
+    bodyPartId: "large-intestine",
+    practicalContext:
+      "Crucial rule: Always drink an extra glass of plain water immediately afterward. Taking psyllium with too little water can cause dry, hardened stool.",
+  },
+  {
+    id: "meibomian-warm-eye-compress",
+    name: "Warm Moisture Eye Compress & Blink Exercises",
+    description:
+      "Placing a clean washcloth soaked in warm water (about 40°C / 104°F) over closed eyes for 5 to 7 minutes, followed by 10 deliberate hard blinks.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Ophthalmology clinical trials confirm that heat melts the waxy oil (meibum) clogging the tiny glands inside your eyelids. This allows natural clear oil to coat your tears, preventing the tear film from evaporating quickly when staring at computer monitors.",
+    ailment: "Digital Eye Dryness, Screen Grittiness & Burning Red Eyes",
+    bodyPartId: "eyes",
+    practicalContext:
+      "Do once every evening before sleep. Avoid rubbing eyes vigorously after the compress; gentle patting is safest.",
+  },
+  {
+    id: "tmj-tongue-roof-jaw-reset",
+    name: "Tongue-to-Roof Jaw Relaxation & Temple Massage",
+    description:
+      "Placing the tip of your tongue gently against the roof of your mouth just behind your front teeth, letting your teeth part slightly, and massaging your temple muscles in circles.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Dental research shows that resting the tongue against the palate triggers a neurological reflex (reciprocal inhibition) that instantly forces the powerful masseter and temporalis jaw muscles to stop clenching, reducing pressure inside the TMJ hinge by up to 70%.",
+    ailment: "Jaw Clenching, Morning Temple Headaches & TMJ Clicking",
+    bodyPartId: "jaw",
+    practicalContext:
+      "Set an hourly reminder on your phone: 'Lips together, teeth apart, tongue on the roof.' Practice while driving or reading emails.",
+  },
+  {
+    id: "salt-water-osmotic-throat-gargle",
+    name: "Warm Salt Water Osmotic Throat Gargle",
+    description:
+      "Dissolving half a teaspoon of plain salt in a cup of comfortably warm water and gargling deeply for 30 seconds, 3 times a day.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Medical guidelines confirm that salt water creates a gentle osmotic gradient: it draws excess trapped fluid out of swollen throat tissues, rapidly relieving scratchiness. It also loosens thick mucus and washes away throat bacteria.",
+    ailment: "Scratchy Sore Throat, Tickle Cough & Pharyngeal Irritation",
+    bodyPartId: "throat",
+    practicalContext:
+      "Spit the water out completely; do not swallow the salty liquid. Use comfortably warm water, never scalding hot.",
+  },
+  {
+    id: "hypertonic-saline-nasal-rinse",
+    name: "Distilled Saline Nasal Irrigation (Neti Rinse)",
+    description:
+      "Flushing the nasal passages using a clean nasal wash bottle or Neti pot filled with lukewarm distilled water and a pharmaceutical saline packet.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Ear, Nose, and Throat (ENT) clinical reviews prove that saline irrigation physically washes pollen, dust, and thick mucus out of the sinuses while improving the natural beating frequency of the tiny nasal hairs (cilia).",
+    ailment: "Sinus Pressure, Post-Nasal Drip & Morning Congestion",
+    bodyPartId: "sinuses",
+    practicalContext:
+      "CRITICAL SAFETY RULE: Never use plain tap water. Always use boiled-and-cooled, distilled, or sterile water to prevent rare waterborne amoeba infections.",
+  },
+  {
+    id: "l-theanine-alpha-wave-focus",
+    name: "L-Theanine with Green Tea for Calm Mental Clarity",
+    description:
+      "Drinking a cup of freshly brewed green tea or taking 100 to 200 mg of L-theanine (a natural amino acid found in tea leaves).",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Electroencephalogram (EEG) brainwave studies prove that L-theanine crosses the blood-brain barrier and increases alpha brainwaves (8 to 12 Hz). This creates a state of 'alert calm' without drowsiness, reducing mental agitation and sharpening frontal lobe focus.",
+    ailment: "Mental Agitation, Multitasking Brain Fog & Exam Jitters",
+    bodyPartId: "frontal-lobe",
+    practicalContext:
+      "Take 30 minutes before complex study or focused work sessions. Can be paired with modest caffeine to eliminate caffeine jitters.",
+  },
+  {
+    id: "colloidal-oatmeal-barrier-soak",
+    name: "Colloidal Oatmeal Bath for Skin Barrier Repair",
+    description:
+      "Adding 1 cup of finely ground colloidal oatmeal powder to a lukewarm bath and soaking for 15 minutes, patting skin dry, and applying moisturizer within 3 minutes.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Dermatology trials show that avenanthramides (unique antioxidants in oats) inhibit inflammatory cytokine release in skin cells. Oatmeal beta-glucan forms a protective water-binding film that restores the skin's natural lipid barrier and calms itching.",
+    ailment: "Dry Itchy Skin, Mild Eczema Flares & Skin Barrier Irritation",
+    bodyPartId: "skin",
+    practicalContext:
+      "Use lukewarm water; hot water strips away natural skin oils and worsens itching. Lock in moisture with a ceramide cream within 3 minutes of stepping out.",
+  },
+  {
+    id: "tart-cherry-muscle-recovery",
+    name: "Tart Montmorency Cherry Juice for Muscle Soreness",
+    description:
+      "Drinking 200 ml of pure tart cherry juice (unsweetened) 30 minutes after intense exercise or 1 hour before bed.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Sports nutrition studies in the Scandinavian Journal of Medicine and Science in Sports show that anthocyanin antioxidants in tart cherries significantly reduce post-exercise muscle damage and oxidative stress, accelerating recovery and reducing delayed onset muscle soreness (DOMS).",
+    ailment: "Delayed Onset Muscle Soreness (DOMS) & Post-Workout Muscle Fatigue",
+    bodyPartId: "muscles",
+    practicalContext:
+      "Choose pure unsweetened tart cherry juice or concentrated extract. Tart cherries also naturally contain small amounts of plant melatonin, supporting deeper sleep.",
+  },
+  {
+    id: "circadian-morning-sunlight-clock",
+    name: "Morning Sunlight Exposure for Sleep-Wake Timing",
+    description:
+      "Stepping outside into natural morning daylight for 10 to 15 minutes within an hour of waking up, without looking directly at the sun.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Neuroscience research at Harvard and Stanford demonstrates that morning photons hitting the specialized melanopsin cells in your eyes travel directly to the suprachiasmatic nucleus (the brain's master biological clock). This triggers a healthy morning cortisol surge and starts an internal 16-hour timer that releases nighttime melatonin on schedule.",
+    ailment: "Difficulty Falling Asleep, Morning Grogginess & Circadian Rhythm Misalignment",
+    bodyPartId: "brain",
+    practicalContext:
+      "Must be done outdoors without sunglasses. Looking through a window glass does not work because window panes filter out 50% or more of the necessary blue-sky wavelengths.",
+  },
 ];
 
 export const HACKS: HealthHack[] = [
@@ -3773,6 +4417,177 @@ export const HACKS: HealthHack[] = [
       "After 10 to 12 hours of digestive rest, liver glycogen stores drop, prompting hepatocytes (liver cells) to switch from storing fat to burning accumulated triglycerides and activating autophagy (cellular cleanup).",
     bodyPartId: "liver",
   },
+  {
+    id: "caffeine-90-min-delay",
+    title: "The 90-Minute Morning Caffeine Delay",
+    practice:
+      "Wait 90 to 120 minutes after waking up before drinking your first cup of coffee or strong tea. Drink a large glass of water first.",
+    scienceBasis:
+      "During sleep, your brain clears adenosine (the chemical that makes you feel sleepy). When you wake up, leftover adenosine clears out naturally over 90 minutes while your body produces a natural morning cortisol surge. If you drink coffee immediately, caffeine blocks adenosine receptors without clearing them; when caffeine wears off around 2 PM, the trapped adenosine floods back in, causing a heavy afternoon crash.",
+    bodyPartId: "frontal-lobe",
+  },
+  {
+    id: "headphone-60-60-rule",
+    title: "The 60/60 Safe Listening Rule for Ears",
+    practice:
+      "Listen to headphones at no more than 60% of the maximum volume bar, and limit continuous listening to 60 minutes before taking a 10-minute quiet break.",
+    scienceBasis:
+      "Sound levels above 85 decibels physically bend and snap the microscopic stereocilia (hair cells) inside the cochlea of your inner ear. Taking a 10-minute break lets these delicate hair cells recover their natural flexibility, preventing permanent noise-induced high-frequency hearing loss.",
+    bodyPartId: "temporal-lobe",
+  },
+  {
+    id: "eustachian-yawn-equalizer",
+    title: "The Soft-Palate Yawn for Ear Pressure",
+    practice:
+      "Instead of aggressively pinching your nose and blowing hard, gently swallow while opening your jaw into a wide yawn, or chew real gum when landing in an airplane.",
+    scienceBasis:
+      "The tensor veli palatini muscle opens the Eustachian tube during swallowing and yawning, allowing air pressure between your middle ear and the outside room to equalize naturally without traumatizing delicate eardrums.",
+    bodyPartId: "ears",
+  },
+  {
+    id: "left-side-sleep-reflux-block",
+    title: "The Left-Side Sleep Position for Acid Reflux",
+    practice:
+      "Sleep primarily on your left side using a comfortable pillow between your knees, especially if you have had a late dinner.",
+    scienceBasis:
+      "Anatomically, the esophagus connects to the right upper curve of your stomach. When you sleep on your left side, the junction between stomach and esophagus stays elevated above the pool of gastric acid, keeping stomach acid trapped by gravity so it cannot splash upward into your throat.",
+    bodyPartId: "throat",
+  },
+  {
+    id: "zone-2-nasal-walk",
+    title: "The Zone 2 Nasal-Breathing Heart Stroll",
+    practice:
+      "Walk briskly at a pace where you could still hold a conversation, while breathing strictly in and out through your nose for 30 minutes.",
+    scienceBasis:
+      "Nasal breathing forces your pace to stay within 'Zone 2' cardiovascular intensity (60% to 70% of max heart rate). This stimulates heart muscle efficiency, increases stroke volume (how much blood your heart pumps per beat), and stimulates mitochondrial growth in blood vessels without spiking stress hormones.",
+    bodyPartId: "heart",
+  },
+  {
+    id: "migrating-motor-complex-rest",
+    title: "The 3-Hour Digestive Gap (Gut Sweeper Wave)",
+    practice:
+      "Leave a clear 3 to 4 hour gap between meals without constant snacking on biscuits, chips, or sugary sips.",
+    scienceBasis:
+      "When your small intestine is empty for 90 to 120 minutes, your gut activates the Migrating Motor Complex (MMC)—a powerful, rhythmic electrical cleansing wave that sweeps food crumbs and bacteria out of the small intestine down into the colon, preventing bloating and bacterial overgrowth (SIBO).",
+    bodyPartId: "small-intestine",
+  },
+  {
+    id: "squatty-35-degree-colon-angle",
+    title: "The 35-Degree Foot Stool for Natural Elimination",
+    practice:
+      "Place a 7-to-9 inch bathroom stool (or upturned plastic tub) under your feet when sitting on a modern toilet, leaning your torso slightly forward.",
+    scienceBasis:
+      "When sitting at a standard 90-degree chair angle, the puborectalis muscle loops around your rectum like a tight choke collar to keep you continent. Raising your knees to a 35-degree squat angle completely straightens the anorectal canal, allowing bowel movements to pass smoothly without straining or risking hemorrhoids.",
+    bodyPartId: "large-intestine",
+  },
+  {
+    id: "double-voiding-bladder-drain",
+    title: "The Double-Voiding Bladder Complete Drain",
+    practice:
+      "After finishing peeing, remain seated on the toilet for an extra 30 seconds, lean slightly forward with elbows on knees, and gently try to pee one more time.",
+    scienceBasis:
+      "Leaning forward changes the tilt of the pelvis, allowing urine pooling at the base of the bladder to drain out completely. Emptying the bladder fully removes stagnant urine that could otherwise breed bacteria and cause bladder infections.",
+    bodyPartId: "bladder",
+  },
+  {
+    id: "doorway-pec-thoracic-release",
+    title: "The Doorway Pec Release for Upper-Back Posture",
+    practice:
+      "Place your forearms against a doorway at shoulder height and take a small step forward until you feel a gentle stretch across your chest; hold for 30 seconds while breathing deeply.",
+    scienceBasis:
+      "Lengthening chronically tight pectoralis minor chest muscles allows your shoulder blades (scapulae) to glide backward into their natural position. This takes thousands of pounds of daily mechanical tension off the overworked muscles of your mid-back and upper spine.",
+    bodyPartId: "spine-thoracic",
+  },
+  {
+    id: "mcgill-big-three-lumbar-core",
+    title: "The McGill Bird-Dog for Lower Back Stability",
+    practice:
+      "On hands and knees with a flat back, reach your right arm straight forward and left leg straight backward, hold for 6 seconds without letting your hips tilt, then switch sides for 5 repetitions.",
+    scienceBasis:
+      "Created by spine biomechanist Dr. Stuart McGill, the bird-dog creates high muscular activation across the spinal erectors and abdominal wall with virtually zero compressive load on lumbar discs, building a protective muscular shield around your lower back.",
+    bodyPartId: "spine-lumbar",
+  },
+  {
+    id: "dead-hang-shoulder-traction",
+    title: "The 30-Second Dead Hang for Shoulder Health",
+    practice:
+      "Grip an overhead pull-up bar or sturdy beam with hands shoulder-width apart, let your feet leave the floor, and hang completely relaxed for 20 to 30 seconds.",
+    scienceBasis:
+      "Gravity creates passive traction that decompresses the shoulder joint capsule and widens the narrow subacromial space. This stops the collarbone from pinching the rotator cuff tendons and improves overhead arm mobility.",
+    bodyPartId: "shoulders",
+  },
+  {
+    id: "towel-twist-elbow-eccentrics",
+    title: "The Tyler Twist Towel Roll for Tennis Elbow",
+    practice:
+      "Hold a rolled-up dry kitchen towel vertically with both hands; twist your wrists in opposite directions, then slowly untwist over 5 seconds against resistance.",
+    scienceBasis:
+      "Eccentric muscle contraction (lengthening a tendon under load) stimulates collagen fiber remodeling in the wrist extensor tendons, accelerating repair of micro-tears on the outer elbow bone without triggering acute inflammation.",
+    bodyPartId: "elbows",
+  },
+  {
+    id: "prayer-reverse-prayer-wrist-flow",
+    title: "The Prayer-to-Reverse-Prayer Wrist Reset",
+    practice:
+      "Press your palms flat together in front of your chest with fingers pointing up (prayer pose) for 15 seconds, then press the backs of your hands together with fingers pointing down for 15 seconds.",
+    scienceBasis:
+      "Gently stretches the flexor and extensor retinaculum ligaments that bind the wrist bones together, pumping out pooled fluid from the carpal tunnel and restoring full 90-degree wrist flexibility.",
+    bodyPartId: "wrists",
+  },
+  {
+    id: "elastic-band-finger-extensor-opener",
+    title: "The Elastic Band Finger Extensor Workout",
+    practice:
+      "Place an ordinary rubber band around the tips of all five fingers, pinch your fingertips together, and then slowly spread your fingers wide apart against the rubber band's tension for 15 reps.",
+    scienceBasis:
+      "Everyday hand activities (typing, texting, gripping steering wheels) only use the flexor muscles that close your hands. Training the opposing extensor muscles creates joint balance, preventing finger knuckle stiffness and trigger finger.",
+    bodyPartId: "hands",
+  },
+  {
+    id: "terminal-knee-extension-quad-lock",
+    title: "The Terminal Knee Extension (TKE) Quad Lock",
+    practice:
+      "Loop a resistance band behind your knee attached to a table leg; start with your knee slightly bent and straighten your leg fully against the band, squeezing your front thigh muscle for 2 seconds.",
+    scienceBasis:
+      "Specifically targets and strengthens the vastus medialis oblique (VMO)—the teardrop muscle on the inside of your thigh that is responsible for guiding the kneecap safely along its groove without friction.",
+    bodyPartId: "knees",
+  },
+  {
+    id: "tennis-ball-foot-arch-roll",
+    title: "The 2-Minute Tennis Ball Foot Arch Roll",
+    practice:
+      "While seated or standing, place a tennis ball or smooth cricket ball under the arch of your bare foot and roll it back and forth from your heel to the base of your toes with moderate downward pressure.",
+    scienceBasis:
+      "Performs deep myofascial release on the thick plantar fascia ligament on the bottom of your foot. This loosens tension that travels all the way up the back of your leg into your calves, hamstrings, and lower back.",
+    bodyPartId: "feet",
+  },
+  {
+    id: "three-minute-shower-moisture-lock",
+    title: "The 3-Minute Post-Shower Moisture Lock",
+    practice:
+      "Gently pat your skin damp with a towel after showering (do not rub completely dry), and smooth on a ceramide or coconut oil moisturizer within 3 minutes while skin is still moist.",
+    scienceBasis:
+      "Damp skin allows moisturizer to trap surface water inside the stratum corneum (the top layer of your skin). Applying moisturizer within 180 seconds prevents water from evaporating into dry air, increasing skin barrier hydration by up to 70%.",
+    bodyPartId: "skin",
+  },
+  {
+    id: "heel-drop-bone-piezoelectric-stimulus",
+    title: "The 20 Daily Heel Drops for Bone Mineralization",
+    practice:
+      "Stand tall holding a wall or sturdy table for balance, lift up onto your tiptoes, and drop down firmly onto your bare heels with a gentle 'thud' 20 times once a day.",
+    scienceBasis:
+      "The mechanical impact creates a microscopic electric current (the piezoelectric effect) through bone crystalline matrix. This signals osteoblast cells to deposit calcium and phosphate, thickening bone trabeculae in the hips, femur, and lower spine.",
+    bodyPartId: "bones",
+  },
+  {
+    id: "leucine-muscle-synthesis-trigger",
+    title: "The Leucine Protein Trigger for Muscle Preservation",
+    practice:
+      "Aim for 20 to 30 grams of quality protein containing at least 2.5 grams of leucine (found naturally in paneer, dal, eggs, fish, or Greek yogurt) in the meal following physical activity.",
+    scienceBasis:
+      "Leucine acts as a biological molecular switch that turns on mTORC1 (the cellular engine that builds muscle tissue). Without reaching this leucine threshold, the body cannot fully initiate muscle protein synthesis, causing slow muscle recovery and gradual muscle wasting.",
+    bodyPartId: "muscles",
+  },
 ];
 
 export const BODY_MARVELS: BodyMarvel[] = [
@@ -3831,7 +4646,7 @@ export const BODY_MARVELS: BodyMarvel[] = [
     ],
     conclusion:
       "Lifting weights literally tells your bones to become denser. The impact signals osteoblasts to lay down more calcium, making weight training the best defense against osteoporosis.",
-    bodyPartId: "skeleton",
+    bodyPartId: "bones",
   },
   {
     id: "optical-processing",
@@ -4060,6 +4875,139 @@ export const BODY_MARVELS: BodyMarvel[] = [
     conclusion:
       "Your liver has incredible self-healing power, but chronic excess alcohol and ultra-processed sugary drinks can silently scar liver tissue (cirrhosis). Protect it by staying active and eating whole fiber-rich foods.",
     bodyPartId: "liver",
+  },
+  {
+    id: "lungs-tennis-court",
+    title: "The Living Tennis Court Inside Your Ribs",
+    introduction:
+      "If you could unfold and flatten out the tiny air sacs (alveoli) inside your two lungs, they would cover an entire singles tennis court—roughly 75 to 100 square meters of surface area.",
+    sections: [
+      {
+        heading: "1. 300 Million Microscopic Bubbles",
+        body: "Your lungs pack about 300 to 500 million microscopic air sacs called alveoli into your chest. Each tiny sac is wrapped in a gossamer-thin net of blood vessels, with a membrane only one single cell thick.",
+      },
+      {
+        heading: "2. Lightning-Fast Oxygen Swap",
+        body: "Because the membrane is so unimaginably thin, oxygen from the air you inhale diffuses across into red blood cells in just one-third of a second, while carbon dioxide waste diffuses outward to be exhaled effortlessly.",
+      },
+    ],
+    conclusion:
+      "Your lungs are self-cleaning when you take deep diaphragm breaths and avoid toxic smoke. Keep them elastic by taking daily brisk walks and breathing fresh air.",
+    bodyPartId: "lung-left",
+  },
+  {
+    id: "stomach-acid-shield",
+    title: "The Living Acid Vat: How Your Stomach Survives Hydrochloric Acid",
+    introduction:
+      "Your stomach churns with concentrated hydrochloric acid with a pH between 1.5 and 2.0—strong enough to dissolve iron nails, kill harmful bacteria on food, and break down dense proteins into liquid mush.",
+    sections: [
+      {
+        heading: "1. The Alkaline Slime Shield",
+        body: "Why doesn't your stomach digest itself? Specialized cells lining the stomach wall produce a thick, gelatinous mucus barrier rich in alkaline bicarbonate, constantly neutralizing the acid before it can touch stomach cells.",
+      },
+      {
+        heading: "2. The Complete 3-Day Lining Rebuild",
+        body: "Because of the harsh chemical environment, stomach cells take a beating. To stay healthy, your stomach sheds its entire epithelial surface and replaces it with brand-new cells every 3 to 5 days without interruption.",
+      },
+    ],
+    conclusion:
+      "Stomach acid is essential for absorbing vitamin B12, iron, and calcium. Chronic overuse of acid-blocking pills weakens this protective barrier and allows bacterial overgrowth.",
+    bodyPartId: "stomach",
+  },
+  {
+    id: "bladder-umbrella-cells",
+    title: "The Living Elastic Balloon: The Bladder's Waterproof Stretch Membrane",
+    introduction:
+      "Your urinary bladder can expand from the size of a small plum when empty to holding more than 500 milliliters (two full glasses) of liquid without leaking a single drop into your body.",
+    sections: [
+      {
+        heading: "1. The Accordion Umbrella Cells",
+        body: "The bladder is lined with a remarkable tissue called transitional epithelium made of specialized 'umbrella cells'. When the bladder fills, these cells glide and slide over one another like an opening accordion, flattening out to five times their normal length without tearing.",
+      },
+      {
+        heading: "2. Impermeable Uroplakin Shield",
+        body: "Urine contains acidic waste and toxic urea that would burn normal tissues. The bladder surface is sealed with unique rigid protein plates called uroplakins that make it completely watertight and impermeable, so waste stays safely trapped until you pee.",
+      },
+    ],
+    conclusion:
+      "Drinking plenty of water prevents concentrated urine from irritating this delicate lining, helping the bladder expand and contract smoothly throughout your life.",
+    bodyPartId: "bladder",
+  },
+  {
+    id: "hands-tactile-supercomputer",
+    title: "The Hand: A 17,000-Sensor Tactile Instrument",
+    introduction:
+      "Your fingertips contain one of the highest densities of touch sensors in the animal kingdom, capable of feeling a single grain of sand or sensing a scratch only one micron high.",
+    sections: [
+      {
+        heading: "1. The 17,000 Touch Sensors",
+        body: "Over 17,000 specialized touch receptors (Meissner corpuscles and Merkel disks) are packed into your palms and fingers, firing thousands of electrical signals every second to the brain's sensory cortex.",
+      },
+      {
+        heading: "2. Friction Ridges and Micro-Vibrations",
+        body: "Your fingerprints aren't just for identification. Their microscopic swirl ridges amplify micro-vibrations by 100 times when you slide your finger across a surface, letting your brain instantly recognize glass, velvet, paper, or metal.",
+      },
+    ],
+    conclusion:
+      "The massive area of your brain dedicated to your hands means that doing delicate manual activities (writing, playing music, drawing) directly exercises and preserves brain sharpness.",
+    bodyPartId: "hands",
+  },
+  {
+    id: "jaw-crushing-power",
+    title: "The Masseter: The Strongest Muscle by Weight in Your Body",
+    introduction:
+      "Located at the back of your jaw, the masseter muscle is pound-for-pound the most powerful muscle in the human body, capable of exerting an astounding 200 pounds of crushing force onto your molars.",
+    sections: [
+      {
+        heading: "1. Mechanical Lever Advantage",
+        body: "Because of where it attaches to your skull and lower jawbone, the masseter has a short, thick lever advantage. Working together with the temporalis muscle, it can easily crack hard nuts and chew tough plant fibers.",
+      },
+      {
+        heading: "2. The Danger of Silent Night Clenching",
+        body: "Because it is so powerful, involuntary teeth clenching during stressful days or sleep can exert hundreds of pounds of pressure on delicate teeth and jaw hinges, leading to tension headaches and worn tooth enamel.",
+      },
+    ],
+    conclusion:
+      "Remind yourself during the workday: 'Lips together, teeth apart, tongue resting softly on the roof of the mouth' to prevent chronic jaw muscle strain.",
+    bodyPartId: "jaw",
+  },
+  {
+    id: "sinus-climate-control",
+    title: "Your Internal Air Conditioner: 10,000 Liters of Conditioned Air Daily",
+    introduction:
+      "Every day, you inhale roughly 10,000 to 15,000 liters of outside air. Whether that air is freezing winter cold or dusty desert dry, your sinuses adjust it to body temperature and 100% humidity before it ever reaches your lungs.",
+    sections: [
+      {
+        heading: "1. The Hollow Skull Caverns",
+        body: "Your sinuses are four pairs of air-filled caverns inside your facial bones. They make your heavy skull light enough for your neck to carry while acting as an acoustic echo chamber that gives your voice its unique richness.",
+      },
+      {
+        heading: "2. The Nitric Oxide Antiviral Gas Chamber",
+        body: "Your nasal sinuses continuously brew a remarkable molecule called nitric oxide (NO). When you inhale through your nose, this gas travels down to your lungs, dilating blood vessels and acting as a natural shield that destroys airborne viruses and bacteria.",
+      },
+    ],
+    conclusion:
+      "Always breathe through your nose instead of your mouth. Mouth breathing bypasses your sinus air conditioning and delivers cold, dry, unfiltered air straight into your lungs.",
+    bodyPartId: "sinuses",
+  },
+  {
+    id: "skin-28-day-shedding",
+    title: "The 28-Day Living Armor: How Your Skin Rebuilds Itself",
+    introduction:
+      "Your skin is your largest living organ, weighing about 8 pounds and covering 20 square feet. It never stops working: every 28 to 30 days, your body produces a completely new external skin shield.",
+    sections: [
+      {
+        heading: "1. The Cellular Conveyor Belt",
+        body: "In the deep basal layer of your skin, keratinocyte cells divide around the clock. As they mature, they migrate outward toward the surface, producing tough waterproof keratin before flattening into protective dead armor plates.",
+      },
+      {
+        heading: "2. Acid Mantle and Friendly Microbes",
+        body: "Your skin maintains a mild acidic surface pH (around 4.5 to 5.5) called the 'acid mantle'. This microscopic barrier, combined with billions of beneficial skin bacteria, stops dangerous fungal and bacterial invaders from multiplying.",
+      },
+    ],
+    conclusion:
+      "Harsh antibacterial soaps strip away your skin's acidic armor and dry out the protective lipid shield. Wash with gentle, pH-balanced cleansers and moisturize while skin is damp.",
+    bodyPartId: "skin",
   },
 ];
 

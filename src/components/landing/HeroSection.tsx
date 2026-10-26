@@ -342,9 +342,9 @@ export function HeroSection() {
             >
               {[
                 { num: "30+", label: "Organs Mapped" },
-                { num: "345", label: "Peer-Reviewed Facts" },
+                { num: "385", label: "Peer-Reviewed Facts" },
                 { num: "91", label: "Debunked Myths" },
-                { num: "55", label: "Studied Remedies" },
+                { num: "80", label: "Studied Remedies" },
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col">
                   <span className="font-mono text-2xl font-bold text-[#00E5C4]">{stat.num}</span>
