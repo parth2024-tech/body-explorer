@@ -1,5 +1,4 @@
 import { useState, useMemo } from "react";
-import { useBodyStore } from "@/store/useBodyStore";
 import {
   FOOD_FACTS,
   FOOD_SYNERGIES,
@@ -75,8 +74,6 @@ import {
 import { useShuffledList } from "@/lib/shuffle";
 
 export function FoodNutritionHub() {
-  const { language } = useBodyStore();
-
   // Active expanded Indian nutrition gap card (null or gap-id)
   const [activeGapId, setActiveGapId] = useState<string | null>("gap-b12");
 

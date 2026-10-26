@@ -1,15 +1,17 @@
-import React, { useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { useGreyMarketStore } from "../../store/useGreyMarketStore";
 import greyMarketDataRaw from "../../data/grey_market_db.json";
 import { MoleculeEntry } from "../../store/useGreyMarketStore";
 import { GreyMarketCard } from "./GreyMarketCard";
+import { PrescriptionScanner } from "./PrescriptionScanner";
 import { useShuffledList } from "@/lib/shuffle";
-import { Shuffle } from "lucide-react";
+import { Shuffle, Database, ScanSearch } from "lucide-react";
 import "./GreyMarket.css";
 
 const greyMarketData = greyMarketDataRaw as unknown as MoleculeEntry[];
 
 export const GreyMarketIndex: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<"observatory" | "scanner">("observatory");
   const {
     searchTerm,
     categoryFilter,
@@ -124,109 +126,166 @@ export const GreyMarketIndex: React.FC = () => {
         </div>
       </div>
 
-      <div className="gm-controls">
-        <div className="gm-search-bar">
-          <svg className="gm-search-icon" width="20" height="20" viewBox="0 0 24 24">
-            <path d="M10 18a7.952 7.952 0 004.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0018 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z" />
-          </svg>
-          <input
-            type="text"
-            className="gm-search-input"
-            placeholder="Search products, brands, or chemicals..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
+      {/* View Switcher Tabs */}
+      <div style={{ display: "flex", gap: "10px", marginBottom: "24px", flexWrap: "wrap" }}>
+        <button
+          type="button"
+          onClick={() => setActiveTab("observatory")}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            padding: "10px 18px",
+            borderRadius: "8px",
+            fontSize: "13px",
+            fontWeight: "bold",
+            cursor: "pointer",
+            border:
+              activeTab === "observatory" ? "1px solid #00E5C4" : "1px solid rgba(255,255,255,0.1)",
+            background: activeTab === "observatory" ? "#00E5C4" : "rgba(255,255,255,0.03)",
+            color: activeTab === "observatory" ? "#030303" : "#8A8F98",
+            transition: "all 0.2s",
+          }}
+        >
+          <Database style={{ width: 16, height: 16 }} />
+          <span>Regulatory Observatory</span>
+        </button>
 
-        <div className="gm-filters-row">
-          <div className="gm-filter-group">
-            <span className="gm-filter-label">Category:</span>
-            <button
-              className={`gm-pill ${categoryFilter === "all" ? "active" : ""}`}
-              onClick={() => setCategoryFilter("all")}
-            >
-              All Items
-            </button>
-            <button
-              className={`gm-pill ${categoryFilter === "food" ? "active" : ""}`}
-              onClick={() => setCategoryFilter("food")}
-            >
-              Food & Drinks
-            </button>
-            <button
-              className={`gm-pill ${categoryFilter === "drug" ? "active" : ""}`}
-              onClick={() => setCategoryFilter("drug")}
-            >
-              Medicines & Drugs
-            </button>
-          </div>
-
-          <div className="gm-filter-group">
-            <span className="gm-filter-label">Risk Level:</span>
-            <button
-              className={`gm-pill ${riskFilters.includes("CRITICAL") ? "active" : ""}`}
-              data-risk="CRITICAL"
-              onClick={() => toggleRiskFilter("CRITICAL")}
-            >
-              Critical
-            </button>
-            <button
-              className={`gm-pill ${riskFilters.includes("HIGH") ? "active" : ""}`}
-              data-risk="HIGH"
-              onClick={() => toggleRiskFilter("HIGH")}
-            >
-              High
-            </button>
-            <button
-              className={`gm-pill ${riskFilters.includes("UNDER-REVIEW") ? "active" : ""}`}
-              data-risk="UNDER-REVIEW"
-              onClick={() => toggleRiskFilter("UNDER-REVIEW")}
-            >
-              Under Review
-            </button>
-          </div>
-
-          <div className="gm-filter-group">
-            <span className="gm-filter-label">Sort:</span>
-            <select
-              className="gm-sort-select"
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as "risk" | "az" | "cat" | "shuffle")}
-            >
-              <option value="risk">Highest Risk First</option>
-              <option value="shuffle">Shuffled / Random Order</option>
-              <option value="az">A-Z by Product</option>
-              <option value="cat">Group by Category</option>
-            </select>
-            <button
-              type="button"
-              className="gm-pill"
-              onClick={() => {
-                setSortBy("shuffle");
-                reshuffleMolecules();
-              }}
-              style={{
-                cursor: "pointer",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "6px",
-                borderColor: "rgba(0, 229, 196, 0.4)",
-                color: "#00E5C4",
-              }}
-              title="Shuffle watchlist order"
-            >
-              <Shuffle style={{ width: 14, height: 14 }} />
-              <span>Shuffle</span>
-            </button>
-          </div>
-        </div>
+        <button
+          type="button"
+          onClick={() => setActiveTab("scanner")}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            padding: "10px 18px",
+            borderRadius: "8px",
+            fontSize: "13px",
+            fontWeight: "bold",
+            cursor: "pointer",
+            border:
+              activeTab === "scanner" ? "1px solid #00E5C4" : "1px solid rgba(255,255,255,0.1)",
+            background: activeTab === "scanner" ? "#00E5C4" : "rgba(255,255,255,0.03)",
+            color: activeTab === "scanner" ? "#030303" : "#8A8F98",
+            transition: "all 0.2s",
+          }}
+        >
+          <ScanSearch style={{ width: 16, height: 16 }} />
+          <span>Prescription & Ingredient Scanner</span>
+        </button>
       </div>
 
-      <div className="gm-grid">
-        {filteredData.map((item) => (
-          <GreyMarketCard key={item.id} item={item} />
-        ))}
-      </div>
+      {activeTab === "scanner" ? (
+        <div style={{ maxWidth: "840px", margin: "0 auto 40px auto" }}>
+          <PrescriptionScanner />
+        </div>
+      ) : (
+        <>
+          <div className="gm-controls">
+            <div className="gm-search-bar">
+              <svg className="gm-search-icon" width="20" height="20" viewBox="0 0 24 24">
+                <path d="M10 18a7.952 7.952 0 004.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0018 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z" />
+              </svg>
+              <input
+                type="text"
+                className="gm-search-input"
+                placeholder="Search products, brands, or chemicals..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+
+            <div className="gm-filters-row">
+              <div className="gm-filter-group">
+                <span className="gm-filter-label">Category:</span>
+                <button
+                  className={`gm-pill ${categoryFilter === "all" ? "active" : ""}`}
+                  onClick={() => setCategoryFilter("all")}
+                >
+                  All Items
+                </button>
+                <button
+                  className={`gm-pill ${categoryFilter === "food" ? "active" : ""}`}
+                  onClick={() => setCategoryFilter("food")}
+                >
+                  Food & Drinks
+                </button>
+                <button
+                  className={`gm-pill ${categoryFilter === "drug" ? "active" : ""}`}
+                  onClick={() => setCategoryFilter("drug")}
+                >
+                  Medicines & Drugs
+                </button>
+              </div>
+
+              <div className="gm-filter-group">
+                <span className="gm-filter-label">Risk Level:</span>
+                <button
+                  className={`gm-pill ${riskFilters.includes("CRITICAL") ? "active" : ""}`}
+                  data-risk="CRITICAL"
+                  onClick={() => toggleRiskFilter("CRITICAL")}
+                >
+                  Critical
+                </button>
+                <button
+                  className={`gm-pill ${riskFilters.includes("HIGH") ? "active" : ""}`}
+                  data-risk="HIGH"
+                  onClick={() => toggleRiskFilter("HIGH")}
+                >
+                  High
+                </button>
+                <button
+                  className={`gm-pill ${riskFilters.includes("UNDER-REVIEW") ? "active" : ""}`}
+                  data-risk="UNDER-REVIEW"
+                  onClick={() => toggleRiskFilter("UNDER-REVIEW")}
+                >
+                  Under Review
+                </button>
+              </div>
+
+              <div className="gm-filter-group">
+                <span className="gm-filter-label">Sort:</span>
+                <select
+                  className="gm-sort-select"
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value as "risk" | "az" | "cat" | "shuffle")}
+                >
+                  <option value="risk">Highest Risk First</option>
+                  <option value="shuffle">Shuffled / Random Order</option>
+                  <option value="az">A-Z by Product</option>
+                  <option value="cat">Group by Category</option>
+                </select>
+                <button
+                  type="button"
+                  className="gm-pill"
+                  onClick={() => {
+                    setSortBy("shuffle");
+                    reshuffleMolecules();
+                  }}
+                  style={{
+                    cursor: "pointer",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    borderColor: "rgba(0, 229, 196, 0.4)",
+                    color: "#00E5C4",
+                  }}
+                  title="Shuffle watchlist order"
+                >
+                  <Shuffle style={{ width: 14, height: 14 }} />
+                  <span>Shuffle</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="gm-grid">
+            {filteredData.map((item) => (
+              <GreyMarketCard key={item.id} item={item} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };

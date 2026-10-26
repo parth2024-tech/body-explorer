@@ -77,9 +77,9 @@ function About() {
       >
         {[
           { value: "30+", label: "Organs Mapped" },
-          { value: "297", label: "Peer-Reviewed Facts" },
-          { value: "58", label: "Debunked Myths" },
-          { value: "39", label: "Evidence Remedies" },
+          { value: "345", label: "Peer-Reviewed Facts" },
+          { value: "91", label: "Debunked Myths" },
+          { value: "55", label: "Evidence Remedies" },
         ].map((s) => (
           <div
             key={s.label}

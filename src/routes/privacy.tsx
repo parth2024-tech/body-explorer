@@ -1,6 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
-import { ShieldCheck, Lock, EyeOff, Database, FileCheck, ArrowLeft } from "lucide-react";
+import { useState } from "react";
+import {
+  ShieldCheck,
+  Lock,
+  EyeOff,
+  Database,
+  FileCheck,
+  ArrowLeft,
+  Download,
+  Trash2,
+  CheckCircle2,
+} from "lucide-react";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
@@ -24,6 +34,62 @@ export const Route = createFileRoute("/privacy")({
 
 export function PrivacyPage() {
   const lastUpdated = "September 2026";
+  const [actionStatus, setActionStatus] = useState<string | null>(null);
+
+  const handleExportData = () => {
+    try {
+      const data: Record<string, unknown> = {};
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && (key.startsWith("atlas-") || key.startsWith("body-"))) {
+          try {
+            data[key] = JSON.parse(localStorage.getItem(key) || "null");
+          } catch {
+            data[key] = localStorage.getItem(key);
+          }
+        }
+      }
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `body-atlas-data-${new Date().toISOString().split("T")[0]}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      setActionStatus("Exported successfully! Check your downloads folder.");
+      setTimeout(() => setActionStatus(null), 4000);
+    } catch {
+      setActionStatus("Failed to export data from browser storage.");
+      setTimeout(() => setActionStatus(null), 4000);
+    }
+  };
+
+  const handleClearData = () => {
+    if (
+      window.confirm(
+        "Are you sure you want to permanently clear all your saved notes, logs, and preferences on this device? This action cannot be undone.",
+      )
+    ) {
+      try {
+        const keysToRemove: string[] = [];
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key && (key.startsWith("atlas-") || key.startsWith("body-"))) {
+            keysToRemove.push(key);
+          }
+        }
+        keysToRemove.forEach((k) => localStorage.removeItem(k));
+        setActionStatus("All local data has been erased successfully.");
+        setTimeout(() => {
+          setActionStatus(null);
+          window.location.reload();
+        }, 1500);
+      } catch {
+        setActionStatus("Failed to clear local data.");
+        setTimeout(() => setActionStatus(null), 4000);
+      }
+    }
+  };
 
   const commitments = [
     {
@@ -78,7 +144,7 @@ export function PrivacyPage() {
       </p>
 
       {/* Highlights Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
         {commitments.map((c) => {
           const Icon = c.icon;
           return (
@@ -96,6 +162,42 @@ export function PrivacyPage() {
             </div>
           );
         })}
+      </div>
+
+      {/* Interactive Local Data Controls */}
+      <div className="mb-12 p-6 rounded-2xl border border-[#1E2844] bg-[#0A0F1D]/80">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h2 className="text-base font-bold text-[#E8E0D5]">Manage Your Local Health Data</h2>
+            <p className="text-xs text-[#8B8FA3] mt-1 max-w-xl">
+              Exercise your right to data portability and deletion. Export your symptom logs, body
+              map notes, and settings as a clean JSON file, or wipe all locally stored information
+              permanently.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <button
+              onClick={handleExportData}
+              type="button"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#00E5C4]/10 hover:bg-[#00E5C4]/20 border border-[#00E5C4]/30 text-xs font-semibold text-[#00E5C4] transition-all cursor-pointer"
+            >
+              <Download className="h-3.5 w-3.5" /> Export Data (JSON)
+            </button>
+            <button
+              onClick={handleClearData}
+              type="button"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-xs font-semibold text-red-400 transition-all cursor-pointer"
+            >
+              <Trash2 className="h-3.5 w-3.5" /> Erase Local Data
+            </button>
+          </div>
+        </div>
+        {actionStatus && (
+          <div className="mt-4 p-3 rounded-lg border border-[#00E5C4]/30 bg-[#00E5C4]/5 text-xs text-[#00E5C4] flex items-center gap-2">
+            <CheckCircle2 className="h-4 w-4 shrink-0" />
+            <span>{actionStatus}</span>
+          </div>
+        )}
       </div>
 
       {/* Policy Details */}

@@ -304,37 +304,6 @@ export function MobileBottomNav() {
                 </a>
               </div>
 
-              {/* Language Switcher */}
-              <div className="mb-5 rounded-2xl border border-white/10 bg-white/[0.02] p-3 flex items-center justify-between">
-                <span className="text-xs font-medium text-[#8A8F98]">
-                  {language === "hi" ? "भाषा चुनें" : "Language"}
-                </span>
-                <div className="flex gap-1.5 bg-[#141826] rounded-xl p-1 border border-white/10">
-                  <button
-                    type="button"
-                    onClick={() => setLanguage("en")}
-                    className={`min-h-[38px] px-4 rounded-lg text-xs font-bold transition-all ${
-                      language === "en"
-                        ? "bg-[#FC3D21] text-white shadow-md"
-                        : "text-[#8A8F98] hover:text-white"
-                    }`}
-                  >
-                    English
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setLanguage("hi")}
-                    className={`min-h-[38px] px-4 rounded-lg text-xs font-bold transition-all ${
-                      language === "hi"
-                        ? "bg-[#FC3D21] text-white shadow-md"
-                        : "text-[#8A8F98] hover:text-white"
-                    }`}
-                  >
-                    हिंदी
-                  </button>
-                </div>
-              </div>
-
               {/* Navigation Grid */}
               <div className="space-y-2.5">
                 <span className="text-[11px] font-bold uppercase tracking-wider text-[#8A8F98] block px-1">

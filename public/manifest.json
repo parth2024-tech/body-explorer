@@ -1,7 +1,7 @@
 {
   "name": "The Living Body Atlas",
   "short_name": "Body Atlas",
-  "description": "Interactive anatomy platform with 30+ organs, personal body diary, daily insights, and AI education.",
+  "description": "Interactive human anatomy and clinical physiology platform. Explore 30+ organs, food intelligence, and emergency protocols.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#030303",
@@ -9,8 +9,18 @@
   "icons": [
     {
       "src": "/favicon.svg",
-      "sizes": "192x192 512x512",
+      "sizes": "any",
       "type": "image/svg+xml"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }

@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from "react";
+import { useBodyStore } from "@/store/useBodyStore";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -886,7 +887,7 @@ const getLayerText = (part: BodyPart, layer: string): string => {
   if (layer === "personal") return part.tip;
   if (layer === "challenge") return part.challenge;
   if (layer === "trends") return part.trend;
-  if (layer === "explore") return part.trend;
+  if (layer === "explore") return `${part.name} belongs to the ${part.system} system. ${part.fact}`;
   return part.fact;
 };
 
@@ -896,6 +897,12 @@ interface InfoPanelProps {
 }
 
 function InfoPanel({ part, layer }: InfoPanelProps) {
+  const [noteInput, setNoteInput] = useState("");
+  const bodyMapNotes = useBodyStore((s) => s.bodyMapNotes);
+  const addBodyMapNote = useBodyStore((s) => s.addBodyMapNote);
+  const deleteBodyMapNote = useBodyStore((s) => s.deleteBodyMapNote);
+  const setSelectedPart = useBodyStore((s) => s.setSelectedPart);
+
   if (!part)
     return (
       <div className="placeholder-card">
@@ -910,6 +917,14 @@ function InfoPanel({ part, layer }: InfoPanelProps) {
 
   const sc = getSC(part.system);
   const text = getLayerText(part, layer);
+  const partNotes = bodyMapNotes[part.id] || [];
+
+  const handleAddNote = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!noteInput.trim()) return;
+    addBodyMapNote(part.id, noteInput.trim());
+    setNoteInput("");
+  };
 
   return (
     <div
@@ -933,6 +948,143 @@ function InfoPanel({ part, layer }: InfoPanelProps) {
         {LAYER_CONTENT_LABEL[layer]}
       </div>
       <div className="info-content-text">{text}</div>
+
+      {/* Personal Notes (Diary Feature) */}
+      {layer === "personal" && (
+        <div
+          style={{ marginTop: "16px", paddingTop: "12px", borderTop: "1px solid var(--border)" }}
+        >
+          <div
+            style={{
+              fontSize: "10px",
+              fontWeight: "bold",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              color: "var(--accent)",
+              marginBottom: "8px",
+            }}
+          >
+            📓 Your Private Notes for {part.name}
+          </div>
+          {partNotes.length > 0 ? (
+            <ul
+              style={{
+                listStyle: "none",
+                padding: 0,
+                margin: "0 0 10px 0",
+                display: "flex",
+                flexDirection: "column",
+                gap: "6px",
+              }}
+            >
+              {partNotes.map((note, idx) => (
+                <li
+                  key={idx}
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    padding: "6px 10px",
+                    borderRadius: "6px",
+                    background: "rgba(255,255,255,0.03)",
+                    border: "1px solid rgba(255,255,255,0.06)",
+                    fontSize: "12px",
+                    color: "var(--text-primary)",
+                  }}
+                >
+                  <span>{note}</span>
+                  <button
+                    type="button"
+                    onClick={() => deleteBodyMapNote(part.id, idx)}
+                    style={{
+                      background: "none",
+                      border: "none",
+                      color: "#F43F5E",
+                      cursor: "pointer",
+                      fontSize: "11px",
+                      padding: "2px 6px",
+                    }}
+                    title="Delete note"
+                  >
+                    ✕
+                  </button>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p style={{ fontSize: "11px", color: "var(--text-muted)", margin: "0 0 8px 0" }}>
+              No private notes logged yet for this organ.
+            </p>
+          )}
+
+          <form onSubmit={handleAddNote} style={{ display: "flex", gap: "6px" }}>
+            <input
+              type="text"
+              value={noteInput}
+              onChange={(e) => setNoteInput(e.target.value)}
+              placeholder="Add sensation or note..."
+              style={{
+                flex: 1,
+                background: "rgba(0,0,0,0.4)",
+                border: "1px solid var(--border)",
+                borderRadius: "6px",
+                padding: "6px 10px",
+                fontSize: "12px",
+                color: "#EAEAEA",
+                outline: "none",
+              }}
+            />
+            <button
+              type="submit"
+              style={{
+                background: sc.glow,
+                color: "#030303",
+                border: "none",
+                borderRadius: "6px",
+                padding: "6px 12px",
+                fontSize: "11px",
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+            >
+              Save
+            </button>
+          </form>
+        </div>
+      )}
+
+      {/* Button to open the full FactPanel for this organ */}
+      <div
+        style={{
+          marginTop: "14px",
+          paddingTop: "10px",
+          borderTop: "1px solid rgba(255,255,255,0.06)",
+        }}
+      >
+        <button
+          type="button"
+          onClick={() => setSelectedPart(part.id)}
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "6px",
+            background: "rgba(0, 229, 196, 0.08)",
+            border: "1px solid rgba(0, 229, 196, 0.3)",
+            color: "#00E5C4",
+            padding: "8px 12px",
+            borderRadius: "8px",
+            fontSize: "12px",
+            fontWeight: "600",
+            cursor: "pointer",
+            transition: "all 0.2s",
+          }}
+        >
+          <span>Open Full Clinical Facts Panel</span>
+          <span>→</span>
+        </button>
+      </div>
     </div>
   );
 }
@@ -949,7 +1101,9 @@ interface Ripple {
 // ─── Main BodyMap component ───────────────────────────────────────────────────
 
 export function BodyMap() {
-  const [selected, setSelected] = useState<string | null>(null);
+  const storeSelectedPartId = useBodyStore((s) => s.selectedPartId);
+  const setStoreSelectedPart = useBodyStore((s) => s.setSelectedPart);
+  const [selected, setSelected] = useState<string | null>(storeSelectedPartId);
   const [hovered, setHovered] = useState<string | null>(null);
   const [activeLayer, setActiveLayer] = useState<string>("facts");
   const [tooltip, setTooltip] = useState<{ x: number; y: number } | null>(null);
@@ -958,6 +1112,11 @@ export function BodyMap() {
   const [scanDone, setScanDone] = useState<boolean>(false);
   const svgRef = useRef<SVGSVGElement | null>(null);
   const rippleId = useRef<number>(0);
+
+  // Synchronize internal selection when store changes (e.g. FactPanel close or URL parameter)
+  useEffect(() => {
+    setSelected(storeSelectedPartId);
+  }, [storeSelectedPartId]);
 
   const layerColor = LAYERS.find((l) => l.id === activeLayer)?.color ?? "#00E5C4";
   const selectedPart = selected ? BODY_PARTS.find((p) => p.id === selected) || null : null;
@@ -1004,7 +1163,11 @@ export function BodyMap() {
         | React.KeyboardEvent<SVGGElement>
         | React.MouseEvent<HTMLButtonElement>,
     ) => {
-      setSelected(id);
+      const nextId = selected === id ? null : id;
+      setSelected(nextId);
+      setStoreSelectedPart(nextId);
+      if (!nextId) return;
+
       const svg = svgRef.current;
       if (!svg) return;
       const pt = svg.createSVGPoint();
@@ -1019,7 +1182,7 @@ export function BodyMap() {
       setRipples((r) => [...r, rpl]);
       setTimeout(() => setRipples((r) => r.filter((x) => x.id !== rpl.id)), 800);
     },
-    [layerColor],
+    [layerColor, selected, setStoreSelectedPart],
   );
 
   const activeConns = ORGAN_CONNECTIONS.filter(
@@ -2000,7 +2163,10 @@ export function BodyMap() {
               {selectedPart && (
                 <span
                   style={{ cursor: "pointer", color: "var(--accent)" }}
-                  onClick={() => setSelected(null)}
+                  onClick={() => {
+                    setSelected(null);
+                    setStoreSelectedPart(null);
+                  }}
                 >
                   ✕ Clear
                 </span>

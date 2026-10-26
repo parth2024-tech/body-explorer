@@ -26,17 +26,19 @@ const explainSymptom = createServerFn({ method: "POST" })
       const genAI = new GoogleGenerativeAI(apiKey);
       const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
-      const prompt = `You are an expert anatomy and physiology educator. 
-A user has provided this description of their physical sensation: "${input}"
+      const prompt = `You are a friendly, expert body science educator. 
+A user has described this physical sensation: "${input}"
+
+Explain how the body works using simple, clear, everyday words that anyone can easily understand (Grade 6 to 8 reading level, no complex medical jargon).
 
 Provide a JSON response with exactly this structure:
 {
   "organs": ["brain", "heart"], // Array of lowercase organ IDs involved
-  "facts": ["Fact 1", "Fact 2", "Fact 3"], // 3 clear, verified physiological facts explaining the bodily mechanism in plain language
-  "doctorQuestions": ["Q1", "Q2", "Q3"] // 3 practical questions to discuss with a healthcare provider
+  "facts": ["Fact 1", "Fact 2", "Fact 3"], // 3 simple, verified body facts explaining how these parts work in everyday words
+  "doctorQuestions": ["Q1", "Q2", "Q3"] // 3 practical questions to ask a doctor
 }
 
-CRITICAL: Do NOT provide medical advice or diagnose. Only explain the physiological mechanisms. Return ONLY the raw JSON string.`;
+CRITICAL: Do NOT give medical advice or diagnose any illness. Only explain normal body science in simple words. Return ONLY the raw JSON string.`;
 
       const result = await model.generateContent({
         contents: [{ role: "user", parts: [{ text: prompt }] }],
@@ -69,12 +71,12 @@ CRITICAL: Do NOT provide medical advice or diagnose. Only explain the physiologi
       return {
         organs: ["brain", "heart"],
         facts: [
-          "The body's systems are highly interconnected. We couldn't reach the AI server to provide a specific explanation right now.",
-          "Stress activates the hypothalamic-pituitary-adrenal (HPA) axis, which can manifest as physical symptoms in almost any body region.",
+          "Your organs work together like a close team. When one part feels tired or strained, connected body parts often react as well.",
+          "When you feel stressed or rushed, your brain releases natural alert chemicals that can quickly speed up your pulse, tighten muscles, or upset your stomach.",
         ],
         doctorQuestions: [
-          "I've been experiencing these symptoms — what initial tests would you recommend?",
-          "What should I track or document before my next visit to help with diagnosis?",
+          "I have been noticing these body sensations recently. Which simple checkups or tests would you recommend?",
+          "What daily notes or food logs should I keep before our next visit to help you understand this better?",
         ],
       };
     }

@@ -257,7 +257,7 @@ export function CTASection() {
               </Link>
             </div>
 
-            <p className="mt-8 font-mono text-[10px] tracking-wider text-[#4B5275] uppercase">
+            <p className="mt-8 font-mono text-[10px] tracking-wider text-[#7B8199] uppercase">
               Peer-reviewed evidence · Zero advertising tracking · WCAG 2.2 AA compliant
             </p>
           </div>
@@ -274,9 +274,12 @@ export function FooterSection() {
       { label: "Interactive Body Map", to: "/explore" },
       { label: "Anatomical Library", to: "/library" },
       { label: "Verified Body Facts", to: "/facts" },
+      { label: "Personalized Onboarding", to: "/onboarding" },
     ],
     Clinical: [
       { label: "Food & Nutrition", to: "/food" },
+      { label: "Food Label Intelligence", to: "/food-labels" },
+      { label: "Grey Market Registry", to: "/grey-market" },
       { label: "Explain Terminology", to: "/explain" },
       { label: "Emergency Red Flags", to: "/emergency" },
     ],
@@ -339,7 +342,7 @@ export function FooterSection() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col items-center gap-4 border-t border-[#1C2540] pt-6 md:flex-row md:justify-between text-xs text-[#4B5275]">
+        <div className="flex flex-col items-center gap-4 border-t border-[#1C2540] pt-6 md:flex-row md:justify-between text-xs text-[#7B8199]">
           <div className="font-mono text-[11px]">
             © {new Date().getFullYear()} The Living Body Atlas · Educational Health Literacy
           </div>

@@ -62,17 +62,17 @@ export function TrustSection() {
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4 mb-14">
           {[
             {
-              value: "297",
+              value: "345",
               label: "Peer-Reviewed Anatomical Facts",
               note: "Indexed to primary citations",
             },
             {
-              value: "58",
+              value: "91",
               label: "Debunked Health Myths",
               note: "With danger alerts and evidence",
             },
             {
-              value: "39",
+              value: "55",
               label: "Evidence-Rated Remedies",
               note: "Studied, traditional & unproven",
             },

@@ -1,7 +1,20 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Sparkles } from "lucide-react";
+import {
+  Sparkles,
+  Brain,
+  Utensils,
+  Leaf,
+  Activity,
+  Wind,
+  Heart,
+  Zap,
+  Bone,
+  Moon,
+  HelpCircle,
+  Flame,
+} from "lucide-react";
 import { useBodyStore } from "@/store/useBodyStore";
 import { TRANSLATIONS } from "@/data/content";
 
@@ -20,21 +33,21 @@ export const Route = createFileRoute("/onboarding")({
 
 // --- Constants & Types ---
 const INTEREST_TOPICS = [
-  { id: "brain", label: "Brain & Sleep", icon: "🧠" },
-  { id: "digestion", label: "Digestion & Gut", icon: "🍽️" },
-  { id: "remedies", label: "Natural Remedies", icon: "🌿" },
-  { id: "fitness", label: "Movement & Joints", icon: "💪" },
-  { id: "hacks", label: "Life Hacks & Breath", icon: "🌬️" },
-  { id: "circulation", label: "Heart & Blood", icon: "❤️" },
-] as const;
+  { id: "brain", label: "Brain & Sleep", icon: Brain, color: "#38BDF8" },
+  { id: "digestion", label: "Digestion & Gut", icon: Utensils, color: "#00E5C4" },
+  { id: "remedies", label: "Natural Remedies", icon: Leaf, color: "#10B981" },
+  { id: "fitness", label: "Movement & Joints", icon: Activity, color: "#F5A623" },
+  { id: "hacks", label: "Life Hacks & Breath", icon: Wind, color: "#06B6D4" },
+  { id: "circulation", label: "Heart & Blood", icon: Heart, color: "#F43F5E" },
+];
 
 const MOODS = [
-  { id: "energized", label: "Energized", emoji: "⚡" },
-  { id: "sore", label: "Sore / Stiff", emoji: "🦴" },
-  { id: "tired", label: "Tired / Sleepy", emoji: "😴" },
-  { id: "curious", label: "Curious", emoji: "🧐" },
-  { id: "anxious", label: "Anxious / Tight", emoji: "🌪️" },
-] as const;
+  { id: "energized", label: "Energized", icon: Zap, color: "#00E5C4" },
+  { id: "sore", label: "Sore / Stiff", icon: Bone, color: "#F5A623" },
+  { id: "tired", label: "Tired / Sleepy", icon: Moon, color: "#38BDF8" },
+  { id: "curious", label: "Curious", icon: HelpCircle, color: "#A855F7" },
+  { id: "anxious", label: "Anxious / Tight", icon: Flame, color: "#F43F5E" },
+];
 
 // --- Animation Variants ---
 const stepVariants: Variants = {
@@ -136,6 +149,7 @@ function OnboardingPage() {
                 <motion.div variants={itemVariants} className="grid grid-cols-2 gap-3">
                   {INTEREST_TOPICS.map((topic) => {
                     const active = interests.includes(topic.id);
+                    const Icon = topic.icon;
                     return (
                       <motion.button
                         key={topic.id}
@@ -148,9 +162,7 @@ function OnboardingPage() {
                             : "bg-[#0D0D0D] border-border/60 text-[#8A8F98] hover:text-[#EAEAEA] hover:border-border"
                         }`}
                       >
-                        <span className="text-xl" role="img" aria-hidden="true">
-                          {topic.icon}
-                        </span>
+                        <Icon className="w-5 h-5 shrink-0" style={{ color: topic.color }} />
                         <span className="text-xs">{topic.label}</span>
                       </motion.button>
                     );
@@ -194,6 +206,7 @@ function OnboardingPage() {
                 <motion.div variants={itemVariants} className="space-y-2.5">
                   {MOODS.map((mood) => {
                     const active = selectedMood === mood.id;
+                    const Icon = mood.icon;
                     return (
                       <motion.button
                         key={mood.id}
@@ -207,9 +220,7 @@ function OnboardingPage() {
                         }`}
                       >
                         <div className="flex items-center gap-3">
-                          <span role="img" aria-hidden="true">
-                            {mood.emoji}
-                          </span>
+                          <Icon className="w-5 h-5 shrink-0" style={{ color: mood.color }} />
                           <span className="text-sm">{mood.label}</span>
                         </div>
                         <AnimatePresence>

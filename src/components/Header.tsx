@@ -58,28 +58,11 @@ export function Header() {
         <div className="flex items-center gap-4">
           <span className="flex text-xs text-[#8A8F98]">{date}</span>
 
-          {/* i18n Selector for Desktop */}
-          <div className="flex items-center gap-1 bg-[#141826] rounded-md p-0.5 border border-[#222222]">
-            <button
-              onClick={() => setLanguage("en")}
-              className={`px-2.5 py-1 text-xs font-medium rounded transition-all ${
-                language === "en"
-                  ? "bg-[#FC3D21] text-white"
-                  : "text-[#8A8F98] hover:text-[#EAEAEA]"
-              }`}
-            >
-              English
-            </button>
-            <button
-              onClick={() => setLanguage("hi")}
-              className={`px-2.5 py-1 text-xs font-medium rounded transition-all ${
-                language === "hi"
-                  ? "bg-[#FC3D21] text-white"
-                  : "text-[#8A8F98] hover:text-[#EAEAEA]"
-              }`}
-            >
-              हिंदी
-            </button>
+          <div className="flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#00E5C4]" />
+            <span className="text-[11px] font-mono text-[#8A8F98] uppercase tracking-wider">
+              Clinical Grade · Tier 1 Sources
+            </span>
           </div>
         </div>
       </div>
@@ -125,16 +108,6 @@ export function Header() {
             <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
             <span>112 SOS</span>
           </a>
-
-          {/* Compact Language Toggle */}
-          <button
-            type="button"
-            onClick={() => setLanguage(language === "en" ? "hi" : "en")}
-            className="flex items-center justify-center h-8 px-2.5 rounded-lg border border-white/10 bg-white/5 text-xs font-semibold text-[#EAEAEA] active:scale-95 transition-all"
-            aria-label="Toggle language"
-          >
-            {language === "en" ? "हिं" : "EN"}
-          </button>
         </div>
 
         {/* Desktop Navigation */}

@@ -9,7 +9,7 @@ import { HeartPulse, Phone, AlertTriangle, ShieldCheck, Globe, Info } from "luci
 export const Route = createFileRoute("/emergency")({
   head: () => ({
     meta: [
-      { title: "Emergency Protocols (AHA 2020 Synthesized) — The Living Body Atlas" },
+      { title: "Emergency Protocols & CPR Metronome | The Body Atlas" },
       {
         name: "description",
         content:
@@ -95,6 +95,18 @@ function EmergencyPage() {
         setSelectedCountryCode("EU");
       else setSelectedCountryCode("IN");
     }
+
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+      if (audioCtxRef.current) {
+        try {
+          audioCtxRef.current.close();
+        } catch {
+          // ignore
+        }
+        audioCtxRef.current = null;
+      }
+    };
   }, [addHistoryEntry]);
 
   const activeDispatch =
