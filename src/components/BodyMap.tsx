@@ -1256,6 +1256,7 @@ export function BodyMap() {
                   overflow: "visible",
                   position: "relative",
                   zIndex: 1,
+                  touchAction: "manipulation",
                 }}
                 role="img"
                 aria-label="Interactive human body map"

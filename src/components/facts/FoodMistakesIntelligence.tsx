@@ -227,7 +227,7 @@ export function FoodMistakesIntelligence() {
                 key={tab.id}
                 type="button"
                 onClick={() => setSelectedPhase(tab.id)}
-                className={`min-h-[38px] px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all shrink-0 cursor-pointer ${
+                className={`min-h-[44px] sm:min-h-[38px] px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all shrink-0 cursor-pointer touch-manipulation ${
                   selectedPhase === tab.id
                     ? "bg-[#00E5C4] text-black font-bold shadow-sm"
                     : "text-[#8A8F98] hover:text-white"
@@ -246,7 +246,7 @@ export function FoodMistakesIntelligence() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search hygiene, tea, water, reflux, walking..."
-              className="w-full rounded-xl border border-white/10 bg-white/[0.03] pl-10 pr-9 py-2.5 text-sm text-white placeholder-[#8A8F98] outline-none focus:border-[#00E5C4]/50 transition-all"
+              className="w-full rounded-xl border border-white/10 bg-white/[0.03] pl-10 pr-9 py-2.5 text-base sm:text-sm text-white placeholder-[#8A8F98] outline-none focus:border-[#00E5C4]/50 transition-all"
             />
             {searchQuery && (
               <button

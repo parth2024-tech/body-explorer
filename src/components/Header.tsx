@@ -103,7 +103,7 @@ export function Header() {
           <a
             href="tel:112"
             aria-label="Call Emergency 112"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-500/15 border border-red-500/40 text-red-400 text-xs font-bold transition-transform active:scale-95"
+            className="inline-flex min-h-[44px] items-center gap-1.5 px-3.5 py-2 rounded-lg bg-red-500/15 border border-red-500/40 text-red-400 text-xs font-bold transition-transform active:scale-95"
           >
             <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
             <span>112 SOS</span>

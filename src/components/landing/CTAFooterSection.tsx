@@ -26,7 +26,7 @@ export function ProductShowcaseSection() {
       color: "#00E5C4",
       icon: BookOpen,
       label: "Facts Layer",
-      desc: "290+ verified biology facts per organ. Written in plain language, sourced from clinical literature.",
+      desc: "385+ verified biology facts per organ. Written in plain language, sourced from clinical literature.",
       example: "Cardiac output: 2,000 gallons pumped daily",
     },
     {
@@ -330,7 +330,7 @@ export function FooterSection() {
                   <li key={link.label}>
                     <Link
                       to={link.to}
-                      className="text-xs text-[#8B8FA3] hover:text-[#00E5C4] transition-colors"
+                      className="text-xs text-[#8B8FA3] hover:text-[#00E5C4] transition-colors py-1 inline-block touch-manipulation"
                     >
                       {link.label}
                     </Link>

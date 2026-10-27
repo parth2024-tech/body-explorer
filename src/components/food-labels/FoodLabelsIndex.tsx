@@ -46,7 +46,7 @@ export function FoodLabelsIndex() {
             </p>
           </div>
 
-          <div className="shrink-0 flex flex-col sm:flex-row items-end sm:items-center gap-4 relative z-10">
+          <div className="shrink-0 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 relative z-10 w-full sm:w-auto">
             {/* Search Bar */}
             <div className="relative w-full sm:w-64">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8A8F98]" />
@@ -55,13 +55,13 @@ export function FoodLabelsIndex() {
                 placeholder="Search claims or products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-2 pl-10 pr-4 text-sm text-[#EAEAEA] placeholder:text-[#8A8F98] focus:outline-none focus:border-[#00E5C4]/50 focus:bg-white/[0.05] transition-all"
+                className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-base sm:text-sm text-[#EAEAEA] placeholder:text-[#8A8F98] focus:outline-none focus:border-[#00E5C4]/50 focus:bg-white/[0.05] transition-all"
               />
             </div>
 
             <button
               onClick={shuffleEntries}
-              className="shrink-0 flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 hover:border-[#00E5C4]/40 border border-white/10 rounded-xl text-sm font-mono text-[#EAEAEA] transition-colors print:hidden cursor-pointer"
+              className="shrink-0 flex items-center justify-center gap-2 px-4 py-2.5 min-h-[44px] bg-white/5 hover:bg-white/10 hover:border-[#00E5C4]/40 border border-white/10 rounded-xl text-sm font-mono text-[#EAEAEA] transition-colors print:hidden cursor-pointer touch-manipulation"
               title="Shuffle labels order"
             >
               <Shuffle className="w-4 h-4 text-[#00E5C4]" /> Shuffle Labels
@@ -69,7 +69,7 @@ export function FoodLabelsIndex() {
 
             <button
               onClick={handlePrint}
-              className="shrink-0 flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-sm font-mono transition-colors print:hidden"
+              className="shrink-0 flex items-center justify-center gap-2 px-4 py-2.5 min-h-[44px] bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-sm font-mono transition-colors print:hidden touch-manipulation"
             >
               <Printer className="w-4 h-4" /> Print Guide
             </button>

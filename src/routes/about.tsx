@@ -63,7 +63,7 @@ function About() {
         <p>
           Explore <span className="text-[#00E5C4] font-semibold">30+ anatomical structures</span>,
           review{" "}
-          <span className="text-[#00E5C4] font-semibold">290+ verified biological facts</span>, and
+          <span className="text-[#00E5C4] font-semibold">385+ verified biological facts</span>, and
           explore clinically debunked misconceptions with prominent safety alerts.
         </p>
       </motion.div>

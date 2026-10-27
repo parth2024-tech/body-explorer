@@ -98,7 +98,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1, viewport-fit=cover",
+      },
       {
         title: "The Living Body Atlas: Interactive Human Anatomy & Physiology",
       },
@@ -189,7 +192,11 @@ function RootComponent() {
       <Header />
 
       {/* Content: sits above particles */}
-      <main id="main-content" className="relative z-10 pb-20 md:pb-0" tabIndex={-1}>
+      <main
+        id="main-content"
+        className="relative z-10 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-0"
+        tabIndex={-1}
+      >
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </main>

@@ -385,7 +385,7 @@ function FactsPage() {
                   </span>
                   <button
                     onClick={() => setSelectedCategory("all")}
-                    className={`rounded-lg px-4 sm:px-5 py-2 text-xs font-bold transition-all border min-h-[38px] flex items-center ${
+                    className={`rounded-lg px-4 sm:px-5 py-2 text-xs font-bold transition-all border min-h-[44px] sm:min-h-[38px] flex items-center touch-manipulation cursor-pointer ${
                       selectedCategory === "all"
                         ? "bg-[#00E5C4] text-black border-[#00E5C4]"
                         : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"
@@ -397,7 +397,7 @@ function FactsPage() {
                     <button
                       key={cat}
                       onClick={() => setSelectedCategory(cat)}
-                      className={`rounded-lg px-4 sm:px-5 py-2 text-xs font-bold transition-all flex items-center gap-2 border min-h-[38px] ${
+                      className={`rounded-lg px-4 sm:px-5 py-2 text-xs font-bold transition-all flex items-center gap-2 border min-h-[44px] sm:min-h-[38px] touch-manipulation cursor-pointer ${
                         selectedCategory === cat
                           ? "bg-[#00E5C4] text-black border-[#00E5C4]"
                           : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"
@@ -416,7 +416,7 @@ function FactsPage() {
                   </span>
                   <button
                     onClick={() => setSelectedRarity("all")}
-                    className={`rounded-lg px-4 sm:px-5 py-2 text-xs font-bold transition-all border min-h-[38px] flex items-center ${
+                    className={`rounded-lg px-4 sm:px-5 py-2 text-xs font-bold transition-all border min-h-[44px] sm:min-h-[38px] flex items-center touch-manipulation cursor-pointer ${
                       selectedRarity === "all"
                         ? "bg-white text-black border-white"
                         : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"
@@ -428,7 +428,7 @@ function FactsPage() {
                     <button
                       key={rar}
                       onClick={() => setSelectedRarity(rar)}
-                      className={`rounded-lg px-4 sm:px-5 py-2 text-xs font-bold transition-all border min-h-[38px] flex items-center ${
+                      className={`rounded-lg px-4 sm:px-5 py-2 text-xs font-bold transition-all border min-h-[44px] sm:min-h-[38px] flex items-center touch-manipulation cursor-pointer ${
                         selectedRarity === rar
                           ? "bg-white text-black border-white"
                           : "bg-transparent border-white/10 text-[#8A8F98] hover:text-white hover:border-white/30"

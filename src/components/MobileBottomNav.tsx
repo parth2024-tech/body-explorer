@@ -171,7 +171,7 @@ export function MobileBottomNav() {
       {/* Mobile Bottom Navigation Bar */}
       <nav
         aria-label="Mobile Navigation"
-        className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-[#070A12]/95 border-t border-[#1E2844] backdrop-blur-xl pb-[env(safe-area-inset-bottom)] shadow-[0_-4px_24px_rgba(0,0,0,0.6)]"
+        className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-[#070A12]/95 border-t border-[#1E2844] backdrop-blur-xl pb-[env(safe-area-inset-bottom)] shadow-[0_-4px_24px_rgba(0,0,0,0.6)] touch-manipulation select-none"
       >
         <div className="grid grid-cols-5 h-16 items-center px-2">
           {navItems.map((item) => {
@@ -258,7 +258,7 @@ export function MobileBottomNav() {
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
               transition={{ type: "spring", stiffness: 350, damping: 32 }}
-              className="relative w-full rounded-t-[2rem] border-t border-[#1E2844] bg-[#0A0E1A] p-5 max-h-[85vh] overflow-y-auto pb-[calc(env(safe-area-inset-bottom)+1.5rem)] shadow-2xl flex flex-col"
+              className="relative w-full rounded-t-[2rem] border-t border-[#1E2844] bg-[#0A0E1A] p-5 max-h-[85vh] overflow-y-auto pb-[calc(env(safe-area-inset-bottom)+1.5rem)] shadow-2xl flex flex-col touch-manipulation"
             >
               {/* Drawer Handle */}
               <div className="mx-auto h-1.5 w-12 rounded-full bg-white/20 mb-4 shrink-0" />

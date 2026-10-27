@@ -274,10 +274,10 @@ function EmergencyPage() {
       </div>
 
       {/* Floating Action Bar (CPR Metronome & Quick Emergency Dial) */}
-      <div className="fixed bottom-20 md:bottom-0 left-0 right-0 z-30 p-3 sm:p-4 pointer-events-none pb-[calc(env(safe-area-inset-bottom)+5rem)] md:pb-4">
+      <div className="fixed bottom-[calc(4rem+env(safe-area-inset-bottom))] md:bottom-0 left-0 right-0 z-30 p-3 sm:p-4 pointer-events-none pb-2 md:pb-4">
         <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row justify-between items-end gap-3 sm:gap-4">
           {/* Emergency Number Direct Dial Card */}
-          <div className="pointer-events-auto bg-black/95 backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:p-4 shadow-2xl flex items-center justify-between gap-3 w-full sm:w-auto">
+          <div className="pointer-events-auto bg-black/95 backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:p-4 shadow-2xl flex items-center justify-between gap-3 w-full sm:w-auto touch-manipulation">
             <div className="flex items-center gap-3">
               <div className="bg-red-500/20 p-2.5 sm:p-3 rounded-xl border border-red-500/30">
                 <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-red-500 animate-pulse" />
@@ -293,7 +293,7 @@ function EmergencyPage() {
             </div>
             <a
               href={`tel:${activeDispatch.primaryNumber}`}
-              className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-red-500 px-4 text-xs font-bold text-white shadow-lg shadow-red-500/30 active:scale-95 transition-all"
+              className="inline-flex min-h-[48px] items-center justify-center rounded-xl bg-red-500 px-5 text-sm font-bold text-white shadow-lg shadow-red-500/30 active:scale-95 transition-all"
             >
               Call Now
             </a>
@@ -379,7 +379,7 @@ function EmergencyPage() {
             {/* CPR FAB */}
             <button
               onClick={() => setIsCprExpanded(!isCprExpanded)}
-              className={`flex items-center gap-2.5 px-5 py-3.5 rounded-full shadow-2xl transition-all ${
+              className={`flex items-center gap-2.5 px-5 py-3.5 min-h-[48px] rounded-full shadow-2xl transition-all touch-manipulation active:scale-95 cursor-pointer ${
                 isCprExpanded || cprRunning
                   ? "bg-red-500 text-white shadow-[0_0_30px_rgba(239,68,68,0.4)] hover:bg-red-600"
                   : "bg-white text-black hover:bg-gray-100"

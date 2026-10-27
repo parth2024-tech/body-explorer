@@ -261,7 +261,7 @@ function LibraryPage() {
                 );
                 setSelectedTag(null);
               }}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-bold text-xs sm:text-sm whitespace-nowrap min-h-[42px] shrink-0 transition-all backdrop-blur-md border ${
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-bold text-xs sm:text-sm whitespace-nowrap min-h-[44px] shrink-0 transition-all backdrop-blur-md border touch-manipulation ${
                 activeTab === tab.id
                   ? "bg-[#00E5C4] text-black border-[#00E5C4] shadow-sm font-semibold"
                   : "bg-white/[0.02] text-[#8A8F98] border-white/10 hover:text-white hover:bg-white/[0.05]"
@@ -280,7 +280,7 @@ function LibraryPage() {
                 type="text"
                 placeholder={`Search ${
                   activeTab === "conditions"
-                    ? "49 conditions, symptoms, or organs..."
+                    ? `${DISEASES.length} conditions, symptoms, or organs...`
                     : `${activeTab}...`
                 }`}
                 value={searchQuery}

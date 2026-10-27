@@ -381,7 +381,7 @@ export function HeroSection() {
                     }}
                   >
                     <div
-                      className="flex items-center gap-2.5 rounded-lg border px-3 py-2 bg-[#090D16]/90 backdrop-blur-md"
+                      className="flex items-center gap-2 sm:gap-2.5 rounded-lg border px-2.5 sm:px-3 py-1.5 sm:py-2 bg-[#090D16]/90 backdrop-blur-md max-w-[150px] sm:max-w-none"
                       style={{
                         borderColor: `${card.color}35`,
                       }}
@@ -392,11 +392,13 @@ export function HeroSection() {
                       >
                         <Icon className="h-3.5 w-3.5" />
                       </div>
-                      <div>
-                        <div className="font-mono text-[9px] uppercase tracking-wider text-[#7B8199]">
+                      <div className="min-w-0">
+                        <div className="font-mono text-[9px] uppercase tracking-wider text-[#7B8199] truncate">
                           {card.label}
                         </div>
-                        <div className="font-semibold text-xs text-[#E8E0D5]">{card.value}</div>
+                        <div className="font-semibold text-[11px] sm:text-xs text-[#E8E0D5] truncate">
+                          {card.value}
+                        </div>
                       </div>
                     </div>
                   </div>

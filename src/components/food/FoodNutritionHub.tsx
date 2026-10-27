@@ -576,7 +576,7 @@ export function FoodNutritionHub() {
             <a
               key={sec.id}
               href={`#${sec.id}`}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-[#EAEAEA] shrink-0 active:bg-[#00E5C4]/20 active:text-[#00E5C4] hover:bg-white/10 transition-all"
+              className="flex items-center gap-1.5 px-3.5 py-2 min-h-[40px] rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-[#EAEAEA] shrink-0 active:bg-[#00E5C4]/20 active:text-[#00E5C4] hover:bg-white/10 transition-all touch-manipulation"
             >
               <sec.icon className="w-3.5 h-3.5 text-[#00E5C4]" />
               <span>{sec.label}</span>
@@ -623,7 +623,7 @@ export function FoodNutritionHub() {
               value={atlasSearchQuery}
               onChange={(e) => setAtlasSearchQuery(e.target.value)}
               placeholder="Search organ, brain, eyes, liver, kidneys, potassium, B12..."
-              className="w-full rounded-xl border border-white/10 bg-white/[0.03] pl-10 pr-9 py-2.5 text-sm text-white placeholder-[#8A8F98] outline-none focus:border-[#00E5C4]/50 transition-all"
+              className="w-full rounded-xl border border-white/10 bg-white/[0.03] pl-10 pr-9 py-2.5 text-base sm:text-sm text-white placeholder-[#8A8F98] outline-none focus:border-[#00E5C4]/50 transition-all"
             />
             {atlasSearchQuery && (
               <button
@@ -1361,7 +1361,7 @@ export function FoodNutritionHub() {
                 value={nutrientSearchQuery}
                 onChange={(e) => setNutrientSearchQuery(e.target.value)}
                 placeholder="Search B12, Zinc, Iron, Omega-3, Calcium, Folate..."
-                className="w-full rounded-xl border border-white/10 bg-white/[0.03] pl-10 pr-9 py-2.5 text-sm text-white placeholder-[#8A8F98] outline-none focus:border-[#00E5C4]/50 transition-all"
+                className="w-full rounded-xl border border-white/10 bg-white/[0.03] pl-10 pr-9 py-2.5 text-base sm:text-sm text-white placeholder-[#8A8F98] outline-none focus:border-[#00E5C4]/50 transition-all"
               />
               {nutrientSearchQuery && (
                 <button

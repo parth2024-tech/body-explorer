@@ -77,12 +77,14 @@ export function FactPanel() {
             className="fixed right-0 top-0 z-40 flex h-full w-full flex-col border-l border-[#222222] bg-[#0D0D0D]/95 backdrop-blur-xl lg:w-[460px]"
           >
             {/* Header */}
-            <div className="relative border-b border-[#222222] p-6">
+            <div className="relative border-b border-[#222222] p-5 pt-[calc(env(safe-area-inset-top)+1rem)] lg:p-6">
+              {/* Mobile swipe/close indicator bar */}
+              <div className="mx-auto -mt-1 mb-3 h-1.5 w-12 rounded-full bg-white/20 lg:hidden" />
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#FC3D21]/50 to-transparent" />
               <button
                 onClick={close}
                 aria-label="Close"
-                className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-[#222222] bg-[#16181D] text-[#8A8F98] transition-colors hover:border-[#FC3D21]/50 hover:text-[#EAEAEA]"
+                className="absolute right-4 top-[calc(env(safe-area-inset-top)+0.75rem)] lg:top-4 flex h-11 w-11 items-center justify-center rounded-full border border-[#222222] bg-[#16181D] text-[#8A8F98] transition-colors hover:border-[#FC3D21]/50 hover:text-[#EAEAEA] active:scale-95"
               >
                 <svg
                   width="18"
@@ -104,7 +106,7 @@ export function FactPanel() {
             </div>
 
             {/* Category tabs */}
-            <div className="flex gap-1.5 overflow-x-auto border-b border-[#222222] px-3 py-2.5 fact-scroll">
+            <div className="flex gap-2 overflow-x-auto border-b border-[#222222] px-3 py-2.5 fact-scroll touch-scroll touch-manipulation">
               {CATEGORIES.map((cat) => {
                 const meta = CATEGORY_META[cat];
                 const active = activeCategory === cat;
@@ -112,18 +114,18 @@ export function FactPanel() {
                   <button
                     key={cat}
                     onClick={() => setCategory(cat)}
-                    className={`relative whitespace-nowrap rounded-full px-3.5 py-2 text-xs font-medium min-h-[40px] flex items-center transition-all ${
+                    className={`relative whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold min-h-[44px] flex items-center transition-all ${
                       active
-                        ? "bg-[#FC3D21]/10 text-[#FC3D21]"
+                        ? "bg-[#FC3D21]/15 text-[#FC3D21]"
                         : "text-[#8A8F98] hover:text-[#EAEAEA]"
                     }`}
                   >
-                    <span className="mr-1">{meta.icon}</span>
+                    <span className="mr-1.5">{meta.icon}</span>
                     {meta.label}
                     {active && (
                       <motion.div
                         layoutId="cat-underline"
-                        className="absolute inset-0 -z-10 rounded-full border border-[#FC3D21]/30"
+                        className="absolute inset-0 -z-10 rounded-full border border-[#FC3D21]/40"
                       />
                     )}
                   </button>
@@ -132,7 +134,7 @@ export function FactPanel() {
               <button
                 type="button"
                 onClick={() => setShuffleSeed((s) => s + 1)}
-                className="relative whitespace-nowrap rounded-full px-3 py-1.5 text-[11px] font-mono font-medium min-h-[36px] flex items-center gap-1.5 border border-white/10 bg-white/5 hover:bg-white/10 hover:border-[#00E5C4]/40 text-[#00E5C4] transition-all shrink-0 ml-auto cursor-pointer"
+                className="relative whitespace-nowrap rounded-full px-3.5 py-2 text-[11px] font-mono font-medium min-h-[44px] flex items-center gap-1.5 border border-white/10 bg-white/5 hover:bg-white/10 hover:border-[#00E5C4]/40 text-[#00E5C4] transition-all shrink-0 ml-auto cursor-pointer"
                 title="Shuffle facts and insights for this organ"
               >
                 <Shuffle className="w-3.5 h-3.5" />
@@ -140,8 +142,8 @@ export function FactPanel() {
               </button>
             </div>
 
-            {/* Scrollable content with mobile bottom navigation clearance */}
-            <div className="flex-1 overflow-y-auto fact-scroll p-5 space-y-4 pb-28 lg:pb-6">
+            {/* Scrollable content with mobile bottom navigation and safe-area clearance */}
+            <div className="flex-1 overflow-y-auto fact-scroll p-5 space-y-4 pb-[calc(env(safe-area-inset-bottom)+7rem)] lg:pb-6 touch-manipulation">
               {/* Facts */}
               {facts.length === 0 ? (
                 <div className="py-12 text-center text-sm text-[#8A8F98]">
