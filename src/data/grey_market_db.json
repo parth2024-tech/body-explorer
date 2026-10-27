@@ -987,5 +987,40 @@
     "confidenceLevel": "HIGH",
     "evidenceStatement": "FDA laboratory spectrometry confirms illicit chemical adulteration with PDE-5 inhibitors in over 300 named OTC products.",
     "clinicalDisclaimer": "Never consume over-the-counter sexual enhancement pills; they are frequently tainted with prescription chemicals that interact lethally with heart medications."
+  },
+  {
+    "id": 33,
+    "category": "food",
+    "icon": "🍞",
+    "product": "Britannia 100% Whole Wheat Bread (CCPA Penalty for Misleading Labeling)",
+    "molecule": "Refined White Flour (Maida) Dilution in '100% Atta' Claims",
+    "subtitle": "The Central Consumer Protection Authority (CCPA) fined Britannia ₹1 Lakh and ordered the immediate stop of the '100% Whole Wheat' claim after audits proved it contained 38% refined maida.",
+    "brands": [
+      "Britannia '100% Whole Wheat Bread' (Subject to CCPA Statutory Penalty & Discontinuation Order)",
+      "Commercial packaged 'Atta' breads blending Maida without clear front disclosure"
+    ],
+    "risk": "HIGH",
+    "organ": "Digestive System & Blood Sugar (Metabolism)",
+    "summary": "In October 2024, India's Central Consumer Protection Authority (CCPA) penalized Britannia Industries ₹1 Lakh for misleading everyday consumers. Britannia marketed packaged bread under a giant front label reading '100% Whole Wheat Bread'. However, official ingredient checks revealed the bread actually contained only about 62% whole wheat flour (atta) blended with 38% refined white flour (maida). The CCPA ruled this an illegal unfair trade practice and ordered Britannia to immediately stop using the '100%' claim.",
+    "mechanism": "Refined white flour (maida) has the grain's protective bran and germ stripped away. When people with diabetes or high blood sugar buy '100% Whole Wheat Bread' expecting slow-digesting complex carbs, the 38% maida causes fast carb digestion, steeper blood sugar spikes, and higher insulin demand than genuine whole grain bread.",
+    "status_global": {
+      "India": "CCPA Statutory Penalty of ₹1 Lakh & Immediate Claim Halt Directive (October 2024)",
+      "US": "US FDA 21 CFR 101.4 requires exact flour percentage declarations and bans '100% Whole Wheat' unless 100% of grain is whole",
+      "UK": "UK Bread and Flour Regulations 1998 require 100% wholemeal flour for any bread labeled 'wholemeal'",
+      "EU": "EU Regulation 1169/2011 mandates Quantitative Ingredient Declaration (QUID) for any highlighted ingredient"
+    },
+    "status_india": "The CCPA ruled the packaging violated Section 2(28) and Section 89 of the Consumer Protection Act, 2019. FSSAI regulations also mandate that ingredient tables list the exact percentage of atta vs maida.",
+    "how_to_spot": "Always turn the packet over to the back ingredient table. Look at the line for 'Refined Wheat Flour (Maida)'. If whole wheat flour (atta) is only 55% to 65% and maida is listed next to it, it is NOT 100% whole grain, no matter what the front wrapper promises.",
+    "alternatives": [
+      "Traditional home-made 100% stone-ground whole wheat roti or chapati",
+      "Bakery sourdough bread made exclusively with 100% stone-ground whole wheat flour and water",
+      "Wholesome cooked grains like steel-cut oats, dalia (broken wheat), or millets (jowar, bajra, ragi)"
+    ],
+    "ref": "Central Consumer Protection Authority (CCPA) Order on Misleading Food Claims / Consumer Protection Act, 2019",
+    "regulatorAgency": "Central Consumer Protection Authority (CCPA) & FSSAI",
+    "noticeDate": "October 2024 Enforcement Action",
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "Official statutory regulatory order by the Central Consumer Protection Authority (CCPA) under the Ministry of Consumer Affairs, Government of India.",
+    "clinicalDisclaimer": "This regulatory record details official government enforcement actions against deceptive product claims. It does not replace individualized dietary advice from a qualified healthcare practitioner."
   }
 ]

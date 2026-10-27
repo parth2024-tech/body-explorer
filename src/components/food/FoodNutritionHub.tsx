@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { Link } from "@tanstack/react-router";
 import {
   FOOD_FACTS,
   FOOD_SYNERGIES,
@@ -583,6 +584,41 @@ export function FoodNutritionHub() {
             </a>
           ))}
         </nav>
+
+        {/* ─── Deceptive Food Claims & CCPA Enforcement Callout ─── */}
+        <div className="mb-10 p-4 sm:p-6 rounded-2xl border border-red-500/30 bg-gradient-to-r from-red-950/30 via-[#0A0E1A] to-black text-left flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
+          <div className="flex items-start gap-3.5">
+            <div className="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center shrink-0 mt-0.5">
+              <Scale className="w-5 h-5 text-red-400" />
+            </div>
+            <div>
+              <div className="flex flex-wrap items-center gap-2 mb-1">
+                <span className="text-[10px] font-mono uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-red-500/20 text-red-300 border border-red-500/30">
+                  Government Food Crackdowns
+                </span>
+                <span className="text-[10px] font-mono text-[#8A8F98]">
+                  CCPA & FSSAI Legal Actions
+                </span>
+              </div>
+              <h3 className="text-sm sm:text-base font-bold text-white">
+                Are You Really Eating "100% Whole Wheat"? Watch Out for Packaging Tricks
+              </h3>
+              <p className="text-xs text-[#8A8F98] mt-1 max-w-2xl leading-relaxed">
+                India's Central Consumer Protection Authority (CCPA) penalized Britannia ₹1 Lakh for
+                selling bread with 38% refined maida as "100% Whole Wheat Bread". Similar orders
+                removed Bournvita from "Health Drinks" and banned "100% Real Juice" claims on
+                concentrates.
+              </p>
+            </div>
+          </div>
+          <Link
+            to="/food-labels"
+            className="shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#00E5C4] hover:bg-[#00E5C4]/90 text-black font-mono font-bold text-xs transition-all shadow-md shadow-[#00E5C4]/20 touch-manipulation cursor-pointer"
+          >
+            <span>Food Label X-Ray (36 Claims)</span>
+            <ExternalLink className="w-3.5 h-3.5" />
+          </Link>
+        </div>
 
         {/* ─── SECTION 1: The Whole-Body Food Atlas (15 Organs & Systems) ─── */}
         <section id="atlas" aria-labelledby="atlas-heading" className="mb-14 sm:mb-20 scroll-mt-24">

@@ -1,11 +1,28 @@
 import { useEffect } from "react";
 import { useFoodLabelStore } from "@/store/useFoodLabelStore";
-import { AlertTriangle, Printer, Search, Shuffle } from "lucide-react";
+import {
+  AlertTriangle,
+  Printer,
+  Search,
+  Shuffle,
+  Scale,
+  Gavel,
+  Wheat,
+  Coffee,
+  Flame,
+} from "lucide-react";
 import { FoodLabelCard } from "./FoodLabelCard";
 
 export function FoodLabelsIndex() {
-  const { entries, searchQuery, setSearchQuery, filteredEntries, shuffleEntries } =
-    useFoodLabelStore();
+  const {
+    entries,
+    searchQuery,
+    setSearchQuery,
+    selectedCategory,
+    setSelectedCategory,
+    filteredEntries,
+    shuffleEntries,
+  } = useFoodLabelStore();
 
   useEffect(() => {
     shuffleEntries();
@@ -14,6 +31,11 @@ export function FoodLabelsIndex() {
   const handlePrint = () => {
     window.print();
   };
+
+  const regulatoryCount = entries.filter((e) => !!e.regulatoryCase).length;
+  const grainCount = entries.filter((e) => e.category === "grain_flour").length;
+  const sugarCount = entries.filter((e) => e.category === "sugar_sweetener").length;
+  const beverageCount = entries.filter((e) => e.category === "beverage_health").length;
 
   return (
     <div className="min-h-screen bg-[#030303] text-[#EAEAEA] font-sans selection:bg-[#FC3D21]/30">
@@ -34,12 +56,12 @@ export function FoodLabelsIndex() {
 
       <div className="max-w-[1600px] mx-auto p-4 sm:p-6 lg:p-8">
         {/* Header */}
-        <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 relative">
+        <header className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6 relative">
           <div className="relative z-10">
             <h1 className="text-4xl md:text-6xl font-space font-extrabold uppercase tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-[#8A8F98]">
               Food Label <span className="text-[#00E5C4]">X-Ray</span>
             </h1>
-            <p className="text-[#8A8F98] mt-4 font-mono text-sm max-w-2xl leading-relaxed">
+            <p className="text-[#8A8F98] mt-3 font-mono text-sm max-w-2xl leading-relaxed">
               Supermarket shelves are filled with deceptive "health" claims. Learn how to X-Ray the
               front label and read the hidden chemical truths on the back of the packet. Click
               "Scan" on any label below to reveal its biological impact.
@@ -52,7 +74,7 @@ export function FoodLabelsIndex() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8A8F98]" />
               <input
                 type="text"
-                placeholder="Search claims or products..."
+                placeholder="Search claims, brands, laws..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-base sm:text-sm text-[#EAEAEA] placeholder:text-[#8A8F98] focus:outline-none focus:border-[#00E5C4]/50 focus:bg-white/[0.05] transition-all"
@@ -75,6 +97,143 @@ export function FoodLabelsIndex() {
             </button>
           </div>
         </header>
+
+        {/* ─── SPOTLIGHT BANNER: Government Enforcement & Regulatory Fines ─── */}
+        <section
+          aria-labelledby="regulatory-spotlight-heading"
+          className="mb-8 rounded-2xl border border-red-500/30 bg-gradient-to-br from-red-950/20 via-black to-[#0A0E1A] p-4 sm:p-6 backdrop-blur-xl print:hidden shadow-xl"
+        >
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+            <div className="flex items-start gap-3.5">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center shrink-0 mt-0.5">
+                <Gavel className="w-5 h-5 sm:w-6 sm:h-6 text-red-400" />
+              </div>
+              <div>
+                <div className="flex flex-wrap items-center gap-2 mb-1">
+                  <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-red-500/20 text-red-300 border border-red-500/30 font-bold">
+                    Statutory Legal Crackdowns
+                  </span>
+                  <span className="text-[10px] font-mono text-[#8A8F98]">
+                    CCPA & FSSAI Enforcement Orders
+                  </span>
+                </div>
+                <h2
+                  id="regulatory-spotlight-heading"
+                  className="text-base sm:text-lg font-bold text-white tracking-tight"
+                >
+                  Britannia Fined ₹1 Lakh for 62% Atta Bread • Bournvita De-Listed from "Health
+                  Drinks"
+                </h2>
+                <p className="text-xs sm:text-sm text-[#8A8F98] mt-1 max-w-3xl leading-relaxed">
+                  Indian authorities (Central Consumer Protection Authority & FSSAI) are actively
+                  cracking down on deceptive food claims. Brands can no longer write "100% Whole
+                  Wheat" while hiding 38% refined maida, call sugary powders "Health Drinks", or
+                  brand fruit concentrates as "100% Real Juice".
+                </p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={() =>
+                setSelectedCategory(selectedCategory === "regulatory" ? "all" : "regulatory")
+              }
+              className={`shrink-0 flex items-center justify-center gap-2 px-4 py-2.5 min-h-[44px] rounded-xl text-xs font-mono font-bold transition-all cursor-pointer border ${
+                selectedCategory === "regulatory"
+                  ? "bg-[#00E5C4] text-black border-[#00E5C4] shadow-md shadow-[#00E5C4]/20"
+                  : "bg-red-500/10 hover:bg-red-500/20 text-red-200 border-red-500/30 hover:border-red-500/60"
+              }`}
+            >
+              <Scale className="w-4 h-4" />
+              <span>
+                {selectedCategory === "regulatory"
+                  ? "Showing 8 Regulatory Crackdowns (Reset)"
+                  : `Filter to ${regulatoryCount} Landmark Government Rulings`}
+              </span>
+            </button>
+          </div>
+        </section>
+
+        {/* ─── Category Filter Chips ─── */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-6 print:hidden touch-scroll">
+          <button
+            type="button"
+            onClick={() => setSelectedCategory("all")}
+            className={`shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono transition-all cursor-pointer border ${
+              selectedCategory === "all"
+                ? "bg-white text-black font-bold border-white"
+                : "bg-white/[0.03] text-[#8A8F98] border-white/10 hover:bg-white/[0.08] hover:text-white"
+            }`}
+          >
+            <span>All Claims ({entries.length})</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setSelectedCategory("regulatory")}
+            className={`shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono transition-all cursor-pointer border ${
+              selectedCategory === "regulatory"
+                ? "bg-red-500 text-white font-bold border-red-500 shadow-md shadow-red-500/20"
+                : "bg-red-500/10 text-red-300 border-red-500/30 hover:bg-red-500/20"
+            }`}
+          >
+            <Gavel className="w-3.5 h-3.5" />
+            <span>Government Fines & Orders ({regulatoryCount})</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setSelectedCategory("grains")}
+            className={`shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono transition-all cursor-pointer border ${
+              selectedCategory === "grains"
+                ? "bg-[#00E5C4] text-black font-bold border-[#00E5C4]"
+                : "bg-white/[0.03] text-[#8A8F98] border-white/10 hover:bg-white/[0.08] hover:text-white"
+            }`}
+          >
+            <Wheat className="w-3.5 h-3.5" />
+            <span>Whole Wheat & Flour Dilution ({grainCount})</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setSelectedCategory("sugar")}
+            className={`shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono transition-all cursor-pointer border ${
+              selectedCategory === "sugar"
+                ? "bg-[#00E5C4] text-black font-bold border-[#00E5C4]"
+                : "bg-white/[0.03] text-[#8A8F98] border-white/10 hover:bg-white/[0.08] hover:text-white"
+            }`}
+          >
+            <Flame className="w-3.5 h-3.5" />
+            <span>Sugar & Sweeteners ({sugarCount})</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setSelectedCategory("beverage")}
+            className={`shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono transition-all cursor-pointer border ${
+              selectedCategory === "beverage"
+                ? "bg-[#00E5C4] text-black font-bold border-[#00E5C4]"
+                : "bg-white/[0.03] text-[#8A8F98] border-white/10 hover:bg-white/[0.08] hover:text-white"
+            }`}
+          >
+            <Coffee className="w-3.5 h-3.5" />
+            <span>Drinks & Juices ({beverageCount})</span>
+          </button>
+        </div>
+
+        {/* Educational Note when Regulatory Category is Selected */}
+        {selectedCategory === "regulatory" && (
+          <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-xs text-red-200 leading-relaxed font-mono print:hidden">
+            <strong className="text-white block mb-1">
+              ⚖️ What is a Deceptive Food Claim Under Indian Law?
+            </strong>
+            Under Section 2(28) and Section 89 of the Consumer Protection Act, 2019 and FSSAI Food
+            Safety and Standards (Advertising and Display) Regulations, 2020: A manufacturer
+            violates the law when packaging claims ("100% Whole Wheat", "Health Drink", "Real Fruit
+            Juice") contradict the Quantitative Ingredient Declaration (QUID) on the back. The CCPA
+            can impose fines up to ₹10 Lakh for first offences and order immediate product recalls.
+          </div>
+        )}
 
         {/* X-Ray Grid */}
         <div className="print:hidden">

@@ -8,6 +8,8 @@ import {
   FlaskConical,
   Stethoscope,
   ShoppingBag,
+  Gavel,
+  Scale,
 } from "lucide-react";
 import { FoodLabelEntry } from "@/store/useFoodLabelStore";
 
@@ -81,6 +83,13 @@ export function FoodLabelCard({ label }: { label: FoodLabelEntry }) {
           </button>
         </div>
 
+        {label.regulatoryCase && (
+          <div className="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-rose-500/15 border border-rose-500/30 text-rose-400 text-xs font-mono font-bold tracking-wide self-start">
+            <Gavel className="w-3.5 h-3.5 shrink-0" />
+            <span>GOVERNMENT CRACKDOWN: {label.regulatoryCase.penalty}</span>
+          </div>
+        )}
+
         <motion.div
           initial={false}
           animate={{ height: isXRayed ? 0 : "auto", opacity: isXRayed ? 0 : 1 }}
@@ -115,7 +124,40 @@ export function FoodLabelCard({ label }: { label: FoodLabelEntry }) {
                     {label.confidenceLevel} CONFIDENCE
                   </span>
                 )}
+                {label.regulatoryCase && (
+                  <span className="px-2 py-1 rounded text-xs font-mono font-bold tracking-widest uppercase border bg-rose-500/20 text-rose-400 border-rose-500/40 flex items-center gap-1">
+                    <Scale className="w-3.5 h-3.5" />
+                    STATUTORY RULING
+                  </span>
+                )}
               </div>
+
+              {/* Regulatory Case Ruling Box */}
+              {label.regulatoryCase && (
+                <div className="p-4 rounded-xl border border-rose-500/40 bg-rose-500/10">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-2 pb-2 border-b border-rose-500/20">
+                    <div className="flex items-center gap-2">
+                      <Gavel className="w-4 h-4 text-rose-400 shrink-0" />
+                      <span className="text-xs font-mono font-bold uppercase tracking-wider text-rose-300">
+                        {label.regulatoryCase.authority}
+                      </span>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-rose-500/25 border border-rose-500/40 text-[11px] font-mono font-bold text-white">
+                      {label.regulatoryCase.penalty}
+                    </span>
+                  </div>
+                  <div className="text-xs text-rose-100 leading-relaxed space-y-1 font-sans">
+                    <p>
+                      <strong className="text-white">Product Investigated:</strong>{" "}
+                      {label.regulatoryCase.productName}
+                    </p>
+                    <p>
+                      <strong className="text-white">Official Finding:</strong>{" "}
+                      {label.regulatoryCase.verdict}
+                    </p>
+                  </div>
+                </div>
+              )}
 
               {/* Real Meaning */}
               <div className="p-4 bg-black/40 rounded-lg border border-white/5">

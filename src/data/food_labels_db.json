@@ -385,5 +385,186 @@
     "confidenceLevel": "HIGH",
     "evidenceStatement": "✅ EVIDENCE: Systematic reviews in the Journal of Human Nutrition and Dietetics confirm commercial gluten-free processed foods frequently contain higher saturated fat, sodium, and simple starch with less dietary fiber than gluten-containing equivalents.",
     "clinicalDisclaimer": "📍 IMPORTANT: If you have celiac disease, strict gluten avoidance is medically mandatory. For others, naturally gluten-free whole foods (like brown rice, millets, beans, and vegetables) are far healthier than processed gluten-free packaged snacks."
+  },
+  {
+    "id": "fl-29",
+    "marketing_claim": "100% Whole Wheat Bread (Britannia CCPA ₹1 Lakh Penalty Case)",
+    "category": "regulatory_action",
+    "risk_level": "CRITICAL",
+    "real_meaning": "The bread was made with only 62% whole wheat flour (Atta) and roughly 38% refined white flour (Maida), despite having a massive '100% Whole Wheat' banner on the front packet.",
+    "biological_impact": "Refined white flour (Maida) turns into sugar very quickly in your stomach. It rapidly raises your blood sugar and insulin levels, which can cause sudden energy crashes and encourage fat storage around your stomach. People with diabetes or heart trouble bought this bread believing it had zero refined white flour, unknowingly putting their blood sugar at risk.",
+    "how_to_spot": "Never trust the big green banner on the front. Always turn the packet over and check the 'Ingredients' list. Look for the exact percentage next to 'Whole Wheat Flour (Atta)'. If 'Refined Wheat Flour (Maida)' is listed, the bread is diluted. Also look for 'Caramel Color' (INS 150a or 150d), which companies add to turn white flour dark brown to fake a healthy whole-grain look.",
+    "common_products": [
+      "Britannia 100% Whole Wheat Bread",
+      "Packaged Brown Breads",
+      "Multigrain Sandwich Loaves",
+      "Whole Wheat Burger Buns"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ OFFICIAL RULING: The Central Consumer Protection Authority (CCPA) penalized Britannia Industries ₹1 Lakh and directed an immediate halt to the '100% Whole Wheat' claim under the Consumer Protection Act, 2019, confirming that 38% of the flour blend was refined Maida.",
+    "clinicalDisclaimer": "📍 STATUTORY CONSUMER ALERT: The CCPA confirmed the product was misleading to everyday consumers. If you need pure whole wheat for medical blood sugar control, look for bread labeled '100% Atta' where whole wheat flour is the only flour in the ingredients list, or make fresh rotis at home.",
+    "regulatoryCase": {
+      "authority": "Central Consumer Protection Authority (CCPA)",
+      "penalty": "₹1 Lakh Fine & Mandatory Cease of '100% Whole Wheat' Claim",
+      "productName": "Britannia 100% Whole Wheat Bread",
+      "year": "2024",
+      "verdict": "The CCPA ruled that advertising bread containing 38% refined flour (Maida) as '100% Whole Wheat' misled consumers about its true ingredients, violating the Consumer Protection Act, 2019."
+    }
+  },
+  {
+    "id": "fl-30",
+    "marketing_claim": "'Health Drink' / Energy Powder (Bournvita E-Commerce Ban Case)",
+    "category": "regulatory_action",
+    "risk_level": "CRITICAL",
+    "real_meaning": "Nearly 50% of the powder is pure sugar (regular sugar, liquid glucose, and maltodextrin), yet it was sold online under the 'Health Drinks' section for growing kids.",
+    "biological_impact": "Drinking 2 to 3 spoons of sugary malt powder every day floods a child's body with high-glycemic sugar. It causes rapid spikes in blood sugar, increases the risk of childhood weight gain and cavities, and trains young taste buds to reject plain milk or real whole foods.",
+    "how_to_spot": "Look at the 'Nutrition Facts' chart on the back of the jar. Find 'Total Sugars' per 100 grams. If it shows 30g to 50g, nearly half the tin is pure sugar. Also check the ingredients for multiple names of sugar: 'Sugar', 'Malt Extract', 'Liquid Glucose', and 'Invert Sugar'.",
+    "common_products": ["Bournvita", "Horlicks", "Boost", "Complan", "Malted Milk Powders"],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ OFFICIAL DIRECTIVE: The Ministry of Commerce and Industry and FSSAI ordered all e-commerce platforms (Amazon, Flipkart) to remove Bournvita and malted beverages from the 'Health Drink' category in April 2024, clarifying that Indian food law (FSS Act 2006) does not define any product as a 'Health Drink'.",
+    "clinicalDisclaimer": "📍 STATUTORY DIRECTIVE: FSSAI clarified that no packaged malt beverage holds legal status as a 'Health Drink'. Plain boiled milk or water with balanced home food provides far better nourishment without the sugar crash.",
+    "regulatoryCase": {
+      "authority": "Ministry of Commerce & Industry / FSSAI",
+      "penalty": "Mandatory De-listing from 'Health Drink' Category across All Platforms",
+      "productName": "Bournvita & Commercial Malt Beverages",
+      "year": "2024",
+      "verdict": "The Ministry issued an advisory directing e-commerce websites to pull Bournvita and similar malt powders from the 'Health Drinks' category because Indian food safety laws do not recognize any product category called 'Health Drinks'."
+    }
+  },
+  {
+    "id": "fl-31",
+    "marketing_claim": "'100% Real Fruit Juice' (FSSAI Reconstituted Juice Ban Order)",
+    "category": "regulatory_action",
+    "risk_level": "CRITICAL",
+    "real_meaning": "The carton was filled with boiled fruit concentrate mixed with tap water, yet companies plastered '100% Fruit Juice' across the front of the box.",
+    "biological_impact": "Concentrated fruit juice has all the natural plant fiber boiled away. Without fiber to slow digestion down, pure liquid fruit sugar (fructose) rushes into your liver all at once. Over time, this excess fructose is turned directly into liver fat, which can lead to fatty liver disease and belly fat.",
+    "how_to_spot": "Look for the tiny print on the back that says 'Reconstituted from Fruit Juice Concentrate'. If it has water, concentrate, acidity regulator (INS 330), and added natural flavors, it is not fresh, pure squeezed fruit juice.",
+    "common_products": [
+      "Packaged Apple Juices",
+      "Reconstituted Orange Juices",
+      "Mixed Fruit Tetra Packs"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ OFFICIAL DIRECTIVE: In June 2024, FSSAI issued an enforcement order mandating that all food companies immediately withdraw and stop using claims of '100% Fruit Juice' on reconstituted juices, as products reconstituted from concentrate and water cannot legally claim to be 100% juice.",
+    "clinicalDisclaimer": "📍 STATUTORY WARNING: FSSAI ordered companies to exhaust old packaging and stop claiming 100% juice. Eating an actual whole apple or orange with its natural fiber is far healthier than drinking any boxed juice.",
+    "regulatoryCase": {
+      "authority": "Food Safety and Standards Authority of India (FSSAI)",
+      "penalty": "Immediate Removal Order of '100% Fruit Juice' Claims Across India",
+      "productName": "Reconstituted Packaged Fruit Juices",
+      "year": "2024",
+      "verdict": "FSSAI directed all food business operators to remove '100% Fruit Juice' claims from reconstituted fruit juice advertisements and labels, confirming that concentrate reconstituted with water is not 100% fruit juice."
+    }
+  },
+  {
+    "id": "fl-32",
+    "marketing_claim": "Sugary 'ORS' Energy Drinks (FSSAI Medical Misbranding Warning)",
+    "category": "regulatory_action",
+    "risk_level": "CRITICAL",
+    "real_meaning": "Selling everyday sugary fruit drinks with names sounding like 'ORS' (Oral Rehydration Salts) to trick sick, dehydrated people into buying candy water.",
+    "biological_impact": "A real medical ORS follows an exact World Health Organization (WHO) formula with very low sugar and balanced salts. When a dehydrated person or child drinks a sugary imitation beverage (>10% sugar), the excess sugar pulls water out of the body and into the gut through osmosis. This can make diarrhea and dehydration much worse, which is very dangerous.",
+    "how_to_spot": "Look for the words 'WHO Recommended Formula' on the packet. If the drink has more than 15 calories per 100ml or tastes like very sweet mango or apple juice, it is NOT medical ORS. Real medical ORS is sold at pharmacy counters as a dry powder sachet.",
+    "common_products": [
+      "Commercial ORS-like Tetra Packs",
+      "Electrolyte Flavored Juice Drinks",
+      "Energy Ready-to-Drink Tetra Packs"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ STATUTORY ADVISORY: FSSAI and State Food and Drug Administrations issued strict advisories warning companies against using the medical acronym 'ORS' on commercial drinks with high sugar, as they violate WHO medical osmolarity standards.",
+    "clinicalDisclaimer": "📍 CRITICAL HEALTH WARNING: Never give commercial sugary tetra-pack drinks to a child with diarrhea or vomiting. Always use genuine WHO-formula ORS sachets from a registered pharmacy mixed in clean drinking water.",
+    "regulatoryCase": {
+      "authority": "FSSAI & State Drug Controllers",
+      "penalty": "Crackdown on Misleading 'ORS' Names on Sugary Commercial Beverages",
+      "productName": "Commercial Ready-to-Drink 'ORS' Formulations",
+      "year": "2023–2024",
+      "verdict": "Regulators cracked down on brands using variations of 'ORS' on high-sugar consumer drinks, warning that confusing sick patients with high-sugar beverages poses severe dehydration risks."
+    }
+  },
+  {
+    "id": "fl-33",
+    "marketing_claim": "'Pure Honey' Adulterated with Sugar Syrup (CSE Investigation & FSSAI Testing)",
+    "category": "regulatory_action",
+    "risk_level": "HIGH",
+    "real_meaning": "Bottles sold as '100% Pure Raw Honey' were found to be mixed with lab-made invert sugar syrups imported from abroad that were engineered to bypass standard purity tests.",
+    "biological_impact": "Adulterated honey acts in your body just like refined high-fructose corn syrup. It spikes your blood sugar quickly, burdens your liver, and provides none of the healthy enzymes, pollens, or antimicrobial perks of real raw honey made by bees.",
+    "how_to_spot": "Most supermarket honey that stays completely clear, liquid, and never crystallizes in the cold during winter is heavily heated, micro-filtered, or cut with sugar syrup. Real raw honey naturally thickens and forms soft crystals over time in cold weather.",
+    "common_products": [
+      "Commercial Squeezy Honey Bottles",
+      "Supermarket Brand Honey",
+      "Flavored Honey Jars"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ LABORATORY FINDINGS: A landmark investigation by the Centre for Science and Environment (CSE) tested major Indian honey brands at an advanced German laboratory using NMR (Nuclear Magnetic Resonance). Nearly 77% of samples failed purity tests due to modified sugar syrups, prompting FSSAI to mandate specialized SMR and TMR tests.",
+    "clinicalDisclaimer": "📍 NUTRITIONAL FACT: Even 100% pure raw bee honey is still mostly natural sugar (fructose and glucose). People with diabetes should consume it only in strict moderation.",
+    "regulatoryCase": {
+      "authority": "Centre for Science and Environment (CSE) & FSSAI",
+      "penalty": "Mandatory Specific Marker for Rice (SMR) and Trace Marker (TMR) Testing",
+      "productName": "Commercial Packaged Honey",
+      "year": "2020–2024",
+      "verdict": "Advanced NMR testing revealed widespread adulteration of packaged honey with modified rice and corn syrups designed to deceive basic lab tests, leading FSSAI to tighten purity standards."
+    }
+  },
+  {
+    "id": "fl-34",
+    "marketing_claim": "'A1 vs A2' Milk Health Claims (FSSAI Removal Advisory)",
+    "category": "regulatory_action",
+    "risk_level": "HIGH",
+    "real_meaning": "Companies claimed that A2 milk prevents diabetes, cancer, and heart attacks while calling regular A1 milk 'poisonous', charging double or triple the price based on unproven claims.",
+    "biological_impact": "Both A1 and A2 milk have the exact same protein, calcium, vitamins, and calories. Unless someone has a specific sensitivity to a protein fragment, extensive medical studies show no difference in human health, heart function, or diabetes risk between the two.",
+    "how_to_spot": "Look for luxury milk bottles priced at ₹120 to ₹180 per liter claiming 'Miracle A2 Desi Cow Milk'. If the brand claims it cures chronic diseases, it is using fear-based advertising to overcharge you.",
+    "common_products": ["Premium A2 Cow Milk", "A2 Organic Ghee", "A2 Paneer Jars"],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ OFFICIAL DIRECTIVE: In August 2024, FSSAI issued an advisory instructing all dairy companies to remove 'A1' and 'A2' claims from milk, curd, and ghee labels, clarifying that the Food Safety and Standards Regulations (FSSR, 2011) do not recognize any A1/A2 distinction.",
+    "clinicalDisclaimer": "📍 OFFICIAL FSSAI ADVISORY: FSSAI clarified that A1/A2 claims on milk packaging are misleading and not supported by official food standards. Any clean, pasteurized milk from a reputable dairy provides standard quality calcium and protein.",
+    "regulatoryCase": {
+      "authority": "Food Safety and Standards Authority of India (FSSAI)",
+      "penalty": "Official Directive to Remove A1/A2 Claims from All Dairy Products",
+      "productName": "Packaged A2 Milk, Ghee, and Curd",
+      "year": "2024",
+      "verdict": "FSSAI issued an advisory clarifying that Food Safety and Standards Regulations do not recognize A1/A2 claims, ordering dairy operators to remove these misleading claims from milk and ghee products."
+    }
+  },
+  {
+    "id": "fl-35",
+    "marketing_claim": "'100% Atta' Instant Noodles & Digestive Biscuits (FSSAI Scrutiny)",
+    "category": "regulatory_action",
+    "risk_level": "HIGH",
+    "real_meaning": "Packaged snacks with big 'Atta' and golden wheat graphics on the front often contain as little as 25% to 35% wheat flour, while the rest is refined Maida and up to 20% refined palm oil.",
+    "biological_impact": "The combination of refined flour, palm oil, and heavy sodium (often >800mg per pack) spikes your blood pressure and drives body-wide inflammation. Calling it 'Atta' gives consumers a false sense of health security while delivering the exact same metabolic penalty as junk food.",
+    "how_to_spot": "Look at the ingredients order. Ingredients must be listed by weight from highest to lowest. If you see 'Refined Wheat Flour (Maida)' or 'Palmolein Oil' listed before or alongside 'Whole Wheat Flour', it is not a wholesome wheat meal.",
+    "common_products": ["Atta Instant Noodles", "Digestive Wheat Biscuits", "Whole Wheat Rusk"],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ REGULATORY SCRUTINY: FSSAI guidelines require that products highlighting an ingredient in their name must clearly state its exact percentage by weight. Audits revealed many 'Atta' products contained over 50% refined flour and palm oil.",
+    "clinicalDisclaimer": "📍 PRACTICAL TIP: Ultra-processed packaged snacks fried in palm oil are not whole foods, regardless of whether a fraction of the flour is whole wheat.",
+    "regulatoryCase": {
+      "authority": "FSSAI Food Safety Audits",
+      "penalty": "Mandatory Declaration of Ingredient Percentages (QUID Standards)",
+      "productName": "Packaged Atta Noodles & Digestive Biscuits",
+      "year": "2023–2024",
+      "verdict": "FSSAI enforced strict ingredient percentage declarations (Quantitative Ingredient Declaration) to prevent companies from calling products 'Atta' when the majority of flour was refined Maida."
+    }
+  },
+  {
+    "id": "fl-36",
+    "marketing_claim": "'0% Cholesterol' Vegetable Cooking Oil (ASCI & FSSAI Enforcement)",
+    "category": "regulatory_action",
+    "risk_level": "HIGH",
+    "real_meaning": "Advertising vegetable oil as 'Cholesterol-Free' as if the brand invented a heart-saving technology, when in reality all plant-based oils on planet Earth naturally contain zero cholesterol.",
+    "biological_impact": "Cholesterol is made exclusively in animal and human liver cells. Plants cannot make cholesterol. Misleading heart patients into believing they can pour unlimited 'zero cholesterol' oil onto their food leads to high calorie intake, excess omega-6 inflammation, and toxic lipid peroxides from high-heat frying.",
+    "how_to_spot": "Any bottle of sunflower oil, soybean oil, mustard oil, or corn oil that charges extra for a big 'Zero Cholesterol' banner is charging you for a basic biological fact that applies to every plant oil on Earth.",
+    "common_products": [
+      "Refined Sunflower Oils",
+      "Soybean Cooking Oils",
+      "Zero Cholesterol Vegetable Chips"
+    ],
+    "confidenceLevel": "HIGH",
+    "evidenceStatement": "✅ ADVERTISING STANDARDS: The Advertising Standards Council of India (ASCI) and FSSAI cracked down on cooking oil ads using 'Zero Cholesterol' as a unique health claim, ruling that claiming a universal natural trait as an exclusive brand benefit is deceptive.",
+    "clinicalDisclaimer": "📍 MEDICAL REALITY: While plant oils have zero cholesterol, consuming large amounts of refined, highly processed oil still raises blood triglycerides and increases inflammation. Keep daily cooking oil to 3–4 teaspoons per person.",
+    "regulatoryCase": {
+      "authority": "ASCI (Advertising Standards Council of India) & FSSAI",
+      "penalty": "Prohibition of Deceptive Universal Claims on Plant Oils",
+      "productName": "Refined Vegetable & Seed Cooking Oils",
+      "year": "2023–2024",
+      "verdict": "Regulators prohibited oil companies from marketing 'Zero Cholesterol' as a special product feature, clarifying that all vegetable oils are naturally cholesterol-free and promoting them as heart-cures misleads consumers."
+    }
   }
 ]
