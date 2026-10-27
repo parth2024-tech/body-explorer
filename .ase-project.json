@@ -20,7 +20,8 @@
     "Strict TypeScript typing - zero use of 'any'",
     "Clinical evidence compliance - Tier 1/2 sourcing",
     "Hindi translations paused: all newly added content and UI copy must remain English-only until explicit resumption is requested by user",
-    "Individual food intelligence only: Whole-Body Food Atlas (15 organs), Unusual Food Science (6 mechanisms), and Interactive Food Journey grounded in ICMR-NIN 2024 standards. Keep live shuffling active across all sections."
+    "Individual food intelligence only: Whole-Body Food Atlas (15 organs), Unusual Food Science (6 mechanisms), and Interactive Food Journey grounded in ICMR-NIN 2024 standards. Keep live shuffling active across all sections.",
+    "Real-world food regulatory enforcement actions (e.g. CCPA ₹1L fine for Britannia 62% atta bread, FSSAI Bournvita de-listing, fruit juice reconstituted concentrate claim bans) are indexed under Food Label X-Ray and Grey Market Registry with plain-language statutory rulings, QUID ingredient disclosures, and metabolic impact."
   ],
   "architecture_patterns": [
     "SSR via TanStack Start and Nitro Vercel preset",
