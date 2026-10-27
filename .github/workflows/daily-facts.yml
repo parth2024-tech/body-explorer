@@ -32,6 +32,9 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: npx tsx scripts/generate-daily-facts.ts
 
+      - name: Automatically detect and cover latest food regulatory news & crackdowns
+        run: npx tsx scripts/detect-food-regulatory-news.ts
+
       - name: Validate data integrity and tests
         run: npm test
 

@@ -30,7 +30,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "validate": "npm run typecheck && npm run lint && npm run test",
-    "daily:upload": "tsx scripts/generate-daily-facts.ts"
+    "daily:upload": "tsx scripts/generate-daily-facts.ts",
+    "detect:news": "tsx scripts/detect-food-regulatory-news.ts"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
