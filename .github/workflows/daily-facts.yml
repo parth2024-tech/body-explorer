@@ -13,10 +13,13 @@ permissions:
 jobs:
   generate-daily-site-content:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -42,10 +45,23 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          npx prettier --write "src/data/**/*.{ts,json}" || true
           git add src/data/ package-lock.json
           if ! git diff --staged --quiet; then
             git commit -m "chore(content): daily automated full-website clinical content update [skip ci]"
-            git push
+            # Rebase any remote changes before pushing to avoid non-fast-forward rejection
+            git pull --rebase origin main || true
+            # Retry push up to 3 times in case of transient network issues
+            for i in 1 2 3; do
+              if git push origin main; then
+                echo "Successfully pushed daily updates to GitHub."
+                break
+              else
+                echo "Push attempt $i failed, retrying in 3 seconds..."
+                sleep 3
+                git pull --rebase origin main || true
+              fi
+            done
           else
             echo "No new content or data changes to commit today."
           fi

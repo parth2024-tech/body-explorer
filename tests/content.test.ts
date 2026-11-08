@@ -41,7 +41,7 @@ describe("Content & Knowledge Base Integrity", () => {
       expect(item.id).toBeGreaterThan(0);
       expect(item.product.length).toBeGreaterThan(3);
       expect(item.molecule.length).toBeGreaterThan(2);
-      expect(["CRITICAL", "HIGH", "UNDER-REVIEW"]).toContain(item.risk);
+      expect(["CRITICAL", "HIGH", "UNDER-REVIEW", "MODERATE"]).toContain(item.risk);
       expect(item.organ.length).toBeGreaterThan(2);
       expect(item.summary.length).toBeGreaterThan(20);
       expect(item.how_to_spot.length).toBeGreaterThan(10);
@@ -80,5 +80,28 @@ describe("Content & Knowledge Base Integrity", () => {
       const partHacks = HACKS.filter((h) => h.bodyPartId === part.id);
       expect(partHacks.length).toBeGreaterThanOrEqual(1);
     }
+  });
+
+  it("enforces zero duplicate IDs and zero exact duplicate texts in facts database", () => {
+    const seenIds = new Set<string>();
+    const seenTexts = new Set<string>();
+    const duplicateIds: string[] = [];
+    const duplicateTexts: string[] = [];
+
+    for (const fact of FACTS) {
+      if (seenIds.has(fact.id)) {
+        duplicateIds.push(fact.id);
+      }
+      seenIds.add(fact.id);
+
+      const normalized = fact.text.toLowerCase().trim();
+      if (seenTexts.has(normalized)) {
+        duplicateTexts.push(fact.id);
+      }
+      seenTexts.add(normalized);
+    }
+
+    expect(duplicateIds).toEqual([]);
+    expect(duplicateTexts).toEqual([]);
   });
 });

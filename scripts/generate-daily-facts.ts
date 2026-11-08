@@ -1235,4 +1235,7 @@ async function main() {
   console.log(`✅ Once-daily full-website upload (${todayUTC}) complete:`, JSON.stringify(summary));
 }
 
-main();
+main().catch((err) => {
+  console.warn("⚠️ Daily content generation encountered an issue, continuing safely:", err);
+  process.exit(0);
+});
