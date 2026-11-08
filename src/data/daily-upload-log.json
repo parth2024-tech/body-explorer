@@ -1,7 +1,7 @@
 {
-  "lastUploadDate": "2026-10-12",
+  "lastUploadDate": "2026-11-08",
   "frequency": "once_daily",
-  "totalUploads": 3,
+  "totalUploads": 4,
   "history": [
     {
       "date": "2026-10-10",
@@ -52,6 +52,24 @@
         "hacks": 1,
         "bodyMarvels": 1,
         "sensoryFacts": 1,
+        "qaEntries": 1,
+        "foodSynergies": 1,
+        "drugWarnings": 1
+      }
+    },
+    {
+      "date": "2026-11-08",
+      "summary": {
+        "facts": 3,
+        "foodLabels": 0,
+        "greyMarket": 0,
+        "insights": 1,
+        "myths": 0,
+        "diseases": 0,
+        "remedies": 1,
+        "hacks": 1,
+        "bodyMarvels": 1,
+        "sensoryFacts": 0,
         "qaEntries": 1,
         "foodSynergies": 1,
         "drugWarnings": 1

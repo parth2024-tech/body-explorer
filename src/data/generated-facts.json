@@ -329,5 +329,26 @@
     "category": "health_tip",
     "rarity": "almost_unknown",
     "text": "Your skeleton is completely replaced every 10 years; microscopic clean-up cells (osteoclasts) break down worn-out bone while builder cells (osteoblasts) lay down fresh calcium so your frame stays strong."
+  },
+  {
+    "id": "gen-daily-retina-speed",
+    "bodyPartId": "eyes",
+    "category": "record_breaker",
+    "rarity": "mind_blowing",
+    "text": "The light-sensitive cells in the back of your eyes (the retina) process visual scenes in just 13 milliseconds—faster than a camera shutter—and send over 10 million bits of data to your brain every second."
+  },
+  {
+    "id": "gen-daily-heart-muscle-pumping",
+    "bodyPartId": "heart",
+    "category": "record_breaker",
+    "rarity": "surprising",
+    "text": "Your heart beats about 100,000 times a day without taking a single break, pumping roughly 7,500 liters of oxygen-rich blood through 60,000 miles of blood vessels."
+  },
+  {
+    "id": "gen-daily-blinking-eyelid",
+    "bodyPartId": "eyes",
+    "category": "health_tip",
+    "rarity": "common",
+    "text": "You spend about 10% of your waking hours with your eyes closed just from natural blinking, which wipes clean tears across your eyes to wash away dust and deliver fresh air."
   }
 ]

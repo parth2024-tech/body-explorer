@@ -4261,6 +4261,19 @@ export const REMEDIES: RemedyEntry[] = [
     practicalContext:
       "Must be done outdoors without sunglasses. Looking through a window glass does not work because window panes filter out 50% or more of the necessary blue-sky wavelengths.",
   },
+  {
+    id: "ginger-tea-nausea-motility",
+    name: "Fresh Ginger Root Tea for Nausea & Stomach Settling",
+    description:
+      "Steeping 1 to 2 grams of freshly sliced ginger root in hot water for 10 minutes to relieve mild nausea, car sickness, and sluggish gastric emptying.",
+    evidenceRating: "studied",
+    evidenceDetails:
+      "Systematic reviews (Cochrane & Critical Reviews in Food Science and Nutrition) demonstrate that gingerols and shogaols in fresh ginger bind to serotonin 5-HT3 receptors in the digestive tract, gently accelerating stomach emptying and reducing nausea signals to the brainstem.",
+    ailment: "Mild Digestive Nausea & Post-Meal Heaviness",
+    bodyPartId: "stomach",
+    practicalContext:
+      "Sip freshly steeped ginger tea slowly 20 minutes before a car trip or after a heavy meal. Limit to under 4 grams of raw ginger daily if taking blood thinners.",
+  },
 ];
 
 export const HACKS: HealthHack[] = [
@@ -4587,6 +4600,15 @@ export const HACKS: HealthHack[] = [
     scienceBasis:
       "Leucine acts as a biological molecular switch that turns on mTORC1 (the cellular engine that builds muscle tissue). Without reaching this leucine threshold, the body cannot fully initiate muscle protein synthesis, causing slow muscle recovery and gradual muscle wasting.",
     bodyPartId: "muscles",
+  },
+  {
+    id: "box-breathing-autonomic-reset",
+    title: "4x4 Box Breathing (Navy SEAL Autonomic Reset)",
+    practice:
+      "Inhale through your nose for 4 seconds, hold your breath gently for 4 seconds, exhale through your mouth for 4 seconds, and hold empty for 4 seconds. Repeat for 4 cycles.",
+    scienceBasis:
+      "Paced equal-ratio breathing balances blood carbon dioxide levels and dampens sympathetic nervous system (fight-or-flight) arousal, bringing rapid mental clarity during high-stress moments.",
+    bodyPartId: "brain",
   },
 ];
 
@@ -5008,6 +5030,25 @@ export const BODY_MARVELS: BodyMarvel[] = [
     conclusion:
       "Harsh antibacterial soaps strip away your skin's acidic armor and dry out the protective lipid shield. Wash with gentle, pH-balanced cleansers and moisturize while skin is damp.",
     bodyPartId: "skin",
+  },
+  {
+    id: "vagus-nerve-superhighway",
+    title: "The Vagus Nerve: Your Body's Master Calming Superhighway",
+    introduction:
+      "Wandering from your brainstem all the way down through your heart, lungs, stomach, and intestines, the vagus nerve is the longest cranial nerve in your body and serves as your master parasympathetic brake.",
+    sections: [
+      {
+        heading: "1. The Direct Heart Brake",
+        body: "Whenever you take a long, slow exhale or hum, the vagus nerve releases a neurotransmitter called acetylcholine directly onto your heart's natural pacemaker (the SA node), telling your heart to slow its beats within seconds.",
+      },
+      {
+        heading: "2. The Gut-to-Brain Telephone Line",
+        body: "Over 80% of vagus nerve fibers are sensory wires traveling upward—sending real-time reports about gut bacteria, stomach fullness, and inflammation straight to your emotional brain centers.",
+      },
+    ],
+    conclusion:
+      "You can tone your vagus nerve naturally through slow exhales, singing, cold face splashes, and eating prebiotic fibers that feed friendly gut bacteria.",
+    bodyPartId: "brain",
   },
 ];
 
@@ -5679,6 +5720,16 @@ export const QA_ENTRIES: QAEntry[] = [
     expertName: "Dr. Sunita Mehta",
     expertTitle: "Senior Hepatologist & Liver Transplant Physician",
     bodyPartId: "liver",
+  },
+  {
+    id: "cold-weather-catch-cold-expert",
+    question:
+      "Does going outside in cold weather with wet hair actually make you catch a cold or the flu?",
+    answer:
+      "No. Colds and flu are caused exclusively by viral infections (rhinoviruses and influenza viruses), not cold air or damp hair. However, cold, dry winter air does two things: it cools the nasal lining, slightly slowing down the protective microscopic hairs (cilia) that sweep viruses out of your nose, and it drives people indoors into crowded, poorly ventilated rooms where airborne viruses spread easily.",
+    expertName: "Dr. Anthony Morales",
+    expertTitle: "Clinical Immunologist & Infectious Disease Specialist",
+    bodyPartId: "throat",
   },
 ];
 

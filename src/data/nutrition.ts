@@ -3192,6 +3192,17 @@ export const FOOD_SYNERGIES: FoodSynergyPair[] = [
     culinaryIdea:
       "Brew your daily cup of unsweetened black or lightly milked coffee with a dash of pure Ceylon cinnamon powder.",
   },
+  {
+    id: "syn-yogurt-banana-synbiotic",
+    foodA: "Fermented Yogurt or Kefir (Live Probiotics)",
+    foodB: "Slightly Green Underripe Bananas (Prebiotic Resistant Starch)",
+    synergyOutcome: "Synbiotic Colon Microbiome Colonization",
+    multiplier: "+300% Probiotic Survival & SCFA Yield",
+    mechanism:
+      "Live probiotic bacteria need soluble fuel to survive the harsh stomach acid barrier. Resistant starch in underripe bananas acts as a protective shield and fertilizer in the colon, allowing beneficial bacteria to produce protective short-chain fatty acids (SCFAs).",
+    culinaryIdea:
+      "Slice half an underripe banana into a cup of plain unsweetened Greek yogurt or homemade curd for a morning gut-shield breakfast.",
+  },
 ];
 
 export interface DrugFoodWarning {
@@ -3334,5 +3345,15 @@ export const DRUG_FOOD_WARNINGS: DrugFoodWarning[] = [
       "Activated charcoal is an unselective, super-absorbent powder used in hospital emergency rooms to bind poisons. Drinking it in trendy 'detox' black smoothies or lattes absorbs your morning medications directly in your stomach, rendering contraceptive pills and heart drugs completely inactive and leading to unplanned pregnancies or blood pressure spikes.",
     doctorDirective:
       "Never consume trendy activated charcoal drinks or baked foods within 4 to 6 hours of taking any daily prescription medication.",
+  },
+  {
+    id: "warn-cbd-liver-metabolism",
+    food: "Over-the-Counter CBD Oils, Tinctures & Gummies",
+    medicationClass: "Blood Thinners (Warfarin), Anti-Epileptic Drugs & Immunosuppressants",
+    riskSeverity: "HIGH",
+    clinicalConsequence:
+      "Cannabidiol (CBD) strongly competes for CYP450 liver enzymes (specifically CYP3A4 and CYP2C19) that your body uses to clear prescription drugs. Taking high-dose CBD blocks these enzymes, causing prescription blood thinner or seizure drug levels in your blood to build up dangerously high.",
+    doctorDirective:
+      "Always inform your doctor or pharmacist before using CBD supplements if you take prescription medications, and get routine therapeutic blood level checks.",
   },
 ];

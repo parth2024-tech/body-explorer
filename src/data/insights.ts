@@ -497,4 +497,12 @@ export const DAILY_INSIGHTS: DailyInsight[] = [
       "Try 3 physiological sighs right now: double-inhale through your nose, then a gentle 6-second sigh out your mouth.",
     actionDuration: "30s",
   },
+  {
+    dayOfYear: 65,
+    bodyPartId: "liver",
+    fact: "Your liver stores about 100 grams of glucose (sugar) as glycogen—a reserve fuel tank that quietly drips clean energy into your blood while you sleep so your brain never starves.",
+    action:
+      "Drink a tall glass of water first thing in the morning to help your liver rehydrate and clear nighttime waste products.",
+    actionDuration: "20s",
+  },
 ];
