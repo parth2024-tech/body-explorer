@@ -47,7 +47,11 @@
   "deployment": {
     "platform": "Vercel",
     "branch_strategy": "main → production, dev → preview",
-    "environments": ["development", "staging", "production"]
+    "environments": [
+      "development",
+      "staging",
+      "production"
+    ]
   },
   "sprint_focus": "Building the user onboarding flow with email verification and profile setup.",
   "sprint_skills": [
@@ -79,11 +83,16 @@
     "Use Next.js Image component for all images",
     "Always mandate production web essentials: custom domain, custom favicon suite, remove AI badges, /privacy page, and /terms page",
     "Always follow the 6-step Second Brain closed loop: Load Conventions -> Select Model -> Autonomous Loop -> Validate Output -> Continuous Learning -> Automated Git Push",
-    "Always enforce Arch Linux On-Demand System Governance (run interactive tools on-demand, terminate completely on exit)"
+    "Always enforce Arch Linux On-Demand System Governance (run interactive tools on-demand, terminate completely on exit)",
+    "Always use Node 22+ in GitHub Actions runners, include resilient fallback install (npm ci || npm install), verify staged changes before committing, and wrap git push in rebase retry loops."
   ],
   "agent_skills": {
     "directory": "/home/thor/skiils/skills",
-    "default_skills": ["using-agent-skills", "context-engineering", "anti-vibe-design"],
+    "default_skills": [
+      "using-agent-skills",
+      "context-engineering",
+      "anti-vibe-design"
+    ],
     "mandatory_skills": {
       "api": "api-and-interface-design",
       "auth": "security-and-hardening",
