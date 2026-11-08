@@ -2274,7 +2274,7 @@ const HARDCODED_FACTS: Fact[] = [
     "bones",
     "record_breaker",
     "surprising",
-    "Ounce for ounce, your bones are stronger than solid steel. A block of bone the size of a matchbox can support up to 18,000 pounds of weight.",
+    "Your thigh bone (the femur) is the strongest and longest bone in your body—it can withstand up to 30 times your entire body weight before cracking under vertical pressure.",
   ),
   f(
     "user-fact-spinal-height",
