@@ -42,5 +42,10 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add src/data/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(content): daily automated full-website clinical content update [skip ci]" && git push)
+          git add src/data/ package-lock.json
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(content): daily automated full-website clinical content update [skip ci]"
+            git push
+          else
+            echo "No new content or data changes to commit today."
+          fi
